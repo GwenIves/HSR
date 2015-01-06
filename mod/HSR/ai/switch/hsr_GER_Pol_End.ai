@@ -1,0 +1,28 @@
+#
+# by Aregorn for HSR
+#
+
+neutrality = 20.000
+war = 50
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	country_priorities = {
+		FIN = -1
+		ITA = -1
+		sch = -1
+		HUN = -1
+		FRA = 40
+		YUG = 5
+		HOL = 50
+		BEL = 100
+		DEN = 50
+		SOV = 2
+	}
+	province_priorities = {
+	}
+	area_multiplier = {
+	}
+}

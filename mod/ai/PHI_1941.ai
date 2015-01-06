@@ -1,0 +1,579 @@
+# HOI2 AI file for Phillipines 1941
+# Tamerlan
+# Inter-Agent distribution variables
+
+# flags = {} # FLAGS DISABLED
+reinforcement = 0.3500
+upgrading = 0.1500
+# Country tags listed with a value specifying how much we want to destroy them.
+combat = {
+}
+# Countries listed here are considered withing our 'sphere of influence'. We will strive to guarantee their independence.
+protect = {}
+
+# Countries listed here are considered our natural allies. We will try to influence them and ally with them.
+befriend = {
+	USA = 100
+}
+
+# Provinces with an assigned priority. These are strategic goals for the AI (it will try to take them in wars and demand them in peace treaties.)
+# 1 - 100
+target = { }
+
+strat_redeploy_threshold = 15 # [days] The ETA at which the AI uses strat. redeploy.
+
+# The "war monger" value affects the propensity of a country for declaring wars:
+war = 5
+
+# The tendency of a nation to create and accept alliances, and accept military access. The higher the value, the more "neutral" the nation. NOTE: this does not affect the tendency of a nation to start wars.
+
+neutrality = 90 # Total neutrality at about 100 to 150
+
+max_front_ratio			= 1.2	# The max wanted friendly-enemy division ratio along the front
+# NOTE: Disregarded if there is only one front in the area.
+
+max_garrison_prop		= 0.3 # [0.0-1.0] The war-time desired proportion of troops allocated to garrison duty
+min_garrison_prop		= 0.2 # [0.0-1.0] The war-time minimum proportion of troops allocated to garrison duty
+# NOTE: In areas without fronts, _all_ land units are controlled by the Garrison AI (except forces preparing for an invasion.)
+###################################
+# Spying
+###################################
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.6
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 10
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+
+		country = PHI
+	}
+}
+construction = {
+	max_factor		= 0.05 	# [0.0-1.0] Proportion of Production IC that should be used for province buildings.
+	AA_batteries	 	= no # [yes/no/atwar/not_atwar] yes = all the time, no = none, atwar = build during wars, not_atwar = build during peace
+	max_AA_level		= 2	# Don't improve beyond this level.
+	AA_provs		= { }	# List of prioritized provinces:
+
+	coastal_fort 		= yes		# [yes/no/atwar/not_atwar]
+	max_coastal_level	= 2		# Don't improve beyond this level.
+	coastal_fort_provs	= { 1740 1741 1742 1743 }	# List of prioritized provinces:
+
+	radar_station 		= no		# [yes/no/atwar/not_atwar]
+	max_radar		= 0		# Don't improve beyond this level.
+	radar_provs		= {  }		# List of prioritized provinces:
+
+	air_base 		= no		# [yes/no/atwar/not_atwar]
+	max_air_base		= 0		# Don't improve beyond this level.
+	air_base_provs		= { }		# List of prioritized provinces:
+
+	naval_base 		= no		# [yes/no/atwar/not_atwar]
+	max_naval_base		= 0		# Don't improve beyond this level.
+	naval_base_provs	= {  }		# List of prioritized provinces:
+
+	land_fort		= no		# [yes/no/atwar/not_atwar]
+	max_land_level		= 1		# Don't improve land forts beyond this level.
+	fort_borders = { }			# Build land forts along these borders
+
+	ic_at_war		= no		# [yes/no] Normally, we always build IC if there is a large resource surplus. The exception could be during wars.
+	force_ic_until		= 1937		# Ignore presence of a resource surplus and build IC anyway, until year X. (Useful for countries anticipating expansion.)
+	ic_end_year		= 1938		# Stop building IC at the end of year X.
+	IC_provs		= { 1739 }	# List of prioritized provinces: Manilia
+}
+#9 divisions protecting manilla island
+garrison = {
+
+	# OVERSEAS GARRISONING:
+	defend_overseas_beaches = yes # [yes/no]  "no" is default
+
+	# Basic need is X divisions per area where X is: number of provinces - attrition provinces
+	home_multiplier = 1.28 # In home area, multiply basic need by X. (7 provinces/9 divisions)
+	overseas_multiplier = 0.1 # In other area, multiply basic need by X. Default: 0.3333
+	home_peace_cap = 20
+	war_zone_odds = 2.0  # For the philippines the only real war_zone should be around Manilla
+	area_multiplier = { # If an area contains a specific province, multiply the basic need by value (overrides overseas_multiplier, but if it is the home area it is ignored.)
+	}
+
+	# PRIORITIES:
+
+	beach = 0			# Beach prio
+	capital = 10			# Our capital
+	human_border = 1		# Ignored for allied human players
+	war_target = 100		# The next country targeted for attack by this AI
+
+	opposing_alliance = 1		# For neutrals, all alliances are "opposing"
+	claim_threat = 1		# If we are neutral, countries with claims on us get this
+	unstable_border	= 1		# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		JAP = 50 # should not be required, but still
+	}
+
+	# Specific provinces
+	province_priorities = {
+		1740 = 75 #Lingay gulf
+		1741 = 50 #Aparii
+		1742 = 50 #Lamon Bay
+		1743 = 50 #Legaspi
+	}
+
+	key_point_prio_mult		= 0.0
+}
+
+front = {
+	recklessness 		= 	2 # 0-3
+	distrib_vs_ai 		= 	reactive
+	distrib_vs_human 	= 	even
+
+	enemy_reinf_days	=	1
+
+	reserve_prop		=	0.2
+	panic_ratio_vs_ai	=	1.5
+	panic_ratio_vs_human	=	1.0
+	base_attack_odds	=	2.5
+	min_attack_odds		=	1.8
+	max_attack_odds		=	3.5
+	reinforce_odds		=	1.0 #don't reinforce
+	withdraw_odds		=	1.6
+
+	strength = 1.0
+	organisation = 2.0
+	soft_attack = 1.0
+	hard_attack = 2.0
+	ground_defense = 1.0
+	dig_in = 1.05 #1.25 Against defender
+
+	occupied 	= 0.7
+	owned 		= 0.7
+}
+
+military = {
+	relative_build_scheme 	= yes # [yes/no] Should the AI strive to maintain a relative balance between unit types [yes] or simply allocate percentages (see below) of the total production [no]. Default: yes
+
+	max_batch_peace = 270			# Max production run length in DAYS while at peace
+	max_batch_war = 270			# Max production run length in DAYS while at war with no home front
+	max_batch_home_front = 270		# Max production run length in DAYS while at war with home fronts
+	extra_convoys_war = 0.0500
+	extra_convoys_peace = 0.0500
+
+	# NOTE: AI production run size is also limited by other factors, such as Total IC capacity, days until end of scenario, and desperation.
+
+#  Build scheme:
+	infantry = 		10
+	cavalry = 		0
+	motorized = 		0
+	mechanized = 		0
+	light_armor =		0
+	armor =			0
+	paratrooper = 		0
+	marine =		0
+	bergsjaeger = 		0
+	garrison = 		70
+	cas = 			0
+					  #80 %
+	interceptor = 		0
+	multi_role = 		0
+	strategic_bomber = 	0
+	tactical_bomber = 	0
+	naval_bomber = 		0
+	transport_plane = 	0
+	flying_rocket =		0
+	flying_bomb	=	0
+					  # 0 %
+	battleship = 		0
+	carrier = 		0
+	destroyer = 		0
+	cruiser = 		10
+	submarine = 		0
+	transports = 		10
+					  # 20 %
+# NOTE: The sum _must_ be exactly 100%!
+
+# Brigade preferences:
+# (% of eligible division types that should be built with a certain brigade type)
+# Land types:
+	artillery		=	20
+	sp_artillery		=	0
+	rocket_artillery	=	0
+	sp_rocket_artillery	=	0
+	anti_tank		=	5
+	tank_destroyer		=	0
+	light_armor_brigade	=	0
+	heavy_armor		=	0
+	super_heavy_armor	=	0
+	armored_car		=	0
+	anti_air		=	10
+	police			=	0
+	engineer		= 	0
+# Sum of these should be <= 100
+		escort 	= 	0
+# Naval types:
+		cag	=	100
+# Sum of these should be <= 100
+
+	    naval_asw = 20.0000
+	    naval_anti_air_s = 20.0000
+	    naval_radar_s = 20.0000
+	    naval_fire_controll_s = 20.0000
+	    naval_improved_hull_s = 10.0000
+	    naval_torpedoes_s = 10.0000
+	    naval_anti_air_l = 0.0000
+	    naval_radar_l = 0.0000
+	    naval_fire_controll_l = 0.0000
+	    naval_improved_hull_l = 0.0000
+	    naval_torpedoes_l = 0.0000
+}
+
+#Factors regarding amphibious invasions by ai.
+invasion = {
+	#for evaluating specific province target.
+	base = 1.0			# Relative modifier. (lower = specific targets much more important.)
+	random = 1.0			# How big a random range.  (1.0 = 1%)
+	coastal = 1.0                   # increase to avoid coastal forts more.
+	beach = 1.0                     # higher, avoid worst beaches.
+	distance = 2.0                  # higher = avoid long distance.
+	pocket = 1.0                    # prioritise pockets, ie provinces with no adjacent controlled by same.
+	island = 1.0                    # prioritise taking pure islands.
+	enemy = 1.0                     # higher = much more vary of troops in province.
+	adjacentenemy = 1.0             # higher = much more vary of troops nearby
+	air_base	= 0.2   	# add this priority for air bases within adjacentenemy
+	naval_base	= 0.1		# add this priority for naval bases within adjacentenemy
+	air_support	= 0.5   	# add this priority for beaches within reach of air_bases
+	ignore = no			# to do invasions, even if a front with homearea.  (ie allow germany to invade norway, while at war with france.9)
+
+	redirect	  = nearest	# priority/nearest/home   priority refers to targets in the AI file,
+					# nearest is the closest enemy beach where the AI has
+					# good attack odds and home is to return back to port
+
+	#specific provinces can be targetted to get special bonuses..
+	target = {}
+}
+
+#Factors controlling the naval AI
+admiral = {
+	ignore = {
+		#Baltic Area
+		"Northern Baltic"
+		"Southern Baltic"
+		"Bothnian Bay"
+
+		#Murmansk/Archangel
+		"Barents Sea"
+		"Arctic Ocean"
+
+		#Norway Coast (Denmark Coast)
+		"Norwegian Sea"
+		"East North Sea"
+		"Kattegat"
+
+		#North Sea, East Coast of England
+		"Central Northsea"
+		"West Northsea"
+		"Southeast Northsea"
+
+		#England/France border Sea Areas
+		"English Channel"
+		"Bay of Biscay"
+		"Cape Finisterre"
+
+		#Spanish Coast (Atlantic Side)
+		"Portugese Coast"
+		"Cap St Vincent"
+
+		#Iceland
+		"Faroes Gap"
+		"Denmark Strait"
+
+		#Ireland/West Coast of England
+		"Irish Sea"
+		"The Hebreides"
+		"Irish West Coast"
+
+		#Greenland
+		"Greenland Coast"
+		"Northern Sea of Labrador"
+		"Southern Sea of Labrador"
+
+		#Canada East Coast
+		"Hudson Bay"
+		"Grand Banks"
+		"Canadian Maritimes"
+
+		#Western Mediterranean
+		"Costa del Sol"
+		"Gulf of Lyon"
+		"Algerian Coast"
+
+		#Central Mediterranean
+		"Tyrrhenian Sea"
+		"Adriatic Sea"
+
+		#Eastern Mediterranean
+		"Black Sea"
+		"Aegean Sea"
+		"Egyptian Coast"
+
+		#North Atlantic
+		"North Atlantic"
+		"Western Approaches"
+		"The Seamounts"
+		"Azores"
+
+		#Central Atlantic
+		"Central Atlantic"
+		"Central Mid-Atlantic Ridge"
+		"Bermuda Triangle"
+		"Guiana Basin"
+		"South-Central Mid-Atlantic Ridge"
+		"Cap Verde"
+
+		#South Atlantic
+		"Pernambuco Plain"
+		"Ascension Fracture Zone"
+		"Argentine Plain"
+		"Angola Plain"
+
+		#Caribbean Sea and Guilf of Mexico
+		"West Gulf of Mexico"
+		"East Gulf of Mexico"
+		"Florida Strait"
+		"Yucatan Strait"
+		"Windward Islands"
+		"Central Carribean"
+
+		#Brazil and Argentina Coast
+		"Coast of Guyana"
+		"Coast of Recife"
+		"Coast of Uruguay"
+		"Coast of Brazil"
+		"Coast of Argentina"
+
+		# West Africa
+		"Coast of Africa"
+		"Coast of Bissao"
+
+		#Equitorial Africa
+		"Gulf of Guinea"
+		"Coast of Angola-Namibia"
+
+		#South Africa
+		"Coast of South Africa"
+		"Atlantic-Indian Ridge"
+
+		#East Africa
+		"Red Sea"
+		"Horn of Africa"
+
+		#Madagascar Coast
+		"South Mozambique Channel"
+		"North Mozambique Channel"
+		"Northeast Coast of Madagascar"
+		"Southeast Coast of Madagascar"
+
+		#North Indian Ocean (Persian Gulf)
+		"Persian Gulf"
+		"North Arabian Sea"
+		"South Arabian Sea"
+		"Coast of Ceylon"
+
+		#Central/South Indian Ocean
+		"Mascarene Plateau"
+		"Mid-Indian Ridge"
+		"Ninetyeast Ridge"
+		"Southeast Indian Ocean"
+		"Southwest Indian Ocean"
+
+		#Bay of Bengal & West Indonesia
+		"East Bay of Bengal"
+		"West Bay of Bengal"
+		"Malacca Strait"
+		"Java Ridge"
+		"Java Trench"
+
+		#China Coast
+		"Taiwan Strait"
+		"Yellow Sea"
+
+		#Japanese Coast
+		"Sea of Japan"
+		"Ryukyus"
+		"Coast of Japan"
+		"South Sea of Okhotsk"
+		"West Sea of Okhotsk"
+		"East Sea of Okhotsk"
+
+		#New Guinea, East/North Australia and New Zealan
+		"Coast of New Guinea"
+		"Molucca Sea"
+		"Banda Sea"
+		"Arafura Sea"
+		"South Bismarck Sea"
+		"Solomon Sea"
+		"West Coral Sea"
+		"East Coral Sea"
+		"North Tasman Sea"
+		"South Tasman Sea"
+		"East Cost of New Zealand"
+
+		# South and West Australia
+		"Timor Sea"
+		"West Coast of Australia"
+		"East Great Australian Bight"
+		"West Great Australian Bight"
+
+		#North Pacific
+		"Coast of Kamchatka"
+		"East Bering Sea"
+		"West Bering Sea"
+		"Aleutians"
+		"Northwest Pacific Basin"
+		"North Northeast Pacific Basin"
+
+		#Central Pacific
+		"Hawaiian Rise"
+		"North East Pacific Ocean"
+		"Marshalls Sea"
+		"South East Pacific Ocean"
+		"Marianas"
+		"Western Solomons"
+		"Eastern Solomons"
+		"US Maritimes"
+		"Carolines"
+
+		#South Pacific
+		"Gilberts"
+		"Line Islands"
+		"Fiji Basin"
+		"Southwest Pacific Basin"
+
+		# South American West Coast
+		"Southeast Pacific Basin"
+		"West Coast of Chile"
+		"West Coast of Peru"
+		"South Southeast Pacific Ocean"
+		"North Southeast Pacific Ocean"
+
+		# USA West Coast
+		"Gulf of Alaska"
+		"West Coast of the United States"
+
+		#West Coast of Mexico
+		"West Coast of Mexico"
+		"West Coast of Central America"
+	}
+	#specific provinces can be targetted to get special bonuses..
+	target = {
+		2256 = 50
+		2257 = 50
+		2251 = 50
+		2252 = 50
+		2253 = 50
+		2254 = 50
+	}
+	base = {
+		1737 # Manilla
+		}
+
+	#This is used to determine that it's a core seazone and its control is important.
+	core = {
+		2256
+		2257
+		2254
+	}
+}
+
+
+# Factors to modify for technological development.
+technology = {
+	endgoal = {  }		#list of endgoals to achieve.
+	preference = {  }		# list of techs to give bonus too.
+	ignore = {  } 		# Techs we will never research
+
+	#preference to weight importance of research in these fields
+	armor = 		1.0
+	infantry = 		4.0
+	industry = 		4.0
+	aircraft = 		2.0
+	naval = 		4.0
+	land_doctrines = 	4.0
+	air_doctrines = 	2.0
+	naval_doctrines =	4.0
+	secret_weapons = 	0.1
+}
+
+# Factors to modify Trade Agreements. TAG = X  	# Preferred Countries to trade resources with.
+trade = {
+	favored = {
+			USA = 100
+	}
+	embargo = { JAP }	# Will not trade resources with these countries.
+}
+
+# Factors to modify Tech Sharing
+		# TAG = X  Preferred Countries to trade techs with. Higher value also means better techs.
+
+tech_sharing = {
+	favored = {
+		USA = 100
+	}
+
+	embargo = { JAP	}	# TAG Will not trade techs with these countries.
+
+	not = { }	# ID List of techs never to trade.
+}
+
+leader_ratio = {
+	land_field_marshal 	=0.02
+	land_general 		=0.031
+	land_lt_general 	=0.41
+
+	sea_grand_admiral 	=0.02
+	sea_admiral 		=0.061
+	sea_vice_admiral 	=0.401
+
+	air_marshal 		=0.02
+	air_general 		=0.091
+	air_lt_General 		=0.11
+}
+
+air_marshal = {
+	icxdayscostfactor = 10.0		# How to value true industrial cost when calculating expect causalties
+	manpowercostfactor = 100.0		# How to value manpower cost when calculating expect causalties
+	destructionriskthreashold = 0.2		# when to fear a divisiopn might be destroyed
+
+	airsuperioritydesirability = 10.0	# desirability is a multiplier used when calcualting the mission desirability
+	airsuperioritylosstolerance = 1.0	# tolerance is the required kill:loss ration expected to do mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+	groundattacklosstolerance = 1.0
+	groundattackdesirability = 1.0
+	interdictionlosstolerance = 1.5
+	inderdictiondesirability = 1.0
+	logisticalstrikelosstolerance = 4.5
+	logisticalstrikeefficency = 0.01	# efficency is a tweakable param to adjust according to how much actual damage comes from doing this mission (not to be confused with desirability)
+	logisticalstrikedesirability = 100000.0
+	runwaycrateringlosstolerance = 1.5
+	runwaycrateringefficency = 0.01
+	runwaycrateringdesirability = 20000.0
+	strategicstriketolerance = 4.5
+	strategicstrikeefficency = 0.01
+	strategicstrikedesirability = 1000000.0
+	installationstriketolerance = 1.5
+	installationstrikeefficency = 0.01
+	installationstrikedesirability = 10.0
+	navalstriketolerance = 1.0
+	navalstrikedesirability = 10.0
+	portstriketolerance = 1.0
+	portstrikedesirability = 9.0
+}

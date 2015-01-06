@@ -1,0 +1,395 @@
+####################################
+# France 21500 - 21599 = Minister Change Events by Lothos
+####################################
+################
+# Minister of Security Section 22500 - 22509
+#############################################
+event = { # Pierre Pené takes power
+	id = 21500
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		manpower = 200
+		minister = 2105 # Pierre Pené
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRASecurityPierre }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRASecurityPierre }
+		command = { type = local_clrflag which = FRASecurityHenri }
+		command = { type = ministerofsecurity which = 2105 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Henri Roy takes power
+	id = 21501
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2107 # Henri Roy
+		OR = {
+			NOT = { manpower = 200 }
+			NOT = { minister = 2105 } # Pierre Pené
+		}
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRASecurityHenri }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = FRASecurityPierre }
+		command = { type = local_setflag which = FRASecurityHenri }
+		command = { type = ministerofsecurity which = 2107 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 21510 - 21519
+#############################################
+event = { # Paul Le Gentilhomme takes power
+	id = 21510
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		OR = {
+			atwar = yes
+			NOT = { minister = 2144 } # Jean-Marie Lattre de Tassigny
+		}
+		minister = 2148 # Paul Le Gentilhomme
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAChiefPaul }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAChiefPaul }
+		command = { type = local_clrflag which = FRAChiefJean }
+		command = { type = chiefofstaff which = 2148 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Jean-Marie Lattre de Tassigny takes power
+	id = 21511
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		OR = {
+			atwar = no
+			NOT = { minister = 2148 } # Paul Le Gentilhomme
+		}
+		minister = 2144 # Jean-Marie Lattre de Tassigny
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAChiefJean }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = FRAChiefPaul }
+		command = { type = local_setflag which = FRAChiefJean }
+		command = { type = chiefofstaff which = 2144 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 21520 - 21529
+#############################################
+event = { # Roger Salengro takes power
+	id = 21520
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2123 # Roger Salengro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAIntelligenceRoger }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAIntelligenceRoger }
+		command = { type = local_clrflag which = FRAIntelligenceFelix }
+		command = { type = ministerofintelligence which = 2123 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Felix Gouin takes power
+	id = 21521
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2124 # Felix Gouin
+		NOT = { minister = 2123 } # Roger Salengro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAIntelligenceFelix }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = FRAIntelligenceRoger }
+		command = { type = local_setflag which = FRAIntelligenceFelix }
+		command = { type = ministerofintelligence which = 2124 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 21530 - 21539
+#############################################
+event = { # Leon Victor Bourgeois takes power
+	id = 21530
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2157 # Leon Victor Bourgeois
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAArmyLeon }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAArmyLeon }
+		command = { type = chiefofarmy which = 2157 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 21540 - 21549
+#############################################
+event = { # Edouard Daladier takes power
+	id = 21540
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		OR = {
+			atwar = no
+			NOT = { minister = 2069 } # Jean Louis Barthou
+		}
+		minister = 2068 # Edouard Daladier
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAArmamentEdouard }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAArmamentEdouard }
+		command = { type = local_clrflag which = FRAArmamentJean }
+		command = { type = armamentminister which = 2068 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Jean Louis Barthou takes power
+	id = 21541
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		OR = {
+			atwar = yes
+			NOT = { minister = 2068 } # Edouard Daladier
+		}
+		minister = 2069 # Jean Louis Barthou
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAArmamentJean }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = FRAArmamentEdouard }
+		command = { type = local_setflag which = FRAArmamentJean }
+		command = { type = armamentminister which = 2069 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 21550 - 21559
+#############################################
+event = { # Marcel Deat takes power
+	id = 21550
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2183 # Marcel Deat
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAChiefAirMarcel }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAChiefAirMarcel }
+		command = { type = local_clrflag which = FRAChiefAirJoseph }
+		command = { type = chiefofair which = 2183 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Joseph Vuillemin takes power
+	id = 21551
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 2187 # Joseph Vuillemin
+		NOT = { minister = 2183 } # Marcel Deat
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = FRAChiefAirJoseph }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = FRAChiefAirMarcel }
+		command = { type = local_clrflag which = FRAChiefAirJoseph }
+		command = { type = chiefofair which = 2187 }
+		command = { type = dissent value = -1 }
+	}
+}

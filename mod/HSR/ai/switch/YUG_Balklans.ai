@@ -1,0 +1,26 @@
+#
+# By Aregorn for HSR
+#
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+front = {
+	recklessness 		= 0 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 1.5
+	min_attack_odds		= 1.2
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+	enemy_handicap = {
+		ITA = 100
+	}
+}

@@ -1,0 +1,48 @@
+#
+# by Aregorn for HSR
+#
+target = {
+	56 = 50
+}
+
+invasion = {
+	invasion	= yes
+	base 		= 10.0
+	random 		= 10.0
+	coastal 	= 3.0
+	beach 		= 2.0
+	distance 	= 0.1
+	pocket 		= 2.0
+	island 		= 1.0
+	enemy 		= 3.0
+	adjacentenemy 	= 3.0
+	air_base	= 1.5
+	naval_base 	= 0.1
+	air_support 	= 3.0
+	redirect 	= priority
+	ignore		= no
+	help_allies 	= yes
+
+	staging_province = {
+		23 # Plymouth
+		21 # Portsmouth
+		20 # Dover
+	}
+	target = {
+		78  = 5000 # Leeweden
+		47  = 5000 # Amsterdam
+		46  = 5000 # Rotterdam
+		45  = 5000 # Ghent
+		18  = 5000 # Calais
+		42  = 5000 # Dieppe
+		41  = 5000 # Le Havre
+		39  = 5000 # Caen
+		33  = 5000 # Rennes
+		32  = 5000 # Brest
+		34  = 5000 # Lorient
+		35  = 5000 # Nantes
+		59  = 5000 # Cholet
+		325 = 5000 # Bordeaux
+		326 = 5000 # Dax
+	}
+}

@@ -1,0 +1,95 @@
+#
+# by Aregorn for HSR2_DD
+#
+# 0 - Basic
+model = {
+	cost 				= 1.2
+	buildtime	 		= 165
+	manpower 			= 2
+	defensiveness 			= 1
+	toughness 			= 1
+	morale				= 2.5	#0
+	defaultorganisation 		= 5	#3
+	softness			= -5
+	softattack		= 2
+	hardattack		= 1
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.2	#0.4
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 1 - Improved
+model = {
+	cost 				= 1.6	#3
+	buildtime	 		= 170
+	manpower 			= 2
+	defensiveness 			= 2
+	toughness 			= 2
+	morale				= 3.5	#0
+	defaultorganisation 		= 7	#6
+	softness			= -7
+	softattack		= 4	#3
+	hardattack		= 2	#1
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.22	#0.45
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+# 2 - Advanced
+model = {
+	cost 				= 1.8
+	buildtime	 		= 185
+	manpower 			= 2
+	defensiveness 			= 3
+	toughness 			= 3
+	morale				= 5	#0
+	defaultorganisation 		= 10
+	softness			= -10
+	softattack		= 5	#2
+	hardattack		= 3
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.25	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 3 - Semi-Modern
+model = {
+	cost 				= 1.8
+	buildtime	 		= 185
+	manpower 			= 2
+	defensiveness 			= 4
+	toughness 			= 4
+	morale				= 5	#0
+	defaultorganisation 		= 11
+	softness			= -11
+	softattack			= 6	#2
+	hardattack			= 4 #
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.25	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 4 - Modern
+model = {
+	cost 				= 1.8
+	buildtime	 		= 185
+	manpower 			= 2
+	defensiveness 			= 4
+	toughness 			= 4
+	morale				= 5	#0
+	defaultorganisation 		= 12 #
+	softness			= -12 #
+	softattack			= 8	#2
+	hardattack			= 5 #
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.25	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+
+}

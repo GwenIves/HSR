@@ -1,0 +1,25 @@
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+front = {
+	recklessness 		= 0 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 3.0
+	panic_ratio_vs_human	= 3.0
+	base_attack_odds	= 2.0
+	min_attack_odds		= 1.7
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.7
+
+	enemy_handicap = {
+		SOV = 30
+	}
+	passivity = {
+		SOV = 85
+	}
+}

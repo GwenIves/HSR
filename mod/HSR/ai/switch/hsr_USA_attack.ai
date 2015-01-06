@@ -1,0 +1,60 @@
+#
+# By Aregorn for HSR
+#
+###################################
+front = {
+	recklessness 		= 2 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.3
+	panic_ratio_vs_ai	= 4.0
+	panic_ratio_vs_human	= 4.0
+	base_attack_odds	= 1.0
+	min_attack_odds		= 0.8
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+}
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 0.3
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.3
+	revolt_risk_mult	= 0.3
+
+	# PRIORITIES:
+	beach			= 30
+	capital			= 30
+	human_border		= 50
+	war_target		= 100
+	opposing_alliance	= 50
+	claim_threat		= 0
+	unstable_border		= 10
+
+	# Borders with specific countries
+	country_priorities = {
+		CAN = -1
+		MEX = -1
+		GER = 100
+		JAP = 60
+		ITA = 100
+	}
+}
+
+technology = {
+
+	armor 		= 5
+	infantry 	= 3
+	industry 	= 5
+	aircraft  	= 4
+	naval 		= 3
+	land_doctrines 	= 4
+	air_doctrines 	= 4
+	naval_doctrines = 4
+	secret_weapons  = 5
+}

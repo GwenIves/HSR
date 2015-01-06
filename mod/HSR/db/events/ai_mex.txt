@@ -1,0 +1,352 @@
+####################################
+# Mexico AI events 32900 - 32999 by Lothos
+####################################
+# Behavior Flags
+#	MEXDDay		= Load DDay AI
+################
+# Minister of Security Section 32900 - 32909
+#############################################
+event = { # Andres F. Figueroa takes power
+	id = 32900
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36073 # Andres F. Figueroa
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXSecurityFigueroa }
+		}
+		OR = {
+			manpower = 200
+			AND = {
+				NOT = { manpower = 200 }
+				NOT = { minister = 36005 } # Francisco U. Benavides
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = MEXSecurityFigueroa }
+		command = { type = local_clrflag which = MEXSecurityBenavides }
+		command = { type = ministerofsecurity which = 36073 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Francisco U. Benavides takes power
+	id = 32901
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36005 # Francisco U. Benavides
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXSecurityBenavides }
+		}
+		OR = {
+			NOT = { manpower = 200 }
+			AND = {
+				manpower = 200
+				NOT = { minister = 36073 } # Andres F. Figueroa
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = MEXSecurityFigueroa }
+		command = { type = local_setflag which = MEXSecurityBenavides }
+		command = { type = ministerofsecurity which = 36005 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 32910 - 32919
+#############################################
+event = { # Pablo Quiroga Escamillo takes power
+	id = 32910
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36095 # Pablo Quiroga Escamillo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXChiefEscamillo }
+		}
+		OR = {
+			atwar = no
+			NOT = { manpower = 200 }
+			AND = {
+				manpower = 200
+				NOT = { minister = 36096 } # Gustavo Salinas Camina
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = MEXChiefEscamillo }
+		command = { type = local_clrflag which = MEXChiefCamina }
+		command = { type = local_clrflag which = MEXChiefHill }
+		command = { type = chiefofstaff which = 19007 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Gustavo Salinas Camina takes power
+	id = 32911
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 36096 # Gustavo Salinas Camina
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXChiefCamina }
+		}
+		OR = {
+			manpower = 200
+			AND = {
+				NOT = { manpower = 200 }
+				NOT = { minister = 36095 } # Pablo Quiroga Escamillo
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = MEXChiefEscamillo }
+		command = { type = local_setflag which = MEXChiefCamina }
+		command = { type = local_clrflag which = MEXChiefHill }
+		command = { type = chiefofstaff which = 36096 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Benjamin G. Hill takes power
+	id = 32912
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 36007 # Benjamin G. Hill
+		NOT = { minister = 36096 } # Gustavo Salinas Camina
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXChiefHill }
+		}
+		OR = {
+			manpower = 200
+			AND = {
+				NOT = { manpower = 200 }
+				NOT = { minister = 36095 } # Pablo Quiroga Escamillo
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = MEXChiefEscamillo }
+		command = { type = local_clrflag which = MEXChiefCamina }
+		command = { type = local_setflag which = MEXChiefHill }
+		command = { type = chiefofstaff which = 36007 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 32920 - 32929
+#############################################
+event = { # Victor Muñoz Cardenas takes power
+	id = 32920
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36091 # Victor Muñoz Cardenas
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXIntelligenceCardenas }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = MEXIntelligenceCardenas }
+		command = { type = ministerofintelligence which = 36091 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 32930 - 32939
+#############################################
+event = { # Matias Santos Ramos takes power
+	id = 32930
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36111 # Matias Santos Ramos
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXArmyRamos }
+		}
+		OR = {
+			atwar = no
+			NOT = { minister = 36107 } # Gilberto Limon Marquez
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = MEXArmyRamos }
+		command = { type = local_clrflag which = MEXArmyMarquez }
+		command = { type = chiefofarmy which = 36111 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Gilberto Limon Marquez takes power
+	id = 32931
+	random = no
+	country = MEX
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 36107 # Gilberto Limon Marquez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = MEXArmyMarquez }
+		}
+		OR = {
+			atwar = yes
+			NOT = { minister = 36111 } # Matias Santos Ramos
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = MEXArmyRamos }
+		command = { type = local_setflag which = MEXArmyMarquez }
+		command = { type = chiefofarmy which = 36107 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+#############################################
+# Regular AI Events 32960 - 32999
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 32960
+	random = no
+	country = MEX
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_5.ai" }
+	}
+}

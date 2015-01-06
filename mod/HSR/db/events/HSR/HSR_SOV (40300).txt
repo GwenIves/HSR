@@ -1,0 +1,3039 @@
+# Aregorn_SOV: Events for the Soviet Union (73)
+#
+# ID		Title						Author
+#
+# 40300 	Soviets human 					(by Aregorn 040324)
+# 40301 	Stalin Purges 					(by Aregorn 041031)
+# 40302 	A.I. Red army reorganization 1 			(by Aregorn 041031)
+# 40303 	A.I. Red army reorganization 2 			(by Aregorn 041031)
+# 40304 	A.I. Red army reorganization 3 			(by Aregorn 041031)
+# 40305-08 	Soviet military programmes 			(by Aregorn 041215)
+# 40309  	Soviet DOW  					(by Aregorn 040329)
+# 40310 	Stalin's finger 				(by Aregorn 050214)
+# 40311 	Soviet reaction		  			(by Aregorn 030602)
+# 40312		Second defence line 				(by Aregorn 050404)
+# 40313 	Third defence line 				(by Aregorn 050404)
+# 40314 	Red army reorganization 1 			(by Aregorn 041031)
+# 40315 	Red army reorganization 2 			(by Aregorn 041031)
+# 40316		Red army reorganization 3 			(by Aregorn 041031)
+# 40317-18 	Naval (A.I.) 					(by Aregorn 050508)
+# 40319-21 	Air Force (A.I.)				(by Aregorn 050508)
+# 40322-27 	Army (A.I.) 					(by Aregorn 050508)
+# 40328 	Soviet-Japanese non Aggression Pact 		(by Aregorn 050601)
+# 40329-30 	Barbarossa 					(by Aregorn 050616)
+# 40331 	Barbarossa (A.I.) Garrison of key cities 	(by Aregorn 050621)
+# 40332 	Murmansk convoy					(by Aregorn 050630)
+# 40333 	Murmansk convoy	(A.I.)				(by Aregorn 050630)
+# 40334 	Moscow Encircled 	 			(by Aregorn 050702)
+# 40335-38 	Elimination of the defence lines (A.I.) 	(by Aregorn 051008)
+# 40339 	Soviet-Japanese non Aggression Pact II 		(by Aregorn 050601)
+# 40340 	The Great Patriotic War 			(by Aregorn 051029 - using HOI2 text)
+# 40341-43  	Purge Event series II 				(by Dec152000 050719 & slightly modified by Aregorn)
+# 40344 	Leningrad Encircled 				(by Dec152000 050831 & Mofified by Aregorn)
+# 40345 	Lessons of the Winter War 			(by Aregorn 051120)
+# 40346 	Troops from the East 				(by Aregorn 051211)
+# 40347-48 	Total War 					(by Aregorn 051219)
+# 40349 		Moscow Encircled 				(by Aregorn 051223)
+# 40350-57 	Elimination of the defence lines (A.I.) 	(by Aregorn 051223)
+# 40358 	War against Spain 				(by Aregorn 050605)
+# 40359-65  	Red Fleet   					(by Dec152000 060122)
+# 40366 	War against Stalin 				(by Aregorn 060304)
+# 40367 	Soviet Winter War (A.I.) 			(by Aregorn 060122)
+# 40368 	Soviet Winter War End (A.I.) 			(by Aregorn 060122)
+# 40369 	Lithuanian Capitulation 			(by Aregorn 060424)
+# 40370 	Soviet Armor	 				(by Aregorn 081107) requested by Alan Mateus
+# 40371 	Soviet Aircraft 				(by Aregorn 081107) requested by Alan Mateus
+# 40372 	Troops from the East (Moscow surrounded)	(by Aregorn 090208)
+
+
+
+############################################################################
+# 40300 Soviet War mobilisation (by Aregorn 040720)
+############################################################################
+
+
+event = {
+   id = 40300
+   random = no
+   country = sov
+
+trigger = { ai = yes war = { country = sov country = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Smolensk" value = land where = 219 } #Smolensk
+		command = { type = activate_division which = 10848 value = 500 where = 571 }
+		command = { type = activate_division which = 10848 value = 500 where = 572 }
+		command = { type = activate_division which = 10848 value = 500 where = 573 }
+		command = { type = activate_division which = 10848 value = 500 where = 574 }
+	}
+}
+#########################################################################
+# 40301 Stalin Purges (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40301
+	random = no
+	country = SOV
+
+# Triggered by 2609
+
+	name = "Stalin Purges"
+	desc = "Thousands of officers were executed significantly weakening the Red Army."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -2 }
+
+		command = { type = max_organization which = land value = -30 }
+		command = { type = max_organization which = naval value = -21 }
+		command = { type = max_organization which = air value = -12 }
+
+	  	command = { type = morale which = land value = -30 }
+	  	command = { type = morale which = naval value = -21 }
+	  	command = { type = morale which = air value = -12 }
+
+		command = { type = sleepteam which = 3706 } #Tukhachevsky
+		command = { type = domestic which = professional_army value = -2 }
+	}
+}
+#########################################################################
+# 40302 Red army reorganization 1 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40302
+	random = no
+	country = SOV
+	trigger = { ai = yes OR = { lost_national = { country = sov value = 10 } year = 1942 }	event = 40301 }
+
+	name = "Red army reorganization (1)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -1 }
+
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 7 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 7 }
+	  	command = { type = morale which = air value = 4 }
+
+	  	command = { type = new_model which = garrison value = 2 }
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = waketeam which = 3709}
+		command = { type = waketeam which = 3718}
+
+		command = { type = add_corps value = land where = 187 } #leningrad
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_corps value = land where = 282 } #Orel
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_corps value = land where = 163 } #Stalingrad
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_corps value = land where = 163 } #Stalingrad
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = manpowerpool value = -380 }
+
+	}
+}
+#########################################################################
+# 40303 Red army reorganization 2 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40303
+	random = no
+	country = SOV
+
+	trigger = { ai = yes  event = 40301
+		or = { 	lost_national = { country = sov value = 20 } year = 1943
+			not = { control = { province = 175 data = sov } }
+			not = { control = { province = 187 data = sov } }
+			not = { control = { province = 249 data = sov } }
+		}
+		or = {	lost_national = { country = sov value = 20 } year = 1943
+			not = { control = { province = 281 data = sov } } #Lipetsk
+			not = { control = { province = 283 data = sov } } #Voronezh
+			not = { control = { province = 263 data = sov } } #Svoboda
+			not = { control = { province = 264 data = sov } } #Pavlovsk
+			not = { control = { province = 160 data = sov } } #Frolovo
+			not = { control = { province = 162 data = sov } } #Kalach
+			not = { control = { province = 270 data = sov } } #Salsk
+			not = { control = { province = 271 data = sov } } #Kotelnikovo
+			not = { control = { province = 172 data = sov } } #Cherepovets
+			not = { control = { province = 151 data = sov } } #Segezha
+			not = { control = { province = 154 data = sov } } #Archangelsk
+			not = { control = { province = 186 data = sov } } #Luga
+			not = { control = { province = 176 data = sov } } #Rybinsk
+			not = { control = { province = 279 data = sov } } #Ryazan
+		}
+	}
+
+
+	name = "Red army reorganization (2)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -1 }
+
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 7 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 7 }
+	  	command = { type = morale which = air value = 4 }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = manpowerpool value = -300 }
+	}
+}
+#########################################################################
+# 40304 Red army reorganization 3 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40304
+	random = no
+	country = SOV
+	trigger = { ai = yes  event = 40301
+		OR = { lost_national = { country = sov value = 20 } and = { year = 1943 month = 7 }
+		not = { control = { province = 175 data = sov } }
+		not = { control = { province = 187 data = sov } }
+		not = { control = { province = 249 data = sov } }
+		}
+		OR = {
+		lost_national = { country = sov value = 30 } year = 1944
+		not = { control = { province = 1838 data = sov } } 	#Astrakhan
+		not = { control = { province = 1836 data = sov } } 	#Elton
+		not = { control = { province = 1834 data = sov } } 	#Krasnya Sloboda
+		not = { control = { province = 1831 data = sov } } 	#Nikolayevka
+		not = { control = { province = 1829 data = sov } } 	#Engels
+		not = { control = { province = 1828 data = sov } } 	#Kuybyshev
+		not = { control = { province = 1781 data = sov } } 	#Melekess
+		not = { control = { province = 1780 data = sov } } 	#Kazan
+		not = { control = { province = 1775 data = sov } } 	#Yoskar Ola
+		not = { control = { province = 166 data = sov } } 	#Kostroma
+		not = { control = { province = 177 data = sov } } 	#Danilov
+		}
+}
+
+
+	name = "Red army reorganization (3)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -1 }
+
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 7 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 7 }
+	  	command = { type = morale which = air value = 4 }
+
+		command = { type = research_mod value = 10 }
+		command = { type = domestic which = professional_army value = 2 }
+
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+		command = { type = add_division value = infantry when = 2 where = artillery  }
+
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery  }
+
+		command = { type = manpowerpool value = -300 }
+	}
+}
+#########################################################################
+# 40305-08 Soviet military programmes (by Aregorn 041215)
+#########################################################################
+event = {
+	id = 40305
+	random = no
+	country = sov
+	trigger = { random = 25	ai = yes atwar = yes }
+
+
+	name = "1942 Soviet military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 Soviet military programme finished"
+
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = industrial_multiplier which = energy_to_oil value = 1 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -250 }
+}
+}
+event = {
+	id = 40306
+	random = no
+	country = sov
+	trigger = { random = 25	ai = yes atwar = yes }
+
+
+	name = "1943 Soviet military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 Soviet military programme finished"
+
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = transport_plane when = 1 }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = tc_mod value = 5 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 1.5 }
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -300 }
+	}
+}
+
+event = {
+	id = 40307
+	random = no
+	country = sov
+	trigger = { random = 25	ai = yes atwar = yes }
+
+
+	name = "1944 Soviet military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "1944 Soviet military programme finished"
+
+
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = tc_mod value = 5 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -300 }
+	}
+}
+
+event = {
+	id = 40308
+	random = no
+	country = sov
+	trigger = { random = 25	ai = yes atwar = yes }
+
+
+	name = "1945 Soviet military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1945 }
+
+	action_a = {
+		name = "1945 Soviet military programme finished"
+
+
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_corps value = air where = 1544 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = transport_plane when = 1 }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+		command = { type = add_division value = infantry when = 1 where = artillery  }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_rct_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = manpowerpool value = -300 }
+}
+}
+#########################################################################
+# 40309  Soviet DOW  (by Aregorn 040329)
+#########################################################################
+
+event = {
+	id = 40309
+	random = no
+	country = sov
+
+	trigger = { ai = yes difficulty = 4
+		random = 10
+		not = { war = { country = sov  country = ger } }
+		war = { country = usa  country = ger }
+		}
+
+	name = "Soviet Union DOW"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 14
+	deathdate = { day = 30 month = january year = 1963 }
+
+	action_a = {
+		name = "We will turn them into ashes"
+		command = { type = war which = ger}
+	}
+}
+#######################################################################################
+# 40310 Stalin's finger (by Aregorn 050214)
+#######################################################################################
+
+#event = {
+#	id = 40310
+#	random = no
+#	country = sov
+
+#	trigger = { random = 50 event = 3203 }
+
+#	name = "Stalin's finger"
+#	desc = "During the signing of the peace treaty between Finland and the Soviet union, everything was agreed upon but the fate of Petsamo. Without reaching an agreement the new Finish-Soviet border started to be redrawn by the cartographers. Stalin stood beside the map and firmly rested his finger on the city. When the cartographer reached with his pencil the city, neither him not anyone else dared to ask Stalin to move. The border was then gently drawn around Stalin’s finger."
+#	style = 0
+#	picture = sov_40310_finger	#steffele
+
+#	date = { day = 1 month = december year = 1936 }
+#	offset = 1
+#	deathdate = { day = 30 month = december year = 1963 }
+
+#	action_a = {
+#		name = "Good"
+#		ai_chance = 99
+#		command = { type = trigger which = 40425 }
+#		}
+#	action_b = {
+#		name = "No need to risk more bloodshed"
+#		ai_chance = 1
+#             	command = { type = dissent value = 2 }
+#		}
+#}
+#########################################################################
+# 40311 Soviet reaction  (by Aregorn 030602)
+#########################################################################
+
+event = {
+	id = 40311
+	random = no
+	country = sov
+
+	trigger = {  	ai = yes random = 50
+			NOT = { alliance = { country = ger country = sov } }
+			not = { war = { country = sov  country = ger } }
+			or = {  war = { country = tur  country = ger }
+				control = { province =  448 data = ger }
+				and = { year = 1941 war = { country = usa country = ger }
+				}
+			}
+	}
+
+	name = "Soviet reaction"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Get the Army ready"
+		ai_chance = 100
+		command = { type = relation which = ger value = -200 }
+		command = { type = belligerence which = ger value = 30 }
+		command = { type = domestic which = interventionism value = 10 }
+		command = { type = ai which = "switch/hsr_SOV_Gear_Up_Sealion.ai" }
+
+	}
+	action_b = {
+		name = "We can not get involved in the war yet"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+#  40312 Second defence line (by Aregorn 050404)
+#########################################################################
+event = {
+	id = 40312
+	random = no
+	country = sov
+
+	trigger = { 	or = {
+				and = { random = 50 ai = yes lost_national = { country = sov value = 10 }
+					war = { country = sov country = ger }
+				}
+				event = 40302
+			}
+	}
+
+	name = "Second defence line"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 281 value = 3 }
+		command = { type = add_corps value = land where = 281 }
+		command = { type = activate_division which = 10848 value = 500 where = 281 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 180 value = 3 }
+		command = { type = add_corps value = land where = 180 }
+		command = { type = activate_division which = 10848 value = 558 where = 180 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 283 value = 2 }
+		command = { type = add_corps value = land where = 283 }
+		command = { type = activate_division which = 10848 value = 501 where = 283 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 263 value = 2 }
+		command = { type = add_corps value = land where = 263 }
+		command = { type = activate_division which = 10848 value = 502 where = 263 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 264 value = 2 }
+		command = { type = add_corps value = land where = 264 }
+		command = { type = activate_division which = 10848 value = 503 where = 264 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 160 value = 2 }
+		command = { type = add_corps value = land where = 160 }
+		command = { type = activate_division which = 10848 value = 504 where = 160 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 162 value = 2 }
+		command = { type = add_corps value = land where = 162 }
+		command = { type = activate_division which = 10848 value = 505 where = 162 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 270 value = 2 }
+		command = { type = add_corps value = land where = 270 }
+		command = { type = activate_division which = 10848 value = 506 where = 270 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 271 value = 2 }
+		command = { type = add_corps value = land where = 1836 }
+		command = { type = activate_division which = 10848 value = 507 where = 271 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 172 value = 3 }
+		command = { type = add_corps value = land where = 172 }
+		command = { type = activate_division which = 10848 value = 508 where = 172 }
+		command = { type = activate_division which = 10848 value = 554 where = 172 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 151 value = 2 }
+		command = { type = add_corps value = land where = 151 }
+		command = { type = activate_division which = 10848 value = 509 where = 151 } #Segezha
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 154 value = 2 }
+		command = { type = add_corps value = land where = 154 }
+		command = { type = activate_division which = 10848 value = 510 where = 154 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 176 value = 3 }
+		command = { type = add_corps value = land where = 176 }
+		command = { type = activate_division which = 10848 value = 512 where = 176 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 279 value = 3 }
+		command = { type = add_corps value = land where = 279 }
+		command = { type = activate_division which = 10848 value = 513 where = 279 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 153 value = 2 }
+		command = { type = add_corps value = land where = 153 }
+		command = { type = activate_division which = 10848 value = 552 where = 153 }
+		command = { type = activate_division which = 10848 value = 553 where = 153 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 159 value = 2 }
+		command = { type = add_corps value = land where = 159 }
+		command = { type = activate_division which = 10848 value = 559 where = 159 }
+		command = { type = activate_division which = 10848 value = 560 where = 159 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 189 value = 2 }	#Novgorod
+		command = { type = add_corps value = land where = 189 }
+		command = { type = activate_division which = 10848 value = 561 where = 189 }
+		command = { type = activate_division which = 10848 value = 562 where = 189 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 185 value = 3 }	#Volkhov
+		command = { type = add_corps value = land where = 185 }
+		command = { type = activate_division which = 10848 value = 563 where = 185 }
+		command = { type = activate_division which = 10848 value = 564 where = 185 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 190 value = 2 }	#Staraya Russa
+		command = { type = add_corps value = land where = 190 }
+		command = { type = activate_division which = 10848 value = 565 where = 190 }
+		command = { type = activate_division which = 10848 value = 566 where = 190 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = construct which = land_fort where = 288 value = 2 }	#Rzhev
+		command = { type = add_corps value = land where = 288 }
+		command = { type = activate_division which = 10848 value = 567 where = 288 }
+		command = { type = activate_division which = 10848 value = 568 where = 288 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = manpowerpool value = -200 }
+	}
+}
+#########################################################################
+#  40313 Third defence line (by Aregorn 050404)
+#########################################################################
+event = {
+	id = 40313
+	random = no
+	country = sov
+
+	trigger = { 	or = {
+				and = { random = 50 ai = yes lost_national = { country = sov value = 10 }
+					war = { country = sov country = ger }
+				}
+				event = 40303
+			}
+	}
+
+	name = "Third defence line"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 1838 value = 3 }
+		command = { type = add_corps value = land where = 1838 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 514 where = 1838 }
+
+		command = { type = construct which = land_fort where = 1836 value = 3 }
+		command = { type = add_corps value = land where = 1836 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 515 where = 1836 }
+
+		command = { type = construct which = land_fort where = 1834 value = 3 }
+		command = { type = add_corps value = land where = 1834 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 516 where = 1834 }
+
+		command = { type = construct which = land_fort where = 1835 value = 3 }
+		command = { type = add_corps value = land where = 1835 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 517 where = 1831 }
+
+		command = { type = construct which = land_fort where = 1829 value = 3 }
+		command = { type = add_corps value = land where = 1829 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 518 where = 1829 }
+
+		command = { type = construct which = land_fort where = 1828 value = 3 }
+		command = { type = add_corps value = land where = 1828 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 520 where = 1828 }
+
+		command = { type = construct which = land_fort where = 1781 value = 3 }
+		command = { type = add_corps value = land where = 1781 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 521 where = 1781 }
+
+		command = { type = construct which = land_fort where = 1780 value = 3 }
+		command = { type = add_corps value = land where = 1780 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 522 where = 1780 }
+
+		command = { type = construct which = land_fort where = 1775 value = 3 }
+		command = { type = add_corps value = land where = 1775 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 523 where = 1775 }
+
+		command = { type = construct which = land_fort where = 166 value = 3 }
+		command = { type = add_corps value = land where = 166 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 524 where = 166 }
+
+		command = { type = construct which = land_fort where = 177 value = 3 }
+		command = { type = add_corps value = land where = 177 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+		command = { type = activate_division which = 10848 value = 525 where = 177 }
+
+		command = { type = construct which = land_fort where = 172 value = 1 }
+		command = { type = construct which = land_fort where = 151 value = 1 } #Segezha
+		command = { type = construct which = land_fort where = 154 value = 1 }
+
+		command = { type = construct which = land_fort where = 183 value = 4 }	#Vytegra
+		command = { type = add_corps value = land where = 183 }
+		command = { type = activate_division which = 10848 value = 511 where = 183 }
+		command = { type = add_division value = garrison when = 1 where = artillery }
+		command = { type = add_division value = garrison when = 1 where = anti_tank }
+
+		command = { type = manpowerpool value = -200 }
+	}
+}
+#########################################################################
+# 40314 Red army reorganization 1 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40314
+	random = no
+	country = SOV
+	trigger = { ai = no event = 40301 or = { lost_national = { country = sov value = 10 }	year = 1942 }	}
+
+	name = "Red army reorganization (1)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = dissent value = -1 }
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 5 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 5 }
+	  	command = { type = morale which = air value = 4 }
+
+		command = { type = waketeam which = 3709}
+		command = { type = waketeam which = 3718}
+		command = { type = domestic which = professional_army value = 1 }
+	}
+}
+#########################################################################
+# 40315 Red army reorganization 2 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40315
+	random = no
+	country = SOV
+
+	trigger = { ai = no event = 40301 OR = { lost_national = { country = sov value = 16 } year = 1943 }}
+
+
+	name = "Red army reorganization (2)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = dissent value = -1 }
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 5 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 5 }
+	  	command = { type = morale which = air value = 4 }
+
+		command = { type = domestic which = professional_army value = 1 }
+	}
+}
+#########################################################################
+# 40316 Red army reorganization 3 (by Aregorn 041031)
+#########################################################################
+event = {
+	id = 40316
+	random = no
+	country = SOV
+	trigger = { ai = no event = 40301 OR = { lost_national = { country = sov value = 30 } year = 1944 } }
+
+	name = "Red army reorganization (3)"
+	desc = "After terrible defeats, Stalin realised that the convenient more loyal officers were not performing well military. High ranks reshuffle was necessary and the battlefield prove to be an essential factor for the natural selection of the replacements."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reshuffle our commanding positions"
+
+		command = { type = dissent value = -1 }
+		command = { type = max_organization which = land value = 10 }
+		command = { type = max_organization which = naval value = 5 }
+		command = { type = max_organization which = air value = 4 }
+
+	  	command = { type = morale which = land value = 10 }
+	  	command = { type = morale which = naval value = 5 }
+	  	command = { type = morale which = air value = 4 }
+
+		command = { type = domestic which = professional_army value = 1 }
+	}
+}
+#########################################################################
+# 40322-27 Army A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 40322
+	random = no
+	country = sov
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = sov country = eng }
+				war = { country = sov country = ger } }
+			random = 25 control = { province =  175 data = sov }
+			not = { manpower = 20 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 100 }
+		}
+}
+event = {
+	id = 40327
+	random = no
+	country = sov
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = sov country = eng }
+				war = { country = sov country = ger } }
+			random = 25 control = { province =  175 data = sov }
+			not = { supplies = 500 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 1000 }
+		}
+}
+#########################################################################
+# 40328 Soviet-Japanese non Agression Pact (by Aregorn 050601)
+#########################################################################
+event = {
+	id = 40328
+	random = no
+	country = SOV
+
+	trigger = { 	war = { country = sov country = ger } not = { alliance = { country = jap country = sov } }
+		random = 30 }
+
+	name = "Soviet-Japanese non Aggression Pact"
+	desc = "To be able to fight a full War against Germany, the Soviet Union could not sustain a double front in Asia"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Propose the pact to Japan"
+		ai_chance = 100
+		command = { type = trigger which = 40728 } #aregorn_jap
+	}
+	action_b = {
+		name = "We can easily bear a two front war"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40329-30 Barbarossa (by Aregorn 050616)
+#########################################################################
+
+event = {
+	id = 40329
+	random = no
+	country = sov
+
+	name = "Operation 'Barbarossa'"
+	desc = "German, Romanian and Finnish forces comprising 183 divisions (3,500,000 men), 3,350 tanks, 7,184 guns and 1,945 aircraft launch the biggest military operation in history on a 1,800 mile front. Three army groups, Heeresgruppe Süd (von Rundstedt) with Panzergruppe 1 (von Kleist), Heeresgruppe Mitte (von Bock) with Panzergruppen 2 (Guderian) and 3 (Hoth), and Heeresgruppe Nord (von Leeb) with Panzergruppe 4 (Hoepner) go into action against 132 Soviet divisions (2,500,000 men), 20,000 tanks and 7,700 aircraft."
+	style = 0
+	picture = barbarossa
+
+	action_a = {
+		name = "ok"
+		command = { type = tactical_withdrawal value = -30 }
+		command = { type = counterattack value = -30 }
+		command = { type = surprise which = land value = -20 }
+		command = { type = surprise which = air value = -40 }
+		command = { type = surprise which = naval value = -40 }
+		command = { type = trigger which = 40035 }
+	}
+}
+event = {
+	id = 40330
+	random = no
+	country = sov
+
+	name = "Operation 'Barbarossa'"
+	desc = "The initial surprise of the Wehrmacht is over"
+	style = 0
+	picture = barbarossa
+
+	action_a = {
+		name = "Great"
+		command = { type = tactical_withdrawal value = 30 }
+		command = { type = counterattack value = 30 }
+		command = { type = surprise which = land value = 20 }
+		command = { type = surprise which = air value = 40 }
+		command = { type = surprise which = naval value = 40 }
+	}
+}
+#########################################################################
+# 40331 Barbarossa A.I. Garrison of key cities (by Aregorn 050621)
+#########################################################################
+event = {
+	id = 40331
+	random = no
+	country = SOV
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = sov country = ger }
+				and = {
+					not = { non_aggression = { country = sov country = ger } }
+					event = 2050
+				}
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = activate_division which = 10848 value = 526 where = 175 }
+		command = { type = activate_division which = 10848 value = 527 where = 175 }
+		command = { type = activate_division which = 10848 value = 528 where = 175 }
+
+		command = { type = activate_division which = 10848 value = 529 where = 187 }
+		command = { type = activate_division which = 10848 value = 530 where = 187 }
+		command = { type = activate_division which = 10848 value = 531 where = 187 }
+
+		command = { type = activate_division which = 10848 value = 532 where = 163 }
+		command = { type = activate_division which = 10848 value = 533 where = 163 }
+		command = { type = activate_division which = 10848 value = 534 where = 163 }
+
+		command = { type = activate_division which = 10848 value = 535 where = 253 }
+		command = { type = activate_division which = 10848 value = 536 where = 253 }
+
+		command = { type = activate_division which = 10848 value = 537 where = 1372 }
+		command = { type = activate_division which = 10848 value = 538 where = 1372 }
+
+		command = { type = activate_division which = 10848 value = 540 where = 238 } #Kiev
+		command = { type = activate_division which = 10848 value = 541 where = 238 }
+		command = { type = activate_division which = 10848 value = 542 where = 238 }
+
+		command = { type = activate_division which = 10848 value = 543 where = 212 } #Minsk
+		command = { type = activate_division which = 10848 value = 544 where = 212 }
+		command = { type = activate_division which = 10848 value = 545 where = 212 }
+
+		command = { type = activate_division which = 10848 value = 546 where = 255 } #Novorossisk
+		command = { type = activate_division which = 10848 value = 547 where = 255 }
+		command = { type = activate_division which = 10848 value = 548 where = 255 }
+
+		command = { type = activate_division which = 10848 value = 549 where = 258 } #Rostov
+		command = { type = activate_division which = 10848 value = 550 where = 258 }
+		command = { type = activate_division which = 10848 value = 551 where = 258 }
+
+		command = { type = activate_division which = 10848 value = 555 where = 133 } #Murmansk
+		command = { type = activate_division which = 10848 value = 556 where = 133 }
+		command = { type = activate_division which = 10848 value = 557 where = 133 }
+		command = { type = construct which = land_fort where = 133 value = 1 }
+
+		command = { type = manpowerpool value = -200 }
+
+	}
+}
+#########################################################################
+# 40332 Murmansk convoy	(by Aregorn 050630)
+#########################################################################
+event = {
+	id = 40332
+	random = no
+	country = sov
+
+#triggered by aregorn_uk
+
+	name = "Murmansk convoy"
+	desc = "Supplies and military equipment needed to cross the Atlantic to reach the Murmansk port. This means that Germany had the chance to intercept those convoys. Some of the supplies and help from the lend lease will need to be transported from the province of Labrador to represent it."
+	style = 0
+
+
+	action_a = {
+		name = "Lets get going!"
+		command = { }
+	}
+}
+#########################################################################
+# 40333 Murmansk convoy	 (A.I.) (by Aregorn 050630)
+#########################################################################
+event = {
+	id = 40333
+	random = no
+	country = sov
+
+	trigger = { ai = yes event = 40332 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps value = land where = 575 }
+		command = { type = add_division value = garrison when = 1 where = artillery  }
+		command = { type = activate_division which = 10848 value = 539 where = 575 }
+		command = { type = construct which = coastal_fort where = 575 value = 2 }
+	}
+}
+#########################################################################
+# 40334 Moscow Encircled (by Aregorn 050702)
+#########################################################################
+event = {
+	id = 40334
+	random = no
+	country = sov
+	persistent = yes
+
+	trigger = { random = 25 control = { province = 175 data = sov }
+		not = { control = { province = 288 data = sov } }
+		not = { control = { province = 94 data = sov } }
+		not = { control = { province = 176 data = sov } }
+		not = { control = { province = 174 data = sov } }
+		not = { control = { province = 182 data = sov } }
+		or = {
+			control = { province = 179 data = sov } #Murom
+			control = { province = 177 data = sov } #Danilov
+			control = { province = 178 data = sov } #Yaroslavl
+			control = { province = 172 data = sov } #Cherepovets
+			control = { province = 180 data = sov } #Vladimir
+			control = { province = 279 data = sov } #Ryazan
+		}
+	}
+
+	name = "Moscow is Encircled"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Stalin left the capital but fight in Moscow will continue"
+		ai_chance = 99
+		command = { type = capital which = 1552 }	#Omsk
+		command = { type = supplies value = 2000 where = 175 }
+		command = { type = supplies value = -2000 }
+		command = { type = oilpool value = 300 where = 175 }
+		command = { type = oilpool value = -300 }
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		name = "Stalin left the capital but fight in Moscow will continue"
+		ai_chance = 1
+		command = { type = capital which = 1552 }	#Omsk
+		command = { type = supplies value = 4000 where = 175 }
+		command = { type = supplies value = -4000 }
+		command = { type = oilpool value = 1000 where = 175 }
+		command = { type = oilpool value = -1000 }
+		command = { type = dissent value = 1 }
+	}
+	action_c = {
+		name = "Moscow will stand!"
+		ai_chance = 0
+		command = { type = dissent value = -5 }
+	}
+	action_d = {
+		name = "Moscow is a lost cause"
+		ai_chance = 0
+		command = { type = construct which = ic where = 1552 value = 10 }
+		command = { type = construct which = ic where = 175 value = -10 }
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 40334 }
+
+	}
+}
+#########################################################################
+# 40335 Elimination of the 2nd defence line (centre) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40335
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		or = {  not = { control = { province = 281 data = sov } } #Lipetsk
+			not = { control = { province = 283 data = sov } } #Voronezh
+		}
+		or = { 	not = { control = { province = 263 data = sov } } #Svoboda
+			not = { control = { province = 264 data = sov } } #Pavlovsk
+		}
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 281 value = -3 }
+		command = { type = construct which = land_fort where = 283 value = -3 }
+		command = { type = construct which = land_fort where = 263 value = -3 }
+		command = { type = construct which = land_fort where = 264 value = -3 }
+	}
+}
+#########################################################################
+# 40336 Elimination of the 3nd defence line (South) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40336
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		or = { 	not = { control = { province = 1838 data = sov } } #Astrakhan
+			not = { control = { province = 1836 data = sov } } #Elton
+			not = { control = { province = 1834 data = sov } } #Krasnya Sloboda
+		}
+		or = { 	not = { control = { province = 1831 data = sov } } #Nikolayevka
+			not = { control = { province = 1829 data = sov } } #Engels
+			not = { control = { province = 1828 data = sov } } #Kuybyshev
+		}
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 1838 value = -3 }
+		command = { type = construct which = land_fort where = 1836 value = -3 }
+		command = { type = construct which = land_fort where = 1834 value = -3 }
+		command = { type = construct which = land_fort where = 1831 value = -3 }
+		command = { type = construct which = land_fort where = 1829 value = -3 }
+		command = { type = construct which = land_fort where = 1828 value = -3 }
+	}
+}
+#########################################################################
+# 40337 Elimination of the 3nd defence line (Centre) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40337
+	random = no
+	country = sov
+
+	trigger = { 	ai = yes random = 50
+			or = { 	not = { control = { province = 1781 data = sov } } #Melekess
+				not = { control = { province = 1780 data = sov } } #Kazan
+				not = { control = { province = 1775 data = sov } } #Yoskar Ola
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 1781 value = -3 }
+		command = { type = construct which = land_fort where = 1780 value = -3 }
+		command = { type = construct which = land_fort where = 1775 value = -3 }
+	}
+}
+#########################################################################
+# 40338 Elimination of the 3nd defence line (North 1) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40338
+	random = no
+	country = sov
+
+	trigger = { 	ai = yes random = 50
+			or = { 	not = { control = { province = 166 data = sov } } #Kostroma
+				not = { control = { province = 177 data = sov } } #Danilov
+				not = { control = { province = 172 data = sov } } #Cherepovets
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 166 value = -4 }
+		command = { type = construct which = land_fort where = 177 value = -4 }
+		command = { type = construct which = land_fort where = 172 value = -4 }
+	}
+}
+#########################################################################
+# 40339 Soviet-Japanese non Agression Pact II (by Aregorn 050601)
+#########################################################################
+event = {
+	id = 40339
+	random = no
+	country = SOV
+
+	trigger = { 	war = { country = sov country = jap }
+			war = { country = sov country = ger }
+		}
+
+	name = "Soviet-Japanese non Aggression Pact"
+	desc = "To be able to fight a full War against Germany, the Soviet Union could not sustain a double front in Asia"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Propose the pact to Japan"
+		ai_chance = 100
+		command = { type = trigger which = 40728 } #aregorn_jap
+	}
+	action_b = {
+		name = "We can easily bear a two front war"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40340 Great Patriotic War (By Aregorn 051029 - using HOI2 text)
+#########################################################################
+event = {
+	id = 40340
+	random = no
+	country = SOV
+
+	trigger = { 	or = { event = 40314 event = 40302 }
+			or = { war = { country = sov country = ger } war = { country = usa  country = sov }
+			}
+			random = 25
+		}
+
+
+	name = "fbarb_event8_name"
+	desc = "fbarb_event8_desc"
+
+	picture = "great_patriotic_war"
+	style = 0
+
+	date = { day = 3 month = july year = 1936 }
+	offset = 7
+	deathdate = { day = 3 month = september year = 1945 }
+
+	action_a = {
+		name = "OK"
+		command = { type = max_organization which = land when = now value = 5 }
+	  	command = { type = morale which = land value = 5 }
+		command = { type = dissent value = -10 }
+		command = { type = manpowerpool value = 1500 }
+	}
+}
+############################################################################
+# 40341-43  Purge Events II (by Dec152000 050719 & slightly modified by Aregorn)
+############################################################################
+event = {
+	id = 40341
+	random = no
+	country = sov
+
+	trigger = { random = 50 event = 40301 }
+
+	date = { day = 1 month = april year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1938 }
+
+	name = "A Wider Purge"
+	desc = "Repression against perceived enemies of the Bolsheviks was a systemic method of maintaining social control in the USSR, being continuously applied since the October Revolution.  However, the Great Purge was the first time that the ruling party itself felt repression on a massive scale. Nevertheless, only a minority of those affected by the purges were CPSU members and office-holders. The purge of the Party was accomplished by a purge of the whole society."
+	style = 0
+	picture = gpu #steffle
+
+	action_a = {
+		name = "Root out the Traitors"
+		command = { type = research_mod value =  -5 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+	}
+}
+event = {
+	id = 40342
+	random = no
+	country = sov
+
+	trigger = { event = 40335 }
+
+	name = "NKVD Order no. 00447"
+	desc = "NKVD Order no. 00447 was issued, directed against ex-kulaks and kulak helpers, among other anti-Soviet elements. This order was notable in several respects, becoming a blueprint for a number of other actions of NKVD targeting specific categories of people.  Many such operations where conducted on a quota system.  Local NKVD officials were mandated to arrest and execute a specific number of counter-revolutionaries, based on various statistics."
+
+	style = 0
+	picture = "soviet_directive"
+
+	date = { day = 1 month = july year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1937 }
+
+	action_a = { name = "Eliminate the Counter-Revolutionaries"
+		command = { type = research_mod value =  -5 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+	}
+}
+event = {
+	id = 40343
+	random = no
+	country = SOV
+
+	trigger = { random = 50 event = 40301 }
+
+	name = "End of the Great Purge"
+	desc = "By the summer of 1938, Stalin and his circle realized that the purges had gone too far, and Yezhov was relieved from his head of NKVD post (remaining People's Commissar of Water Transport) and eventually purged. Lavrenty Beria, a fellow Georgian and Stalin confidante, succeeded him as head of the NKVD. The NKVD itself was then purged, with half its personnel being removed, and was restaffed with Beria loyalists, many of them from the Caucasus."
+	style = 0
+	picture = "soviet_law"
+
+	date = { day = 1 month = july year = 1938 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "End the Madness"
+		command = { type = research_mod value =  10 }
+		command = { type = sleepminister which = 4031 } #Yezhov
+		command = { type = sleepminister which = 4039 } #Yezhov
+		command = { type = sleepminister which = 4045 } #Yezhov
+		command = { type = ministerofsecurity which = 4041 } #Beria
+		command = { type = wakeleader which = 10393 } # Zhukov
+		command = { type = wakeleader which = 10026 } # Konev
+		command = { type = wakeleader which = 10363 } # Vlassov
+	}
+}
+########################################################################
+# 40344 Leningrad Encircled (by Dec152000 050831 &  Aregorn)
+#########################################################################
+event = {
+	id = 40344
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {	control = { province = 187 data = sov } # Leningrad
+			not = { control = { province = 145 data = sov } } # Viipuri
+			not = { control = { province = 186 data = sov } } # Luga
+			not = { control = { province = 188 data = sov } } # kingisepp
+			supplies = 1000 random = 10
+			or = {
+				control = { province = 152 data = sov } #Petrozavodsk
+				control = { province = 146 data = sov } #Sortavala
+				control = { province = 185 data = sov } #Volkhov
+			}
+
+	}
+
+	name = "Fortress Leningrad"
+	desc = "As the Germans advanced the Red Army prepared to defend Leningrad to the last man.  Large amounts of supplies were stockpiled for use in the event that the fortress-city became cut off."
+	style = 0
+	picture = "oil_supply"
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "For the Motherland"
+		ai_chance = 99
+		command = { type = supplies value = 2000 where = 187 }
+		command = { type = supplies value = -2000 }
+		command = { type = oilpool value = 200 where = 187 }
+		command = { type = oilpool value = -200 }
+}
+	action_b = {
+		name = "For the Motherland"
+		ai_chance = 1
+		command = { type = supplies value = 3000 where = 187 }
+		command = { type = supplies value = -3000 }
+		command = { type = oilpool value = 1000 where = 187 }
+		command = { type = oilpool value = -1000 }
+}
+	action_c = {
+		name = "We can not divert any more supplies at this time"
+		ai_chance = 0
+		command = { }
+}
+	action_d = {
+		name = "Leningrad will need no Supplies"
+		ai_chance = 0
+		command = { }
+		command = { type = sleepevent which = 40344 }
+}
+}
+#######################################################################################
+# 40345 Lessons of the Winter War (by Aregorn 051120)
+#######################################################################################
+
+event = {
+	id = 40345
+	country = sov
+	random = no
+
+	trigger = { event = 2628 random = 50 }
+
+	name = "Lessons of the Winter War"
+	desc = "The disastrous invasion of Finland of 1940 showed not only Stalin but most importantly Hitler and his Generals the weak condition of the Soviet military. Urgent measures to reform the Red Army needed to be taken especially considering the growing German threat."
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reform the Military"
+		ai_chance = 100
+		command = { type = supplies value = -10000 }
+		command = { type = gain_tech which = 6330 }
+		command = { type = gain_tech which = 2080 }
+		command = { type = domestic which = professional_army value = 2 }
+
+	}
+	action_b = {
+		name = "No need to change anything"
+		ai_chance = 0
+		command = { type = domestic which = professional_army value = -2 }
+	}
+}
+#######################################################################################
+# 40346 Troops from the East (by Aregorn 051211)
+#######################################################################################
+
+event = {
+	id = 40346
+	country = sov
+	random = no
+
+	trigger = {	control = { province = 175 data = sov } #Moscow
+			war = { country = sov  country = ger }
+
+			or = {
+				control = { province = 288 data = sov }
+				control = { province = 94 data = sov }
+				control = { province = 176 data = sov }
+				control = { province = 174 data = sov }
+				control = { province = 182 data = sov }
+			}
+
+			or = {
+				and = { event = 40313 random = 50 month = 11 }
+				and = { event = 40312 random = 100 month = 10
+					not = { control = { province = 180 data = sov }
+					}
+				}
+			}
+	}
+
+	name = "Troops from the East"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Bring them"
+
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -1 }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = land where = 175 } #Moscow
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_corps value = air where = 175 } #Moscow
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 175 } #Moscow
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_corps value = air where = 175 } #Moscow
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = manpowerpool value = -400 }
+		command = { type = sleepevent which = 40372 }
+
+		command = { type = ai which = "switch/hsr_SOV_attack.ai" }
+	}
+}
+#######################################################################################
+# 40347-48 Total War (by Aregorn 051219)
+#######################################################################################
+
+event = {
+	id = 40347
+	country = sov
+	random = no
+
+	trigger = { 	ai = yes event = 40302 random = 100
+			or = { war = { country = sov country = ger } war = { country = usa  country = sov }
+			}
+	}
+
+	name = "Total War"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase War production"
+		ai_chance = 100
+		command = { type = free_ic value = 40 }
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = free_money value = 2 }
+		command = { type = free_energy value = 60 }
+		command = { type = free_metal value = 30 }
+		command = { type = free_rare_materials value = 15 }
+		command = { type = supplies value = -1000 }
+	}
+	action_b = {
+		name = "."
+		ai_chance = 0
+		command = { }
+	}
+}
+
+event = {
+	id = 40348
+	country = sov
+	random = no
+
+	trigger = { 	ai = no event = 40314 random = 50 supplies = 30000
+			or = { war = { country = sov country = ger } war = { country = usa  country = sov }
+			}
+	}
+
+	name = "Total War"
+	desc = "Since the war almost started the Soviet Industry and its brave workers made an incredible effort to increase War production. This effort made the difference in tanks and military equipment to finally out compete and totally defeat Germany"
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase War production"
+		command = { type = free_ic value = 30 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = supplies value = -30000 }
+		command = { type = free_energy value = 60 }
+		command = { type = free_metal value = 30 }
+		command = { type = free_rare_materials value = 15 }
+		command = { type = manpowerpool value = -30 }
+	}
+	action_b = {
+		name = "Increase War production"
+		command = { type = free_ic value = 20 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = free_energy value = 40 }
+		command = { type = free_metal value = 20 }
+		command = { type = free_rare_materials value = 10 }
+		command = { type = supplies value = -20000 }
+		command = { type = manpowerpool value = -20 }
+	}
+	action_c = {
+		name = "Increase War production"
+		command = { type = free_ic value = 10 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = free_energy value = 20 }
+		command = { type = free_metal value = 10 }
+		command = { type = free_rare_materials value = 5 }
+		command = { type = supplies value = -10000 }
+		command = { type = manpowerpool value = -10 }
+	}
+	action_d = {
+		name = "We need men in the front not in the factories"
+		command = { type = manpowerpool value = 1000 }
+	}
+}
+#########################################################################
+# 40350-52 Elimination of the 2nd defence line (A.I.) (by Aregorn 051223)
+#########################################################################
+event = {
+	id = 40350
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 288 data = sov } }
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 288 value = -3 }
+	}
+}
+event = {
+	id = 40351
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 189 data = sov } } #Novgorod
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 189 value = -3 }
+	}
+}
+event = {
+	id = 40352
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 190 data = sov } }
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 190 value = -3 }
+	}
+}
+#########################################################################
+# 40353 Elimination of the 2nd defence line (Moscow area) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40353
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 176 data = sov } } #Rybinsk
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 180 value = -3 } #Vladimir
+		command = { type = construct which = land_fort where = 176 value = -3 } #Rybinsk
+		command = { type = construct which = land_fort where = 279 value = -3 } #Ryazan
+	}
+}
+#########################################################################
+# 40354 Elimination of the 2nd defence line (South 1) (A.I.) (by Aregorn 051008)
+#########################################################################
+
+event = {
+	id = 40354
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 271 data = sov } } #Kotelnikovo
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 270 value = -3 } #Salsk
+		command = { type = construct which = land_fort where = 271 value = -3 } #Kotelnikovo
+	}
+}
+#########################################################################
+# 40355 Elimination of the 2nd defence line (South 2) (A.I.) (by Aregorn 051008)
+#########################################################################
+
+event = {
+	id = 40355
+	random = no
+	country = sov
+
+	trigger = { ai = yes random = 50
+		not = { control = { province = 160 data = sov } } #Frolovo
+		not = { control = { province = 162 data = sov } } #Kalach
+}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 160 value = -3 } #Frolovo
+		command = { type = construct which = land_fort where = 162 value = -3 } #Kalach
+	}
+}
+#########################################################################
+# 40356 Elimination of the 2nd defence line (North 2) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40356
+	random = no
+	country = sov
+
+	trigger = { 	ai = yes random = 50
+			not = { control = { province = 154 data = sov } } #Archangelsk
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 154 value = -3 } #Archangelsk
+		command = { type = construct which = land_fort where = 153 value = -3 } #Molotovsk
+	}
+}
+#########################################################################
+# 40357 Elimination of the 2nd defence line (Kamyshin) (A.I.) (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40357
+	random = no
+	country = sov
+
+	trigger = { 	ai = yes random = 50
+			not = { control = { province = 159 data = sov } } #Kamyshin
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 159 value = -3 } #Kamyshin
+	}
+}
+#########################################################################
+# 40358 War against Spain (by Aregorn 050605)
+#########################################################################
+event = {
+	id = 40358
+	random = no
+	country = sov
+
+	trigger = { ai = no
+		or = { war = { country = sov country = spa }
+			war = { country = sov country = spr } }
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Nationalist Spain was not well received by neither the Latin American countries nor any mayor power."
+	style = 0
+
+	date = { day = 22 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = arg value = -100 }
+		command = { type = relation which = mex value = -100 }
+		command = { type = relation which = ven value = -100 }
+		command = { type = relation which = pru value = -100 }
+		command = { type = relation which = bol value = -100 }
+		command = { type = relation which = col value = -100 }
+		command = { type = relation which = ecu value = -100 }
+		command = { type = relation which = chl value = -100 }
+		command = { type = relation which = par value = -100 }
+		command = { type = relation which = gua value = -100 }
+		command = { type = relation which = cos value = -100 }
+		command = { type = relation which = nic value = -100 }
+		command = { type = relation which = hon value = -100 }
+		command = { type = relation which = cub value = -100 }
+		command = { type = relation which = hai value = -100 }
+		command = { type = relation which = dom value = -100 }
+		command = { type = relation which = sal value = -100 }
+		command = { type = relation which = ita value = -100 }
+		command = { type = relation which = usa value = -100 }
+		command = { type = relation which = eng value = -100 }
+		command = { type = relation which = fra value = -100 }
+		command = { type = relation which = ger value = -100 }
+		command = { type = belligerence which = sov value = 10 }
+		command = { type = dissent value = 10 }
+	}
+}
+#########################################################################
+# 40359-66  Red Fleet   (by Dec152000 060122 mod by Aregorn)
+#########################################################################
+event = {
+	id = 40359
+	random = no
+	country = sov
+
+	trigger = { }
+
+	name = "Red Fleet"
+	desc = "The Red Fleet is a second rate military force.  Most of the surface ships are leftover from the Czarist era and have poor range due to a focus on operations in the Baltic and Black Seas.  The submarine forces are numerous, but in general outdated."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	date = { day = 9 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "We are not prepared"
+		ai_chance = 100
+		command = { type = build_time which = naval where = relative value = 10} # Slow shipyards
+	 	command = { type = build_cost which = naval where = relative value = -10 }
+		command = { type = morale which = naval value = -10 }  #  Really Poor reliability
+
+		command = { type = range which = battleship value = -800 } # Poor range
+	  	command = { type = naval_attack which = battleship value = -2 } # Poor fire control
+		command = { type = naval_defense which = battleship value = -1 } # Poor naval architecture tradition
+		command = { type = fuel_consumption which = battleship value = 0.6 } # Really poor fuel economy
+
+		command = { type = range which = battlecruiser value = -750 }
+		command = { type = naval_defense which = battlecruiser value = -1 } # Poor naval architecture tradition
+	  	command = { type = shore_attack which = battlecruiser value = 1 } # High throw weight
+
+		command = { type = range which = carrier value = -1000 }
+		command = { type = naval_defense which = carrier value = -2 } # No carrier naval architecture tradition
+		command = { type = fuel_consumption which = carrier value = 0.3 } # Really poor fuel economy
+
+		command = { type = range which = heavy_cruiser value = -1500 }
+		command = { type = naval_defense which = heavy_cruiser value = -1 } # Poor naval architecture tradition
+		command = { type = supply_consumption which = heavy_cruiser value = -0.1} # Small
+	  	command = { type = speed which = heavy_cruiser value = 1 } # Fast
+	  	command = { type = max_positioning which = heavy_cruiser value = 0.01 }
+	  	command = { type = min_positioning which = heavy_cruiser value = 0.01 }
+		command = { type = fuel_consumption which = heavy_cruiser value = 0.3 } # Really poor fuel economy
+	  	command = { type = shore_attack which = heavy_cruiser value = 2 } # High throw weight
+
+		command = { type = range which = light_cruiser value = 350 }
+		command = { type = naval_defense which = light_cruiser value = -1 } # Poor naval architecture tradition
+	  	command = { type = shore_attack which = light_cruiser value = 1 } # High throw weight
+		command = { type = sub_detection  which = light_cruiser value = -1 }
+
+		command = { type = range which = destroyer value = -800 }
+	  	command = { type = naval_attack which = destroyer value = -2 } # Poor fire control and armarment
+		command = { type = naval_defense which = destroyer value = -1 } # Poor hull design
+		command = { type = sub_detection  which = destroyer value = -1 }
+	  	command = { type = speed which = destroyer value = 1 } # Fast
+	  	command = { type = max_positioning which = destroyer value = 0.01 }
+	  	command = { type = min_positioning which = destroyer value = 0.01 }
+		command = { type = fuel_consumption which = destroyer value = 0.4 } # Terrible fuel economy
+	  	command = { type = shore_attack which = destroyer value = -1 } # throw weight
+
+	  	command = { type = morale which = submarine value = 5 } # Compensates for fleet wide reduction
+		command = { type = naval_defense which = submarine value = -1 } # Weak hulls, slow diving
+		command = { type = air_defense which = submarine value = -1 } # Slow diving
+
+		command = { type = scrap_model which = battleship value = 1 }
+		command = { type = scrap_model which = battlecruiser value = 0 }
+		command = { type = scrap_model which = heavy_cruiser value = 0 }
+		command = { type = scrap_model which = light_cruiser value = 0 }
+		command = { type = scrap_model which = destroyer value = 1 }
+	}
+}
+######################
+event = {
+	id = 40360
+	random = no
+	country = sov
+
+	trigger = { }
+
+	name = "Red Fleet Naval Plan"
+	desc = "The Red Fleet must be modernized.  Planning for the Super Heavy Sovyetskiy Soyuz class BB is almost complete and the first pair is planned for 1938 with two more to follow in 1939 and 1940.  Additionally, two Kronshtadt class BCs will be laid own in 1939.  TECHNICAL NOTE:  Choosing to follow the plan will result in further events and will influence AI ship construction.  If you elect to choose the Red Fleet plan keep track of any additional BB production you order."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -5 }
+	 	command = { type = build_time which = battlecruiser where = relative value = -2.5 }
+		command = { type = supplies value = -2000 }
+	}
+	action_b = {
+		name = "We do not need the Red Fleet plan"
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 40361 }
+		command = { type = sleepevent which = 40362 }
+		command = { type = sleepevent which = 40363 }
+		command = { type = sleepevent which = 40364 }
+		command = { type = sleepevent which = 40365 }
+		command = { type = sleepevent which = 40366 }
+	}
+}
+#####################
+event = {
+	id = 40361
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { }
+
+	date = { day = 15 month = july year = 1938 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	name = "Sovyetskiy Soyuz Laid Down"
+	desc = "With much fanfare, the peasants and workers commence building the battleship Sovyetskiy Soyuz (target date July, 1943)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+}
+#####################
+event = {
+	id = 40362
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { }
+
+	date = { day = 31 month = october year = 1938 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	name = "Sovyetskaya Ukraina Laid Down"
+	desc = "With much fanfare, the peasants and workers commence building the battleship Sovyetskaya Ukraina (target date October, 1943)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+}
+#####################
+event = {
+	id = 40363
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { }
+
+	date = { day = 21 month = October year = 1939 } # Hacked date to make trigger ok with Finnish war, should be 21 December
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	name = "Sovyetskaya Byelorussiya Laid Down"
+	desc = "With much fanfare, the peasants and workers commence preparations for building the battleship Sovyetskaya Byelorussiya (target date October, 1944)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+}
+#####################
+event = {
+	id = 40364
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { }
+
+	date = { day = 5 month = November year = 1939 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	name = "Sevastopol Laid Down"
+	desc = "With much fanfare, the peasants and workers commence building the battlecruiser Sevastopol (target date November, 1943)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battlecruiser }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+}
+#####################
+event = {
+	id = 40365
+	random = no
+	country = sov
+	style = 0
+
+	trigger = {  }
+
+	date = { day = 10 month = november year = 1939 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	name = "Kronshtadt Laid Down"
+	desc = "With much fanfare, the peasants and workers commence building the battlecruiser Kronshtadt (target date November, 1943)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battlecruiser }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+}
+#########################################################################
+# 40366 War against Stalin (by Aregorn 060304)
+#########################################################################
+event = {
+	id = 40366
+	random = no
+	country = sov
+
+	trigger = {  event = 2609 not = { event = 40301 } random = 5 dissent = 1
+		not = { war = { country = sov country = ger } }
+	}
+
+	name = "War against Stalin"
+	desc = "Zarists and rival Communists supported by dissident Generals initiated a counter revolution aiming to depose the Soviet ruthless dictator."
+	style = 0
+
+	date = { day = 22 month = may year = 1938 }
+	offset = 10
+	deathdate = { day = 31 month = june year = 1941 }
+
+	action_a = {
+		name = "ok"
+		command = { type = civil_war  }
+		command = { type = dissent value = 10 }
+	}
+}
+#########################################################################
+# 40367 Soviet Winter War (A.I.) (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40367
+	random = no
+	country = sov
+
+	trigger = {	ai = yes war = { country = fin country = sov }
+			not = { war = { country = ger country = sov } }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_SOV_Finland.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+#########################################################################
+# 40368 Soviet Winter War End (A.I.) (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40368
+	random = no
+	country = sov
+
+	trigger = {	ai = yes  event = 40360 not = { war = { country = fin country = sov } }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_SOV_Finland2.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+#########################################################################
+# 40369 Lithuanian Capitulation (by Aregorn 060424)
+#########################################################################
+event = {
+	id = 40369
+	random = no
+	country = sov
+
+	trigger = { ai = yes  ai = lit event = 2013 not = { war = { country = lit country = sov } }
+	}
+
+	name = "Lithuanian Capitulation"
+	desc = "After the Molotov-Ribbentrop and without much choice the Baltic states became part of the Soviet Union."
+	style = 0
+
+	date = { day = 30 month = march year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = inherit which = lit }
+		command = { type = dissent value = -2 }
+	}
+}
+#############################################################################################################
+# 40370 Soviet Armor (by Aregorn 081107) requested by Alan Mateus
+#############################################################################################################
+event = {
+	id = 40370
+	random = no
+	country = sov
+
+	trigger = { random = 25 }
+
+	name = "Soviet Armor"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities"
+	style = 0
+
+	picture = tank_factory	#by Aregorn
+	date = { day = 1 month = january year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1954 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = hard_attack which = armor value = 1 }
+	command = { type = soft_attack which = armor value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = -30 }
+	command = { type = build_cost which = armor when = now where = relative value = -30 }
+	command = { type = supply_consumption which = armor value = -0.5 }
+	command = { type = fuel_consumption which = armor value = -1 }
+	command = { type = speed which = armor value = 1 }
+	command = { type = transport_weight which = armor value = -10 }
+
+	command = { type = build_time which = mechanized when = now where = relative value = -20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = mechanized value = -0.1 }
+	command = { type = transport_weight which = mechanized value = -10 }
+
+	command = { type = hard_attack which = motorized value = -1 }
+	command = { type = soft_attack which = motorized value = -1 }
+	command = { type = build_time which = motorized when = now where = relative value = -20 }
+	command = { type = build_cost which = motorized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = motorized value = -0.1 }
+	command = { type = transport_weight which = motorized value = -5 }
+
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = industrial_modifier which = total value = 1 }
+	command = { type = tc_mod value = 5 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 4 }
+	command = { type = soft_attack which = armor value = 4 }
+	command = { type = build_time which = armor when = now where = relative value = 30 }
+	command = { type = build_cost which = armor when = now where = relative value = 30 }
+	command = { type = supply_consumption which = armor value = 0.5 }
+	command = { type = fuel_consumption which = armor value = 0.5 }
+	command = { type = speed which = armor value = -1 }
+	command = { type = transport_weight which = armor value = 10 }
+	command = { type = max_organization which = armor value = 3 }
+
+	command = { type = hard_attack which = mechanized value = 2 }
+	command = { type = soft_attack which = mechanized value = 2 }
+	command = { type = build_time which = mechanized when = now where = relative value = 20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = mechanized value = 0.1 }
+	command = { type = speed which = mechanized value = 1 }
+	command = { type = transport_weight which = mechanized value = 5 }
+	command = { type = max_organization which = mechanized value = 3 }
+
+	command = { type = build_time which = motorized when = now where = relative value = 20 }
+	command = { type = build_cost which = motorized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = motorized value = 0.1 }
+	command = { type = speed which = motorized value = 1 }
+	command = { type = max_organization which = motorized value = 3 }
+	command = { type = tc_mod value = -10 }
+	command = { type = industrial_modifier which = total value = -1 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 2 }
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = 15 }
+	command = { type = build_cost which = armor when = now where = relative value = 15 }
+	command = { type = build_time which = mechanized when = now where = relative value = 10 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 10 }
+	command = { type = tc_mod value = -2 }
+	}
+	action_d = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}
+#########################################################################
+# 40371 Soviet Aircrafts (by Aregorn 081107) requested by Alan Mateus
+#########################################################################
+event = {
+	id = 40371
+	random = no
+	country = sov
+
+	trigger = { random = 25 }
+
+	name = "Soviet Aircrafts"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities"
+	style = 0
+
+	picture = usa_air_factory	#by Aregorn
+	date = { day = 1 month = january year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = soft_attack which = multi_role value = -1 }
+	command = { type = air_attack which = multi_role value = -1 }
+	command = { type = air_defense which = multi_role value = -2 }
+	command = { type = build_time which = multi_role when = now where = relative value = -25 }
+	command = { type = build_cost which = multi_role when = now where = relative value = -25 }
+	command = { type = supply_consumption which = multi_role value = -0.1 }
+	command = { type = speed which = multi_role value = -40 }
+
+	command = { type = soft_attack which = interceptor value = -1 }
+	command = { type = build_time which = interceptor when = now where = relative value = -25 }
+	command = { type = build_cost which = interceptor when = now where = relative value = -25 }
+	command = { type = air_attack which = interceptor value = -1 }
+	command = { type = air_defense which = interceptor value = -2 }
+	command = { type = supply_consumption which = interceptor value = -0.1 }
+	command = { type = speed which = interceptor value = -40 }
+
+	command = { type = hard_attack which = cas value = -2 }
+	command = { type = soft_attack which = cas value = -2 }
+	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = build_time which = cas when = now where = relative value = -25 }
+	command = { type = build_cost which = cas when = now where = relative value = -25 }
+	command = { type = supply_consumption which = cas value = -0.1 }
+	command = { type = speed which = cas value = -20 }
+
+	command = { type = hard_attack which = tactical_bomber value = -1 }
+	command = { type = soft_attack which = tactical_bomber value = -2 }
+	command = { type = strategic_attack which = tactical_bomber value = -1 }
+	command = { type = air_defense which = tactical_bomber value = -1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = tactical_bomber value = -0.2 }
+	command = { type = speed which = tactical_bomber value = -20 }
+
+	command = { type = soft_attack which = naval_bomber value = -1 }
+	command = { type = naval_attack which = naval_bomber value = -1 }
+	command = { type = air_defense which = naval_bomber value = -1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = naval_bomber value = -0.1 }
+	command = { type = speed which = naval_bomber value = -20 }
+
+	command = { type = hard_attack which = strategic_bomber value = -1 }
+	command = { type = soft_attack which = strategic_bomber value = -1 }
+	command = { type = strategic_attack which = strategic_bomber value = -2 }
+	command = { type = air_defense which = strategic_bomber value = -1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = strategic_bomber value = -0.2 }
+	command = { type = speed which = strategic_bomber value = -20 }
+
+	command = { type = industrial_modifier which = total value = 1 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+	command = { type = build_time which = multi_role when = now where = relative value = 20 }
+	command = { type = build_cost which = multi_role when = now where = relative value = 20 }
+	command = { type = supply_consumption which = multi_role value = 0.1 }
+	command = { type = speed which = multi_role value = 40 }
+
+	command = { type = build_time which = interceptor when = now where = relative value = 20 }
+	command = { type = build_cost which = interceptor when = now where = relative value = 20 }
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+	command = { type = supply_consumption which = interceptor value = 0.1 }
+	command = { type = speed which = interceptor value = 40 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = build_time which = cas when = now where = relative value = 20 }
+	command = { type = build_cost which = cas when = now where = relative value = 20 }
+	command = { type = supply_consumption which = cas value = 0.1 }
+	command = { type = speed which = cas value = 20 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+	command = { type = air_defense which = tactical_bomber value = 1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = tactical_bomber value = 0.2 }
+	command = { type = speed which = tactical_bomber value = 20 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = naval_bomber value = 0.1 }
+	command = { type = speed which = naval_bomber value = 20 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 2 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = strategic_bomber value = 0.2 }
+	command = { type = speed which = strategic_bomber value = 20 }
+	command = { type = industrial_modifier which = total value = -1 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}
+#######################################################################################
+# 40372 Troops from the East (Moscow surrounded) (by Aregorn 090208)
+#######################################################################################
+
+event = {
+	id = 40372
+	country = sov
+	random = no
+
+	trigger = {	war = { country = sov  country = ger }
+
+			not = { control = { province = 288 data = sov } }
+			not = { control = { province = 94 data = sov } }
+			not = { control = { province = 176 data = sov } }
+			not = { control = { province = 174 data = sov } }
+			not = { control = { province = 182 data = sov } }
+
+			or = {
+				and = { event = 40313 random = 50 month = 11 }
+				and = { event = 40312 random = 100 month = 10
+					not = { control = { province = 180 data = sov }
+					}
+				}
+			}
+	}
+
+	name = "Troops from the East"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Bring them"
+
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -1 }
+
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_rct_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery  }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = manpowerpool value = -400 }
+
+		command = { type = sleepevent which = 40346 }
+
+		command = { type = ai which = "switch/hsr_SOV_attack.ai" }
+	}
+}
+

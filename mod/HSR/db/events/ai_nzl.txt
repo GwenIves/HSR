@@ -1,0 +1,387 @@
+####################################
+# New Zealand AI events 36300 - 36399 by Lothos
+####################################
+################
+# Minister of Security Section 36300 - 36309
+#############################################
+event = { # Adam Hamilton takes power
+	id = 36300
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55066 # Adam Hamilton
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLSecurityHamilton }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLSecurityHamilton }
+		command = { type = local_clrflag which = NZLSecurityBlundell }
+		command = { type = ministerofsecurity which = 55066 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Edward Blundell takes power
+	id = 36301
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55061 # Edward Blundell
+		NOT = { minister = 55066 } # Adam Hamilton
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLSecurityBlundell }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = NZLSecurityHamilton }
+		command = { type = local_setflag which = NZLSecurityBlundell }
+		command = { type = ministerofsecurity which = 55061 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 36310 - 36319
+#############################################
+event = { # William Sinclair-Burgess takes power
+	id = 36310
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55007 # William Sinclair-Burgess
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLChiefBurgess }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLChiefBurgess }
+		command = { type = chiefofstaff which = 55007 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 36320 - 36329
+#############################################
+event = { # Ken MacKenzie takes power
+	id = 36320
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55072 # Ken MacKenzie
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLIntelligenceMacKenzie }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLIntelligenceMacKenzie }
+		command = { type = local_clrflag which = NZLIntelligenceFreeman }
+		command = { type = ministerofintelligence which = 55072 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Frederick Freeman takes power
+	id = 36321
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55026 # Frederick Freeman
+		NOT = { minister = 55072 } # Ken MacKenzie
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLIntelligenceFreeman }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = NZLIntelligenceMacKenzie }
+		command = { type = local_setflag which = NZLIntelligenceFreeman }
+		command = { type = ministerofintelligence which = 55026 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 36330 - 36339
+#############################################
+event = { # Edward Puttick takes power
+	id = 36330
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55083 # Edward Puttick
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLArmyPuttick }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLArmyPuttick }
+		command = { type = local_clrflag which = NZLArmyNichols }
+		command = { type = chiefofarmy which = 55083 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # J.C. Nichols takes power
+	id = 36331
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55082 # J.C. Nichols
+		NOT = { minister = 55083 } # Edward Puttick
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLArmyNichols }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = NZLArmyPuttick }
+		command = { type = local_setflag which = NZLArmyNichols }
+		command = { type = chiefofarmy which = 55082 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 36340 - 36349
+#############################################
+event = { # Walter Nash takes power
+	id = 36340
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55004 # Walter Nash
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLArmamentNash }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLArmamentNash }
+		command = { type = local_clrflag which = NZLArmamentSullivan }
+		command = { type = armamentminister which = 55004 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Dan Sullivan takes power
+	id = 36341
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55048 # Dan Sullivan
+		NOT = { minister = 55004 } # Walter Nash
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLArmamentSullivan }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = NZLArmamentNash }
+		command = { type = local_setflag which = NZLArmamentSullivan }
+		command = { type = armamentminister which = 55048 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 36350 - 36359
+#############################################
+event = { # R.A. Cochrane takes power
+	id = 36350
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55010 # R.A. Cochrane
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLChiefAirCochrane }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLChiefAirCochrane }
+		command = { type = chiefofair which = 55010 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Navy Minister Section 36360 - 36369
+#############################################
+event = { # H.E. Horan takes power
+	id = 36360
+	random = no
+	country = NZL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 55085 # H.E. Horan
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NZLChiefNavyHoran }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NZLChiefNavyHoran }
+		command = { type = chiefofnavy which = 55085 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 36370 - 36399
+#############################################

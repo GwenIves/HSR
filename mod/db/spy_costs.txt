@@ -1,0 +1,70 @@
+# NOTE: Obviously, the order of these variables cannot be changed.
+
+diplomacy = {
+
+
+#	_HOID_SPY_STEAL_TECH_,
+0.8
+#	_HOID_SPY_MINISTER_ASSASSINATION_,
+2.0
+#	-Basic Cost for Increasing Spy lvl.
+0.5
+#	_HOID_SPY_SMEAR_CAMPAIGN_,
+1.6
+#	_HOID_SPY_COUP_,
+12.0
+#	_HOID_SPY_SABOTAGE_INDUSTRY_,
+0.8
+#	_HOID_SPY_NUCLEAR_SABOTAGE_,
+2.0
+#	_HOID_SPY_FOUND_PARTISANS_,
+0.8
+# 	-IC modifier on Cost; 0 = Cost is Unmodified; 1 = Cost * base IC in target; 2 or more: if base IC in target < X, Cost = (X * Basic cost), else cost = (Basic cost * base IC in target)
+20
+#	-Extra Basic Daily maintenance cost for Spy lvl's above 10; 0 = no extra cost; X = extra cost for levels 11-20th
+0.5
+#	-Basic Cost for Increasing Spy lvl's to 11-20th; 0 = Normal Basic cost; else: Basic cost for each lvl = X
+500
+#	_HOID_SPY_MASSMEDIA_,
+1.2
+#	_HOID_SPY_DISRUPT_TECHTEAM_,
+0.8
+#	-Basic Daily maintenance cost per Spy lvl for 1-10th lvl. 11-20th levels may cost more.
+0.001
+#	-Basic Cost for decreasing Spy lvl
+0
+
+
+
+#	_HOID_SPY_STEAL_TECH_CHANCE,
+35
+#	_HOID_SPY_MINISTER_ASSASSINATION_CHANCE,
+10
+#	_HOID_SPY_INCREASE_INTELLIGENCE_FOUNDING_CHANCE - NOT USED
+100
+#	_HOID_SPY_SMEAR_CAMPAIGN_CHANCE,
+35
+#	_HOID_SPY_COUP_CHANCE,
+2
+#	_HOID_SPY_SABOTAGE_INDUSTRY_CHANCE,
+35
+#	_HOID_SPY_NUCLEAR_SABOTAGE_CHANCE,
+8
+#	_HOID_SPY_FOUND_PARTISANS_CHANCE,
+50
+#	-Distance modifier: -1000 = No distance modifier; else: Higher value = Distance has smaller effect = Higher Chances
+20
+#	-Spy lvl bonus on Distance modifier: 0 = No bonus from Spy lvl's; else: Higher value = Higher bonus from spy lvl = Higher Chances.
+2
+#	-Dissent modifier on base coup chance: 0 = No dissent modifier; else: Higher value = Higher dissent needed in target country.
+5
+#	_HOID_SPY_MASSMEDIA_CHANCE,
+40
+#	_HOID_SPY_DISRUPT_TECHTEAM_CHANCE,
+30
+#	-Distance modifier for Spy lvl's above 10: 0 = all levels use same distance bonus; else: X = bonus for levels 11-20th
+30
+#	_HOID_SPY_COUNTER_ESPIONAGE_CHANCE - NOT USED
+100
+
+}

@@ -1,0 +1,283 @@
+#8§WThe Historical Stony Road to War
+
+#6§WHSR Manager and Lead Scripter
+Aregorn
+
+#6§WAdditional Scripting by
+Dec152000
+Scharlemanje
+Smark74
+
+#6§WStony Road forum Manager
+N!ghty
+
+#6§WHSR installer design and Relase Manager
+Tjaja
+
+#6§WStony Road Forum Lead Moderator
+#4§YFeanor
+
+#6§WProgramming
+#4§YPontus Åberg
+Stefan Johansson
+
+#6§WArt Director
+#4§YStefan Thulin
+
+#6§WArtist
+#4§YDick Sjöström
+
+#6§WGraphical Assets by
+Aregorn
+Erich Hartmann
+Generalissimo
+Mosquito
+Scharlemanje
+Steffele
+
+#6§WCampaign Design
+#4§YSimon Aistleitner
+
+#6§WManual
+#4§YChris Stone
+
+#6§WPR and Marketing Manager
+Susana Meza
+
+#6§WProduct Manager
+Jeanette Bauer
+
+#6§WQuality Assurance
+Florian Santer
+
+#6§WEditing
+Ryan Newman, Nick Stewart
+
+#6§WTranslation
+European Localization Center
+
+
+#8§WMarket coordination
+
+#6§WUSA
+#4§YReena Miranda
+
+#6§WGermany, Austria and Switzerland
+#4§YMario Gerhold and Uwe Palmer
+
+#6§WUK
+#4§YStuart Chiplin, Deane Punter, David Blundell and Holly Groves
+
+#6§WItaly
+#4§YMarco Viciani,
+
+#6§WScandinavia
+#4§YNiklas Molin
+
+#6§WFrance
+#4§YSusana Meza
+
+
+Thanks to our partners Atari (USA), Snowball (Russia), Friendware (Spain),
+Cenega (Poland) and Koch Media (UK, Germany, Italy).
+
+
+Special thanks to all our forum members, partners and supporters,
+who are integral for our success.
+
+
+
+
+
+#8§WOriginal Hearts of Iron 2
+
+
+#6§WPRODUCER / LEAD PROGRAMMER
+#4§YJohan Andersson
+
+
+#6§WGAME DESIGN
+#4§YJoakim Bergqwist
+Henrik Fåhraeus
+Johan Andersson
+
+
+#6§WPROGRAMMING
+#4§YHenrik Fåhraeus
+Johan Andersson
+
+
+#6§WADDITIONAL PROGRAMMING
+#4§YJonas Bjering
+Thomas Johansson
+Pontus Åberg
+
+
+#6§WLEAD ARTIST
+#4§YMarcus Edström
+
+#6§WARTIST
+Dick Sjöström
+
+#6§WMAP
+Stefan Thulin
+
+#6§WAI SCRIPTING
+#4§YDavid Martinez
+
+
+#6§WCAMPAIGN DESIGN
+#4§YJoakim Bergqwist
+Markus Herrmann
+Henrik Fåhreaus
+Stefan Carlsson
+
+
+#6§WBATTLESCENARIO DESIGN
+#4§YMarkus Herrmann
+Joakim Bergqwist
+Wesley Ferris
+Simon Aistleitner
+Wojtek Waluk
+Fernando A. Turi
+José M. Aguirre
+Joshua Raup
+
+
+
+#6§WDATABASE RESEARCH
+#4§YMaxime Penen
+Sören Birch-Jensen
+Birger Fjällman
+Wesley Ferris
+Lars Wetterling
+Markus Herrmann
+Simon Aistleitner
+Wojtek Waluk
+Kevin McCarthy
+
+
+#6§WHISTORICAL EVENTS DESIGN
+#4§YJoakim Bergqwist
+Alf Melin
+Henrik Fåhreaus
+
+
+#6§WORIGINAL MUSIC
+#4§YAndreas Waldetoft
+
+#6§WSOUND EFFECTS
+#4§YWave Generation
+
+
+#6§WBETA TESTERS
+#4§YAlf Melin
+Andrew Davidson
+Andy Dunlap
+Artur Godlewski
+Birger Fjällman
+Brian Schulz
+Carsten 't Mannetje
+Chad Cutlip
+Charles Schmidt
+Chris Stone
+Christoph Hemmerle
+Dave Cheeney
+David Ballantyne
+David Smitmanis
+Dominik Adolf
+Drew Swinerd
+Fernando A. Turi
+Fernando J. Nebot
+Igor Lulic
+Inge Davidsen
+Jacob Michael Lundgren
+James L. Erwin.
+Jan Peter Dijkstra
+Jason Schaub
+Jason Snyder
+Jean-Alain Grunchec
+Jean-Philippe DUFLOT
+Jeff Barkhauer
+Jeff Bow
+Jens Juhl Eriksen
+Joakim Bergqwist
+Joe Gurney
+Joel Herrero Enseñat
+Jonathan Barcus
+Jonathan Gartshore-Baxter
+José María Aguirre
+Joshua Raup
+Juan Camilo Gómez
+Juha Ekholm
+Jussi Laaksonen
+Kalle Isotalo
+Kevin Byers
+Kevin McCarthy
+Kevyn Taylor
+Kristo Karvinen
+Lars Lindholm
+Lars Erling Neergård
+Lars Thomsen
+Lars Wetterling
+Michele Pollaci
+Marcus Olausson
+Mark Kvistgaard Thomsen
+Markus Herrmann
+Mathias Forsberg
+Matteo Polacchini
+Matthew Davies
+Maxime Penen
+Michael Kohler
+Nacho Zapata
+Neil Paradise
+Nicholas Malouin
+Nikolai Tuuri
+Nikolaj Dybdal Vinther
+Óskar Björnsson
+Panu Alku
+Patrick Daniel Wegerle
+Patrick Hendriks
+Patrick Murphy
+Paul Rae
+Pent Ploompuu
+Peter Hodosi
+Peteris Paikens
+Petter Trillkott
+Rand Pratt
+Rick McGregor
+Romuald Louvrier
+Ron Peterson
+Sascha Cyrus
+Shawn Tse
+Simon Aistleitner
+Simon Jaeger
+Stefan Carlsson
+Steffen Behncke
+Steffen Potter
+Steven Brengard
+Sören Birch-Jensen
+Tamás Kiss
+Taras Wach
+Thomas Broman
+Thomas Corriol
+Tim Linden
+Tom Smiley
+Tony Lozina
+Wayne Jackson
+Wesley Ferris
+Ville Mällinen
+Wojtek Kubicki
+Wojtek Waluk
+Xavier Follebouckt
+Yacine Gouaref
+
+
+
+
+
+
+#6§WSPECIAL THANKS
+#4§YAll the people at our forum
+-END
+

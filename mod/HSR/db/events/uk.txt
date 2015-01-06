@@ -1,0 +1,389 @@
+#
+# Reworked by Aregorn for HSR
+#
+# HoI - United Kingdom Events
+#
+#		written by Henrik Fåhraeus
+#
+# (2) 3400
+#########################################################################
+#  Spanish Civil War - Intervention (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3400
+	random = no
+	country = ENG
+
+	trigger = {
+		war = { country = SPA country = SPR }
+		event = 3100 #SPA fascist nation
+		NOT = {
+			OR = {
+			government = fascist
+			war = { country = ENG country = SPR }
+			war = { country = ENG country = SOV }
+			war = { country = ENG country = ENG }
+			war = { country = ENG country = USA }
+			war = { country = ENG country = FRA }
+			}
+		}
+	        }
+
+	name = "EVT_3400_NAME"
+	desc = "EVT_3400_DESC"
+	style = 0
+	picture = "SCW"
+
+	date = { day = 20 month = july year = 1936 }
+	offset = 5
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME3400A" # Why support anarchist rabble?
+		ai_chance = 90
+		command = { type = dissent value = 2 }
+		command = { type = relation which = SPR value = -20 }
+		command = { type = relation which = SPA value = 10 }
+		command = { type = relation which = SOV value = -10 }
+		command = { type = relation which = FRA value = 10 }
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = ITA value = 10 }
+		command = { type = relation which = POR value = 10 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+	action_b = {
+		name = "ACTIONNAME3400B" # Send materiel and volunteers
+		ai_chance = 10
+		command = { type = money value = -200 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = supplies value = -2000 }
+		command = { type = dissent value = 5 }
+		command = { type = relation which = SPR value = 30 }
+		command = { type = relation which = SPA value = -50 }
+		command = { type = relation which = SOV value = 30 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = relation which = ITA value = -100 }
+		command = { type = relation which = POR value = -20 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = belligerence which = GER value = 2 }
+		command = { type = trigger which = 3103 } #SPR
+		command = { type = trigger which = 3722 } #USA
+		command	= { type = setflag which = SCW_UK_intervention }
+	}
+}
+
+#########################################################################
+#  Guarantee Independence to Poland
+#########################################################################
+event = {
+	id = 3401
+	random = no
+	country = ENG
+
+	trigger = {
+		exists = POL
+		NOT = {	war = { country = ENG country = pol }
+			war = { country = ENG country = ger }
+			war = { country = pol country = ger }
+			war = { country = pol country = SOV }}
+		NOT = {
+			OR = {
+				ispuppet = ENG
+				alliance = { country = POL country = SOV }
+				alliance = { country = POL country = GER }
+				alliance = { country = POL country = ENG }
+			}
+		}
+	}
+
+	name = "EVT_3401_NAME"
+	desc = "EVT_3401_DESC"
+	style = 0
+	picture = "guarantee_POL"
+
+	date = { day = 30 month = march year = 1939 }
+
+	action_a = {
+		ai_chance = 100
+		name = "ACTIONNAME3401A" # Poland must be protected
+		command = { type = relation which = POL value = 25 }
+		command = { type = relation which = FRA value = 10 }
+		command = { type = relation which = GER value = -15 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 3600 } # POL
+	}
+	action_b = {
+		ai_chance = 0
+		name = "ACTIONNAME3401B" # The world must be spared another Great War
+		command = { type = dissent value = 15 }
+		command = { type = relation which = POL value = -25 }
+		command = { type = relation which = FRA value = -10 }
+		command = { type = relation which = GER value = 15 }
+		command = { type = domestic which = interventionism value = -2 }
+	}
+}
+#########################################################################
+#  Guarantee Independence to Poland - Poland Accepts
+#########################################################################
+event = {
+	id = 3402
+	random = no
+	country = ENG
+
+	# Triggered by POL 3600
+
+	name = "EVT_3402_NAME"
+	desc = "EVT_3402_DESC"
+	picture = "chameberlain"
+	style = 0
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = alliance which = POL }
+	}
+}
+#########################################################################
+#  Guarantee Independence to Poland - Poland Declines
+#########################################################################
+event = {
+	id = 3403
+	random = no
+	country = ENG
+
+	# Triggered by POL 3600
+
+	name = "EVT_3403_NAME"
+	desc = "EVT_3403_DESC"
+       picture = "poland"
+	style = 0
+
+	action_a = {
+		name = "OK" # Their loss
+		command = { }
+	}
+}
+#########################################################################
+#  The Lend-Lease Act - The First Shipment
+#########################################################################
+event = {
+	id = 3404
+	random = no
+	country = ENG
+
+	# Triggered by USA 3700
+
+	name = "EVT_3404_NAME"
+	desc = "EVT_3404_DESC"
+	style = 0
+	picture = "lend_lease"
+
+	action_a = {
+		name = "OK" # Excellent!
+		command = { type = supplies value = 1000 where = 576 }
+		command = { type = supplies value = 4000 }
+		command = { type = oilpool value = 2500 where = 576 }
+		command = { type = metalpool value = 2500 }
+
+		command = { type = construct which = ic where = 19 value = 3 } #London
+		command = { type = construct which = ic where = 14 value = 3 } #Liverpool
+		command = { type = construct which = ic where = 13 value = 3 } #Sheffield
+		command = { type = construct which = ic where = 23 value = 1 } #Plymouth
+	}
+}
+#########################################################################
+#  A Lend-Lease Shipment Arrives from the USA (modified by Aregorn)
+#########################################################################
+event = {
+	id = 3405
+	random = no
+	country = ENG
+	persistent = yes
+
+	# Triggered by USA 3702. NOTE: May be triggered several times.
+
+	name = "EVT_3405_NAME"
+	desc = "EVT_3405_DESC"
+	style = 0
+	picture = "lend_lease"
+
+	action_a = {
+		name = "OK" # Excellent!
+		ai_chance = 100
+		command = { type = supplies value = 4000 }
+		command = { type = supplies value = 100 where = 576 }
+		command = { type = oilpool value = 2500 where = 576 }
+		command = { type = metalpool value = 1000 }
+	}
+	action_b = {
+		name = "OK" # Excellent!
+		ai_chance = 0
+		command = { type = supplies value = 100 where = 576 }
+		command = { type = oilpool value = 2500 where = 576 }
+		command = { type = metalpool value = 100 }
+		command = { type = add_corps value = land where = 576 }
+		command = { type = add_division value = marine where = sp_artillery }
+		command = { type = manpowerpool value = -12 }
+	}
+	action_c = {
+		name = "OK" # Excellent!
+		ai_chance = 0
+		command = { type = supplies value = 100 where = 576 }
+		command = { type = oilpool value = 2500 where = 576 }
+		command = { type = metalpool value = 100 }
+		command = { type = add_corps value = land where = 576 }
+		command = { type = add_division value = transport }
+		command = { type = manpowerpool value = -1 }
+	}
+	action_d = {
+		name = "OK" # Excellent!
+		ai_chance = 0
+		command = { type = supplies value = 100 where = 576 }
+		command = { type = oilpool value = 2500 where = 576 }
+		command = { type = metalpool value = 100 }
+		command = { type = add_corps value = air where = 576 }
+		command = { type = add_division value = cas }
+		command = { type = manpowerpool value = -1 }
+	}
+}
+#########################################################################
+#  The Independence of India
+#########################################################################
+event = {
+	id = 3406
+	random = no
+	country = ENG
+
+	trigger = {
+		random = 8 # 8% chance every month
+		control = { province = 1469 data = ENG } # Delhi
+		NOT = {
+			exists = IND
+			exists = PAK
+			exists = GER
+		}
+	}
+
+	name = "EVT_3406_NAME"
+	desc = "EVT_3406_DESC"
+	picture = "india"
+	style = 0
+
+	date = { day = 1 month = november year = 1945 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME3406A" # They cannot be held back any longer
+		command = { type = independence which = IND value = 1 }
+		command = { type = independence which = PAK value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME3406B" # This must not be allowed, it would signal the death of Empire
+
+		command = { type = dissent value = 20 }
+
+#		command = { type = province_revoltrisk which = 1454 value = 5 }
+#		command = { type = province_revoltrisk which = 1456 value = 5 }
+#		command = { type = province_revoltrisk which = 1457 value = 5 }
+#		command = { type = province_revoltrisk which = 1458 value = 5 }
+#		command = { type = province_revoltrisk which = 1459 value = 5 }
+#		command = { type = province_revoltrisk which = 1472 value = 5 }
+#		command = { type = province_revoltrisk which = 1471 value = 5 }
+#		command = { type = province_revoltrisk which = 1460 value = 5 }
+#		command = { type = province_revoltrisk which = 1461 value = 5 }
+#		command = { type = province_revoltrisk which = 1462 value = 5 }
+#		command = { type = province_revoltrisk which = 1463 value = 5 }
+#		command = { type = province_revoltrisk which = 1464 value = 5 }
+#		command = { type = province_revoltrisk which = 1465 value = 5 }
+#		command = { type = province_revoltrisk which = 1466 value = 5 }
+#		command = { type = province_revoltrisk which = 1467 value = 5 }
+#		command = { type = province_revoltrisk which = 1468 value = 5 }
+#		command = { type = province_revoltrisk which = 1469 value = 5 }
+#		command = { type = province_revoltrisk which = 1470 value = 5 }
+#		command = { type = province_revoltrisk which = 1473 value = 5 }
+#		command = { type = province_revoltrisk which = 1474 value = 5 }
+#		command = { type = province_revoltrisk which = 1475 value = 5 }
+#		command = { type = province_revoltrisk which = 1476 value = 5 }
+#		command = { type = province_revoltrisk which = 1477 value = 5 }
+#		command = { type = province_revoltrisk which = 1478 value = 5 }
+#		command = { type = province_revoltrisk which = 1479 value = 5 }
+#		command = { type = province_revoltrisk which = 1480 value = 5 }
+#		command = { type = province_revoltrisk which = 1481 value = 5 }
+#		command = { type = province_revoltrisk which = 1482 value = 5 }
+#		command = { type = province_revoltrisk which = 1483 value = 5 }
+#		command = { type = province_revoltrisk which = 1494 value = 5 }
+#		command = { type = province_revoltrisk which = 1508 value = 5 }
+#		command = { type = province_revoltrisk which = 1509 value = 5 }
+#		command = { type = province_revoltrisk which = 1505 value = 5 }
+#		command = { type = province_revoltrisk which = 1506 value = 5 }
+#		command = { type = province_revoltrisk which = 1507 value = 5 }
+#		command = { type = province_revoltrisk which = 1515 value = 5 }
+#		command = { type = province_revoltrisk which = 1510 value = 5 }
+#		command = { type = province_revoltrisk which = 1514 value = 5 }
+#		command = { type = province_revoltrisk which = 1511 value = 5 }
+#		command = { type = province_revoltrisk which = 1512 value = 5 }
+#		command = { type = province_revoltrisk which = 1513 value = 5 }
+#		command = { type = province_revoltrisk which = 1285 value = 5 }
+#		command = { type = province_revoltrisk which = 1284 value = 5 }
+#		command = { type = province_revoltrisk which = 1878 value = 5 }
+#		command = { type = province_revoltrisk which = 1877 value = 5 }
+	}
+}
+
+#########################################################################
+#  US Occupation of Iceland and Greenland
+#########################################################################
+event = {
+	id = 3900
+	random = no
+	country = ENG
+
+	# Triggered by USA 3705
+
+	name = "EVT_3900_NAME"
+	desc = "EVT_3900_DESC"
+       picture = "american_soldiers_winter"
+	style = 0
+
+	action_a = {
+		name = "OK" # Give them to the USA.
+		command = { type = secedeprovince which = USA value = 800 } # Gothab
+		command = { type = secedeprovince which = USA value = 1 } # Reykjavik
+		command = { type = secedeprovince which = USA value = 2 } # Akureyri
+		command = { type = relation which = GER value = -15 }
+		command = { type = relation which = USA value = 10 }
+	}
+}
+#########################################################################
+#  Spanish Civil War ends - An important experience (UK) (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3901
+	random = no
+	country = ENG
+
+	trigger = {
+		flag = 	SCW_UK_intervention
+		NOT = { exists = SPA }
+	}
+
+	name = "EVT_3901_NAME"
+	desc = "EVT_3901_DESC"
+	style = 0
+	picture = "SCWuk"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME3901A" # Great!
+		command = { type = relation which = SPR value = 10 }
+		command = { type = manpowerpool value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = gain_tech which = -1 }
+		command = { type = clrflag which = SCW_UK_intervention }
+	}
+}

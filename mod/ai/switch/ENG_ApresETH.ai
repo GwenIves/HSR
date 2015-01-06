@@ -1,0 +1,140 @@
+# Priorités IA ENG après la chute de l'AOI par Fernando Torres
+
+liberate = { ETH }
+
+garrison = {
+
+	# country_priorities = { ETH = -1	}
+	ignore = {
+
+		1141 # Tanga
+
+		# Libye
+		918   #Forte Maddalens
+		926   #Al Jaghbun
+		927   #Aujila
+		1017  #Calanslo
+		1018  #Kufra
+		1016  #Murzuk
+		1015  #Ghat
+		931   #Ghadames
+		928   #Sorno
+
+		# Afrique de l'est/Egypte
+		1020  #Siwa
+		1019  #Great Sand Sea
+		905
+		907   #Qattara
+		1021  #AinDalla
+		1022  #Western Desert
+		1067  #El Atiun
+		1068  #El Obeid
+		1069  #Waw
+		1065  #Malakal
+		1032  #Omdurman
+		1041  #Gallabal
+		1040  #Kassala
+		1059  #Marsabit
+
+		# Ethiopie
+		1039  #Asmara
+		1048  #Adwa
+		1042  #Gonder
+		1044  #Debre
+		1045  #Gambela
+		1047  #Jima
+		1053  #Moyale
+		1049  #Denakil
+		1043  #Dese
+		1050  #Diredawa
+		1054  #Ogaden
+		1055  #Bardera
+1030 1060 1061 1035 1056 1028
+
+		# Congo belge
+		1071  #Stanleyville
+		1072  #Buta
+		1073  #Costermanville
+		1074  #Coquihatville
+		1144  #Abertville
+		1143  #Kindu-Port-Empain
+		1142  #Leopoldville
+
+		# Afrique de l'est
+		1058
+		1139
+		1141
+
+		1112  1008
+		1111
+		1105
+		1104
+		1099
+		1124
+		1125
+		1126
+		1128
+	}
+	province_priorities = {
+		348 = 50 # Gibraltar
+		31  = 30 # Malta
+		906 = 80 # Alexandria
+		43 = 80 # DK
+
+		# Côte britannique
+		20 = 80 # Dover
+		17 = 80 # Norwich
+		21 = 80 # Portsmouth
+		23 = 80 # Plymouth
+		# 12 = 50 # Blackpool
+		13 = 80 # Sheffield
+		# 14 = 30 # Liverpool
+		22 = 50 # Bristol
+		11 = 50 # Sunderland
+		10 = 50 # Edinburgh
+		9 = 40 # Glasgow
+		5 = 60 # Scap Flow
+		28 = 40 # Belfast
+
+		# Inde
+		1457 = 30
+		1296 = 30
+		1505 = 30
+		1469 = 30
+		1494 = 30
+		1514 = 30
+		1517 = 20
+		1299 = 20 # Rangoon
+
+
+		# Méditerranée
+		534 = 20
+		900 = 80 # suez
+		901 = 30 # port said
+		1798 = 50 # Tel Aviv
+		915 = 50
+	}
+	area_multiplier = {
+
+		348 = 2.0 # Gibraltar
+		31  = 2.0 # Malta
+		900  = 2.0 # Malta
+		906 = 2.5 # Alexandria
+		43 = 2.0 # DK
+
+		# Côte britannique
+		20 = 2.0 # Dover
+		17 = 2.0 # Norwich
+		21 = 2.0 # Portsmouth
+		23 = 2.0 # Plymouth
+		12 = 1.0 # Blackpool
+		13 = 2.0 # Sheffield
+		14 = 1.0 # Liverpool
+		22 = 1.0 # Bristol
+		11 = 2.0 # Sunderland
+		10 = 2.0 # Edinburgh
+		9 = 1.0 # Glasgow
+		5 = 2.0 # Scap Flow
+		28 = 1.5 # Belfast
+	}
+}

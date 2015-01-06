@@ -1,0 +1,171 @@
+#
+# by Aregorn for HSR
+#
+# Airmod by Dec152000
+#
+
+construction = {
+	max_factor = 0.50
+
+	AA_batteries = yes
+	max_AA_level = 2
+	AA_provs = {
+		658  # Hawaii
+		662  # Midway
+		765 # San Francisco
+		762 # Los Angeles
+		761 # San Diego
+		780 # Seattle
+		600 # Boston
+		602 # New York
+		606 # Washington DC
+		651 # Miami
+	}
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = yes
+	max_radar = 3
+	radar_provs = {
+		663 # Pearl Harbor
+		658  # Hawaii
+		662  # Midway
+		765 # San Francisco
+		761 # San Diego
+		780 # Seattle
+		549 # Anchorage
+		600 # Boston
+		602 # New York
+		606 # Washington DC
+		651 # Miami
+	}
+
+	air_base = yes
+	max_air_base = 3
+	air_base_provs = {
+		658  # Hawaii
+		662  # Midway
+	}
+
+	naval_base = yes
+	max_naval_base = 3
+	naval_base_provs = {
+	}
+
+	land_fort = no
+	max_land_level = 3
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1940
+	ic_end_year = 1942
+	IC_provs = { }
+}
+technology = {
+	endgoal 	= { }
+	preference 	= {
+		# Arcriculture
+		5020 5030 5040
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Refining
+		5190 5200 5210
+
+		# Motorized
+		1230 1240 1250
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5140 5150 5160
+
+		# Strategic bombers
+		4220 4230 4240
+
+		# Escort/Multirole Fighters
+		4040 4050 4070 4080 4100 4110
+
+		# Naval Bomber
+		4190 4200 4210
+
+		# Tactical Bomber
+		4130 4140 4150 4160
+
+		# Computers
+		5320 5330 5340
+
+		# Aircraft Carriers
+		3330 3340 3350 3360 3370
+
+		# Battleships
+		3280 3290
+
+		# Naval Doctrines
+		8060 8180 8160 8320
+
+		# Air Doctrines
+		9140 9090 9110 9120 9130 9190 9180 9210 9430 9350 9310 9450 9460 9330
+
+		# Atomic Research
+		5470 5480 5490 5500
+
+	}
+	ignore 		= {
+		# Test and Research
+		5550 5560 5570 5580 5590
+
+		# Refining
+		5220 5230 5240
+
+		# Flying Bomb & Rockets
+		7100 7110 7120 7130
+
+		# Atomic Research 5470 5480 5490 5500
+		5510 5520 5530 5540 7170 7180 7190
+
+		# Rocket Assembly
+		5170
+
+		# CAS
+		4170 4280 4180
+
+		# Battle Cruiser
+		3230 3240
+
+		# Super Heavy BB
+		3310
+
+		# Air Transports 4260 4270
+		4250
+
+		# SP Rocket Artillery
+		2260 2270 2280
+
+		# Rocket Artillery
+		2370 2380 2390
+
+		# Land Doctrines
+		6100
+	}
+
+	armor 		= 2
+	infantry 	= 3
+	industry 	= 4
+	aircraft 	= 3
+	naval 		= 4
+	land_doctrines 	= 2
+	secret_weapons 	= 3
+	air_doctrines 	= 2
+	naval_doctrines = 3
+}

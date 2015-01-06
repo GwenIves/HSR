@@ -1,0 +1,67 @@
+name       = "The Abyss"
+panel      = "scenarios/data/theabyss.bmp"
+header =
+{ name       = "It's War Jim, but not as we know it"
+  startdate  = { year = 1936 }
+  selectable = { UES UBO UPR URO UER UGS UCS UPS UCH UTC UTL UTO UAU USN UIC UPE
+		 UIR UAP TAN
+	       }
+  UES        = { }
+  UBO        = { }
+  URO        = { }
+  UPR        = { }
+  UER        = { }
+  UGS        = { }
+  UCH        = { }
+  UPS        = { }
+  USN        = { }
+  UCS        = { }
+}
+globaldata =
+{ startdate = { year = 1936 month = january day = 0 }
+  enddate   = { year = 1964 month = january day = 0 }
+  rules     = { diplomacy = yes }
+  axis =
+  { id          = { type = 15000 id = 2 }
+    participant = { UPR }
+  }
+  allies =
+  { id          = { type = 15000 id = 1 }
+    participant = { USN }
+  }
+  comintern =
+  { id          = { type = 15000 id = 3 }
+    participant = { UES }
+
+  }
+}
+
+# Includes for global data
+include = "scenarios\globalwar\events.txt"
+
+# Victory points distribution
+include = "scenarios\globalwar\vp.inc"
+
+# Include files for each country tag used in the scenario
+include = "scenarios\preglobalwar\ast_36.inc"
+include = "scenarios\preglobalwar\bra_36.inc"
+include = "scenarios\preglobalwar\chi_36.inc"
+include = "scenarios\preglobalwar\uk.inc"
+include = "scenarios\preglobalwar\france.inc"
+include = "scenarios\preglobalwar\germany.inc"
+include = "scenarios\preglobalwar\italy.inc"
+include = "scenarios\preglobalwar\japan.inc"
+include = "scenarios\preglobalwar\mexico.inc"
+include = "scenarios\preglobalwar\nep.inc"
+include = "scenarios\preglobalwar\persia.inc"
+include = "scenarios\preglobalwar\romania.inc"
+include = "scenarios\preglobalwar\southafrica.inc"
+include = "scenarios\preglobalwar\siam.inc"
+include = "scenarios\preglobalwar\soviet.inc"
+include = "scenarios\preglobalwar\sweden.inc"
+include = "scenarios\preglobalwar\tan.inc"
+include = "scenarios\preglobalwar\turkey.inc"
+include = "scenarios\preglobalwar\usa.inc"
+
+# Data for provinces, currently not owned by any nation
+include = "scenarios\globalwar\provinces.inc"

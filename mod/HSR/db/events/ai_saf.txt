@@ -1,0 +1,319 @@
+####################################
+# South Africa AI events 36400 - 36499 by Lothos
+####################################
+################
+# Minister of Security Section 36400 - 36409
+#############################################
+event = { # D. F. Malan takes power
+	id = 36400
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70060 # D. F. Malan
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFSecurityMalan }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFSecurityMalan }
+		command = { type = local_clrflag which = SAFSecuritySwart }
+		command = { type = ministerofsecurity which = 70060 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # C. R. Swart takes power
+	id = 36401
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70057 # C. R. Swart
+		NOT = { minister = 70060 } # D. F. Malan
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFSecuritySwart }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SAFSecurityMalan }
+		command = { type = local_setflag which = SAFSecuritySwart }
+		command = { type = ministerofsecurity which = 70057 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 36410 - 36419
+#############################################
+event = { # Jan C. Smuts takes power
+	id = 36410
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70074 # Jan C. Smuts
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFChiefSmuts }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFChiefSmuts }
+		command = { type = chiefofstaff which = 70074 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 36420 - 36429
+#############################################
+event = { # Nicolaas Havenga takes power
+	id = 36420
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70070 # Nicolaas Havenga
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFIntelligenceHavenga }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFIntelligenceHavenga }
+		command = { type = ministerofintelligence which = 70070 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 36430 - 36439
+#############################################
+event = { # James Mitchell-Baker takes power
+	id = 36430
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70077 # James Mitchell-Baker
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFArmyBaker }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFArmyBaker }
+		command = { type = chiefofarmy which = 70077 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 36440 - 36449
+#############################################
+event = { # S.P. Le Roux takes power
+	id = 36440
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70043 # S.P. Le Roux
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFArmamentRoux }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFArmamentRoux }
+		command = { type = local_clrflag which = SAFArmamentMadeley }
+		command = { type = armamentminister which = 70043 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # W. E. Madeley takes power
+	id = 36441
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70046 # W. E. Madeley
+		NOT = { minister = 70043 } # S.P. Le Roux
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFArmamentMadeley }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SAFArmamentRoux }
+		command = { type = local_setflag which = SAFArmamentMadeley }
+		command = { type = armamentminister which = 70046 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 36450 - 36459
+#############################################
+event = { # Pierre van Ryneveld takes power
+	id = 36450
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70010 # Pierre van Ryneveld
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFChiefAirRyneveld }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFChiefAirRyneveld }
+		command = { type = chiefofair which = 70010 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Navy Minister Section 36460 - 36469
+#############################################
+event = { # Pierre Oliver-Knoll takes power
+	id = 36460
+	random = no
+	country = SAF
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 70009 # Pierre Oliver-Knoll
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SAFChiefNavyKnoll }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SAFChiefNavyKnoll }
+		command = { type = chiefofnavy which = 70009 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 36470 - 36499
+#############################################

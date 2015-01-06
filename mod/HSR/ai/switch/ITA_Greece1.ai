@@ -1,0 +1,123 @@
+#
+# By Aregorn for HSR
+#
+# Italy vs Greece AI File by Lothos
+
+max_garrison_prop = 0.70
+min_garrison_prop = 0.60
+
+###################################
+# Diplomacy
+###################################
+combat = {
+	GRE = 40
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 0.5
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.5
+	revolt_risk_mult	= 0.3
+
+	# PRIORITIES:
+	beach			= 20	# Beach level 2
+	capital			= 30	# Our capital
+	human_border		= 70	# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		VIC = -1
+		SWI = -1
+		ENG = 50
+		FRA = 30
+		AUS = -1
+		GER = -1
+		YUG = 50
+		SOV = 100
+		GRE = 100
+	}
+	province_priorities = {
+		# Albania prep for Greece invasion
+		391 = 100 # Vlore
+
+		#Libya
+		918 = -100  #Forte Maddalens
+		926 = -100  #Al Jaghbun
+		927 = -100  #Aujila
+		1017 = -100 #Calanslo
+		1018 = -100 #Kufra
+		1016 = -100 #Murzuk
+		1015 = -100 #Ghat
+		931 = -100  #Ghadames
+		928 = -100  #Sorno
+
+		#Egypt/East Africa
+		1020 = -100 #Siwa
+		1019 = -100 #Great Sand Sea
+		907 = -100  #Qattara
+		1021 = -100 #AinDalla
+		1022 = -100 #Western Desert
+		1067 = -100 #El Atiun
+		1068 = -100 #El Obeid
+		1069 = -100 #Waw
+		1065 = -100 #Malakal
+		1032 = -100 #Omdurman
+		1041 = -100 #Gallabal
+		1040 = -100 #Kassala
+		1059 = -100 #Marsabit
+
+		#Ethiopia
+		1039 = -100 #Asmara
+		1048 = -100 #Adwa
+		1042 = -100 #Gonder
+		1044 = -100 #Debre
+		1045 = -100 #Gambela
+		1047 = -100 #Jima
+		1053 = -100 #Moyale
+		1049 = -100 #Denakil
+		1043 = -100 #Dese
+		1050 = -100 #Diredawa
+		1054 = -100 #Ogaden
+		1055 = -100 #Bardera
+
+		#Belgian Congo
+		1071 = -100 #Stanleyville
+		1072 = -100 #Buta
+		1073 = -100 #Costermanville
+		1074 = -100 #Coquihatville
+		1144 = -100 #Abertville
+		1143 = -100 #Kindu-Port-Empain
+		1142 = -100 #Leopoldville
+	}
+	area_multiplier = {
+		391 = 3.5 # Vlore
+	}
+}
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 1.5
+	min_attack_odds		= 1.2
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+	enemy_handicap = { }
+	passivity = { }
+}

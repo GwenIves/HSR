@@ -1,0 +1,2331 @@
+# Aregorn_Misc: Events for countries not possessing own file and universal events (75)
+#
+# ID		Title											Author
+#
+# 40400-01	(SWE) Sweden's Emergency Purchase 							(by Justin and Aregorn 050130)
+# 40402 	Random leader Killing			 						(by Aregorn 050208)
+# 40403 	(NOR) Allies negotiations with Norway 							(by Aregorn 030823)
+# 40404 	(BEL) Capture of Eben-Emael 								(by Aregorn 031209)
+# 40405 	(HOL) Netherlands Dams 									(by Aregorn 030601)
+# 40406-7 	(FIN) Finish planes Purchase 								(by Aregorn 041224)
+# 40408-10 	(HUN) Hungarian tanks Purchase to Germany 						(by Aregorn 041224)
+# 40411-13 	(ROM) Romanian tanks Purchase to Germany 						(by Aregorn 041224)
+# 40414 	(AUS) Austro-German Agreement 								(by Aregorn based on Generalissimo's event idea)
+# 40415 	(Hun) The Czeck War 									(by Aregorn 050212)
+# 40416 	(Hun) Hungary gets closer to the Axis 							(by Aregorn 050213)
+# 40417 	(FIN) Finish Army strengths 								(by Aregorn 050214)
+# 40418-21 	(Rom,Bul,Ita, Hun) Axis minors Weakness 						(by Aregorn 050214)
+# 40422-23 	(Bel,Jux) Benelux violation 								(by Aregorn 030601)
+# 40424 	(FIN) New Soviet-Finish border 								(by Aregorn 050214)
+# 40425 	(FIN) Stalin's finger 									(by Aregorn 050214)
+# 40426 	(GRE) Crete to the UK 									(by Aregorn 050325)
+# 40427-28	War Dissent 										(by Aregorn 050402)
+# 40429 	Mao's convictions 									(by Aregorn 050406)
+# 40430 	Random Minister Accident 								(by Aregorn 050506)
+# 40431  	(HUN) Eastern Poland to Soviets 							(by Aregorn)
+# 40432 	(FIN) International Help to Finland- Sweden and the Allies the big absents (Historical)	(by Aregorn 050604)
+# 40433   Deleted		(NOR) War on Denmark 							(by Aregorn 050612)
+# 40434 	(BEL) War on Denmark 									(by Aregorn 050612)
+# 40435 	(TUR) Free access to Sov 								(by Aregorn 050616)
+# 40436 	(FIN) Continuation of the winter war 							(by Aregorn- text from HOI2)
+# 40437 	Christmas 										(by Aregorn 051019)
+#
+# 40444 	(TUR) Turkey A.I. Garrison 								(by Aregorn 051022)
+# 40445-47  	(ROM) Romania reclaims Bessarabia 							(by Dec152000 050831 & Aregorn 051105 based on the HSR1 new order events)
+# 40448-50  	(ROM) Romania Claims Transnistria 							(by Dec152000 050901 & Aregorn 051105 based on the HSR1 new order events)
+# 40451 	Poland shield 										(by Dec152000 & Aregorn)							(by Dec152000 050901 & Aregorn 051105 based on the HSR1 new order events)
+# 40452-55  	(BEL,HOL) Capital move events 								(From HOI2 1.03)
+# 40456 	(YUG) Yugoslavian coup d'etat								(by Aregorn 051120)
+# 40457 	(YUG) War on Friendly Yugoslavia 							(by Aregorn 051202)
+# 40458-62 	(Rom,Bul,Ita) Axis minors A.I. 								(by Aregorn 051216)
+# 40463 	(FIN) Continuation of WW - Check on Military (A.I.) 					(by Aregorn 060108)
+# 40464-65 	(FIN) Continuation of WW - Recovery of lost lands (A.I.) 				(by Aregorn 060115)
+# 40466 	(POL) Bug Fixer (A.I.) 									(by Aregorn 060115)
+# 40467 	(BEL) Schlieffen (A.I.) 								(by Aregorn 060305)
+# 40468 	(NOR) Quizling Government (A.I.) 							(by Aregorn 050522)
+# 40469-70 	(SWE) Swedish Winter ore route 								(by Aregorn 060222)
+# 40471 	(NOR) Operation Weserubung 								(by Jared Torval 060318)
+# 40472 	(NOR) Operation Wilfried 								(by Jared Torval and Aregorn 060322)
+# 40473-74 	(ROM) Romanian Oil fields 								(by Aregorn 060401)
+
+
+
+#########################################################################
+# 40400 (SWE) Sweden's Emergency Purchase (by Justin and Aregorn 050130)
+#########################################################################
+event = {
+	id = 40400
+	country = swe
+	random = no
+
+	trigger = { supplies = 500 random = 50 not = { war = { country = ger country = swe } } }
+
+	name = "Sweden's Emergency Purchase "
+	desc = "Official representatives of the Swedish Air Force approached the Italians once the war started with the purpose of buying some J-11, J-12, and Caproni Ca 313 fighters. The hostile situation in Europe has left them with few choices, as their own aviation industry is quite small."
+	style = 0
+	picture = 40209_j11	#mosquito
+
+	date = { day = 10 month = december year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need to improve the air force, propose Italy the deal"
+		command = { type = trigger which = 40209 }
+
+	}
+	action_b = {
+		name = "We can not afford 1000 gold for it."
+		command = {  }
+	}
+}
+event = {
+	id = 40401
+	country = swe
+	random = no
+
+#	trigger by aregorn_ita 40209
+
+	name = "Sweden's Emergency Purchase accepted by Italy"
+	desc = "Official representatives of the Swedish Air Force approached the Italians once the war started with the purpose of buying some J-11, J-12, and Caproni Ca 313 fighters. The hostile situation in Europe has left them with few choices, as their own aviation industry is quite small."
+	style = 0
+	picture = 40209_j11	#mosquito
+
+	action_a = {
+		name = "Great!"
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -2 }
+		command = { type = supplies value = -500 }
+
+	}
+}
+#########################################################################
+# 40402 Random leader Killing	(by Aregorn 050208)
+#########################################################################
+event = {
+	id = 40402
+	random = no
+
+	trigger = { 	ai = no random = 5
+			atwar = yes
+			}
+
+	name = "Military Commander down"
+	desc = "Various Military Leaders during WWII died. This event is supposed to represent it."
+	style = 0
+	picture = comander_assasinated
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "There is nothing we can do" #
+		command = { type = sleepleader which = -1 }
+	}
+	action_b = {
+		name = "We can not afford loosing him, send our best doctors" #
+	command = { type = supplies value = -5000 }
+	}
+}
+#########################################################################
+# 40403 (Nor) Allies negotiations with Norway (by Aregorn 030823)
+#########################################################################
+event = {
+	id = 40403
+	random = no
+	country = nor
+
+	trigger = { 	ai = yes random = 5
+			not = { exists = pol }
+			not = { or = { exists = den war = { country = den country = ger } } }
+			NOT = {	alliance = { country = eng  country = nor }}
+			NOT = {	war = { country = eng country = nor }}
+			}
+
+	name = "Allies negotiations with Norway"
+	desc = ""
+
+	style = 0
+	picture = constitutional
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We have no choice but to join the Allies" #
+		command = { type = alliance which = eng }
+	}
+	action_a = {
+		name = "We need to stay neutral" #
+		command = { }
+	}
+}
+#########################################################################
+# 40404 (Bel) Capture of Eben-Emael (by Aregorn 031209)
+#########################################################################
+
+event = {
+	id = 40404
+	random = no
+	country = bel
+
+
+	name = "Capture of Eben-Emael"
+	desc = "In the initial phase of the western campaign, a handful of elite German commandos, especially trained for the task, landed with silent gliders and subdued the fortress and its garrison of more than thousand soldiers. Again novel German operations gave a lesson of military tactics to the allies. Amazingly this real historical operations inspired Hollywood movies, although  non historically the protagonists are usually  conveniently changed..."
+
+	style = 0
+	picture = eben_emael
+
+
+	action_a = { name = "Impossible, the Germans had taken Eben Emael!   (no more fortress in Liege)"
+		ai_chance = 99
+	  	command = { type = morale which = land value = -5 }
+		command = { type = trigger which = 40021 } # aregorn_ger
+
+
+	}
+	action_b = { name = "German commandos failed"
+		ai_chance = 1
+		command = { type = dissent value = -1 }
+		command = { type = trigger which = 40020 } # aregorn_ger
+
+	}
+}
+#########################################################################
+#  40405 (Hol) Netherlands Dams (by Aregorn 030601)
+#########################################################################
+event = {
+	id = 40405
+	random = no
+	country = hol
+
+	trigger = { 	war = { country = GER country = hol } random = 25
+			OR = {
+			NOT = { control = { province = 79 data = hol }}
+			NOT = { control = { province = 77 data = hol }}
+			NOT = { control = { province = 49 data = hol }}	}
+
+			not = { war = { country = GER country = usa }}
+			NOT = { control = { province = 47 data = ger }}
+		 }
+
+
+	name = "Bridges and Dams in the Netherlands"
+	desc = "An extra level of defence for the Netherlands was a complicated chain of bridges and dams. Of great importance was for the Germans to secure those installations not to be slowed in a flooded country"
+
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Blow up Dams and bridges!"
+		command = { type = construct which = infrastructure where = 49 value = -50 }
+		command = { type = construct which = infrastructure where = 46 value = -50 }
+		command = { type = construct which = infrastructure where = 48 value = -50 }
+		}
+
+	action_b = {
+		name = "Don't destroy them"
+		command = { }
+	}
+}
+#########################################################################
+# 40406-7 Finish planes Purchase (by Aregorn 041224)
+#########################################################################
+event = {
+	id = 40406
+	country = fin
+	random = no
+	persistent = yes
+
+	trigger = { supplies = 1000 random = 5 war = { country = sov country = fin } not = { war = { country = ger country = fin } } }
+
+	name = "Finish planes Purchase "
+	desc = "Official representatives of Finland approached Germany with the purpose of reinforcing the air force."
+	style = 0
+
+	date = { day = 10 month = march year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need to improve the air force, propose Germany the deal"
+		command = { type = trigger which = 40032 }
+
+	}
+	action_b = {
+		name = "We can not afford 1000 gold for it."
+		command = {  }
+	}
+}
+event = {
+	id = 40407
+	country = fin
+	random = no
+
+#	trigger by aregorn_ger 40032
+
+	name = "Finish Purchase accepted by Germany"
+	desc = "Official representatives of Finland approached Germany with the purpose of reinforcing the air force."
+	style = 0
+
+	action_a = {
+		name = "Great!"
+		command = { type = add_division value = multi_role when = 1 }
+		command = { type = add_division value = multi_role when = 1 }
+		command = { type = add_division value = multi_role when = 1 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -3 }
+		command = { type = supplies value = -1000 }
+	}
+}
+#########################################################################
+# 40408-10 Hungarian tanks Purchase to Germany (by Aregorn 041224)
+#########################################################################
+event = {
+	id = 40408
+	country = hun
+	random = no
+	persistent = yes
+
+	trigger = { supplies = 1000 random = 5 war = { country = sov country = hun } not = { war = { country = ger country = hun } } }
+
+	name = "Hungarian tanks Purchase to Germany"
+	desc = "Official representatives from Hungary approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	date = { day = 10 month = december year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need to improve the Army, propose Germany the deal"
+		command = { type = trigger which = 40033 }
+
+	}
+	action_b = {
+		name = "We can not afford 1000 gold for it."
+		command = {  }
+	}
+}
+event = {
+	id = 40409
+	country = hun
+	random = no
+
+#	trigger by aregorn_ger 40033
+
+	name = "Hungarian tanks Purchase accepted by Germany"
+	desc = "Official representatives from Hungary approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	action_a = {
+		name = "Great! the first delivery is here"
+		command = { type = add_division value = armor when = 2 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = supplies value = -1000 }
+	}
+}
+event = {
+	id = 40410
+	country = hun
+	random = no
+
+	trigger = { supplies = 1000 random = 1 event = 40409 atwar = yes not = { war = { country = ger country = hun } } }
+
+	name = "Hungarian tanks Purchase to Germany"
+	desc = "Official representatives from Hungary approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	date = { day = 10 month = december year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great! the final delivery is here"
+		command = { type = add_division value = armor when = 2 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = supplies value = -1000 }
+	}
+}
+#########################################################################
+# 40411-13 Romanian tanks Purchase to Germany (by Aregorn 041224)
+#########################################################################
+event = {
+	id = 40411
+	country = rom
+	random = no
+	persistent = yes
+
+	trigger = { supplies = 1000 random = 5 war = { country = sov country = rom } not = { war = { country = ger country = rom } } }
+
+	name = "Romanian tanks Purchase to Germany"
+	desc = "Official representatives from Romania approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	date = { day = 10 month = december year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need to improve the Army, propose Germany the deal"
+		command = { type = trigger which = 40034 }
+
+	}
+	action_b = {
+		name = "We can not afford 1000 gold for it."
+		command = {  }
+	}
+}
+event = {
+	id = 40412
+	country = rom
+	random = no
+
+#	trigger by aregorn_ger 40034
+
+	name = "Romanian tanks Purchase to Germany"
+	desc = "Official representatives from Romania approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	action_a = {
+		name = "Great! the first delivery is here"
+		command = { type = add_division value = armor when = 2 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = supplies value = -1000 }
+	}
+}
+event = {
+	id = 40413
+	country = rom
+	random = no
+
+	trigger = { supplies = 1000 random = 1 event = 40412 atwar = yes not = { war = { country = ger country = rom } } }
+
+	name = "Romanian tanks Purchase to Germany"
+	desc = "Official representatives from Romania approached Germany with the purpose of reinforcing the Army."
+	style = 0
+	picture = german_reinforcment_7
+
+	date = { day = 10 month = december year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great! the final delivery is here"
+		command = { type = add_division value = armor when = 2 }
+		command = { type = money value = -1000 }
+		command = { type = manpowerpool value = -10 }
+		command = { type = supplies value = -1000 }
+	}
+}
+#######################################################################################
+# 40414 (AUS) Austro-German Agreement (by Aregorn based on Generalissimo's event idea)
+#######################################################################################
+
+event = {
+	id = 40414
+	random = no
+	country = AUS
+	persistent = yes
+
+	# triggered by 40042
+
+	name = "Austro-German Agreement"
+	desc = "On July 11th, 1936 German and Austrian officials met to hammer out an agreement. Most importantly Germany stated that it would honour Austrian Sovereignty. The pact had a secret supplement though as it stated an amnesty for Austrian Nazis with resumption of their political activities, censorship lifting on Nazi papers, and the appointment of men friendly to the Nazis in the Schuschnigg Cabinet."
+	style = 0
+
+	action_a = {
+		name = "An Excellent offer"
+		ai_chance = 99
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = relation which = ger value = 20 }
+		command = { type = domestic which = political_left value = -2 }
+		command = { type = trigger which = 40043  }
+	}
+
+	action_b = {
+		name = "We will not allow Nazis in Austria at this time"
+		ai_chance = 1
+		command = { type = dissent value = 2 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+#######################################################################################
+# 40415 (Hun) The Czech War (by Aregorn 050212)
+#######################################################################################
+
+event = {
+	id = 40415
+	random = no
+	country = hun
+
+	trigger = { 	random = 25
+			or = { 	war = { country = ger country = cze }
+				war = { country = ger country = slo } }
+			relation = { which = ger value = 50 }
+			not = { or = { 	war = { country = ger country = hun }
+					alliance = { country = ger country = hun } }}
+		}
+
+	name = "The Czech War"
+	desc = "Taking advantage of the German military superiority, this war would be the perfect opportunity to get former Hungarian territory back."
+	style = 0
+	picture = slovakia
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Negociate with Germany to forge an alliance"
+		ai_chance = 99
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 40044  }
+		command = { type = industrial_modifier which = total value = 5 }
+	}
+
+	action_b = {
+		name = "This could turn in something much bigger that what we can afford"
+		ai_chance = 1
+		command = { type = dissent value = 1 }
+	}
+}
+#######################################################################################
+# 40416 (Hun) Hungary gets closer to the Axis (by Aregorn 050213)
+#######################################################################################
+
+event = {
+	id = 40416
+	random = no
+	country = hun
+	persistent = yes
+
+	trigger = { 	random = 50  event = 2202
+			relation = { which = ger value = 50 }
+			not = { or = { war = { country = ger country = hun }
+				alliance = { country = ger country = hun } }}
+			}
+
+	name = "Hungary gets closer to the Axis"
+	desc = "After the German support to obtain back former Slovakian territory, there is no doubt Germany is a good friend of Hungary."
+	style = 0
+	picture = slovakia
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Improve relations"
+		ai_chance = 100
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 40044  }
+	}
+
+	action_b = {
+		name = "We are not Fascists"
+		ai_chance = 0
+		command = { type = dissent value = 2 }
+		command = { type = sleepevent which = 40416 }
+	}
+}
+#######################################################################################
+# 40417 (FIN) Finish Army strengths (by Aregorn 050214)
+#######################################################################################
+
+event = {
+	id = 40417
+	random = no
+	country = fin
+
+	trigger = { atwar = yes }
+
+	name = "Finish Army strengths"
+	desc = "One clear attribute of the Finish Army forces was not only its outstanding courage but their winter warfare capabilities."
+	style = 0
+	picture = 40417_Finish_Army_strengths		#Steffele
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Look at that!"
+		command = { type = frozen_move which = infantry value = 15 }
+		command = { type = snow_move which = infantry value = 15 }
+		command = { type = frozen_attack which = infantry value = 10 }
+		command = { type = frozen_defense which = infantry value = 20 }
+		command = { type = snow_attack which = infantry value = 10 }
+		command = { type = snow_defense which = infantry value = 20 }
+
+		command = { type = frozen_move which = bergsjaeger value = 15 }
+		command = { type = snow_move which = bergsjaeger value = 15 }
+		command = { type = frozen_attack which = bergsjaeger value = 10 }
+		command = { type = frozen_defense which = bergsjaeger value = 20 }
+		command = { type = snow_attack which = bergsjaeger value = 10 }
+		command = { type = snow_defense which = bergsjaeger value = 20 }
+
+		command = { type = frozen_move which = hq value = 15 }
+		command = { type = snow_move which = hq value = 15 }
+		command = { type = frozen_attack which = hq value = 10 }
+		command = { type = frozen_defense which = hq value = 20 }
+		command = { type = snow_attack which = hq value = 10 }
+		command = { type = snow_defense which = hq value = 20 }
+
+		command = { type = frozen_defense which = garrison value = 20 }
+		command = { type = snow_defense which = garrison value = 20 }
+
+		command = { type = morale which = land value = 30 }
+		command = { type = max_organization which = land value = 10 }
+
+		command = { type = morale which = air value = 30 }
+		command = { type = max_organization which = air value = 10 }
+
+		command = { type = gain_tech which = 1030}
+		command = { type = industrial_modifier which = supplies value = 10 }
+
+		command = { type = peacetime_ic_mod value = 10 }
+		command = { type = industrial_modifier which = total value = 10 }
+		command = { type = research_mod value =  10 }
+
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+
+		command = { type = domestic which = professional_army value = 4 }
+		}
+}
+#######################################################################################
+# 40418-21 (Rom,Bul,Ita) Axis minors Weakness (by Aregorn 050214)
+#######################################################################################
+
+event = {
+	id = 40418
+	random = no
+	country = rom
+
+	trigger = { ai = yes atwar = yes alliance = { country = rom country = ger } }
+
+	name = "Romanian Army"
+	desc = "A clear disadvantage of some Axis members was their lack of fierceness in battle. Not that they lack courageous men but more likely a true cause to fight for."
+	style = 0
+	picture = german_strategic_defeat
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+		command = { type = morale which = land value = -25 }
+		command = { type = industrial_modifier which = supplies value = -5 }
+		command = { type = morale which = bergsjaeger value = 25 }
+		command = { type = morale which = paratrooper value = 25 }
+		command = { type = domestic which = professional_army value = -2 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = bergsjaeger value = 15 }
+		command = { type = max_organization which = marine value = 15 }
+		command = { type = max_organization which = paratrooper value = 15 }
+		}
+}
+event = {
+	id = 40419
+	random = no
+	country = ita
+
+	trigger = { atwar = yes war = { country = ita country = eng } }
+
+	name = "Italian Army"
+	desc = "A clear disadvantage of some Axis members like Italy was their lack of fierceness in battle. Not that they lack courageous men but more likely a true cause to fight for."
+	style = 0
+	picture = german_strategic_defeat
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+		command = { type = industrial_modifier which = supplies value = -5 }
+		command = { type = morale which = infantry value = -25 }
+		command = { type = morale which = motorized value = -25 }
+		command = { type = morale which = mechanized value = -25 }
+		command = { type = morale which = light_armor value = -25 }
+		command = { type = morale which = armor value = -25 }
+		command = { type = morale which = hq value = -25 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = bergsjaeger value = 15 }
+		command = { type = max_organization which = marine value = 15 }
+		command = { type = max_organization which = paratrooper value = 15 }
+		command = { type = domestic which = professional_army value = -2 }
+		command = { type = morale which = air value = -25 }
+		command = { type = max_organization which = air value = -10 }
+		command = { type = morale which = naval value = -25 }
+
+		}
+}
+event = {
+	id = 40420
+	random = no
+	country = bul
+
+	trigger = { ai = yes atwar = yes alliance = { country = bul country = ger } }
+
+	name = "Bulgarian Army"
+	desc = "A clear disadvantage of some Axis members was their lack of fierceness in battle. Not that they lack courageous men but more likely a true cause to fight for."
+	style = 0
+	picture = german_strategic_defeat
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+		command = { type = morale which = land value = -25 }
+		command = { type = industrial_modifier which = supplies value = -5 }
+		command = { type = morale which = bergsjaeger value = 25 }
+		command = { type = morale which = paratrooper value = 25 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = bergsjaeger value = 15 }
+		command = { type = max_organization which = paratrooper value = 15 }
+		command = { type = domestic which = professional_army value = -2 }
+		}
+}
+event = {
+	id = 40421
+	random = no
+	country = hun
+
+	trigger = { atwar = yes }
+
+	name = "Hungarian Fierceness"
+	desc = "Contrary to other Axis members the Hungarian troops fought fiercely even when not very well equipped."
+	style = 0
+	picture = ger_40029_hungaryss_crotia #Steffele
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We are Hungarians!"
+		command = { type = morale which = land value = 20 }
+		command = { type = max_organization which = land value = 10 }
+		}
+}
+#########################################################################
+# 40422-23 Benelux violation (by Aregorn 030601)
+#########################################################################
+event = {
+	id = 40422
+	random = no
+	country = bel
+
+	trigger = { 	ai = yes
+			OR = {
+			war = { country = hol country = GER}
+			war = { country = GER country = lux }}
+
+			NOT = {	alliance = { country = eng  country = bel }}
+			NOT = {	war = { country = eng country = bel }}
+		}
+
+	name = "Benelux violation"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok" #
+		command = { type = alliance which = eng }
+	}
+}
+
+event = {
+	id = 40423
+	random = no
+	country = lux
+
+	trigger = { 	ai = yes
+			OR = {
+			war = { country = hol country = GER}
+			war = { country = GER country = bel } }
+			NOT = {	alliance = { country = eng  country = lux }}
+			NOT = {	war = { country = eng country = lux }}
+			}
+
+
+	name = "Benelux violation"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = alliance which = eng }
+	}
+}
+#######################################################################################
+# 40424 (FIN) New Soviet-Finish border (by Aregorn 050214)
+#######################################################################################
+
+event = {
+	id = 40424
+	random = no
+	country = fin
+
+	trigger = { ai = yes event = 3203 }
+
+	name = "New Soviet-Finish border"
+	desc = ""
+	style = 0
+	picture = finish_soldiers
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 142 value = 4 }
+		command = { type = activate_division which = 32000 value = 28 where = 142 }
+
+		command = { type = construct which = land_fort where = 144 value = 3 }
+		command = { type = activate_division which = 32000 value = 29 where = 144 }
+
+		command = { type = construct which = land_fort where = 136 value = 3 }
+		command = { type = activate_division which = 32000 value = 30 where = 136 }
+
+		command = { type = construct which = land_fort where = 130 value = 3 }
+		command = { type = activate_division which = 32000 value = 31 where = 130 }
+
+		command = { type = construct which = land_fort where = 149 value = 3 }
+		command = { type = activate_division which = 32000 value = 32 where = 149 }
+		}
+}
+#######################################################################################
+# 40425 (FIN) Stalin's finger (by Aregorn 050214)
+#######################################################################################
+
+#event = {
+#	id = 40425
+#	random = no
+#	country = fin
+
+#	triggered by aregorn_misc 40310
+
+#	name = "Stalin's finger"
+#	desc = "During the signing of the peace treaty between Finland and the Soviet union, everything was agreed upon but the fate of Petsamo. Without reaching an agreement the new Finish-Soviet border started to be redrawn by the cartographers. Stalin stood beside the map and firmly rested his finger on the city. When the cartographer reached with his pencil the city, neither him not anyone else dared to ask Stalin to move. The border was then gently drawn around Stalin’s finger."
+#	style = 0
+#	picture = stalin
+
+#	action_a = {
+#		name = "Petsamo is not worth any more Finish blood"
+#		ai_chance = 99
+#		command = { type = secedeprovince which = SOV value = 132 } #Petsamo
+#		}
+#	action_b = {
+#		name = "If they want it they will need to fight for it"
+#		ai_chance = 1
+#	        command = { type = war which = sov }
+#		}
+#}
+#######################################################################################
+# 40426 (Gre) Crete to the UK (by Aregorn 050325)
+#######################################################################################
+
+event = {
+	id = 40426
+	random = no
+	country = gre
+
+#	triggered by aregorn_uk 40529
+
+	name = "Crete to the UK"
+	desc = "."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = eng value = 396 } #Crete
+		command = { type = secedeprovince which = eng value = 444 } #Cyprus
+		}
+}
+#########################################################################
+#  40427-28 War Dissent (by Aregorn 050402)
+#########################################################################
+event = {
+	id = 40427
+	random = no
+	persistent = yes
+
+	trigger = { 	ai = no random = 5
+			atwar = yes not = { government = democratic }
+			difficulty = 4
+			}
+
+	name = "War Dissent"
+	desc = "The incessant bloodshed is causing great dissent among the population."
+	style = 0
+	picture = 40427-28_War_Dissent1		#Steffele
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = 1 }
+	}
+}
+event = {
+	id = 40428
+	random = no
+	persistent = yes
+
+	trigger = { 	ai = no random = 5
+			atwar = yes government = democratic
+			difficulty = 4
+			}
+
+	name = "War Dissent"
+	desc = "The war is causing great dissent among the population."
+
+	style = 0
+	picture = 40427-28_War_Dissent1		#Steffele
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 7
+	deathdate = { day = 1 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = 2 }
+	}
+}
+#########################################################################
+#  40429 Mao's convictions (by Aregorn 050406)
+#########################################################################
+
+event = {
+	id = 40429
+	random = no
+	country = chc
+
+	trigger = { atwar = yes }
+
+	name = "Mao's convictions"
+	desc = "Chinese troops lead by Mao fought fiercely even when not very well equipped."
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Communist China!"
+		command = { type = morale which = land value = 20 }
+		command = { type = max_organization which = land value = 10 }
+		command = { type = mountain_defense which = militia value = 40 }
+		command = { type = hill_defense which = militia value = 40 }
+		command = { type = mountain_defense which = infantry value = 10 }
+		command = { type = hill_defense which = infantry value = 10 }
+		command = { type = mountain_defense which = bergsjaeger value = 10 }
+		command = { type = hill_defense which = bergsjaeger value = 10 }
+		}
+}
+#########################################################################
+# 40430 Random Minister Accident (by Aregorn 050506)
+#########################################################################
+event = {
+	id = 40430
+	random = no
+
+	trigger = { 	ai = no random = 2
+			atwar = yes
+			}
+
+	name = "Minister down"
+	desc = "Some Ministers like Fritz Todt in 1942 died from accidents during WWII. This event is supposed to represent it."
+	style = 0
+	picture = comander_assasinated
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "There is nothing we can do" #
+		command = { type = sleepminister which = -1 }
+	}
+	action_b = {
+		name = "We can not afford loosing him, send our best doctors" #
+	command = { type = supplies value = -5000 }
+	}
+}
+#########################################################################
+# 40431  (HUN) The Molotov-Ribbentrop Pact - Eastern Poland to Soviets (by Aregorn)
+#########################################################################
+
+event = {
+	id = 40431
+	random = no
+	country = hun
+
+	# Triggered by German event 2018
+
+	name = "EVT_2018_NAME"
+	desc = "EVT_2018_DESC"
+	style = 0
+	picture = "E_Poland_Sov"
+
+	action_a = {
+		name = "ACTIONNAME2018A" # Honour the Pact
+		command = { type = relation which = SOV value = 10 }
+		command = { type = secedeprovince which = SOV value = 500 }
+		command = { type = secedeprovince which = SOV value = 501 }
+		command = { type = secedeprovince which = SOV value = 502 }
+		command = { type = secedeprovince which = SOV value = 503 }
+		command = { type = secedeprovince which = SOV value = 504 }
+		command = { type = secedeprovince which = SOV value = 505 }
+		command = { type = secedeprovince which = SOV value = 506 }
+		command = { type = secedeprovince which = SOV value = 507 }
+		command = { type = secedeprovince which = SOV value = 508 }
+		command = { type = secedeprovince which = SOV value = 562 }
+		command = { type = secedeprovince which = SOV value = 229 }
+		command = { type = secedeprovince which = SOV value = 222 }
+		command = { type = secedeprovince which = SOV value = 210 }
+		command = { type = secedeprovince which = SOV value = 209 }
+		command = { type = secedeprovince which = SOV value = 211 }
+		command = { type = secedeprovince which = SOV value = 213 }
+		command = { type = secedeprovince which = SOV value = 214 }
+		command = { type = secedeprovince which = SOV value = 208 }
+	        }
+}
+#########################################################################
+# 40432 International Help to Finland - Sweden and the Allies the big absents (Historical) (by Aregorn 050604)
+#########################################################################
+event = {
+	id = 40432
+	random = no
+	country = fin
+
+	name = "International Help to Finland - Sweden and the Allies the big absents (Historical)"
+	desc = "Besides the League of Nations call for helping Finland, The 3th of December Sweden decided not to defend the Finish-Sweden disputed island of Åland against the Soviets (reason why later after the War the League of Nations will rule in favour of Finland) and declared that no support will be given to the neighbour country. Conversely first Argentina (22/12/39) and one day later Ecuador, Haití, Perú, Bolivia,
+	Venezuela and México sent immediate help."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		ai_chance = 98
+		command = { type = relation which = swe value = -30 }
+		command = { type = relation which = eng value = -30 }
+		command = { type = relation which = fra value = -30 }
+		command = { type = relation which = arg value = 50 }
+		command = { type = relation which = mex value = 10 }
+		command = { type = relation which = ven value = 10 }
+		command = { type = relation which = pru value = 10 }
+		command = { type = relation which = bol value = 10 }
+		command = { type = relation which = ecu value = 10 }
+		command = { type = supplies value = 3000 }
+	}
+}
+#########################################################################
+# 40433 (NOR) War on Denmark (by Aregorn 050612)
+#########################################################################
+
+#########################################################################
+# 40434 (BEL) War on Denmark (by Aregorn 050612)
+#########################################################################
+event = {
+	id = 40434
+	random = no
+	country = bel
+
+	trigger = { 	not = { ai = ger } war = { country = den country = ger }
+			NOT = { ispuppet = eng }
+			NOT = { ispuppet = bel }
+			NOT = {	alliance = { country = eng  country = bel }}
+			NOT = {	war = { country = eng  country = bel }}
+			NOT = {	alliance = { country = ger  country = bel }}
+			}
+
+	name = "War on Denmark"
+	desc = "Historically the French deployment in Belgium started way before German DOW on the Benelux when a German plane with sensitive documents describing pat of Plan Yellow (German 1940 western campaign plan) crashed in Belgian territory falling in Allied hands."
+
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Look for the Allied protection"
+		ai_chance = 100
+		command = { type = access which = fra }
+	}
+	action_b = {
+		name = "We can not increase the chances for war"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40435 (Tur) Free access to Sov (by Aregprn 050616)
+#########################################################################
+event = {
+	id = 40435
+	random = no
+	country = Tur
+
+	trigger = { 	not = { ai = ger }
+			war = { country = ger country = tur }
+			war = { country = ger country = sov }
+			NOT = {	war = { country = tur country = sov }}
+			NOT = {	war = { country = eng country = sov }}
+			NOT = {	alliance = { country = tur country = sov }}
+			}
+
+	name = "Soviet intervention in Turkey"
+	desc = "Soviets troops need free access to Turkey to be able to stop the Axis forces."
+
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Let the Soviets pass"
+		ai_chance = 100
+		command = { type = access which = sov }
+	}
+	action_b = {
+		name = "We can not let the communists get into our territory"
+		ai_chance = 1
+		command = { }
+	}
+}
+#########################################################################
+# 40436 (FIN) Continuation of the winter war (by Aregorn- text from HOI2)
+#########################################################################
+
+event = {
+	id = 40436
+	random = no
+	country = FIN
+
+	trigger = { random = 50 war = { country = ger country = sov } event = 3200
+		not = { war = { country = fin country = sov } }
+		}
+
+	name = "fbarb_event10_name"
+	desc = "fbarb_event10_desc"
+	picture = "barbarossa"
+	style = 0
+
+	date = { hour = 0 day = 1 month = may year = 1940 }
+	offset = 2
+	deathdate = { hour = 0 day = 20 month = june year = 1963 }
+
+	action_a = {
+		name = "OK"
+		ai_chance = 100
+	        command = { type = alliance which = ger }
+		command = { type = relation which = ger value = 60 }
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = hq when = 1 where = engineer }
+		command = { type = ai which = "switch/hsr_FIN_WW2.ai" }
+	}
+	action_b = {
+		name = "There is no way we can win"
+		ai_chance = 0
+		command = {}
+	}
+}
+#########################################################################
+# 40437 Christmas (by Aregorn 051019)
+#########################################################################
+
+event = {
+	id = 40437
+	random = no
+	persistent = yes
+
+	trigger = { 	atwar = yes ai = no
+			not = { country = chc }
+			month = 11 day = 24 not = { day = 25 }
+	}
+
+	name = "Christmas Time"
+	desc = "The war seems over for one night"
+	style = 0
+	picture = misc_40437_christmas1	#Steffele
+
+	date = { hour = 0 day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { hour = 0 day = 20 month = june year = 1963 }
+
+	action_a = {
+		name = "OK"
+	        command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+# 40444 Turkey A.I. Garrison (by Aregorn 051022)
+#########################################################################
+event = {
+	id = 40444
+	random = no
+	country = tur
+
+	trigger = { atwar = yes ai = yes }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = activate_division which = 25635 value = 36 where = 448 } #Ankara
+		command = { type = activate_division which = 25635 value = 37 where = 448 }
+		command = { type = activate_division which = 25635 value = 38 where = 445 } #
+		command = { type = activate_division which = 25635 value = 39 where = 450 } #
+		command = { type = activate_division which = 25635 value = 40 where = 437 } #
+
+
+	}
+}
+###############################################################################################################
+# 40445-47  Romania reclaims Bessarabia (by Dec152000 050831 & Aregorn 051105 based on the HSR1 new order events)
+###############################################################################################################
+event = {
+	id = 40445
+	random = no
+	country = rom
+
+	trigger = { 	alliance = { country = ger country = rom } random = 25
+			war = { country = GER country = SOV }
+			not = { control = { province = 434 data = sov } }
+			not = { control = { province = 435 data = sov } }
+			not = { control = { province = 433 data = sov } }
+			not = { control = { province = 500 data = sov } }
+			not = { control = { province = 229 data = sov } }
+			not = { control = { province = 230 data = sov } }
+			not = { control = { province = 231 data = sov } }
+			not = { control = { province = 232 data = sov } }
+			not = { control = { province = 233 data = sov } } # Odessa, Balta, Mogliev Pod., Stanislwow & Styrj
+			or = {
+				not = { control = { province = 230 data = rom } }
+				not = { control = { province = 433 data = rom } }
+				not = { control = { province = 434 data = rom } }
+				not = { control = { province = 435 data = rom } }
+			}
+	}
+
+	name = "Romania reclaims Bessarabia"
+	desc = "Our valiant troops have recovered the land the Communist bastards stole from us."
+	style = 0
+	picture = "romania"
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Claim our rightful territory"
+		command = { type = dissent value = -10 }
+		command = { type = trigger which = 40446 }
+	}
+	action_b = {
+		name = "No need to heat up our diplomatic channels"
+		command = { type = dissent value = 5 }
+	}
+}
+event = {
+	id = 40446
+	random = no
+	country = ger
+
+	name = "Romania reclaims Bessarabia "
+	desc = "As Fascist forces advanced, the Romanians reasserted control over Bessarabia.  The Wehrmacht reports that all partisan activity has ceased."
+	style = 0
+	picture = "romania"
+
+	action_a = {
+		name = "Reward the Romanians"
+		ai_chance = 99
+		command = { type = secedeprovince which = rom value = 434 }
+		command = { type = secedeprovince which = rom value = 435 }
+		command = { type = secedeprovince which = rom value = 433 }
+		command = { type = secedeprovince which = rom value = 230 }
+	}
+	action_b = {
+		name = "The Romanians deserve nothing, let them leave our alliance"
+		ai_chance = 1
+		command = { type = trigger which = 40447 }
+}
+}
+event = {
+	id = 40447
+	random = no
+	country = rom
+
+	# Triggered by aregorn_misc 40446
+
+	name = "Romania denied Bessarabia"
+	desc = "The Germans have denied our rightful claims to Bessarabia."
+	style = 0
+	picture = "failed_objective"
+
+	action_a = {
+		name = "Treachery!"
+		command = { type = leave_alliance }
+		command = { type = dissent value = 10 }
+		command = { type = relation which = ger value = -200 }
+
+	}
+}
+##############################################################################################################
+# 40448-50  Romania Claims Transnistria (by Dec152000 050901 & Aregorn 051105 based on the HSR1 new order events)
+##############################################################################################################
+
+event = {
+	id = 40448
+	random = no
+	country = ger
+
+	trigger = { 	alliance = { country = ger country = rom } random = 25
+			war = { country = GER country = SOV }
+			event = 40445
+			not = { control = { province = 233 data = sov } }
+			not = { control = { province = 232 data = sov } }
+			not = { control = { province = 231 data = sov } }
+			not = { control = { province = 234 data = sov } }
+			not = { control = { province = 236 data = sov } }
+			not = { control = { province = 237 data = sov } }
+			not = { control = { province = 228 data = sov } }
+			not = { control = { province = 229 data = sov } } # Odessa, Balta, Mogliev Pod., Kherson, Krivoy Rog, Cherkassy, Vinnitsa & Stanislawow
+}
+
+	name = "Romania Occupies Transnistria"
+	desc = "The Transnistria region of the USSR bordering Romania is now occupied by Wehrmacht forces.  Shall we assign occupation duties to their forces or keep it for the Reich?"
+	style = 0
+	picture = "romanian_soldier"
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Reward the Romanians"
+		ai_chance = 90
+		command = { type = secedeprovince which = rom value = 233 }
+		command = { type = secedeprovince which = rom value = 232 }
+		command = { type = secedeprovince which = rom value = 231 }
+		command = { type = trigger which = 40449 }
+	}
+	action_b = {
+		name = "The Romanians deserve nothing"
+		ai_chance = 10
+		command = { type = trigger which = 40450 }
+}
+}
+event = {
+	id = 40449
+	random = no
+	country = rom
+
+	# Triggered by Aregorn_misc 40448
+
+	name = "Romania Occupies Transnistria"
+	desc = "Our valiant troops have helped capture Tansnistria from the Bolsheviks.  Our allies the Germans have agreed that it should become part of Romania."
+	style = 0
+	picture = "romanian_soldier"
+
+	action_a = {
+		name = "OK" # Excellent!
+		command = { type = dissent value = -5 }
+		command = { type = relation which = ger value = 10 }
+	}
+}
+event = {
+	id = 40450
+	random = no
+	country = rom
+
+	# Triggered by Aregorn_misc 40448
+
+	name = "Romania denied Transnistria"
+	desc = "The Germans have denied our rightful claims to Transnistria."
+	style = 0
+	picture = "failed_objective"
+
+	action_a = {
+		name = "Ungrateful Germans!"
+		command = { type = dissent value = 2 }
+		command = { type = relation which = ger value = -50 }
+
+	}
+}
+##############################################################################################################
+# 40451 Poland shield (by Dec152000 & Aregorn)
+##############################################################################################################
+event = {
+	id = 40451
+	random = no
+	country = pol
+
+	trigger = { 	atwar = no not = { ai = ger } ai = yes random = 25
+			war = { country = ger country = sov } }
+
+	name = "Dance with the Devil"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare for war"
+	        command = { type = war which = ger }
+		command = { type = domestic which = political_left value = 2 }  #
+		command = { type = domestic which = freedom value = -2 }
+		command = { type = trigger which = 40446 }
+		}
+}
+###########################################################################
+#40452 Netherlands Capitulates in Europe (by Aregorn)
+###########################################################################
+
+event = {
+	id = 40452
+	random = no
+	country = HOL
+
+	    trigger = {
+	    	war = { country = GER country = HOL }
+		AND = {
+			control = { province = 77 data = ger } #Arnhem
+			control = { province = 78 data = ger } #Leeuwarden
+			control = { province = 79 data = ger } #Groningen
+			control = { province = 49 data = ger }
+			control = { province = 48 data = ger }
+			control = { province = 46 data = ger }
+			control = { province = 47 data = ger }
+		}
+		random = 50
+		}
+
+	name = "EVT_2810_NAME"
+	desc = "EVT_2810_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 1 month = december year = 1963 }
+
+	action_a = {
+		command = { type = set_domestic which = democratic value = 9 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = headofstate which = 8001 }
+		command = { type = headofgovernment which = 8050 }
+		command = { type = foreignminister which = 8067 }
+		command = { type = armamentminister which = 8086 }
+		command = { type = ministerofsecurity which = 8117 }
+		command = { type = ministerofintelligence which = 8133 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = secedeprovince which = GER value = 47 }
+		command = { type = secedeprovince which = GER value = 46 }
+		command = { type = secedeprovince which = GER value = 77 }
+		command = { type = secedeprovince which = GER value = 78 }
+		command = { type = secedeprovince which = GER value = 79 }
+		command = { type = secedeprovince which = GER value = 48 }
+		command = { type = secedeprovince which = GER value = 49 }
+		}
+	}
+
+################################################################
+#40453 Belgium Capitulates in Europe (by Aregorn)
+################################################################
+
+event = {
+	id = 40453
+	random = no
+	country = BEL
+
+	trigger = {
+		war = { country = GER country = BEL }
+		AND = {
+			control = { province = 45 data = ger }
+			control = { province = 46 data = ger }
+			control = { province = 50 data = ger }
+			control = { province = 51 data = ger }
+			control = { province = 52 data = ger }
+			control = { province = 65 data = ger }
+			control = { province = 68 data = ger }
+			control = { province = 69 data = ger }
+			control = { province = 70 data = ger }
+		}
+		random = 100
+	}
+
+	name = "EVT_2809_NAME"
+	desc = "EVT_2809_DESC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 1 month = december year = 1963 }
+
+	action_a = {
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = secedeprovince which = GER value = 45 }
+		command = { type = secedeprovince which = GER value = 46 }
+		command = { type = secedeprovince which = GER value = 50 }
+		command = { type = secedeprovince which = GER value = 51 }
+		command = { type = secedeprovince which = GER value = 52 }
+		command = { type = secedeprovince which = GER value = 65 }
+		command = { type = secedeprovince which = GER value = 68 }
+		command = { type = secedeprovince which = GER value = 69 }
+		command = { type = secedeprovince which = GER value = 70 }
+		}
+	}
+
+
+event = {
+	id = 40454
+	random = no
+	country = HOL
+
+	trigger = {
+		ai = yes
+		war = { country = GER country = HOL }
+		control = { province = 1628 data = -1 } # must control Batavia
+		NOT = {
+			control = { province = 77 data = HOL }
+			control = { province = 78 data = HOL }
+			control = { province = 79 data = HOL }
+		}
+	}
+
+	name = "Exile Government"
+	desc = "AI_EVENT"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = capital which = 1628 }
+
+	}
+}
+
+
+event = {
+	id = 40455
+	random = no
+	country = BEL
+
+	trigger = {
+		ai = yes
+		war = { country = GER country = BEL }
+		control = { province = 1142 data = -1 } # must control Léopoldville
+		NOT = {
+			control = { province = 50 data = BEL }
+			control = { province = 68 data = BEL }
+			control = { province = 69 data = BEL }
+		}
+	}
+
+	name = "Exile Government"
+	desc = "AI_EVENT"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = capital which = 1142 }
+	}
+}
+
+##############################################################################################################
+# 40456 (YUG) Yugoslavian coup d'etat (by Aregorn 051120)
+##############################################################################################################
+
+event = {
+	id = 40456
+	random = no
+	country = YUG
+	style = 0
+
+	name = "Yugoslavian coup d'etat"
+	desc = EVT_6_DESC
+	picture = Yugoslav_coup
+
+	action_a = {
+		name = "OK"
+		command = { type = leave_alliance }
+		command = { type = dissent value = -5 }
+		command = { type = peace which = eng value = 1 }
+		command = { type = peace which = sov value = 1 }
+		command = { type = peace which = usa value = 1 }
+		command = { type = end_access which = ger }
+
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+
+		command = { type = headofstate which = 20094 }
+		command = { type = headofgovernment which = 20033 }
+		command = { type = foreignminister which = 20040 }
+		command = { type = armamentminister which = 20050 }
+		command = { type = ministerofsecurity which = 20057 }
+		command = { type = ministerofintelligence which = 20064 }
+		command = { type = chiefofstaff which = 20071 }
+		command = { type = chiefofarmy which = 20078 }
+		command = { type = chiefofnavy which = 20084 }
+		command = { type = chiefofair which = 20010 }
+
+		command = { type = relation which = ger value = -100 }
+		command = { type = relation which = ita value = -50 }
+		command = { type = relation which = eng value = 100 }
+
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+		}
+}
+##############################################################################################################
+# 40457 (YUG) War on Friendly Yugoslavia (by Aregorn 051202)
+##############################################################################################################
+
+event = {
+	id = 40457
+	random = no
+	country = YUG
+	style = 0
+
+	trigger = { ai = yes war = { country = yug country = ger }
+			or = { 	ideology = paternal_autocrat
+				government = fascist }
+		}
+
+	name = "War on Yugoslavia"
+	desc = "."
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = -5 }
+		command = { type = belligerence which =	ger value = 10 }
+		}
+}
+#######################################################################################
+# 40458-61 (Rom,Bul,Ita) Axis minors A.I. (by Aregorn 051216)
+#######################################################################################
+
+event = {
+	id = 40458
+	random = no
+	country = rom
+
+	trigger = { or = { ai = eng ai = sov }	ai = yes atwar = yes alliance = { country = rom country = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		}
+}
+event = {
+	id = 40459
+	random = no
+	country = ita
+
+	trigger = { or = { ai = eng } ai = yes atwar = yes war = { country = ita country = eng } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+
+		command = { type = remove_division which = "1a Gruppo di Caccia 'Aquila'" value = ita }
+		command = { type = remove_division which = "2a Gruppo di Caccia 'Borea'" value = ita }
+		command = { type = remove_division which = "7a Gruppo di Caccia" value = ita }
+		command = { type = remove_division which = "8a Gruppo di Caccia 'Astore'" value = ita }
+		command = { type = remove_division which = "9a Gruppo di Caccia" value = ita }
+
+		}
+}
+event = {
+	id = 40460
+	random = no
+	country = bul
+
+	trigger = { or = { ai = eng ai = sov }	ai = yes atwar = yes alliance = { country = bul country = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		}
+}
+event = {
+	id = 40461
+	random = no
+	country = hun
+
+	trigger = { or = { ai = eng ai = sov }	ai = yes atwar = yes alliance = { country = hun country = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		}
+}
+event = {
+	id = 40462
+	random = no
+	country = spa
+
+	trigger = { or = { ai = eng ai = sov }	ai = yes atwar = yes alliance = { country = spa country = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		}
+}
+#########################################################################
+# 40463 (FIN) Continuation of WW - Check on Military (A.I.) (by Aregorn)
+#########################################################################
+
+event = {
+	id = 40463
+	random = no
+	country = FIN
+
+	trigger = { not = { infantry = 15 } war = { country = ger country = sov }
+			war = { country = fin country = sov }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { hour = 0 day = 1 month = june year = 1940 }
+	offset = 1
+	deathdate = { hour = 0 day = 20 month = june year = 1963 }
+
+	action_a = {
+		name = "OK"
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division value = hq when = 1 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+	}
+}
+#########################################################################
+# 40464-65 (FIN) Continuation of WW -  Recovery of lost lands (A.I.) (by Aregorn 060115)
+#########################################################################
+
+event = {
+	id = 40464
+	random = no
+	country = FIN
+	persistent = yes
+
+	trigger = { 	not = { flag = winterwar2 } event = 40436 ai = sov
+			war = { country = ger country = sov }
+			war = { country = fin country = sov }
+			control = { province = 145 data = fin }
+			control = { province = 146 data = fin }
+			control = { province = 103 data = fin }
+			control = { province = 141 data = fin }
+			control = { province = 142 data = fin }
+			control = { province = 140 data = fin }
+			control = { province = 143 data = fin }
+			control = { province = 138 data = fin }
+			control = { province = 139 data = fin }
+			control = { province = 137 data = fin }
+			control = { province = 131 data = fin }
+			control = { province = 130 data = fin }
+			control = { province = 132 data = fin }
+			control = { province = 136 data = fin }
+			control = { province = 148 data = fin }
+			control = { province = 147 data = fin }
+			control = { province = 144 data = fin }
+			control = { province = 149 data = fin }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { hour = 0 day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { hour = 0 day = 20 month = june year = 1963 }
+
+	action_a = {
+		name = "OK"
+		command = { type = setflag which = winterwar2 }
+		command = { type = ai which = "switch/hsr_FIN_WW2_Def.ai" }
+	}
+}
+event = {
+	id = 40465
+	random = no
+	country = FIN
+	persistent = yes
+
+	trigger = { 	flag = winterwar2 ai = sov
+			war = { country = ger country = sov }
+			war = { country = fin country = sov }
+			or = {
+				not = { control = { province = 145 data = fin }}
+				not = { control = { province = 146 data = fin }}
+				not = { control = { province = 103 data = fin }}
+				not = { control = { province = 141 data = fin }}
+				not = { control = { province = 142 data = fin }}
+				not = { control = { province = 140 data = fin }}
+				not = { control = { province = 143 data = fin }}
+				not = { control = { province = 138 data = fin }}
+				not = { control = { province = 139 data = fin }}
+				not = { control = { province = 137 data = fin }}
+				not = { control = { province = 131 data = fin }}
+				not = { control = { province = 130 data = fin }}
+				not = { control = { province = 132 data = fin }}
+				not = { control = { province = 136 data = fin }}
+				not = { control = { province = 148 data = fin }}
+				not = { control = { province = 147 data = fin }}
+				not = { control = { province = 144 data = fin }}
+				not = { control = { province = 149 data = fin }}
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { hour = 0 day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { hour = 0 day = 20 month = june year = 1948 }
+
+	action_a = {
+		name = "OK"
+		command = { type = clrflag which = winterwar2 }
+		command = { type = ai which = "switch/hsr_FIN_WW2.ai" }
+	}
+}
+#########################################################################
+# 40466 (Pol) Bug Fixer (by Aregorn 060115)
+#########################################################################
+event = {
+	id = 40466
+	random = no
+	country = pol
+	trigger = { ai = ger lost_VP = { country = pol value = 100 } }
+
+	name = "The Polish Army Surrendered"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 3 month = december year = 1963 }
+
+	action_a = {
+		name = "Sign the pact"
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+	}
+}
+############################################################################
+# 40467 (BEL) Schlieffen (A.I.) (by Aregorn 060305)
+############################################################################
+event = {
+	id = 40467
+	random = no
+	country = bel
+
+	trigger = { ai = yes war = { country = fra country = ger } war = { country = bel country = ger } }
+
+	name = "ai_event"
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps value = land where = 45 }
+		command = { type = add_division which = "2ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "1ère Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "4ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		}
+}
+#########################################################################
+# 40468 Quizling Government (A.I.) (by Aregorn 050522)
+#########################################################################
+event = {
+	id = 40468
+	random = no
+	country = nor
+
+	#Triggered by 40064
+
+	name = ai_event
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME2033A" # Install a Puppet
+		command = { type = metalpool value = 10000 }
+		command = { type = energypool value = 5000 }
+		command = { type = supplies value = 5000 }
+		command = { type = oilpool value = 5000 }
+		command = { type = rarematerialspool value = 5000 }
+		command = { type = add_corps value = land where = 107 } #Oslo
+		command = { type = add_division value = hq when = 1 where = engineer }
+		command = { type = add_corps value = land where = 110 } #Bergen
+		command = { type = add_division value = infantry when = 1 where = engineer }
+		command = { type = add_corps value = land where = 118 } #Trondheim
+		command = { type = add_division value = infantry when = 1 where = engineer }
+		command = { type = add_corps value = land where = 125 } #Narvik
+		command = { type = add_division value = infantry when = 1 where = engineer }
+		command = { type = add_corps value = land where = 109 } #Stavanger
+		command = { type = add_division value = infantry when = 1 where = engineer }
+		command = { type = add_corps value = land where = 108 } #Kristiansand
+		command = { type = add_division value = infantry when = 1 where = engineer }
+		command = { type = ai which = "NOR_1936.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+#########################################################################
+# 40469-70 (SWE) Swedish Winter ore route (by Aregorn 060222)
+#########################################################################
+event = {
+	id = 40469
+	random = no
+	country = swe
+	persistent = yes
+
+	trigger = { 	or = { 	flag = narvik
+				and = { war = { country = ger country = usa }
+					control = { province = 125 data = usa }
+				}
+				and = { war = { country = ger country = nor }
+					control = { province = 125 data = nor }
+				}
+				and = { war = { country = ger country = fra }
+					control = { province = 125 data = fra }
+				}
+				and = { war = { country = ger country = eng }
+					control = { province = 125 data = eng }
+				}
+				and = { war = { country = ger country = fin }
+					control = { province = 125 data = fin }
+				}
+				and = { war = { country = ger country = sov }
+					control = { province = 125 data = sov }
+				}
+			}
+			or = { month = 11 and = { month = 0 not = { month = 2 } not = { year = 1940 } }
+			}
+			trade = { country = swe country = ger }
+			not = { and = { alliance = { country = nor country = ger }
+					control = { province = 125 data = nor }
+				}
+			}
+			not = { control = { province = 125 data = ger }	}
+	}
+
+	name = "The Winter Ore route to Germany has been disrupted"
+	desc = "Every year during winter when the Baltic froze, the only way for the precious Swedish ore to reach Germany was by sea through the Atlantic port of Narvik connected to Sweden by railroad."
+	style = 0
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = end_trades which = swe where = ger }
+		command = { type = ai which = "switch/hsr_SWE_narvik.ai" }
+		command = { type = clrflag which = narvik }
+		command = { type = setflag which = oreroute }
+		command = { type = trigger which = 45032 }
+	}
+}
+event = {
+	id = 40470
+	random = no
+	country = swe
+	persistent = yes
+
+	trigger = { 	flag = oreroute
+			or = { 	and = { month = 3 not = { month = 10 } }
+				and = { alliance = { country = nor country = ger }
+					control = { province = 125 data = nor }
+				}
+				and = { alliance = { country = fra country = ger }
+					control = { province = 125 data = fra }
+				}
+				and = { alliance = { country = eng country = ger }
+					control = { province = 125 data = eng }
+				}
+				and = { alliance = { country = usa country = ger }
+					control = { province = 125 data = usa }
+				}
+				and = { alliance = { country = ita country = ger }
+					control = { province = 125 data = ita }
+				}
+				and = { alliance = { country = arg country = ger }
+					control = { province = 125 data = arg }
+				}
+				and = { alliance = { country = swe country = ger }
+					control = { province = 125 data = swe }
+				}
+				and = { alliance = { country = fin country = ger }
+					control = { province = 125 data = fin }
+				}
+				and = { alliance = { country = sov country = ger }
+					control = { province = 125 data = sov }
+				}
+				control = { province = 125 data = ger }
+			}
+			not = { war = { country = swe country = ger } }
+	}
+
+	name = "The Ore route to Germany has been reopened"
+	desc = "Every year during winter when the Baltic froze, the only way for the precious Swedish ore to reach Germany was by sea through the Atlantic port of Narvik connected to Sweden by railroad."
+	style = 0
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_SWE_narvik2.ai" }
+		command = { type = clrflag which = oreroute }
+		command = { type = setflag which = narvik }
+		command = { type = trigger which = 45033 }
+	}
+}
+#########################################################################
+# 40471 (NOR) Operation Weserubung (by Jared Torval 060318)
+#########################################################################
+event = {
+	id = 40471
+	random = no
+	country = nor
+
+	trigger = { 	or = { 	flag = Weserubung
+				and = { flag = Weserubungden not = { exists = den }
+				}
+			}
+	}
+
+	name = "Operation Weserubung"
+	desc = "In its first stage with a fast combined arms small scale multi-landing operation with airborne troops from the sky and amphibious landings driven by destroyers and submarines, German units took control of critical Norwegian points."
+	style = 0
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 110 }
+		command = { type = secedeprovince which = ger value = 118 }
+		command = { type = secedeprovince which = ger value = 125 }
+		command = { type = secedeprovince which = ger value = 109 }
+		command = { type = secedeprovince which = ger value = 108 }
+	}
+}
+#########################################################################
+# 40472 (NOR) Operation Wilfried (by Jared Torval and Aregorn 060322)
+#########################################################################
+event = {
+	id = 40472
+	random = no
+	country = nor
+
+	name = "Operation Wilfried"
+	desc = "Once Norway entered the war and to complement the mining of Norwegian waters, an allied expeditionary force was sent to exclusively keep control of the strategic port of Narvik."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = eng value = 125 }
+	}
+}
+#########################################################################
+# 40473-74 Romanian Oil fields (by Aregorn 060401)
+#########################################################################
+
+event = {
+	id = 40473
+	random = no
+	country = rom
+	persistent = yes
+
+	name = "The Ploesti Oil Fields are now producing for the Reich"
+	desc = "Germany is now controlling the strategic region."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = -40  }
+		}
+}
+
+
+event = {
+	id = 40474
+	random = no
+	country = ger
+	persistent = yes
+
+	name = "The Ploesti Oil Fields are not under German control any longer"
+	desc = "It is up to Romania to control the territory."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = 40  }
+		}
+}

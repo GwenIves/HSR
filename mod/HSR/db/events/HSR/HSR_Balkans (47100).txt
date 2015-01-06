@@ -1,0 +1,822 @@
+# Aregorn_Balkans (28).
+#
+# ID		Title						Author
+#
+# 47100-14 	Yugoslavian Provinces 				(by Aregorn 060325)
+# 47115 	Greece independent 				(by Aregorn 060514)
+# 47116 	Serbia independent 				(by Aregorn 060514)
+# 47117-20 	Greek Provinces 				(by Aregorn 060325)
+# 47121-23 	Soviet Provinces 				(by Aregorn 060325)
+# 47124 	(ROM) Romanian coup d'etat 			(by Aregorn 081022)
+# 47125-27 	Quizling Governments 				(by Aregorn 081022)
+
+#########################################################################
+# 47100-75 Yugoslavian Provinces (by Aregorn 060325)
+#########################################################################
+
+### ITA
+
+event = {
+	id = 47100
+	country = ita
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 413 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = ita country = ger }
+			control = { province = 413 data = ita }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 413 }
+	}
+}
+event = {
+	id = 47101
+	country = ita
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 415 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = ita country = ger }
+			control = { province = 415 data = ita }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 415 }
+	}
+}
+event = {
+	id = 47102
+	country = ita
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 451 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = ita country = ger }
+			control = { province = 451 data = ita }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 451 }
+	}
+}
+### BUL
+
+event = {
+	id = 47103
+	country = bul
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 413 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = bul country = ger }
+			control = { province = 413 data = bul }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 413 }
+	}
+}
+event = {
+	id = 47104
+	country = bul
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 415 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = bul country = ger }
+			control = { province = 415 data = bul }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 415 }
+	}
+}
+event = {
+	id = 47105
+	country = bul
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 451 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = bul country = ger }
+			control = { province = 451 data = bul}
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 451 }
+	}
+}
+### HUN
+
+event = {
+	id = 47106
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 413 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = hun country = ger }
+			control = { province = 413 data = hun }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 413 }
+	}
+}
+event = {
+	id = 47107
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 415 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = hun country = ger }
+			control = { province = 415 data = hun }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 415 }
+	}
+}
+event = {
+	id = 47108
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 493 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = hun country = ger }
+			control = { province = 451 data = hun }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 493 }
+	}
+}
+event = {
+	id = 47109
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 454 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = hun country = ger }
+			control = { province = 454 data = hun }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 454 }
+	}
+}
+event = {
+	id = 47110
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 494 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = rom country = ger }
+			control = { province = 494 data = hun }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 494 }
+	}
+}
+#### ROM
+event = {
+	id = 47111
+	country = rom
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 494 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = rom country = ger }
+			control = { province = 494 data = rom } #Zrenjanin
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 494 }
+	}
+}
+event = {
+	id = 47112
+	country = rom
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 418 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = rom country = ger }
+			control = { province = 418 data = rom } #Nis
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 418 }
+	}
+}
+event = {
+	id = 47113
+	country = rom
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 493 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = rom country = ger }
+			control = { province = 493 data = rom } #Novi Sad
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 493 }
+	}
+}
+event = {
+	id = 47114
+	country = rom
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 454 type = land size = 1 }
+				not = { exists = yug }
+			}
+			alliance = { country = rom country = ger }
+			control = { province = 454 data = rom } #Osijek
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 454 }
+	}
+}
+#########################################################################
+# 47115 Greece independent (by Aregorn 060514)
+#########################################################################
+event = {
+	id = 47115
+	random = no
+	country = gre
+	persistent = yes
+
+	trigger = { 	random = 100  ai = yes not = { ai = ger }
+			or = { war = { country = eng country = ger } war = { country = usa country = ger } }
+			alliance = { country = gre country = ger }
+	}
+
+	name = "Greece pulls out of the axis"
+	desc = "The Greek people is contrary to the fascist ideology. To keep them under control it must exist a state of military occupation."
+	style = 0
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = end_puppet which = gre }
+		command = { type = leave_alliance }
+		command = { type = dissent value = -5 }
+		command = { type = peace which = eng value = 1 }
+		command = { type = peace which = sov value = 1 }
+		command = { type = end_access which = ger }
+
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 5 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+
+		command = { type = headofstate which = 18034 }
+		command = { type = headofgovernment which = 18049 }
+
+		command = { type = relation which = ger value = -100 }
+		command = { type = relation which = ita value = -50 }
+		command = { type = relation which = eng value = 100 }
+
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+	}
+}
+#########################################################################
+# 47116 Serbia independent (by Aregorn 060514)
+#########################################################################
+event = {
+	id = 47116
+	random = no
+	country = ser
+	persistent = yes
+
+	trigger = { 	random = 50  ai = yes not = { ai = ger }
+			or = { war = { country = eng country = ger } war = { country = usa country = ger } }
+			alliance = { country = ser country = ger }
+	}
+
+	name = "Serbia pulls out of the axis"
+	desc = "The Serbian people is contrary to the fascist ideology. To keep them under control it must exist a state of military occupation."
+	style = 0
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = end_puppet which = ser }
+		command = { type = leave_alliance }
+		command = { type = dissent value = -5 }
+		command = { type = peace which = eng value = 1 }
+		command = { type = peace which = sov value = 1 }
+		command = { type = end_access which = ger }
+
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+
+		command = { type = headofstate which = 547011 }
+		command = { type = headofgovernment which = 547013 }
+
+		command = { type = relation which = ger value = -100 }
+		command = { type = relation which = ita value = -50 }
+		command = { type = relation which = eng value = 100 }
+
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+	}
+}
+#########################################################################
+# 47117-18 Greek Provinces (by Aregorn 060325)
+#########################################################################
+
+### ITA
+
+event = {
+	id = 47117
+	country = ita
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 412 type = land size = 1 }
+				not = { exists = gre }
+			}
+			alliance = { country = ita country = ger }
+			control = { province = 412 data = ita } #Edessa
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 412 }
+	}
+}
+event = {
+	id = 47118
+	country = ita
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 392 type = land size = 1 }
+				not = { exists = gre }
+			}
+			alliance = { country = ita country = ger }
+			control = { province = 392 data = ita } #Ioannina
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 392 }
+	}
+}
+### BUL
+
+event = {
+	id = 47119
+	country = BUL
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 412 type = land size = 1 }
+				not = { exists = gre }
+			}
+			alliance = { country = BUL country = ger }
+			control = { province = 412 data = bul } #Edessa
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 412 }
+	}
+}
+event = {
+	id = 47120
+	country = BUL
+	random = no
+
+	trigger = {	ai = yes
+			or = {
+				garrison = { country = ger province = 411 type = land size = 1 }
+				not = { exists = gre }
+			}
+			alliance = { country = BUL country = ger }
+			control = { province = 411 data = bul } #Salonika
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 411 }
+	}
+}
+#########################################################################
+# 47121-23 Soviet Provinces (by Aregorn 060325)
+#########################################################################
+
+
+
+event = {
+	id = 47121
+	country = rom
+	random = no
+
+	trigger = {	ai = yes
+			garrison = { country = ger province = 501 type = land size = 1 }
+			alliance = { country = rom country = ger }
+			control = { province = 501 data = rom } #lvov
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 501 }
+	}
+}
+event = {
+	id = 47122
+	country = hun
+	random = no
+
+	trigger = {	ai = yes
+			garrison = { country = ger province = 501 type = land size = 1 }
+			alliance = { country = hun country = ger }
+			control = { province = 501 data = hun } #lvov
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 501 }
+	}
+}
+event = {
+	id = 47123
+	country = nor
+	random = no
+
+	trigger = {	ai = yes
+			garrison = { country = ger province = 130 type = land size = 1 }
+			alliance = { country = nor country = ger }
+			control = { province = 130 data = nor } #Rovan.
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 130 }
+	}
+}
+##############################################################################################################
+# 47124 (ROM) Romanian coup d'etat (by Aregorn 081022)
+##############################################################################################################
+
+event = {
+	id = 47124
+	random = no
+	country = ROM
+	style = 0
+
+	trigger = {	ai = yes event = 2021
+			not = { alliance = { country = rom country = ger } }
+	}
+
+	name = "Romanian coup d'etat"
+
+	date = { day = 1 month = september year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1962 }
+
+	action_a = {
+		name = "OK"
+		command = { type = set_domestic which = democratic value = -3 }
+		command = { type = set_domestic which = political_left value = -3 }
+		command = { type = domestic which = freedom value = -2 }
+		command = { type = headofstate which = 22035 }
+		command = { type = headofgovernment which = 22048 }
+		command = { type = foreignminister which = 22075 }
+		command = { type = armamentminister which = 22093 }
+		command = { type = ministerofsecurity which = 22105 }
+		command = { type = ministerofintelligence which = 22118 }
+		command = { type = chiefofstaff which = 22127 }
+		command = { type = chiefofarmy which = 22139 }
+		command = { type = chiefofnavy which = 22147 }
+		command = { type = chiefofair which = 22158 }
+		}
+}
+#########################################################################
+# 47125-27 Quizling Governments (by Aregorn 081022)
+#########################################################################
+event = {
+	id = 47125
+	random = no
+	country = ger
+
+	trigger = { 	random = 50  ai = no
+			alliance = { country = rom country = ger }
+
+			}
+
+	name = "Quizling Governments"
+	desc = "The choice of fully puppeting Romania is now in German hands"
+	style = 0
+	picture = ger_40064-65_Government1	#Steffele
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Install a Puppet"
+		ai_chance = 0
+		command = { type = make_puppet which = rom }
+	}
+	action_b = {
+		name = "We do not need a puppet"
+		ai_chance = 100
+		command = {  }
+	}
+}
+event = {
+	id = 47126
+	random = no
+	country = ger
+
+	trigger = { 	random = 50  ai = no
+			alliance = { country = hun country = ger }
+
+			}
+
+	name = "Quizling Governments"
+	desc = "The choice of fully puppeting Hungary is now in German hands"
+	style = 0
+	picture = ger_40064-65_Government1	#Steffele
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Install a Puppet"
+		ai_chance = 0
+		command = { type = make_puppet which = hun }
+	}
+	action_b = {
+		name = "We do not need a puppet"
+		ai_chance = 100
+		command = {  }
+	}
+}
+event = {
+	id = 47127
+	random = no
+	country = ger
+
+	trigger = { 	random = 50  ai = no
+			alliance = { country = bul country = ger }
+
+			}
+
+	name = "Quizling Governments"
+	desc = "The choice of fully puppeting Bulgaria is now in German hands"
+	style = 0
+	picture = ger_40064-65_Government1	#Steffele
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Install a Puppet"
+		ai_chance = 0
+		command = { type = make_puppet which = bul }
+	}
+	action_b = {
+		name = "We do not need a puppet"
+		ai_chance = 100
+		command = {  }
+	}
+}

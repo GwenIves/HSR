@@ -1,0 +1,441 @@
+name       = "1945_SCENARIO"
+panel      = "scenarios/data/scenario_doomsday.bmp"
+header =
+{ startdate        = { year = 1945 day = 1 month = october }
+  selectable       = { AFG ALB ARG AST BEL BHU BOL BRA BRU BUL CAN CHC CHI CHL CMB COL COS CUB CXB CYN CZE DEN DOM ECU ENG ETH FIN FRA GRE GUA HAI HOL HON HUN ICL IRE IRQ ITA LIB LUX MEX MON NEP NIC NOR NZL OMN PAN PAR PER PHI POL POR PRU ROM SAF SAL SAU
+		       SCH SIA SIK SOV SPA SWE TIB TUR URU USA VEN YEM YUG LEB SYR
+		     }
+  ENG              = { }
+  USA              = { }
+  SOV              = { }
+  AST              = { }
+  FRA              = { }
+  CHI              = { }
+  CHC              = { }
+  CAN              = { }
+  POL              = { }
+  ROM              = { }
+  HUN = { }
+  ITA = { }
+  ARG = { }
+  BRA = { }
+  MEX = { }
+  SPA = { }
+  NZL = { }
+  TUR = { }
+  FIN = { }
+  SWE = { }
+  set_ai_aggresive = 2
+  set_difficulty   = 2
+  set_gamespeed    = 3
+}
+globaldata =
+{ startdate = { day = 1 month = october year = 1945 }
+  axis =
+  { id          = { type = 15000 id = 2 }
+    participant = { }
+  }
+  allies =
+  { id          = { type = 15000 id = 1 }
+    participant = { USA ENG CAN AST NZL SAF FRA NEP BHU BRA MEX BOL COL COS CUB DOM SAL GUA HAI HON LIB NIC PAN ETH IRQ HOL BEL LUX GRE PHI DEN NOR ITA BRU PER LEB ECU PAR PRU URU TUR VEN ARG CHL SAU YEM OMN CMB }
+  }
+  comintern =
+  { id          = { type = 15000 id = 3 }
+    participant = { SOV MON POL CZE HUN ROM BUL YUG ALB }
+  }
+  alliance =
+  { id          = { type = 4951 id = 1 }
+    participant = { CHI CXB CYN }
+  }
+  war =
+  { id        = { type = 9430 id = 1 }
+    date      = { year = 1945 month = september day = 30 hour = 23 }
+    enddate   = { year = 1953 month = december day = 30 }
+    attackers =
+    { id          = { type = 9430 id = 2 }
+      participant = { SOV MON POL CZE HUN ROM BUL YUG ALB }
+    }
+    defenders =
+    { id          = { type = 9430 id = 3 }
+      participant = { USA ENG CAN AST NZL SAF FRA NEP BHU BRA MEX BOL COL COS CUB DOM SAL GUA HAI HON LIB NIC PAN ETH IRQ HOL BEL LUX GRE PHI DEN NOR ITA BRU PER LEB ECU PAR PRU URU TUR VEN ARG CHL SAU YEM OMN CMB }
+    }
+  }
+  war =
+  { id        = { type = 9430 id = 16 }
+    date      = { year = 1939 month = september day = 1 hour = 1 }
+    enddate   = { year = 1953 month = december day = 30 }
+    attackers =
+    { id          = { type = 9430 id = 17 }
+      participant = { CHI CYN CXB }
+    }
+    defenders =
+    { id          = { type = 9430 id = 18 }
+      participant = { CHC }
+    }
+  }
+  # ############################# 1945 ############################
+  treaty =
+  { id         = { type = 16384 id = 171 }
+    type       = non_aggression
+    country    = "ENG"
+    country    = "POR"
+    expirydate = { year = 1948 month = december day = 30 }
+    startdate  = { year = 1935 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 172 }
+    type       = non_aggression
+    country    = "ENG"
+    country    = "SAU"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 173 }
+    type       = non_aggression
+    country    = "ENG"
+    country    = "YEM"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 174 }
+    type       = non_aggression
+    country    = "ENG"
+    country    = "TUR"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 175 }
+    type       = non_aggression
+    country    = "ENG"
+    country    = "IRE"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 176 }
+    type       = non_aggression
+    country    = "SOV"
+    country    = "MON"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 178 }
+    type       = non_aggression
+    country    = "SOV"
+    country    = "CHI"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 181 }
+    type       = non_aggression
+    country    = "ARG"
+    country    = "BOL"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 182 }
+    type       = non_aggression
+    country    = "FRA"
+    country    = "TUR"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 184 }
+    type       = non_aggression
+    country    = "TUR"
+    country    = "AFG"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 186 }
+    type       = non_aggression
+    country    = "POR"
+    country    = "SPA"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 207 }
+    type       = non_aggression
+    country    = "YUG"
+    country    = "ALB"
+    startdate  = { year = 1954 month = september day = 30 }
+    expirydate = { year = 1953 month = december day = 30 }
+  }
+  # ############### AMERICAN CONFERENCE TREATIES ################
+  treaty =
+  { id         = { type = 16384 id = 187 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "ARG"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 188 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "BOL"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 189 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "BRA"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 190 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "CAN"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 191 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "CHL"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 192 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "COS"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 193 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "CUB"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 194 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "DOM"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 195 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "ECU"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 196 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "GUA"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 197 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "HAI"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 198 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "HON"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 199 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "MEX"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 200 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "NIC"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 201 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "PAN"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 202 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "PAR"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 203 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "PRU"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 204 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "SAL"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 205 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "URU"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+  treaty =
+  { id         = { type = 16384 id = 206 }
+    type       = non_aggression
+    country    = "USA"
+    country    = "VEN"
+    startdate  = { year = 1935 month = december day = 30 }
+    expirydate = { year = 1948 month = december day = 30 }
+  }
+dormant_teams = {
+	1916 # I. Yamamoto
+	}
+  enddate   = { year = 1964 month = january day = 0 }
+}
+history    = { 2000   2020   2100   2001   2030   2200   2003   2040   2201   2006   2008   2400   2009   2050   2600   2013   3001   2023   3002   3719   2023   2623   2801   2901   3400   3003   2900   2027   3601   2028   3600   3401   3402   2609
+	       3102   3721   2300   2500   3720   2902   3500   2903   3802   4100   3724   3100   3101   3709   3004   2700   3301   3200   3201   2800   2801   2018   2503   2019   2701   3900   2021   2022   3601   2604   2505   2700   4000   3803
+	       3804   2606   2607   2620   2621   3800   3701   3700   3404   3705   3711   2031   2032   2633   2634   2635   6193   1      2      3      4      5      6      17     18     19     20     21     22     23     24     25     26     27
+	       28     29     30     31     32     33     50     56     57     58     65     71     72     73     74     75     76     80     81     82     83     84     85     86     87     88     89     90     91     92     93     94     95     96
+	       97     98     300    302    320    321    322    324    325    329    338    345    346    349    301    317    336    343    348    306    308    319    323    337    351    352    353    354    355    357    358    361    362    363
+	       364    369    371    150    153    157    158    159    160    166    167    169    176    186    187    188    198    200    201    204    209    210    211    213    216    220    221    222    229    237    161    170    177    189
+	       197    199    205    206    212    214    217    223    241    151    154    155    162    171    175    178    180    185    190    224    226    230    238    244    245    246    373    11001  11003  11004  11007  11009  11010  11017
+	       11018  11019  11022  11034  11080  11083  11084  11089  11006  11008  11014  11021  11027  11028  11029  11032  11036  11044  11046  11049  11050  11054  11056  11062  11067  11068  11082  11086  11000  11002  11005  11011  11012  11013
+	       11015  11016  11020  11023  11024  11026  11030  11031  11033  11035  11041  11045  11047  11048  11051  11052  11053  11055  11057  11058  11059  11060  11061  11063  11064  11065  11066  11069  11070  11071  11072  11073  11074  11075
+	       11076  11077  11078  11079  11081  11087  11088  375    374    376    382    383    384    377    378    379    385    386    900000 900005 900007 900008 900011 900014 900017 900018 900022 900023 900026 900027 900028 900029 900038 900040
+	       900043 900046 900049 900052 900053 900003 900019 900024 900030 900031 900039 900044 900050 900001 900009 900015 900020 900032 900033 900034 900036 900041 900045 900047 900054 155    156    162    164    171    175    178    179    180
+	       182    183    190    193    196    207    215    224    226    227    228    230    231    235    242    246    247    304    305    306    308    309    316    318    330    331    333    347    365    370    377    378    379    380
+	       381    387    900006 900033 900034 900045 900051 900055 900057 413    414    900084 3424   2905   15100  15124  15117  15118  445 446
+	     }
+sleepevent = { 3713 3717 3710 2504 2702 2029 2605 2017 2016 2014 2501 2502 2506 3805 4001 4002 2015 2601 2017 2602 2603 2018 2608 2622 2904 3403 3103 3104 3707 3708 3712 3722 3723 2622 3202 3300 36 37 46 47 2624 2625 2646 2645 }
+event      = "db\events\ai_revolters.txt"
+event      = "db\events\AI_sliders.txt"
+event      = "db\events\hoi2.txt"
+event      = "db\events\death_events.txt"
+event      = "db\events\coups_hoi2.txt"
+event      = "db\events\secret_weapon_events.txt"
+event      = "db\events\doomsday_election_events.txt"
+event      = "db\events\doomsday_death_events.txt"
+event      = "db\events\doomsday_coup_events.txt"
+event      = "db\events\doomsday_AI.txt"
+
+# Victory points distribution
+include = "scenarios\1945\vp.inc"
+
+# Include files for each country tag used in the scenario
+include = "scenarios\1945\afg.inc"
+include = "scenarios\1945\alb.inc"
+include = "scenarios\1945\arg.inc"
+include = "scenarios\1945\ast.inc"
+include = "scenarios\1945\bel.inc"
+include = "scenarios\1945\bhu.inc"
+include = "scenarios\1945\bol.inc"
+include = "scenarios\1945\bra.inc"
+include = "scenarios\1945\bru.inc"
+include = "scenarios\1945\bul.inc"
+include = "scenarios\1945\can.inc"
+include = "scenarios\1945\chc.inc"
+include = "scenarios\1945\chi.inc"
+include = "scenarios\1945\chl.inc"
+include = "scenarios\1945\cmb.inc"
+include = "scenarios\1945\col.inc"
+include = "scenarios\1945\cos.inc"
+include = "scenarios\1945\cub.inc"
+include = "scenarios\1945\cxb.inc"
+include = "scenarios\1945\cyn.inc"
+include = "scenarios\1945\cze.inc"
+include = "scenarios\1945\den.inc"
+include = "scenarios\1945\dom.inc"
+include = "scenarios\1945\ecu.inc"
+include = "scenarios\1945\eng.inc"
+include = "scenarios\1945\eth.inc"
+include = "scenarios\1945\fin.inc"
+include = "scenarios\1945\fra.inc"
+include = "scenarios\1945\gre.inc"
+include = "scenarios\1945\gua.inc"
+include = "scenarios\1945\hai.inc"
+include = "scenarios\1945\hol.inc"
+include = "scenarios\1945\hon.inc"
+include = "scenarios\1945\hun.inc"
+include = "scenarios\1945\icl.inc"
+include = "scenarios\1945\ire.inc"
+include = "scenarios\1945\irq.inc"
+include = "scenarios\1945\ita.inc"
+include = "scenarios\1945\leb.inc"
+include = "scenarios\1945\lib.inc"
+include = "scenarios\1945\lux.inc"
+include = "scenarios\1945\mex.inc"
+include = "scenarios\1945\mon.inc"
+include = "scenarios\1945\nep.inc"
+include = "scenarios\1945\nic.inc"
+include = "scenarios\1945\nor.inc"
+include = "scenarios\1945\nzl.inc"
+include = "scenarios\1945\omn.inc"
+include = "scenarios\1945\pan.inc"
+include = "scenarios\1945\par.inc"
+include = "scenarios\1945\per.inc"
+include = "scenarios\1945\phi.inc"
+include = "scenarios\1945\pol.inc"
+include = "scenarios\1945\por.inc"
+include = "scenarios\1945\pru.inc"
+include = "scenarios\1945\rom.inc"
+include = "scenarios\1945\saf.inc"
+include = "scenarios\1945\sal.inc"
+include = "scenarios\1945\sau.inc"
+include = "scenarios\1945\sch.inc"
+include = "scenarios\1945\sia.inc"
+include = "scenarios\1945\sik.inc"
+include = "scenarios\1945\sov.inc"
+include = "scenarios\1945\spa.inc"
+include = "scenarios\1945\swe.inc"
+include = "scenarios\1945\syr.inc"
+include = "scenarios\1945\tib.inc"
+include = "scenarios\1945\tur.inc"
+include = "scenarios\1945\uru.inc"
+include = "scenarios\1945\usa.inc"
+include = "scenarios\1945\ven.inc"
+include = "scenarios\1945\yem.inc"
+include = "scenarios\1945\yug.inc"

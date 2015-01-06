@@ -1,0 +1,1350 @@
+#		command = { type = domestic which = defense_lobby value = 1 }
+#		command = { type = domestic which = professional_army value = -1 }
+
+
+#
+# AI Domestic Sliders events (id 12000-XXXXXX)
+#
+#
+#########################################################################
+
+
+#
+# USA events - interventionism + hawk lobby (12000-12012)
+#
+#
+################################################
+
+event = {
+	id = 12000
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12002
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+
+
+event = {
+	id = 12004
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+
+event = {
+	id = 12006
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+
+event = {
+	id = 12008
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+
+
+
+event = {
+	id = 12010
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12011
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1942 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+event = {
+	id = 12012
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1943 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+
+event = {
+	id = 12300
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1628  data = JAP } # Batavia
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12301
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1457  data = JAP } # Calcutta
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12302
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1353  data = JAP } # Singapore
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12303
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1315  data = JAP } # Hong Kong
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12304
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1679  data = JAP } # Port Moresby
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12305
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1703  data = JAP } # Darwin
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12306
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1372  data = JAP } # Vladivostok
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12307
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			control = { province = 1871  data = JAP } # Wellington
+			NOT = {
+				war = { country = USA country = JAP }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12308
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+			NOT = {
+				control = { province = 19  data = ENG } # London
+				war = { country = USA country = GER }
+				war = { country = USA country = ENG }
+				war = { country = USA country = SOV }
+			}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 1 month = january year = 1949 }
+
+
+	action_a = {
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12309
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+		ai = yes
+		}
+
+
+	action_a = {
+		command = { type = domestic which = interventionism value = -1 }
+	}
+
+}
+event = {
+	id = 12310
+	random = no
+	country = USA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+
+	trigger = {
+		ai = yes
+		}
+
+
+	action_a = {
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+#
+# UK events - interventionism + hawk lobby (12013-12018)
+#
+# 2 interventionism adjustments
+# 2 hawk lobby adjustments
+# 2 drafted army adjustments
+#
+################################################
+
+event = {
+	id = 12013
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12014
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12015
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12016
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12017
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+
+event = {
+	id = 12018
+	random = no
+	country = ENG
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+
+#
+# USSR events - interventionism (12019-12020)
+#
+# 2 interventionism adjustments
+#
+################################################
+
+event = {
+	id = 12019
+	random = no
+	country = SOV
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12020
+	random = no
+	country = SOV
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+#
+# GER events  (12024-12030 + 12050)
+#
+# 1 closed society adjustments
+# 2 free market adjustments
+# 4 drafted army adjustments
+#
+################################################
+
+event = {
+	id = 12024
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = freedom value = -1 }
+	}
+
+}
+
+event = {
+	id = 12025
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = free_market value = -1 }
+	}
+
+}
+
+event = {
+	id = 12026
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12027
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = 1 }
+	}
+
+}
+
+event = {
+	id = 12028
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12029
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = 1 }
+	}
+
+}
+
+event = {
+	id = 12030
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1942 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = free_market value = -1 }
+	}
+
+}
+
+event = {
+	id = 12050
+	random = no
+	country = GER
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1943 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = 1 }
+	}
+
+}
+
+#
+# ITA events (12031-12037)
+#
+# 3 hawk lobby adjustments
+# 2 free market adjustments
+# 2 interventionism adjustments
+#
+################################################
+
+event = {
+	id = 12031
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12032
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12033
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12034
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12035
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12036
+	random = no
+	country = ITA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = free_market value = -1 }
+	}
+
+}
+
+
+#
+# JAP events (12038-12043)
+#
+# 2 hawk lobby adjustments
+# 2 free market adjustments
+# 1 interventionism adjustment
+# 1 closed society adjustment
+#
+################################################
+
+event = {
+	id = 12038
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = free_market value = -1 }
+	}
+
+}
+
+event = {
+	id = 12039
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = free_market value = -1 }
+	}
+
+}
+
+event = {
+	id = 12040
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = freedom value = -1 }
+	}
+
+}
+
+
+event = {
+	id = 12041
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12042
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12043
+	random = no
+	country = JAP
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1941 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+
+#
+# FRA events (12044-12048)
+#
+# 2 hawk lobby adjustments
+# 2 drafted army adjustments
+# 1 interventionism adjustment
+#
+#
+################################################
+
+event = {
+	id = 12044
+	random = no
+	country = FRA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1936 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+event = {
+	id = 12045
+	random = no
+	country = FRA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 1 month = january year = 1937 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = interventionism value = 1 }
+	}
+
+}
+
+event = {
+	id = 12046
+	random = no
+	country = FRA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1938 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+
+}
+
+
+event = {
+	id = 12047
+	random = no
+	country = FRA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1939 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+event = {
+	id = 12048
+	random = no
+	country = FRA
+
+	name = AI_event
+	desc = AI_event
+	style = 0
+
+	trigger = {
+			ai = yes
+	}
+
+	date = { day = 2 month = january year = 1940 }
+
+
+	action_a = {
+		name = "OK"
+		command = { type = domestic which = professional_army value = -1 }
+	}
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+#
+# By Aregorn for HSR
+#
+# Airmod by Dec152000
+#
+
+front = {
+	enemy_handicap = {
+	}
+	passivity = {
+		CHC = 50
+		CXB = 50
+	}
+}

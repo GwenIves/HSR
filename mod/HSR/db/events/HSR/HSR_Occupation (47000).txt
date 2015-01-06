@@ -1,0 +1,1776 @@
+# Aregorn_Occupation: Events considering German occupation events (64).
+#
+# ID		Title						Author
+#
+# 47000-01 	Occupation Poland 				(by Aregorn 050211)
+# 47002-03 	Occupation Norway 				(by Aregorn 050211)
+# 47004-05 	Occupation the Benelux 				(by Aregorn 050211)
+# 47006-07 	Occupation Yugoslavia 				(by Aregorn 050211)
+# 47008-09	Occupation Greece 				(by Aregorn 050211)
+# 47010-12 	Occupation France 				(by Aregorn 050211)
+# 47013-26 	Capture of Soviet cities 			(by Bandit, coding corrected by Aregorn and some new cities added)
+# 47028-30 	Yugoslavian Partisans 				(by Dec152000 & Aregorn)
+# 47031-37 	War Attrition 					(by Aregorn 051203)
+# 47038		Occupation Spain				(by Aregorn 051203)
+# 47039 	Occupation Turkey 				(by Aregorn 051203)
+# 47042-62 	Chinese Collaborationist Armies 		(by Syntax & Aregorn 060322)
+# 47063 	War Attrition - Ita-Alb 			(by Aregorn 051203)
+
+#########################################################################
+#  47000-01 Occupation Poland  (by Aregorn 050211)
+#########################################################################
+
+
+event = {
+	id = 47000
+	country = GER
+	random = no
+	picture = 47000_Occupation_Poland	#Aregorn
+
+	trigger = { 	random = 50 event = 2018
+			or = { 	and = { NOT = { exists = pol } control = { province = 485 data = ger } }
+				puppet = { country = pol country = ger } }
+	}
+
+	name = "Annexation of Poland"
+	desc = "After an outstanding victory, Germany formally annexes western Poland, Danzig and the Polish Corridor. This adds the new districts of Posen, Greater East Prussia and Danzig West Prussia to the Reich.(Historical 1/11/39)"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -10 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = sleepevent which = 47031 }
+	}
+}
+event = {
+	id = 47001
+	country = GER
+	random = no
+	picture = automedon
+
+	trigger = { random = 50 event = 47000 	}
+
+	name = "Polish captured equipment"
+	desc = "Tons of material, transport vessels and some valuable assets are now at the Reich's disposition"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 10 }
+		command = { type = supplies value = 3000 }
+		command = { type = money value = 100 }
+	}
+}
+#########################################################################
+#  47002-03 Occupation Norway (by Aregorn 050211)
+#########################################################################
+
+
+event = {
+	id = 47002
+	country = GER
+	random = no
+	picture = german_stratec_victory
+
+	trigger = { 	random = 50 event = 40064
+			or = { 	and = { NOT = { exists = nor } control = { province = 107 data = ger } }
+				puppet = { country = nor country = ger } }
+
+			}
+
+	name = "Norway is now part of the Axis"
+	desc = "The last elements of the Norwegian army surrendered to Germany (Historical 10/6/40)"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
+}
+event = {
+	id = 47003
+	country = GER
+	random = no
+	picture = automedon
+
+	trigger = { random = 50 event = 47002 	}
+
+	name = "Norwegian captured equipment"
+	desc = "Tons of material and part of the second biggest merchant fleet in the world are now at the Reich's disposition. All merchant ships outside Norway at the time of surrender (~90% of the fleet) joined the allies though"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 40 }
+		command = { type = add_corps which = "Norwegian transport fleet" value = naval where = 107 }
+		command = { type = add_division value = transport }
+		command = { type = supplies value = 1000 }
+		command = { type = money value = 100 }
+
+	}
+}
+#########################################################################
+#  47004-05 Occupation the Benelux (by Aregorn 050211)
+#########################################################################
+
+
+event = {
+	id = 47004
+	country = GER
+	random = no
+	picture = german_stratec_victory
+
+	trigger = { 	random = 50 event = 40452 event = 40453
+			control = { province = 47 data = ger }
+			control = { province = 51 data = ger }
+			control = { province = 71 data = ger }
+			}
+
+	name = "The Benelux is now part of the Axis"
+	desc = "Continental Benelux is now in German hands after the surrender of the Belgium army (Historical 28/5/40)"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+		command = { type = province_revoltrisk which = 91 value = -44 }
+		command = { type = province_revoltrisk which = 92 value = -44 }
+		command = { type = province_revoltrisk which = 292 value = -44 }
+		command = { type = province_revoltrisk which = 293 value = -44 }
+		command = { type = province_revoltrisk which = 294 value = -44 }
+		command = { type = province_revoltrisk which = 295 value = -44 }
+		command = { type = province_revoltrisk which = 800 value = -44 }
+		command = { type = province_revoltrisk which = 1 which = -44 }
+		command = { type = province_revoltrisk which = 2 value = -44 }
+	}
+}
+event = {
+	id = 47005
+	country = GER
+	random = no
+	picture = automedon
+
+	trigger = { random = 50 event = 47004 	}
+
+	name = "Benelux captured equipment"
+	desc = "Tons of material and an important merchant fleet are now at the Reich's disposition"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 20 }
+		command = { type = supplies value = 3000 }
+		command = { type = money value = 200 }
+
+	}
+}
+#########################################################################
+#  47006-07 Occupation Yugoslavia (by Aregorn 050211)
+#########################################################################
+
+
+event = {
+	id = 47006
+	random = no
+	picture = german_stratec_victory
+
+	trigger = { 	random = 50
+			or = {
+				and = { country = GER control = { province = 53 data = ger }  }
+				and = { country = ita control = { province = 53 data = ita }  }
+			}
+			not = { exists = yug }
+	}
+
+	name = "Yugoslavia is now part of the Axis"
+	desc = "The Yugoslavian Army capitulates (Historical 17/4/41)"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great news!"
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = sleepevent which = 47033 }
+	}
+}
+event = {
+	id = 47007
+	random = no
+	picture = automedon
+
+	trigger = { random = 50 event = 47006
+			or = {
+				and = { country = GER control = { province = 53 data = ger }  }
+				and = { country = ita control = { province = 53 data = ita }  }
+			}
+	}
+
+	name = "Yugoslavian captured equipment"
+	desc = "Tons of material are now at the Reich's disposition"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 5 }
+		command = { type = supplies value = 1000 }
+		command = { type = money value = 100 }
+	}
+}
+#########################################################################
+#  47008-09 Occupation Greece (by Aregorn 050211)
+#########################################################################
+
+
+event = {
+	id = 47008
+	random = no
+	picture = 47008_victory_over_greece	#by Mosquito
+
+	trigger = { 	random = 50
+			not = { exists = gre }
+			or = {
+				and = { country = GER control = { province = 401 data = ger }  }
+				and = { country = ita control = { province = 401 data = ita }  }
+			}
+	}
+
+	name = "Greece surrendered"
+	desc = "Greece fall in Axis hands with a total of 223.000 Greek and 22.000 British prisoners (Historical 30/4/41)"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great news!"
+		command = { type = dissent value = -5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = sleepevent which = 47034 }
+	}
+}
+event = {
+	id = 47009
+	random = no
+	picture = automedon
+
+	trigger = { event = 47008
+			or = {
+				and = { country = GER control = { province = 401 data = ger }  }
+				and = { country = ita control = { province = 401 data = ita }  }
+			}
+	}
+
+	name = "Greek captured equipment"
+	desc = "Tons of material and an important merchant fleet are now at the Reich's disposition"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 20 }
+		command = { type = supplies value = 1000 }
+		command = { type = add_corps which = "Greek transport fleet" value = naval where = 401 }
+		command = { type = add_division value = transport }
+		command = { type = money value = 100 }
+	}
+}
+#########################################################################
+#  47010-12 Occupation France (by Aregorn 050211)
+#########################################################################
+event = {
+	id = 47010
+	country = GER
+	random = no
+
+	trigger = { 	not = { or = { war = { country = spa country = ger } war = { country = spr country = ger }}}
+			event = 2021 or = { exists = vic lost_VP = { country = fra value = 62 }	}
+			not = { event = 47012 }
+			}
+
+	name = "France has been defeated"
+	desc = "Against all predictions France is now under German control leaving the British as the only European power holding against Germany. The War end seems near."
+	style = 0
+	picture = 47010_fra_occupation	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -10 }
+	}
+}
+event = {
+	id = 47011
+	country = GER
+	random = no
+	picture = automedon
+
+	trigger = { event = 2021 random = 50 or = { event = 47010 event = 47012 } }
+
+	name = "Captured equipment from the defeated French"
+	desc = "Tons of material and an important merchant fleet are now at the Reich's disposition"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = transport_pool which = ger value = 10 }
+		command = { type = supplies value = 10000 }
+		command = { type = add_corps which = "French transport fleet Calais" value = naval where = 38 }
+		command = { type = add_division value = transport }
+		command = { type = add_corps which = "French transport fleet Brest" value = naval where = 32 }
+		command = { type = add_division value = transport }
+		command = { type = money value = 100 }
+		command = { type = sleepevent which = 47032 }
+	}
+}
+event = {
+	id = 47012
+	country = GER
+	random = no
+
+	trigger = { 	or = { war = { country = spa country = ger } war = { country = spr country = ger }}
+			event = 2021 or = { exists = vic lost_VP = { country = fra value = 62 }	}
+			not = { event = 47010 }
+			}
+
+	name = "France has been defeated"
+	desc = "Against all predictions France is now under German control. Now also Spain will need to be defeated though and history shows that even when military conquered the Spaniards were still a tough bone to swallow."
+	style = 0
+	picture = 47010_fra_occupation	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -1 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+###########################################################################
+#  47013-20 Capture of Soviet cities (by Bandit, coding corrected by Aregorn)
+###########################################################################
+###########################################################################
+#Kiev
+###########################################################################
+
+event = {
+id = 47013
+country = GER
+random = no
+
+trigger = { control = { province = 238 data = ger } }
+
+name = "Capture of Kiev"
+desc = "After an outstanding victory, Germany captures Kiev in one of the greatest encircle-destruction battles in history. Diverted from Moscow, Guderian's march south took the Russians by surprise. On September 16 the encirclement was complete as Stalin would not allow any withdrawal. After five days of resistance according to Germans sources some 665,000 men surrendered."
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+
+event = {
+id = 47014
+country = GER
+random = no
+
+trigger = { event = 47013 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+command = { type = add_division value = motorized where = sp_artillery }
+command = { type = supplies value = 3000 where = 238 }
+command = { type = money value = 100 }
+command = { type = manpowerpool value = -10 }
+
+}
+}
+
+#########################################################################
+# Minsk captured
+#########################################################################
+
+
+event = {
+id = 47015
+country = GER
+random = no
+
+trigger = { control = { province = 212 data = ger }
+}
+
+name = "Capture of Minsk"
+desc = "Army Group Centre was the strongest of the three German formations. Commanded by Field Marshal Fedor von Bock, it included the 4th and 9th Army, the 2nd and 3rd Panzer Groups and the 2nd Air Fleet. By mid-August 1941 it had crushed Soviet forces in huge encirclement battles. In the Battle of Minsk The Wehrmacht captured over 300,000 Soviet prisoners."
+style = 0
+picture = ger_47014_minsk2
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+#####
+event = {
+id = 47016
+country = GER
+random = no
+
+trigger = { event = 47015 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+picture = ger_47014_minsk2
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+command = { type = add_division value = motorized where = sp_artillery }
+command = { type = supplies value = 3000 where = 212 }
+command = { type = money value = 100 }
+command = { type = manpowerpool value = -10 }
+
+}
+}
+
+#########################################################################
+# Smolensk captured
+#########################################################################
+
+
+event = {
+id = 47017
+country = GER
+random = no
+
+trigger = { control = { province = 219 data = ger }
+}
+
+name = "Capture of Smolensk"
+desc = "Having driven the Soviet forces out of Byelorussia by July 1st, the German command was confident that it could complete the breakthrough to Moscow. German armoured divisions of Army Group Centre began an offensive on July 10 to encircle Soviet forces in the Smolensk area. The Resistance was so strong that not only some troops managed to brake out of the pocket but most importantly it delayed the overall German advance toward Moscow by two months."
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+event = {
+id = 47018
+country = GER
+random = no
+
+trigger = { event = 47017 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+command = { type = add_division value = motorized where = sp_artillery }
+command = { type = supplies value = 3000 where = 219 }
+command = { type = money value = 100 }
+command = { type = manpowerpool value = -10 }
+
+}
+}
+
+#########################################################################
+# Sevastopol captured
+#########################################################################
+
+
+event = {
+id = 47019
+country = GER
+random = no
+
+trigger = { 	or = { 	control = { province = 253 data = ger }
+			and = {  control = { province = 253 data = ukr }
+				alliance = { country = ukr country = ger }
+			}
+		}
+}
+
+name = "Capture of Sevastopol"
+desc = "In late September, 1941, Erich von Manstein's Eleventh Army from Army Group South began the siege of Sevastopol. By the 16th of November they had captured all of the peninsula other than the ancient port of Sevastopol, on the southern tip. The garrison at Sevastopol was made up of about 106,000 soldiers and sailors. Using their largest artillery piece, the 31.5 inch gun Gustav Gerat 'Big Dora' the Germans reduced Soviet fortifications and on the 4th of July 1942, Sevastopol was secured."
+
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+event = {
+id = 47020
+country = GER
+random = no
+
+trigger = { event = 47019 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+picture = occu_47018_sevasto1	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+ command = { type = supplies value = 3000 where = 253 }
+command = { type = money value = 100 }
+
+}
+}
+#########################################################################
+# 47021 Baku oil Fields (by Aregorn 050101)
+#########################################################################
+
+event = {
+	id = 47021
+	country = GER
+	random = no
+
+	trigger = { control = { province = 1907 data = ger }
+			war = { country = GER country = sov }	}
+
+	name = "Baku oil Fields"
+	desc = "The strategic oil fields has been captured together with important oil stocks ready to be delivered by oleoduct to Russia."
+	style = 0
+
+	date = { day = 20 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great news"
+		command = { type = oilpool value = 5000 where = 1907 }
+		command = { type = dissent value = -5 }
+	}
+}
+#########################################################################
+# Stalingrad captured
+#########################################################################
+
+
+event = {
+id = 47022
+country = GER
+random = no
+
+trigger = { control = { province = 163 data = ger }
+}
+
+name = "Capture of Stalingrad"
+desc = "."
+picture = occu_47016_smolensk2	#Steffele
+
+style = 0
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+event = {
+id = 47023
+country = GER
+random = no
+
+trigger = { event = 47022 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+ command = { type = supplies value = 3000 where = 163 }
+command = { type = money value = 100 }
+
+}
+}
+#########################################################################
+# Leningrad captured
+#########################################################################
+
+
+event = {
+id = 47024
+country = GER
+random = no
+
+trigger = { control = { province = 187 data = ger }
+}
+
+name = "Capture of Leningrad"
+desc = "."
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+event = {
+id = 47025
+country = GER
+random = no
+
+trigger = { event = 47024 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+ command = { type = supplies value = 5000 where = 187 }
+command = { type = money value = 500 }
+
+}
+}
+#########################################################################
+# Moscow captured
+#########################################################################
+
+
+event = {
+id = 47026
+country = GER
+random = no
+
+trigger = { control = { province = 175 data = ger }
+}
+
+name = "Capture of Moscow"
+desc = "."
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 2
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Germany seems to be unstopable."
+command = { type = dissent value = -5 }
+}
+}
+event = {
+id = 47027
+country = GER
+random = no
+
+trigger = { event = 47026 random = 25 }
+
+name = "Soviet captured equipment"
+desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+style = 0
+picture = occu_47016_smolensk2	#Steffele
+
+date = { day = 1 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Great!"
+ command = { type = supplies value = 10000 where = 175 }
+command = { type = money value = 1000 }
+
+}
+}
+#########################################################################
+# 47028-30 Yugoslavian Partisans (by Dec152000 & Aregorn)
+#########################################################################
+
+event = {
+	id = 47028
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 10
+			control = { province = 453 data = ger } #Belgrade
+			war = { country = GER country = sov } war = { country = GER country = usa }
+			event = 47006 or = { event = 40304 event = 40316 }
+			}
+
+	name = "Partisan Activity in the former Yugoslavia"
+	desc = "12. Armee reports an increase of partisan activity in the Balkans."
+	style = 0
+	picture = partisan_revolt
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We must crush them"
+		command = { type = province_revoltrisk which = 382 value = 2 }
+		command = { type = province_revoltrisk which = 383 value = 2 }
+		command = { type = province_revoltrisk which = 387 value = 2 }
+		command = { type = province_revoltrisk which = 385 value = 2 }
+		command = { type = province_revoltrisk which = 386 value = 2 }
+		command = { type = province_revoltrisk which = 414 value = 2 }
+		command = { type = province_revoltrisk which = 418 value = 2 }
+		command = { type = province_revoltrisk which = 452 value = 2 }
+		command = { type = province_revoltrisk which = 451 value = 2 }
+		command = { type = province_revoltrisk which = 415 value = 2 }
+		command = { type = province_revoltrisk which = 413 value = 2 }
+		command = { type = trigger which = 47029 }
+	}
+}
+event = {
+	id = 47029
+	country = sov
+	random = no
+
+	name = "Tito increased his fight"
+	desc = "Reports from Tito's partisans in Yugoslavia claim major disruptions in German supply lines."
+	style = 0
+	picture = partisan_revolt
+
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+event = {
+	id = 47030
+	country = ger
+	random = no
+
+	trigger = { 	event = 47029 random = 25
+			not = { war = { country = GER country = sov } }
+			}
+
+	name = "Partisan Activity in the former Yugoslavia"
+	desc = "Reports from Tito's partisans claim major disruptions in German supply lines."
+	style = 0
+	picture = partisan_revolt
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = sleepevent which = 47028 }
+	}
+}
+#########################################################################
+# 47031-37 War Attrition (by Aregorn 051203)
+#########################################################################
+
+event = {
+	id = 47031
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = GER country = pol }
+			}
+
+	name = "War against Poland"
+	desc = "The War against the Polish is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47032
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no  war = { country = GER country = bel }
+			war = { country = GER country = Fra } not = { event = 2021 }
+			}
+
+	name = "War against France"
+	desc = "The War against the French is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47033
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = GER country = yug }
+			}
+
+	name = "War against Yugoslavia "
+	desc = "The War against Yugoslavia is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47034
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = GER country = gre }
+			or = {
+				control = { province = 401 data = ger }
+				control = { province = 402 data = ger }
+				control = { province = 403 data = ger }
+				control = { province = 412 data = ger }
+				control = { province = 410 data = ger }
+				control = { province = 411 data = ger }
+				control = { province = 392 data = ger }
+
+			}
+	}
+	name = "War against Greece"
+	desc = "The War against the Greeks is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47035
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = GER country = spa }
+			}
+
+	name = "War against Spain"
+	desc = "The War against the Spanish is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47036
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = GER country = tur }
+			}
+
+	name = "War against Turkey"
+	desc = "The War against the Turkish is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+event = {
+	id = 47037
+	country = GER
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			or = {
+			war = { country = GER country = bul }
+			war = { country = GER country = hun }
+			war = { country = GER country = rom }
+			}
+	}
+	name = "War in the Balkans"
+	desc = "The War in the Balkans is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that the only chance to win the war is to rapidely implement Blitzkrieg. Germany will not be able as was the case in WWI to support a war of attrition . Military operations when invading a country should always keep this in mind."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}
+#########################################################################
+#  47038 Occupation Spain (by Aregorn 051203)
+#########################################################################
+event = {
+	id = 47038
+	country = GER
+	random = no
+
+	trigger = { 	or = { war = { country = spa country = ger } war = { country = spr country = ger }}
+			or = { and = { NOT = { exists = spa } NOT = { exists = spr } control = { province = 341 data = ger } }
+				puppet = { country = spa country = ger } }
+				puppet = { country = spr country = ger } }
+			}
+	}
+
+	name = "Spain has been defeated"
+	desc = "The last elements of the Spanish army surrendered to Germany"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+		command = { type = sleepevent which = 47035 }
+	}
+}
+#########################################################################
+#  47039 Occupation Turkey (by Aregorn 051203)
+#########################################################################
+event = {
+	id = 47039
+	country = GER
+	random = no
+
+	trigger = { 	war = { country = tur country = ger }
+			or = {
+				and = {
+					NOT = { exists = tur }
+					control = { province = 448 data = ger }
+				}
+				puppet = { country = tur country = ger }
+			}
+	}
+
+	name = "Spain has been defeated"
+	desc = "The last elements of the Spanish army surrendered to Germany"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+		command = { type = sleepevent which = 47036 }
+	}
+}
+#########################################################################
+#  47042-61 Chinese Collaborationist Armies (by Syntax & Aregorn 060322)
+#########################################################################
+event = {
+	id = 47042
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1205 data = jap } #beiping
+			war = { country = jap country = chi }
+			and = {	month = 9 day = 10 not = { day = 11 } not = { month = 10 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Beiping Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = add_corps value = land where = 1205 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = supplies value = -700 }
+		command = { type = metalpool value = 100 }
+		command = { type = energypool value = 300 }
+		command = { type = rarematerialspool value = 100 }
+	}
+}
+event = {
+	id = 47043
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1225 data = jap } #Taiyuan
+			war = { country = jap country = chi }
+			and = {	month = 9 day = 20 not = { day = 21 } not = { month = 10 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Taiyuan Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1225 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 600 }
+		command = { type = energypool value = 1100 }
+		command = { type = rarematerialspool value = 400 }
+	}
+}
+event = {
+	id = 47044
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1216 data = jap } #Jinan
+			war = { country = jap country = chi }
+			and = {	month = 10 day = 10 not = { day = 11 } not = { month = 11 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+
+	name = "Jinan Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -1050 }
+		command = { type = add_corps value = land where = 1216 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 1000 }
+		command = { type = energypool value = 300 }
+		command = { type = rarematerialspool value = 100 }
+	}
+}
+event = {
+	id = 47045
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1269 data = jap } #Xi'an
+			war = { country = jap country = chi }
+			and = {	month = 10 day = 20 not = { day = 21 } not = { month = 11 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Xi'an Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1269 }
+		command = { type = add_division value = militia where = police }
+		command = { type = energypool value = 1000 }
+	}
+}
+event = {
+	id = 47046
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1360 data = jap } #chengdu
+			war = { country = jap country = chi }
+			and = {	month = 1 day = 10 not = { day = 11 } not = { month = 2 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Chengdu Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1360 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 300 }
+		command = { type = energypool value = 700 }
+		command = { type = rarematerialspool value = 300 }
+	}
+}
+event = {
+	id = 47047
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1364 data = jap } #guiyang
+			war = { country = jap country = chi }
+			and = {	month = 1 day = 20 not = { day = 21 } not = { month = 2 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Guiyang Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1364 }
+		command = { type = add_division value = militia where = police }
+		command = { type = energypool value = 900 }
+	}
+}
+event = {
+	id = 47048
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1228 data = jap } #zhengzhou
+			war = { country = jap country = chi }
+			and = {	month = 1 day = 25 not = { day = 26 } not = { month = 2 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Zhengzhou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1228 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 1500 }
+		command = { type = energypool value = 500 }
+		command = { type = rarematerialspool value = 200 }
+	}
+}
+event = {
+	id = 47049
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1232 data = jap } #hankou
+			war = { country = jap country = chi }
+			and = {	month = 2 day = 10 not = { day = 11 } not = { month = 3 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Hankou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1232 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 700 }
+		command = { type = energypool value = 200 }
+	}
+}
+event = {
+	id = 47050
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1253 data = jap } #wuchang
+			war = { country = jap country = chi }
+			and = {	month = 2 day = 20 not = { day = 21 } not = { month = 3 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Wuchang Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1253 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 100 }
+		command = { type = energypool value = 200 }
+		command = { type = rarematerialspool value = 200 }
+	}
+}
+event = {
+	id = 47051
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1255 data = jap } #Changsha
+			war = { country = jap country = chi }
+			and = {	month = 2 day = 25 not = { day = 26 } not = { month = 3 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Changsha Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1255 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 200 }
+		command = { type = energypool value = 300 }
+		command = { type = rarematerialspool value = 200 }
+	}
+}
+event = {
+	id = 47052
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1251 data = jap } #Nanchang
+			war = { country = jap country = chi }
+			and = {	month = 3 day = 10 not = { day = 11 } not = { month = 4 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Nanchang Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1251 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 200 }
+		command = { type = energypool value = 500 }
+		command = { type = rarematerialspool value = 200 }
+	}
+}
+event = {
+	id = 47053
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1244 data = jap } #Fuzhou
+			war = { country = jap country = chi }
+			and = {	month = 3 day = 20 not = { day = 21 } not = { month = 4 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Fuzhou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1244 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 100 }
+		command = { type = energypool value = 100 }
+	}
+}
+event = {
+	id = 47054
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1221 data = jap } #Hefei
+			war = { country = jap country = chi }
+			and = {	month = 3 day = 25 not = { day = 26 } not = { month = 4 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Hefei Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1221 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 200 }
+		command = { type = energypool value = 300 }
+		command = { type = rarematerialspool value = 200 }
+	}
+}
+event = {
+	id = 47055
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1237 data = jap } #Shanghai
+			war = { country = jap country = chi }
+			and = {	month = 4 day = 10 not = { day = 11 } not = { month = 5 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Shanghai Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1237 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 100 }
+		command = { type = energypool value = 200 }
+	}
+}
+event = {
+	id = 47056
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1236 data = jap } #Suzhou
+			war = { country = jap country = chi }
+			and = {	month = 4 day = 20 not = { day = 21 } not = { month = 5 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Suzhou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1236 }
+		command = { type = add_division value = militia where = police }
+	}
+}
+event = {
+	id = 47057
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1235 data = jap } #Nanjing
+			war = { country = jap country = chi }
+			and = {	month = 4 day = 25 not = { day = 26 } not = { month = 5 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Nanjing Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1235 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 1200 }
+		command = { type = energypool value = 2700 }
+		command = { type = rarematerialspool value = 1000 }
+	}
+}
+event = {
+	id = 47058
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1313 data = jap } #Guangzhou
+			war = { country = jap country = chi }
+			and = {	month = 5 day = 10 not = { day = 11 } not = { month = 6 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Guangzhou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1313 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 700 }
+		command = { type = energypool value = 1300 }
+		command = { type = rarematerialspool value = 400 }
+	}
+}
+event = {
+	id = 47059
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1258 data = jap } #Guilin
+			war = { country = jap country = chi }
+			and = {	month = 5 day = 20 not = { day = 21 } not = { month = 6 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Guilin Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1258 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 500 }
+		command = { type = energypool value = 1000 }
+		command = { type = rarematerialspool value = 400 }
+	}
+}
+event = {
+	id = 47060
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1319 data = jap } #Nanning
+			war = { country = jap country = chi }
+			and = {	month = 5 day = 25 not = { day = 26 } not = { month = 6 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Nanning Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -350 }
+		command = { type = add_corps value = land where = 1319 }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 100 }
+		command = { type = energypool value = 300 }
+	}
+}
+event = {
+	id = 47061
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1307 data = jap } #Kunming
+			war = { country = jap country = chi }
+			and = {	month = 6 day = 10 not = { day = 11 } not = { month = 7 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Kunming Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1307 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 600 }
+		command = { type = energypool value = 1100 }
+		command = { type = rarematerialspool value = 400 }
+	}
+}
+event = {
+	id = 47062
+	country = jap
+	random = no
+	persistent = yes
+
+	trigger = { 	control = { province = 1238 data = jap }
+			war = { country = jap country = chi }
+			and = {	month = 7 day = 10 not = { day = 11 } not = { month = 8 } }
+			or = { ai = no not = { ai = chi }  }
+	}
+
+	name = "Hangzhou Collaborators"
+	desc = "Depending the sources between 1 and 2 million Chinese souls helped Japan in its Asian war efforts."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "A new collaborationist Army is ready."
+		command = { type = supplies value = -700 }
+		command = { type = add_corps value = land where = 1238 }
+		command = { type = add_division value = militia where = police }
+		command = { type = add_division value = militia where = police }
+		command = { type = metalpool value = 400 }
+		command = { type = energypool value = 900 }
+		command = { type = rarematerialspool value = 400 }
+	}
+}
+#########################################################################
+# 47063 War Attrition - Ita-Alb (by Aregorn 051203)
+#########################################################################
+
+event = {
+	id = 47063
+	country = ita
+	random = no
+	persistent = yes
+
+	trigger = { 	random = 25 ai = no
+			war = { country = ita country = alb }
+			}
+
+	name = "War against Poland"
+	desc = "The War against the Albanians is requiring additional efforts from the War industry and the military. The high command requested a rapid succesful conclusion of hostilities and reminded that to secure victory a fast campaign will need to be implemented."
+	style = 0
+	picture = german_reinforcment_5
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = dissent value = 1 }
+		command = { type = manpowerpool value = -2 }
+	}
+}

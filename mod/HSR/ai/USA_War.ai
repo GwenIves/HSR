@@ -1,0 +1,206 @@
+#
+# By Aregorn for HSR
+#
+# Tech Airmod by Dec152000
+#
+
+neutrality = 100.000
+
+combat = {
+	GER = 30
+	JAP = 20
+	ITA = 10
+}
+###################################
+# Construction and Tech Research
+###################################
+construction = {
+	max_factor = 0.00
+
+	AA_batteries = no
+	max_AA_level = 8
+	AA_provs		= { 1624 663 889 1756 1766 662 1786 1408 1762 895 553 } # Guam, Pearl Harbor, Colon, Palmyra, Johnson Is., Midway, Wake, Attu, Phoenix Island, Puerto Rico, Juneau
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs	= { 1624 663 889 1756 1766 662 1786 1408 1762 895 553 } # Guam, Pearl Harbor, Colon, Palmyra, Johnson Is., Midway, Wake, Attu, Phoenix Island, Puerto Rico, Juneau
+
+	radar_station = no
+	max_radar = 8
+	radar_provs		= { 1624 889 1756 1766 662 1786 1408 1762 895 553 } # Guam, Colon, Palmyra, Johnson Is., Midway, Wake, Attu, Phoenix Island, Puerto Rico, Juneau
+
+	air_base = no
+	max_air_base = 8
+	air_base_provs		= { 1624 889 1756 1766 662 1786 1408 1762 895 553 } # Guam, Colon, Palmyra, Johnson Is., Midway, Wake, Attu, Phoenix Island, Puerto Rico, Juneau
+
+	naval_base = no
+	max_naval_base = 8
+	naval_base_provs	= { 1624 889 1756 1766 662 1786 1408 1762 895 553 } # Guam, Colon, Palmyra, Johnson Is., Midway, Wake, Attu, Phoenix Island, Puerto Rico, Juneau
+
+	land_fort = no
+	max_land_level = 1
+	fort_borders = { }
+
+	ic_at_war = no
+	force_ic_until = 1939
+	ic_end_year = 1940
+	IC_provs = { }
+}
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 600
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 3
+	cavalry 	= 0
+	motorized 	= 5
+	mechanized 	= 10
+	light_armor 	= 0
+	armor 		= 10
+	paratrooper 	= 1
+	marine 		= 5
+	bergsjaeger 	= 1
+	garrison	= 0
+	hq 		= 5
+	militia 	= 0
+#				40 %
+
+	interceptor 	= 5
+	multi_role 	= 5
+	escort 		= 0
+	cas 		= 0
+	strategic_bomber = 13
+	tactical_bomber	= 4
+	naval_bomber 	= 1
+	transport_plane = 2
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#				30 %
+
+	battleship 	= 3
+	carrier 	= 6
+	destroyer 	= 6
+	light_cruiser 	= 3
+	heavy_cruiser 	= 2
+	battlecruiser 	= 1
+	submarine 	= 4
+	transports 	= 5
+#				30  %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 0
+	rocket_artillery	= 0
+	sp_rct_artillery 	= 5
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 0
+	heavy_armor 		= 0
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 0
+	engineer 		= 95
+
+	cag = 100.000
+}
+technology = {
+	endgoal 	= { }
+	preference 	= {
+		# Arcriculture
+		5020 5030 5040
+
+		# Refining
+		5190 5200 5210
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Motorized
+		1230 1240 1250
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5140 5150 5160
+
+		# Strategic bombers
+		4220 4230 4240
+
+		# Escort/Multirole Fighters
+		4040 4050 4070 4080 4100 4110
+
+		# Naval Bomber
+		4190 4200 4210
+
+		# Tactical Bomber
+		4130 4140 4150 4160
+
+		# Computers
+		5320 5330 5340 7140 7150 7160
+
+		# Aircraft Carriers
+		3330 3340 3350 3360 3370
+
+		# Battleships
+		3280 3290
+
+		# Naval Doctrines
+		8060 8180 8160 8320
+
+		# Air Doctrines
+		9140 9090 9110 9120 9130 9190 9180 9210 9430 9350 9310 9450 9460 9330
+
+		# Atomic Research
+		5470 5480 5490 5500 5510 5520 5530 5540 7170 7180 7190
+
+	}
+	ignore 		= {
+
+		# Test and Research
+		5580 5590
+
+		# Refining
+		5220 5230 5240
+
+		# Flying Bomb & Rockets
+		7100 7110 7120 7130
+
+		# Rocket Assembly
+		5170
+
+		# Battle Cruiser
+		3240
+
+		# Super Heavy BB
+		3310
+
+		# SP Rocket Artillery
+		2260 2270 2280
+
+		# Rocket Artillery
+		2370 2380 2390
+
+		# Land Doctrines
+		6100
+	}
+
+	armor 		= 3
+	infantry 	= 3
+	industry 	= 4
+	aircraft 	= 3
+	naval 		= 4
+	land_doctrines 	= 2
+	secret_weapons 	= 4
+	air_doctrines 	= 2
+	naval_doctrines = 3
+}

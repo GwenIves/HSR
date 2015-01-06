@@ -1,0 +1,157 @@
+#
+# By Aregorn for HSR
+#
+
+###################################
+# Diplomacy
+###################################
+befriend = {
+	ROM = 80
+	BUL = 70
+	HUN = 80
+	YUG = 40
+	SPA = 20
+	ITA = 80
+	SWE = 10
+	FIN = 60
+	JAP = 60
+	TUR = 10
+}
+technology = {
+	endgoal 	= { }
+	preference 	= {
+
+		# Infantry
+		1040 1050 1060
+
+		# Motorized
+		1230 1240 1250
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Light tanks
+		2020 2030 2040 2050 2060
+
+		# Medium tanks
+		2070 2080 2090
+
+		# Heavy Tanks
+		2100 210 2120 2130 2140
+
+		# SP Rocket Artillery (Elite)
+		2260 2270 2280
+
+		# Submarines
+		3400 3410 3420 3430 3440 3450
+
+		# Interceptor 36, 37, 43
+		4020 4030 4090
+
+		# MR Fighter 40
+		4070
+
+		# Tactical Bomber 40
+		4150
+
+		# CAS 43
+		4180
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5180
+
+		# Computers
+		5320 5330 5340
+
+		# Encryption
+		5350 5370 5390
+
+		# Refining
+		5190 5200 5210 5220 5230 5240
+
+		# Test and Research
+		5550 5560 5570 5580 5590
+
+		# Land Doctrine
+		6270 6280
+
+		# Rocket & Jet Interceptors
+		7010 7020 7030 7040
+
+		# Flying Bomb & Rockets
+		7100 7110 7120 7130
+
+		# Jet MR fighter
+		7280 7290
+
+		# Naval Doctrines
+		8090 8210 8280 8290 8300
+
+		# Air Doctrines
+		9090 9050 9060 9110 9080 9130 9190 9230 9220 9250 9350 9270 9390 9350 9270 9310 9360 9410 9330
+
+	}
+	ignore 		= {
+
+		# Airborne 1070 1080
+		1090 1100
+
+		# Marines 1150
+		1160 1170 1180
+
+		# Battle Cruiser
+		3230 3240
+
+		# Battleship
+		3300 3310
+
+		# Carrier 3320 3330
+		3350 3360 3370 3380 3390
+
+		# Strategic bombers
+		4230 4240
+
+		# Air Transports 4250
+		4260 4270
+
+		# Air Doctrines
+		9430
+	}
+
+	armor 		= 6
+	infantry 	= 5
+	industry 	= 5
+	aircraft 	= 6
+	naval 		= 1
+	land_doctrines 	= 5
+	secret_weapons 	= 3
+	air_doctrines 	= 4
+	naval_doctrines = 2
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 0.9
+	min_attack_odds		= 0.6
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.5
+
+	enemy_handicap = { }
+	passivity = { }
+}

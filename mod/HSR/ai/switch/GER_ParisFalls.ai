@@ -1,0 +1,122 @@
+#
+# by Aregorn for HSR
+#
+
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 20
+	cavalry 	= 0
+	motorized 	= 6
+	mechanized 	= 3
+	light_armor 	= 4
+	armor 		= 8
+	paratrooper 	= 1
+	marine 		= 0
+	bergsjaeger 	= 2
+	garrison	= 10
+	hq 		= 5
+	militia 	= 0
+#			59 %
+	interceptor 		= 5
+	multi_role 		= 3
+	escort 			= 3
+	cas 			= 3
+	strategic_bomber 	= 0
+	tactical_bomber 	= 5
+	naval_bomber 		= 1
+	transport_plane 	= 1
+	flying_bomb 		= 0
+	flying_rocket 		= 0
+#				21 %
+	battleship 	= 1
+	carrier 	= 0
+	destroyer 	= 5
+	light_cruiser 	= 3
+	heavy_cruiser 	= 2
+	battlecruiser 	= 0
+	submarine 	= 6
+	transports 	= 3
+#			20 %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 5
+	rocket_artillery	= 5
+	sp_rct_artillery 	= 0
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 5
+	heavy_armor 		= 0
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 0
+	engineer 		= 85
+
+	cag = 100.000
+}
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.5
+	revolt_risk_mult	= 0.3
+
+
+	# PRIORITIES:
+	beach			= 30	# Beach level 2
+	capital			= 20	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 10	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		VIC = -1
+		TUR = -1
+		SPA = -1
+		SWI = -1
+		USA = 60
+		SOV = 50
+		ENG = 50
+	}
+	province_priorities = {
+		315 = 100
+		314 = 100
+		74  = 100
+		75  = 100
+		66  = 100
+		76  = 100
+		77  = 100
+		48  = 100
+		47  = 100
+		45  = -100 # Ghent
+		18  = -100 # Calais
+		42  = -100 # Dieppe
+		41  = -100 # Le Havre
+		39  = -100 # Caen
+		33  = -100 # Rennes
+		32  = -100 # Brest
+		34  = -100 # Lorient
+		35  = -100 # Nantes
+		59  = -100 # Cholet
+		325 = -100 # Bordeaux
+		326 = -100 # Dax
+	}
+	area_multiplier = { }
+}

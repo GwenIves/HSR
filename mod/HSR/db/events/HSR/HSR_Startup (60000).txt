@@ -1,0 +1,3299 @@
+# Aregorn_Startup: General starting up Events (179)
+#
+# ID		Title						Author
+#
+# 60000		Welcome message					(by Aregorn 050202)
+# 60001		Start up notification				(by Aregorn 050202)
+# 60002		HSR house rules					(by Aregorn 050506)
+
+# 50011-50099	Airmod Axis					(by Dec152000) (corrected all development programmes by Aregorn)
+# 49010-49099   Airmod Allied					(by Dec152000) (corrected all development programmes by Aregorn)
+
+#########################################################################
+# 60000 Start up notification (by Aregorn 050202)
+#########################################################################
+event = {
+	id = 60000
+	random = no
+	trigger = { ai = no }
+
+	name = "The Historical Stony Road to War v2.11 ARM"
+	desc = "Welcome to the Historical Stony Road to War mod. The goal of this project is to upgrade HOI 2, as we did in the past with HOI 1, to a WW2 realistic simulation. Please visit the stony forum  at www.stonyroad.de and let us know your comments, the good ones and most importantly the bad ones. Remember that this mod will only improve with the combined effort of the community. Thanks to all for the constant support and mod contributions.
+			.
+Aregorn"
+	style = 0
+	picture = 50000_startup
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+# 60001 Start up notification (by Aregorn 050202)
+#########################################################################
+event = {
+	id = 60001
+	trigger = { ai = no }
+	name = "The Historical Stony Road to War v2.11 ARM"
+	desc =	"HSR Management:
+		Aregorn (HSR Manager and Lead Scripter)
+		Nighty (www.stonyroad.de Manager)
+		Feanor (Forum manager)
+				.
+		HSR Past Contributors:
+		Adam5743,Ashberry,Bandit,Bolt,Coppernicus,Dec152000,
+		Flecktarn,Generalissimo,Gigzoid,Greg,Hannibal,Hartmann,
+		Jared Torval,Jpekar,Justin,Kronoss,LeFigaro,MD,MDIE,
+		Mosquito,Moxs602,PhilK,Scharlemanje,Tjaja,Trygvasson and all the SR forum."
+
+	style = 0
+	picture = 50000_startup
+
+	date = { day = 3 month = januar year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+# 60002 HSR house rules (by Aregorn 050506)
+#########################################################################
+event = {
+	id = 60002
+	trigger = { ai = no }
+	name = "HSR 2.11 house rules"
+	desc ="
+		1. Do not assume military control of your allies
+		2. Do not give attachments to event given expeditionary forces
+		3. Do not give provinces to countries that do not have a claim on them (exploit)
+		4. Choose a land doctrine path at the start and do not change it anymore during the game (serius Bug-exploit)
+		5. Max supported IC in each province is x3 the manpower on that province"
+
+	style = 0
+	picture = 50000_startup
+
+	date = { day = 10 month = januar year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "I will use the house rules"
+		command = { type = dissent value = -2 }
+	}
+	action_b = {
+		name = "I want the additional advantage despite the temporal penalty"
+		command = { type = dissent value = 5 }
+	}
+}
+#############################################################
+#
+#   GERMANY
+#
+#############################################################
+# 50011 Bf.109C Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50011
+country = GER
+random = no
+
+trigger = { technology = 4010 }
+
+
+name = "Bf.109C Development Program"
+desc = "The origin of the Bf.109 program began in the summer of 1934 in response to a RLM request for a monoplane interceptor to replace the He.51 biplane.  Willy Messerschmitt took the excellent features of the Bf.108 Taifun as a basis and created the smallest possible structure compatible with the most powerful engine then available.  In September 1935 the first prototype of the Bf.109 took to the air and in 1936 it was selected over the He.112 for series production."
+style = 0
+picture = 50011_bf109c_1 #Steffele
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4020 }
+}
+}
+#############################################################
+# 50012 He.111H Development Program (by Dec152000 050713) (Corrected by Aregorn)
+#############################################################
+event = {
+id = 50012
+country = GER
+random = no
+
+trigger = { event = 40002 technology = 4130 not = { technology = 4140 } }
+
+
+name = "He.111H Development Program"
+desc = "The He.111 was initially conceived as a commercial aircraft and was perhaps the best representative of the deceptive rearmament policy carried out by Germany.  The first effective bomber variant (the He.111b) entered service in late 1936 an in February 1937, approximately 30 were assigned to the Condor Legion where they completed operational testing.  The results of these tests allowed rapid improvement and the definitive He.111H entered production in 1938."
+style = 0
+picture = 50012_he111_1 #Steffele
+
+date = { day = 0 month = january year = 1938 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4140 }
+
+}
+}
+#############################################################
+# 50013 Bf.109E Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50013
+country = GER
+random = no
+
+trigger = { technology = 4020 not = { technology = 4030 }}
+
+
+name = "Bf.109E Development Program"
+desc = "Messerschmitt continued to develop the Bf.109 during the late 1930s.  The availability of the new DB 601A engine, with 1100 HP resulted in a vastly superior machine.  The Emil was 70 kph faster than the Bf.109C and carried 2 machine guns plus 2 20mm cannons for improved firepower."
+
+style = 0
+picture = 50013_bf109e_1	#Steffele
+
+date = { day = 0 month = january year = 1938 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4030 }
+
+}
+}
+#############################################################
+# 50014 FW.200C Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50014
+country = GER
+random = no
+
+trigger = { technology = 4130 not = { technology = 4190 } }
+
+
+name = "FW.200C Development Program"
+desc = "As war approached, the Luftwaffe was devoid of any long range naval bomber. The RLM turned to the civilian Fw.200B long range transport to fill the gap.  Relatively few modifications were required to make the FW.200C an extremely effective naval bomber and the Kondor earned the title 'Scourge of the Atlantic' due to it's deadly attacks."
+style = 0
+picture = 50014_fw200c	#Steffele
+
+date = { day = 1 month = july year = 1939 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4190 }
+}
+}
+#############################################################
+# 50015 Bf.190F Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50015
+country = GER
+random = no
+
+trigger = { technology = 4030 not = { technology = 4040 } }
+
+
+name = "Bf.109F Development Program"
+desc = "The continuing evolution of the Bf.109 resulted in the Franz entering production in 1940.  The basic airframe was careful redesigned to reduce drag, which markedly improved top speed.  They were considered by many to be the most brilliant aircraft of the series."
+style = 0
+picture = 50015_bf109f_1	#Steffele
+
+date = { day = 0 month = january year = 1940 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4040 }
+}
+}
+#############################################################
+# 50016 Ju.87D Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50016
+country = GER
+random = no
+
+trigger = { technology = 4170 not = { technology = 4280 } }
+
+
+name = "Ju.87D Development Program"
+desc = "Operational results with the Ju.87B aided in designing the vastly improved Ju-87D.  After an exhaustive review, the aircraft was greatly improved from an aerodynamic perspective and the bomb load was almost trebled.  Other improvements included better armor for the crew and improved defensive armament.  The Ju.87D was a highly regarded tank killer."
+style = 0
+picture = 50016_ju87	#Steffele
+
+date = { day = 0 month = january year = 1940 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4280 }
+}
+}
+#############################################################
+# 50017 Bf.109G Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50017
+country = GER
+random = no
+
+trigger = { technology = 4040 not = { technology = 4060 } }
+
+
+name = "Bf.109G Development Program"
+desc = "Starting from the improved design of the Bf.109F, the G version addressed the main weakness of the previous model: the lack of firepower.  The aircraft was now fitted with a pair of heavy machine guns along with it's 20mm cannon and the improved horsepower of the new DB605 engine allowed the higher weight with no loss of speed."
+style = 0
+picture = 50015_bf109f_1	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4060 }
+}
+}
+#############################################################
+# 50018 Do.217K-2 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50018
+country = GER
+random = no
+
+trigger = { technology = 4190 not = { technology = 4200 } }
+
+
+name = "Do.217K-2 Development Program"
+desc = "The FW.200C had proven to be an effective naval bomber.  However, it was less robust than a military design and had limited potential for further improvement.  The RLM decided to modify the Do.217 bomber (a contemporary of the He.111, and itself derived from the Do.17 bomber) for the anti-shipping role.  The Do.217 was able to carry a large bomb load and the K series aircraft were modified to launch Hs.293 and Fritz X radio guided missiles to great effect."
+style = 0
+picture = 50018_do217_1	#Steffele
+
+date = { day = 0 month = january year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4200 }
+}
+}
+#############################################################
+# 50019 FW.190F Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50019
+country = GER
+random = no
+
+trigger = { technology = 4070 not = { technology = 4180 } }
+
+
+name = "FW.190F Development Program"
+desc = "With the decline of the Stuka, the Luftwaffe was in need of a new CAS aircraft.  The idea to use the Fw.190 in a tactical support role soon took root and design work commenced in 1942.  The FW.190F retained the basic airframe of the Fw.190A and was easily produced for it's new role as it only differed in finishing details.  These aircraft could carry approximately 500 kg of ordinance and were armed with 2 20mm cannons and 2 machine guns."
+style = 0
+picture = 50019_fw190_2	#Steffele
+
+date = { day = 0 month = january year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4180 }
+}
+}
+#############################################################
+# 50020 Bf.110G Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50020
+country = GER
+random = no
+
+trigger = { technology = 4050 not = { technology = 4080 } }
+
+
+name = "Bf.110G Development Program"
+desc = "The failure of the Me.210 project resulted in the resumption of Bf.110 production in 1942.  The new version was equipped with the new DB 605 engine.  A wide array of armament could be carried by the Bf.110G and it's effectiveness was enhanced by the airborne Lichtenstein radar.  It was primarily used as a bomber destroyer, where it was widely feared.  Maj Heinz-Wolfgang Schnaufer scored 121 kills while flying the Bf.110 G-4 in defence of the Reich."
+style = 0
+picture = 50020_bf110g	#Steffele
+
+date = { day = 0 month = january year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4080 }
+}
+}
+#############################################################
+# 50021 Ju.188 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50021
+country = GER
+random = no
+
+trigger = { technology = 4150 not = { technology = 4160 } }
+
+
+name = "Ju.188 Development Program"
+desc = "Immediately after the introduction of the Ju.88 work was initiated to improve upon it.  The idea was to give the Ju.88 a more aerodynamic shape.  The Ju.188 featured higher power Junkers or BMW engines along with a number of aerodynamic improvements including a fully redesigned nose section and wings that were 20% longer than the original model.  This allowed the  bomb load to be increased to 3000 kg while improving overall performance."
+style = 0
+picture = 50021_ju188	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4160 }
+}
+}
+#############################################################
+# 50022 Bf.109K Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50022
+country = GER
+random = no
+
+trigger = { technology = 4060 not = { technology = 4090 } }
+
+
+name = "Bf.109K Development Program"
+desc = "This was the last production version of the venerable Bf.109.  It was very similar to the Gustav, with some aerodynamic improvements and a high power DB 605ASCM engine capable of driving the aircraft to over 725 kph.  Armament was also heavier, with a 30mm cannon installed for engaging heavy bombers."
+style = 0
+picture = 50022_bf109k	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#############################################################
+# 50023 Ju.88G Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50023
+country = GER
+random = no
+
+trigger = { technology = 4150 not = { technology = 4110 } }
+
+
+name = "Ju.88G Development Program"
+desc = "Earlier models of the Ju.88 had served alongside the Bf.110G as night fighters but had only been partially successful.  The G model was a vast improvement, with stronger engines and larger tail surfaces to compensate for the increasingly heavy armament.  Two 20 mm cannons were installed on the back of the aircraft for engaging targets from below (schrage musik), while 4 cannons fired forward."
+style = 0
+picture = 50023_ju88g	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4110 }
+}
+}
+
+#############################################################
+# 50024 FW.190D Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50024
+country = GER
+random = no
+
+trigger = { technology = 4070 not = { technology = 4100 }}
+
+
+name = "FW.190D Development Program"
+desc = "Kurt Tank first tested an inline engine on the FW-190 in 1942 and eventually convinced the RLM to authorize full scale production of the FW.190D in 1943.  The shift to the 1700 hp Jumo 213 produced a remarkable improvement in performance.  The FW-190D was now far more capable of fighting at high altitude, plus manuverability and top speed were improved as well."
+style = 0
+picture = 50024_fw190d	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4100 }
+}
+}
+#############################################################
+# 50025 Ju.188A-3 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50025
+country = GER
+random = no
+
+trigger = { technology = 4160 not = { technology = 4210 }}
+
+
+name = "Ju.188A-3 Development Program"
+desc = "The naval bomber variant of the Ju-188, which could carry torpedoes.  Very few were built."
+style = 0
+
+date = { day = 0 month = january year = 1944 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4210 }
+}
+}
+#############################################################
+#50026 IAR 80 Component Sale to Romania (by Dec152000 050727)
+#############################################################
+event = {
+id = 50026
+country = ger
+random = no
+persistent = yes
+
+trigger = { random = 30
+	    supplies = 1000
+	    NOT = { war = { country = ger country = rom }}}
+
+
+name = "IAR 80 Component Sale to Romania"
+desc = "Based on the Polish P.24E, the Romanians developed the IAR 80. Although it was built in Romania, many components had to be imported, a fact that made Romania dependant on Germany after the defeat of France and delayed the development of the plane. The first squadrons did not become operational with the new plane before April of 1941. The IAR 80 first saw combat during the conquest of Transnistria against Russia a few months afterwards."
+style = 0
+picture = 50026_iar80	#Steffele
+
+date = { day = 0 month = january year = 1940 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1940 }
+
+	action_a = {
+		name = "Offer the components"
+		ai_chance = 98
+		command = { type = supplies value = -500 }
+		command = { type = money value = 100 }
+		command = { type = relation which = rom value = 20 }
+		command = { type = trigger which = 50071 } # rom
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = rom value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Romanians to buy our equipment ever"
+		ai_chance = 1
+		command = { type = relation which = rom value = -10 }
+		command = { type = sleepevent which = 50026 }
+
+}
+}
+#############################################################
+#50027 Do.17K Technology Sale to Yugoslavia (by Dec152000 050805)
+#############################################################
+event = {
+id = 50027
+country = ger
+random = no
+persistent = yes
+
+trigger = { random = 30
+	    NOT = { war = { country = ger country = yug }}
+}
+name = "Do.17K Technology Sale to Yugoslavia"
+desc = "Impressed by the top speed of the German prototype of the Do 17M presented in Zürich in 1937, the Yugoslavs bought licence rights. The gave it another engine and other weaponry. They had 70 of them in April of 1941 when the country was invaded."
+style = 0
+picture = 50027_do17k	#Steffele
+
+date = { day = 1 month = august year = 1937 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1938 }
+
+	action_a = {
+		name = "Offer the production license"
+		ai_chance = 98
+		command = { type = relation which = yug value = 20 }
+		command = { type = money value = 100 }
+		command = { type = trigger which = 50028 } # yug
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = yug value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Yugoslavians to buy military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = yug value = -10 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepevent which = 50027 }
+
+}
+}
+#########################################################################
+#  50028 Do.17K Technology Purchase  (by Dec152000 050805)
+#########################################################################
+event = {
+	id = 50028
+	random = no
+	country = yug
+
+	# Triggered by ger 50027
+
+	name = "Do.17K Technology Purchase"
+	desc = "Impressed by the top speed of the German prototype of the Do 17M presented in Zürich in 1937, the Yugoslavs bought licence rights. Drazavna Fabrika Aviona produced the aircraft with another engine and other weaponry. They had 70 of them in April of 1941 when the country was invaded."
+	style = 0
+	picture = 50027_do17k	#Steffele
+
+
+	action_a = {
+		name = "We need the German design."
+		ai_chance = 98
+		command = { type = gain_tech which = 4130 }
+		command = { type = money value = -100 }
+		command = { type = sleepevent which = 50027 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need technology from the Germans"
+		ai_chance = 1
+		command = { type = sleepevent which = 50027 }
+	}
+}
+#############################################################
+#50029 D.520 Capture (by Dec152000 050805)
+#############################################################
+event = {
+id = 50029
+country = ger
+random = no
+
+	trigger = { event = 50 random = 30 }
+
+	name = "D.520 Capture"
+	desc = "Following the collapse of the Vichy regime the Germans captured over 400 of the D.520 fighters.  These aircraft no longer represented front line aircraft for the Luftwaffe, but were still capable aircraft.  Historically, Germany provided 120 of these aircraft to Bulgaria and 60 to Italy, while using the rest as advanced trainers."
+	style = 0
+	picture = 50029_d520_1 #Steffele
+
+	date = { day = 0 month = january year = 1942 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1948 }
+
+	action_a = {
+		name = "Keep all of the aircraft for the Luftwaffe"
+		ai_chance = 1
+		command = { type = add_division value = multi_role }
+		command = { type = add_division value = multi_role }
+		command = { type = add_division value = multi_role }
+		command = { type = add_division value = multi_role }
+		command = { type = manpowerpool value = -4 }
+	}
+	action_b = {
+		name = "Divide the aircraft historically"
+		ai_chance = 99
+		command = { type = add_division value = multi_role }
+		command = { type = add_division value = multi_role }
+		command = { type = manpowerpool value = -2 }
+		command = { type = relation which = ita value = 5 }
+		command = { type = relation which = bul value = 10 }
+		command = { type = trigger which = 50030 } # bul
+		command = { type = trigger which = 50031 } # ita
+	}
+}
+#########################################################################
+#  50030 Bulgaria Receives D.520 Aircraft (by Dec152000 050805)
+#########################################################################
+event = {
+	id = 50030
+	random = no
+	country = bul
+
+	# Triggered by 50029 ger
+
+	name = "Bulgaria Receives D.520 Aircraft"
+	desc = "Following the collapse of the Vichy regime the Germans captured over 400 of the D.520 fighters.  These aircraft no longer represented front line aircraft for the Luftwaffe, but were still capable aircraft.  Historically, Germany provided 120 of these aircraft to Bulgaria."
+
+	style = 0
+	picture = 50029_d520_1 #Steffele
+
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = add_division value = multi_role }
+		command = { type = manpowerpool value = -1 }
+	}
+
+}
+#########################################################################
+#  50031 Italy Receives D.520 Aircraft  (by Dec152000 050805)
+#########################################################################
+event = {
+	id = 50031
+	random = no
+	country = hun
+
+	# Triggered by ita 50047
+
+	name = "Italy Receives D.520 Aircraft"
+	desc = "Following the collapse of the Vichy regime the Germans captured over 400 of the D.520 fighters.  These aircraft no longer represented front line aircraft for the Luftwaffe, but were still capable aircraft.  Historically, Germany provided 60 of these aircraft to Italy."
+	style = 0
+	picture = 50029_d520_1 #Steffele
+
+
+	action_a = {
+		name = "Excellent"
+		command = { type = activate_division which = 23500 value = 207  where = 370}
+	}
+}
+#############################################################
+#50032 Jet & Rocket Aircraft Technology to Japan (by Dec152000 050810)
+#############################################################
+event = {
+id = 50032
+country = ger
+random = no
+persistent = yes
+
+trigger = { random = 30
+	    event = 40704
+	    technology = 7280
+	    technology = 7010
+	    NOT = { war = { country = ger country = jap }}
+	    war = { country = usa country = jap }
+}
+name = "Jet & Rocket Aircraft Technology to Japan"
+desc = "The Japanese military attaché is impressed by the performance of the new German rocket and jet fighter prototypes.  He has requested that Japan be provided the new technology and promises they will use the new super weapon against the Americans."
+style = 0
+picture = 50032_me262	#Steffele
+
+date = { day = 0 month = january year = 1944 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the technology"
+		ai_chance = 98
+		command = { type = relation which = jap value = 5 }
+		command = { type = trigger which = 50066 } # jap
+	}
+	action_b = {
+		name = "Do not allow them access now"
+		ai_chance = 1
+		command = { type = relation which = jap value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Japanese to have these secrets ever"
+		ai_chance = 1
+		command = { type = relation which = jap value = -10 }
+		command = { type = sleepevent which = 50032 }
+}
+}
+#############################################################
+#
+#   ITALY
+#
+#############################################################
+# 50040 SM.79-I Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50040
+country = ita
+random = no
+
+trigger = { technology = 4120 not = { technology = 4130 } }
+
+
+name = "SM.79-I Development Program"
+desc = "The SM.79-I's orgins go back to 1934 when Alessandro Marchetti decided to develop a more modern derivative of the SM.91 bomber.  Major improvements included more powerful engines, improved aerodynamics and retractable landing gear.  The prototype broke a number of world speed records and military interest followed quickly.  Series production commenced in October 1936 and they first saw action during the Spanish Civil War."
+style = 0
+picture = 50040_sm79-1_2
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4130 }
+}
+}
+#############################################################
+# 50041 SM.79-II Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50041
+country = ita
+random = no
+
+trigger = { technology = 4130 not = { technology = 4190 }}
+
+
+name = "SM.79-II Development Program"
+desc = "Following service in Spain, SIAI-Marchetti made several upgrades to the SM-79 to develop the -II model.  One of the most significant was the provision for the carriage of two torpedoes.  Many consider it to be the best land based torpedo bomber of WW2."
+style = 0
+picture = 50041+50046_sm79-1_2
+
+date = { day = 0 month = january year = 1938 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4190 }
+}
+}
+#############################################################
+# 50042 MC.205V Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50042
+country = ita
+random = no
+
+trigger = { technology = 4060 not = { technology = 4090 }}
+
+
+name = "MC.205V Development Program"
+desc = "The Veltro was the logical evolution of the Folgore, taking over it's airframe and adopting the newer DB605 engine.  The result was a remarkable plane, fast, manuverable and well armed.  Production was initiated immediately after the test of the prototype in 1942."
+style = 0
+picture = 50042_mc205_2
+
+date = { day = 1 month = july year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#############################################################
+# 50043 SM.89 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50043
+country = ita
+random = no
+
+trigger = { technology = 4200 not = { technology = 4180 }}
+
+
+name = "SM.89 Development Program"
+desc = "The SM.89 was derived from the SM.84 torpedo-bomber.  A powerful 37mm cannon was installed to provide offensive punch plus aerodynamic and engine improvements resulted in better performance. The prototype was assigned for operational testing in mid 1943."
+style = 0
+picture = 50043_sm89
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4180 }
+}
+}
+#############################################################
+# 50044 SM.92 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50044
+country = ita
+random = no
+
+trigger = { technology = 4080 not = { technology = 4110 }}
+
+
+name = "SM.92 Development Program"
+desc = "The SM.92 was a further development of the SM.91 heavy fighter.  Both of these aircraft bore a striking resemblance to the Lockheed P-38."
+style = 0
+picture = 50044_sm92
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4110 }
+}
+}
+#############################################################
+# 50045 SM.82 Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 50045
+country = ita
+random = no
+
+trigger = { technology = 4250 not = { technology = 4260 }}
+
+
+name = "SM.82 Development Program"
+desc = "The SM.82 was a development of the SM.75 commercial transport adapted to meet the colonial needs of the army in Africa and first flew on February 5, 1940.  Major modifications included more internal space and larger tires for unimproved landing strip capability.  The aircraft was capable of transporting 40 passengers and also could be used as a very long range bomber against lightly defended targets."
+style = 0
+picture = 50045_sm82_1
+
+date = { day = 1 month = july year = 1939 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4260 }
+}
+}
+#############################################################
+# 50046  SM.79-II Deployment (by Dec152000 050728)
+#############################################################
+event = {
+id = 50046
+country = ita
+random = no
+persistent = yes
+
+trigger = { technology = 4190
+}
+
+name = "SM.79-II Deployment"
+desc = "The most significant upgrade to the SM.79 was the addition of provisions for the carriage of two torpedoes.  This turned the medium bomber into a world-class naval bomber that many consider to be the best land based torpedo bomber of WW2.  You now have the option of retraining three wings to use the new weapons in support of the Regia Marina."
+
+style = 0
+picture = 50041+50046_sm79-1_2
+
+date = { day = 0 month = january year = 1938 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+		name = "Train the pilots for making torpedo attacks"
+		ai_chance = 100
+		command = { type = remove_division which = "3a Div. Bombardieri 'Centauro'" value = ita }
+		command = { type = remove_division which = "5a Div. Bombardieri 'Eolo'" value = ita }
+		command = { type = remove_division which = "10a Div. Bombardieri 'Marte'" value = ita }
+		command = { type = add_division which =  "3a Div. Bomb. di Navale" value = naval_bomber when = 5 }
+		command = { type = add_division which =  "5a Div. Bomb. di Navale" value = naval_bomber when = 5 }
+		command = { type = add_division which =  "10a Div. Bomb. di Navale" value = naval_bomber when = 5 }
+		command = { type = sleepevent which = 50046 }
+	}
+action_b = {
+		name = "We can not risk converting at this time, but maybe later."
+		ai_chance = 0
+		command = { }
+	}
+	action_c = {
+		name = "We do not need airplanes to support the RM"
+		ai_chance = 0
+		command = { type = sleepevent which = 50046 }
+	}
+}
+#############################################################
+#50047 Re.2000 Technology & Aircraft Sale to Hungary (by Dec152000 050804)
+#############################################################
+event = {
+id = 50047
+country = ita
+random = no
+persistent = yes
+
+trigger = { random = 50
+			atwar = no
+			war = { country = GER country = eng}
+			not = { war = { country = hun country = eng } }
+
+}
+name = "Re.2000 Technology & Aircraft Sale to Hungary"
+desc = "The Re.2000 was the first fighter developed by Reggiane.  During comparative trials against the MC.200, the Re.2000 proved to be as maneuvrable and a little faster. But the Saetta was already in production and the authorities were reluctant to put in production planes with "wet wings" (wings turned into fuel tank).  Most units were exported, 60 to Sweden and 100 to Hungary (where they were renamed Heja M and further built under licence)."
+style = 0
+picture = 50047-48re-2000_2
+
+date = { day = 0 month = january year = 1940 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1940 }
+
+	action_a = {
+		name = "Offer the aircraft & production license"
+		ai_chance = 98
+		command = { type = relation which = hun value = 5 }
+		command = { type = trigger which = 50048 } # hun
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = hun value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Hungarians to buy military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = hun value = -10 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepevent which = 50047 }
+
+}
+}
+#########################################################################
+#  50048 Re.2000 Heja M Technology & Aircraft Purchase  (by Dec152000 050804)
+#########################################################################
+event = {
+	id = 50048
+	random = no
+	country = hun
+
+	# Triggered by ita 50047
+
+	name = "Re.2000 Heja M Technology & Aircraft Purchase"
+	desc = "The Re.2000 was the first fighter developed by Reggiane.  During comparative trials against the MC.200, the Re.2000 proved to be as maneuvrable and a little faster. But the Saetta was already in production and the authorities were reluctant to put in production planes with "wet wings" (wings turned into fuel tank).  Most units were exported, 60 to Sweden and 100 to Hungary (where they were renamed Heja M and further built under licence)."
+	style = 0
+	picture = 50047-48re-2000_2
+
+
+	action_a = {
+		name = "We need the Italian design and aircraft."
+		ai_chance = 98
+		command = { type = gain_tech which = 4030 }
+		command = { type = activate_division which = 20500 value = 16  where = 457}
+		command = { type = money value = -1000 }
+		command = { type = supplies value = -500 }
+		command = { type = sleepevent which = 50047 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need technology from the Italians"
+		ai_chance = 1
+		command = { type = sleepevent which = 50047 }
+		command = { type = sleepevent which = 50049 }
+	}
+}
+#########################################################################
+# 50049 Reggiane SpA Activation (by Dec152000 050804)
+#########################################################################
+event = {
+	id = 50049
+	country = ita
+	random = no
+
+	trigger = { event = 40401 }
+
+	name = "Reggiane SpA Activation"
+	desc = "The tech team Reggiane SpA is now available for research.  Reggiane SpA developed the Re.2000 fighter for the export markets, and after finding buyers in Sweden and Hungary was able to further develop the design into the Re.2001 fighter, which served in the Regia Aeronautica."
+	style = 0
+
+	picture = 50049_reg #Steffele
+
+	date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Develop the Re.2001"
+		command = { type = waketeam which = 1821 }
+	}
+}
+#############################################################
+#
+#   Japan
+#
+#############################################################
+# 50060 Ki-34 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 50060
+country = jap
+random = no
+
+trigger = { technology = 4120 not = { technology = 4250 }}
+
+
+name = "Ki-34 Development Program"
+desc = "In 1935 Nakajima began to design a light transport plane.  The AT-1 was inspired by the American DC-2, but experienced so many changes during development, that it flew for the first time in 1936 as the AT-2 (A was the initial of Akegawa, the chief engineer).  The Army had ordered a batch to be used for communication, light transport and dropping of paratroops. The Navy too got some of them delivered and renamed them L1N1."
+style = 0
+picture = 50060_ki34	#Steffele
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4250 }
+}
+}
+#############################################################
+# 50061 Ki-43-II Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 50061
+country = jap
+random = no
+
+trigger = { technology = 4030 not = { technology = 4040 }}
+
+
+name = "Ki-43-II Development Program"
+desc = "Operational experience with the Ki-43-I encouraged the Japanese to turn out a second version, with a more powerful engine and a better protection (self-sealing fuel tanks, armor for the pilot's seat). The reduced wing span and the modified exhaust pipes gave a few more mph. The bomb load was significantly increased."
+style = 0
+picture = 50061_ki43	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4040 }
+}
+}
+#########################################################################
+#  50062 Showa L2D4 Technology Purchase  (by Dec152000 050714)
+#########################################################################
+event = {
+	id = 50062
+	random = no
+	country = jap
+
+	# Triggered by usa 49063
+
+	name = "Showa L2D4 Technology Purchase"
+
+	desc = "Amongst the beneficiaries of the qualities of the DC-3/Dakota was Japan ! In 1938, the conglomerate Mitsui bought twenty planes (13 DC-3 and 7 DC-3A) as well as the rights for license production. Those were subcontracted to Showa, which turned them out during the war for the of the Imperial Navy."
+	style = 0
+	picture = 50062_l2d4	#Steffele
+
+
+	action_a = {
+		name = "We need the American design."
+		ai_chance = 98
+		command = { type = gain_tech which = 4260 }
+		command = { type = money value = -250 }
+		command = { type = sleepevent which = 49063 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need American technology."
+		ai_chance = 1
+		command = { type = sleepevent which = 49063 }
+	}
+}
+#############################################################
+# 50063 Ki-45KAIc Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 50063
+country = jap
+random = no
+
+trigger = { technology = 4050 not = { technology = 4080 }}
+
+
+name = "Ki-45KAIc Development Program"
+desc = "The last version of the Toryu to be mass-produced. Its armament was increased and it specialized as a night fighter (the aircraft was capable of having radar installed in the nose, but it was not yet ready at the end of the conflict). The obliquely firing machine guns, installed in the field on the Ki-45 KAIb, were replaced by a pair of 20mm cannons, installed directly on the factory floor."
+style = 0
+picture = 50063_ki45_3	#Steffele
+
+date = { day = 1 month = july year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4080 }
+}
+}
+#############################################################
+# 50064 Ki-102b Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 50064
+country = jap
+random = no
+
+trigger = { technology = 4080 not = { technology = 4180 }}
+
+
+name = "Ki-102b Development Program"
+desc = "The Ki-102 was derived from the Ki-96 (which never reached production), which had been a development of the Ki-45 with a new fuselage and more powerful engines.  The Ki-102b was the ground attack version armed with a 57mm cannon and the first variant to reach production status (before the Ki-102a). Very few experienced combat: most were held in reserve in homeland Japan in preparation for a US landing. Some were employed to test guided missiles (I-GO-1-B)."
+
+style = 0
+picture = 50064_ki102b	#Steffele
+
+date = { day = 0 month = january year = 1944 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4180 }
+}
+}
+#############################################################
+# 50065 Ki-102c Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 50065
+country = jap
+random = no
+
+trigger = { technology = 4080 not = { technology = 4110 }}
+
+
+name = "Ki-102c Development Program"
+desc = "The Ki-102 was derived from the Ki-96 (which never reached production), which had been a development of the Ki-45 with a new fuselage and more powerful engines.  The Ki-102c"
+style = 0
+
+date = { day = 0 month = january year = 1945 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4110 }
+}
+}
+#########################################################################
+#  50066 German Jet & Rocket Aircraft Technology  (by Dec152000 050810)
+#########################################################################
+event = {
+	id = 50066
+	random = no
+	country = jap
+
+	# Triggered by ger 50032
+
+	name = "German Jet & Rocket Aircraft Technology"
+	desc = "Our military attaché in Berlin is impressed by the performance of the new German rocket and jet fighter prototypes.  He has reported that Germany will provide the new technology if we promise to use the new super weapon against the Americans."
+	style = 0
+	picture = 50066_me262	#Steffele
+
+
+	action_a = {
+		name = "We need the German design"
+		ai_chance = 98
+		command = { type = gain_tech which = 5560 }
+		command = { type = gain_tech which = 5570 }
+		command = { type = trigger which = 50067 }
+		command = { type = sleepevent which = 50032 }
+	}
+	action_b = {
+		name = "We do not need technology from the Germans"
+		ai_chance = 1
+		command = { type = sleepevent which = 50032 }
+	}
+}
+#########################################################
+# 50067 Germany & Japan Share  Jet Technology  (by Dec152000 050810)
+##########################################################
+event = {
+	id = 50067
+	random = no
+	country = jap
+
+
+	# Triggered by 50066
+
+	name = "Germany & Japan Share Technology"
+	desc = "The Japanese quickly adapted the German advances to Japanese production standards.  They were able to rapidly develop the Nakajima Kikka (based on the Me-262) & the Mitsubishi J8M Shusui (a near exact copy of the Me-163)."
+
+	style = 0
+	picture = 50067_kikka	#Steffele
+
+	action_a = {
+		name = "Germany and Japan Share Jet Technology"
+		command = { type = gain_tech which = 7010 }
+		command = { type = gain_tech which = 7280 }
+	}
+}
+#############################################################
+#50070 PZL-24 Technology Purchase by Romania (by Dec152000 050727)
+#############################################################
+event = {
+id = 50070
+country = rom
+random = no
+persistent = yes
+
+trigger = { NOT = { war = { country = pol country = rom }}}
+
+
+name = "PZL-24 Technology Purchase by Romania"
+desc = "The Rumanian version of the P-24 was designated P-24E, and had an I.A.R.-built Gnome-Rhone 14 Kmc/36 engine of 930 hp. Six airframes were supplied by P.Z.L, but the rest were built under license by I.A.R. at Brasov.  Deliveries began in 1937, and fifty were built at I.A.R. by 1939. The P-24E provided the backbone for Rumanian fighter squadrons and saw action on the Russian front when Rumania joined Germany in the war against the USSR."
+style = 0
+
+date = { day = 0 month = january year = 1937 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1937 }
+
+	action_a = {
+		name = "We need the Polish design."
+		ai_chance = 98
+		command = { type = gain_tech which = 4020 }
+		command = { type = money value = -250 }
+		command = { type = sleepevent which = 50070 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need Polish technology."
+		ai_chance = 1
+		command = { type = sleepevent which = 50070 }
+	}
+}
+
+#########################################################################
+#  50071 IAR 80 Technology Purchase  (by Dec152000 050727)
+#########################################################################
+event = {
+	id = 50071
+	random = no
+	country = rom
+
+	# Triggered by ger 50026
+
+	name = "IAR 80 Technology Purchase"
+	desc = "Based on the Polish P.24E, the Romanians developed the IAR 80. Although it was built in Romania, many components had to be imported, a fact that made Romania dependant on Germany and delayed the development of the plane. The first squadrons did not become operational with the new plane before April of 1941. The IAR 80 first saw combat during the conquest of Transnistria against Russia a few months afterwards."
+	style = 0
+
+	action_a = {
+		name = "We need the German equipment."
+		ai_chance = 98
+		command = { type = gain_tech which = 4030 }
+		command = { type = money value = -250 }
+		command = { type = supplies value = 500 }
+		command = { type = sleepevent which = 50026 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need German equipment."
+		ai_chance = 1
+		command = { type = sleepevent which = 50026 }
+	}
+}
+#############################################################
+# 50072 IAR 80C Development Program (by Dec152000 050727)
+#############################################################
+event = {
+id = 50072
+country = rom
+random = no
+
+trigger = { technology = 4030 not = { technology = 4040 }}
+
+
+name = "IAR 80C Development Program"
+desc = "The inadequacy of the IAR 80's armament forced Romania to up gun the IAR 80: 20 mm guns replaced the heavy machine guns of the previous IAR 80B. All completed IAR 80C were built from airframes planned as IAR 81B, the dive-bomber version of the plane. They retained the bomb racks under the wings (but not the centreline rack). It was the first variant to have self-sealing fuel tanks."
+style = 0
+
+
+date = { day = 0 month = january year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4040 }
+}
+}
+#############################################################
+# 50073 IAR 81 Development Program (by Dec152000 050727)
+#############################################################
+event = {
+id = 50073
+country = rom
+random = no
+
+trigger = { technology = 4030 not = { technology = 4170 }}
+
+
+name = "IAR 81 Development Program"
+desc = "The IAR 81 was a minimalist adaptation of the fighter IAR 80 as a dive bomber. A bomb rack was added under the cockpit (the last ten examples of this series got two other bombs under the wings). The new plane was a quick fix for the lack of an effective dive bomber, but the drag due to the bombs dramatically reduced the performances of the plane."
+style = 0
+
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4170 }
+}
+}
+#############################################################
+#
+#   United Kingdom
+#
+#############################################################
+# 49010 Blenheim Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49010
+country = eng
+random = no
+
+trigger = { technology = 4120 not = { technology = 4130 } }
+
+
+name = "Blenheim Development Program"
+desc = "The Blenheim was originally developed by Bristol to provide an extremely fast private transport plane for Lord Rothermere, the owner of the Daily Mail.  During flight tests it reached 307 mph, a performance superior to any British fighter of the time.  The Air Ministry evaluated the Blenheim for transformation into a fast bomber and initially ordered 150 production series aircraft in September, 1935.  The military prototype first flew on June 25, 1936."
+style = 0
+picture = 49010_blenh	#Steffele
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4130 }
+}
+}
+#############################################################
+# 49011 Battle Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49011
+country = eng
+random = no
+
+trigger = { technology = 4120 not = { technology = 4170 }}
+
+
+name = "Battle Development Program"
+desc = "When it was introduced in 1936, the Battle bomber looked like a miracle weapon. It topped all other candidates by a vast margin. The details of its characteristics and construction remained secret as long as possible.  The combat experience by contrast was disastrous: the Battles were slaughtered. Having lost their speed advantage over the years, they were easy preys for the enemy fighters and anti-aircraft guns."
+style = 0
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4170 }
+}
+}
+#############################################################
+# 49012 Hurricane II Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49012
+country = eng
+random = no
+
+trigger = { technology = 4020 not = { technology = 4030 }}
+
+
+name = "Hurricane II Development Program"
+desc = "Although less famous than the Spitfire, the Hurricane shot down more enemy planes that its colleague during the Battle of Britain. A bit older (it was the first monoplane fighter of the RAF and flew for the first time in 1935), it was devoid of drawbacks and very maneuvrable, even if it was outperformed by most of its German counterparts in 1940.  This model featured the updated Merlin XX engine for improved high altitude performance."
+style = 0
+picture = 49012_hurri	#Steffele
+
+date = { day = 0 month = january year = 1939 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4030 }
+}
+}
+#############################################################
+# 49013 Hurricane IV Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49013
+country = eng
+random = no
+
+trigger = { technology = 4030 not = { technology = 4280 }}
+
+
+name = "Hurricane IV Development Program"
+desc = "While the Hurricane was no longer fit as a fighter, a new wing with two 40 mm guns gave it a new lease of life as an antitank weapon. Initially named Hurricane II-E, it was renamed Hurricane IV afterwards. Its armament could be either 40 mm antitank guns or bombs or rockets. All that could be exchanged for additional fuel tanks. The Hurricane IV was the first operational aircraft intended to use rockets."
+style = 0
+picture = 49012_hurri	#Steffele
+
+date = { day = 1 month = july year = 1940 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4280 }
+}
+}
+#############################################################
+# 49014 Beaufighter TF-X Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49014
+country = eng
+random = no
+
+trigger = { technology = 4050 not = { technology = 4200 }}
+
+
+name = "Beaufighter TF-X Development Program"
+desc = "Bristol eventually developed a maritime attack version of the Beaufighter. It was the variant of the Beaufighter with the highest production digit, especially as the TF-X, which was optimised for torpedo attacks. With either rockets or torpedoes, they sank dozens of German ships, among them many U-boats. It remained in production until the end of the war. Australia built several hundred of them as Beaufighter Mk.21."
+style = 0
+picture = 49014_beau	#Steffele
+
+date = { day = 0 month = january year = 1942 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4200 }
+}
+}
+#############################################################
+# 49015 Spitfire IX Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49015
+country = eng
+random = no
+
+trigger = { technology = 4040 not = { technology = 4070 }}
+
+
+name = "Spitfire IX Development Program"
+desc = "The Spitfire Mk.IX was produced to face the Fw 190, which was superior in almost all counts to the Spitfire Mk.V, the best fighter available in the RAF at the time. A new, more powerful, engine was mounted in the reinforced airframe of a Spitfire V. It was the version of the Spitfire with the greatest production digit. Numerous sub-variants were built according to the wing span (F, LF and HF) and their armament (A, B, C or E)."
+style = 0
+picture = 49015_spitfireix	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4070 }
+}
+}
+#############################################################
+# 49016 Mosquito FB-VI Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49016
+country = eng
+random = no
+
+trigger = { technology = 4080 not = { technology = 4160 }}
+
+
+name = "Mosquito FB-VI Development Program"
+desc = "The success of the first armed version of the Mosquito (Mosquito NF-II) prodded the British to test their miracle plane as an all-weather fighter-bomber. In this new role, the Mosquito was once more successful, so that the Mosquito FB-VI would become the version of the plane with the highest production numbers.  The Series 2 Appeared in 1944 with an increased capacity in fuel or bombs compared to the previous Mosquito FB-VI Series 1."
+style = 0
+picture = 49016_mosq_2	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4160 }
+}
+}
+#############################################################
+# 49017 Mosquito NF-XIII Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49017
+country = eng
+random = no
+
+trigger = { technology = 4080 not = { technology = 4110 }}
+
+
+name = "Mosquito NF-XIII Development Program"
+desc = "A more advanced version of the NF-II was developed in 1943.  The NF-XIII was fitted with the A.I Mark VIII centimetric radar in the nose instead of the four machine guns and attachments for drop-tanks."
+style = 0
+picture = 49017_mosqnf	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4110 }
+}
+}
+#############################################################
+# 49018 Lincoln Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49018
+country = eng
+random = no
+
+trigger = { technology = 4230 not = { technology = 4240 }}
+
+
+name = "Lincoln Development Program"
+desc = "Initially dubbed Lancaster IV, the Lincoln was the heir of the famous aircraft, but modified to be able to operate over greater distances and at higher altitudes. It would have been able to fight in the Far East had the war not ended before its first mission. It saw further service with the RAF and the RAAF (Australian, who built a particular version) after the war."
+style = 0
+picture = 49018_lincoln	#Steffele
+
+date = { day = 0 month = january year = 1944 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4240 }
+}
+}
+#############################################################
+# 49019 Typhoon IB Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49019
+country = eng
+random = no
+
+trigger = { technology = 4060 not = { technology = 4180 }}
+
+
+name = "Typhoon IB Development Program"
+desc = "The British pressed the Typhoon I-A into service too soon. It was not yet fully developed and got a terrible reputation because of the numerous accident it suffered, loosing the tail was one of the most usual.  The Typhoon had to wait until late 1943 before its full potential was realized: equipped with rockets and 4 20mm cannons, it became one of the most feared Jabo (German term for fighter-bomber) of the war. It wreaked havoc amongst the columns of Panzers."
+style = 0
+picture = 49019_typh	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4180 }
+}
+}
+#############################################################
+# 49020 Brigand Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49020
+country = eng
+random = no
+
+trigger = { technology = 4200 not = { technology = 4210 }}
+
+
+name = "Brigand Development Program"
+desc = "The Brigand was the successor intended for the Beaufort and the Buckingham (a derivative of the Beaufighter) as a long-range torpedo-bomber. It took over the wings and the tail of the Buckingham. Although it had been developed during the war, it was delivered too late to take part in combats. It served after the war in the British colonies."
+style = 0
+picture = 49020_brigand   #Steffele
+
+date = { day = 0 month = january year = 1944 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4210 }
+}
+}
+#############################################################
+# 49021 Tempest Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49021
+country = eng
+random = no
+
+trigger = { technology = 4060 not = { technology = 4090 }}
+
+
+name = "Tempest Development Program"
+desc = "The Tempest was an attempt to solve the problems of the thick wings of the Typhoon, which severely hampered its ability to operate at higher altitude. Initially dubbed Typhoon II, the program took afterwards the name Tempest. It had wings as thin as those of a Spitfire, but would retain the powerful engines of the Typhoon. The Tempest had several opportunities to face the first planes powered by reactors, and shot down 20 Me.262 before the end of the conflict."
+style = 0
+picture = 49021_tempest_1	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#############################################################
+# 49022 Spitfire XIV Development Program (by Dec152000 050713)
+#############################################################
+event = {
+id = 49022
+country = eng
+random = no
+
+trigger = { technology = 4070 not = { technology = 4100 }}
+
+
+name = "Spitfire XIV Development Program"
+desc = "First series of Spitfire with the new Rolls-Royce Griffon engine that was produced in great numbers. The Griffon 65 was fitted with a 2 stage supercharger and controlled a five bladed propeller to provide 2,050 hp.  The new bubble canopy greatly improved the visibility of the pilot while the tail planes were enlarged, improving manuverability.  A Spitfire Mk.XIV, in service with the 401st Squadron shot down the first Me.262 of the war."
+style = 0
+picture = 49022_spitfirexiv	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4100 }
+}
+}
+#############################################################
+# 49023 Short Stirling Mk.I Program (by Dec152000 050728) (Modified by Aregorn)
+#############################################################
+event = {
+id = 49023
+country = eng
+random = no
+persistent = yes
+
+trigger = { technology = 4220
+}
+
+name = "Short Stirling Mk.I Program"
+desc = "The Short Stirling Mk.I was the first large bomber developed for the RAF.  The Stirling was clearly a transitional design with limited potential.  However, it still was a vast improvement over the old two engine bombers used by Bomber Command.  You now have the option of converting three wings of tactical bombers into strategic bombers."
+style = 0
+picture = 49023_sterling	#Steffele
+
+	date = { day = 0 month = january year = 1938 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Upgrade the units with the new bomber"
+		ai_chance = 98
+		command = { type = remove_division which = 12700 value = 66 }
+		command = { type = remove_division which = 12700 value = 68 }
+		command = { type = remove_division which = 12700 value = 70 }
+		command = { type = add_corps which = "RAF Strategic Bomber Command" value = air where = 17 }
+		command = { type = add_division value = strategic_bomber when = 0 }
+		command = { type = add_division value = strategic_bomber when = 0 }
+		command = { type = add_division value = strategic_bomber when = 0 }
+		command = { type = sleepevent which = 49023 }
+	}
+	action_b = {
+		name = "We can not risk converting now, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need these airplanes ever."
+		ai_chance = 1
+		command = { type = sleepevent which = 49023 }
+	}
+}
+
+#############################################################
+#
+#   France
+#
+#############################################################
+# 49030 MS.406 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49030
+country = fra
+random = no
+
+trigger = { technology = 4010 not = { technology = 4020 }}
+
+
+name = "MS.406 Development Program"
+desc = "This was the standard fighter of the Armee de l'Air in 1940.  The project was launched in 1934 and the prototype (built in great secrecy) made it's first flight on August 8, 1935.  The prototype had excellent performance, and was especially fast.  By September 1939, 572 Moranes had already left the factories."
+style = 0
+picture = 49030_ms406	#Steffele
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4020 }
+}
+}
+#############################################################
+# 49031 MB.220 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49031
+country = fra
+random = no
+
+trigger = { technology = 4130 not = { technology = 4250 }}
+
+
+name = "MB.220 Development Program"
+desc = "Derived from the MB-210 bomber, the twin-engine transport MB-220 first flew in 1935. It was powered with 2 Gnome-&-Rhone-14N 900 HP engines and was used by Air France and the Armee de l'Air."
+style = 0
+picture = 49031_mb   #Steffele
+
+date = { day = 4 month = january year = 1936 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4250 }
+}
+}
+#############################################################
+# 49032 D.552 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49032
+country = fra
+random = no
+
+trigger = { technology = 4040 not = { technology = 4070 }}
+
+
+name = "D.552 Development Program"
+desc = "The Dewoitine 520 was considered to be the best French fighter of WW2.  As a further development of it, the Dewoitine 552 drew on technology used in the D.550 racing aircraft and was equipped with a Hispano-Suiza 12Z engine."
+style = 0
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4070 }
+}
+}
+#############################################################
+# 49033 Br.700 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49033
+country = fra
+random = no
+
+trigger = { technology = 4280 not = { technology = 4080 }}
+
+
+name = "Br.700 Development Program"
+desc = "A heavy fighter version of the Bre-690, with more powerful engines, which improved the climb rate, and allowed reinforced armament."
+style = 0
+
+date = { day = 0 month = january year = 1941 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4080 }
+}
+}
+#############################################################
+# 49034 Amiot 357 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49034
+country = fra
+random = no
+
+trigger = { technology = 4150 not = { technology = 4160 }}
+
+
+name = "Amiot 357 Development Program"
+desc = "A planned development of the excellent Amiot 354 bomber.  The Amiot 357 was equipped with a pressurized cockpit and supercharged Hispano-Suiza 12Z engines for use as an high altitude bomber."
+style = 0
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4160 }
+}
+}
+#############################################################
+# 49035 VG.39bis Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49035
+country = fra
+random = no
+
+trigger = { technology = 4060 not = { technology = 4090 }}
+
+
+name = "VG.39bis Development Program"
+desc = "Planned upgrade of the Arsenal fighter with a more powerful Hispano-Suiza engine, a redesigned wing and increased armament."
+style = 0
+picture = 49035_vg  #Steffele
+
+date = { day = 0 month = january year = 1943 }
+offset = 1
+deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#########################################################################
+# 49036 Armament Industry Nationalization Act (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49036
+	country = fra
+	random = no
+
+	trigger = { random = 50 }
+
+	name = "Armament Industry Nationalization Act"
+	desc = "In the fall of 1936, the French Government chose to nationalize a number of smaller companies in the defence sector and form larger enterprises based on a regional system.   Famous aviation firms such as Breguet and Bleriot were consolidated into state entities such as SNCASO in an attempt to gain greater economic efficiency through centralized planning.  Specialists within the government are certain this will improve aviation production."
+	style = 0
+
+	picture = 49036_mb #Steffele
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 15
+	deathdate = { day = 30 month = december year = 1936 }
+
+	action_a = {
+		name = "Nationalize the Aviation Sector"
+		ai_chance = 99
+		command = { type = dissent value = 1 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepteam which = 1401 }
+		command = { type = sleepteam which = 1409 }
+		command = { type = sleepteam which = 1428 }
+		command = { type = trigger which = 49037 }
+
+	}
+	action_b = {
+		name = "Keep the Companies Private"
+		ai_chance = 1
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = trigger which = 49038 }
+		command = { type = sleepevent which = 49035 }
+	}
+}
+#########################################################################
+# 49037 Armament Industry Nationalization Act Passes (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49037
+	country = fra
+	random = no
+
+#	trigger by 49036
+
+	name = "Armament Industry Nationalization Act Passes"
+	desc = "The nationalization program is underway.  The teams SNCAN and SNCASO are now available for research.  SNCAN designed the Potez 631 heavy fighter while SNCASO designed the MB-152 fighter."
+	style = 0
+
+	picture = 49037_sncaso	#Steffele
+
+
+	action_a = {
+		name = "ok"
+		command = { type = waketeam which =  1425 }
+		command = { type = waketeam which = 1427 }
+
+	}
+}
+#########################################################################
+# 49038 Armarment Industry Nationalization Act Fails (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49038
+	country = fra
+	random = no
+
+#	trigger by 49036
+
+	name = "Armament Industry Nationalization Act Fails"
+	desc = "The nationalization program has been cancelled."
+	style = 0
+
+	picture = news_paper
+
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+#########################################################################
+# 49039 Dewoitine Activation (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49039
+	country = fra
+	random = no
+
+	trigger = { event = 49038 }
+
+	name = "Dewoitine Activation"
+	desc = "The tech team Dewoitine is now available for research.  Historically this team designed the D.520 fighter, which was beginning to equip French fighter units in 1940."
+	style = 0
+	picture = 49039_dewo	#Steffele
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Excellent"
+		command = { type = waketeam which = 1403 }
+	}
+}
+#########################################################################
+# 49040 SNCAM Activation (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49040
+	country = fra
+	random = no
+
+	trigger = { event = 49037 }
+
+	name = "SNCAM Activation"
+	desc = "The tech team SNCAM is now available for research.  Historically this team designed the D.520 fighter, which was beginning to equip French fighter units in 1940."
+	style = 0
+	picture = 50029_d520_1 #Steffele
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Excellent"
+		command = { type = waketeam which = 1426 }
+	}
+}
+#########################################################################
+# 49041 SNCAO Activation (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49041
+	country = fra
+	random = no
+
+	trigger = { event = 49037 }
+
+	name = "SNCAO Activation"
+	desc = "The tech team SNCAO is now available for research."
+	style = 0
+	picture = 50029_d520_1 #Steffele
+
+	date = { day = 1 month = july year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Excellent"
+		command = { type = waketeam which = 1429 }
+	}
+}
+#########################################################################
+# 49042 Arsenal d'la Aeronatique Activation (by Dec152000 050720)
+#########################################################################
+event = {
+	id = 49042
+	country = fra
+	random = no
+
+	trigger = { event = 49037 }
+
+	name = "Arsenal d'la Aeronatique Activation"
+	desc = "The tech team Arsenal is now available for research.  Historically this team designed the VG.33 fighter, which was entering production in 1940."
+	style = 0
+	picture = 49042_vg33	#Steffele
+
+	date = { day = 1 month = july year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Excellent"
+		command = { type = waketeam which = 1430 }
+	}
+}
+#########################################################################
+#  49043 Lend Lease P-47 Aircraft  (by Dec152000 050726)
+#########################################################################
+event = {
+	id = 49043
+	random = no
+	country = fra
+	persistent = yes
+
+	# Triggered by usa 49066
+
+	name = "Lend Lease P-47 Aircraft"
+	desc = "During WW2 Free French forces were the second largest recipient of the P-47.  446 aircraft were provided via Lend Lease and these aircraft served in Europe."
+	style = 0
+	picture = 49043_p47d	#Steffele
+
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = manpowerpool value = -1 }
+	}
+
+}
+#########################################################################
+# 49046 Free French Aviation Resources (by Dec152000 050805)
+#########################################################################
+event = {
+	id = 49046
+	country = fra
+	random = no
+
+#	trigger by 2021 GER Vichy
+
+	name = "Free French Aviation Resources"
+	desc = "The fall of continental France left the Free French forces with almost no aviation industry.  For the remainder of the war the French forces were completely dependent upon British and American aircraft."
+	style = 0
+
+	picture = news_paper
+
+	action_a = {
+		name = "ok"
+		command = { type = sleepevent which = 49032 }
+		command = { type = sleepevent which = 49033 }
+		command = { type = sleepevent which = 49034 }
+		command = { type = sleepevent which = 49035 }
+		command = { type = sleepevent which = 49036 }
+		command = { type = sleepteam which = 1403 }
+		command = { type = sleepteam which = 1426 }
+		command = { type = sleepteam which = 1429 }
+		command = { type = sleepteam which = 1430 }
+
+	}
+}
+#############################################################
+#
+#   United States
+#
+#############################################################
+# 49050 P-36A Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49050
+country = usa
+random = no
+
+trigger = { technology = 4010 not = { technology = 4020 }}
+
+
+name = "P-36A Development Program"
+desc = "The P-36 program was launched in the summer of 1934 by Curtis Wright Corporation with the aim of participating in a competition announced by the USAAC for the construction of a new monoplane fighter to replace the Boeing P-26.  Construction commenced in November of 1934 and the maiden flight took place on May 15th, 1935.  Considerable changes were made to the design after the USAAC delayed the competition, and the first P-36 was delivered in 1938."
+style = 0
+picture = 49050_p36a	#Steffele
+
+date = { day = 4 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4020 }
+}
+}
+#############################################################
+# 49051 P-40E Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49051
+country = usa
+random = no
+
+trigger = { technology = 4020 not = { technology = 4040 }}
+
+
+name = "P-40E Development Program"
+desc = "The P-40 resulted from the decision to replace the radial engine of the P-36 by an inline engine, a first in the USA. Although the plane was sturdy and proved valuable for ground-support, the end-product was never achieved satisfactory performance as a fighter.  However, production continued, since Curtiss had invested to increase its production capacity and could deliver a large number of planes quickly , at the time when American rearmament was in full swing."
+style = 0
+picture = 49051_p40e	#Steffele
+
+date = { day = 0 month = january year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4040 }
+}
+}
+#############################################################
+# 49052 A-20G Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49052
+country = usa
+random = no
+
+trigger = { technology = 4140 not = { technology = 4280 }}
+
+
+name = "A-20G Development Program"
+desc = "The A-20 initially flew on October 26th, 1938.  The original design envisioned the use of the aircraft as both a tactical bomber and as a ground attack aircraft.  The A-20G was the ground attack variant, which was first produced in 1942.  These aircraft had a solid nose in which four 20mm cannons and two 50 cal machine guns installed for precision low altitude attacks.  The aircraft also retained it's bomb bay and could carry 1800 kgs of ordinance."
+style = 0
+picture = 49052_a20g	#Steffele
+
+date = { day = 0 month = january year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4280 }
+}
+}
+#############################################################
+# 49053 C-47A Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49053
+country = usa
+random = no
+
+trigger = { technology = 4250 not = { technology = 4260 }}
+
+
+name = "C-47A Development Program"
+desc = "During WW2, the US Army acquired many aircraft based on the civilian DC-3. The DC-3 derivatives made up the backbone of the American transport fleet and served with the USN and many allied air forces as well. The C-47, which entered service in 1942, was the first version really adapted to the needs of the military, with an strengthened landing gear, reinforced cabin floor and a larger loading door."
+style = 0
+picture = 49053_c47a	#Steffele
+
+date = { day = 0 month = january year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4260 }
+}
+}
+#############################################################
+# 49054 P-38G Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49054
+country = usa
+random = no
+
+trigger = { technology = 4050 not = { technology = 4080 }}
+
+
+name = "P-38G Development Program"
+desc = "The Lightning was the first war plane produced by Lockheed. Although it was less maneuvrable than single-engine fighters, the Lightning offsets that drawback by its range, its sturdiness and its firepower.  Deployed in 1942, the P-38G featured updated engines and wing attachments for carrying bombs.  P-38G aircraft of the 339th fighter squadron carried out the attack that downed Admiral Isoroku Yamamoto's G4M transport, killing the architect of the Pearl Harbor attack."
+style = 0
+picture = 49054_p38g	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4080 }
+}
+}
+#############################################################
+# 49055 PB4Y Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49055
+country = usa
+random = no
+
+trigger = { technology = 4230 not = { technology = 4200 }}
+
+
+name = "PB4Y Development Program"
+desc = "At the start of WW2, the USA decided that the Navy would have sole responsibility for conducting airborne anti-submarine patrols. Nearly 1000 B-24s were transferred to the Navy and converted into the PB4Y-1, with the first squadron becoming operational in September of 1942. In 1943 the PB4Y-2 was developed. The PB4Y-2 carried more armament & equipment and was perfectly suited for the ASW mission. 13 U-boats were their victims during the war."
+style = 0
+picture = 49055_pb4y	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4200 }
+}
+}
+#############################################################
+# 49056 B-25J Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49056
+country = usa
+random = no
+
+trigger = { technology = 4150 not = { technology = 4160 }}
+
+
+name = "B-25J Development Program"
+desc = "The B-25J represented the final evolution of the airframe.  It was considerably improved from the original design and featured improved engines that allowed a 50% greater bomb load and slightly improved speed and climb performance.  Defensive armament was also increased, with the addition of a tail gunner armed with two 12.7 mm machine guns.  The B-25J entered production in December, 1943."
+style = 0
+picture = 49056_b25j	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4160 }
+}
+}
+#############################################################
+# 49057 P-47N Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49057
+country = usa
+random = no
+
+trigger = { technology = 4060 not = { technology = 4090 }}
+
+
+name = "P-47N Development Program"
+desc = "The P-47N featured an enlarged wing with additional fuel tanks, greatly increasing the range of the big fighter. The aircraft also featured a bubble canopy, which allowed good all-around vision to the pilot.  These aircraft entered production in late 1944."
+style = 0
+picture = 49057_p47n	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#############################################################
+# 49058 P-38L Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49058
+country = usa
+random = no
+
+trigger = { technology = 4080 not = { technology = 4110 }}
+
+
+name = "P-38L Development Program"
+desc = "The P-38L was the final development of the P-38, featuring redesigned radiators and the improved Allison V-1710-111/113 engines, boosting total power to 2,950 hp.  These aircraft also had greater fuel capacity and range could be increased to almost 2600 miles with full external tanks.  In 1945 some of these aircraft had radar equipment added for night operation and were redisignated P-38M."
+style = 0
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4110 }
+}
+}
+#############################################################
+# 49059 P-51D Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49059
+country = usa
+random = no
+
+trigger = { technology = 4070 not = { technology = 4100 }}
+
+
+name = "P51-D Development Program"
+desc = "The classic model of the Mustang with a bubble canopy which provided the pilot with all-round vision. A modification to the wings allowed it to carry rockets and the basic armament was reinforced, with six machine guns instead of four and a fire control system powered by an analog computer.  The plane entered service in Europe from March of 1944 onwards. It was valuable for its ability to shuttle from the British bases to heartland Germany and back."
+style = 0
+picture = 49059_p51d	#Steffele
+
+date = { day = 1 month = july year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4100 }
+}
+}
+#############################################################
+# 49060 PBJ-1H Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49060
+country = usa
+random = no
+
+trigger = { technology = 4150 not = { technology = 4210 }}
+
+
+name = "PBJ-1H Development Program"
+desc = "The PBJ-1H (B-25H) was the definitive anti-shipping variant of the Mitchell.  The aircraft was fitted with a solid nose which housed a 75mm cannon and eight machine guns.  The aircraft remained capable of caryying its "normal" bomb load (3000#) and could also be equiped with eight rockets mounted on underwing racks.  The heavy armarment mounted in the nose proved to be particularily effective , especially in anti-shipping attacks."
+style = 0
+picture = 49060_pbj1h	#Steffele
+
+date = { day = 0 month = january year = 1944 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4210 }
+}
+}
+#############################################################
+#49061 PBY-5A Technology Sale to USSR (by Dec152000 050714)
+#############################################################
+event = {
+id = 49061
+country = usa
+random = no
+persistent = yes
+
+trigger = { random = 30  technology = 4190 NOT = { war = { country = usa country = sov }}}
+
+
+name = "PBY-5A Technology Sale to USSR"
+	desc = "The need for maritime patrol aircraft and the fact that the USSR had a low technical state for those aircraft forced the decision to build them under license. After evaluating several models, the choice fell on the Consolidated Model 28.  The Catalina was adapted to Russian needs and standards, with GST tasked to build the aircraft. The Amtorg GST was powered by two Tumanskii M-87 or M87A radials, rated at 950 hp , and was based on the PBY-1 model."
+style = 0
+picture = 49061_pby5a	#Steffele
+
+date = { day = 0 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the production license"
+		ai_chance = 98
+		command = { type = relation which = sov value = 5 }
+		command = { type = trigger which = 49071 } # SOV
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = sov value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the communists to buy military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = sov value = -10 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepevent which = 49061 }
+
+}
+}
+#############################################################
+#49062 C-47 Design to USSR (by Dec152000 050714)
+#############################################################
+event = {
+id = 49062
+country = usa
+random = no
+persistent = yes
+
+	    trigger = { event = 2626 # Lend-Lease to USSR
+}
+
+
+name = "C-47 Design to USSR"
+desc = ""The USSR was one of the great producers of the Dakota during the war, thanks to a licence agreement. Some of the variants produced locally even recevied turrets with weapons. The local production (over 2000 aircraft were biult by Lisunov) far outnumbered the deliveries of the US made planes in the "Lend & Lease" scheme."
+"
+style = 0
+
+date = { day = 0 month = january year = 1941 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the production license"
+		ai_chance = 99
+		command = { type = relation which = sov value = 5 }
+		command = { type = trigger which = 49072 } # SOV
+		command = { type = sleepevent which = 49062 }
+
+	}
+	action_b = {
+		name = "Do not provide the design"
+		ai_chance = 1
+		command = { type = relation which = sov value = -5 }
+		command = { type = sleepevent which = 49062 }
+
+}
+}
+#############################################################
+#49063 C-47 Technology Sale to Japan (by Dec152000 050714)
+#############################################################
+event = {
+id = 49063
+country = usa
+random = no
+persistent = yes
+
+trigger = { random = 30 NOT = { war = { country = usa country = jap }}}
+
+
+name = "C-47 Technology Sale to Japan"
+desc = "Amongst the beneficiaries of the qualities of the DC-3/Dakota was Japan ! In 1938, the conglomerate Mitsui bought twenty planes (13 DC-3 and 7 DC-3A) as well as the rights for license production. Those were subcontracted to Showa, which turned them out during the war for the of the Imperial Navy."
+style = 0
+
+date = { day = 0 month = january year = 1940 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the production license"
+		ai_chance = 98
+		command = { type = relation which = jap value = 5 }
+		command = { type = trigger which = 50062 } # jap
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = jap value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Japanese to buy our aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = jap value = -10 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepevent which = 49063 }
+
+}
+}
+#############################################################
+#49064 PBY-5A Technology and Aircraft Sale to Canada (by Dec152000 050716)
+#############################################################
+event = {
+id = 49064
+country = usa
+random = no
+persistent = yes
+
+trigger = { random = 30 technology = 4190
+			atwar = no
+			war = { country = GER country = CAN}
+
+}
+name = "PBY-5A Technology & Aircraft Sale to Canada"
+desc = "In December of 1939, Canada bought 50 PBY-5A and the licence to build others locally. The designation "Canso" was applied to the PBY-5 and PBY-5A built in Canada and delivered to the Canadian airforce.  Two companies were concerned, Boeing Canada (363 examples built, either PBY-5 or PBY-5A) and Canadian Vickers (379 examples, all of them PBY-5A)."
+style = 0
+
+date = { day = 0 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the production license"
+		ai_chance = 98
+		command = { type = relation which = can value = 5 }
+		command = { type = trigger which = 49090 } # can
+
+	}
+	action_b = {
+		name = "Do not allow the sale now"
+		ai_chance = 1
+		command = { type = relation which = can value = -5 }
+	}
+	action_c = {
+		name = "We can not allow the Canadians to buy military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = can value = -10 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = sleepevent which = 49064 }
+
+}
+}
+#############################################################
+#49065 P-47D Aircraft to Brazil (by Dec152000 050726)
+#############################################################
+event = {
+id = 49065
+country = usa
+random = no
+persistent = yes
+
+	    trigger = { random = 30
+			supplies = 9000
+			technology = 4060
+			event = 3404 # Lend-Lease Act passed
+			alliance = { country = bra country = usa}
+			war = { country = GER country = usa}
+
+}
+name = "P-47D Aircraft to Brazil"
+desc = "During WW2 Brazil was one of the major users of the P-47.  88 aircraft were provided via Lend Lease and these aircraft served in Italy."
+style = 0
+picture = 49065_p47d	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Offer the aircraft"
+		ai_chance = 98
+		command = { type = supplies value = -8250 }
+		command = { type = relation which = bra value = 5 }
+		command = { type = trigger which = 49091 } # bra
+		command = { type = sleepevent which = 49065 }
+
+	}
+	action_b = {
+		name = "Do not offer the aircraft now"
+		ai_chance = 1
+		command = { type = relation which = bra value = -5 }
+	}
+	action_c = {
+		name = "We can not provide the Brazilians with military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = bra value = -10 }
+		command = { type = sleepevent which = 49065 }
+
+}
+}
+#############################################################
+#49066 P-47 Aircraft to the Free French (by Dec152000 050726)
+#############################################################
+event = {
+id = 49066
+country = usa
+random = no
+persistent = yes # This will trigger multiple times
+
+	    trigger = { random = 30
+			supplies = 9000
+			technology = 4060
+			event = 3404 # Lend-Lease Act passed
+			alliance = { country = usa country = fra}
+			war = { country = GER country = usa}
+
+}
+name = "P-47 Aircraft to the Free French"
+desc = "During WW2 Free French forces were the second largest recipient of the P-47.  446 aircraft were provided via Lend Lease and these aircraft served in Europe."
+style = 0
+picture = 49066_p47d	#Steffele
+
+date = { day = 15 month = january year = 1943 }
+	offset = 90
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Provide the aircraft"
+		ai_chance = 98
+		command = { type = supplies value = -8250 }
+		command = { type = relation which = fra value = 5 }
+		command = { type = trigger which = 49043 } # fra
+
+	}
+	action_b = {
+		name = "Do not provide the aircraft now"
+		ai_chance = 1
+		command = { type = relation which = fra value = -5 }
+	}
+	action_c = {
+		name = "We can not provide the Free French with military aircraft ever"
+		ai_chance = 1
+		command = { type = relation which = fra value = -10 }
+		command = { type = sleepevent which = 49066 }
+
+}
+}
+#############################################################
+#
+#   USSR
+#
+#############################################################
+# 49070 I-16 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49070
+country = sov
+random = no
+
+trigger = { technology = 4010 not = { technology = 4020 }}
+
+
+name = "I-16 Development Program"
+desc = "The I-16 was the best fighter of its time when it first flew in December of 1933. It was most innovative, introducing the retractable landing gear and the basic low wing monoplane design. The I-16 was also cheap to build and very resilient.  It revealed the advanced state of the Soviet aeronautic industry when it appeared in the skies of Spain during the Civil War.  They were a nasty surprise for its opponents due to the I-16's performance and powerful armament. "
+style = 0
+picture = 49070-i16	#Steffele
+
+date = { day = 4 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4020 }
+}
+}
+#########################################################################
+#  49071 Amtorg GST Technology Purchase  (by Dec152000 050714)
+#########################################################################
+event = {
+	id = 49071
+	random = no
+	country = sov
+
+	# Triggered by usa 49061
+
+	name = "Amtorg GST Technology Purchase"
+	desc = "The need for maritime patrol aircraft and the fact that the USSR had a low technical state for those aircraft forced the decision to build them under license. After evaluating several models, the choice fell on the Consolidated Model 28.  The Catalina was adapted to Russian needs and standards, with GST tasked to build the aircraft. The Amtorg GST was powered by two Tumanskii M-87 or M87A radials, rated at 950 hp , and was based on the PBY-1 model."
+	style = 0
+	picture = 49071_amtourg	#Steffele
+
+
+	action_a = {
+		name = "We need the capitalist design."
+		ai_chance = 98
+		command = { type = gain_tech which = 4190 }
+		command = { type = money value = -250 }
+		command = { type = sleepevent which = 49061 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need technology from the capitalist dogs."
+		ai_chance = 1
+		command = { type = sleepevent which = 49061 }
+	}
+}
+#############################################################
+# 49072  Lend Lease Li-2 Design (by Dec152000 050714)
+#############################################################
+event = {
+id = 49072
+country = sov
+random = no
+
+	# Triggered by usa 49062
+
+name = "Lend Lease Li-2 Design"
+desc = "The USSR was one of the great producers of the Dakota during the war, thanks to a licence agreement. Some of the variants produced locally even recevied turrets with weapons. The local production (over 2000 aircraft were biult by Lisunov) far outnumbered the deliveries of the US made planes in the "Lend & Lease" scheme."
+style = 0
+picture = 49072_li2	#Steffele
+
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = gain_tech which = 4260 }
+}
+}
+#############################################################
+# 49073 Il-4T Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49073
+country = sov
+random = no
+
+trigger = { technology = 4140 not = { technology = 4200 }}
+
+
+name = "Il-4T Development Program"
+desc = "The Il-4 was sucessfully adapted by the USSR to serve as a naval bomber for the VMF.  The Il-4T could be used to lay mines or launch a 2,070 lb torpedo."
+style = 0
+picture = 49073_il4	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4200 }
+}
+}
+#############################################################
+# 49074 Yak-9 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49074
+country = sov
+random = no
+
+trigger = { technology = 4030 not = { technology = 4060 }}
+
+
+name = "Yak-9 Development Program"
+desc = "The Yak-9 alone made up almost half of all Yakovlev fighers produced during WW2. It entered service in October of 1942 and was derived from the Yak-7.  The basic design was modified to use metal instead of wood and the wings were redesigned. The Yak-9 remained the standard fighter of the Russian aviation until the end of the war."
+style = 0
+picture = 49074_yak9	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4060 }
+}
+}
+#############################################################
+# 49075 La-5 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49075
+country = sov
+random = no
+
+trigger = { technology = 4040 not = { technology = 4070 }}
+
+name = "La-5 Development Program"
+desc = "The La-5 was the definitive version of the LaG-5, where the inline engine of the LaGG-3 was replaced by a new much more powerful radial model. The canopy is changed for an all around vision.  In contrast to the LaGG-3, it could perform at the same level as contemporary German fighters, at least at lower altitudes."
+style = 0
+picture = 49075_la5	#Steffele
+
+date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4070 }
+}
+}
+
+#############################################################
+# 49076 Pe-3 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49076
+country = sov
+random = no
+
+trigger = { technology = 4150 not = { technology = 4080 }}
+
+name = "Pe-3 Development Program"
+desc = "A development of the Pe-2 as an heavy fighter.  The Pe-3 was lighter and better profiled than the original Pe-2 and its' performance was clearly better, but the Red Army had more need for tactical bombers than for heavy fighters, so few Pe-3 were completed."
+style = 0
+
+date = { day = 0 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4080 }
+}
+}
+#############################################################
+# 49077 Il-10 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49077
+country = sov
+random = no
+
+trigger = { technology = 4280 not = { technology = 4180 }}
+
+name = "Il-10 Development Program"
+desc = "The Il-10 took over all the essential components of the Il-2, but with a more aerodynamic shape and more powerful engine, armament and armor. The improvements paid off, since the Il-10 was faster than its model, despite being heavier and that contributed much reducing its' vulnerability."
+style = 0
+picture = 49077_il10	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4180 }
+}
+}
+#############################################################
+# 49078 Yak-3 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49078
+country = sov
+random = no
+
+trigger = { technology = 4030 not = { technology = 4090 }}
+
+name = "Yak-3 Development Program"
+desc = "In spite of its number, the Yak-3 is the last version of the Yakovlev fighters to appear during World War II. It came after the first Yak-9 but was derived directly from the Yak-1.  A reduction in weight resulted in a 30 mph gain in top speed and improved manuverability.  The Yak-3 reached the frontline in 1944 and remained in production until the end of the war."
+style = 0
+picture = 49078_yak3_1	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4090 }
+}
+}
+#############################################################
+# 47079 La-7 Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 47079
+country = sov
+random = no
+
+trigger = { technology = 4070 not = { technology = 4100 }}
+
+
+name = "La-7 Development Program"
+desc = "The successive improvements brought to the La-5 finally resulted in the La-7.  The La-7 featured decreased weight and a redesigned frontal section to improve performance at higher altitudes. The armament was increased as well, with three 20mm cannons installed.  The La-7 reached the front in the first days of 1944 and was second most produced, only behind the Yak-3."
+style = 0
+picture = 47079_la7	#Steffele
+
+date = { day = 0 month = january year = 1944 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4100 }
+}
+}
+#############################################################
+# 49080 Tu-2T Development Program (by Dec152000 050714)
+#############################################################
+event = {
+id = 49080
+country = sov
+random = no
+
+trigger = { technology = 4160 not = { technology = 4210 }}
+
+desc = "The Tu-2 was sucessfully adapted by the USSR to serve as a low altitude naval bomber for the VMF.  The Tu2-T could be used to lay mines or launch a pair of 2,070 lb torpedoes."
+desc = ""
+style = 0
+picture = 49080_tu2_1	#Steffele
+
+date = { day = 0 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4210 }
+}
+}
+#############################################################
+# 49081  Petlyakov Design Bureau (by Dec152000 050729)
+#############################################################
+event = {
+id = 49081
+country = sov
+random = no
+
+	trigger = { event = 40336
+		    event = 40002
+}
+
+name = "Petlyakov Design Bureau"
+desc = "The performance of the German aircraft in Spain has convinced Comrade Stalin that the USSR needs more modern aircraft.  Some of the counter-revolutionary aviation technicians imprisoned by the NKVD can be put to work in a Sharashka (a labor camp for intellectuals) to serve the people by designing aircraft."
+style = 0
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = january year = 1941 }
+
+action_a = {
+name = "Death to Fascism"
+command = { type = waketeam which = 3721}
+}
+}
+#############################################################
+# 49082  Polikarpov Design Bureau  (by Dec152000 050719)
+#############################################################
+event = {
+id = 49082
+country = sov
+random = no
+
+trigger = { event = 40335 } # SOV A Wider Purge
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1937 }
+
+name = "Polikarpov Design Bureau"
+desc = "The Great Purge had a chilling effect on the intellectual climate in the USSR.  No one was safe from arrest, as the NKVD eliminated real and imaginary counter-revolutionary elements.  Nikolai Polikarpov was not arrested during the purges, but the I-16 was his last significant design effort."
+style = 0
+picture = "gulag"
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = sleepteam which = 3719}
+}
+}
+#############################################################
+# 49083  Tupolev Design Bureau #1 (by Dec152000 050719)
+#############################################################
+event = {
+id = 49083
+country = sov
+random = no
+trigger = { event = 40336 } # SOV NKVD Order
+
+name = "Tupolev Design Bureau #1"
+desc = "On 21 October, 1937 A. Tupolev was arrested by the NKVD.  He was charged with having a harmful anti-Soviet organization within the Soviet aviation industry and, personally and through his agents, conducted harmful sabotage with the aim of weakening the Soviet Union's defence capabilities.  He was imprisoned and eventually held in a NKVD Sharashka (a labor camp for intellectuals) where he continued his aviation design work under extremely unpleasant conditions."
+style = 0
+picture = "gulag"
+
+date = { day = 21 month = October year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = sleepteam which = 3714}
+}
+}
+#############################################################
+# 49084  Stalin Releases Tupolev & Korolev (by Dec152000 050729)
+#############################################################
+event = {
+id = 49084
+country = sov
+random = no
+
+ trigger = {    random = 10
+		event = 40335  # A Wider Purge
+		OR = {  event = 40304  # Red Army Reorganization 3 (AI)
+			event = 40316  # Red Army Reorganization 3 (HUM)
+			event = 45012  # Soviet War Counter III
+		}
+	}
+
+name = "Stalin Releases Tupolev & Korolev"
+desc = "Tupolev and Korolev were assigned to the NKVD's Central Design Bureau 29.  The group was moved several times during the war, the first time to avoid capture by advancing German forces.  On June 27, 1944, Korolev (along with Tupolev and others) was finally discharged by special government decree and his prior convictions were dismissed in recognition of his important defense work."
+style = 0
+picture = Korolev   #Steffele
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1948 }
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = waketeam which = 3714}
+command = { type = waketeam which = 3722}
+}
+}
+#############################################################
+# 49085  Sergey Korolev (by Dec152000 050719)
+#############################################################
+event = {
+id = 49085
+country = sov
+random = no
+
+trigger = { event = 40335 } # SOV A Wider Purge
+
+name = "Sergey Korolev"
+desc = "On 22 June, 1938 Sergey Korolev was arrested by the NKVD.  He was accused of subversion, apparently due to his desire to work on liquid-rocket powered aircraft rather than solid rockets.  He was initially sent to the notorious Kolyma gulag camp in Siberia, which produced a death rate in the tens of thousands per year.  The rocketry program was set back for years, and fell far behind the rapid progress taking place in Germany."
+style = 0
+picture = "gulag"
+
+date = { day = 22 month = June year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = sleepteam which = 3703}
+}
+}
+##########################################################
+# 49086 Soviet Aviation Research  (by Dec152000 050729)
+##########################################################
+event = {
+	id = 49086
+	random = no
+	country = sov
+
+	trigger = {
+		ai = yes
+		OR = {  event = 47000  # Poland Occupation
+			event = 47006  # Yugo Occupation
+			event = 47010  # France Occupation
+			event = 45010  # Soviet War Counter I
+	}
+	}
+	name = "Soviet Aviation Research"
+	style = 0
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		    name = "Soviet Aviation Research"
+			command = { type = waketeam which = 3721}
+			command = { type = waketeam which = 3709}
+			command = { type = waketeam which = 3718}
+			command = { type = sleepevent which = 49087 }
+	}
+}
+#############################################################
+# 49087  Soviet Aviation Design Bureau Activation (by Dec152000 050729)
+#############################################################
+event = {
+id = 49087
+country = sov
+random = no
+
+	trigger = {  ai = no
+		OR = {  event = 47000  # Poland Occupation
+			event = 47006  # Yugo Occupation
+			event = 47010  # France Occupation
+			event = 45010  # Soviet War Counter I
+}
+	}
+name = "Soviet Aviation Design Bureau Activation"
+desc = "The performance of the Luftwaffe in the early campaigns of WW2 has convinced Stalin that the USSR needs more modern aircraft.  The Ilyushin and Yakolev OKBs are now ready for work."
+style = 0
+
+
+date = { day = 0 month = january year = 1937 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1938 }
+
+action_a = {
+name = "Death to Fascism"
+		command = { type = waketeam which = 3709}
+		command = { type = waketeam which = 3718}
+		command = { type = sleepevent which = 49086 }
+}
+}
+#############################################################
+# 49088  Vladimir Petlyakov Dies in Plane Crash (by Dec152000 050729)
+#############################################################
+event = {
+id = 49088
+country = sov
+random = no
+trigger = { exists = sov }
+
+name = "Vladimir Petlyakov Dies in Plane Crash"
+desc = "Vladimir Petlyakov was killed in an air crash on 12 January 1942, ironically in a Pe-2. He had been called to a meeting and preferred to ride in his own creation, rather than a VIP transport. The aircraft was believed to have encountered a snowstorm and run into a hill.  This reportedly unleashed another small purge, as Stalin ordered the NKVD to find the individual's responsible for sabotaging the plane and killing a great hero of the Soviet Union."
+style = 0
+picture = "gulag"
+
+date = { day = 12 month = January year = 1942 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "Death to the Fascists"
+command = { type = sleepteam which = 3721}
+}
+}
+#########################################################################
+#  49090 PBY-5 Canso Technology & Aircraft Purchase  (by Dec152000 050714)
+#########################################################################
+event = {
+	id = 49090
+	random = no
+	country = can
+
+	# Triggered by usa 49064
+
+	name = "PBY-5 Canso Technology & Aircraft Purchase"
+	desc = "In December of 1939, Canada bought 50 PBY-5A and the licence to build others locally. The designation "Canso" was applied to the PBY-5 and PBY-5A built in Canada and delivered to the Canadian airforce.  Two companies were concerned, Boeing Canada (363 examples built, either PBY-5 or PBY-5A) and Canadian Vickers (379 examples, all of them PBY-5A)."
+	style = 0
+
+
+	action_a = {
+		name = "We need the American design and aircraft."
+		ai_chance = 98
+		command = { type = gain_tech which = 4190 }
+		command = { type = activate_division which = 20000 value = 503 where = 3 }
+		command = { type = manpowerpool value = -.5 }
+		command = { type = money value = -1000 }
+		command = { type = supplies value = -700 }
+		command = { type = sleepevent which = 49064 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 1
+		command = { }
+	}
+	action_c = {
+		name = "We do not need technology from the Americans"
+		ai_chance = 1
+		command = { type = sleepevent which = 49064 }
+	}
+}
+#########################################################################
+#  49091 Lend Lease P-47D Aircraft  (by Dec152000 050726)
+#########################################################################
+event = {
+	id = 49091
+	random = no
+	country = bra
+
+	# Triggered by usa 49065
+
+	name = "Lend Lease P-47D Aircraft"
+	desc = "During WW2 Brazil was one of the major users of the P-47.  88 of the big fighters were provided via Lend Lease and these aircraft served in Italy."
+	style = 0
+
+
+	action_a = {
+		name = "Excellent!"
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = manpowerpool value = -1 }
+}
+}
+#############################################################
+# 49092 PZL P.11f Development Program (by Dec152000 050728)
+#############################################################
+event = {
+id = 49092
+country = pol
+random = no
+
+trigger = { technology = 4010 not = { technology = 4020 }}
+
+name = "PZL P.11f Development Program"
+desc = "The P.24 was the logical improvement of the P.11 fighter and it entered production in 1936.  However, the Polish High Command considered it to be a transitional fighter and all aircraft were actually completed for the export markets, leaving the obsolescent P.11c as the front line Polish fighter in 1939.  Attempts to upgrade the P.11 were initiated in 1939, but the first P.11f was still under construction when the Germans invaded."
+style = 0
+
+
+date = { day = 0 month = january year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+name = "ok"
+command = { type = gain_tech which = 4020 }
+}
+}

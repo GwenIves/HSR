@@ -1,0 +1,514 @@
+#
+# HoI - Nationalist China Events
+#
+#		written by Henrik Fåhraeus
+#
+
+# ID series: 4100-4199
+
+# 3823, 4100,
+#########################################################################
+#  The Nanking Massacre (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 4100
+	random = no
+	country = CHI
+
+	# Triggered by JAP 3802
+
+	name = "EVT_4100_NAME"
+	desc = "EVT_4100_DESC"
+	style = 0
+	picture = "Nanking"
+
+	action_a = {
+		name = "OK" # Tragedy!
+		command = { type = relation which = CGX value = 15 }
+		command = { type = relation which = CSX value = 20 }
+		command = { type = province_manpower which = 1235 value = -5 }
+		command = { type = dissent value = -30 } # National cementation
+		command = { type = capital which = 1280 } # Chongqing
+	}
+}
+
+################
+# Chinese alliance against the Soviets
+#############################################
+event = {
+	id = 29032
+	country = CHI
+	random = no
+
+	trigger = {
+		OR = {
+			war = { country = CHI country = SOV }
+			war = { country = CHC country = SOV }
+			war = { country = CSX country = SOV }
+			war = { country = CGX country = SOV }
+			war = { country = CXB country = SOV }
+			war = { country = SIK country = SOV }
+			war = { country = CYN country = SOV }
+		}
+		NOT = { alliance = { country = CHI country = SOV } }
+		NOT = { alliance = { country = CSX country = SOV } }
+		NOT = { alliance = { country = CHC country = SOV } }
+		NOT = { alliance = { country = CGX country = SOV } }
+		NOT = { alliance = { country = CYN country = SOV } }
+		NOT = { alliance = { country = CXB country = SOV } }
+		OR = {
+			NOT = { ispuppet = CSX }
+			puppet = { country = CSX country = CHI }
+			puppet = { country = CSX country = CHC }
+			puppet = { country = CSX country = CGX }
+			puppet = { country = CSX country = CYN }
+			puppet = { country = CSX country = CXB }
+		}
+		OR = {
+			NOT = { ispuppet = CHC }
+			puppet = { country = CHC country = CHI }
+			puppet = { country = CHC country = CSX }
+			puppet = { country = CHC country = CGX }
+			puppet = { country = CHC country = CYN }
+			puppet = { country = CHC country = CXB }
+		}
+		OR = {
+			NOT = { ispuppet = CGX }
+			puppet = { country = CGX country = CHI }
+			puppet = { country = CGX country = CSX }
+			puppet = { country = CGX country = CHC }
+			puppet = { country = CGX country = CYN }
+			puppet = { country = CGX country = CXB }
+		}
+		OR = {
+			NOT = { ispuppet = CYN }
+			puppet = { country = CYN country = CHI }
+			puppet = { country = CYN country = CSX }
+			puppet = { country = CYN country = CHC }
+			puppet = { country = CYN country = CGX }
+			puppet = { country = CYN country = CXB }
+		}
+		OR = {
+			NOT = { ispuppet = CXB }
+			puppet = { country = CXB country = CHI }
+			puppet = { country = CXB country = CSX }
+			puppet = { country = CXB country = CHC }
+			puppet = { country = CXB country = CGX }
+			puppet = { country = CXB country = CYN }
+		}
+
+	}
+
+	name = "UFRONT_NAME"
+	desc = "UFRONT_DESC"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "YES"
+		ai_chance = 90
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = democratic value = 1 }
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = peace which = CHC value = 0 }
+		command = { type = peace which = CSX value = 1 }
+		command = { type = peace which = CGX value = 1 }
+		command = { type = peace which = CYN value = 1 }
+		command = { type = peace which = CXB value = 1 }
+		command = { type = peace which = SIK value = 1 }
+		command = { type = alliance which = CHC }
+		command = { type = alliance which = CSX }
+		command = { type = alliance which = CGX }
+		command = { type = alliance which = CYN }
+		command = { type = alliance which = CXB }
+		command = { type = alliance which = SIK }
+	}
+
+	action_b = {
+		name = "NO"
+		ai_chance = 10
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = dissent value = 5 }
+		command = { type = relation which = CHC value = -10 }
+		command = { type = relation which = CSX value = -15 }
+		command = { type = relation which = CGX value = -10 }
+	}
+
+}
+
+
+
+################
+# China offers Guangxi Clique peace
+#############################################
+event = {
+	id = 27008
+	random = no
+	country = CHI
+
+	trigger = {
+		event = 27005
+		war = { country = CGX country = CHI }
+		NOT = { war = { country = JAP country = CHI } }
+		NOT = { war = { country = JAP country = CGX } }
+		lost_national = { country = CGX value = 30 }
+	}
+
+	name = "EVT_27008_NAME"
+	desc = "EVT_27008_DESC"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_27008_A"
+		ai_chance = 100
+		command = { type = trigger which = 27009 }
+	}
+
+	action_b = {
+		name = "EVT_27008_B"
+		ai_chance = 0
+		command = { }
+	}
+}
+
+################
+# China offers Guangxi Clique peace
+#############################################
+event = {
+	id = 27009
+	random = no
+	country = CGX
+
+	trigger = { ai = yes }
+
+	name = "EVT_27008_NAME"
+	desc = "EVT_27008_DESC"
+	style = 0
+
+	action_a = {
+		name = "EVT_27009_A"
+		ai_chance = 100
+		command = { type = secedeprovince which = CHI value = 1248 }
+		command = { type = secedeprovince which = CHI value = 1249 }
+		command = { type = secedeprovince which = CHI value = 1312 }
+		command = { type = secedeprovince which = CHI value = 1313 }
+		command = { type = secedeprovince which = CHI value = 1314 }
+		command = { type = secedeprovince which = CHI value = 1315 }
+		command = { type = secedeprovince which = CHI value = 1316 }
+		command = { type = secedeprovince which = CHI value = 1317 }
+		command = { type = secedeprovince which = CHI value = 1318 }
+		command = { type = secedeprovince which = CHI value = 1320 }
+		command = { type = secedeprovince which = CHI value = 1321 }
+		command = { type = peace which = CHI value = 1 }
+	}
+	action_b = {
+		name = "EVT_27009_B"
+		ai_chance = 0
+		command = { }
+	}
+}
+
+#########################################################################
+#  Surrender events - China
+#########################################################################
+
+event = {
+	id = 3814
+	random = no
+	country = CHI
+
+	name = "EVT_3814_NAME"
+	desc = "EVT_3814_DESC"
+	style = 0
+	picture = "japanese_reinforcments"
+
+	trigger = {
+		control = { province = 1235 data = JAP } #
+		control = { province = 1237 data = JAP } #
+		control = { province = 1238 data = JAP } #
+		lost_VP = { country = CHI value = 95 }
+		lost_national = { country = CHI value = 75 }
+		lost_IC = { country = CHI value = 50 }
+		NOT = {
+			war = { country = SOV country = JAP }
+		}
+		random = 50
+	}
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1947 }
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3814_ACTA" #
+		command = { type = leave_alliance }
+		command = { type = peace which = JAP value = 1 }
+
+		command = { type = sleepleader which = 50048 }
+		command = { type = sleepminister which = 52002 }
+		command = { type = sleepminister which = 52007 }
+		command = { type = sleepminister which = 52022 }
+		command = { type = sleepteam which = 1006 }
+
+		command = { type = dissent value = 5 }
+		command = { type = trigger which = 3815 }
+
+		command = { type = end_mastery which = CSX }
+		command = { type = end_mastery which = CGX }
+		command = { type = end_mastery which = CXB }
+		command = { type = end_mastery which = CYN }
+		command = { type = end_mastery which = CHC }
+		command = { type = end_mastery which = SIK }
+		command = { type = end_mastery which = TIB }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_3814_ACTB" #
+		command = { type = dissent value = 10 }
+		command = { type = sleepevent which = 3815 }
+	}
+}
+
+
+event = {
+	id = 3819
+	random = no
+	country = CHI
+
+	name = "EVT_3819_NAME"
+	desc = "EVT_3819_DESC"
+	style = 0
+	picture = "Nanking"
+
+	action_a = {
+		ai_chance = 100
+		name = "OK" #
+
+		command = { type = set_domestic which = democratic value = 2 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = free_market value = 3 }
+		command = { type = set_domestic which = freedom value = 2 }
+		command = { type = set_domestic which = professional_army value = 1 }
+		command = { type = set_domestic which = defense_lobby value = 5 }
+		command = { type = set_domestic which = interventionism value = 3 }
+
+		command = { type = sleepleader which = 50048 }
+		command = { type = sleepminister which = 52002 }
+		command = { type = sleepminister which = 52007 }
+		command = { type = sleepminister which = 52022 }
+		command = { type = sleepteam which = 1006 }
+
+		command = { type = alliance which = JAP }
+
+		command = { type = secedeprovince which = JAP value = 1282 } #
+
+		command = { type = secedeprovince which = JAP value = 1313 } #
+		command = { type = secedeprovince which = JAP value = 1314 } #
+		command = { type = secedeprovince which = JAP value = 1315 } #
+		command = { type = secedeprovince which = JAP value = 1316 } #
+
+		command = { type = secedeprovince which = JAP value = 1321 } #
+		command = { type = secedeprovince which = JAP value = 1439 } #
+		command = { type = secedeprovince which = JAP value = 1322 } #
+		command = { type = secedeprovince which = JAP value = 1323 } #
+		command = { type = secedeprovince which = JAP value = 1324 } #
+
+		command = { type = secedeprovince which = JAP value = 1213 } #
+		command = { type = secedeprovince which = JAP value = 1214 } #
+		command = { type = secedeprovince which = JAP value = 1215 } #
+		command = { type = secedeprovince which = JAP value = 1216 } #
+		command = { type = secedeprovince which = JAP value = 1217 } #
+
+
+		command = { type = secedeprovince which = JAP value = 1237 } #
+		command = { type = secedeprovince which = JAP value = 1293 } #
+		command = { type = secedeprovince which = JAP value = 1294 } #
+		command = { type = secedeprovince which = JAP value = 1305 } #
+		command = { type = secedeprovince which = JAP value = 1444 } #
+	}
+}
+
+event = {
+	id = 3822
+	random = no
+	country = CYN
+
+	name = "EVT_3822_NAME"
+	desc = "EVT_3822_DESC"
+	style = 0
+	picture = "japanese_reinforcments"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3822_ACTA" #
+		command = { type = secedeprovince which = JAP value = 1293 } #
+		command = { type = secedeprovince which = JAP value = 1294 } #
+		command = { type = secedeprovince which = JAP value = 1305 } #
+		command = { type = secedeprovince which = JAP value = 1282 } #
+	}
+}
+
+#########################################################################
+#  Surrender events - Japan surrenders to China (Corrected by Aregorn)
+#########################################################################
+
+event = {
+	id = 3823
+	random = no
+	country = CHI
+
+	name = "EVT_3823_NAME"
+	desc = "EVT_3823_DESC"
+	style = 0
+	picture = "chanfukeng"
+
+	trigger = {
+		control = { province = 1389 data = CHI } # Mukden
+		control = { province = 1379 data = CHI } # Harbin
+		control = { province = 1201 data = CHI } # Pyongyang
+		control = { province = 1199 data = CHI } # Seoul
+		control = { province = 1196 data = CHI } # Busan
+		control = { province = 1235 data = CHI } # Nanjing
+		control = { province = 1205 data = CHI } # Beiping
+		war = { country = CHI country = JAP }
+		random = 50
+	}
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 29 month = december year = 1947 }
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3823_ACTA" #
+		command = { type = dissent value = -20 }
+		command = { type = trigger which = 3824 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "EVT_3823_ACTB" #
+		command = { type = dissent value = 5 }
+		command = { type = sleepevent which = 3824 }
+	}
+}
+
+#########################################################################
+#  Surrender events - Japan surrenders to China
+#########################################################################
+
+event = {
+	id = 3826
+	random = no
+	country = CHI
+
+	name = "EVT_3825_NAME"
+	desc = "EVT_3825_DESC"
+	style = 0
+	picture = "korea_independent"
+
+#Triggered by JAP 3824
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3826_ACTA" #
+		command = { type = inherit which = MAN }
+		command = { type = inherit which = MEN }
+		command = { type = make_puppet which = KOR }
+	}
+}
+
+#########################################################################
+#  China annexes Mongolia
+#########################################################################
+
+event = {
+	id = 3827
+	random = no
+	country = CHI
+
+	name = "EVT_3827_NAME"
+	desc = "EVT_3827_DESC"
+	style = 0
+	picture = "Nomonhan"
+
+	trigger = {
+		event = 2625
+		alliance = { country = CHI country = GER }
+	}
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 5
+	  deathdate = { day = 29 month = december year = 1947 }
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3826_ACTA" #
+		command = { type = inherit which = MON }
+		command = { type = dissent value = -2 }
+	}
+}
+event = {
+	id = 3828
+	random = no
+	country = CGX
+
+	name = "EVT_3822_NAME"
+	desc = "EVT_3822_DESC"
+	style = 0
+	picture = "japanese_reinforcments"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3822_ACTA" #
+		command = { type = secedeprovince which = JAP value = 1313 } #
+		command = { type = secedeprovince which = JAP value = 1314 } #
+	}
+}
+event = {
+	id = 3829
+	random = no
+	country = CSX
+
+	name = "EVT_3822_NAME"
+	desc = "EVT_3829_DESC"
+	style = 0
+	picture = "japanese_reinforcments"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3822_ACTA" #
+		command = { type = secedeprovince which = JAP value = 1213 } #
+	}
+}
+event = {
+	id = 3830
+	random = no
+	country = CXB
+
+	name = "EVT_3822_NAME"
+	desc = "EVT_3830_DESC"
+	style = 0
+	picture = "japanese_reinforcments"
+
+	action_a = {
+		ai_chance = 100
+		name = "EVT_3822_ACTA" #
+		command = { type = secedeprovince which = JAP value = 1444 } #
+	}
+}
+
+
+
+

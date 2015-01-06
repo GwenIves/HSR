@@ -1,0 +1,52 @@
+#
+# By Aregorn for HSR
+#
+
+combat = {
+	HOL = 100
+	BEL = 100
+	LUX = 100
+}
+
+front = {
+		province_priorities = {
+			314 = 0.05
+			315 = 0.05
+		}
+	enemy_handicap = { }
+	passivity = { }
+}
+garrison = {
+
+	province_priorities = {	}
+}
+
+###################################
+# Invasions and Naval
+###################################
+admiral = {
+	min_org		= 90	# NEW: Percent of org gained back before the unit can leave port
+	min_dmg		= 90	# NEW: Percent of dmg gained back before the unit can leave port
+	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+	return_dmg 	= 50 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+
+	ignore = {
+		"Irish West Coast"
+		"Cape Finisterre"
+		"Bay of Biscay"
+		"Central Northsea"
+		"West Northsea"
+		"English Channel"
+		"The Hebreides"
+		"Irish Sea"
+	}
+	target = { }
+	core = {
+		2473
+		2474
+		2475
+		2476
+		2477
+		2478
+	}
+}

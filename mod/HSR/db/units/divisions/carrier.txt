@@ -1,0 +1,256 @@
+#
+# By Aregorn for HSR2_ARM
+#
+allowed_brigades = cag
+
+# 0 - Great War
+model = {
+	cost				= 8	#5
+	buildtime 			= 605	#447
+	defaultorganisation 		= 20
+	morale				= 30
+	manpower			= 1
+	maxspeed			= 18
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 2
+	subdetectioncapability		= 1
+	visibility			= 80	#100
+	seadefence			= 8
+	convoyattack			= 1
+	airdefence			= 2
+	seaattack			= 1
+	subattack			= 0
+	airattack			= 2
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 2000
+	supplyconsumption		= 0.9
+	fuelconsumption			= 1
+	distance			= 0.07	#0.14
+}
+# 1 - Early
+model = {
+	cost				= 8	#5
+	buildtime 			= 660
+	defaultorganisation 		= 20
+	morale				= 30
+	manpower			= 1
+	maxspeed			= 18
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 2
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 9
+	airdefence			= 2
+	seaattack			= 1
+	convoyattack			= 1
+	subattack			= 0
+	airattack			= 2
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 2500
+	supplyconsumption		= 1.1
+	fuelconsumption			= 1
+	distance					= 0.07	#0.16
+}
+# 2 - Basic
+model = {
+	cost				= 9	#6
+	buildtime 			= 695
+	defaultorganisation 		= 25
+	morale				= 30
+	manpower			= 2
+	maxspeed			= 22
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 2
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 10
+	airdefence			= 3
+	seaattack			= 1
+	convoyattack			= 1
+	subattack			= 0
+	airattack			= 2
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 3000
+	supplyconsumption		= 1.3
+	fuelconsumption			= 1
+	distance			= 0.07	#0.16
+}
+# 3 - Improved
+model = {
+	cost				= 10	#7
+	buildtime 			= 695
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 2
+	maxspeed			= 24
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 2
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 12
+	airdefence			= 4
+	seaattack			= 2	#2
+	convoyattack			= 2	#2
+	subattack			= 0
+	airattack			= 3
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 3500
+	supplyconsumption		= 1.5
+	fuelconsumption			= 1
+	distance			= 0.07	#0.17
+}
+# 4 - Advanced
+model = {
+	cost				= 11	#8
+	buildtime 			= 695
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 2
+	maxspeed			= 26
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 3
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 15
+	airdefence			= 5
+	seaattack			= 2	#3
+	convoyattack			= 2	#3
+	subattack			= 0
+	airattack			= 5
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 4000
+	supplyconsumption		= 1.7
+	fuelconsumption			= 1
+	distance			= 0.07	#0.18
+}
+# 5 - Advanced Heavy
+model = {
+	cost				= 13	#10
+	buildtime 			= 780
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 3
+	maxspeed			= 28
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 4
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 18
+	airdefence			= 6
+	seaattack			= 3	#4
+	convoyattack			= 3	#4
+	subattack			= 0
+	airattack			= 6
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 4000
+	supplyconsumption		= 2.0
+	fuelconsumption			= 1.5
+	distance			= 0.07	#0.18
+}
+# 6 - Advanced Super-Heavy
+model = {
+	cost				= 14	#11
+	buildtime 			= 905
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 3
+	maxspeed			= 30
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 4
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 22
+	airdefence			= 6
+	seaattack			= 4	#5
+	convoyattack			= 4	#5
+	subattack			= 0
+	airattack			= 6
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 4000
+	supplyconsumption		= 2.3
+	fuelconsumption			= 2
+	distance			= 0.07	#0.18
+}
+# 7 - Semi-Modern
+model = {
+	cost				= 15	#12
+	buildtime 			= 905
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 3
+	maxspeed			= 30
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 5
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 24
+	airdefence			= 7
+	seaattack			= 4	#5
+	convoyattack			= 4	#5
+	subattack			= 0
+	airattack			= 7
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 4500
+	supplyconsumption		= 2.5
+	fuelconsumption			= 2
+	distance			= 0.08	#0.2
+}
+# 8 - Nuclear
+model = {
+	cost				= 17	#14
+	buildtime 			= 935
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 3
+	maxspeed			= 32
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 5
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 26
+	airdefence			= 9
+	seaattack			= 6
+	convoyattack			= 6
+	subattack			= 0
+	airattack			= 6
+	shorebombardment		= 0
+	transportcapability		= 0
+	range				= 8000
+	supplyconsumption		= 3.5
+	fuelconsumption			= 0
+	distance			= 0.08	#0.2
+}
+# 9 - Modern
+model = {
+	cost				= 16	#13
+	buildtime 			= 930
+	defaultorganisation 		= 30
+	morale				= 30
+	manpower			= 3
+	maxspeed			= 34
+	surfacedetectioncapability	= 1
+	airdetectioncapability		= 5
+	subdetectioncapability		= 1
+	visibility					= 80	#100
+	seadefence			= 26
+	airdefence			= 9 # was 7
+	seaattack			= 6
+	convoyattack			= 1
+	subattack			= 3
+	convoyattack			= 6
+	airattack			= 6 # was 5
+	shorebombardment		= 2 # was 0
+	transportcapability		= 0
+	range				= 4500
+	supplyconsumption		= 2.5
+	fuelconsumption			= 2
+	distance			= 0.09 # 0.2
+}

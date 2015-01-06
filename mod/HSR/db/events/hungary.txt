@@ -1,0 +1,399 @@
+#
+# HoI - Hungarian Events
+#
+#
+# Modified and written by Aregorn for HSR
+#
+# 2500-09
+# written by Henrik Fåhraeus
+#
+# (4) 2501, 2502, 2504, 2505, 2507
+#########################################################################
+#  The End of Czechoslovakia - Ruthenia ceded to Hungary
+#########################################################################
+event = {
+	id = 2500
+	random = no
+	country = HUN
+	# Triggered by SLO 2300
+	name = "EVT_2500_NAME"
+	desc = "EVT_2500_DESC"
+	picture = "ruthenia_ceded"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = -5 }
+		command = { type = relation which = SLO value = 5 }
+		command = { type = relation which = GER value = 5 }
+	}
+}
+#########################################################################
+#  The End of Czechoslovakia - Slovakia given to Hungary (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2501
+	random = no
+	country = HUN
+	# Triggered by CZE 2202
+	name = "EVT_2501_NAME"
+	desc = "EVT_2501_DESC"
+       picture = "slovakia"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = -10 }
+		command = { type = relation which = GER value = 50 }
+		command = { type = add_division which = "13. motostrelecká divize" value = infantry when = 1 where = armored_car }
+		command = { type = industrial_modifier which = total value = 5 }
+	}
+}
+#########################################################################
+#  The End of Czechoslovakia - Czecho-Slovakia fight back!
+#########################################################################
+event = {
+	id = 2502
+	random = no
+	country = HUN
+	# Triggered by CZE 2202
+	name = "EVT_2502_NAME"
+	desc = "EVT_2502_DESC"
+       picture = "slovakian_tank"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = 10 }
+		command = { type = relation which = CZE value = -15 }
+		command = { type = industrial_modifier which = total value = 5 }
+	}
+}
+#########################################################################
+#  The Vienna Diktat - Claim Transylvania with German blessing
+#########################################################################
+event = {
+	id = 2503
+	random = no
+	country = HUN
+
+	trigger = {
+		exists = GER
+		exists = ROM
+		control = { province = 498 data = ROM } #Satu Mare
+		control = { province = 428 data = ROM } #Cluj
+		control = { province = 495 data = ROM } #Timiosara
+		government = fascist
+		NOT = {
+			war = { country = HUN country = ROM  }
+			OR = {
+				control = { province = 495 data = -1 }
+				control = { province = 496 data = -1 }
+				control = { province = 498 data = -1 }
+			}
+		}
+	}
+
+	name = "EVT_2503_NAME"
+	desc = "EVT_2503_DESC"
+	picture = "vienna_diktat"
+	style = 0
+
+	date = { day = 4 month = september year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2503A" # Press the issue
+		ai_chance = 98
+		command = { type = relation which = ROM value = -10 }
+		command = { type = trigger which = 2019 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2503B" # Refrain
+		ai_chance = 2
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = ROM value = 10 }
+	}
+}
+#########################################################################
+#  The Vienna Diktat - Germans rule in Romanian favor (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2504
+	random = no
+	country = HUN
+	# Triggered by GER 2019
+	name = "EVT_2504_NAME"
+	desc = "EVT_2504_DESC"
+	picture = "vienna_diktat"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = 5 }
+		command = { type = relation which = ROM value = -20 }
+	}
+}
+#########################################################################
+#  The Vienna Diktat - Romania folds under German duress (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2505
+	random = no
+	country = HUN
+
+	# Triggered by ROM 2701
+
+	name = "EVT_2505_NAME"
+	desc = "EVT_2505_DESC"
+       picture = "vienna_diktat"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = -10 }
+		command = { type = relation which = GER value = 50 }
+	}
+}
+#########################################################################
+#  The Vienna Diktat - Romania refuses the demands!
+#########################################################################
+event = {
+	id = 2506
+	random = no
+	country = HUN
+
+	# Triggered by ROM 2701
+
+	name = "EVT_2506_NAME"
+	desc = "EVT_2506_DESC"
+	 picture = "vienna_diktat"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = dissent value = 5 }
+		command = { type = relation which = ROM value = -10 }
+#		command = { type = alliance which = GER } # Alliance with Germany if not already
+	}
+}
+#########################################################################################
+# M-R Pact effects copy to ensure HUN doesn't keep any conquests were promised to SOV
+
+event = {
+	id = 2507
+	random = no
+	country = HUN
+
+	# Triggered by German event 2018
+
+	name = "EVT_2018_NAME"
+	desc = "EVT_2018_DESC"
+	style = 0
+	picture = "E_Poland_Sov"
+
+	action_a = {
+		name = "ACTIONNAME2018A" # Honor the Pact
+		command = { type = secedeprovince which = SOV value = 500 }
+		command = { type = secedeprovince which = SOV value = 501 }
+		command = { type = secedeprovince which = SOV value = 502 }
+		command = { type = secedeprovince which = SOV value = 503 }
+		command = { type = secedeprovince which = SOV value = 504 }
+		command = { type = secedeprovince which = SOV value = 505 }
+		command = { type = secedeprovince which = SOV value = 506 }
+		command = { type = secedeprovince which = SOV value = 507 }
+		command = { type = secedeprovince which = SOV value = 508 }
+		command = { type = secedeprovince which = SOV value = 562 }
+		command = { type = secedeprovince which = SOV value = 229 }
+		command = { type = secedeprovince which = SOV value = 222 }
+		command = { type = secedeprovince which = SOV value = 210 }
+		command = { type = secedeprovince which = SOV value = 209 }
+		command = { type = secedeprovince which = SOV value = 211 }
+		command = { type = secedeprovince which = SOV value = 213 }
+		command = { type = secedeprovince which = SOV value = 214 }
+		command = { type = secedeprovince which = SOV value = 208 }
+	        }
+}
+#########################################################################
+# 2507-08 Claim Slovakia with German blessing (By Aregorn)
+#########################################################################
+event = {
+	id = 2508
+	random = no
+	country = HUN
+
+	trigger = { event = 2505 random = 20
+		exists = GER
+		exists = slo
+		NOT = {	war = { country = HUN country = ger }}
+	}
+
+	name = "Hungarian claims on Slovakia"
+	desc = "Hungary wishes the German blessing to obtain their former territories"
+	picture = "CZE_Partition"
+	style = 0
+	picture = slovakia
+
+	date = { day = 1 month = september year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Press the issue and offer an alliance"
+		ai_chance = 95
+		command = { type = relation which = slo value = -60 }
+		command = { type = trigger which = 40063 } # aregorn_ger
+	}
+	action_b = {
+		name = "Refrain"
+		ai_chance = 5
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = slo value = 50 }
+	}
+}
+event = {
+	id = 2509
+	random = no
+	country = hun
+
+	# Triggered by aregorn_ger
+
+	name = "Annexation of Slovakia"
+	desc = "The former Hungarian territories are back to the rightfull owner"
+	style = 0
+	picture = ger_40063_hun_claims1		#Steffele
+
+	action_a = {
+		name = "OK"
+		command = { type = inherit which = slo }
+		command = { type = dissent value = -10 }
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+}
+#########################################################################
+#  Hungary exploits the situation
+#########################################################################
+event = {
+	id = 2713
+	random = no
+	country = HUN
+
+	# Triggered by BUL 2712
+
+	name = "EVT_2713_NAME"
+	desc = "EVT_2713_DESC"
+	style = 0
+	picture = "hungarian_tank"
+
+	trigger = {
+		event = 2712
+		war = { country = BUL country = ROM }
+		random = 40
+	}
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions day
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_2713_ACTA" # Hungary gang-bangs Romania
+		ai_chance = 75
+		command = { type = leave_alliance }
+		command = { type = peace which = ENG value = 1 }
+		command = { type = end_guarantee which = SOV where = HUN }
+		command = { type = end_guarantee which = GER where = HUN }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = dissent value = -10 }
+		command = { type = war which = ROM }
+		command = { type = sleepevent which = 2716 }
+		command = { type = sleepevent which = 2717 }
+		command = { type = sleepevent which = 2721 }
+		command = { type = sleepevent which = 2722 }
+	}
+	action_b = {
+		name = "EVT_2713_ACTB" # Hungary doesn't get involved
+		ai_chance = 25
+		command = { type = relation which = ROM value = 50 }
+		command = { type = non_aggression which = HUN where = ROM }
+		command = { type = sleepevent which = 2714 }
+		command = { type = sleepevent which = 2715 }
+		command = { type = sleepevent which = 2718 }
+		command = { type = sleepevent which = 2719 }
+		command = { type = sleepevent which = 2720 }
+		command = { type = sleepevent which = 2723 }
+		command = { type = sleepevent which = 2724 }
+		command = { type = sleepevent which = 2725 }
+		command = { type = sleepevent which = 2726 }
+	}
+}
+
+#########################################################################
+#  Hungary Victorious - Hungary involved
+#########################################################################
+event = {
+	id = 2720
+	random = no
+	country = HUN
+
+	# Triggered by ROM 2718A
+
+	name = "EVT_2716_NAME"
+	desc = "EVT_2720_DESC"
+	style = 0
+	picture = "hungarian_tank"
+
+	action_a = {
+		name = "EVT_2717_ACTA" # Bulgaria has won
+		command = { type = addcore which = 498 }
+		command = { type = addcore which = 427 }
+		command = { type = addcore which = 428 }
+		command = { type = addcore which = 429 }
+		command = { type = addcore which = 430 }
+		command = { type = addcore which = 495 }
+		command = { type = addcore which = 496 }
+		command = { type = addcore which = 494 }
+		command = { type = dissent value = -20 }
+	}
+}
+
+#########################################################################
+#  Hungary Defeated - Hungary involved
+#########################################################################
+event = {
+	id = 2725
+	random = no
+	country = HUN
+
+	name = "EVT_2725_NAME"
+	desc = "EVT_2725_DESC"
+	style = 0
+	picture = "surrender"
+
+	trigger = {
+		event = 2713
+		control = { province = 457 data = ROM } # Budapest
+		war = { country = HUN country = ROM }
+	}
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1 # Check for trigger conditions day
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_2725_ACTA" # Magyars are unlucky
+		command = { type = leave_alliance }
+		command = { type = peace which = ROM value = 1 }
+		command = { type = secedeprovince which = ROM value = 428 } #Transylvania
+		command = { type = secedeprovince which = ROM value = 496 } #Transylvania
+		command = { type = secedeprovince which = ROM value = 498 } #Transylvania
+		command = { type = secedeprovince which = ROM value = 497 } #Debrecen
+		command = { type = secedeprovince which = ROM value = 499 } #Ruthenia
+		command = { type = removecore which = 428 }
+		command = { type = removecore which = 496 }
+		command = { type = removecore which = 498 }
+		command = { type = dissent value = 20 }
+		command = { type = trigger which = 2726 } #Romania victorious over Hungary
+	}
+}

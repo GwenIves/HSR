@@ -1,0 +1,1148 @@
+# Aregorn_tech : Events related to tech improvements all countries (47)
+
+# 48000 	Mechanized Waffen SS Divisions 			(by Aregorn 050213)
+# 48001 	Heavy tank Waffen SS Divisions 			(by Aregorn 050213)
+# 48002-06 	Wehrmacht Divisional Formation 			(by Aregorn 050226)
+# 48007-16 	Allied Divisional Formation 			(by Aregorn 050226)
+# 48017-21 	French Divisional Formation 			(by Aregorn 050226)
+# 48022-26 	Japanese Divisional Formation 			(by Aregorn 050226)
+# 48027-31 	Soviet Divisional Formation 			(by Aregorn 050226)
+# 48032 	Advance Waffen SS Division 			(by Aregorn 050213)
+# 48033 	Semi Modern Waffen SS Division 			(by Aregorn 060414)
+# 48034 	Modern Waffen SS Division 			(by Aregorn 060414)
+# 48035-40 	Semi-Modern Divisional Formations 		(by Aregorn 060414)
+# 48041-46 	Modern Divisional Formations 			(by Aregorn 060414)
+
+#######################################################################################
+# 48000 Basic Waffen SS Division (by Aregorn 050213)
+#######################################################################################
+
+	event = {
+	id = 48000
+	country = GER
+	random = no
+
+	trigger = { technology = 2260 }
+
+
+	name = "Basic Waffen SS"
+	desc = "It is time to modernize our elite corps."
+	style = 0
+	picture = ger_40024_waffenss	#steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = activate_unit_type which = super_heavy_armor }
+		command = { type = new_model which = super_heavy_armor  value = 1 }
+		command = { type = scrap_model which = super_heavy_armor  value = 0 }
+}
+}
+#######################################################################################
+# 48001 Improved Waffen SS Division (by Aregorn 050213)
+#######################################################################################
+
+	event = {
+	id = 48001
+	country = GER
+	random = no
+
+	trigger = { technology = 2270 }
+
+
+	name = "Improved Waffen SS"
+	desc = "It is time to modernize our elite corps."
+	style = 0
+	picture = ger_40024_waffenss	#steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = new_model which = super_heavy_armor value = 2 }
+		command = { type = scrap_model which = super_heavy_armor value = 1 }
+}
+}
+#######################################################################################
+# 48002-06 Wehrmacht Divisional Formation (by Aregorn 050226)
+#######################################################################################
+
+	event = {
+	id = 48002
+	country = GER
+	random = no
+
+	trigger = { technology = 1020 }
+
+
+	name = "Wehrmacht Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 22 }
+		command = { type = scrap_model which = engineer value = 0 }
+		command = { type = scrap_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 7 }
+	}
+}
+	event = {
+	id = 48003
+	country = GER
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "Wehrmacht Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 23 }
+		command = { type = scrap_model which = engineer value = 22 }
+}
+}
+	event = {
+	id = 48004
+	country = GER
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "Wehrmacht Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 24 }
+		command = { type = scrap_model which = engineer value = 23 }
+}
+}
+	event = {
+	id = 48005
+	country = GER
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "Wehrmacht Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 25 }
+		command = { type = scrap_model which = engineer value = 24 }
+}
+}
+	event = {
+	id = 48006
+	country = GER
+	random = no
+
+	trigger = { technology = 1060 random = 50 technology = 2360 technology = 2440 technology = 2540 technology = 2250 }
+
+
+	name = "Wehrmacht Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 26 }
+		command = { type = scrap_model which = engineer value = 25 }
+}
+}
+#######################################################################################
+# 48007-16 Allied Divisional Formation (by Aregorn 050226)
+#######################################################################################
+
+	event = {
+	id = 48007
+	country = usa
+	random = no
+
+	trigger = { technology = 1020 random = 50 }
+
+
+	name = "Allied Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 8 }
+		command = { type = scrap_model which = engineer value = 0 }
+		command = { type = scrap_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 7 }
+	}
+}
+	event = {
+	id = 48008
+	country = usa
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "Allied Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 9 }
+		command = { type = scrap_model which = engineer value = 8 }
+}
+}
+	event = {
+	id = 48009
+	country = usa
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "Allied Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 10 }
+		command = { type = scrap_model which = engineer value = 9 }
+}
+}
+	event = {
+	id = 48010
+	country = usa
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "Allied Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 11 }
+		command = { type = scrap_model which = engineer value = 10 }
+}
+}
+	event = {
+	id = 48011
+	country = usa
+	random = no
+
+	trigger = { technology = 1060 random = 50 }
+
+
+	name = "Allied Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 12 }
+		command = { type = scrap_model which = engineer value = 11 }
+}
+}
+	event = {
+	id = 48012
+	country = eng
+	random = no
+
+	trigger = { technology = 1020 random = 50 }
+
+
+	name = "Allied Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 8 }
+		command = { type = scrap_model which = engineer value = 0 }
+		command = { type = scrap_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 7 }
+	}
+}
+	event = {
+	id = 48013
+	country = eng
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "Allied Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 9 }
+		command = { type = scrap_model which = engineer value = 8 }
+}
+}
+	event = {
+	id = 48014
+	country = eng
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "Allied Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 10 }
+		command = { type = scrap_model which = engineer value = 9 }
+}
+}
+	event = {
+	id = 48015
+	country = eng
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "Allied Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 11 }
+		command = { type = scrap_model which = engineer value = 10 }
+}
+}
+	event = {
+	id = 48016
+	country = eng
+	random = no
+
+	trigger = { technology = 1060 random = 50 }
+
+
+	name = "Allied Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 12 }
+		command = { type = scrap_model which = engineer value = 11 }
+}
+}
+#######################################################################################
+# 48017-21 French Divisional Formation (by Aregorn 050226)
+#######################################################################################
+
+	event = {
+	id = 48017
+	country = fra
+	random = no
+
+	trigger = { technology = 1020 random = 50 }
+
+
+	name = "French Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 0 }
+
+}
+}
+	event = {
+	id = 48018
+	country = fra
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "French Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 1 }
+}
+}
+	event = {
+	id = 48019
+	country = fra
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "French Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 2 }
+}
+}
+	event = {
+	id = 48020
+	country = fra
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "French Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 3 }
+}
+}
+	event = {
+	id = 48021
+	country = fra
+	random = no
+
+	trigger = { technology = 1060 random = 50 }
+
+
+	name = "French Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 4 }
+}
+}
+#######################################################################################
+# 48022-26 Japanese Divisional Formation (by Aregorn 050226)
+#######################################################################################
+
+	event = {
+	id = 48022
+	country = jap
+	random = no
+
+	trigger = { technology = 1020 random = 50 }
+
+
+	name = "Japanese Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 15 }
+		command = { type = scrap_model which = engineer value = 0 }
+		command = { type = scrap_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 7 }
+		command = { type = morale which = air value = 5 }
+	}
+}
+	event = {
+	id = 48023
+	country = jap
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "Japanese Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 16 }
+		command = { type = scrap_model which = engineer value = 15 }
+}
+}
+	event = {
+	id = 48024
+	country = jap
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "Japanese Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 17 }
+		command = { type = scrap_model which = engineer value = 16 }
+}
+}
+	event = {
+	id = 48025
+	country = jap
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "Japanese Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 18 }
+		command = { type = scrap_model which = engineer value = 17 }
+}
+}
+	event = {
+	id = 48026
+	country = jap
+	random = no
+
+	trigger = { technology = 1060 random = 50 }
+
+
+	name = "Japanese Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 19 }
+		command = { type = scrap_model which = engineer value = 18 }
+}
+}
+#######################################################################################
+# 48027-31 Soviet Divisional Formation (by Aregorn 050226)
+#######################################################################################
+
+	event = {
+	id = 48027
+	country = sov
+	random = no
+
+	trigger = { technology = 1020 random = 50 }
+
+
+	name = "Soviet Divisional Formation 36'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 36’). To enable HD 39’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 29 }
+		command = { type = scrap_model which = engineer value = 0 }
+		command = { type = scrap_model which = engineer value = 1 }
+		command = { type = scrap_model which = engineer value = 2 }
+		command = { type = scrap_model which = engineer value = 3 }
+		command = { type = scrap_model which = engineer value = 4 }
+		command = { type = scrap_model which = engineer value = 5 }
+		command = { type = scrap_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 7 }
+	}
+}
+	event = {
+	id = 48028
+	country = sov
+	random = no
+
+	trigger = { technology = 1030 technology = 2510 technology = 2220 technology = 2330 technology = 2410 }
+
+
+	name = "Soviet Divisional Formation 39'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 39’). To enable HD 41’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 30 }
+		command = { type = scrap_model which = engineer value = 29 }
+}
+}
+	event = {
+	id = 48029
+	country = sov
+	random = no
+
+	trigger = { technology = 1040 technology = 2520 technology = 2230 technology = 2340 technology = 2420 }
+
+
+	name = "Soviet Divisional Formation 41'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 41’). To enable HD 43’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 31 }
+		command = { type = scrap_model which = engineer value = 30 }
+}
+}
+	event = {
+	id = 48030
+	country = sov
+	random = no
+
+	trigger = { technology = 1050 random = 50 technology = 2530 technology = 2240 technology = 2350 technology = 2430 }
+
+
+	name = "Soviet Divisional Formation 43'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 43’). To enable HD 45’, research in the areas of infantry, tank destroyer, artillery, SP artillery and anti tank up to the year of the next division type will need to be completed."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 32 }
+		command = { type = scrap_model which = engineer value = 31 }
+}
+}
+	event = {
+	id = 48031
+	country = sov
+	random = no
+
+	trigger = { technology = 1060 random = 50 }
+
+
+	name = "Soviet Divisional Formation 45'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 45’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 33 }
+		command = { type = scrap_model which = engineer value = 32 }
+}
+}
+#######################################################################################
+# 48032 Advance Waffen SS Division (by Aregorn 050213)
+#######################################################################################
+
+	event = {
+	id = 48032
+	country = GER
+	random = no
+
+	trigger = { technology = 2280 }
+
+
+	name = "Advance Waffen SS"
+	desc = "It is time to modernize our elite corps."
+	style = 0
+	picture = ger_40024_waffenss	#steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = new_model which = super_heavy_armor value = 3 }
+		command = { type = scrap_model which = super_heavy_armor  value = 2 }
+}
+}
+#######################################################################################
+# 48033 Semi Modern Waffen SS Division (by Aregorn 060414)
+#######################################################################################
+
+	event = {
+	id = 48033
+	country = GER
+	random = no
+
+	trigger = { technology = 11050 }
+
+
+	name = "Semi Modern Waffen SS"
+	desc = "It is time to modernize our elite corps."
+	style = 0
+	picture = ger_40024_waffenss	#steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = new_model which = super_heavy_armor value = 4 }
+		command = { type = scrap_model which = super_heavy_armor  value = 3 }
+}
+}
+#######################################################################################
+# 48034 Semi Modern Waffen SS Division (by Aregorn 060414)
+#######################################################################################
+
+	event = {
+	id = 48034
+	country = GER
+	random = no
+
+	trigger = { technology = 11060 }
+
+
+	name = "Semi Modern Waffen SS"
+	desc = "It is time to modernize our elite corps."
+	style = 0
+	picture = ger_40024_waffenss	#steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = new_model which = super_heavy_armor value = 5 }
+		command = { type = scrap_model which = super_heavy_armor  value = 4 }
+	}
+}
+#######################################################################################
+# 48035-40 Semi-Modern Divisional Formations (by Aregorn 060414)
+#######################################################################################
+
+
+event = {
+	id = 48035
+	country = GER
+	random = no
+
+	trigger = { technology = 10000 }
+
+
+	name = "Wehrmacht Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 27 }
+		command = { type = scrap_model which = engineer value = 26 }
+}
+}
+event = {
+	id = 48036
+	country = usa
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 13 }
+		command = { type = scrap_model which = engineer value = 12 }
+}
+}
+event = {
+	id = 48037
+	country = eng
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 13 }
+		command = { type = scrap_model which = engineer value = 12 }
+}
+}
+event = {
+	id = 48038
+	country = fra
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 6 }
+		command = { type = scrap_model which = engineer value = 5 }
+}
+}
+event = {
+	id = 48039
+	country = jap
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 20 }
+		command = { type = scrap_model which = engineer value = 19 }
+}
+}
+event = {
+	id = 48040
+	country = sov
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 47'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 47’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 34 }
+		command = { type = scrap_model which = engineer value = 33 }
+}
+}
+#######################################################################################
+# 48041-46 Modern Divisional Formations (by Aregorn 060414)
+#######################################################################################
+
+event = {
+	id = 48041
+	country = GER
+	random = no
+
+	trigger = { technology = 10000 }
+
+
+	name = "Wehrmacht Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+	picture = 15th_army
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 28 }
+		command = { type = scrap_model which = engineer value = 27 }
+}
+}
+event = {
+	id = 48042
+	country = usa
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 14 }
+		command = { type = scrap_model which = engineer value = 13 }
+}
+}
+event = {
+	id = 48043
+	country = eng
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 14 }
+		command = { type = scrap_model which = engineer value = 13 }
+}
+}
+event = {
+	id = 48044
+	country = fra
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 7 }
+		command = { type = scrap_model which = engineer value = 6 }
+}
+}
+event = {
+	id = 48045
+	country = jap
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 21 }
+		command = { type = scrap_model which = engineer value = 20 }
+}
+}
+event = {
+	id = 48046
+	country = sov
+	random = no
+
+	trigger = { technology = 10000 random = 50 }
+
+
+	name = "Allied Divisional Formation 51'"
+	desc = "The option to expand, in the case of infantry, binary divisions to three regiments with a variety of complementing specialized battalions including artillery, anti-tank and engineer battalions, updated with the current technology is now available (HD 51’)."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start updating our divisions."
+		command = { type = new_model which = engineer value = 35 }
+		command = { type = scrap_model which = engineer value = 34 }
+}
+}

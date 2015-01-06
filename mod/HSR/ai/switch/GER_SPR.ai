@@ -1,0 +1,47 @@
+#
+# By Aregorn for HSR
+#
+
+###################################
+# Diplomacy
+###################################
+combat = {
+	SPR = 300
+}
+befriend = {
+	ROM = 50
+	BUL = 40
+	HUN = 80
+	YUG = 50
+	SLO = 50
+	SPA = 20
+	ITA = 80
+	SWE = 10
+	FIN = 20
+	JAP = 20
+	POR = 10
+	TUR = 30
+	DEN = 50
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 0.9
+	min_attack_odds		= 0.7
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.5
+
+
+	enemy_handicap = { }
+	passivity = { }
+}

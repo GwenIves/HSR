@@ -1,0 +1,1267 @@
+# Aregorn_chi: Events for China (29)
+#
+#ID		Title					Author
+#
+# 40800		USA Volunteer Group sent to China  	(by Justin and Aregorn 040612)
+# 40801-04	USA help to China  			(by Justin and Aregorn 040612)
+# 40805 	CCH Joins NCH against Japan 		(by Aregorn 050403)
+# 40806		CYN Joins NCH against Japan 		(by Aregorn 050403)
+# 40807 	CYN Defensive buildup 			(by Aregorn 050403)
+# 40808-10 	The Burma Road 				(by Justin and Aregorn 040612)
+# 40811 	CHI AI industry 			(by Aregorn 050406)
+# 960-961	The Burma Road II			(HOI2 Modified by Aregorn)
+# 40812 	Chinese Civil War 			(by Aregorn 060219)
+# 40813 	United Front -CHC 			(by Aregorn 060219)
+# 40814 	War against Japan (A.I.)		(by Aregorn 060221)
+# 40815 	Chinese reaction (A.I.) 		(by Aregorn 060222)
+# 40816 	Chinese Civil War - CHC 		(by Aregorn 060219)
+# 40817 	USA help to China - End  		(by Aregorn 060226)
+# 40818-22 	Chinese Military programmes 		(by Aregorn 050405)
+# 40823 	CHI compensation low difficulty levels 	(by Aregorn 060307)
+# 40824-25 	Chinese Army A.I. 			(by Aregorn 050508)
+# 40826-27 	CHC Army A.I. 				(by Aregorn 050508)
+# 40828 	CGX reaction (A.I.) 			(by Aregorn 060222)
+# 40829 	Continuation Chinese CW (A.I.) 		(by Aregorn 060222)
+
+#######################################################################################################################
+# 40800		USA Volunteer Group sent to China  (by Justin and Aregorn 040612) (Added Chennault as leader Dec152000)
+#######################################################################################################################
+event = {
+	id = 40800
+	random = no
+	country = chi
+
+#	aregorn_usa 40914
+
+	name = "USA Volunteer Group sent to China"
+	desc = "The U.S. President agreed to send a group of American aviators to China to help out. The American Volunteer Group (AVG) was funded through shady sources, using 'borrowed' equipment. Members of the AVG boarded in San Francisco on July 10 1941. With Curtis P-40 Warhawks packed in the holds of their two steamers, they set sail for China. The Japanese found out about this covert endeavor and the Tokyo Rose, voice of the Japanese propaganda radio, promised a warm reception for the American Joes."
+	style = 0
+	picture = 40800_flying_tigers	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 2000 }
+		command = { type = dissent value = -3 }
+		command = { type = add_corps which = "AVG" value = air when = 50370 where = 1360 }
+		command = { type = add_division value = multi_role when = 1 }
+		}
+}
+###############################################################################################
+# 40801		USA help to China  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40801
+	random = no
+	country = chi
+
+#	aregorn_usa 40915
+
+	name = "USA help to China - 1941"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chennault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 5000 }
+		command = { type = dissent value = -3 }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = manpowerpool value = -50 }
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = tc_mod value = 3 }
+		}
+}
+###############################################################################################
+# 40802	USA help to China  (by Justin and Aregorn 040718)
+###############################################################################################
+event = {
+	id = 40802
+	random = no
+	country = chi
+
+#	aregorn_usa 40916
+
+	name = "USA help to China - 1942"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -3 }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = manpowerpool value = -50 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = tc_mod value = 3 }
+		}
+}
+###############################################################################################
+# 40803		USA help to China  (by Justin and Aregorn 040718)
+###############################################################################################
+event = {
+	id = 40803
+	random = no
+	country = chi
+
+#	aregorn_usa 40917
+
+	name = "USA help to China - 1943"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -3 }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = manpowerpool value = -50 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = tc_mod value = 4 }
+		}
+}
+###############################################################################################
+# 40804	USA help to China - Initiation  (by Justin and Aregorn 040718)
+###############################################################################################
+event = {
+	id = 40804
+	random = no
+	country = chi
+
+#	aregorn_usa 40913
+
+	name = "USA help to China - Initiation"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 10000 }
+		command = { type = dissent value = -3 }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = free_ic value = 6 }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = manpowerpool value = -50 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = tc_mod value = 5 }
+		}
+}
+#########################################################################
+#  40805 CCH against Japan (by Aregorn 050403)
+#########################################################################
+event = {
+	id = 40805
+	random = no
+	country = chc
+
+	trigger = { random = 25
+			ai = yes
+			war = { country = jap country = chi }
+			lost_national = { country = CHi value = 40 }
+			NOT = { ispuppet = chc }
+			NOT = {	alliance = { country = chc country = chi }}
+			NOT = {	alliance = { country = chc country = jap }}
+			}
+
+	name = "Communist China against Japan"
+	desc = "War against the invaders"
+
+	style = 0
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = war which = jap }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = add_division value = bergsjaeger where = engineer }
+		command = { type = manpowerpool value = -50 }
+		command = { type = construct which = land_fort where = 1271 value = 2 }
+		command = { type = construct which = land_fort where = 1270 value = 2 }
+		command = { type = construct which = land_fort where = 1275 value = 2 }
+		command = { type = construct which = flak where = 1271 value = 2 }
+		command = { type = construct which = flak where = 1270 value = 2 }
+		command = { type = construct which = flak where = 1275 value = 2 }
+		command = { type = free_metal value = 15 }
+		command = { type = free_energy value = 30 }
+		command = { type = free_rare_materials value = 8 }
+		command = { type = free_ic value = 15 }
+		command = { type = dissent value = -5 }
+
+		command = { type = mountain_defense which = militia value = 40 }
+		command = { type = hill_defense which = militia value = 40 }
+		command = { type = mountain_defense which = infantry value = 20 }
+		command = { type = hill_defense which = infantry value = 20 }
+
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = manpowerpool value = -120 }
+
+	}
+}
+#########################################################################
+#  40806 CYN Joins CHI against Japan (by Aregorn 050403)
+#########################################################################
+event = {
+	id = 40806
+	random = no
+	country = cyn
+
+	trigger = { 	random = 10 ai = yes
+
+			war = { country = jap country = chi }
+			NOT = { ispuppet = cyn }
+			lost_national = { country = CHi value = 50 }
+			NOT = {	alliance = { country = cyn country = chi }}
+			NOT = {	alliance = { country = cyn country = jap }}
+			}
+
+	name = "Yunnan joins Nationalsit China"
+	desc = "War against the invaders"
+
+	style = 0
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		ai_chance = 99
+		command = { type = peace which = chi }
+		command = { type = alliance which = chi }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = construct which = land_fort where = 1307 value = 4 }
+		command = { type = construct which = land_fort where = 1282 value = 3 }
+		command = { type = construct which = land_fort where = 1281 value = 3 }
+		command = { type = construct which = land_fort where = 1362 value = 3 }
+		command = { type = construct which = land_fort where = 1305 value = 3 }
+		command = { type = construct which = flak where = 1307 value = 2 }
+		command = { type = construct which = flak where = 1282 value = 2 }
+		command = { type = construct which = flak where = 1281 value = 2 }
+		command = { type = construct which = flak where = 1362 value = 2 }
+		command = { type = construct which = flak where = 1305 value = 2 }
+		command = { type = add_corps value = land where = 1307 }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1282 }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1281 }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1362 }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1305 }
+		command = { type = add_division value = garrison }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = add_division value = militia }
+		command = { type = manpowerpool value = -90 }
+	}
+	action_b = {
+		name = "We can not be involved in a war against Japan right now"
+		ai_chance = 1
+		command = { }
+	}
+}
+#########################################################################
+#  40807 CYN Defensive buildup (by Aregorn 050403)
+#########################################################################
+event = {
+	id = 40807
+	random = no
+	country = chi
+
+	trigger = { 	not = { event = 40806 }	ai = yes ai = cyn
+			war = { country = jap country = chi }
+			or = { 	control = { province = 1262 data = jap }
+				control = { province = 1309 data = jap }
+				control = { province = 1364 data = jap }
+				control = { province = 1279 data = jap }
+				control = { province = 1281 data = jap }
+				control = { province = 1277 data = jap } }
+			}
+
+	name = "Yunnan Defensive buildup"
+	desc = "War against the invaders"
+
+	style = 0
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps value = land where = 1307 }
+		command = { type = add_division value = hq where = engineer }
+		command = { type = add_division value = infantry when = 0 where = engineer }
+		command = { type = add_division value = infantry when = 0 where = engineer }
+
+		command = { type = inherit which = CYN }
+		command = { type = construct which = land_fort where = 1307 value = 4 }
+		command = { type = construct which = land_fort where = 1282 value = 2 }
+		command = { type = construct which = land_fort where = 1281 value = 2 }
+		command = { type = construct which = land_fort where = 1362 value = 2 }
+		command = { type = construct which = land_fort where = 1305 value = 2 }
+
+		command = { type = construct which = flak where = 1307 value = 2 }
+		command = { type = construct which = flak where = 1282 value = 2 }
+		command = { type = construct which = flak where = 1281 value = 2 }
+		command = { type = construct which = flak where = 1362 value = 2 }
+		command = { type = construct which = flak where = 1305 value = 2 }
+
+		command = { type = activate_division which = 22000 value = 283 where = 1362 }
+		command = { type = activate_division which = 22000 value = 284 where = 1282 }
+		command = { type = activate_division which = 22000 value = 285 where = 1305 }
+		command = { type = activate_division which = 22000 value = 286 where = 1307 }
+		command = { type = activate_division which = 22000 value = 287 where = 1307 }
+		command = { type = activate_division which = 22000 value = 288 where = 1281 }
+
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = supplies value = 5000 }
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -130 }
+	}
+}
+#########################################################################
+# 40808-10 The Burma Road (by Justin and Aregorn 040612)
+#########################################################################
+event = {
+	id = 40808
+	random = no
+	country = chi
+
+	trigger = {	war = { country = CHI country = JAP }
+			supplies = 3000
+	}
+
+	name = "The Burma Road"
+	desc = "Shortly after the Japanese war declaration, Nationalist Chinese leaders met to discuss their options. If there was any hope of getting aid from the West, it had to come through the Burmese port of Rangoon, in Mianmar. This meant they had to build a road through more than 700 kilometers of dense jungle and steep mountains."
+	style = 0
+	picture = uk_40530_burma2
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = { name = "Start the project"
+		ai_chance = 100
+		command = { type = manpowerpool value = -125 }
+		command = { type = supplies value = -3000 }
+		command = { type = trigger which = 40809 }
+	}
+	action_b = { name = "No need to start a senseless enterprise"
+		ai_chance = 0
+		command = { }
+	}
+}
+event = {
+	id = 40809
+	random = no
+	country = chi
+
+	name = "The Burma Road project started"
+	desc = "Shortly after the Japanese war declaration, Nationalist Chinese leaders met to discuss their options. If there was any hope of getting aid from the West, it had to come through the Burmese port of Rangoon, in Mianmar. This meant they had to build a road through more than 700 kilometers of dense jungle and steep mountains."
+	style = 0
+	picture = uk_40530_burma2
+
+	action_a = { name = "The Burma Road construction had started"
+		command = { }
+	}
+}
+event = {
+	id = 40810
+	random = no
+	country = chi
+
+	trigger = {	war = { country = CHI country = JAP } event = 40809
+			not = { control = { province = 1307 data = jap }}
+			not = { control = { province = 1305 data = jap }}
+	}
+
+	name = "The Burma Road is finished"
+	desc = "January of 1940 saw the completion of the Burma Road. Diseased and under-fed, more than 122,000 Chinese and Burmese workers were hailed as heros for completing the 715 kilometers of road that conected Kunmin with Rangoon (more than 50000 men died in the process). The road would allow badly needed supplies to reach Chinese armies fighting the Japanese."
+	style = 0
+	picture = uk_40530_burma1
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Great!"
+		command = { type = construct which = infrastructure where = 1307 value = 10 }
+		command = { type = construct which = infrastructure where = 1305 value = 10 }
+		command = { type = construct which = infrastructure where = 1299 value = 10 }
+		command = { type = construct which = infrastructure where = 1304 value = 20 }
+		command = { type = construct which = infrastructure where = 1301 value = 10 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = 50 }
+		command = { type = tc_mod value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = trigger which = 40530 }
+		}
+}
+#########################################################################
+#  40811 CHI AI industry (by Aregorn 050406)
+#########################################################################
+event = {
+	id = 40811
+	random = no
+	country = chi
+
+	trigger = { 	ai = yes random = 25
+			event = 86 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = industrial_modifier which = total value = 5 }
+	}
+}
+#######################
+### THE BURMA ROAD
+#######################
+
+event = {
+	id = 960
+	random = no
+	country = CHI
+	persistent = yes
+	style = 0
+
+	trigger = { event = 40810
+		war = { country = JAP country = CHI }
+		NOT = {
+			flag = BurmaRoadOpen
+			war = { country = ENG country = CHI }
+			}
+		OR = {
+			lost_national = { country = CHI value = 15 }
+			war = { country = JAP country = ENG }
+			AND = {
+				war = { country = JAP country = USA }
+				NOT = { war = { country = ENG country = USA } }
+				}
+			}
+
+		control = { province = 1299 data = ENG } #Rangoon
+		control = { province = 1295 data = ENG } #Lashio
+		control = { province = 1301 data = ENG } #Toungoo
+
+		control = { province = 1298 data = ENG } #Bashein
+		control = { province = 1300 data = ENG } #Prome
+		control = { province = 1296 data = ENG } #Mandalay
+
+		OR = {
+			AND = {
+				NOT = { war = { country = CHI country = CYN } }
+				OR = {
+					control = { province = 1294 data = CYN } #Baoshan is Yunnan
+					control = { province = 1294 data = CHI } #Baoshan is China
+					}
+				OR = {
+					control = { province = 1293 data = CYN } # is Yunnan
+					control = { province = 1293 data = CHI } # is China
+					}
+				OR = {
+					control = { province = 1305 data = CYN } # is Yunnan
+					control = { province = 1305 data = CHI } # is China
+					}
+				OR = {
+					control = { province = 1307 data = CYN } # Kunming is Yunnan
+					control = { province = 1307 data = CHI } # Kunming is China
+					}
+		     		}
+			}
+		OR = {	alliance = { country = CHI country = CYN } }
+			not = { exists = CYN }
+			and = { war = { country = jap country = CYN }
+				not = { war = { country = chi country = CYN }}
+			AND = {
+				war = { country = CHI country = CYN }
+				OR = {
+					control = { province = 1294 data = CHI } # Baoshan is China
+					control = { province = 1305 data = CHI } # is China
+					}
+				control = { province = 1307 data = CHI } #Kunming in Nationalist hands
+				}
+			}
+	}
+
+	date = { year = 1936 month = january day = 1 }
+	offset = 10
+	deathdate = { year = 1963 month = january day = 30 }
+
+	name = "The Burma Road was Opened"
+	desc = "The Burma Road is now open to actively transport desperately required allied supplies to the Chinese combatants"
+
+	action_a = {
+		command = { type = free_metal value = 7  }
+		command = { type = free_energy value = 14 }
+		command = { type = free_rare_materials value = 4  }
+		command = { type = free_supplies value = 5  }
+		command = { type = setflag which = BurmaRoadOpen   }
+		}
+	}
+
+
+event = {
+	id = 961
+	random = no
+	country = CHI
+	persistent = yes
+	style = 0
+
+	trigger = {
+		flag = BurmaRoadOpen
+		war = { country = JAP country = CHI }
+		NOT = {
+			war = { country = ENG country = CHI }
+			}
+		OR = {
+			lost_national = { country = CHI value = 15 }
+			war = { country = JAP country = ENG }
+			AND = {
+				war = { country = JAP country = USA }
+				NOT = { war = { country = ENG country = USA } }
+				}
+		     }
+		NOT = {
+			AND = {
+				OR = {
+					control = { province = 1299 data = ENG } #Rangoon
+					control = { province = 1298 data = ENG } #Bashein
+					control = { province = 1300 data = ENG } #Prome
+					control = { province = 1296 data = ENG } #Mandalay
+					control = { province = 1295 data = ENG } #Lashio
+					control = { province = 1301 data = ENG } #Toungoo
+					}
+				}
+			OR = {
+			AND = {
+				OR = {
+					OR = {
+					control = { province = 1294 data = CYN } #Baoshan is Yunnan
+					control = { province = 1294 data = CHI } #Baoshan is China
+					}
+					OR = {
+					control = { province = 1293 data = CYN } # is Yunnan
+					control = { province = 1293 data = CHI } # is China
+					}
+					OR = {
+					control = { province = 1305 data = CYN } # is Yunnan
+					control = { province = 1305 data = CHI } # is China
+					}
+					OR = {
+					control = { province = 1307 data = CYN } # Kunming is Yunnan
+					control = { province = 1307 data = CHI } # Kunming is China
+					}
+					}
+				}
+		     }
+		}
+	}
+
+	date = { year = 1936 month = january day = 1 }
+	offset = 7
+	deathdate = { year = 1963 month = january day = 30 }
+
+	name = "The Burma Road was Closed"
+	desc = "Enemy forces blocked the periodical flow of supplies delivered through this critical vessel. Only retaking the lost territories would allow continuation of the supply route."
+
+	action_a = {
+		command = { type = free_metal value = -7  }
+		command = { type = free_energy value = -14 }
+		command = { type = free_rare_materials value = -4  }
+		command = { type = free_supplies value = -5  }
+		command = { type = clrflag which = BurmaRoadOpen   }
+		}
+	}
+#########################################################################
+#  40812 Chinese Civil War (by Aregorn 060219)
+#########################################################################
+event = {
+	id = 40812
+	random = no
+	country = chi
+
+	trigger = { 	ai = no random = 50 exists = chc
+			war = { country = jap country = chi }
+	}
+
+	name = "Chinese Civil War"
+	desc = "The Japanese found a divided China, plenty of corruption and unable to mount a serious military opposition."
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = industrial_modifier which = total value = -5 }
+		command = { type = industrial_modifier which = supplies value = -5 }
+		command = { type = dissent which = total value = 15 }
+	}
+}
+#########################################################################
+#  40813 Chinese United Front -CHC (by Aregorn 060219)
+#########################################################################
+event = {
+	id = 40813
+	random = no
+	country = chc
+
+	name = "Chinese Unified front"
+	desc = EVT_91_DESC
+	style = 0
+
+
+	action_a = {
+		name = "Join forces"
+		ai_chance = 100
+		command = { type = peace which = CHi value = 0 }
+		command = { type = alliance which = CHi }
+		command = { type = peace which = CHi value = 0 }
+		command = { type = alliance which = CSX }
+		command = { type = peace which = CSX value = 0 }
+		command = { type = alliance which = CGX }
+		command = { type = peace which = CGX value = 0 }
+		command = { type = alliance which = CYN }
+		command = { type = peace which = CYN value = 0 }
+		command = { type = alliance which = CXB }
+		command = { type = peace which = CXB value = 0 }
+		command = { type = alliance which = SIK }
+		command = { type = peace which = SIK value = 0 }
+		command = { type = dissent which = total value = -2 }
+	}
+	action_b = {
+		name = "No way"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+#  40814 War against Japan (by Aregorn 060221)
+#########################################################################
+event = {
+	id = 40814
+	random = no
+	country = chi
+
+	trigger = { 	ai = yes
+			war = { country = jap country = chi }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = activate_division which = 22000 value = 289 where = 1217 } #Liany
+
+		command = { type = activate_division which = 22000 value = 290 where = 1219 } #Nantong
+
+		command = { type = activate_division which = 22000 value = 293 where = 1215 } #Qingdao
+
+		command = { type = activate_division which = 22000 value = 289 where = 1217 } #Liany
+		command = { type = activate_division which = 22000 value = 290 where = 1219 } #Nantong
+		command = { type = activate_division which = 22000 value = 291 where = 1237 } #Shanghai
+		command = { type = activate_division which = 22000 value = 292 where = 1235 } #Nanjing
+		command = { type = activate_division which = 22000 value = 293 where = 1215 } #Qingdao
+		command = { type = activate_division which = 22000 value = 294 where = 1244 } #Fuzhou
+		command = { type = activate_division which = 22000 value = 295 where = 1247 } #Xiamen
+		command = { type = activate_division which = 22000 value = 296 where = 1248 } #Shantou
+		command = { type = activate_division which = 22000 value = 298 where = 1265 } #Wanxiang
+		command = { type = activate_division which = 22000 value = 299 where = 1263 } #Fulin
+		command = { type = activate_division which = 22000 value = 310 where = 1267 } #Ankang
+
+		command = { type = construct which = land_fort where = 1280 value = 4 }
+		command = { type = construct which = land_fort where = 1269 value = 3 }
+		command = { type = construct which = land_fort where = 1268 value = 2 }
+		command = { type = construct which = land_fort where = 1279 value = 2 }
+		command = { type = construct which = land_fort where = 1263 value = 2 }
+		command = { type = construct which = land_fort where = 1265 value = 2 }
+		command = { type = construct which = land_fort where = 1267 value = 2 }
+		command = { type = construct which = land_fort where = 1360 value = 2 }
+		command = { type = construct which = land_fort where = 1361 value = 2 }
+
+		command = { type = construct which = flak where = 1280 value = 2 }
+		command = { type = construct which = flak where = 1269 value = 2 }
+		command = { type = construct which = flak where = 1268 value = 2 }
+		command = { type = construct which = flak where = 1279 value = 2 }
+		command = { type = construct which = flak where = 1263 value = 2 }
+		command = { type = construct which = flak where = 1265 value = 2 }
+		command = { type = construct which = flak where = 1267 value = 2 }
+		command = { type = construct which = flak where = 1360 value = 2 }
+		command = { type = construct which = flak where = 1361 value = 2 }
+
+		command = { type = dissent value = 15 }
+
+		command = { type = manpowerpool value = -30 }
+
+		command = { type = ai which = "switch/hsr_CHI_jap.ai" }
+	}
+}
+#########################################################################
+#  40815 Chinese reaction (A.I.) (by Aregorn 060222)
+#########################################################################
+event = {
+	id = 40815
+	random = no
+	country = chi
+
+	trigger = { 	or = {
+				and = { lost_national = { country = CHi value = 60 } year = 1938 }
+				and = { lost_national = { country = CHi value = 50 } year = 1939 }
+				and = { lost_national = { country = CHi value = 40 } year = 1940 }
+				and = { lost_national = { country = CHi value = 40 } year = 1941 }
+				and = { lost_national = { country = CHi value = 30 } year = 1942 }
+				and = { lost_national = { country = CHi value = 30 } year = 1943 }
+			}
+			not = { control = { province = 1235  data = chi } }
+			ai = yes
+			war = { country = chi country = jap }
+			}
+
+	name = "Chinese counter-offensive"
+	desc = "."
+
+	style = 0
+
+	date = { day = 1 month = june year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+
+		command = { type = mountain_defense which = militia value = 60 }
+		command = { type = hill_defense which = militia value = 60 }
+		command = { type = mountain_defense which = infantry value = 10 }
+		command = { type = hill_defense which = infantry value = 10 }
+		command = { type = mountain_defense which = bergsjaeger value = 10 }
+		command = { type = hill_defense which = bergsjaeger value = 10 }
+
+		command = { type = free_money value = 1 }
+		command = { type = free_oil value = 3 }
+		command = { type = free_metal value = 16 }
+		command = { type = free_energy value = 32 }
+		command = { type = free_rare_materials value = 8 }
+		command = { type = industrial_modifier which = total value = 10 }
+		command = { type = free_ic value = 15 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 10000 }
+
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = manpowerpool value = -120 }
+	}
+}
+#########################################################################
+#  40816 Chinese Civil War - CHC (by Aregorn 060219)
+#########################################################################
+event = {
+	id = 40816
+	random = no
+	country = chc
+
+	name = "Chinese Civil War"
+	desc = EVT_91_DESC
+	style = 0
+
+
+	action_a = {
+		name = "Stop the fight"
+		ai_chance = 100
+		command = { type = peace which = CHi value = 0 }
+		command = { type = peace which = CHi value = 0 }
+		command = { type = peace which = CSX value = 0 }
+		command = { type = peace which = CGX value = 0 }
+		command = { type = peace which = CYN value = 0 }
+		command = { type = peace which = CXB value = 0 }
+		command = { type = peace which = SIK value = 0 }
+		command = { type = dissent which = total value = -2 }
+	}
+	action_b = {
+		name = "No way"
+		ai_chance = 0
+		command = { }
+	}
+}
+###############################################################################################
+# 40817 End of the USA help to China  (by Aregorn 060226)
+###############################################################################################
+event = {
+	id = 40817
+	random = no
+	country = chi
+	persistent = yes
+
+#	aregorn_usa 40916
+
+	name = "End of the USA help to China"
+	desc = "The aid had to be stopped"
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	action_a = {
+		name = "Great!"
+		command = { type = free_ic value = -6 }
+		command = { type = industrial_modifier which = supplies value = -1 }
+		command = { type = tc_mod value = -5 }
+		}
+}
+#########################################################################
+# 40818-22 Chinese Military programmes (by Aregorn 050405)
+#########################################################################
+event = {
+	id = 40818
+	random = no
+	country = chi
+
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			not = { ispuppet = chi }
+			or = { 	not = { ai = jap }
+				and = { ai = jap lost_national = { country = CHi value = 70 }
+				}
+			}
+	}
+
+
+
+	name = "1939 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1939 }
+
+	action_a = {
+		name = "1939 Military programme finished"
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = -60 }
+		}
+}
+#########################
+event = {
+	id = 40819
+	random = no
+	country = chi
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			not = { ispuppet = chi }
+			or = { 	not = { ai = jap }
+				and = { ai = jap lost_national = { country = CHi value = 70 }
+				}
+			}
+	}
+
+
+	name = "1940 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1940 }
+
+	action_a = {
+		name = "1940 Military programme finished"
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = -60 }
+		}
+}
+#########################
+event = {
+	id = 40820
+	random = no
+	country = chi
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			not = { ispuppet = chi }
+			or = { 	not = { ai = jap }
+				and = { ai = jap lost_national = { country = CHi value = 70 }
+				}
+			}
+	}
+
+
+
+	name = "1941 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "1941 Military programme finished"
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = -60 }
+		}
+}
+#########################
+event = {
+	id = 40821
+	random = no
+	country = chi
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			not = { ispuppet = chi }
+			or = { 	not = { ai = jap }
+				and = { ai = jap lost_national = { country = CHi value = 70 }
+				}
+			}
+	}
+
+
+
+	name = "1942 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 Military programme finished"
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = -60 }
+		}
+}
+#########################
+event = {
+	id = 40822
+	random = no
+	country = chi
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			not = { ispuppet = chi }
+			or = { 	not = { ai = jap }
+				and = { ai = jap lost_national = { country = CHi value = 70 }
+				}
+			}
+	}
+
+
+
+	name = "1943 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 Military programme finished"
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = add_division value = infantry when = 2 where = engineer }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = manpowerpool value = -60 }
+		}
+}
+#########################################################################
+# 40823 Chinese adjustment lower difficulty levels (by Aregorn 060307)
+#########################################################################
+
+#########################################################################
+# 40824-25 Chinese Army A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 40824
+	random = no
+	country = chi
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = chi country = jap }
+				war = { country = chi country = sov } }
+			random = 25
+			not = { manpower = 20 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 20 }
+		}
+}
+event = {
+	id = 40825
+	random = no
+	country = chi
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = chi country = jap }
+				war = { country = chi country = sov } }
+			random = 25
+			not = { supplies = 400 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 600 }
+		}
+}
+#########################################################################
+# 40826-27 ChC Army A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 40826
+	random = no
+	country = chc
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = chc country = chi }
+				war = { country = chc country = sov }
+				war = { country = chc country = jap }
+				}
+			random = 25
+			not = { manpower = 20 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 100 }
+		}
+}
+event = {
+	id = 40827
+	random = no
+	country = chc
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = chc country = chi }
+				war = { country = chc country = sov }
+				war = { country = chc country = jap }
+				}
+			random = 25
+			not = { supplies = 400 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 600 }
+		}
+}
+#########################################################################
+#  40828 CGX reaction (A.I.) (by Aregorn 060222)
+#########################################################################
+event = {
+	id = 40828
+	random = no
+	country = cgx
+
+	trigger = { 	ai = yes
+			war = { country = cgx country = jap }
+			}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+		command = { type = add_division value = militia when = 0 where = engineer }
+
+		command = { type = free_money value = 1 }
+		command = { type = free_oil value = 2 }
+		command = { type = free_metal value = 6 }
+		command = { type = free_energy value = 12 }
+		command = { type = free_rare_materials value = 3 }
+		command = { type = industrial_modifier which = total value = 10 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+
+		command = { type = mountain_defense which = militia value = 60 }
+		command = { type = hill_defense which = militia value = 60 }
+		command = { type = mountain_defense which = infantry value = 30 }
+		command = { type = hill_defense which = infantry value = 30 }
+		command = { type = mountain_defense which = bergsjaeger value = 10 }
+		command = { type = hill_defense which = bergsjaeger value = 10 }
+
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = manpowerpool value = -120 }
+	}
+}
+#########################################################################
+#  40829 Continuation Chinese CW (A.I.) (by Aregorn 060222)
+#########################################################################
+event = {
+	id = 40829
+	random = no
+	country = chi
+
+	trigger = { 	ai = yes event = 40815 not = { war = { country = chi country = jap } }
+			war = { country = chi country = chc }
+	}
+
+	name = "Continuation of the Chinese Civil War"
+	desc = "."
+
+	style = 0
+
+	date = { day = 1 month = june year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = mountain_defense which = militia value = -60 }
+		command = { type = hill_defense which = militia value = -60 }
+		command = { type = mountain_defense which = infantry value = -10 }
+		command = { type = hill_defense which = infantry value = -10 }
+		command = { type = mountain_defense which = bergsjaeger value = -10 }
+		command = { type = hill_defense which = bergsjaeger value = -10 }
+
+		command = { type = free_money value = -1 }
+		command = { type = free_oil value = -3 }
+		command = { type = free_metal value = -16 }
+		command = { type = free_energy value = -32 }
+		command = { type = free_rare_materials value = -8 }
+		command = { type = industrial_modifier which = total value = -15 }
+		command = { type = free_ic value = -10 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = professional_army value = -1 }
+	}
+}

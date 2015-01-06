@@ -1,0 +1,23 @@
+ARG;Name;Pic Name;Skill;Start Year;End Year;Speciality1;Speciality2;Speciality3;Speciality4;Speciality5;Speciality6;Speciality7;Speciality8;Speciality9;Speciality10;Speciality11;Speciality12;Speciality13;Speciality14;Speciality15;Speciality16;Speciality17;Speciality18;Speciality19;Speciality20;Speciality21;Speciality22;Speciality23;Speciality24;Speciality25;Speciality26;Speciality27;Speciality28;Speciality29;Speciality30;Speciality31;Speciality32;x
+400;YPF;T407;5;1930;1970;industrial_engineering;chemistry;technical_efficiency;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+401;Universidad de Bs.As.;T421;5;1930;1970;mathematics;chemistry;mechanics;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+402;Buenos Aires Railway Company;T402;4;1930;1970;industrial_engineering;mechanics;electronics;general_equipment;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+403;SOMISA;T416;6;1947;1970;artillery;mechanics;general_equipment;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+404;Fabricaciones Militares;T405;5;1941;1970;general_equipment;mechanics;chemistry;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+405;Esteban de Luca;T404;5;1930;1970;mechanics;artillery;general_equipment;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+406;Fábrica Militar Villa María;T417;5;1937;1970;artillery;general_equipment;chemistry;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+407;Kurt Tank;T420;6;1947;1955;rocketry;aeronautics;electronics;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+408;Alfredo Baisi;T419;6;1943;1948;artillery;mechanics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+409;AFNE;T400;3;1930;1970;naval_engineering;electronics;naval_artillery;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+410;Astilleros Alianza S.A.;T401;3;1930;1970;naval_engineering;technical_efficiency;electronics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+411;CAC;T403;3;1930;1970;aeronautics;electronics;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+412;FAA;T406;4;1930;1970;aeronautics;artillery;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+413;Antonio Parodi;T408;4;1930;1945;training;fighter_tactics;piloting;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+414;Augustín Justo;T409;2;1930;1938;large_unit_tactics;centralized_execution;infantry_focus;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+415;Eleazar Videla;T410;5;1942;1960;large_taskforce_tactics;centralized_execution;naval_training;seamanship;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+416;Francisco Velez;T411;4;1930;1941;small_unit_tactics;decentralized_execution;individual_courage;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+417;Hector del Riva;T412;4;1939;1970;training;bomber_tactics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+418;Juan Domingo Peron;T413;4;1941;1970;combined_arms_focus;small_unit_tactics;decentralized_execution;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+419;Pedro Casal;T414;4;1930;1946;large_taskforce_tactics;centralized_execution;naval_training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+420;Luis F. Leloir;T415;9;1938;1944;chemistry;general_equipment;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+421;Manuel Savio;T418;4;1937;1970;mechanics;chemistry;technical_efficiency;management;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;x

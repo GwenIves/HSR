@@ -1,0 +1,119 @@
+# France 1936 AI File by Lothos
+
+max_garrison_prop = 0.30
+min_garrison_prop = 0.20
+max_front_ratios = { }
+upgrading = 0.30
+reinforcement = 0.30
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = no
+	home_peace_cap 		= 100
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.0
+	revolt_risk_mult	= 0.0
+	capital			= 20	# Our capital
+	opposing_alliance	= 0	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		BEL = -1
+		LUX = 100
+		GER = 100
+		SPA = -1
+		SPR = -1
+		ITA = 40
+		SCH = -1
+		ENG = -1
+		CAN = -1
+		AST = -1
+		NZL = -1
+		CYN = -1
+		CGX = -1
+	}
+	province_priorities = {
+		43 = 100 # Dunkerque
+		44 = 100 # Lille
+		53 = 100 # Valenciennes
+		54 = 20  # Amiens
+		55 = 20  # Compiegne
+		63 = 20  # Troyes
+		64 = 100 # Reims
+		72 = 100 # Metz
+		317 = 20 # Chaumont
+		527 = 60 # Grenoble
+		366 = 60 # Nice
+
+		# Africa
+		939 = 10 # Tunis
+		949 = 5 # Algiers
+		953 = 5 # Oran
+		958 = -1 # Casablanca
+		981 = -1 # Dakar
+
+		# Middle East
+		1794 = -1 # Beirut
+
+		# Asia
+		1328 = 10 # Hanoi
+		1337 = 10 # Saigon
+	}
+	area_multiplier = { }
+}
+front = {
+	recklessness 		= 2 # 0-3
+	distrib_vs_ai 		= op_defensive
+	distrib_vs_human 	= op_defensive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human = 2.5
+	base_attack_odds	= 1.2 # 1.3
+	min_attack_odds		= 1.1
+	max_attack_odds		= 4.0 # 3.0
+	reinforce_odds		= 1.3
+	withdraw_odds		= 0.6
+
+	enemy_handicap = { }
+	passivity = { }
+	province_priorities = {
+		# Maginot Line
+		72 = 0.1 # 0.4
+		73 = 0.1 # 0.4
+		316 = 0.1 # 0.4
+	}
+}
+###################################
+# Invasions and Naval
+###################################
+admiral = {
+	min_org		= 100	# NEW: Percent of org gained back before the unit can leave port
+	min_dmg		= 98    # NEW: Percent of dmg gained back before the unit can leave port
+	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+	return_dmg 	= 80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+
+	ignore = {
+		"Southeast Northsea"
+		"kattegat"
+		"Bothnian Bay"
+		"northern baltic"
+		"southern baltic"
+		"Southeast Northsea"
+		"East North Sea"
+		"Norwegian Sea"
+	}
+	target = { }
+	core = {
+		2414
+		2415
+		2416
+		2417
+		2435
+		2438
+	}
+}

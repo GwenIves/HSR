@@ -1,0 +1,235 @@
+#
+# HoI - Czechoslovakian Events
+#
+#
+# Modified by Aregorn for HSR
+#
+#
+# written by Henrik Fåhraeus
+#
+#
+# (2) 2200, 2201, 2202
+#
+#
+# 2200 		The Treaty of Munich - Allied Support 			(by Aregorn 060204 based on HOI2 event)
+# 2201 		The End of Czechoslovakia - Slovakia Independent 	(Modified by Aregorn 050209)
+# 2202 		The End of Czechoslovakia - Partitioning 		(Modified by Aregorn)
+# 2203 		The Treaty of Munich - Czechs left alone 		(by Aregorn 060204 based on HOI2 event)
+
+#########################################################################
+# 2200 The Treaty of Munich - Allied Support (by Aregorn)
+#########################################################################
+event = {
+	id = 2200
+	random = no
+	country = CZE
+
+	trigger = { flag = sudetelandsupport }
+
+	name = "EVT_2200_NAME"
+	desc = "EVT_2200_DESC"
+	style = 0
+	picture = "Munich"
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2200A" # Accept the Claims
+		ai_chance = 5
+		command = { type = secedeprovince which = GER value = 466 } #Strakonice
+		command = { type = secedeprovince which = GER value = 467 } #Tabor
+		command = { type = secedeprovince which = GER value = 471 } #Usti
+		command = { type = secedeprovince which = GER value = 472 } #Liberec
+		command = { type = secedeprovince which = GER value = 474 } #Ostrava
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = ENG value = -10 }
+		command = { type = relation which = FRA value = -10 }
+		command = { type = domestic which = democratic value = -2 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = dissent value = 25 }
+		command = { type = trigger which = 2003 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2200C" # No way!
+		ai_chance = 95
+		command = { type = domestic which = political_left value = 2 }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = SOV value = 30 }
+		command = { type = relation which = ENG value = -10 }
+		command = { type = relation which = FRA value = -10 }
+		command = { type = dissent value = 5 }
+		command = { type = trigger which = 2005 } # GER
+	}
+}
+
+#########################################################################
+# 2201 The End of Czechoslovakia - Slovakia Independent (Modified by Aregorn 050209)
+#########################################################################
+event = {
+	id = 2201
+	random = no
+	country = CZE
+	name = "EVT_2201_NAME"
+	desc = "EVT_2201_DESC"
+	style = 0
+	picture = "End_Czech"
+
+	# Triggered by GER 2040
+
+	action_a = {
+		name = "ACTIONNAME2201A" # Accept the inevitable (Game Over)
+		ai_chance = 100
+
+		command = { type = leave_alliance }
+
+		command = { type = switch_allegiance which = -1 where = GER }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = relation which = GER value = 50 }
+		command = { type = relation which = HUN value = 20 }
+		command = { type = relation which = ENG value = -15 }
+		command = { type = relation which = FRA value = -15 }
+		command = { type = relation which = SOV value = -25 }
+
+		command = { type = domestic which = democratic value = -2 }
+		command = { type = domestic which = political_left value = -2 }
+		command = { type = domestic which = freedom value = -1 }
+
+		command = { type = capital which = 476 } # Bratislava
+		command = { type = country which = SLO }
+		command = { type = trigger which = 2006 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2201B" # Fight!
+		ai_chance = 0
+		command = { type = leave_alliance }
+		command = { type = domestic which = political_left value = 2 }
+		command = { type = dissent value = 30 }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = SOV value = 25 }
+		command = { type = trigger which = 2007 } # GER
+	}
+}
+#########################################################################
+# 2202 The End of Czechoslovakia - Partitioning (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2202
+	random = no
+	country = CZE
+	name = "EVT_2202_NAME"
+	desc = "EVT_2202_DESC"
+	style = 0
+	picture = "CZE_Partition"
+
+	# Triggered by GER 2040
+
+	action_a = {
+		name = "ACTIONNAME2202A" # Accept the inevitable (Game Over)
+		ai_chance = 30
+		command = { type = leave_alliance }
+		command = { type = secedeprovince which = HUN value = 476 } #Bratislava
+		command = { type = secedeprovince which = HUN value = 477 } #Banska
+		command = { type = secedeprovince which = HUN value = 478 } #Zilina
+		command = { type = secedeprovince which = HUN value = 490 } #Kosice
+		command = { type = secedeprovince which = HUN value = 499 } #Presov
+
+		command = { type = switch_allegiance which = -1 where = GER }
+		command = { type = switch_allegiance which = -1 where = hun }
+
+		command = { type = trigger which = 2011 } # GER
+		command = { type = trigger which = 2501 } # HUN
+	}
+	action_b = {
+		name = "ACTIONNAME2202B" # Fight!
+		ai_chance = 70
+		command = { type = leave_alliance }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = HUN value = -25 }
+		command = { type = relation which = SOV value = 20 }
+		command = { type = domestic which = political_left value = 2 }
+		command = { type = dissent value = 10 }
+		command = { type = trigger which = 2012 } # GER
+		command = { type = trigger which = 2502 } # HUN
+	}
+}
+#########################################################################
+# 2203 The Treaty of Munich - Czechs left alone (by Aregorn)
+#########################################################################
+event = {
+	id = 2203
+	random = no
+	country = CZE
+
+	trigger = { flag = sudetelandnosupport }
+
+	name = "EVT_2200_NAME"
+	desc = "EVT_2200_DESC"
+	style = 0
+	picture = "Munich"
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2200A" # Accept the Claims
+		ai_chance = 99
+		command = { type = leave_alliance }
+		command = { type = secedeprovince which = GER value = 466 } #Strakonice
+		command = { type = secedeprovince which = GER value = 467 } #Tabor
+		command = { type = secedeprovince which = GER value = 471 } #Usti
+		command = { type = secedeprovince which = GER value = 472 } #Liberec
+		command = { type = secedeprovince which = GER value = 474 } #Ostrava
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = ENG value = -10 }
+		command = { type = relation which = FRA value = -10 }
+		command = { type = domestic which = democratic value = -2 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = dissent value = 25 }
+		command = { type = trigger which = 2003 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2200C" # No way!
+		ai_chance = 1
+		command = { type = leave_alliance }
+		command = { type = domestic which = political_left value = 2 }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = SOV value = 30 }
+		command = { type = relation which = ENG value = -10 }
+		command = { type = relation which = FRA value = -10 }
+		command = { type = dissent value = 25 }
+		command = { type = trigger which = 2005 } # GER
+	}
+}

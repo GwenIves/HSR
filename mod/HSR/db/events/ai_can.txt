@@ -1,0 +1,474 @@
+####################################
+# Canada AI events 36100 - 36199 by Lothos
+####################################
+################
+# Minister of Security Section 36100 - 36109
+#############################################
+event = { # Thomas A. Crerar takes power
+	id = 36100
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45070 # Thomas A. Crerar
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANSecurityCrerar }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANSecurityCrerar }
+		command = { type = local_clrflag which = CANSecurityFoster }
+		command = { type = ministerofsecurity which = 45070 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # George Eulas Foster takes power
+	id = 36101
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45068 # George Eulas Foster
+		NOT = { minister = 45070 } # Thomas A. Crerar
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANSecurityFoster }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CANSecurityCrerar }
+		command = { type = local_setflag which = CANSecurityFoster }
+		command = { type = ministerofsecurity which = 45068 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 36110 - 36119
+#############################################
+event = { # Frederick M.W. Harvey takes power
+	id = 36110
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45104 # Frederick M.W. Harvey
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANChiefHarvey }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANChiefHarvey }
+		command = { type = local_clrflag which = CANChiefStuart }
+		command = { type = chiefofstaff which = 45104 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Kenneth Stuart takes power
+	id = 36111
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45101 # Kenneth Stuart
+		NOT = { minister = 45104 } # Frederick M.W. Harvey
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANChiefStuart }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CANChiefHarvey }
+		command = { type = local_setflag which = CANChiefStuart }
+		command = { type = chiefofstaff which = 45101 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 36120 - 36129
+#############################################
+event = { # René St. Pierre takes power
+	id = 36120
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45092 # René St. Pierre
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANIntelligencePierre }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANIntelligencePierre }
+		command = { type = local_clrflag which = CANIntelligenceCrerar }
+		command = { type = ministerofintelligence which = 45092 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Henry Crerar takes power
+	id = 36121
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45006 # Henry Crerar
+		NOT = { minister = 45092 } # René St. Pierre
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANIntelligenceCrerar }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CANIntelligencePierre }
+		command = { type = local_setflag which = CANIntelligenceCrerar }
+		command = { type = ministerofintelligence which = 45006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 36130 - 36139
+#############################################
+event = { # Ernest Ashton takes power
+	id = 36130
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45008 # Ernest Ashton
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANArmyAshton }
+		}
+		OR = {
+			atwar = no
+			NOT = { minister = 45110 } # Kenneth Stuart
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANArmyAshton }
+		command = { type = local_clrflag which = CANArmyStuart }
+		command = { type = chiefofarmy which = 45008 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Kenneth Stuart takes power
+	id = 36131
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45110 # Kenneth Stuart
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANArmyStuart }
+		}
+		OR = {
+			atwar = yes
+			NOT = { minister = 45008 } # Ernest Ashton
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CANArmyAshton }
+		command = { type = local_setflag which = CANArmyStuart }
+		command = { type = chiefofarmy which = 45110 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 36140 - 36149
+#############################################
+event = { # Ian A. MacKenzie takes power
+	id = 36140
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45004 # Ian A. MacKenzie
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANArmamentMacKenzie }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANArmamentMacKenzie }
+		command = { type = local_clrflag which = CANArmamentMeighen }
+		command = { type = armamentminister which = 45004 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Arthur Meighen takes power
+	id = 36141
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45056 # Arthur Meighen
+		NOT = { minister = 45004 } # Ian A. MacKenzie
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANArmamentMeighen }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CANArmamentMacKenzie }
+		command = { type = local_setflag which = CANArmamentMeighen }
+		command = { type = armamentminister which = 45056 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 36150 - 36159
+#############################################
+event = { # Joseph Roméo Vachon takes power
+	id = 36150
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45123 # Joseph Roméo Vachon
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANChiefAirVachon }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANChiefAirVachon }
+		command = { type = chiefofair which = 45123 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Navy Minister Section 36160 - 36169
+#############################################
+event = { # Percy Nelles takes power
+	id = 36160
+	random = no
+	country = CAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 45009 # Percy Nelles
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CANChiefNavyNelles }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CANChiefNavyNelles }
+		command = { type = chiefofnavy which = 45009 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 36170 - 36199
+#############################################
+################
+# Canada Load D-Day AI
+#############################################
+event = {
+	id = 36170
+	random = no
+	country = CAN
+
+	trigger = {
+		ai = yes
+		alliance = { country = CAN country = USA }
+		OR = {
+			event = 28005 # USA Loaded D-Day
+			control = { province = 292 data = USA } # Arburg
+			control = { province = 92  data = USA } # Arhus
+			control = { province = 91  data = USA } # Kolding
+			control = { province = 78  data = USA } # Leeweden
+			control = { province = 47  data = USA } # Amsterdam
+			control = { province = 46  data = USA } # Rotterdam
+			control = { province = 45  data = USA } # Ghent
+			control = { province = 18  data = USA } # Calais
+			control = { province = 42  data = USA } # Dieppe
+			control = { province = 41  data = USA } # Le Havre
+			control = { province = 39  data = USA } # Caen
+			control = { province = 33  data = USA } # Rennes
+			control = { province = 32  data = USA } # Brest
+			control = { province = 34  data = USA } # Lorient
+			control = { province = 35  data = USA } # Nantes
+			control = { province = 59  data = USA } # Cholet
+			control = { province = 325 data = USA } # Bordeaux
+			control = { province = 326 data = USA } # Dax
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/CAN_Dday.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}

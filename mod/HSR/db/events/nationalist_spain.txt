@@ -1,0 +1,282 @@
+#
+#
+# Modified by Aregorn for HSR
+#
+#
+# written by Henrik Fåhraeus
+#
+# (2) 3001, 3005
+
+#########################################################################
+#  Spanish Civil War - Fascist Nation (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3001
+	random = no
+	country = SPA
+
+	trigger = {
+		event = 3100
+	}
+
+	name = "EVT_3001_NAME"
+	desc = "EVT_3001_DESC"
+	style = 0
+	picture = "SPA_fascist"
+
+	date = { day = 18 month = july year = 1936 }
+#	date = { day = 11 month = january year = 1936 }
+#	offset = 3
+#	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK" # Anarchism and Communism must fall!
+
+		command = { type = set_domestic which = democratic value = 2 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = domestic which = professional_army value = -1 }
+
+		command = { type = headofstate which = 10001 }
+		command = { type = headofgovernment which = 10002 }
+		command = { type = foreignminister which = 10003 }
+		command = { type = armamentminister which = 10004 }
+		command = { type = ministerofsecurity which = 10005 }
+		command = { type = ministerofintelligence which = 10006 }
+		command = { type = chiefofstaff which = 10007 }
+		command = { type = chiefofarmy which = 10008 }
+		command = { type = chiefofnavy which = 10009 }
+		command = { type = chiefofair which = 10010 }
+
+		command = { type = sleepminister which = 10279 } #José Sanjurjo as HoS
+		command = { type = sleepminister which = 10281 } #José Sanjurjo as HoG
+		command = { type = sleepminister which = 10188 } #José Sanjurjo as CoS
+		command = { type = sleepminister which = 10211 } #José Sanjurjo as CoA
+		command = { type = sleepleader which = 3460 }	#Sanjurjo
+
+		command = { type = supplies value = 5000 }
+		command = { type = oilpool value = 25000 }
+		command = { type = metalpool value = 25000 }
+		command = { type = energypool value = 50000 }
+		command = { type = rarematerialspool value = 25000 }
+
+		#command = { type = trigger which = 2023 } # German intervention
+		#command = { type = trigger which = 2623 } # Soviet intervention
+		#command = { type = trigger which = 2801 } # French intervention
+		#command = { type = trigger which = 2901 } # Italian intervention
+		#command = { type = trigger which = 3400 } # UK intervention
+
+		command = { type = set_domestic which = democratic value = 2 }
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = professional_army value = 3 }
+
+		command = { type = add_division which = "1a Milicia Falangista" value = militia when = 0 where = engineer }
+		command = { type = add_division which = "2a Milicia Falangista" value = militia when = 0 where = engineer }
+		command = { type = add_division which = "Brigadas Navarras" value = militia when = 0 where = engineer }
+		command = { type = add_corps which = "Tropas de África" value = land when = 3422 where = 347 } #Seville
+		command = { type = add_division which = "Regulares Marroquíes" value = infantry when = 0 where = engineer }
+		command = { type = add_division value = hq where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = add_division value = militia where = engineer }
+		command = { type = convoy which = 334 value = 347 when = 16 } #Supplies to Seville
+		command = { type = add_division value = transport when = 0 }
+		command = { type = add_division value = transport when = 0 }
+		command = { type = manpowerpool value = 500 }
+
+		command = { type = transport_pool which = ger value = 20 }
+		command = { type = secedeprovince which = spr value = 341 }
+	}
+}
+
+
+#########################################################################
+#  Spanish Civil War - German Intervention
+#########################################################################
+event = {
+	id = 3002
+	random = no
+	country = SPA
+
+	# Triggered by GER 2023
+
+	name = "EVT_3002_NAME"
+	desc = "EVT_3002_DESC"
+	style = 0
+	picture = "SCW_German Intervention"
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = supplies value = 5000 }
+		command = { type = add_division which = "Panzer Division 'Condor'" value = armor when = 1 where = sp_artillery }
+	   	command = { type = gain_tech which = 1020 } #36 inf
+		command = { type = gain_tech which = 9020 } #Flying circus doc
+	    	command = { type = steal_tech which = GER }
+		command = { type = transport_pool which = ger value = 20 }
+		command = { type = set_domestic which = professional_army value = 1 }
+
+	}
+}
+#########################################################################
+#  Spanish Civil War - Italian Intervention (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3003
+	random = no
+	country = SPA
+
+	# Triggered by ITA 2901
+
+	name = "EVT_3003_NAME"
+	desc = "EVT_3003_DESC"
+	style = 0
+	picture = "SCW_Italian Intervention"
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = manpowerpool value = 10 }
+		command = { type = supplies value = 1000 }
+		command = { type = add_division value = destroyer when = 0 }
+		command = { type = add_division value = submarine when = 1 }
+
+		command = { type = add_corps which = "Corpo Truppe Voluntario" value = land when = 3427 where = 333 }
+		command = { type = add_division which = "Littorio" value = light_armor when = 0 }
+		command = { type = add_division which = "Dio lo Vuole" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "Fiamme Nere" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "Penne Nere" value = infantry when = 1 where = artillery }
+
+		command = { type = add_corps which = "Aviación Legionaria" value = air when = 1 where = 334 }
+		command = { type = add_division which = "Bombarderos Aviación Legionaria" value = naval_bomber when = 0 }
+		command = { type = add_division which = "Cazas Aviación Legionaria" value = interceptor when = 0 }
+
+	        command = { type = gain_tech which = 2320 } #Early field arty
+
+	       	command = { type = steal_tech which = ITA }
+		command = { type = transport_pool which = ger value = 30 }
+
+#		command = { type = province_keypoints which = -1 value = 1 }
+#		command = { type = province_keypoints which = -1 value = 1 }
+	}
+}
+#########################################################################
+#  Spanish Civil War - Victory!!!
+#########################################################################
+event = {
+	id = 3004
+	random = no
+	country = SPA
+
+	trigger = {
+		owned = { province = 341 data = SPA }
+		NOT = {
+			exists = SPR
+	   	}
+	}
+	name = "EVT_3004_NAME"
+	desc = "EVT_3004_DESC"
+	style = 0
+	picture = "SPA_Victory"
+
+	date = { day = 18 month = july year = 1936 }
+	offset = 5
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = capital which = 341 }
+		command = { type = set_domestic which = democratic value = 3 }
+		command = { type = set_domestic which = political_left value = 4 }
+		command = { type = headofstate which = 10032 }
+		command = { type = headofgovernment which = 10046 }
+		command = { type = foreignminister which = 10057 }
+		command = { type = armamentminister which = 10090 }
+		command = { type = ministerofsecurity which = 10129 }
+		command = { type = ministerofintelligence which = 10162 }
+		command = { type = chiefofstaff which = 10183 }
+		command = { type = chiefofarmy which = 10206 }
+		command = { type = chiefofnavy which = 10230 }
+		command = { type = sleepleader which = 3413 }
+		command = { type = sleepleader which = 3416 }
+		command = { type = sleepleader which = 3427 }
+		command = { type = sleepleader which = 3466 }
+		command = { type = sleepleader which = 3492 }
+		command = { type = sleepleader which = 3493 }
+		command = { type = sleepleader which = 3494 }
+#		command = { type = sleepevent which = 2155 }
+#		command = { type = sleepevent which = 2156 }
+		command = { type = belligerence which = SPA value = -10 }
+		command = { type = remove_division which = "Condor Panzer" value = SPA }
+		command = { type = remove_division which = "Littorio" value = SPA }
+		command = { type = remove_division which = "Dio lo Vuole" value = SPA }
+		command = { type = remove_division which = "Fiamme Nere" value = SPA }
+		command = { type = remove_division which = "Penne Nere" value = SPA }
+		command = { type = remove_division which = "Bombarderos Aviación Legionaria" value = SPA }
+		command = { type = remove_division which = "Cazas Aviación Legionaria" value = SPA }
+		command = { type = free_oil value = -5 }
+		command = { type = transport_pool which = ger value = -40 }
+		command = { type = ai which = "switch/SP_EndCivilWar.ai" }
+		command = { type = peacetime_ic_mod value = -50 }
+	}
+
+}
+#########################################################################
+#  Vichy France - Return of occupied provinces (Aregorn 051130)
+#########################################################################
+event = {
+	id = 3005
+	random = no
+	country = spa
+
+	trigger = {
+		exists = VIC
+		alliance = { country = GER country = spa }
+	}
+
+	name = "EVT_2900_NAME"
+	desc = "EVT_2900_DESC"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK" # Return occupied provinces as per agreement
+		command = { type = secedeprovince which = VIC value = 319 }
+		command = { type = secedeprovince which = VIC value = 320 }
+		command = { type = secedeprovince which = VIC value = 327 }
+# Not Pau	command = { type = secedeprovince which = VIC value = 328 }
+		command = { type = secedeprovince which = VIC value = 324 }
+		command = { type = secedeprovince which = VIC value = 322 }
+		command = { type = secedeprovince which = VIC value = 321 }
+		command = { type = secedeprovince which = VIC value = 359 }
+# Not Perpignan	command = { type = secedeprovince which = VIC value = 358 }
+		command = { type = secedeprovince which = VIC value = 362 }
+		command = { type = secedeprovince which = VIC value = 361 }
+		command = { type = secedeprovince which = VIC value = 360 }
+		command = { type = secedeprovince which = VIC value = 363 }
+		command = { type = secedeprovince which = VIC value = 364 }
+		command = { type = secedeprovince which = VIC value = 365 }
+		command = { type = secedeprovince which = VIC value = 366 }
+		command = { type = secedeprovince which = VIC value = 528 }
+		command = { type = secedeprovince which = VIC value = 529 }
+		command = { type = secedeprovince which = VIC value = 527 }
+		command = { type = secedeprovince which = VIC value = 367 }
+		command = { type = secedeprovince which = VIC value = 934 }
+		command = { type = secedeprovince which = VIC value = 935 }
+		command = { type = secedeprovince which = VIC value = 936 }
+		command = { type = secedeprovince which = VIC value = 937 }
+		command = { type = secedeprovince which = VIC value = 938 }
+		command = { type = secedeprovince which = VIC value = 939 }
+		command = { type = secedeprovince which = VIC value = 940 }
+		command = { type = secedeprovince which = VIC value = 941 }
+		command = { type = secedeprovince which = VIC value = 942 }
+		command = { type = secedeprovince which = VIC value = 943 }
+
+		}
+}

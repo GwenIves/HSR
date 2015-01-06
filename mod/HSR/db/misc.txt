@@ -1,0 +1,237 @@
+#
+# by Aregorn for HSR2 2.11 ARM
+#
+# NOTE: Obviously, the order of these variables cannot be changed.
+
+economy = {
+# IC to TC ratio
+	1.5 #redifined for human via event
+# IC to Supplies ratio
+	3.6 #4
+# IC to Consumer Goods Ratio
+	1.0
+# IC to Money Ratio
+	0.2
+# Max Gearing Bonus ( never lower than value * build time )
+	0.65
+# Gearing Bonus Increment ( lessening of build time per successive build, down to Max Gearing Bonus )
+	0.05
+# IC Non-National Province Multiplier
+	0.25 #0.3333
+# IC Non-Owned (i.e. occupied) Province Multiplier (overrides Non-National where applicable)
+	0.15 #0.2
+# TC Undeployed Division Load
+	10.0 #5
+# TC Occupied Province Load
+	4.0 #3.0
+# TC Land Division Load Multiplier
+	1.0 #1.0
+# TC Air Division Load Multiplier
+	1.0 #1.0
+# TC Naval Division Load Multiplier
+	0.3 #0.3333
+# TC Load from partisans
+	15.0 #3
+# TC load factor from offensives
+	1.5
+# TC Load from province dev
+	5.0
+# TC Load from bases in queue
+	100.0
+# National Province Manpower Multiplier (income per day)
+	0.01 #0.1
+# Non-National Province Manpower Multiplier (income per day.) Note: Some types of ministers can affect this value.
+	0.001 #0
+# Colonial Province Manpower Multiplier (multiplied on the other)
+	0.01 #0.1
+# Requirement for "Influence Nation" to affect domestic sliders: Our IC >= Target IC * X
+	1.5 #0.5
+# Trickle-back factor for manpower from losses in battle. (ie, how many are just wounded.)
+	0.35 #0.5
+# Reinforcement Manpower Cost Factor
+	0.9 #0.8
+# Reinforce cost
+	0.5
+# Reinforce time
+	0.5
+# Upgrade cost
+	0.5	#0.5
+# Upgrade time
+	0.5
+# Nationalism starting value
+	30
+# Monthly Nationalism reduction
+	0.0	#-0.02
+# Time in days to send a division to an ally
+	30
+# TC Load from undeployed brigades (multiplied on top of the division cost)
+	0.3
+# If units can be sold/transfered to non allied countries
+	0
+# Days between spy missions in a country. Do not use fractions
+	20 #15
+# Days between increase intelligence levels. Do not use fractions
+	180 #180
+# Chance to detect the initiator of a spy mission; Values = [0 - 100]; 0 = never detected, Do not use fractions
+	20 #50
+# Relationships hit for detected missions
+	5 #10
+# Distance modifier for neighbours; Values = [0.0 - 1.0]; 0.0 = No neighbour distance bonus.
+	0.25
+# Spy information accuracy modifier. Values = [-10 - 10]; 10 = Full info
+	0 #0
+# Disables AI Peacetime offensive spy missions: 0 = all are allowed; 1 = Assassination, Coup, Fund Partisans and Nuclear sabotage are disabled; 2 = (1) + Delay TT and Disrupt Prod. are disabled.
+	2 #1
+# AI spy missions cost modifier: 1.0 = No change; 0.5 = 50% discount; 2.0 = doubled cost.
+	1.0 #0.5
+# AI diplo missions cost modifier: 1.0 = No discount; 0.5 = 50% discount; 2.0 = doubled cost. Note: Demand territory and Trade deals are for free.
+	1.0 #0.5
+# AI influence modifier. Reduce or increase number of Influence missions AI does: 1 = no change; 0 = No influence missions; 2 = doubled.
+	1.0 #1.0
+}
+
+combat = {
+# Land XP gain Factor
+	2.0	#1.0
+# Naval XP gain Factor
+	3.0	#7.0
+# Air XP gain Factor
+	2.5	#2.25
+# Division XP gain Factor
+	1.5	#1.0
+# Leader XP gain Factor
+	0.4	#1.0
+# Attrition Severity Modifier
+	0.05	#0.05
+# Combat Modifier: Base Proximity
+	0.2	#0.15
+# Combat Modifier: Shore Bombardment Multiplier (Applies to the SB value of ships for org damage)
+	0.002	#0.002
+# Combat Modifier: Total Invasion Mod for each division above three.
+	-0.1
+# Combat Modifier: Multiple Combat Mod
+	-0.3	#-0.5
+# Combat Modifier: Offensive Combined Arms Bonus
+	0.06	#0.05
+# Combat Modifier: Defensive Combined Arms Bonus
+	0.18	#0.15
+# Combat Modifier: Surprise Mod
+	-0.2
+# Combat Modifier: Land Exceeding Max Command Limit Mod
+	-0.75
+# Combat Modifier: Air Exceeding Max Command Limit Mod
+	-0.50	#-0.25
+# Combat Modifier: Naval Exceeding Max Command Limit Mod
+	-0.25
+# Combat Modifier: Envelopment Mod (for each attack direction above one)
+	-0.1
+# Combat Modifier: Encircled Mod (for completely surrounded units)
+	-0.15	#-0.1
+# Combat Modifier: Land Fort Multiplier ( value * fort level)
+	-0.08	#-0.09
+# Combat Modifier: Coastal Fort Multiplier ( value * fort level)
+	-0.08	#-0.09
+# Combat Modifier: Dissent Multiplier
+	-0.02 	#-0.005
+# Combat Modifier: Supply Problems Mod
+	-0.2
+# Combat Modifier: Radar Station ( value * radar level)
+	-0.06 	#0.025
+# Combat Modifier: Interceptor vs Bomber Mod
+	0.33 	#0.25
+# Combat Modifier: Total Air Overstacking Mod for each division above two.
+	-0.02
+# Combat Modifier: Total Naval Overstacking Mod for each non-transport division above two.
+	-0.02	#-0.01
+# Land Leader Command Limit (nr of divisions), Rank 0 (highest)
+	12
+# Land Leader Command Limit (nr of divisions), Rank 1
+	6	#9
+# Land Leader Command Limit (nr of divisions), Rank 2
+	3
+# Land Leader Command Limit (nr of divisions), Rank 3 (lowest)
+	1
+# Air Leader Command Limit (nr of divisions), Rank 0 (highest)
+	16 	#16
+# Air Leader Command Limit (nr of divisions), Rank 1
+	8 	#8
+# Air Leader Command Limit (nr of divisions), Rank 2
+	4 	#4
+# Air Leader Command Limit (nr of divisions), Rank 3 (lowest)
+	2	#3
+# Naval Leader Command Limit (nr of ships), Rank 0 (highest)
+	30	#30
+# Naval Leader Command Limit (nr of ships), Rank 1
+	20	#18
+# Naval Leader Command Limit (nr of ships), Rank 2
+	10	#12
+# Naval Leader Command Limit (nr of ships), Rank 3 (lowest)
+	5	#6
+# HQ Command Limit Factor (value * HQ Leader Command Limit)
+	2.5	#2
+# Convoy protection factor  (higher, the more fearful convoy escorts are for raiders.)
+	1.0
+# Delay in hours after a combat ends before new orders can be given.
+	24 	#24
+# Maximum sizes of air-stacks
+	4 	#4
+# Effect of experience on combat
+	0.5
+# Damage factor versus Naval Bases from bombing
+	1.5 	#2.0
+# Damage factor versus Air Bases from bombing
+	2.0
+# Damage factor versus AA from bombing
+	0.3	#0.1
+# Damage factor versus rocket from bombing
+	0.2
+# Damage factor versus nuke from bombing
+	0.2
+# Damage factor versus Radar from bombing
+	0.5
+# Damage factor versus Infra from bombing
+	0.14	#0.07
+# Damage factor versus IC from bombing
+	1.0
+# Damage factor versus resources from bombing
+	1.0
+# How effective is ground-def efficiency when applied to defence chance rolls.
+	1.90 	#1.0
+# Base chance to avoid hit if defences left.
+	0.8	#
+# Base chance to avoid hit if no defences left.
+	0.6	#0.6
+#CHANCE TO GET TERRAIN TRAIT
+	1000	#600
+#CHANCE TO GET EVENT TRAIT
+	800	#300
+#BONUS ON TERRAIN TRAIT
+	0.15
+#BONUS_ON_EVENT_TRAIT_
+	0.05
+#Chance of leaders dying while in combat per day
+	0	#0.0003
+#_CV_AIR_ORG_DMG_MODIFYER1_ Increasing this value will increase the org dmg air units takes
+	25.0
+#_CV_AIR_ORG_DMG_MODIFYER2_Str dmg will increase by org/ this value
+	0.003
+#_CV_AIR_STR_DMG_MODIFYER_ Increasing this value will increase the str dmg air units takes
+	0.2
+# Extra ORG damage multiplier to subs in combat. 1 = no extra damage. Do not use fractions
+	9 #3
+# Extra STR damage multiplier to subs in combat. 1 = no extra damage. Do not use fractions
+	1 #3
+# Pure sub stacks detection modifier ( 0 = subs will never be detected, 1.0 - no change )
+	0.5 #1.0
+}
+
+research = {
+# Blueprint Bonus
+	2.0
+# Pre-Historical Date Mod (value * days prior to historical date. Lower limit for the total is -0.9. )
+	-0.00125
+# Money cost for each skill-level
+	0.5 	#0.2
+# Mean number of "invention" events occuring per year
+	4
+}

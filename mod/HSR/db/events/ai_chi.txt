@@ -1,0 +1,322 @@
+####################################
+# China and the Warlords 27000 - 27999 by Lothos
+####################################
+####################################
+# China 27500 - 27599 = Minister Change Events
+####################################
+################
+# Minister of Security Section 22500 - 22509
+#############################################
+event = { # Dai Li takes power
+	id = 27500
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52063 # Dai Li
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHISecurityDai }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHISecurityDai }
+		command = { type = ministerofsecurity which = 52063 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 27510 - 27519
+#############################################
+event = { # Bai Chongxi takes power
+	id = 27510
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52088 # Bai Chongxi
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIChiefBai }
+		}
+		OR = {
+			NOT = { manpower = 400 }
+			NOT = {
+				atwar = yes
+				NOT = { minister = 52093 } # Xu Zuyi
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIChiefBai }
+		command = { type = local_clrflag which = CHIChiefXu }
+		command = { type = chiefofstaff which = 52088 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Xu Zuyi takes power
+	id = 27511
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		manpower = 400
+		minister = 52093 # Xu Zuyi
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIChiefXu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIChiefXu }
+		command = { type = local_clrflag which = CHIChiefBai }
+		command = { type = chiefofstaff which = 52093 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 27520 - 27529
+#############################################
+event = { # He Yaozu takes power
+	id = 27520
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52079 # He Yaozu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIIntelligenceHe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIIntelligenceHe }
+		command = { type = ministerofintelligence which = 52079 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 27530 - 27539
+#############################################
+event = { # Gu Zhutong takes power
+	id = 27530
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52097 # Gu Zhutong
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIArmyGu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIArmyGu }
+		command = { type = local_clrflag which = CHIArmyZhang }
+		command = { type = chiefofarmy which = 52097 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Zhang Xueliang takes power
+	id = 27531
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52008 # Zhang Xueliang
+		NOT = { minister = 52097 } # Zhang Xueliang
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIArmyZhang }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIArmyZhang }
+		command = { type = local_clrflag which = CHIArmyGu }
+		command = { type = chiefofarmy which = 52008 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 27540 - 27549
+#############################################
+event = { # Huang Chenzuo takes power
+	id = 27540
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52047 # Huang Chenzuo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIArmamentHuang }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIArmamentHuang }
+		command = { type = local_clrflag which = CHIArmamentBai }
+		command = { type = armamentminister which = 52047 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Bai Chongxi takes power
+	id = 27541
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 52045 # Bai Chongxi Chenzuo
+		NOT = { minister = 52047 } # Huang Chenzuo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIArmamentBai }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CHIArmamentHuang }
+		command = { type = local_setflag which = CHIArmamentBai }
+		command = { type = armamentminister which = 52045 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 27550 - 27559
+#############################################
+event = { # Huang Chenzuo takes power
+	id = 27550
+	random = no
+	country = CHI
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = JAPAirAINaval
+		minister = 52108 # Huang Chenzuo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHIChiefAirHuang }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHIChiefAirHuang }
+		command = { type = chiefofair which = 52108 }
+		command = { type = dissent value = -1 }
+	}
+}
+

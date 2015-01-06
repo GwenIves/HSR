@@ -1,0 +1,260 @@
+####################################
+# Romania AI events 32100 - 32199 by Lothos
+####################################
+################
+# Minister of Security Section 32100 - 32109
+#############################################
+event = { # Cesare Vaida-Voievod takes power
+	id = 32100
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22100 # Cesare Vaida-Voievod
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMSecurityCesare }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ROMSecurityCesare }
+		command = { type = ministerofsecurity which = 22100 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 32110 - 32119
+#############################################
+event = { # Victor Antonescu takes power
+	id = 32110
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22127 # Victor Antonescu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMChiefVictor }
+		}
+		OR = {
+			atwar = no
+			NOT = { minister = 22124 } # Florea Tenescu
+			AND = {
+				atwar = yes
+				NOT = { manpower = 50 }
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ROMChiefVictor }
+		command = { type = local_clrflag which = ROMChiefFlorea }
+		command = { type = chiefofstaff which = 22127 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Florea Tenescu takes power
+	id = 32111
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22124 # Florea Tenescu
+		atwar = yes
+		manpower = 50
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMChiefFlorea }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ROMChiefVictor }
+		command = { type = local_setflag which = ROMChiefFlorea }
+		command = { type = chiefofstaff which = 22124 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 32120 - 32129
+#############################################
+################
+# Chief of the Army Section 32130 - 32131
+#############################################
+event = { # Gheorghe Tatarescu takes power
+	id = 32130
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22138 # Gheorghe Tatarescu
+		OR = {
+			atwar = no
+			AND = {
+				atwar = yes
+				NOT = { minister = 22136 } # Gheorghe Mihail
+			}
+		}
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMArmyGheorghe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ROMArmyGheorghe }
+		command = { type = local_clrflag which = ROMArmyMihail }
+		command = { type = chiefofarmy which = 22138 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Gheorghe Mihail takes power
+	id = 32131
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 22136 # Gheorghe Mihail
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMArmyMihail }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ROMArmyGheorghe }
+		command = { type = local_setflag which = ROMArmyMihail }
+		command = { type = chiefofarmy which = 22136 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 32140 - 32149
+#############################################
+event = { # Gheorghe Potopeanu takes power
+	id = 32140
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22093 # Gheorghe Potopeanu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMArmamentGheorghe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ROMArmamentGheorghe }
+		command = { type = armamentminister which = 22093 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 32050 - 32059
+#############################################
+event = { # Dante Vizante takes power
+	id = 32150
+	random = no
+	country = ROM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 22010 # Dante Vizante
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ROMChiefAirDante }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ROMChiefAirDante }
+		command = { type = chiefofair which = 22010 }
+		command = { type = dissent value = -1 }
+	}
+}

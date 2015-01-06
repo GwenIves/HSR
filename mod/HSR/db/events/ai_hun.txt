@@ -1,0 +1,444 @@
+####################################
+# Hungary AI Minister events 32200 - 32299 by Lothos
+####################################
+################
+# Minister of Security Section 32200 - 32209
+#############################################
+event = { # Ferenc Keresztes-Fischer takes power
+	id = 32200
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21100 # Ferenc Keresztes-Fischer
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNSecurityFerenc }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNSecurityFerenc }
+		command = { type = ministerofsecurity which = 21100 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 32210 - 32219
+#############################################
+event = { # Gustáv Henneyey takes power
+	id = 32210
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21007 # Gustáv Henneyey
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNChiefHenneyey }
+		}
+		OR = {
+			atwar = no
+			NOT = { minister = 21131 } # Karoly Barthá von Dálnokfalva
+			AND = {
+				atwar = yes
+				NOT = { manpower = 50 }
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNChiefHenneyey }
+		command = { type = local_clrflag which = HUNChiefKaroly }
+		command = { type = chiefofstaff which = 21007 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Karoly Barthá von Dálnokfalva takes power
+	id = 32211
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21131 # Karoly Barthá von Dálnokfalva
+		atwar = yes
+		manpower = 50
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNChiefKaroly }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HUNChiefHenneyey }
+		command = { type = local_setflag which = HUNChiefKaroly }
+		command = { type = chiefofstaff which = 21131 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 32220 - 32229
+#############################################
+event = { # Sandor Csia takes power
+	id = 32220
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21170 # Sandor Csia
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNIntelligenceSandor }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNIntelligenceSandor }
+		command = { type = local_clrflag which = HUNIntelligenceAndorka }
+		command = { type = ministerofintelligence which = 21170 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Rezsö Andorka takes power
+	id = 32221
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21117 # Rezsö Andorka
+		NOT = { minister = 21170 } # Sandor Csia
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNIntelligenceAndorka }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HUNIntelligenceSandor }
+		command = { type = local_setflag which = HUNIntelligenceAndorka }
+		command = { type = ministerofintelligence which = 21117 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 32230 - 32231
+#############################################
+event = { # István Shvoy takes power
+	id = 32230
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21008 # István Shvoy
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNArmyShvoy }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNArmyShvoy }
+		command = { type = local_clrflag which = HUNArmyFerenc }
+		command = { type = chiefofarmy which = 21008 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Ferenc Szombathelyi takes power
+	id = 32231
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21148 # Ferenc Szombathelyi
+		NOT = { minister = 21008 } # István Shvoy
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNArmyFerenc }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HUNArmyKaarle }
+		command = { type = local_setflag which = HUNArmyFerenc }
+		command = { type = chiefofarmy which = 21148 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 32240 - 32249
+#############################################
+event = { # Lajos Reményi-Schneller takes power
+	id = 32240
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21084 # Lajos Reményi-Schneller
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNArmamentLajos }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNArmamentLajos }
+		command = { type = local_clrflag which = HUNArmamentFabinyi }
+		command = { type = armamentminister which = 21084 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Tihamér Fabinyi takes power
+	id = 32241
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21004 # Tihamér Fabinyi
+		NOT = { minister = 21084 } # Lajos Reményi-Schneller
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNArmamentFabinyi }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HUNArmamentLajos }
+		command = { type = local_setflag which = HUNArmamentFabinyi }
+		command = { type = armamentminister which = 21004 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 32250 - 32259
+#############################################
+event = { # László Tomor takes power
+	id = 32250
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21010 # László Tomor
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNChiefAirTomor }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HUNChiefAirTomor }
+		command = { type = local_clrflag which = HUNChiefAirSandor }
+		command = { type = chiefofair which = 21010 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Sandor Maguarosy takes power
+	id = 32251
+	random = no
+	country = HUN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 21158 # Sandor Maguarosy
+		NOT = { minister = 21010 } # László Tomor
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HUNChiefAirSandor }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HUNChiefAirTomor }
+		command = { type = local_setflag which = HUNChiefAirSandor }
+		command = { type = chiefofair which = 21158 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+#############################################
+# Regular AI Events 32260 - 32299
+#	HUNAggressive	= Hungary is taking an offensive approach in the game to rebuild their empire
+#	HUNInvadeYUG	= Hungary is planning to invade Yugoslavia
+#############################################
+################
+# Partition of Yugoslavia AI only events
+#############################################
+event = {
+	id = 32261
+	random = no
+	country = HUN
+
+	trigger = {
+		ai = yes
+		ai = GER
+		event = 20011
+		alliance = { country = GER country = HUN }
+		NOT = { exists = YUG }
+		NOT = { local_flag = HUNAggressive }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = GER value = 380 }
+		command = { type = secedeprovince which = GER value = 459 }
+		command = { type = secedeprovince which = GER value = 455 }
+		command = { type = secedeprovince which = GER value = 454 }
+		command = { type = secedeprovince which = GER value = 453 }
+		command = { type = secedeprovince which = GER value = 382 }
+		command = { type = secedeprovince which = GER value = 381 }
+		command = { type = secedeprovince which = GER value = 383 }
+		command = { type = secedeprovince which = GER value = 384 }
+		command = { type = secedeprovince which = GER value = 385 }
+		command = { type = secedeprovince which = GER value = 386 }
+		command = { type = secedeprovince which = GER value = 387 }
+		command = { type = secedeprovince which = GER value = 388 }
+		command = { type = secedeprovince which = GER value = 389 }
+		command = { type = secedeprovince which = GER value = 451 }
+		command = { type = secedeprovince which = GER value = 452 }
+		command = { type = secedeprovince which = GER value = 418 }
+		command = { type = secedeprovince which = GER value = 415 }
+		command = { type = secedeprovince which = GER value = 494 }
+		command = { type = secedeprovince which = GER value = 413 }
+		command = { type = secedeprovince which = GER value = 414 }
+	}
+}

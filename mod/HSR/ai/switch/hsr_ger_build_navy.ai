@@ -1,0 +1,44 @@
+#
+# By Aregorn for HSR
+#
+
+military = {
+	relative_build_scheme 	= yes
+
+	infantry 	= 4
+	cavalry 	= 0
+	motorized 	= 5
+	mechanized 	= 5
+	light_armor 	= 0
+	armor 		= 10
+	paratrooper 	= 1
+	marine 		= 10
+	bergsjaeger 	= 1
+	garrison	= 1
+	hq 		= 3
+	militia 	= 0
+#			40 %
+
+	interceptor 		= 3
+	multi_role 		= 3
+	escort 			= 2
+	cas 			= 1
+	strategic_bomber	= 0
+	tactical_bomber 	= 4
+	naval_bomber 		= 5
+	transport_plane 	= 2
+	flying_bomb 		= 0
+	flying_rocket 		= 0
+#				20 %
+
+	battleship 	= 4
+	carrier 	= 4
+	destroyer 	= 8
+	light_cruiser 	= 3
+	heavy_cruiser 	= 1
+	battlecruiser 	= 0
+	submarine 	= 10
+	transports 	= 10
+#			40 %
+}
+

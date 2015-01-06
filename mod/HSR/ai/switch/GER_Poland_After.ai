@@ -1,0 +1,149 @@
+#
+# Aregorn for HSR
+#
+
+combat = {
+	fra = 100
+	eng = 100
+}
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 21
+	cavalry 	= 0
+	motorized 	= 9
+	mechanized 	= 0
+	light_armor 	= 6
+	armor 		= 8
+	paratrooper 	= 1
+	marine 		= 0
+	bergsjaeger 	= 1
+	garrison	= 8
+	hq 		= 5
+	militia 	= 0
+#				59 %
+	interceptor 	= 5
+	multi_role 	= 3
+	escort 		= 3
+	cas 		= 3
+	strategic_bomber = 0
+	tactical_bomber = 5
+	naval_bomber 	= 1
+	transport_plane = 1
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#				21 %
+	battleship 	= 1
+	carrier 	= 0
+	destroyer 	= 5
+	light_cruiser 	= 3
+	heavy_cruiser 	= 2
+	battlecruiser 	= 0
+	submarine 	= 6
+	transports 	= 3
+#				20 %
+
+	#### Brigades
+	artillery 			= 0
+	sp_artillery 		= 4
+	rocket_artillery		= 5
+	sp_rct_artillery 		= 0
+	anti_tank 			= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 4
+	heavy_armor 		= 0
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 			= 0
+	police 			= 0
+	engineer 			= 87
+
+	cag = 100.000
+}
+
+
+max_front_ratio = 4.0
+max_front_ratios = { 	# Override the default against specific countries. Ignored against humans.
+	FRA = 1.0
+	SOV = 0.2
+}
+#max_garrison_prop = 0.30
+#min_garrison_prop = 0.20
+neutrality = 20.000
+war = 50
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.5
+	revolt_risk_mult	= 0.3
+
+	# PRIORITIES:
+	beach			= 20	# Beach level 2
+	capital			= 20	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 10	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		VIC = -1
+		FIN = -1
+		ITA = -1
+		SWI = -1
+		AUS = -1
+		CZE = -1
+		HUN = -1
+		FRA = 30
+		POL = -1
+		YUG = 5
+		HOL = 50
+		BEL = 50
+		DEN = 50
+		SOV = 1
+	}
+	province_priorities = {
+		#Belgium Dutch Border
+		75 = 100
+		66 = 100
+		76 = 100
+	}
+	area_multiplier = {
+		#Belgium Dutch Border
+		75 = 7.0
+		66 = 7.0
+		76 = 7.0
+
+		#Russian Border
+		509 = 0.1
+		486 = 0.1
+		487 = 0.1
+		488 = 0.1
+		489 = 0.1
+
+		#Maginot Line
+		314 = 0.2
+		315 = 0.2
+		74 = 0.2
+		71 = 0.2
+		70 = 0.2
+		64 = 0.2
+		317 = 0.2
+		318 = 0.2
+		529 = 0.2
+	}
+}

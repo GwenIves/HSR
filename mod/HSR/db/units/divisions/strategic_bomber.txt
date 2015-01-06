@@ -1,0 +1,145 @@
+#
+# By Aregorn for HSR2_DD
+#
+
+allowed_brigades =  escort
+
+# 0 - Basic Strategic Bomber
+model = {
+	cost 						= 22
+	buildtime					= 230
+	defaultorganisation 				= 30
+	morale						= 40	#30
+	manpower					= 2
+	maxspeed					= 250	#
+	surfacedetectioncapability			= 3
+	airdetectioncapability				= 2
+	surfacedefence					= 10
+	airdefence					= 8
+	airattack					= 1
+	strategicattack					= 6
+	softattack					= 3
+	hardattack					= 1
+	navalattack					= 1	#2
+	range						= 800
+	supplyconsumption 				= 1.5	#3
+	fuelconsumption					= 4
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 1 - Improved Strategic Bomber
+model = {
+	cost 						= 22
+	buildtime					= 240
+	defaultorganisation 				= 30
+	morale						= 40	#30
+	manpower					= 2
+	maxspeed					= 300	#
+	surfacedetectioncapability			= 4
+	airdetectioncapability				= 3
+	surfacedefence					= 12
+	airdefence					= 12
+	airattack					= 2
+	strategicattack					= 9
+	softattack					= 5
+	hardattack					= 3
+	navalattack					= 2	#3
+	range						= 1000
+	supplyconsumption 				= 1.6	#3.3
+	fuelconsumption					= 4.5
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 2 - Advanced Strategic Bomber
+model = {
+	cost 						= 24
+	buildtime					= 250
+	defaultorganisation 				= 30
+	morale						= 40	#30
+	manpower					= 2
+	maxspeed					= 350	#
+	surfacedetectioncapability			= 4
+	airdetectioncapability				= 3
+	surfacedefence					= 16
+	airdefence					= 16
+	airattack					= 2
+	strategicattack					= 12
+	softattack					= 6
+	hardattack					= 4
+	navalattack					= 3	#5
+	range						= 1300
+	supplyconsumption 			= 1.8			#3.6
+	fuelconsumption				= 4.6
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+
+}
+# 3 - Turbojet Strategic Bomber
+model = {
+	cost 						= 30
+	buildtime					= 260
+	defaultorganisation 				= 30
+	morale						= 40	#30
+	manpower					= 2
+	maxspeed					= 650	#
+	surfacedetectioncapability			= 4
+	airdetectioncapability				= 3
+	surfacedefence					= 24
+	airdefence					= 22
+	airattack					= 2
+	strategicattack					= 16
+	softattack					= 8
+	hardattack					= 6
+	navalattack					= 4	#6
+	range						= 1300
+	supplyconsumption 				= 2.5		#5
+	fuelconsumption					= 5
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 4 - Improved Turbojet Strategic Bomber
+model = {
+	cost 					= 30
+	buildtime				= 234
+	defaultorganisation 			= 40	#30
+	morale					= 30
+	manpower				= 2
+	maxspeed				= 800
+	surfacedetectioncapability	= 4
+	airdetectioncapability		= 3
+	surfacedefence				= 23
+	airdefence				= 20
+	airattack				= 5
+	strategicattack				= 45
+	softattack				= 7
+	hardattack				= 5
+	navalattack				= 5	#7
+	range					= 1400
+	supplyconsumption 			= 2.7	#3.5
+	fuelconsumption				= 5	#4.0
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 5 - Intercontinental Strategic Bomber
+model = {
+	cost 					= 40
+	buildtime				= 234
+	defaultorganisation 			= 40	#30
+	morale					= 30
+	manpower				= 2
+	maxspeed				= 800
+	surfacedetectioncapability	= 4
+	airdetectioncapability		= 3
+	surfacedefence				= 27
+	airdefence				= 25
+	airattack				= 5
+	strategicattack				= 50
+	softattack				= 7
+	hardattack				= 5
+	navalattack				= 6	#7
+	range					= 3000
+	supplyconsumption 			= 3.5	#4.5
+	fuelconsumption				= 5.5	#5
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

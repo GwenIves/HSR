@@ -1,0 +1,3452 @@
+# Aregorn_GER2: Second file of events designed for Germany  (85)
+#
+# ID		Title						Author
+#
+# 45000-05 	German military programmes 			(by Aregorn 041215)
+# 45006-07	Wehrmacht A.I. 					(by Aregorn 050508)
+# 45008		Danzig or War 2nd Part 				(by Aregorn 050528)
+# 45009 	Operation Barbarossa  				(by Aregorn 050617)
+# 45010 	Ger-Sov non aggression when at war 		(by Aregorn 050617)
+# 45011		Germany gets ready for Barbarossa 		(by Aregorn 051105)
+# 45012 	Afrikakorps I 					(by Aregorn 030527)
+# 45013 	Afrikakorps II 					(by Aregorn 030527)
+# 45014 	Yugoslavian Coup d'etat 			(by Aregorn 051202)
+# 45015 	Poland 		 				(by Aregorn 060118)
+# 45016 	Norway 		 				(by Aregorn 060118)
+# 45017 	Britain 					(by Aregorn 060118)
+# 45018 	Yugoslavia 					(by Aregorn 060118)
+# 45019 	Vichy 						(by Aregorn 060128)
+# 45020-28 	Airborne operation Crete 			(by Aregorn 051203)
+# 45029 	RSI 						(by Aregorn 060212)
+# 45030-31 	Mussolini Rescue Operation 			(by Aregorn 060212)
+# 45032-33 	Swedish Winter ore route 			(by Aregorn 060222)
+# 45034-35 	Operation Weserubung 				(by Jared Torval and Aregorn 060318)
+# 45036-45  	Kriegsmarine	 				(by Dec152000 060121 & modified and corrected by Aregorn)
+# 45046 	Operation Wilfried 				(by Jared Torval and Aregorn 060322)
+# 45047-48 	Upgrade of the KMS Graf Zeppelin 		(by Aregorn 081005)
+# 45047-49   Deleted for HSR2_DD      Kriegsmarine II 		(by Aregorn 060326)
+# 45050-51  	Caucasus Oil fields 				(by Aregorn 060109)
+# 45052-55  	Romanian Oil fields 				(by Aregorn 060109)
+# 45056-58  	Russian Corridor 				(by Aregorn 060110)
+# 45059 	The Versailles Treaty 				(by Aregorn 061401)
+# 45060-61 	Re-occupation of the Rhineland - FRA Ultimatum 	(by Aregorn 061401)
+# 45062 	Nationalisation of German Industry 		(by Aregorn 060408)
+# 45063 	The winds of political change 			(by Aregorn 060408)
+# 45064 	Deutsche SüdameriKakorps  			(by Aregorn 060606)
+# 45065 	War against Spain - ITA  			(by Aregorn 060606)
+# 45066 	The Ottoman Empire 				(by Aregorn 061002)
+# 45067-69 	IG Farben 					(by Aregorn 080928)
+# 45070 	German unemployment 				(by Aregorn 081004)
+# 45071-79 	The Westwall (Siegfried Line) 			(by Aregorn 081012)
+# 45080 	Olympics opening ceremony 			(by Aregorn 081017)
+# 45081 	Hitler Youth 					(by Aregorn 081017)
+# 45082 	Naval Aviation 					(by Aregorn 081021)
+# 45083 	German Armor 					(by Aregorn 081107) requested by Alan Mateus
+# 45084 	German Aircrafts 				(by Aregorn 081107) requested by Alan Mateus
+
+
+#########################################################################
+# 45000-05 German military programmes (by Aregorn 041215)
+#########################################################################
+event = {
+	id = 45000
+	random = no
+	country = ger
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1942 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 German military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = add_corps which = "Unterflotte C" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = industrial_multiplier which = energy_to_oil value = 1 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = manpowerpool value = -220 }
+
+}
+}
+event = {
+	 id = 45001
+	random = no
+	country = ger
+
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1943 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 German military programme finished"
+
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+
+		command = { type = add_corps which = "Unterflotte D" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+
+		command = { type = add_division value = battleship when = 3  }
+		command = { type = add_division value = battlecruiser when = 3  }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = industrial_multiplier which = energy_to_oil value = 1.5 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 1.5 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -220 }
+	}
+}
+
+event = {
+	id = 45002
+	random = no
+	country = ger
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1944 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "1944 German military programme finished"
+
+
+
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+
+		command = { type = add_corps which = "Unterflotte E" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = industrial_multiplier which = energy_to_oil value = 2 }
+		command = { type = industrial_multiplier which = oil_to_rare_materials value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -220 }
+
+	}
+}
+
+event = {
+	id = 45003
+	random = no
+	country = ger
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1945 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1945 }
+
+	action_a = {
+		name = "1945 German military programme finished"
+
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+		command = { type = add_division value = tactical_bomber when = 3 where = escort }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+		command = { type = add_division value = flying_rocket when = 0 }
+
+		command = { type = add_division value = flying_rocket when = 1 }
+		command = { type = add_division value = flying_rocket when = 1 }
+		command = { type = add_division value = flying_rocket when = 1 }
+		command = { type = add_division value = flying_rocket when = 1 }
+
+		command = { type = add_corps which = "Unterflotte F" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+		command = { type = add_division value = submarine when = 4 }
+
+		command = { type = add_division value = battleship when = 3  }
+		command = { type = add_division value = battlecruiser when = 3  }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 4 }
+		command = { type = add_division value = light_cruiser when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -220 }
+
+}
+}
+event = {
+	id = 45004
+	random = no
+	country = ger
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1940 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1940 }
+
+	action_a = {
+		name = "1940  German military programme finished"
+
+		command = { type = add_division value = cas when = 0 }
+		command = { type = add_division value = cas when = 0 }
+		command = { type = add_division value = cas when = 0 }
+		command = { type = add_division value = cas when = 0 }
+
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 }
+		command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = transport_plane }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = add_corps which = "Unterflotte A" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+		command = { type = add_division value = submarine when = 2 }
+
+		command = { type = add_division value = battleship when = 3  }
+		command = { type = add_division value = battlecruiser when = 3  }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = destroyer when = 2 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+
+		command = { type = manpowerpool value = -200 }
+
+}
+}
+event = {
+	id = 45005
+	random = no
+	country = ger
+	trigger = { random = 25	ai = yes }
+
+
+	name = "1941 German military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = march year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "1941 German military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 }
+		command = { type = add_division value = tactical_bomber when = 2 }
+		command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = transport_plane }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_division value = armor when = 2 where = super_heavy_armor }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+
+		command = { type = add_corps which = "Unterflotte B" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = energypool value = 10000 }
+		command = { type = metalpool value = 10000 }
+		command = { type = oilpool value = 10000 }
+
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+
+		command = { type = manpowerpool value = -200 }
+
+}
+}
+#########################################################################
+# 45006-07 Wehrmacht A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 45006
+	random = no
+	country = GER
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = ger country = eng }
+				war = { country = ger country = sov } }
+			random = 25 control = { province = 300 data = ger }
+			not = { manpower = 20 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 20 }
+		}
+}
+event = {
+	id = 45007
+	random = no
+	country = GER
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = ger country = eng }
+				war = { country = ger country = sov } }
+			random = 25 control = { province = 300 data = ger }
+			not = { supplies = 500 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 1000 }
+		}
+}
+#########################################################################
+# 45008 Danzig or War 2nd Part (by Aregorn 050528)
+#########################################################################
+event = {
+	id = 45008
+	random = no
+	country = GER
+
+	trigger = {
+		exists = POL
+		ai = yes
+		NOT = { atwar = GER }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK"
+		command = { type = war which = POL }
+	}
+}
+#########################################################################
+# 45009 Operation Barbarossa  (by Aregorn 050617)
+#########################################################################
+
+event = {
+	id = 45009
+	random = no
+	country = ger
+
+
+	trigger = {  	ai = yes random = 25 event = 45011
+			not = { war = { country = sov  country = ger } }
+			not = { alliance = { country = sov  country = ger } }
+	}
+
+	name = "AI_EVENT"
+	desc = ""
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the invasion"
+		command = { type = end_non_aggression which = sov }
+		command = { type = ai which = "switch/hsr_GER_sov.ai" }
+		command = { type = war which = sov }
+	}
+}
+#########################################################################
+# 45010 Ger-Sov non aggression when at war (by Aregorn 050617)
+#########################################################################
+
+event = {
+	id = 45010
+	random = no
+	country = ger
+
+	trigger = {  	ai = yes
+			war = { country = sov  country = ger }
+			non_aggression = { country = ger country = sov }
+			}
+
+	name = "AI_EVENT"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the invasion"
+		command = { type = end_non_aggression which = sov }
+	}
+}
+############################################################
+# 45011 Germany gets ready for Barbarossa (by Aregorn 051105)
+############################################################
+event = {
+	id = 45011
+	random = no
+	country = GER
+
+	trigger = {	ai = yes
+			not = { war = { country = sov  country = ger } }
+			not = { alliance = { country = sov  country = ger } }
+			event = 2021
+
+			or = { 	alliance = { country = ger country = yug }
+				and = { control = { province =  459 data = ger }
+					not = { exists = yug }
+				}
+			}
+			or = { 	alliance = { country = ger country = gre }
+				not = { exists = gre }
+			}
+	}
+
+	name = "Operation Barbarossa preparations"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/GER_Russia_Buildup.ai" }
+	}
+}
+#########################################################################
+# 45014 Yugoslavian Coup d'etat (by Aregorn 051202)
+#########################################################################
+
+event = {
+	id = 45014
+	country = GER
+	random = no
+
+	trigger = {	random = 25 ai = yes event = 40456
+			not = { war = { country = ger country = yug }}
+			not = { war = { country = ger country = sov }}
+			not = { alliance = { country = ger country = yug }}
+	}
+
+	name = "Yugoslavian Coup d'etat"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = september year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+	action_a = {
+		name = "ok"
+		command = { type = end_non_aggression which = yug }
+		command = { type = war which = yug }
+	}
+}
+################################################
+# 45015 Poland (by Aregorn 060118)
+################################################
+event = {
+	id = 45015
+	random = no
+	country = GER
+
+	trigger = { ai = yes war = { country = POL country = GER }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_GER_pol.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+################################################
+# 45016 Norway (A.I.) (by Aregorn 060118)
+################################################
+event = {
+	id = 45016
+	random = no
+	country = GER
+
+	trigger = { 	ai = yes war = { country = NOR country = GER }
+			NOT = { war = { country = POL country = GER } }
+			NOT = { war = { country = DEN country = GER } }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_GER_Nor.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+
+		command = { type = add_corps which = "Weserubung Task Force" value = naval when = 384 where = 296 }
+		command = { type = add_division value = battleship when = 3  }
+		command = { type = add_division value = battlecruiser when = 3  }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_corps which = "Weserubung Armor Korps" value = land when = 310 where = 296 }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_corps which = "Weserubung Infantry Korps" value = land when = 294 where = 296 }
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+
+		command = { type = add_corps which = "Weserubung Marine Korps" value = land when = 249 where = 296 }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+
+		command = { type = add_corps which = "Weserubung Mountain Korps" value = land when = 49 where = 296 }
+		command = { type = add_division value = bergsjaeger when = 1 where = artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = artillery }
+
+		command = { type = remove_division which = "2. Panzer-Division" value = ger }
+		command = { type = remove_division which = "3. Panzer-Division" value = ger }
+		command = { type = remove_division which = "2. Infanterie-Division (mot)" value = ger }
+		command = { type = remove_division which = "1. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "2. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "3. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "4. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "5. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "6. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "7. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "8. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "9. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "10. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "11. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "12. Infanterie-Division" value = ger }
+		command = { type = remove_division which = "Heeresgruppe A" value = ger }
+
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+
+		command = { type = add_corps which = "Weserubung Gliders Wing A" value = air where = 292 }
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = escort }
+
+		command = { type = add_corps which = "Weserubung Gliders Wing B" value = air where = 294 }
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = escort }
+
+		command = { type = add_corps when = 260 value = land where = 292 }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+
+		command = { type = add_corps when = 472 value = land where = 294 }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+		command = { type = morale which = transport_plane  value = 20 }
+	}
+}
+################################################
+# 45017 Britain (by Aregorn 060118)
+################################################
+event = {
+	id = 45017
+	random = no
+	country = GER
+
+	trigger = { 	ai = yes war = { country = eng country = GER }
+			NOT = { war = { country = POL country = GER } }
+			NOT = { war = { country = DEN country = GER } }
+			or = { 	event = 2021
+				NOT = { war = { country = fra country = GER } }
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_GER_Eng.ai" }
+		command = { type = ai which = "Air_naval.ai" }
+
+		command = { type = add_corps which = "Sea Lion Task Force" value = naval when = 384 where = 90 }
+		command = { type = add_division value = battleship when = 3  }
+		command = { type = add_division value = battlecruiser when = 3  }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_corps which = "Unterflotte D" value = naval where = 80 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+		command = { type = add_division value = submarine when = 3 }
+
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+		command = { type = add_division value = naval_bomber when = 5 }
+
+		command = { type = manpowerpool value = -30 }
+
+	}
+}
+################################################
+# 45018 Yugoslavia (by Aregorn 060118)
+################################################
+event = {
+	id = 45018
+	random = no
+	country = GER
+
+	trigger = { 	ai = yes event = 40456
+			not = { war = { country = spa country = GER }}
+			not = { alliance = { country = yug country = GER }}
+			not = { war = { country = spr country = GER }}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_GER_yug.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+	action_b = {
+		command = { type = ai which = "switch/hsr_GER_yug.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+		command = { type = war which = yug }
+	}
+}
+############################################################################
+# 45019 Vichy (by Aregorn 060128)
+############################################################################
+event = {
+	id = 45019
+	random = no
+	country = ger
+
+	trigger = { ai = yes event = 2021 random = 10
+		control = { province = 32 data = ger }
+		control = { province = 33 data = ger }
+		control = { province = 34 data = ger }
+		control = { province = 35 data = ger }
+		control = { province = 39 data = ger }
+		control = { province = 59 data = ger }
+		control = { province = 41 data = ger }
+		control = { province = 42 data = ger }
+		control = { province = 18 data = ger }
+ }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = coastal_fort where = 32 value = 1 }
+	      	command = { type = activate_division which = 14500 value = 116 where = 32 }
+		command = { type = construct which = coastal_fort where = 33 value = 1 }
+	     	command = { type = activate_division which = 14500 value = 117 where = 33 }
+		command = { type = construct which = coastal_fort where = 34 value = 1 }
+	    	command = { type = activate_division which = 14500 value = 118 where = 34 }
+		command = { type = construct which = coastal_fort where = 35 value = 1 }
+	    	command = { type = activate_division which = 14500 value = 119 where = 35 }
+		command = { type = construct which = coastal_fort where = 39 value = 1 }
+	   	command = { type = activate_division which = 14500 value = 120 where = 39 }
+		command = { type = construct which = coastal_fort where = 59 value = 1 }
+	    	command = { type = activate_division which = 14500 value = 121 where = 59 }
+		command = { type = construct which = coastal_fort where = 41 value = 1 }
+	    	command = { type = activate_division which = 14500 value = 122 where = 41 }
+		command = { type = construct which = coastal_fort where = 42 value = 1 }
+	   	command = { type = activate_division which = 14500 value = 123 where = 42 }
+		command = { type = construct which = coastal_fort where = 18 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 124 where = 18 }
+		command = { type = construct which = land_fort where = 56 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 125 where = 56 }
+
+		command = { type = construct which = coastal_fort where = 47 value = 1 }
+	   	command = { type = activate_division which = 14500 value = 126 where = 47 }
+		command = { type = construct which = coastal_fort where = 43 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 127 where = 43 }
+		command = { type = construct which = land_fort where = 46 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 128 where = 46 }
+		command = { type = construct which = land_fort where = 45 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 129 where = 45 }
+		command = { type = construct which = land_fort where = 78 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 130 where = 78 }
+		command = { type = construct which = land_fort where = 238 value = 1 }
+	  	command = { type = activate_division which = 14500 value = 131 where = 238 }
+
+		command = { type = manpowerpool value = -130 }
+		}
+}
+#########################################################################
+# 45020-28 Airborne operation Crete (ai GER) (by Aregorn 051203)
+#########################################################################
+event = {
+	id = 45020
+	random = no
+	country = eng
+
+	trigger = {	ai = ger not = { event = 40512 } ai = no event = 47009
+			or = { 	event = 40426
+				alliance = { country = ger country = gre }
+				and = { alliance = { country = ger country = ita } control = { province = 401 data = ita } }
+			}
+			war = { country = ger country = eng }
+			control = { province = 396 data = eng }
+			}
+
+	name = "German military activity in Athens"
+	desc = "Intelligence reports established intense military activity in the sector"
+	style = 0
+	picture = ger_50105_kreta	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+event = {
+	id = 45021
+	random = no
+	country = eng
+
+	trigger = {	ai = ger ai = no event = 40512 event = 47009
+			or = { 	event = 40426
+				alliance = { country = ger country = gre }
+				and = { alliance = { country = ger country = ita } control = { province = 401 data = ita } }
+			}
+			war = { country = ger country = eng }
+			control = { province = 396 data = eng }
+			}
+
+	name = "German Airborne operation Crete"
+	desc = "Intelligence reports established intense military activity in Athens. Decoded intercepted messages confirmed a big scale German airborne operation to take over Crete. British forces in the island if properly deployed could easily prevent the success of the German operation at the expense of probably revealing to the Germans the precious Ultra project."
+	style = 0
+	picture = ger_50105_kreta	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Keep defending the cost"
+		command = { }
+	}
+
+	action_b = {
+		name = "Concentrate defences in the air landing points"
+		command = { type = setflag which = Crete }
+	}
+}
+event = {
+	id = 45022
+	random = no
+	country = ger
+
+	trigger = { ai = yes or = { event = 45020 event = 45021 } random = 25 not = { control = { province = 396 data = ger } }
+	}
+
+	name = "Airborne operation Crete - First Wave"
+	desc = "The British dominated Mediterranean waters obliging the Germans to launch the first big scale full Airborne assault in military history."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the first wave"
+		command = { type = add_corps which = "7. Flieger Division" when = 472 value = land where = 396 }
+		command = { type = add_division which = "7. Flieger Division A" value = paratrooper when = 0 }
+		command = { type = add_division which = "7. Flieger Division B" value = paratrooper when = 0 }
+		command = { type = supplies value = -2000 }
+	}
+	action_b = {
+		name = "Send the first wave"
+		command = { type = add_corps which = "7. Flieger Division" when = 472 value = land where = 396 }
+		command = { type = add_division which = "7. Flieger Division A" value = paratrooper when = 0 }
+		command = { type = add_division which = "7. Flieger Division B" value = paratrooper when = 0 }
+		command = { type = add_division which = "7. Flieger Division C" value = paratrooper when = 0 }
+		command = { type = supplies value = -3000 }
+	}
+}
+event = {
+	id = 45023
+	random = no
+	country = ger
+
+	trigger = { event = 45022 flag = crete not = { control = { province = 396 data = ger } }
+	}
+
+	name = "First Wave Massacred"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the first wave"
+		command = { type = remove_division which = "7. Flieger Division A" value = ger }
+		command = { type = remove_division which = "7. Flieger Division B" value = ger }
+		command = { type = remove_division which = "7. Flieger Division C" value = ger }
+	}
+}
+event = {
+	id = 45024
+	random = no
+	country = ger
+	trigger = { 	event = 45022
+			not = { control = { province = 396 data = ger } }
+			or = {  not = { or = { event = 40512 event = 40546 } }
+				and = { or = { event = 40512 event = 40546 } random = 50 }
+			}
+	}
+
+	name = "Airborne operation Crete - Second Wave"
+	desc = "After heavy fighting an airfield in the island was secured by elite Paratroopers allowing air transport planes to start bringing in supporting Mountain troops"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the second wave"
+		command = { type = add_corps which = "22. Luftlande Division" value = land when = 260 where = 396 }
+		command = { type = add_division which = "22. Luftlande Division A" value = paratrooper when = 0 where = engineer }
+		command = { type = supplies value = -1000 }
+	}
+	action_b = {
+		name = "Send the second wave"
+		command = { type = add_corps which = "22. Luftlande Division" value = land when = 260 where = 396 }
+		command = { type = add_division which = "22. Luftlande Division A" value = paratrooper when = 0 where = engineer }
+		command = { type = add_division which = "22. Luftlande Division B" value = paratrooper when = 0 where = engineer }
+		command = { type = supplies value = -2000 }
+	}
+	action_c = {
+		name = "Send the second wave"
+		command = { type = add_corps which = "22. Luftlande Division" value = land when = 260 where = 396 }
+		command = { type = add_division which = "22. Luftlande Division A" value = paratrooper when = 0 where = engineer }
+		command = { type = add_division which = "22. Luftlande Division B" value = bergsjaeger when = 1 where = engineer }
+		command = { type = supplies value = -2000 }
+	}
+}
+event = {
+	id = 45025
+	random = no
+	country = ger
+
+	trigger = { event = 45024 flag = crete not = { control = { province = 396 data = ger } }
+	}
+
+	name = "Second Wave Massacred"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the first wave"
+		command = { type = remove_division which = "22. Luftlande Division A" value = ger }
+		command = { type = remove_division which = "22. Luftlande Division B" value = ger }
+	}
+}
+event = {
+	id = 45026
+	random = no
+	country = ger
+	trigger = { 	event = 45024
+			not = { control = { province = 396 data = ger } }
+	}
+
+	name = "Airborne operation Crete - Mountain troops support"
+	desc = "After heavy fighting an airfield in the island was secured by elite Paratroopers allowing air transport planes to start bringing in supporting Mountain troops"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the bergsjaegers"
+		command = { type = add_corps value = land when = 249 where = 396 }
+		command = { type = add_division which = "Gebirgsjaeger Division A" value = bergsjaeger when = 1 where = engineer }
+		command = { type = add_division which = "Gebirgsjaeger Division B" value = bergsjaeger when = 1 where = engineer }
+		command = { type = supplies value = -2000 }
+	}
+	action_b = {
+		name = "Send the bergsjaegers"
+		command = { type = add_corps value = land when = 249 where = 396 }
+		command = { type = add_division which = "Gebirgsjaeger Division A" value = bergsjaeger when = 1 }
+		command = { type = add_division which = "Gebirgsjaeger Division B" value = bergsjaeger when = 1 }
+		command = { type = add_division which = "Gebirgsjaeger Division C" value = bergsjaeger when = 1 }
+		command = { type = supplies value = -3000 }
+	}
+}
+event = {
+	id = 45027
+	random = no
+	country = ger
+
+	trigger = { ai = yes event = 45026 flag = crete not = { control = { province = 396 data = ger } }
+	}
+
+	name = "Final Wave Massacred"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = remove_division which = "Gebirgsjaeger Division A" value = ger }
+		command = { type = remove_division which = "Gebirgsjaeger Division B" value = ger }
+		command = { type = remove_division which = "Gebirgsjaeger Division C" value = ger }
+	}
+}
+event = {
+	id = 45028
+	random = no
+	country = ger
+	trigger = { 	event = 45024 control = { province = 396 data = ger }
+			or = { event = 40546 event = 40512 }
+	}
+
+	name = "Airborne operation Crete - The heavy cost of the battle"
+	desc = "The battle was fierce with casualties that reached the thousands. Someone speculated that somehow the British knew we were coming"
+	style = 0
+	picture = ger_40081_Ju52
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = sleepleader which = 472 }
+		command = { type = manpowerpool value = -12 }
+		command = { type = supplies value = -1000 }
+		command = { type = sleepevent which = 50112 }
+	}
+}
+############################################################################
+# 45029 RSI (by Aregorn 060212)
+############################################################################
+event = {
+	id = 45029
+	random = no
+	country = ger
+
+	trigger = { ai = yes  alliance = { country = ger country = ita }
+		control = { province = 515 data = ita }
+		control = { province = 516 data = ita }
+		control = { province = 517 data = ita }
+		control = { province = 518 data = ita } event = 40245
+ }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 515 value = 1 }
+		command = { type = add_corps value = land where = 515 }
+		command = { type = add_division value = armor when = 3 where = sp_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_artillery  }
+
+		command = { type = construct which = land_fort where = 370 value = 1 }
+		command = { type = add_corps value = land where = 370 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = construct which = land_fort where = 516 value = 1 }
+		command = { type = add_corps value = land where = 516 }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+
+		command = { type = construct which = land_fort where = 517 value = 1 }
+		command = { type = add_corps value = land where = 517 }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+		command = { type = add_division value = infantry when = 3 where = artillery }
+
+		command = { type = construct which = land_fort where = 518 value = 1 }
+		command = { type = add_corps value = land where = 518 }
+		command = { type = add_division value = bergsjaeger when = 2 where = artillery }
+		command = { type = add_division value = bergsjaeger when = 2 where = artillery }
+		command = { type = add_division value = bergsjaeger when = 2 where = artillery }
+
+		command = { type = construct which = land_fort where = 371 value = 1 }
+		command = { type = add_corps value = land where = 371 }
+		command = { type = add_division value = armor when = 3 where = sp_artillery  }
+		command = { type = add_division value = armor when = 3 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 2 where = sp_artillery  }
+
+		command = { type = add_corps value = land where = 378 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 512 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 379 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 513 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 514 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 369 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 531 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 368 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land where = 381 }
+		command = { type = add_division value = militia where = police }
+
+		command = { type = add_corps value = land when = 157 where = 516 }
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+
+		command = { type = manpowerpool value = -180 }
+		}
+}
+#########################################################################
+# 45030-31 Mussolini Rescue Operation (by Aregorn 060212)
+#########################################################################
+event = {
+	id = 45030
+	random = no
+	country = ger
+
+	trigger = {
+			event = 40246
+			control = { province = 370 data = ger }
+	}
+
+	name = "Mussolini Rescue Operation"
+	desc = "Badoglio made a pact with the Allies backstabbing the Motherland. Mussolini was also arrested and taken into custody in a secret location. Liberating him will unify Italian Fascist elements which will help to stop Ally forces."
+	style = 0
+
+	date = { day = 30 month = october year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Find the location and set a commando Operation"
+		ai_chance = 100
+		command = { type = independence which = RSI value = 1 }
+		command = { type = trigger which = 45031}
+	}
+	action_b = {
+		name = "Italy must be under German control"
+		ai_chance = 0
+		command = { type = trigger which = 45031}
+	}
+}
+event = {
+	id = 45031
+	random = no
+	country = ger
+
+	name = "Mussolini Rescued"
+	desc = "Gliders landed near the Hotel where Mussolini was confined and rapidly liberated the fascist leader."
+	style = 0
+
+	action_a = {
+		name = "Find the location and set a commando Operation"
+		command = { type = make_puppet which = RSI }
+		command = { type = dissent value = -5 }
+		command = { type = ai which = "switch/hsr_ger_rsi.ai" }
+		command = { type = supplies value = 10000 where = 370 }
+		command = { type = oilpool value = 10000 where = 370 }
+		command = { type = supplies value = 10000 where = 515 }
+		command = { type = oilpool value = 10000 where = 515 }
+	}
+}
+
+#########################################################################
+# 45032-33 Swedish Winter ore route (by Aregorn 060222)
+#########################################################################
+
+event = {
+	id = 45032
+	random = no
+	country = ger
+	persistent = yes
+
+#	trigger by aregorn_40469
+
+	name = "The Winter Ore route to Germany has been disrupted"
+	desc = "Every year during winter when the Baltic froze, the only way for the precious Swedish ore to reach Germany was by sea through the Atlantic port of Narvik connected to Sweden by railroad."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = industrial_modifier which = total value = -7 }
+	}
+}
+
+event = {
+	id = 45033
+	random = no
+	country = ger
+	persistent = yes
+
+#	trigger by aregorn_40470
+
+	name = "The Winter Ore route to Germany has been disrupted"
+	desc = "Every year during winter when the Baltic froze, the only way for the precious Swedish ore to reach Germany was by sea through the Atlantic port of Narvik connected to Sweden by railroad."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = industrial_modifier which = total value = 7 }
+	}
+}
+
+######################################################################################
+# 45034-35 Operation Weserubung (by Jared Torval, Dec152000 & Aregorn 060318)
+######################################################################################
+
+event = {
+	id = 45034
+	random = no
+	country = GER
+	trigger = { 	ai = no
+			exists = NOR
+			exists = DEN
+
+			war = { country = ENG country = GER }
+
+			OR = {	and = {	flag = WeserubungFall month = 3 }
+				and = { flag = oreroute not = { year = 1940 } }
+			}
+
+		NOT = {	atwar = NOR
+			atwar = DEN
+			war = { country = ger country = pol }
+			alliance = { country = SOV country = DEN }
+			alliance = { country = SOV country = NOR }
+			alliance = { country = GER country = DEN }
+			alliance = { country = GER country = NOR }
+		}
+
+		NOT = { war = { country = GER country = SOV }
+		}
+	}
+	name = "Operation Weserubung"
+	desc = "The operation started as a fast combined arms multi-landing operation with airborne troops from the sky and small scale amphibious landings driven by destroyers and submarines from the sea. The risky surprise move allowed Germany to rapidly gain control of critical Norwegian objectives along all country."
+	style = 0
+	picture = 40056_Airborne_operation_Norway	#Steffele
+
+	date = { day = 1 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		name = "Initiate the combined arms operation"
+		command = { type = war which = NOR }
+		command = { type = war which = DEN }
+		command = { type = dissent value = -5 }
+		command = { type = setflag which = Weserubung }
+		command = { type = supplies value = -2000 }
+		command = { type = remove_division which = "1. Infanteridivisjon" value = nor }
+		command = { type = remove_division which = "6. Infanteridivisjon" value = nor }
+	}
+
+	action_b = {
+		name = "It is necessary to take Denmark first to have air superiority in kattegat"
+		command = { type = war which = NOR }
+		command = { type = war which = DEN }
+		command = { type = dissent value = -5 }
+		command = { type = setflag which = Weserubungden }
+	}
+	action_c = {
+		name = "Way to risky, launch a conventional operation"
+		command = { type = war which = NOR }
+		command = { type = war which = DEN }
+		command = { type = relation which = DEN value = -10 }
+		command = { type = relation which = NOR value = -10 }
+		command = { type = dissent value = -5 }
+		command = { type = sleepevent which = 40079 }
+	}
+	action_d = {
+		name = "Abort Operation"
+		command = { }
+	}
+
+}
+event = {
+	id = 45035
+	random = no
+	country = ger
+
+	trigger = { event = 40471
+	}
+
+	name = "Operation Weserubung"
+	desc = "The operation started as a fast combined arms multilanding operation with airborne troops from the sky and small scale amphibious landings driven by destroyers and submarines from the sea. The risky surprise move allowed Germany to rapidly gain control of critical Norwegian objectives along all country."
+	style = 0
+	picture = weserubung
+
+	date = { day = 10 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		name = "ok"
+
+		command = { type = remove_division which = "3. Zerstörergeschwader" value = ger }
+		command = { type = remove_division which = "4. Zerstörergeschwader" value = ger }
+
+		command = { type = add_corps value = naval where = 110 }
+		command = { type = add_division value = destroyer when = 2 }
+
+		command = { type = add_corps value = naval where = 125 }
+		command = { type = add_division value = destroyer when = 2 }
+
+	}
+}
+#########################################################################################
+# 45036-45  Kriegsmarine	 (by Dec152000 and Aregorn)
+#########################################################################################
+
+event = {
+	id = 45036
+	country = GER
+	random = no
+	picture = doenitz4 	#steffele
+
+	trigger = { }
+
+
+	name = "Führer der Unterseeboote (FdU)"
+	desc = "During the 1930s there were two main schools of thought in the Kriegsmarine.  Grossadmiral Raeder and many other officers argued for a large surface fleet based on the Z-plan.  On the other hand, Kapitan z. See Karl Dönitz proposed a force of several hundred u-boats and a minimal surface fleet.  In the end Admiral Raeder won the argument and the ambitious Z-plan was commenced.  Dönitz was forced to settle for a small force of u-boats and was named Führer der Unterseeboote (FdU) in early 1936."
+	style = 0
+
+	date = { day = 3 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		name = "Hedge our bets. Appoint Captain Dönitz as FdU and let him test his theories."
+		ai_chance = 100
+		command = { type = gain_tech which = 8080 }
+		command = { type = gain_tech which = 8150 }
+		command = { type = gain_tech which = 8160 }
+		command = { type = gain_tech which = 8170 }
+		command = { type = gain_tech which = 8090 }
+		command = { type = gain_tech which = 8210 }
+		command = { type = gain_tech which = 3420 }
+	}
+	action_b = {
+		name = "Submarines will be more cost-effective.  Appoint Dönitz as Kriegsmarine head."
+		ai_chance = 0
+		command = { type = chiefofnavy which = 192 }
+
+		command = { type = gain_tech which = 8080 }
+		command = { type = gain_tech which = 8150 }
+		command = { type = gain_tech which = 8160 }
+		command = { type = gain_tech which = 8170 }
+		command = { type = gain_tech which = 8090 }
+		command = { type = gain_tech which = 8210 }
+		command = { type = gain_tech which = 3420 }
+
+		command = { type = sleepevent which = 45045 }
+		command = { type = sleepevent which = 45043 }
+		command = { type = sleepevent which = 45044 }
+	}
+	action_c = {
+		name = "We need a carrier based fleet give full support to Admiral Raeder."
+		ai_chance = 0
+		command = { type = gain_tech which = 8060 }
+		command = { type = gain_tech which = 8160 }
+		command = { type = gain_tech which = 8170 }
+
+		command = { type = sleepevent which = 45037 }
+		command = { type = sleepevent which = 45038 }
+		command = { type = sleepevent which = 45039 }
+		command = { type = sleepevent which = 45040 }
+	}
+}
+############################
+event = {
+	id = 45037
+	country = GER
+	random = no
+	picture = doenitz2 	#steffele
+
+	trigger = { random = 25 }
+
+	name = "U-boat School"
+	desc = "After his appointment as FdU, Captain Dönitz worked tirelessly to expand the u-boat arm.  U-boats secretly undertook combat actions against Republican Spanish forces and a number of new boats were ordered.  In order to expedite training for the crews, Captain Dönitz advises removing some of our costal u-boats from front line operations to expand the u-boat school."
+	style = 0
+
+	date = { day = 1 month = october year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1937 }
+
+	action_a = {
+		name = "Set up the u-boat school"
+		ai_chance = 100
+		command = { type = manpowerpool value = -5 }
+		command = { type = morale which = submarine value = 5 }
+		command = { type = build_time which = submarine where = relative value = -10 } # Improved training
+		command = { type = build_cost which = submarine where = relative value = -2.5 } # Improved training
+		command = { type = remove_division which = 14500 value = 12 }
+		command = { type = remove_division which = 14500 value = 13 }
+		command = { type = gain_tech which = 3430 }
+	}
+	action_b = {
+		name = "We don't need a u-boat school"
+		ai_chance = 0
+		command = { type = sleepevent which = 45038 }
+		command = { type = sleepevent which = 45039 }
+		command = { type = sleepevent which = 45040 }
+	}
+}
+############################
+event = {
+	id = 45038
+	country = GER
+	random = no
+	picture = doenitz5 	#steffele
+
+	trigger = { random = 25 war = { country = GER country = eng }}
+
+	name = "Befelshaber der Unterseeboote"
+	desc = "Shortly after WW2 erupted Captain Dönitz was promoted to Admiral and given the new title Befelshaber (C-in-C) der Unterseeboote (BdU).  His BdU Operations staff coordinated all u-boat operations in the North Sea, Atlantic and Indian Oceans while the BdU Organisation staff controlled all u-boat training and testing."
+	style = 0
+
+	date = { day = 1 month = october year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Promote Dönitz."
+		ai_chance = 99
+	  	command = { type = task_efficiency which = convoy_raiding value = 0.1 }
+		command = { type = gain_tech which = 8290 }
+	}
+	action_b = {
+		name = "We need Dönitz at sea."
+		ai_chance = 1
+		command = { }
+	}
+}
+############################
+event = {
+	id = 45039
+	country = GER
+	random = no
+	picture = doenitz3 	#steffele
+
+	trigger = { random = 25 war = { country = GER country = sov }
+	or = { alliance = { country = rom country = ger } control = { province = 436 data = ger }}
+}
+
+	name = "30. Unterseebootsflotilla"
+	desc = "After war erupted with the USSR, the OKW directed the Kriegsmarine to develop a plan for interdicting shipping in the Black Sea.  BdU-Ops developed a plan for transporting a flotilla of Type IIB boats to Tulcea via special rail and canal shipments."
+	style = 0
+
+	date = { day = 1 month = october year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Form the 30. Unterseebootsflotilla at Constanta"
+		ai_chance = 99
+		command = { }
+	}
+	action_b = {
+		name = "We don't need u-boats in the Black Sea"
+		ai_chance = 1
+		command = { type = sleepevent which = 45040 }
+	}
+}
+############################
+event = {
+	id = 45040
+	country = GER
+	random = no
+	picture = doenitz3 	#steffele
+
+	trigger = { event = 45039 random = 5 war = { country = GER country = sov }
+	or = { alliance = { country = rom country = ger } control = { province = 436 data = ger }}
+}
+
+	name = "Black Sea U-boat Operations"
+	desc = "After many months of preparations the 30. Unterseebootsflotilla is now ready to commence combat operations from the new base in Tulcea."
+	style = 0
+
+	date = { day = 1 month = october year = 1937 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "The 30. Unterseebootsflotilla at Constanta is ready for action"
+		command = { type = add_corps which = "30. Unterseebootsflotilla" value = naval where = 436 }
+		command = { type = add_division which = "Unterseebootsflotilla 30a" value = submarine when = 3 }
+		command = { type = add_division which = "Unterseebootsflotilla 30b" value = submarine when = 3 }
+	}
+	action_b = {
+		name = "Redeploy The 30. Unterseebootsflotilla to Taranto"
+		command = { type = add_corps which = "30. Unterseebootsflotilla" value = naval where = 523 }
+		command = { type = add_division which = "Unterseebootsflotilla 30a" value = submarine when = 3 }
+		command = { type = add_division which = "Unterseebootsflotilla 30b" value = submarine when = 3 }
+	}
+}
+########################### Kriegsmarine
+event = {
+	id = 45041
+	random = no
+	country = ger
+
+	trigger = { }
+
+	name = "Kriegsmarine"
+	desc = "The Kriegsmarine was leader in submarine tactics and produced vessels like the excellent Bismarck class battleship.  On the other hand, the ships were plagued by problems with mechanical reliability."
+	style = 0
+	picture = "ger_45041_scharnorst"	#Steffele
+
+	date = { day = 4 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		name = "Outstanding"
+		ai_chance = 100
+
+	  	command = { type = naval_defense which = battleship value = 2 } # superior comparmentation
+	  	command = { type = naval_attack which = battleship value = 3 } # superior main battery fire control + Throw weight
+	  	command = { type = shore_attack which = battleship value = 1 } # Throw weight
+	  	command = { type = speed which = battleship value = 2 } # Fast
+	  	command = { type = max_positioning which = battleship value = 0.02 }
+	  	command = { type = min_positioning which = battleship value = 0.02 }
+		command = { type = morale which = battleship value = -5 }  #  Poor reliability
+		command = { type = range which = battleship value = -500 }  # Low range
+	 	command = { type = build_cost which = battleship where = relative value = 5 } # Big
+		command = { type = fuel_consumption which = battleship value = 0.3 } # poor fuel economy
+		command = { type = supply_consumption which = battleship value = 0.3 }
+
+		command = { type = morale which = battlecruiser value = -5 }  #  Poor reliability
+	  	command = { type = naval_defense which = battlecruiser value = 2 } # superior comparmentation/armor
+	  	command = { type = naval_attack which = battlecruiser value = 1 } # Superior fire control
+	  	command = { type = shore_attack which = battlecruiser value = -1 } # Poor throw weight
+
+	  	command = { type = naval_attack which = heavy_cruiser value = 1 } # superior main battery fire control + Throw weight
+	  	command = { type = naval_defense which = heavy_cruiser value = 1 } # superior comparmentation
+		command = { type = range which = heavy_cruiser value = -700 }  #  Poor range
+		command = { type = morale which = heavy_cruiser value = -5 }  #  Poor reliability
+	  	command = { type = speed which = heavy_cruiser value = 2 } # Fast
+	  	command = { type = max_positioning which = heavy_cruiser value = 0.02 }
+	  	command = { type = min_positioning which = heavy_cruiser value = 0.02 }
+		command = { type = fuel_consumption which = heavy_cruiser value = 0.2 } # poor fuel economy
+
+		command = { type = range which = light_cruiser value = -500 }  #  Poor range
+	 	command = { type = build_cost which = light_cruiser where = relative value = -10 }
+	  	command = { type = naval_defense which = light_cruiser value = -1 } # Sructural weakness
+	  	command = { type = naval_attack which = light_cruiser value = 1 } # Heavy armarment
+
+		command = { type = supply_consumption which = carrier value = 0.4 }
+		command = { type = fuel_consumption which = carrier value = 0.4 }
+		command = { type = speed which = carrier value = 2 }
+		command = { type = morale which = carrier value = -5 }  #  Poor reliability
+
+		command = { type = morale which = destroyer value = -5 }  #  Poor reliability
+		command = { type = range which = destroyer value = -500 }
+		command = { type = build_time which = destroyer where = relative value = 15 } # really big
+	 	command = { type = build_cost which = destroyer where = relative value = 15 }
+		command = { type = fuel_consumption which = destroyer value = 0.1 } # poor fuel economy
+		command = { type = supply_consumption which = destroyer value = 0.1 }
+	  	command = { type = speed which = destroyer value = 2 } # Fast
+	  	command = { type = max_positioning which = destroyer value = 0.03 }
+	  	command = { type = min_positioning which = destroyer value = 0.03 }
+
+	  	command = { type = naval_defense which = submarine value = 2 } # superior crush depth
+
+		command = { type = scrap_model which = battleship value = 2 }
+		command = { type = scrap_model which = battlecruiser value = 2 }
+		command = { type = scrap_model which = heavy_cruiser value = 2 }
+		command = { type = scrap_model which = light_cruiser value = 2 }
+		command = { type = scrap_model which = carrier value = 0 }
+	}
+}
+############################
+event = {
+	id = 45042
+	random = no
+	country = ger
+
+	trigger = { event = 45041 }
+
+	name = "Kriegsmarine Z-Plan"
+	desc = "In June, 1935 the London Naval agreement was signed, authorizing a German surface fleet up to 35% of the Royal Navy.  The Kriegsmarine's ambitious Z-Plan aimed to make this a reality by 1945.  Initial requirements are for 2 Bismarck Class BBs (you will need 14k supplies by 8/1940 & 2/1941) and one Graf Zeppelin class CV (14k supplies 11/1940 + basic or imp. carrier tech) to be laid down in 1936."
+	style = 0
+	picture = "ger_45042_zplan"	#Steffele
+
+	date = { day = 9 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -5 }
+	 	command = { type = build_time which = battlecruiser where = relative value = -5 }
+		command = { type = gain_tech which = 3340 }
+		command = { type = supplies value = -3000 }
+	}
+	action_b = {
+		name = "We do not need the Z-plan"
+		ai_chance = 0
+		command = { type = sleepevent which = 45043 }
+		command = { type = sleepevent which = 45044 }
+		command = { type = sleepevent which = 45045 }
+	}
+}
+############################
+event = {
+	id = 45043
+	random = no
+	country = GER
+
+	trigger = { supplies = 14000 }
+
+	date = { day = 1 month = august year = 1940 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	name = "KMS Bismarck"
+	desc = "The first scheduled capital ship from the Z plan is ready."
+	style = 0
+	picture = "ger_45043_bis2"	#Steffele
+
+	action_a = {
+		name = "Lay it down"
+		ai_chance = 100
+		command = { type = activate_division which = 14500 value = 608 where = 90 }
+		command = { type = supplies value = -14000 }
+		}
+	action_b = {
+		name = "We need the resources elsewhere"
+		ai_chance = 0
+		command = { }
+	}
+}
+############################
+event = {
+	id = 45044
+	random = no
+	country = GER
+	style = 0
+
+	trigger = { supplies = 14000 }
+
+	date = { day = 1 month = february year = 1941 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	name = "KMS Tirpitz"
+	desc = "The kriegsmarine now counts with another first class battleship."
+	style = 0
+	picture = "ger_45044_tirpitz3"	#Steffele
+
+	action_a = {
+		name = "Lay it down"
+		command = { type = activate_division which = 14500 value = 609 where = 90 }
+		command = { type = supplies value = -14000 }
+		}
+	action_b = {
+		name = "We need the resources elsewhere"
+		ai_chance = 0
+		command = { }
+	}
+}
+############################
+event = {
+	id = 45045
+	random = no
+	country = ger
+	style = 0
+
+	trigger = { technology = 3330 supplies = 10000 }
+
+	date = { day = 1 month = october year = 1940 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	name = "KMS Graf Zeppelin (class 3)"
+	desc = "Z plan carrier ready."
+	style = 0
+	picture = "ger_45045_zep1"	#Steffele
+
+	action_a = {
+		name = "Lay it down"
+		command = { type = activate_division which = 14500 value = 610 where = 90 }
+		command = { type = supplies value = -14000 }
+		}
+	action_b = {
+		name = "We need the resources elsewhere"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 45046 Operation Wilfried (by Jared Torval and Aregorn 060322)
+#########################################################################
+event = {
+	id = 45046
+	random = no
+	country = ger
+
+	name = "Operation Wilfried"
+	desc = "Once Norway entered the war and to complement the mining of Norwegian waters, an allied expeditionary force was sent to exclusively keep control of the strategic port of Narvik."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = eng value = 125 }
+	}
+}
+################################################################################
+# 45047-48 Upgrade of the KMS Graf Zeppelin (by Aregorn 081005)
+################################################################################
+event = {
+	id = 45047
+	random = no
+	country = ger
+	style = 0
+
+	trigger = { technology = 3350 supplies = 1500 }
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1937 }
+
+	name = "KMS Graf Zeppelin Upgrade"
+	desc = "Timely new available technology and infrastructure opened the possibility to upgrade our flag carrier under development. Additional costs and time will be required for the upgrade but the carrier once finished will be consider class 4 instead of 3."
+	style = 0
+	picture = "ger_45045_zep1"	#Steffele
+
+	action_a = {
+		name = "We need the best quality we can get"
+		command = { type = supplies value = -1500 }
+		command = { type = sleepevent which = 45045 }
+		command = { type = sleepevent which = 45049 }
+		}
+	action_b = {
+		name = "Provide the needs for improving quality while speeding up buildup"
+		command = { type = supplies value = -3000 }
+		command = { type = sleepevent which = 45048 }
+		command = { type = sleepevent which = 45045 }
+	}
+	action_c = {
+		name = "We can not spend further resources on the project"
+		command = { type = sleepevent which = 45048 }
+		command = { type = sleepevent which = 45049 }
+	}
+}
+event = {
+	id = 45048
+	random = no
+	country = ger
+	style = 0
+
+	trigger = { technology = 3350 supplies = 12000 }
+
+	date = { day = 1 month = november year = 1940 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	name = "KMS Graf Zeppelin (class 4)"
+	desc = "Z plan carrier is ready."
+	style = 0
+	picture = "ger_45045_zep1"	#Steffele
+
+	action_a = {
+		name = "Lay it down"
+		command = { type = activate_division which = 14500 value = 611 where = 90 }
+		command = { type = supplies value = -14000 }
+		}
+	action_b = {
+		name = "We need the resources elsewhere"
+		ai_chance = 0
+		command = { }
+	}
+}
+event = {
+	id = 45049
+	random = no
+	country = ger
+	style = 0
+
+	trigger = { technology = 3350 supplies = 12000 }
+
+	date = { day = 1 month = april year = 1940 }
+	offset = 1
+	deathdate = { day = 29 month = may year = 1963 }
+
+	name = "KMS Graf Zeppelin (class 4) faster construction"
+	desc = "Z plan carrier is ready."
+	style = 0
+	picture = "ger_45045_zep1"	#Steffele
+
+	action_a = {
+		name = "Lay it down"
+		command = { type = activate_division which = 14500 value = 611 where = 90 }
+		command = { type = supplies value = -14000 }
+		}
+	action_b = {
+		name = "We need the resources elsewhere"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 45050-51  Caucasus Oil fields (by Aregorn 060109)
+#########################################################################
+
+event = {
+	id = 45050
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	event = 47021
+			NOT = { flag = Baku }
+		OR = {
+			control = { province = 1907 data = ger } #Baku
+			AND = { control = { province = 1907 data = azb }
+				alliance = { country = ger country = azb }
+			}
+		}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Caucasus Oil Fields are now producing for the Reich"
+	desc = "Germany is now controling the strategic region."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = 40  }
+		command = { type = setflag which = Baku }
+		}
+}
+
+
+event = {
+	id = 45051
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	flag = baku
+			not = { control = { province = 1907 data = ger } }
+			not = { AND = { control = { province = 1907 data = azb }
+					alliance = { country = ger country = azb }
+				}
+			}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Caucasus Oil Fields were lost"
+	desc = "Enemy forces took control of the strategic region."
+	style = 0
+	picture = ger_50123-24_oel1 	#Steffele
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = -40  }
+		command = { type = clrflag which = baku }
+		}
+}
+#########################################################################
+# 45052-55  Romanian Oil fields (by Aregorn 060109)
+#########################################################################
+
+event = {
+	id = 45052
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = {
+			NOT = { flag = ploesti }
+		OR = {
+			control = { province = 431 data = ger } #Ploesti
+			AND = { control = { province = 431 data = rom }
+				alliance = { country = ger country = rom }
+			}
+		}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Ploesti Oil Fields are now producing for the Reich"
+	desc = "Germany is now controlling the strategic region."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = 40  }
+		command = { type = setflag which = ploesti }
+		command = { type = trigger which = 40473 }
+		}
+}
+
+
+event = {
+	id = 45053
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	flag = ploesti
+			not = { control = { province = 431 data = ger } }
+			not = { AND = { control = { province = 431 data = rom }
+					alliance = { country = ger country = rom }
+				}
+			}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Ploesti Oil Fields were lost"
+	desc = "Enemy forces took control of the strategic region."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = -40  }
+		command = { type = clrflag which = ploesti }
+		command = { type = trigger which = 40474 }
+		}
+}
+event = {
+	id = 45054
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	flag = ploesti
+			NOT = { flag = ploestibomb }
+		OR = {
+			war = { country = GER country = gre }
+			war = { country = GER country = yug }
+			war = { country = GER country = bul }
+			war = { country = GER country = tur }
+			AND = { control = { province = 396 data = eng } war = { country = GER country = eng } }
+			AND = { control = { province = 396 data = usa } war = { country = GER country = usa } }
+		}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Air Raids on  Ploesti"
+	desc = "Bombing raids are severely hampering oil production in Ploesti. To prevent this happening all hostile air bases at range need to be neutralised. This means that Crete, Turkey, Bulgaria, Yugoslavia and Greece must be in friendly or neutral hands."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = -20  }
+		command = { type = setflag which = ploestibomb }
+		}
+}
+
+
+event = {
+	id = 45055
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	flag = ploestibomb flag = ploesti
+			not = { war = { country = GER country = gre }}
+			not = { war = { country = GER country = yug }}
+			not = { war = { country = GER country = bul }}
+			not = { war = { country = GER country = tur }}
+			not = { AND = { control = { province = 396 data = eng } war = { country = GER country = eng } }}
+			not = { AND = { control = { province = 396 data = usa } war = { country = GER country = usa } }}
+	}
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Ploesti Oil Fields are now secured from Raids"
+	desc = "Hostile air bases at range to bomb Ploesti have been neutralised."
+	style = 0
+	picture = ger_40082_ploesti	#Aregorn
+
+	action_a = {
+		name = "ok"
+		command = { type = free_oil value = 20  }
+		command = { type = clrflag which = ploestibomb }
+		}
+}
+#########################################################################
+# 45056-58  Russian Corridor (by Aregorn 060110)
+#########################################################################
+
+event = {
+	id = 45056
+	random = no
+	country = ger
+
+	trigger = { event = 50114 event = 50115 exists = lit exists = lat }
+
+	date = { year = 1936 month = january day = 1 }
+	offset = 1
+	deathdate = { year = 1963 month = january day = 30 }
+
+	name = "The Eastern Corridor"
+	desc = "In order to prevent some mechanical problems, HSR is giving full control of three Baltic provinces to Germany."
+	style = 0
+	picture = 50000_startup
+
+	action_a = {
+		name = "ok"
+		command = { type = addcore which = 202 }
+		command = { type = addcore which = 203 }
+		command = { type = addcore which = 577 }
+		command = { type = trigger which = 45057 }
+		command = { type = trigger which = 45058 }
+		}
+}
+event = {
+	id = 45057
+	random = no
+	country = lit
+
+	name = "Russian Corridor"
+	desc = ""
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 577 }
+		}
+}
+event = {
+	id = 45058
+	random = no
+	country = lat
+
+	name = "Russian Corridor"
+	desc = ""
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 202 }
+		command = { type = secedeprovince which = ger value = 203 }
+		}
+}
+#########################################################################
+# 45059 The Versailles Treaty (by Aregorn 061401)
+#########################################################################
+event = {
+	id = 45059
+	country = GER
+	trigger = { ai = no NOT = { event = 2000 }
+		NOT = { war = { country = GER country = FRA } }
+		NOT = { alliance = { country = GER country = FRA } }
+	}
+	name = "The Versailles Treaty"
+	desc = "Although Germany already broke the treaty in 1935 by officially reinstalling conscription, outnumbering the 100000 military men limit and unofficially training in secret an air force in the Soviet Union, the demilitarisation of the Rhine is still standing. Decision might be taken to remilitarise Cologne by sending Wehrmacht troops. This move will greatly consolidate the German Leadership's strength although it is uncertain what the Allied reaction would be."
+	style = 0
+	picture = ger_50129_vers4 	#Steffele
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+#########################################################################
+# 45060-61 Re-occupation of the Rhineland - French Ultimatum (by Aregorn 061401)
+#########################################################################
+event = {
+	id = 45060
+	country = GER
+	random = no
+	picture = Rhineland
+
+	trigger = { flag = rhineland }
+
+	name = "Allied Ultimatum"
+	desc = "Allied envoys demanded an immediate withdrawal from the Rhineland or face immediate military retaliation"
+	style = 0
+	picture = ger_50130_rhineland #Steffele
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = clrflag which = rhineland }
+	}
+}
+event = {
+	id = 45061
+	country = GER
+	random = no
+	picture = Rhineland
+
+	trigger = { 	event = 50130
+			NOT = {
+				war = { country = GER country = FRA }
+				alliance = { country = GER country = FRA }
+				garrison = { country = GER province = 74 size = 1 }
+				garrison = { country = GER province = 75 size = 1 }
+			}
+	}
+
+	name = "Allied Ultimatum accepted"
+	desc = "The Rhineland have been again demilitarised due to the Allied threat. The German people have been again humiliated."
+	style = 0
+
+	date = { day = 7 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = ENG value = 30 }
+		command = { type = relation which = BEL value = 30 }
+		command = { type = relation which = HOL value = 30 }
+		command = { type = belligerence which = GER value = -10 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = domestic which = defense_lobby value = -2 }
+	}
+}
+#########################################################################
+# 45062 Nationalisation of German Industry (by Aregorn 060408)
+#########################################################################
+event = {
+	id = 45062
+	random = no
+
+	trigger = { random = 25 ai = no atwar = no }
+
+	name = "EVT_1006R_NAME"
+	desc = "EVT_1006R_DESC"
+	picture = "private_sector"
+	style = 0
+
+	date = { day = 1 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase focus on the military"
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = dissent value = 1 }
+	}
+	action_b = {
+		name = "We need a more liberal policy"
+		command = { type = dissent value = -1 }
+		command = { type = domestic which = free_market value = 2 }
+	}
+}
+#########################################################################
+# 45063 The winds of political change (by Aregorn 060408)
+#########################################################################
+event = {
+	id = 45063
+	random = no
+	country = ger
+
+	trigger = { government = democratic random = 25 }
+
+
+	name = "The winds of political change"
+	desc = "The significant deviation in policies open the possibility of choosing a new Government"
+	style = 0
+	picture = ger_40080_New_Policies1	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Give the task to our new Kaiser"
+		command = { type = headofstate which = 37 }
+		command = { type = headofgovernment which = 50 }
+	  	command = { type = dissent value = 1 }
+		command = { type = set_domestic	which = democratic value = 5 }
+		command = { type = set_domestic	which = freedom value = 5 }
+		command = { type = set_domestic	which = interventionism value = 8 }
+				}
+	action_b = {
+		name = "We need a Social conservative government"
+		command = { type = headofstate which = 38 }
+		command = { type = headofgovernment which = 50 }
+	  	command = { type = dissent value = -2 }
+		command = { type = set_domestic	which = democratic value = 8 }
+		command = { type = set_domestic	which = freedom value = 5 }
+		command = { type = set_domestic	which = political_left value = 2 }
+		command = { type = set_domestic	which = interventionism value = 7 }
+				}
+	action_c = {
+		name = "We need a Workers government"
+		command = { type = headofstate which = 39 }
+		command = { type = headofgovernment which = 51 }
+	  	command = { type = dissent value = 10 }
+		command = { type = set_domestic	which = democratic value = 2 }
+		command = { type = set_domestic	which = freedom value = 2 }
+		command = { type = set_domestic	which = interventionism value = 7 }
+		command = { type = set_domestic	which = political_left value = 8 }
+				}
+	action_d = {
+		name = "No need to change, the Fürer will continue to lead us on our way to success"
+	  	command = { type = dissent value = -2 }
+		command = { type = domestic which = democratic value = -2 }
+		command = { type = domestic which = freedom value = -2 }
+		command = { type = domestic which = interventionism value = 2 }
+				}
+
+}
+#########################################################################
+# 45064 Deutsche SüdameriKakorps  (by Aregorn 060606)
+#########################################################################
+
+event = {
+	id = 45064
+	country = ger
+	random = no
+	persistent = yes
+
+	trigger = {	supplies = 1000 random = 25
+			control = { province = 667 data = arg } #BA
+			war = { country = arg country = eng }
+			alliance = { country = GER country = arg }
+	}
+
+	name = "Deutsche SüdameriKakorps"
+	desc = "To help the latin american allies Germany created the SüdameriKakorps, a small group built to give mainly military training support to the Argentinean military."
+	style = 0
+	picture = ger_40057_dak1	#Steffele
+
+	date = { day = 1 month = june year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare and send the SüdameriKakorps!"
+		ai_chance = 100
+		command = { type = manpowerpool value = -1 }
+		command = { type = supplies value = -1000 }
+		command = { type = trigger which = 46014 }
+		command = { type = sleepevent which = 45064 }
+	}
+	action_b = {
+		name = "We can not afford it at this time, but maybe later."
+		ai_chance = 0
+		command = { }
+	}
+	action_c = {
+		name = "We will not spend military resources in South America."
+		ai_chance = 0
+		command = { type = sleepevent which = 45064 }
+	}
+}
+#########################################################################
+# 45064 War against Spain - ITA  (by Aregorn 060606)
+#########################################################################
+event = {
+	id = 45065
+	random = no
+	country = ger
+
+	trigger = { 	ai = yes event = 40242 not = { 	war = { country = ITA country = eng } }
+			or = {
+				war = { country = ITA country = spa }
+				war = { country = ITA country = spr }
+			}
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Spain was not well received by neither the Latin American countries nor any mayor powers."
+	style = 0
+
+	date = { day = 22 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = peace which = spa value = 0 }
+		command = { type = peace which = spr value = 0 }
+	}
+}
+#########################################################################
+# 45066 The Ottoman Empire (by Aregorn 061002)
+#########################################################################
+event = {
+	id = 45066
+	random = no
+	country = GER
+
+	# Triggered by Misc2
+
+	name = "The Ottoman empire"
+	desc = "Turkey asks for the German blessing to obtain their former territories"
+	style = 0
+
+	action_a = {
+		name = "Force Middle East to accept"
+		ai_chance = 100
+		command = { type = relation which = tur value = 10 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 42018 } # Misc2
+	}
+	action_b = {
+		name = "It can not be done"
+		ai_chance = 0
+		command = { type = relation which = tur value = -20 }
+	}
+}
+#########################################################################
+# 45067 IG Farben (by Aregorn 080928)
+#########################################################################
+event = {
+	id = 45067
+	random = no
+	country = ger
+
+	picture = IG_Farben
+
+	trigger = { }
+
+	name = "IG Farben, the German industrial power behind WWII"
+
+	desc = "the Inter-nationale Gesellschaft Farbenindustrie A.G (IG Farben in short), was created in 1925 by Hermann Schmitz mergering giants Badische Anilin, Bayer, Agfa, Hoechst, Weiler-ter-Meer, and Griesheim-Elektron, becoming the world largest chemical/pharmaceutical cartel of the time.The empire not only supported the rise of the Nazi regime but was considered to be the main instigator and financing force behind WWII driven by the ambition of gaining global control of oil and drog markets."
+	style = 0
+
+	date = { day = 1 month = march year = 1937 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "German Industry is strong"
+		ai_chance = 100
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = gain_tech which = 5030 }
+		command = { type = trigger which = 45068 }
+		command = { type = industrial_modifier which = total value = 3 }
+	}
+	action_b = {
+		name = "disolve IG Farben and pass anti-monopoly laws to improve competition"
+		ai_chance = 0
+		command = { type = domestic which = free_market value = 5 }
+		command = { type = sleepteam which = 1 }
+		command = { type = sleepevent which = 45069 }
+	}
+}
+
+event = {
+	id = 45068
+	random = no
+	country = ger
+
+	picture = IG_Farben
+
+	trigger = { event = 45067 }
+
+	name = "IG Farben and the blitzkrieg"
+	desc = "Although Germany lacked crude petroleum and natural rubber, IG Farben with the technical assistance of American companies like Standard Oil, and the financial support of Wall street, was able to evolve in conversion technologies building efficient conversion plants. Finally the German war machine had guarantied supply of synthetic gasoline and essential synthetic rubber to feed the blitzkrieg. Without IG Farben (and private U.S. support) WWII would have never taken place in 1939."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = gain_tech which = 5200 }
+		command = { type = free_oil value = 3  }
+	}
+}
+
+event = {
+	id = 45069
+	random = no
+	country = ger
+
+	picture = IG_Farben
+
+	trigger = { atwar = no }
+
+	name = "Additional oil supplies for the Wehrmacht"
+
+	desc = "IG Farben, knowledgable of the war about to start delievered additional fuel shipments to the Wehrmacht."
+	style = 0
+
+	date = { day = 10 month = august year = 1939 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "Lets get the Panzers ready to roll"
+		command = { type = oilpool value = 2000 }
+	}
+}
+#########################################################################
+# 45070 German unemployment (by Aregorn 081004)
+#########################################################################
+event = {
+	id = 45070
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = {	ai = no atwar = no difficulty = 3 random = 25
+		or = {
+			and = {	manpower = 1100 year = 1936 not = { month = 2 } not = { year = 1937 }}
+			and = {	manpower = 1300 year = 1936 not = { month = 7 } not = { year = 1937 }}
+			and = {	manpower = 1500 year = 1936 not = { month = 11 } not = { year = 1937 }}
+			and = {	manpower = 1600 year = 1937 not = { month = 5 }}
+			and = {	manpower = 1700 year = 1937 not = { month = 11 }}
+		}
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1937 }
+
+	name = "Reich unemployment"
+	desc = "Idle manpower is overgrowing without real job offers which together with the bad recesion context is producing severe unemployment and dissent among the population. Reducing free idle manpower maybe by increasing the army forces and most importantly keeping the original military OOB manpower will reduce the problem."
+	style = 0
+	picture = ger_40009_crisis
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = 1 }
+	}
+}
+#########################################################################
+# 45071-79 The Westwall (Siegfried Line) (by Aregorn 081012)
+#########################################################################
+event = {
+	id = 45071
+	random = no
+	country = ger
+
+	trigger = {	random = 50 event = 2000 atwar = no
+	}
+
+
+	date = { day = 10 month = may year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "The Westwall (Siegfried Line)"
+	desc = "Soon after the reoccupation of the Rhineland Hitler planned the construction of a fortified defensive line where the old WWI Siegfried line stood. The project that started construction in 1938 was more propaganda intended than military, and in fact although vastly incomplete and unfitted for modern warfare was threatening enough to successfully prevent Allied attack in 1939 allowing German focus on Poland and later in 1944 significantly delayed the overcautious Americans allowing again focus on other fronts"
+	style = 0
+
+	picture = Westwall #by Aregorn
+
+	action_a = {
+		name = "Start gathering materials and announce the plan (5k supplies to trigger in 1938)"
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "This is a military useless unecessary waste of resources"
+		command = { type = sleepevent which = 45072 }
+		command = { type = sleepevent which = 45073 }
+		command = { type = sleepevent which = 45074 }
+		command = { type = sleepevent which = 45075 }
+		command = { type = sleepevent which = 45076 }
+		command = { type = sleepevent which = 45077 }
+		command = { type = sleepevent which = 45078 }
+		command = { type = sleepevent which = 45079 }
+	}
+}
+
+event = {
+	id = 45072
+	random = no
+	country = ger
+
+	trigger = { event = 45071 atwar = no random = 50 supplies = 5000
+	}
+
+
+	date = { day = 10 month = january year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Pioneering programme                  (The Westwall)"
+	desc = "The first stage of the protective fortified line was carried out by the Border Watch (Grenzwacht) a small military organisation that was created after the remilitarisation of the Rhineland. The initial wall consisted of small 50cm thick concrete pillboxes which would have given some protection against shrapnel from bomds and granades"
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Order the Grenzwacht to start construction"
+		command = { type = supplies value = -5000 }
+		command = { type = dissent value = -1 }
+		command = { type = sleepevent which = 45072 }
+	}
+	action_b = {
+		name = "no military need for spending precious resources"
+		command = { type = sleepevent which = 45073 }
+		command = { type = sleepevent which = 45074 }
+		command = { type = sleepevent which = 45075 }
+		command = { type = sleepevent which = 45076 }
+		command = { type = sleepevent which = 45077 }
+		command = { type = sleepevent which = 45078 }
+		command = { type = sleepevent which = 45079 }
+		command = { type = dissent value = 1 }
+	}
+}
+event = {
+	id = 45073
+	random = no
+	country = ger
+
+	trigger = { event = 45071 atwar = no
+	}
+
+
+	date = { day = 5 month = may year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Pioneering programme completed"
+	desc = "The initial Westwall consisted of small 50cm thick concrete pillboxes which would have given some protection against shrapnel from bomds and granades"
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Make the achievemnt public (+5k supplies to trigger next in 38)"
+		command = { type = construct which = land_fort where = 314 value = 1 }
+		command = { type = construct which = land_fort where = 315 value = 1 }
+		command = { type = construct which = land_fort where = 74 value = 1 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = {
+	id = 45074
+	random = no
+	country = ger
+
+	trigger = { event = 45073 random = 50 atwar = no supplies = 5000
+	}
+
+
+	date = { day = 1 month = may year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Limes programme                       (The Westwall)"
+	desc = "In 1938 Hitler ordered to strengthen fortifications on the westwall line. The enterpise was assigned to the Todt organisation and served as internal porpaganda and foreign military dissuasion"
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Announce the continuation of the Westwall (3k supplies to trigger next in 1938)"
+		command = { type = supplies value = -5000 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "No need to further spend precious resources"
+		command = { type = sleepevent which = 45075 }
+		command = { type = sleepevent which = 45078 }
+		command = { type = sleepevent which = 45079 }
+		command = { type = dissent value = 1 }
+	}
+}
+event = {
+	id = 45075
+	random = no
+	country = ger
+
+	trigger = { event = 45073 atwar = no
+	}
+
+
+	date = { day = 15 month = december year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Limes programme              completed"
+	desc = "In the new completed phase of the project a total of 3471 stronger 1.5 m concrete bunkers were built"
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Make the achievemnt public (5k supplies to trigger next in 1939)"
+		command = { type = construct which = land_fort where = 314 value = 1 }
+		command = { type = construct which = land_fort where = 315 value = 1 }
+		command = { type = construct which = land_fort where = 74 value = 1 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = {
+	id = 45076
+	random = no
+	country = ger
+
+	trigger = { event = 45073 random = 50 atwar = no supplies = 3000
+	}
+
+
+	date = { day = 1 month = july year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "LVZ West (The Westwall)"
+	desc = "The Western Air Defence Zone (Luftverteidigungszone West or LVZ West) consisted mainly of concrete flak towers designed to force enemy planes to fly higher thus decreasing the accuracy of their bombing giving additional protection to the westwall fortifications."
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Announce the continuation of the Westwall project"
+		command = { type = supplies value = -3000 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "There is no need to further spend precious resources"
+		command = { type = sleepevent which = 45077 }
+		command = { type = dissent value = 1 }
+	}
+}
+event = {
+	id = 45077
+	random = no
+	country = ger
+
+	trigger = { event = 45076 atwar = no
+	}
+
+
+	date = { day = 1 month = december year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "LVZ West completed"
+	desc = "The Western Air Defence Zone (Luftverteidigungszone West or LVZ West) consisted mainly of concrete flak towers designed to force enemy planes to fly higher, thus decreasing the accuracy of their bombing giving additional protection to the westwall fortifications. These towers were protected at close range by bunkers from the Limes and Aachen-Saar programmes."
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Make the achievemnt public"
+		command = { type = construct which = flak  where = 314 value = 3 }
+		command = { type = construct which = flak where = 315 value = 3 }
+		command = { type = construct which = flak where = 74 value = 3 }
+		command = { type = construct which = flak where = 75 value = 3 }
+		command = { type = construct which = flak where = 66 value = 3 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = {
+	id = 45078
+	random = no
+	country = ger
+
+	trigger = { event = 45075 random = 50 atwar = no supplies = 5000
+	}
+
+
+	date = { day = 10 month = january year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Aachen-Saar Programme              (The Westwall)"
+	desc = "The westwall needed to be further extended north to the Aachen region. The bunkers built under this programme were similar to those of the Limes programme with concrete walls up to 3.5m thick."
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Announce the continuation of the Westwall project"
+		command = { type = supplies value = -5000 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "No need to further spend precious resources"
+		command = { type = sleepevent which = 45079 }
+		command = { type = dissent value = 1 }
+	}
+}
+event = {
+	id = 45079
+	random = no
+	country = ger
+
+	trigger = { event = 45078 atwar = no
+	}
+
+
+	date = { day = 1 month = july year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1947 }
+
+	name = "Aachen-Saar Programme completed"
+	desc = "The bunkers built under this programme were similar to those of the Limes programme with concrete walls up to 3.5m thick extending the line to the Aachen region."
+	style = 0
+
+	picture = Westwall_2 #by Aregorn
+
+	action_a = {
+		name = "Make the achievemnt public"
+		command = { type = construct which = land_fort where = 75 value = 1 }
+		command = { type = construct which = land_fort where = 66 value = 1 }
+		command = { type = construct which = land_fort where = 74 value = 1 }
+		command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+# 45080 Olympics opening ceremony (by Aregorn 081017)
+#########################################################################
+
+
+
+event = {
+	id = 45080
+	random = no
+	country = GER
+
+		trigger = { atwar = no event = 40038}
+
+	name = "Olympic Games of 1936 - Opening Ceremony"
+	desc = "On the 1st of August in Berlin after a vivid opening ceremony Hitler officially announed the starting of the XI Olympic games."
+	style = 0
+	picture = 45080_olympics	#by Aregorn
+
+	date = { day = 0 month = august year = 1936 }
+
+	action_a = {
+		name = "Outstanding!"
+		command = { type = dissent value = -2 }
+	}
+}
+#########################################################################
+# 45081 Hitler Youth (by Aregorn 081017)
+#########################################################################
+
+
+
+event = {
+	id = 45081
+	random = no
+	country = GER
+
+		trigger = { }
+
+	name = "Hitler Youth (Hitlerjugend)"
+	desc = "Originally created in 1922 The Hitlerjugend (HJ) was seen as an important stepping stone to future membership of the elite Schutzstaffel (SS). From 1936, membership of the HJ was compulsory for Germans aged 10-18 and counted 4 million members that year. Their activities were very competitive and closely resembled military training, with weapons training, assault course circuits and basic strategy."
+	style = 0
+	picture = HJ	#by Aregorn
+
+	date = { day = 10 month = february year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1947 }
+
+	action_a = {
+		name = "We need an early school for our future soldiers"
+		command = { type = free_manpower value = 0.05 }
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+	action_b = {
+		name = "Make membership voluntary"
+		command = { type = domestic which = freedom value = 1 }
+	}
+}
+#########################################################################
+# 45082 Naval Aviation (by Aregorn 081021)
+#########################################################################
+
+
+
+event = {
+	id = 45082
+	random = no
+	country = GER
+
+		trigger = { }
+
+	name = "Naval Aviation"
+	desc = "Grossadmiral Raeder looked for the advice of the Japanese who gave the Kriegsmarine technical and tactical knowledge. In their view, carriers will overtake modern sea warfare. That is where Raeder found a big obstacle, the over weighted Göring. Carriers needed planes and luftwaffe personnel which Göring was never going to give up willingly and in fact he used every political skill to delay any carrier project to avoid power sharing with the Kriegsmarine (and in fact succeeded)."
+	style = 0
+	picture = ger_45045_zep1
+
+	date = { day = 25 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1947 }
+
+	action_a = {
+		name = "Trust Göring"
+		ai_chance = 90
+		command = { type = gain_tech which = 4140 }
+		command = { type = sleepevent which = 45045 }
+		command = { type = sleepevent which = 45048 }
+	}
+	action_b = {
+		name = "Overrule Göring and create an independent Kriegsmarine air branch"
+		ai_chance = 10
+		command = { type = gain_tech which = 4190 }
+		command = { type = gain_tech which = 3350 }
+		command = { type = dissent value = 2 }
+	}
+}
+#################################################################################################################
+# 45083 German Armor (by Aregorn 081107) requested by Alan Mateus
+#################################################################################################################
+event = {
+	id = 45083
+	random = no
+	country = ger
+
+	trigger = { random = 25 }
+
+	name = "German Armor"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. Historically Germany opted for best quality with regular models upgrade resulting in excellent vehicles but also in heterogeneous military units more complex to maintain and reduced numbers built because of assembly line changes and increased costs."
+	style = 0
+
+	picture = german_tank_factory	#by Aregorn
+	date = { day = 1 month = january year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+	command = { type = hard_attack which = armor value = 5 }
+	command = { type = soft_attack which = armor value = 6 }
+	command = { type = build_time which = armor when = now where = relative value = 30 }
+	command = { type = build_cost which = armor when = now where = relative value = 30 }
+	command = { type = supply_consumption which = armor value = 0.2 }
+	command = { type = speed which = armor value = -1 }
+	command = { type = transport_weight which = armor value = 10 }
+	command = { type = max_organization which = armor value = 5 }
+
+	command = { type = hard_attack which = mechanized value = 2 }
+	command = { type = soft_attack which = mechanized value = 3 }
+	command = { type = build_time which = mechanized when = now where = relative value = 20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = mechanized value = 0.1 }
+	command = { type = speed which = mechanized value = 1 }
+	command = { type = transport_weight which = mechanized value = 5 }
+	command = { type = max_organization which = mechanized value = 5 }
+
+	command = { type = build_time which = motorized when = now where = relative value = 20 }
+	command = { type = build_cost which = motorized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = motorized value = 0.1 }
+	command = { type = speed which = motorized value = 1 }
+	command = { type = max_organization which = motorized value = 5 }
+	command = { type = industrial_modifier which = total value = -1 }
+	command = { type = tc_mod value = -10 }
+
+	}
+	action_b = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 0
+	command = { type = soft_attack which = armor value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = -30 }
+	command = { type = build_cost which = armor when = now where = relative value = -30 }
+	command = { type = supply_consumption which = armor value = -0.5 }
+	command = { type = fuel_consumption which = armor value = -1 }
+	command = { type = speed which = armor value = 1 }
+	command = { type = transport_weight which = armor value = -10 }
+
+	command = { type = build_time which = mechanized when = now where = relative value = -20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = mechanized value = -0.1 }
+	command = { type = transport_weight which = mechanized value = -10 }
+
+	command = { type = hard_attack which = motorized value = -1 }
+	command = { type = soft_attack which = motorized value = -1 }
+	command = { type = build_time which = motorized when = now where = relative value = -20 }
+	command = { type = build_cost which = motorized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = motorized value = -0.1 }
+	command = { type = transport_weight which = motorized value = -5 }
+
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = industrial_modifier which = total value = 1 }
+	command = { type = tc_mod value = 5 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 3 }
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = 15 }
+	command = { type = build_cost which = armor when = now where = relative value = 15 }
+	command = { type = build_time which = mechanized when = now where = relative value = 10 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 10 }
+	command = { type = tc_mod value = -3 }
+	}
+	action_d = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}
+#########################################################################
+# 45084 German Aircrafts (by Aregorn 081107) requested by Alan Mateus
+#########################################################################
+event = {
+	id = 45084
+	random = no
+	country = ger
+
+	trigger = { random = 25 }
+
+	name = "German Aircrafts"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. Historically Germany opted for best quality with regular models upgrade resulting in excellent vehicles but also in heterogeneous military units more complex to maintain and reduced numbers built because of assembly line changes and increased costs."
+	style = 0
+
+	picture = german_air_factory	#by Aregorn
+	date = { day = 1 month = january year = 1937 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+	command = { type = build_time which = multi_role when = now where = relative value = 20 }
+	command = { type = build_cost which = multi_role when = now where = relative value = 20 }
+	command = { type = supply_consumption which = multi_role value = 0.1 }
+	command = { type = speed which = multi_role value = 40 }
+
+	command = { type = build_time which = interceptor when = now where = relative value = 20 }
+	command = { type = build_cost which = interceptor when = now where = relative value = 20 }
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+	command = { type = supply_consumption which = interceptor value = 0.1 }
+	command = { type = speed which = interceptor value = 40 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = build_time which = cas when = now where = relative value = 20 }
+	command = { type = build_cost which = cas when = now where = relative value = 20 }
+	command = { type = supply_consumption which = cas value = 0.1 }
+	command = { type = speed which = cas value = 20 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+	command = { type = air_defense which = tactical_bomber value = 1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = tactical_bomber value = 0.2 }
+	command = { type = speed which = tactical_bomber value = 20 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = naval_bomber value = 0.1 }
+	command = { type = speed which = naval_bomber value = 20 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 2 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = strategic_bomber value = 0.2 }
+	command = { type = speed which = strategic_bomber value = 20 }
+	command = { type = industrial_modifier which = total value = -1 }
+	}
+	action_b = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 0
+	command = { type = soft_attack which = multi_role value = -1 }
+	command = { type = air_attack which = multi_role value = -1 }
+	command = { type = air_defense which = multi_role value = -2 }
+	command = { type = build_time which = multi_role when = now where = relative value = -25 }
+	command = { type = build_cost which = multi_role when = now where = relative value = -25 }
+	command = { type = supply_consumption which = multi_role value = -0.1 }
+	command = { type = speed which = multi_role value = -40 }
+
+	command = { type = soft_attack which = interceptor value = -1 }
+	command = { type = build_time which = interceptor when = now where = relative value = -25 }
+	command = { type = build_cost which = interceptor when = now where = relative value = -25 }
+	command = { type = air_attack which = interceptor value = -1 }
+	command = { type = air_defense which = interceptor value = -2 }
+	command = { type = supply_consumption which = interceptor value = -0.1 }
+	command = { type = speed which = interceptor value = -40 }
+
+	command = { type = hard_attack which = cas value = -2 }
+	command = { type = soft_attack which = cas value = -2 }
+	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = build_time which = cas when = now where = relative value = -25 }
+	command = { type = build_cost which = cas when = now where = relative value = -25 }
+	command = { type = supply_consumption which = cas value = -0.1 }
+	command = { type = speed which = cas value = -20 }
+
+	command = { type = hard_attack which = tactical_bomber value = -1 }
+	command = { type = soft_attack which = tactical_bomber value = -2 }
+	command = { type = strategic_attack which = tactical_bomber value = -1 }
+	command = { type = air_defense which = tactical_bomber value = -1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = tactical_bomber value = -0.2 }
+	command = { type = speed which = tactical_bomber value = -20 }
+
+	command = { type = soft_attack which = naval_bomber value = -1 }
+	command = { type = naval_attack which = naval_bomber value = -1 }
+	command = { type = air_defense which = naval_bomber value = -1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = naval_bomber value = -0.1 }
+	command = { type = speed which = naval_bomber value = -20 }
+
+	command = { type = hard_attack which = strategic_bomber value = -1 }
+	command = { type = soft_attack which = strategic_bomber value = -1 }
+	command = { type = strategic_attack which = strategic_bomber value = -2 }
+	command = { type = air_defense which = strategic_bomber value = -1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = strategic_bomber value = -0.2 }
+	command = { type = speed which = strategic_bomber value = -20 }
+	command = { type = industrial_modifier which = total value = 1 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}

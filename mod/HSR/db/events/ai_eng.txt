@@ -1,0 +1,465 @@
+####################################
+# England 24500 - 24599 = Minister Change Events
+####################################
+################
+# Minister of Security Section 24500 - 24509
+#############################################
+event = { # Sir John Simon takes power
+	id = 24500
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1005 # Sir John Simon
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGSecurityJohn }
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 1083 } # Viscount Templewood
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGSecurityJohn }
+		command = { type = local_clrflag which = ENGSecurityViscount }
+		command = { type = ministerofsecurity which = 1005 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Viscount Templewood takes power
+	id = 24501
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { manpower = 200 }
+		minister = 1083 # Viscount Templewood
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGSecurityViscount }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGSecurityJohn }
+		command = { type = local_setflag which = ENGSecurityViscount }
+		command = { type = ministerofsecurity which = 1083 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 24510 - 24519
+#############################################
+event = { # Sir Alan Brooke takes power
+	id = 24510
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 1120 # Sir Alan Brooke
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefAlan }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGChiefAlan }
+		command = { type = local_clrflag which = ENGChiefArchibald }
+		command = { type = chiefofstaff which = 1120 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Archibald Nye takes power
+	id = 24511
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 1122 # Archibald Nye
+		NOT = { minister = 1120 } # Sir Alan Brooke
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefArchibald }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGChiefAlan }
+		command = { type = local_setflag which = ENGChiefArchibald }
+		command = { type = chiefofstaff which = 1122 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+################
+# Head of Intelligence Section 24520 - 24529
+#############################################
+event = { # S.P. James takes power
+	id = 24520
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1107 # S.P. James
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGIntelligenceJames }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGIntelligenceJames }
+		command = { type = local_clrflag which = ENGIntelligenceCecil }
+		command = { type = ministerofintelligence which = 1107 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Lord Cecil of Chelwood takes power
+	id = 24521
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1102 # Lord Cecil of Chelwood
+		NOT = { minister = 1107 } # S.P. James
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGIntelligenceCecil }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGIntelligenceJames }
+		command = { type = local_setflag which = ENGIntelligenceCecil }
+		command = { type = ministerofintelligence which = 1102 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 24530 - 24539
+#############################################
+event = { # Sir Cyril Deverell takes power
+	id = 24530
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1127 # Sir Cyril Deverell
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGArmyCyril }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGArmyCyril }
+		command = { type = chiefofarmy which = 1127}
+		command = { type = dissent value = -1 }
+	}
+}
+
+################
+# Armament Minister Section 24540 - 24549
+#############################################
+event = { # Sir John Simon takes power
+	id = 24540
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1060 # Sir John Simon
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGArmamentJohn }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGArmamentJohn }
+		command = { type = local_clrflag which = ENGArmamentHugh }
+		command = { type = armamentminister which = 1060 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Hugh Dalton takes power
+	id = 24541
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 1065 # Hugh Dalton
+		NOT = { minister = 1060 } # Sir John Simon
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGArmamentHugh }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGArmamentJohn }
+		command = { type = local_setflag which = ENGArmamentHugh }
+		command = { type = armamentminister which = 1065 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 24550 - 24559
+# Air AI Flags
+#	ENGAirAINaval		= Air vs Naval priority
+#	ENGAirAIStrategic	= Strategic Bombing has priority
+#	ENGAirAIGround		= Ground Support has priority
+#############################################
+event = { # Railton Freeman takes power
+	id = 24550
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ENGAirAINaval
+		minister = 1154 # Railton Freeman
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefAirRailton }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ENGChiefAirRailton }
+		command = { type = local_clrflag which = ENGChiefAirHugh }
+		command = { type = local_clrflag which = ENGChiefAirJohn }
+		command = { type = local_clrflag which = ENGChiefAirOwen }
+		command = { type = chiefofair which = 1154 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Sir Hugh Dowding takes power
+	id = 24551
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ENGAirAINaval
+		minister = 1168 # Sir Hugh Dowding
+		NOT = { minister = 1154 }  # Railton Freeman
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefAirHugh }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGChiefAirRailton }
+		command = { type = local_setflag which = ENGChiefAirHugh }
+		command = { type = local_clrflag which = ENGChiefAirJohn }
+		command = { type = local_clrflag which = ENGChiefAirOwen }
+		command = { type = chiefofair which = 1168 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # John Strachey takes power
+	id = 24552
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ENGAirAIStrategic
+		minister = 1155 # John Strachey
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefAirJohn }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGChiefAirRailton }
+		command = { type = local_clrflag which = ENGChiefAirHugh }
+		command = { type = local_setflag which = ENGChiefAirJohn }
+		command = { type = local_clrflag which = ENGChiefAirOwen }
+		command = { type = chiefofair which = 1155 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Sir Owen Boyd takes power
+	id = 24553
+	random = no
+	country = ENG
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ENGAirAIGround
+		minister = 1010 # Sir Owen Boyd
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ENGChiefAirOwen }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ENGChiefAirRailton }
+		command = { type = local_clrflag which = ENGChiefAirHugh }
+		command = { type = local_clrflag which = ENGChiefAirJohn }
+		command = { type = local_setflag which = ENGChiefAirOwen }
+		command = { type = chiefofair which = 1010 }
+		command = { type = dissent value = -1 }
+	}
+}

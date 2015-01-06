@@ -1,0 +1,280 @@
+####################################
+# Dominican Republic AI events 33700 - 33799 by Lothos
+####################################
+################
+# Minister of Security Section 33700 - 33709
+#############################################
+event = { # Alberto Garcia Vienda takes power
+	id = 33700
+	random = no
+	country = PAN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49069 # Alberto Garcia Vienda
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMecurityVienda }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = DOMecurityVienda }
+		command = { type = ministerofsecurity which = 49069 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 33710 - 33719
+#############################################
+event = { # Jesus da Costa-Ruiz takes power
+	id = 33710
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49081 # Jesus da Costa-Ruiz
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMChiefJesus }
+		}
+		OR = {
+			atwar = no
+			NOT = { minister = 49007 } # Rafél Trujillo
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = DOMChiefJesus }
+		command = { type = local_clrflag which = DOMChiefTrujillo }
+		command = { type = chiefofstaff which = 49081 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Rafél Trujillo takes power
+	id = 33711
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49007 # Rafél Trujillo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMChiefTrujillo }
+		}
+		OR = {
+			atwar = yes
+			NOT = { minister = 49081 } # Jesus da Costa-Ruiz
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = DOMChiefJesus }
+		command = { type = local_setflag which = DOMChiefTrujillo }
+		command = { type = chiefofstaff which = 49007 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 33720 - 33729
+#############################################
+event = { # Francisco Prats Ramirez takes power
+	id = 33720
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49077 # Francisco Prats Ramirez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMIntelligenceRamirez }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = DOMIntelligenceRamirez }
+		command = { type = local_clrflag which = DOMIntelligenceRuiz }
+		command = { type = ministerofintelligence which = 49077 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Jesus da Costa Ruiz takes power
+	id = 33721
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49006 # Jesus da Costa Ruiz
+		NOT = { minister = 49077 } # Francisco Prats Ramirez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMIntelligenceRuiz }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = DOMIntelligenceRamirez }
+		command = { type = local_setflag which = DOMIntelligenceRuiz }
+		command = { type = ministerofintelligence which = 49006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 33730 - 33739
+#############################################
+event = { # Rafél Trujillo takes power
+	id = 33730
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49008 # Rafél Trujillo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMArmyTrujillo }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = DOMArmyTrujillo }
+		command = { type = chiefofarmy which = 49008 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 33740 - 33749
+#############################################
+event = { # Ignacio Bajordo takes power
+	id = 33740
+	random = no
+	country = DOM
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 49056 # Ignacio Bajordo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = DOMArmamentBajordo }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = DOMArmamentBajordo }
+		command = { type = armamentminister which = 49056 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+#############################################
+# Regular AI Events 33760 - 33799
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 33760
+	random = no
+	country = DOM
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_1.ai" }
+	}
+}

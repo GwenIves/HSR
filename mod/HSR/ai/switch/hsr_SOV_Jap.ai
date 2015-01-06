@@ -1,0 +1,25 @@
+#
+# By Aregorn for HSR
+#
+trade = {
+	cancel_deal_threshold = 2
+
+	energy 		= -1
+	rare_materials 	= -1
+	metal 		= -1
+	oil 		= -1
+	supplies 	= -1
+	money 		= -1
+
+	favored = {
+		GER = 80
+		SWE = 20
+		ITA = 50
+		SPR = 60
+		BUL = 40
+		YUG = 40
+		TUR = 50
+		ROM = 30
+	}
+	embargo = { }
+}

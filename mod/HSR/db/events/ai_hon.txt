@@ -1,0 +1,235 @@
+####################################
+# Honduras AI events 33100 - 33199 by Lothos
+####################################
+################
+# Minister of Security Section 33100 - 33109
+#############################################
+event = { # Carlos Alberto Ucles takes power
+	id = 33100
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79005 # Carlos Alberto Ucles
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONSecurityUcles }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HONSecurityUcles }
+		command = { type = ministerofsecurity which = 79005 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 33110 - 33119
+#############################################
+event = { # Raimundo Stochler Garcia takes power
+	id = 33110
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79088 # Raimundo Stochler Garcia
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONChiefGarcia }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HONChiefGarcia }
+		command = { type = chiefofstaff which = 79088 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 33120 - 33129
+#############################################
+event = { # Hernan Fernandez Silva takes power
+	id = 33120
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79083 # Hernan Fernandez Silva
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONIntelligenceSilva }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HONIntelligenceSilva }
+		command = { type = local_clrflag which = HONIntelligenceBanados }
+		command = { type = ministerofintelligence which = 79083 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Raul Sanchez Banados takes power
+	id = 33121
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79086 # Raul Sanchez Banados
+		NOT = { minister = 79083 } # Hernan Fernandez Silva
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONIntelligenceBanados }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HONIntelligenceSilva }
+		command = { type = local_setflag which = HONIntelligenceBanados }
+		command = { type = ministerofintelligence which = 79086 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 33130 - 33139
+#############################################
+event = { # José Zuñiga Huete takes power
+	id = 33130
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79095 # José Zuñiga Huete
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONArmyLott }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HONArmyLott }
+		command = { type = chiefofarmy which = 79095 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 33140 - 33149
+#############################################
+event = { # Carlos Alberto Ucles takes power
+	id = 33140
+	random = no
+	country = HON
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 79057 # Carlos Alberto Ucles
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = HONArmamentUcles }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HONArmamentUcles }
+		command = { type = armamentminister which = 79057 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+#############################################
+# Regular AI Events 33160 - 33199
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 33160
+	random = no
+	country = HON
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_1.ai" }
+	}
+}

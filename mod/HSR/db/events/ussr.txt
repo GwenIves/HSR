@@ -1,0 +1,2675 @@
+# HoI - USSR Events
+#
+#
+# Modified by Aregorn for HSR
+#
+#
+# written by Henrik Fåhraeus
+#
+#(8) 2600, 2601, 2609, 2623, 2627, 2620, 2630, 2636 (Aregorn)
+#########################################################################
+#  The Molotov-Ribbentrop Pact - Historical Pact (modified by Aregorn)
+#########################################################################
+event = {
+	id = 2600
+	random = no
+	country = SOV
+
+	# Triggered by GER 2050
+
+	name = "EVT_2600_NAME"
+	desc = "EVT_2600_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "ACTIONNAME2600A" # A Most Excellent Proposition
+		ai_chance = 100
+
+		command = { type = end_guarantee which = SOV where = FRA }
+
+		# Estonia
+		command = { type = addcore which = 199 }
+		command = { type = addcore which = 195 }
+		command = { type = addcore which = 194 }
+		command = { type = addcore which = 196 }
+		command = { type = addcore which = 193 }
+
+		# Latvia
+		command = { type = addcore which = 197 }
+		command = { type = addcore which = 198 }
+		command = { type = addcore which = 202 }
+		command = { type = addcore which = 203 }
+		command = { type = addcore which = 204 }
+		command = { type = addcore which = 205 }
+
+		# Lithuania
+		command = { type = addcore which = 577 }
+		command = { type = addcore which = 511 }
+		command = { type = addcore which = 207 }
+
+		# Bessarabia
+		command = { type = addcore which = 434 }
+		command = { type = addcore which = 435 }
+		command = { type = addcore which = 433 }
+		command = { type = addcore which = 230 }
+
+		# Claims on Finland
+		command = { type = addcore which = 146 }
+		command = { type = addcore which = 145 }
+		command = { type = addcore which = 132 }
+
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = FIN value = -5 }
+		command = { type = relation which = POL value = -5 }
+		command = { type = relation which = LIT value = -5 }
+		command = { type = relation which = LAT value = -5 }
+		command = { type = relation which = EST value = -5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = non_aggression which = ger where = sov }
+		command = { type = trigger which = 2013 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2600B" # No deals with the enemies of the Workers!
+		ai_chance = 0
+		command = { type = trigger which = 2014 } # GER
+		command = { type = relation which = GER value = -15 }
+	}
+}
+#########################################################################
+#  The Molotov-Ribbentrop Pact - Limited Pact (modified by Aregorn)
+#########################################################################
+event = {
+	id = 2601
+	random = no
+	country = SOV
+
+	# Triggered by GER 2050
+
+	name = "EVT_2601_NAME"
+	desc = "EVT_2601_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "ACTIONNAME2601A" # Acceptable, but just barely
+		command = { type = end_guarantee which = SOV where = FRA }
+		command = { type = trigger which = 2016 } # GER
+		command = { type = non_aggression which = ger where = sov }
+	}
+	action_b = {
+		name = "ACTIONNAME2601B" # No deals with the enemies of the Workers!
+		command = { type = relation which = GER value = -15 }
+		command = { type = trigger which = 2017 } # GER
+	}
+}
+#########################################################################
+#  The Molotov-Ribbentrop Pact - Full Alliance
+#########################################################################
+event = {
+	id = 2602
+	random = no
+	country = SOV
+
+	# Triggered by GER 2015
+
+	name = "EVT_2602_NAME"
+	desc = "EVT_2602_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "OK" # Let the world tremble!
+		command = { type = end_guarantee which = SOV where = FRA }
+
+		# Estonia
+		command = { type = addcore which = 199 }
+		command = { type = addcore which = 195 }
+		command = { type = addcore which = 194 }
+		command = { type = addcore which = 196 }
+		command = { type = addcore which = 193 }
+
+		# Latvia
+		command = { type = addcore which = 197 }
+		command = { type = addcore which = 198 }
+		command = { type = addcore which = 202 }
+		command = { type = addcore which = 203 }
+		command = { type = addcore which = 204 }
+		command = { type = addcore which = 205 }
+
+		# Lithuania
+		command = { type = addcore which = 577 }
+		command = { type = addcore which = 511 }
+		command = { type = addcore which = 207 }
+
+		# Bessarabia
+		command = { type = addcore which = 434 }
+		command = { type = addcore which = 435 }
+		command = { type = addcore which = 433 }
+		command = { type = addcore which = 230 }
+
+		# Claims on Finland
+		command = { type = addcore which = 146 }
+		command = { type = addcore which = 145 }
+		command = { type = addcore which = 132 }
+	}
+}
+#########################################################################
+#  The Molotov-Ribbentrop Pact - No Full Alliance
+#########################################################################
+event = {
+	id = 2603
+	random = no
+	country = SOV
+
+	# Triggered by GER 2015
+
+	name = "EVT_2603_NAME"
+	desc = "EVT_2603_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "OK" # Too bad
+		command = { type = end_guarantee which = SOV where = FRA }
+
+		# Estonia
+		command = { type = addcore which = 199 }
+		command = { type = addcore which = 195 }
+		command = { type = addcore which = 194 }
+		command = { type = addcore which = 196 }
+		command = { type = addcore which = 193 }
+
+		# Latvia
+		command = { type = addcore which = 197 }
+		command = { type = addcore which = 198 }
+		command = { type = addcore which = 202 }
+		command = { type = addcore which = 203 }
+		command = { type = addcore which = 204 }
+		command = { type = addcore which = 205 }
+
+		# Lithuania
+		command = { type = addcore which = 577 }
+		command = { type = addcore which = 511 }
+		command = { type = addcore which = 207 }
+
+		# Bessarabia
+		command = { type = addcore which = 434 }
+		command = { type = addcore which = 435 }
+		command = { type = addcore which = 433 }
+		command = { type = addcore which = 230 }
+
+		# Claims on Finland
+		command = { type = addcore which = 146 }
+		command = { type = addcore which = 145 }
+		command = { type = addcore which = 132 }
+	}
+}
+#########################################################################
+#  The Molotov-Ribbentrop Pact - Eastern Poland to USSR
+#########################################################################
+event = {
+	id = 2604
+	random = no
+	country = SOV
+
+	# Triggered by GER 2018
+
+	name = "EVT_2604_NAME"
+	desc = "EVT_2604_DESC"
+	style = 0
+	picture = "E_Poland_Sov"
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = dissent value = -5 }
+		command = { type = belligerence which = SOV value = 5 }
+		command = { type = oilpool value = -2000 }
+		command = { type = supplies value = 1000 }
+	}
+}
+#########################################################################
+#  The Molotov-Ribbentrop Pact - Germany dishonors the pact
+#########################################################################
+event = {
+	id = 2605
+	random = no
+	country = SOV
+
+	# Triggered by GER 2018
+
+	name = "EVT_2605_NAME"
+	desc = "EVT_2605_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "ACTIONNAME2605A" # We shall never forget this!
+		ai_chance = 70
+		command = { type = dissent value = 5 }
+		command = { type = relation which = GER value = -25 }
+	}
+	action_b = {
+		name = "ACTIONNAME2605B" # This means war!
+		ai_chance = 30
+		command = { type = war which = GER }
+		command = { type = dissent value = -10 }
+	}
+}
+#########################################################################
+#  Claim Bessarabia
+#########################################################################
+event = {
+	id = 2606
+	random = no
+	country = SOV
+
+	trigger = {
+		event = 2604 # Eastern Poland has been given to the USSR
+		OR = {
+			event = 2013  # Bessarabia recognized as Soviet territory by Germany
+			event = 2015
+		}
+		exists = ROM
+		NOT = {
+			OR = {
+				war = { country = ROM country = SOV }
+				war = { country = GER country = SOV }
+			}
+		}
+		NOT = {
+
+			control = { province = 434 }
+			control = { province = 435 }
+			control = { province = 433 }
+			control = { province = 230 }
+		}
+	}
+
+	name = "EVT_2606_NAME"
+	desc = "EVT_2606_DESC"
+       picture = "romania"
+	style = 0
+
+	date = { day = 26 month = june year = 1940 }
+
+	action_a = {
+		name = ACTIONNAME2606A # Claim Bessarabia
+		ai_chance = 100
+		command = { type = relation which = ROM value = -10 }
+		command = { type = trigger which = 2700 } # ROM
+	}
+	action_b = {
+		name = ACTIONNAME2606B # The Romanians are our friends
+		ai_chance = 0
+		command = { type = relation which = ROM value = 15 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+#########################################################################
+#  Claim Bessarabia - Done
+#########################################################################
+event = {
+	id = 2607
+	random = no
+	country = SOV
+
+	# Triggered by ROM 2700
+
+	name = "EVT_2607_NAME"
+	desc = "EVT_2607_DESC"
+	picture = "romania"
+	style = 0
+
+	action_a = {
+		name = "OK" # Excellent!
+		command = { type = belligerence which = SOV value = 1 }
+	}
+}
+#########################################################################
+#  Claim Bessarabia - the Romanians Fight!
+#########################################################################
+event = {
+	id = 2608
+	random = no
+	country = SOV
+
+	# Triggered by ROM 2700
+
+	name = "EVT_2608_NAME"
+	desc = "EVT_2608_DESC"
+	picture = "romania_tank"
+	style = 0
+
+	action_a = {
+		name = "OK" # They will rue this day...
+		command = { }
+	}
+}
+#########################################################################
+#  The Great Officer Purge Begins (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2609
+	random = no
+	country = SOV
+
+	name = "EVT_2609_NAME"
+	desc = "EVT_2609_DESC"
+	picture = "gulag"
+	style = 0
+
+	date = { day = 1 month = march year = 1937 }
+
+	action_a = {
+		name = "ACTIONNAME2609A" # Purge the traitors!
+		ai_chance = 100
+		command = { type = manpowerpool value = -10 }
+		command = { type = belligerence which = SOV value = -1 }
+	command = { type = sleepleader which = 9839 }
+	command = { type = sleepleader which = 9841 }
+	command = { type = sleepleader which = 9843 }
+	command = { type = sleepleader which = 9849 }
+	command = { type = sleepleader which = 9884 }
+	command = { type = sleepleader which = 9894 }
+	command = { type = sleepleader which = 9896 }
+	command = { type = sleepleader which = 9900 }
+	command = { type = sleepleader which = 9907 }
+	command = { type = sleepleader which = 9910 }
+	command = { type = sleepleader which = 9926 }
+	command = { type = sleepleader which = 9930 }
+	command = { type = sleepleader which = 9951 }
+	command = { type = sleepleader which = 9955 }
+	command = { type = sleepleader which = 9969 }
+	command = { type = sleepleader which = 9974 }
+	command = { type = sleepleader which = 9991 }
+	command = { type = sleepleader which = 9993 }
+	command = { type = sleepleader which = 10006 }
+	command = { type = sleepleader which = 10016 }
+	command = { type = sleepleader which = 10019 }
+	command = { type = sleepleader which = 10028 }
+	command = { type = sleepleader which = 10031 }
+	command = { type = sleepleader which = 10042 }
+	command = { type = sleepleader which = 10054 }
+	command = { type = sleepleader which = 10066 }
+	command = { type = sleepleader which = 10071 }
+	command = { type = sleepleader which = 10114 }
+	command = { type = sleepleader which = 10115 }
+	command = { type = sleepleader which = 10137 }
+	command = { type = sleepleader which = 10138 }
+	command = { type = sleepleader which = 10202 }
+	command = { type = sleepleader which = 10208 }
+	command = { type = sleepleader which = 10215 }
+	command = { type = sleepleader which = 10253 }
+	command = { type = sleepleader which = 10271 }
+	command = { type = sleepleader which = 10276 }
+	command = { type = sleepleader which = 10283 }
+	command = { type = sleepleader which = 10286 }
+	command = { type = sleepleader which = 10297 }
+	command = { type = sleepleader which = 10322 }
+	command = { type = sleepleader which = 10342 }
+	command = { type = sleepleader which = 10349 }
+	command = { type = sleepleader which = 10369 }
+	command = { type = sleepleader which = 10370 }
+	command = { type = sleepleader which = 10371 }
+	command = { type = sleepleader which = 10401 }
+	command = { type = sleepleader which = 10417 }
+	command = { type = sleepleader which = 10453 }
+	command = { type = sleepleader which = 10463 }
+	command = { type = sleepleader which = 10472 }
+	command = { type = sleepleader which = 10477 }
+	command = { type = sleepleader which = 10500 }
+	command = { type = sleepleader which = 10514 }
+	command = { type = sleepleader which = 10515 }
+	command = { type = sleepleader which = 10516 }
+	command = { type = sleepleader which = 10517 }
+	command = { type = sleepleader which = 10518 }
+	command = { type = sleepleader which = 10520 }
+	command = { type = sleepleader which = 10521 }
+	command = { type = sleepleader which = 10522 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+	command = { type = sleepleader which = -1 }
+
+	command = { type = sleepminister which = 4005 } #Yagoda
+	command = { type = sleepminister which = 4007 } #Tukhachevsky
+	command = { type = sleepminister which = 4009 } #Orlov
+	command = { type = sleepminister which = 4066 } #Smushkevich
+	command = { type = sleepminister which = 4006 } #Berzin
+
+	command = { type = ministerofsecurity which = 4041 }
+	command = { type = chiefofstaff which = 4051 }
+	command = { type = chiefofnavy which = 4061 }
+	command = { type = chiefofair which = 4065 }
+
+	command = { type = trigger which = 40301 }
+
+
+	}
+	action_b = {
+		name = "Dissident Generals will not dare to oppose the Soviet leadership"
+		ai_chance = 0
+		command = { type = domestic which = democratic value = 2 }
+		command = { type = domestic which = political_left value = -3 }
+		command = { type = domestic which = defense_lobby value = -3 }
+	}
+}
+
+#########################################################################
+#  The Great Officer Purge
+#########################################################################
+#event = {
+#	id = 2610
+#	random = no
+#	country = SOV
+#
+#	name = "EVT_2610_NAME"
+#	desc = "EVT_2610_DESC"
+#        picture = "gulag"
+#	style = 0
+#
+#	date = { day = 1 month = june year = 1937 }
+#
+#	action_a = {
+#		name = "ACTIONNAME2610A" # Purge the traitors!
+#		ai_chance = 98
+#		command = { type = manpowerpool value = -10 }
+#		command = { type = belligerence which = SOV value = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#	}
+#	action_b = {
+#		name = "ACTIONNAME2610B" # No need for brutality
+#		ai_chance = 2
+#		command = { type = dissent value = 10 }
+#	}
+#}
+#########################################################################
+#  The Great Officer Purge
+#########################################################################
+#event = {
+#	id = 2611
+#	random = no
+#	country = SOV
+#
+#	name = "EVT_2611_NAME"
+#	desc = "EVT_2611_DESC"
+#       picture = "gulag"
+#	style = 0
+#
+#	date = { day = 1 month = august year = 1937 }
+#
+#	action_a = {
+#		name = "ACTIONNAME2611A" # Purge the traitors!
+#		ai_chance = 98
+#		command = { type = manpowerpool value = -10 }
+#		command = { type = belligerence which = SOV value = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#	}
+#	action_b = {
+#		name = "ACTIONNAME2611B" # No need for brutality
+#		ai_chance = 2
+#		command = { type = dissent value = 10 }
+#	}
+#}
+#########################################################################
+#  The Great Officer Purge
+#########################################################################
+#event = {
+#	id = 2612
+#	random = no
+#	country = SOV
+#
+#	name = "EVT_2612_NAME"
+#	desc = "EVT_2612_DESC"
+#        picture = "gulag"
+#	style = 0
+#
+#	date = { day = 1 month = november year = 1937 }
+#
+#	action_a = {
+#		name = "ACTIONNAME2612A" # Purge the traitors!
+#		ai_chance = 98
+#		command = { type = manpowerpool value = -10 }
+#		command = { type = belligerence which = SOV value = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#		command = { type = sleepleader which = -1 }
+#	}
+#	action_b = {
+#		name = "ACTIONNAME2612B" # No need for brutality
+#		ai_chance = 2
+#		command = { type = dissent value = 10 }
+#	}
+#}
+
+#########################################################################
+#  The Finnish Winter War (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2620
+	random = no
+	country = SOV
+
+	trigger = { atwar = no
+		exists = FIN
+		NOT = {
+			exists = POL
+			OR = {
+				war = { country = FIN country = SOV }
+				war = { country = GER country = SOV }
+				alliance = { country = FIN country = SOV }
+				control = { province = 132 data = SOV }
+				control = { province = 146 data = SOV }
+				control = { province = 145 data = SOV }
+				ispuppet = FIN
+				ispuppet = SOV
+			}
+		}
+	}
+
+	name = "EVT_2620_NAME"
+	desc = "EVT_2620_DESC"
+		  style = 0
+	picture = "finland_sweden"
+
+	date = { day = 13 month = november year = 1939 }
+	offset = 5
+	deathdate = { day = 28 month = january year = 1940 }
+
+	action_a = {
+		name = "ACTIONNAME2620A" # Press claims
+		ai_chance = 100
+		command = { type = relation which = FIN value = -10 }
+		command = { type = relation which = SWE value = -5 }
+		command = { type = relation which = NOR value = -5 }
+		command = { type = trigger which = 3200 } # FIN
+	}
+	action_b = {
+		name = "ACTIONNAME2620B" # Leave them be
+		ai_chance = 0
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = FIN value = 10 }
+	}
+}
+
+#########################################################################
+#  The Finnish Winter War - Demands rejected
+#########################################################################
+event = {
+	id = 2621
+	random = no
+	country = SOV
+
+	# Triggered by FIN 3200
+
+	name = "EVT_2621_NAME"
+	desc = "EVT_2621_DESC"
+	style = 0
+	picture = "Winter_War"
+
+	action_a = {
+		name = "OK" # This means War!
+		command = { type = war which = FIN }
+		command = { type = belligerence which = SOV value = 10 }
+		command = { type = relation which = ENG value = -10 }
+		command = { type = relation which = SWE value = -15 }
+		command = { type = relation which = NOR value = -10 }
+	}
+}
+
+#########################################################################
+#  The Finnish Winter War - Finland gives in
+#########################################################################
+event = {
+	id = 2622
+	random = no
+	country = SOV
+
+	# Triggered by FIN 3200
+
+	name = "EVT_2622_NAME"
+	desc = "EVT_2622_DESC"
+	style = 0
+	picture = "FIN_give_in"
+
+	action_a = {
+		name = "OK" # Excellent!
+		command = { type = belligerence which = SOV value = 5 }
+	}
+}
+
+#########################################################################
+#  Spanish Civil War - Intervention (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2623
+	random = no
+	country = SOV
+
+	trigger = {
+		war = { country = SPA country = SPR }
+		event = 3100 #SPA fascist nation
+		NOT = {
+			OR = {
+			war = { country = SOV country = SPR }
+			war = { country = SOV country = GER }
+			war = { country = SOV country = ENG }
+			war = { country = SOV country = USA }
+			war = { country = SOV country = ITA }
+			war = { country = SOV country = FIN }
+			government = fascist
+			}
+		}
+	        }
+
+	name = "EVT_2623_NAME"
+	desc = "EVT_2623_DESC"
+	style = 0
+	picture = "SCW_Soviet_Intervention"
+
+	date = { day = 20 month = july year = 1936 }
+	offset = 5
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2623A" # Send materiel and volunteers
+		ai_chance = 100
+		command = { type = manpowerpool value = -10 }
+		command = { type = resource which = supplies value = -2000 } # % of max daily income
+		command = { type = relation which = SPR value = 20 }
+		command = { type = relation which = SPA value = -15 }
+		command = { type = relation which = GER value = -5 }
+		command = { type = relation which = ITA value = -5 }
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = POR value = -10 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = belligerence which = SOV value = 1 }
+		command = { type = trigger which = 3102 } #SPR
+		command = { type = trigger which = 3721 } #USA
+	}
+	action_b = {
+		name = "ACTIONNAME2623B" # Why support anarchist rabble?
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = relation which = SPR value = -20 }
+		command = { type = relation which = SPA value = 10 }
+		command = { type = relation which = GER value = 5 }
+		command = { type = relation which = ITA value = 5 }
+		command = { type = relation which = ENG value = 5 }
+		command = { type = relation which = FRA value = 5 }
+		command = { type = relation which = POR value = 5 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = belligerence which = SOV value = -1 }
+	}
+}
+
+#########################################################################
+#  Sue for peace with the Germans (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2624
+	random = no
+	country = SOV
+
+	trigger = {
+		war = { country = GER country = SOV }
+		random = 5
+
+		OR = {
+			AND = {
+				lost_national = { country = SOV value = 70 }
+				NOT = {
+					war = { country = GER country = ENG }
+					war = { country = GER country = FRA }
+					war = { country = GER country = USA }
+				}
+			}
+			AND = {
+				control = { province = 56 data = GER } # Paris is not free
+				NOT = {
+						control = { province = 187 data = SOV } # Leningrad has fallen
+						control = { province = 163 data = SOV } # Stalingrad has fallen
+						control = { province = 175 data = SOV } # Moscow has fallen
+						control = { province = 1907 data = SOV } # Baku has fallen
+						control = { province = 1572 data = SOV } # Sverdlovsk has fallen
+						alliance = { country = GER country = JAP }
+						war = { country = GER country = ITA } # To avoid exploits
+					}
+			   	}
+		   	}
+		}
+
+
+
+
+	name = "EVT_2624_NAME"
+	desc = "EVT_2624_DESC"
+	style = 0
+	picture = "Bitter_Peace"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2624A" # We surrender! Just let us keep what we still have.
+		ai_chance = 1
+		command = { type = relation which = ENG value = -15 }
+		command = { type = relation which = FRA value = -15 }
+		command = { type = relation which = USA value = -15 }
+		command = { type = domestic which = interventionism value = -3 }
+		command = { type = trigger which = 2024 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2624B" # Fight to the bitter end!
+		ai_chance = 99
+		command = { type = dissent value = 30 }
+		command = { type = relation which = ENG value = 15 }
+		command = { type = relation which = FRA value = 15 }
+		command = { type = relation which = USA value = 15 }
+	}
+}
+#########################################################################
+#  Sue for peace with the Germans (Japan wants a bigger slice)
+#########################################################################
+event = {
+	id = 2645
+	random = no
+	country = SOV
+
+	trigger = {
+		war = { country = GER country = SOV } lost_national = { country = SOV value = 70 }
+		alliance = { country = GER country = JAP }
+		control = { province = 56 data = GER } # Paris is not free
+		random = 5
+		NOT = {
+				control = { province = 187 data = SOV } # Leningrad has fallen
+				control = { province = 163 data = SOV } # Stalingrad has fallen
+				control = { province = 175 data = SOV } # Moscow has fallen
+				control = { province = 1907 data = SOV } # Baku has fallen
+				control = { province = 1372 data = SOV } # Vladivostok has fallen
+			}
+	}
+
+	name = "EVT_2624_NAME"
+	desc = "EVT_2624_DESC"
+	style = 0
+	picture = "Bitter_Peace"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2624A" # We surrender! Just let us keep what we still have.
+		ai_chance = 1
+		command = { type = relation which = ENG value = -15 }
+		command = { type = relation which = FRA value = -15 }
+		command = { type = relation which = USA value = -15 }
+		command = { type = domestic which = interventionism value = -3 }
+		command = { type = trigger which = 2046 } # GER
+	}
+	action_b = {
+		name = "ACTIONNAME2624B" # Fight to the bitter end!
+		ai_chance = 99
+		command = { type = dissent value = 30 }
+		command = { type = relation which = ENG value = 15 }
+		command = { type = relation which = FRA value = 15 }
+		command = { type = relation which = USA value = 15 }
+	}
+}
+
+##########################################################################
+#  The Bitter Peace - Japan is not Axis
+##########################################################################
+event = {
+	id = 2625
+	random = no
+	country = SOV
+
+	# Triggered by GER 2024
+
+	name = "EVT_2625_NAME"
+	desc = "EVT_2625_DESC"
+	style = 0
+	picture = "Bitter_Peace"
+
+	action_a = {
+		name = "OK"
+
+
+
+		      	# Secede the west of Urals to Germany
+				command = { type = secedeprovince which = GER value = 212 }
+				command = { type = secedeprovince which = GER value = 218 }
+				command = { type = secedeprovince which = GER value = 219 }
+				command = { type = secedeprovince which = GER value = 217 }
+				command = { type = secedeprovince which = GER value = 216 }
+				command = { type = secedeprovince which = GER value = 215 }
+				command = { type = secedeprovince which = GER value = 200 }
+				command = { type = secedeprovince which = GER value = 201 }
+				command = { type = secedeprovince which = GER value = 221 }
+				command = { type = secedeprovince which = GER value = 225 }
+				command = { type = secedeprovince which = GER value = 226 }
+				command = { type = secedeprovince which = GER value = 227 }
+				command = { type = secedeprovince which = GER value = 228 }
+				command = { type = secedeprovince which = GER value = 220 }
+				command = { type = secedeprovince which = GER value = 231 }
+				command = { type = secedeprovince which = GER value = 232 }
+				command = { type = secedeprovince which = GER value = 233 }
+				command = { type = secedeprovince which = GER value = 234 }
+				command = { type = secedeprovince which = GER value = 235 }
+				command = { type = secedeprovince which = GER value = 236 }
+				command = { type = secedeprovince which = GER value = 237 }
+				command = { type = secedeprovince which = GER value = 238 }
+				command = { type = secedeprovince which = GER value = 239 }
+				command = { type = secedeprovince which = GER value = 246 }
+				command = { type = secedeprovince which = GER value = 249 }
+				command = { type = secedeprovince which = GER value = 245 }
+				command = { type = secedeprovince which = GER value = 247 }
+				command = { type = secedeprovince which = GER value = 248 }
+				command = { type = secedeprovince which = GER value = 249 }
+				command = { type = secedeprovince which = GER value = 242 }
+				command = { type = secedeprovince which = GER value = 244 }
+				command = { type = secedeprovince which = GER value = 241 }
+				command = { type = secedeprovince which = GER value = 240 }
+				command = { type = secedeprovince which = GER value = 250 }
+				command = { type = secedeprovince which = GER value = 256 }
+				command = { type = secedeprovince which = GER value = 251 }
+				command = { type = secedeprovince which = GER value = 252 }
+				command = { type = secedeprovince which = GER value = 253 }
+				command = { type = secedeprovince which = GER value = 254 }
+				command = { type = secedeprovince which = GER value = 258 }
+				command = { type = secedeprovince which = GER value = 259 }
+				command = { type = secedeprovince which = GER value = 257 }
+				command = { type = secedeprovince which = GER value = 255 }
+				command = { type = secedeprovince which = GER value = 260 }
+				command = { type = secedeprovince which = GER value = 263 }
+				command = { type = secedeprovince which = GER value = 262 }
+				command = { type = secedeprovince which = GER value = 261 }
+				command = { type = secedeprovince which = GER value = 264 }
+				command = { type = secedeprovince which = GER value = 265 }
+				command = { type = secedeprovince which = GER value = 266 }
+				command = { type = secedeprovince which = GER value = 267 }
+				command = { type = secedeprovince which = GER value = 269 }
+				command = { type = secedeprovince which = GER value = 268 }
+				command = { type = secedeprovince which = GER value = 173 }
+				command = { type = secedeprovince which = GER value = 172 }
+				command = { type = secedeprovince which = GER value = 170 }
+				command = { type = secedeprovince which = GER value = 171 }
+				command = { type = secedeprovince which = GER value = 176 }
+				command = { type = secedeprovince which = GER value = 174 }
+				command = { type = secedeprovince which = GER value = 177 }
+				command = { type = secedeprovince which = GER value = 175 }
+				command = { type = secedeprovince which = GER value = 178 }
+				command = { type = secedeprovince which = GER value = 272 }
+				command = { type = secedeprovince which = GER value = 273 }
+				command = { type = secedeprovince which = GER value = 271 }
+				command = { type = secedeprovince which = GER value = 274 }
+				command = { type = secedeprovince which = GER value = 275 }
+				command = { type = secedeprovince which = GER value = 276 }
+				command = { type = secedeprovince which = GER value = 277 }
+				command = { type = secedeprovince which = GER value = 278 }
+				command = { type = secedeprovince which = GER value = 270 }
+				command = { type = secedeprovince which = GER value = 279 }
+				command = { type = secedeprovince which = GER value = 94 }
+				command = { type = secedeprovince which = GER value = 287 }
+				command = { type = secedeprovince which = GER value = 286 }
+				command = { type = secedeprovince which = GER value = 285 }
+				command = { type = secedeprovince which = GER value = 281 }
+				command = { type = secedeprovince which = GER value = 289 }
+				command = { type = secedeprovince which = GER value = 288 }
+				command = { type = secedeprovince which = GER value = 282 }
+				command = { type = secedeprovince which = GER value = 283 }
+				command = { type = secedeprovince which = GER value = 284 }
+				command = { type = secedeprovince which = GER value = 280 }
+				command = { type = secedeprovince which = GER value = 190 }
+				command = { type = secedeprovince which = GER value = 191 }
+				command = { type = secedeprovince which = GER value = 192 }
+				command = { type = secedeprovince which = GER value = 186 }
+				command = { type = secedeprovince which = GER value = 187 }
+				command = { type = secedeprovince which = GER value = 188 }
+				command = { type = secedeprovince which = GER value = 189 }
+				command = { type = secedeprovince which = GER value = 185 }
+				command = { type = secedeprovince which = GER value = 184 }
+				command = { type = secedeprovince which = GER value = 183 }
+				command = { type = secedeprovince which = GER value = 182 }
+				command = { type = secedeprovince which = GER value = 181 }
+				command = { type = secedeprovince which = GER value = 180 }
+				command = { type = secedeprovince which = GER value = 153 }
+				command = { type = secedeprovince which = GER value = 154 }
+				command = { type = secedeprovince which = GER value = 155 }
+				command = { type = secedeprovince which = GER value = 159 }
+				command = { type = secedeprovince which = GER value = 157 }
+				command = { type = secedeprovince which = GER value = 156 }
+				command = { type = secedeprovince which = GER value = 165 }
+				command = { type = secedeprovince which = GER value = 166 }
+				command = { type = secedeprovince which = GER value = 169 }
+				command = { type = secedeprovince which = GER value = 160 }
+				command = { type = secedeprovince which = GER value = 167 }
+				command = { type = secedeprovince which = GER value = 163 }
+				command = { type = secedeprovince which = GER value = 168 }
+				command = { type = secedeprovince which = GER value = 162 }
+				command = { type = secedeprovince which = GER value = 161 }
+				command = { type = secedeprovince which = GER value = 164 }
+				command = { type = secedeprovince which = GER value = 1778 }
+				command = { type = secedeprovince which = GER value = 1777 }
+				command = { type = secedeprovince which = GER value = 1776 }
+				command = { type = secedeprovince which = GER value = 1775 }
+				command = { type = secedeprovince which = GER value = 1774 }
+				command = { type = secedeprovince which = GER value = 1841 }
+				command = { type = secedeprovince which = GER value = 1783 }
+				command = { type = secedeprovince which = GER value = 1782 }
+				command = { type = secedeprovince which = GER value = 1781 }
+				command = { type = secedeprovince which = GER value = 1780 }
+				command = { type = secedeprovince which = GER value = 1570 }
+				command = { type = secedeprovince which = GER value = 1568 }
+				command = { type = secedeprovince which = GER value = 1569 }
+				command = { type = secedeprovince which = GER value = 1837 }
+				command = { type = secedeprovince which = GER value = 1827 }
+				command = { type = secedeprovince which = GER value = 1829 }
+				command = { type = secedeprovince which = GER value = 1828 }
+				command = { type = secedeprovince which = GER value = 1838 }
+				command = { type = secedeprovince which = GER value = 1839 }
+				command = { type = secedeprovince which = GER value = 1832 }
+				command = { type = secedeprovince which = GER value = 1836 }
+				command = { type = secedeprovince which = GER value = 1831 }
+				command = { type = secedeprovince which = GER value = 1830 }
+				command = { type = secedeprovince which = GER value = 1835 }
+				command = { type = secedeprovince which = GER value = 1834 }
+				command = { type = secedeprovince which = GER value = 1874 }
+				command = { type = secedeprovince which = GER value = 1771 }
+				command = { type = secedeprovince which = GER value = 1850 }
+				command = { type = secedeprovince which = GER value = 1856 }
+				command = { type = secedeprovince which = GER value = 1857 }
+				command = { type = secedeprovince which = GER value = 1858 }
+				command = { type = secedeprovince which = GER value = 1907 }
+				command = { type = secedeprovince which = GER value = 1840 }
+				command = { type = secedeprovince which = GER value = 1846 }
+				command = { type = secedeprovince which = GER value = 1842 }
+				command = { type = secedeprovince which = GER value = 1847 }
+				command = { type = secedeprovince which = GER value = 1843 }
+				command = { type = secedeprovince which = GER value = 1844 }
+				command = { type = secedeprovince which = GER value = 1845 }
+				command = { type = secedeprovince which = GER value = 1848 }
+#######if the soviets snatched poland early
+								command = { type = secedeprovince which = GER value = 303 }
+								command = { type = secedeprovince which = GER value = 306 }
+								command = { type = secedeprovince which = GER value = 307 }
+								command = { type = secedeprovince which = GER value = 305 }
+								command = { type = secedeprovince which = GER value = 483 }
+								command = { type = secedeprovince which = GER value = 481 }
+								command = { type = secedeprovince which = GER value = 480 }
+								command = { type = secedeprovince which = GER value = 484 }
+								command = { type = secedeprovince which = GER value = 485 }
+								command = { type = secedeprovince which = GER value = 486 }
+								command = { type = secedeprovince which = GER value = 489 }
+								command = { type = secedeprovince which = GER value = 488 }
+								command = { type = secedeprovince which = GER value = 487 }
+#######if romania doesnt exist
+				command = { type = secedeprovince which = GER value = 423 }
+				command = { type = secedeprovince which = GER value = 436 }
+				command = { type = secedeprovince which = GER value = 432 }
+				command = { type = secedeprovince which = GER value = 431 }
+				command = { type = secedeprovince which = GER value = 424 }
+				command = { type = secedeprovince which = GER value = 425 }
+				command = { type = secedeprovince which = GER value = 426 }
+				command = { type = secedeprovince which = GER value = 427 }
+				command = { type = secedeprovince which = GER value = 428 }
+				command = { type = secedeprovince which = GER value = 429 }
+				command = { type = secedeprovince which = GER value = 495 }
+				command = { type = secedeprovince which = GER value = 496 }
+				command = { type = secedeprovince which = GER value = 498 }
+				command = { type = secedeprovince which = GER value = 434 }
+				command = { type = secedeprovince which = GER value = 435 }
+				command = { type = secedeprovince which = GER value = 433 }
+				command = { type = secedeprovince which = GER value = 230 }
+				command = { type = secedeprovince which = GER value = 231 }
+				command = { type = secedeprovince which = GER value = 232 }
+				command = { type = secedeprovince which = GER value = 233 }
+
+#######if croatia doesnt exist
+				command = { type = secedeprovince which = GER value = 380 }
+				command = { type = secedeprovince which = GER value = 381 }
+				command = { type = secedeprovince which = GER value = 382 }
+				command = { type = secedeprovince which = GER value = 383 }
+				command = { type = secedeprovince which = GER value = 384 }
+				command = { type = secedeprovince which = GER value = 385 }
+				command = { type = secedeprovince which = GER value = 459 }
+				command = { type = secedeprovince which = GER value = 455 }
+
+#######if yugoslavia doesnt exist
+				command = { type = secedeprovince which = GER value = 454 }
+				command = { type = secedeprovince which = GER value = 453 }
+				command = { type = secedeprovince which = GER value = 452 }
+				command = { type = secedeprovince which = GER value = 451 }
+				command = { type = secedeprovince which = GER value = 389 }
+				command = { type = secedeprovince which = GER value = 388 }
+				command = { type = secedeprovince which = GER value = 387 }
+				command = { type = secedeprovince which = GER value = 386 }
+				command = { type = secedeprovince which = GER value = 385 }
+				command = { type = secedeprovince which = GER value = 493 }
+				command = { type = secedeprovince which = GER value = 494 }
+				command = { type = secedeprovince which = GER value = 418 }
+				command = { type = secedeprovince which = GER value = 415 }
+				command = { type = secedeprovince which = GER value = 414 }
+				command = { type = secedeprovince which = GER value = 413 }
+
+#######if finland doesnt exist
+				command = { type = secedeprovince which = GER value = 132 }
+			        command = { type = secedeprovince which = GER value = 130 } #Mikkeli, missing in 1.05b
+				command = { type = secedeprovince which = GER value = 131 }
+				command = { type = secedeprovince which = GER value = 137 }
+				command = { type = secedeprovince which = GER value = 136 }
+				command = { type = secedeprovince which = GER value = 138 }
+				command = { type = secedeprovince which = GER value = 139 }
+				command = { type = secedeprovince which = GER value = 103 }
+				command = { type = secedeprovince which = GER value = 148 }
+				command = { type = secedeprovince which = GER value = 149 }
+				command = { type = secedeprovince which = GER value = 147 }
+				command = { type = secedeprovince which = GER value = 144 }
+				command = { type = secedeprovince which = GER value = 146 }
+				command = { type = secedeprovince which = GER value = 143 }
+				command = { type = secedeprovince which = GER value = 142 }
+				command = { type = secedeprovince which = GER value = 141 }
+				command = { type = secedeprovince which = GER value = 133 }
+				command = { type = secedeprovince which = GER value = 134 } # Russian Karelia + Kola to GERland
+				command = { type = secedeprovince which = GER value = 135 }
+				command = { type = secedeprovince which = GER value = 150 }
+				command = { type = secedeprovince which = GER value = 151 }
+				command = { type = secedeprovince which = GER value = 152 }
+				command = { type = secedeprovince which = GER value = 146 }
+				command = { type = secedeprovince which = GER value = 145 }
+
+#########if sweden doesn´t exist
+	                        command = { type = secedeprovince which = GER value = 96 }
+				command = { type = secedeprovince which = GER value = 95 }
+				command = { type = secedeprovince which = GER value = 93 }
+				command = { type = secedeprovince which = GER value = 98 }
+				command = { type = secedeprovince which = GER value = 97 }
+				command = { type = secedeprovince which = GER value = 99 }
+				command = { type = secedeprovince which = GER value = 100 }
+				command = { type = secedeprovince which = GER value = 101 }
+				command = { type = secedeprovince which = GER value = 102 }
+				command = { type = secedeprovince which = GER value = 104 }
+				command = { type = secedeprovince which = GER value = 105 }
+				command = { type = secedeprovince which = GER value = 106 }
+				command = { type = secedeprovince which = GER value = 112 }
+				command = { type = secedeprovince which = GER value = 113 }
+				command = { type = secedeprovince which = GER value = 114 }
+				command = { type = secedeprovince which = GER value = 115 }
+				command = { type = secedeprovince which = GER value = 119 }
+				command = { type = secedeprovince which = GER value = 120 }
+				command = { type = secedeprovince which = GER value = 121 }
+				command = { type = secedeprovince which = GER value = 122 }
+				command = { type = secedeprovince which = GER value = 123 }
+				command = { type = secedeprovince which = GER value = 126 }
+				command = { type = secedeprovince which = GER value = 127 }
+
+#########if bulgaria doesn´t exist
+				command = { type = secedeprovince which = GER value = 416 }
+				command = { type = secedeprovince which = GER value = 417 }
+				command = { type = secedeprovince which = GER value = 419 }
+				command = { type = secedeprovince which = GER value = 420 }
+				command = { type = secedeprovince which = GER value = 421 }
+				command = { type = secedeprovince which = GER value = 422 }
+
+#########if hungary doesn´t exist
+				command = { type = secedeprovince which = GER value = 456 }
+				command = { type = secedeprovince which = GER value = 457 }
+				command = { type = secedeprovince which = GER value = 458 }
+				command = { type = secedeprovince which = GER value = 491 }
+				command = { type = secedeprovince which = GER value = 492 }
+				command = { type = secedeprovince which = GER value = 497 }
+				command = { type = secedeprovince which = GER value = 499 } # Munkacs, missing in 1.05b
+
+#########if slovakia doesn´t exist
+				command = { type = secedeprovince which = GER value = 469 }
+				command = { type = secedeprovince which = GER value = 476 }
+				command = { type = secedeprovince which = GER value = 477 }
+				command = { type = secedeprovince which = GER value = 478 }
+
+#########if persia doesn´t exist
+				command = { type = secedeprovince which = GER value = 1859 }
+				command = { type = secedeprovince which = GER value = 1789 }
+				command = { type = secedeprovince which = GER value = 1788 }
+				command = { type = secedeprovince which = GER value = 1825 }
+				command = { type = secedeprovince which = GER value = 1826 }
+				command = { type = secedeprovince which = GER value = 1787 }
+				command = { type = secedeprovince which = GER value = 1502 }
+				command = { type = secedeprovince which = GER value = 1501 }
+				command = { type = secedeprovince which = GER value = 1500 }
+				command = { type = secedeprovince which = GER value = 1503 }
+				command = { type = secedeprovince which = GER value = 1498 }
+				command = { type = secedeprovince which = GER value = 1499 }
+				command = { type = secedeprovince which = GER value = 1497 }
+				command = { type = secedeprovince which = GER value = 1496 }
+				command = { type = secedeprovince which = GER value = 1495 }
+
+#########if manchukou doesn't exist
+	    			command = { type = secedeprovince which = JAP value = 1382 }
+	   			command = { type = secedeprovince which = JAP value = 1381 }
+	  			command = { type = secedeprovince which = JAP value = 1380 }
+	    			command = { type = secedeprovince which = JAP value = 1387 }
+# 				command = { type = secedeprovince which = JAP value = 1530 }
+	    			command = { type = secedeprovince which = JAP value = 1390 }
+	    			command = { type = secedeprovince which = JAP value = 1389 }
+	    			command = { type = secedeprovince which = JAP value = 1374 }
+	    			command = { type = secedeprovince which = JAP value = 1375 }
+	    			command = { type = secedeprovince which = JAP value = 1377 }
+	    			command = { type = secedeprovince which = JAP value = 1378 }
+	    			command = { type = secedeprovince which = JAP value = 1379 }
+# New in HoI 2
+	    			command = { type = secedeprovince which = GER value = 194 }
+	    			command = { type = secedeprovince which = GER value = 193 }
+	    			command = { type = secedeprovince which = GER value = 195 }
+	    			command = { type = secedeprovince which = GER value = 196 }
+	    			command = { type = secedeprovince which = GER value = 199 }
+	    			command = { type = secedeprovince which = GER value = 198 }
+	    			command = { type = secedeprovince which = GER value = 197 }
+	    			command = { type = secedeprovince which = GER value = 205 }
+	    			command = { type = secedeprovince which = GER value = 204 }
+	    			command = { type = secedeprovince which = GER value = 203 }
+	    			command = { type = secedeprovince which = GER value = 202 }
+	    			command = { type = secedeprovince which = GER value = 214 }
+	    			command = { type = secedeprovince which = GER value = 577 }
+	    			command = { type = secedeprovince which = GER value = 511 }
+	    			command = { type = secedeprovince which = GER value = 207 }
+	    			command = { type = secedeprovince which = GER value = 208 }
+	    			command = { type = secedeprovince which = GER value = 213 }
+	    			command = { type = secedeprovince which = GER value = 509 }
+	    			command = { type = secedeprovince which = GER value = 209 }
+	    			command = { type = secedeprovince which = GER value = 211 }
+	    			command = { type = secedeprovince which = GER value = 508 }
+	    			command = { type = secedeprovince which = GER value = 507 }
+	    			command = { type = secedeprovince which = GER value = 210 }
+	    			command = { type = secedeprovince which = GER value = 505 }
+	    			command = { type = secedeprovince which = GER value = 503 }
+	    			command = { type = secedeprovince which = GER value = 222 }
+	    			command = { type = secedeprovince which = GER value = 504 }
+	    			command = { type = secedeprovince which = GER value = 562 }
+	    			command = { type = secedeprovince which = GER value = 506 }
+	    			command = { type = secedeprovince which = GER value = 502 }
+	    			command = { type = secedeprovince which = GER value = 501 }
+	    			command = { type = secedeprovince which = GER value = 229 }
+	    			command = { type = secedeprovince which = GER value = 500 }
+	    			command = { type = secedeprovince which = GER value = 179 }
+	    			command = { type = secedeprovince which = GER value = 243 }
+	    			command = { type = secedeprovince which = GER value = 158 }
+	    			command = { type = secedeprovince which = GER value = 1833 }
+	    			command = { type = secedeprovince which = GER value = 1849 }
+
+	   			command = { type = peace which = GER }
+
+
+	    # Estonia
+		command = { type = removecore which = 199 }
+		command = { type = removecore which = 195 }
+		command = { type = removecore which = 193 }
+		command = { type = removecore which = 196 }
+		command = { type = removecore which = 194 }
+
+		# Latvia
+		command = { type = removecore which = 205 }
+		command = { type = removecore which = 204 }
+		command = { type = removecore which = 203 }
+		command = { type = removecore which = 202 }
+		command = { type = removecore which = 197 }
+		command = { type = removecore which = 198 }
+
+		# Lithuania
+		command = { type = removecore which = 577 }
+		command = { type = removecore which = 511 }
+		command = { type = removecore which = 206 }
+		command = { type = removecore which = 207 }
+
+		# Bessarabia
+		command = { type = removecore which = 434 }
+		command = { type = removecore which = 435 }
+		command = { type = removecore which = 433 }
+		command = { type = removecore which = 230 }
+
+		# Claims on Finland
+		command = { type = removecore which = 132 }
+		command = { type = removecore which = 145 }
+		command = { type = removecore which = 152 }
+		command = { type = removecore which = 146
+ }
+
+
+
+		# If Slovakia doesn't exist, it Slovakian provinces to Hungary
+		# If both countries don't exist, provinces of both go to Germany
+	    command = { type = secedeprovince which = HUN value = 496 }
+	    command = { type = secedeprovince which = HUN value = 477 }
+	    command = { type = secedeprovince which = HUN value = 476 }
+	    command = { type = secedeprovince which = HUN value = 478 }
+
+
+	    # In case Finland still exists:
+		command = { type = secedeprovince which = FIN value = 145 }
+		command = { type = secedeprovince which = FIN value = 146 }
+		command = { type = secedeprovince which = FIN value = 134 } # Russian Karelia + Kola to Finland
+		command = { type = secedeprovince which = FIN value = 133 }
+		command = { type = secedeprovince which = FIN value = 135 }
+		command = { type = secedeprovince which = FIN value = 150 }
+		command = { type = secedeprovince which = FIN value = 151 }
+		command = { type = secedeprovince which = FIN value = 152 }
+		command = { type = secedeprovince which = FIN value = 132 }
+
+		command = { type = peace which = FIN }
+
+		# In case USSR is still at war with Sweden:
+		command = { type = peace which = SWE }
+
+		# Bessarabia back to Romania:
+		command = { type = secedeprovince which = ROM value = 434 }
+		command = { type = secedeprovince which = ROM value = 435 }
+		command = { type = secedeprovince which = ROM value = 433 }
+		command = { type = secedeprovince which = ROM value = 230 }
+		command = { type = secedeprovince which = ROM value = 231 }
+		command = { type = secedeprovince which = ROM value = 232 }
+		command = { type = secedeprovince which = ROM value = 233 }
+
+		command = { type = peace which = ROM  }
+
+		command = { type = peace which = BUL }
+		command = { type = peace which = PER }
+		command = { type = peace which = SLO }
+
+
+
+
+	      # Some to Japan:
+		command = { type = secedeprovince which = JAP value = 1175 } # Northern Sakhalin
+		command = { type = secedeprovince which = JAP value = 1172 } # Commodore
+		command = { type = secedeprovince which = JAP value = 1171 } # Kamtjatka
+		command = { type = secedeprovince which = JAP value = 1405 }
+
+		command = { type = secedeprovince which = JAP value = 1174 } #Shumushima
+
+
+		# Added because because original event didn't make peace with them
+		command = { type = peace which = JAP }
+		command = { type = peace which = MAN }
+
+
+		# If Germany is at war with Norway, and USSR has captured a German-occupied Norwegian province,
+		# gives it back to Norway
+		# If USSR has annexed Norway, secede provinces to Germany
+
+		command = { type = secedeprovince which = GER value = 129 }
+		command = { type = secedeprovince which = GER value = 128 }
+		command = { type = secedeprovince which = GER value = 125 }
+		command = { type = secedeprovince which = GER value = 124 }
+		command = { type = secedeprovince which = GER value = 118 }
+		command = { type = secedeprovince which = GER value = 117 }
+		command = { type = secedeprovince which = GER value = 116 }
+		command = { type = secedeprovince which = GER value = 111 }
+		command = { type = secedeprovince which = GER value = 110 }
+		command = { type = secedeprovince which = GER value = 109 }
+		command = { type = secedeprovince which = GER value = 108 }
+		command = { type = secedeprovince which = GER value = 107 }
+
+		# Hand back provinces to Norway in case it still exists
+		command = { type = control which = NOR value = 129 }
+		command = { type = control which = NOR value = 128 }
+		command = { type = control which = NOR value = 125 }
+		command = { type = control which = NOR value = 124 }
+		command = { type = control which = NOR value = 118 }
+		command = { type = control which = NOR value = 117 }
+		command = { type = control which = NOR value = 116 }
+		command = { type = control which = NOR value = 111 }
+		command = { type = control which = NOR value = 110 }
+		command = { type = control which = NOR value = 109 }
+		command = { type = control which = NOR value = 108 }
+		command = { type = control which = NOR value = 107 }
+
+
+
+		command = { type = dissent value = -15 }
+		command = { type = relation which = GER value = 25 }
+		command = { type = relation which = ROM value = 20 }
+		command = { type = relation which = HUN value = 20 }
+		command = { type = relation which = FIN value = 20 }
+		command = { type = relation which = ENG value = -20 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = USA value = -20 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = belligerence which = SOV value = -50 }
+
+		# Move the capital
+		command = { type = capital which = 1548} # Novosibirsk
+		command = { type = province_keypoints which = 1548 value = 5 }
+
+		command = { type = headofstate which = 4011 }
+		command = { type = headofgovernment which = 4012 }
+		command = { type = foreignminister which = 4013 }
+		command = { type = armamentminister which = 4014 }
+		command = { type = ministerofsecurity which = 4015 }
+		command = { type = ministerofintelligence which = 4016 }
+		command = { type = chiefofstaff which = 4017 }
+		command = { type = chiefofarmy which = 4018 }
+		command = { type = chiefofnavy which = 4019 }
+		command = { type = chiefofair which = 4020 }
+		}
+}
+#############################################################################
+#  The Bitter Peace - Japan is Axis (and thus get a bigger slice)
+#############################################################################
+event = {
+	id = 2646
+	random = no
+	country = SOV
+
+	# Triggered by GER 2046
+
+	name = "EVT_2625_NAME"
+	desc = "EVT_2625_DESC"
+	style = 0
+	picture = "Bitter_Peace"
+
+	action_a = {
+		name = "OK"
+
+
+			 	# Secede the west of Urals to Germany
+				command = { type = secedeprovince which = GER value = 212 }
+				command = { type = secedeprovince which = GER value = 218 }
+				command = { type = secedeprovince which = GER value = 219 }
+				command = { type = secedeprovince which = GER value = 217 }
+				command = { type = secedeprovince which = GER value = 216 }
+				command = { type = secedeprovince which = GER value = 215 }
+				command = { type = secedeprovince which = GER value = 200 }
+				command = { type = secedeprovince which = GER value = 201 }
+				command = { type = secedeprovince which = GER value = 221 }
+				command = { type = secedeprovince which = GER value = 225 }
+				command = { type = secedeprovince which = GER value = 226 }
+				command = { type = secedeprovince which = GER value = 227 }
+				command = { type = secedeprovince which = GER value = 228 }
+				command = { type = secedeprovince which = GER value = 220 }
+				command = { type = secedeprovince which = GER value = 231 }
+				command = { type = secedeprovince which = GER value = 232 }
+				command = { type = secedeprovince which = GER value = 233 }
+				command = { type = secedeprovince which = GER value = 234 }
+				command = { type = secedeprovince which = GER value = 235 }
+				command = { type = secedeprovince which = GER value = 236 }
+				command = { type = secedeprovince which = GER value = 237 }
+				command = { type = secedeprovince which = GER value = 238 }
+				command = { type = secedeprovince which = GER value = 239 }
+				command = { type = secedeprovince which = GER value = 246 }
+				command = { type = secedeprovince which = GER value = 249 }
+				command = { type = secedeprovince which = GER value = 245 }
+				command = { type = secedeprovince which = GER value = 247 }
+				command = { type = secedeprovince which = GER value = 248 }
+				command = { type = secedeprovince which = GER value = 249 }
+				command = { type = secedeprovince which = GER value = 242 }
+				command = { type = secedeprovince which = GER value = 244 }
+				command = { type = secedeprovince which = GER value = 241 }
+				command = { type = secedeprovince which = GER value = 240 }
+				command = { type = secedeprovince which = GER value = 250 }
+				command = { type = secedeprovince which = GER value = 256 }
+				command = { type = secedeprovince which = GER value = 251 }
+				command = { type = secedeprovince which = GER value = 252 }
+				command = { type = secedeprovince which = GER value = 253 }
+				command = { type = secedeprovince which = GER value = 254 }
+				command = { type = secedeprovince which = GER value = 258 }
+				command = { type = secedeprovince which = GER value = 259 }
+				command = { type = secedeprovince which = GER value = 257 }
+				command = { type = secedeprovince which = GER value = 255 }
+				command = { type = secedeprovince which = GER value = 260 }
+				command = { type = secedeprovince which = GER value = 263 }
+				command = { type = secedeprovince which = GER value = 262 }
+				command = { type = secedeprovince which = GER value = 261 }
+				command = { type = secedeprovince which = GER value = 264 }
+				command = { type = secedeprovince which = GER value = 265 }
+				command = { type = secedeprovince which = GER value = 266 }
+				command = { type = secedeprovince which = GER value = 267 }
+				command = { type = secedeprovince which = GER value = 269 }
+				command = { type = secedeprovince which = GER value = 268 }
+				command = { type = secedeprovince which = GER value = 173 }
+				command = { type = secedeprovince which = GER value = 172 }
+				command = { type = secedeprovince which = GER value = 170 }
+				command = { type = secedeprovince which = GER value = 171 }
+				command = { type = secedeprovince which = GER value = 176 }
+				command = { type = secedeprovince which = GER value = 174 }
+				command = { type = secedeprovince which = GER value = 177 }
+				command = { type = secedeprovince which = GER value = 175 }
+				command = { type = secedeprovince which = GER value = 178 }
+				command = { type = secedeprovince which = GER value = 272 }
+				command = { type = secedeprovince which = GER value = 273 }
+				command = { type = secedeprovince which = GER value = 271 }
+				command = { type = secedeprovince which = GER value = 274 }
+				command = { type = secedeprovince which = GER value = 275 }
+				command = { type = secedeprovince which = GER value = 276 }
+				command = { type = secedeprovince which = GER value = 277 }
+				command = { type = secedeprovince which = GER value = 278 }
+				command = { type = secedeprovince which = GER value = 270 }
+				command = { type = secedeprovince which = GER value = 279 }
+				command = { type = secedeprovince which = GER value = 94 }
+				command = { type = secedeprovince which = GER value = 287 }
+				command = { type = secedeprovince which = GER value = 286 }
+				command = { type = secedeprovince which = GER value = 285 }
+				command = { type = secedeprovince which = GER value = 281 }
+				command = { type = secedeprovince which = GER value = 289 }
+				command = { type = secedeprovince which = GER value = 288 }
+				command = { type = secedeprovince which = GER value = 282 }
+				command = { type = secedeprovince which = GER value = 283 }
+				command = { type = secedeprovince which = GER value = 284 }
+				command = { type = secedeprovince which = GER value = 280 }
+				command = { type = secedeprovince which = GER value = 190 }
+				command = { type = secedeprovince which = GER value = 191 }
+				command = { type = secedeprovince which = GER value = 192 }
+				command = { type = secedeprovince which = GER value = 186 }
+				command = { type = secedeprovince which = GER value = 187 }
+				command = { type = secedeprovince which = GER value = 188 }
+				command = { type = secedeprovince which = GER value = 189 }
+				command = { type = secedeprovince which = GER value = 185 }
+				command = { type = secedeprovince which = GER value = 184 }
+				command = { type = secedeprovince which = GER value = 183 }
+				command = { type = secedeprovince which = GER value = 182 }
+				command = { type = secedeprovince which = GER value = 181 }
+				command = { type = secedeprovince which = GER value = 180 }
+				command = { type = secedeprovince which = GER value = 153 }
+				command = { type = secedeprovince which = GER value = 154 }
+				command = { type = secedeprovince which = GER value = 155 }
+				command = { type = secedeprovince which = GER value = 159 }
+				command = { type = secedeprovince which = GER value = 157 }
+				command = { type = secedeprovince which = GER value = 156 }
+				command = { type = secedeprovince which = GER value = 165 }
+				command = { type = secedeprovince which = GER value = 166 }
+				command = { type = secedeprovince which = GER value = 169 }
+				command = { type = secedeprovince which = GER value = 160 }
+				command = { type = secedeprovince which = GER value = 167 }
+				command = { type = secedeprovince which = GER value = 163 }
+				command = { type = secedeprovince which = GER value = 168 }
+				command = { type = secedeprovince which = GER value = 162 }
+				command = { type = secedeprovince which = GER value = 161 }
+				command = { type = secedeprovince which = GER value = 164 }
+				command = { type = secedeprovince which = GER value = 1778 }
+				command = { type = secedeprovince which = GER value = 1777 }
+				command = { type = secedeprovince which = GER value = 1776 }
+				command = { type = secedeprovince which = GER value = 1775 }
+				command = { type = secedeprovince which = GER value = 1774 }
+				command = { type = secedeprovince which = GER value = 1841 }
+				command = { type = secedeprovince which = GER value = 1783 }
+				command = { type = secedeprovince which = GER value = 1782 }
+				command = { type = secedeprovince which = GER value = 1781 }
+				command = { type = secedeprovince which = GER value = 1780 }
+				command = { type = secedeprovince which = GER value = 1570 }
+				command = { type = secedeprovince which = GER value = 1568 }
+				command = { type = secedeprovince which = GER value = 1569 }
+				command = { type = secedeprovince which = GER value = 1837 }
+				command = { type = secedeprovince which = GER value = 1827 }
+				command = { type = secedeprovince which = GER value = 1829 }
+				command = { type = secedeprovince which = GER value = 1828 }
+				command = { type = secedeprovince which = GER value = 1838 }
+				command = { type = secedeprovince which = GER value = 1839 }
+				command = { type = secedeprovince which = GER value = 1832 }
+				command = { type = secedeprovince which = GER value = 1836 }
+				command = { type = secedeprovince which = GER value = 1831 }
+				command = { type = secedeprovince which = GER value = 1830 }
+				command = { type = secedeprovince which = GER value = 1835 }
+				command = { type = secedeprovince which = GER value = 1834 }
+				command = { type = secedeprovince which = GER value = 1874 }
+				command = { type = secedeprovince which = GER value = 1771 }
+				command = { type = secedeprovince which = GER value = 1850 }
+				command = { type = secedeprovince which = GER value = 1856 }
+				command = { type = secedeprovince which = GER value = 1857 }
+				command = { type = secedeprovince which = GER value = 1858 }
+				command = { type = secedeprovince which = GER value = 1907 }
+				command = { type = secedeprovince which = GER value = 1840 }
+				command = { type = secedeprovince which = GER value = 1846 }
+				command = { type = secedeprovince which = GER value = 1842 }
+				command = { type = secedeprovince which = GER value = 1847 }
+				command = { type = secedeprovince which = GER value = 1843 }
+				command = { type = secedeprovince which = GER value = 1844 }
+				command = { type = secedeprovince which = GER value = 1845 }
+				command = { type = secedeprovince which = GER value = 1848 }
+#######if the soviets snatched poland early
+								command = { type = secedeprovince which = GER value = 303 }
+								command = { type = secedeprovince which = GER value = 306 }
+								command = { type = secedeprovince which = GER value = 307 }
+								command = { type = secedeprovince which = GER value = 305 }
+								command = { type = secedeprovince which = GER value = 483 }
+								command = { type = secedeprovince which = GER value = 481 }
+								command = { type = secedeprovince which = GER value = 480 }
+								command = { type = secedeprovince which = GER value = 484 }
+								command = { type = secedeprovince which = GER value = 485 }
+								command = { type = secedeprovince which = GER value = 486 }
+								command = { type = secedeprovince which = GER value = 489 }
+								command = { type = secedeprovince which = GER value = 488 }
+								command = { type = secedeprovince which = GER value = 487 }
+
+#######if romania doesnt exist
+				command = { type = secedeprovince which = GER value = 423 }
+				command = { type = secedeprovince which = GER value = 436 }
+				command = { type = secedeprovince which = GER value = 432 }
+				command = { type = secedeprovince which = GER value = 431 }
+				command = { type = secedeprovince which = GER value = 424 }
+				command = { type = secedeprovince which = GER value = 425 }
+				command = { type = secedeprovince which = GER value = 426 }
+				command = { type = secedeprovince which = GER value = 427 }
+				command = { type = secedeprovince which = GER value = 428 }
+				command = { type = secedeprovince which = GER value = 429 }
+				command = { type = secedeprovince which = GER value = 495 }
+				command = { type = secedeprovince which = GER value = 496 }
+				command = { type = secedeprovince which = GER value = 498 }
+				command = { type = secedeprovince which = GER value = 434 }
+				command = { type = secedeprovince which = GER value = 435 }
+				command = { type = secedeprovince which = GER value = 433 }
+				command = { type = secedeprovince which = GER value = 230 }
+				command = { type = secedeprovince which = GER value = 231 }
+				command = { type = secedeprovince which = GER value = 232 }
+				command = { type = secedeprovince which = GER value = 233 }
+
+
+#######if croatia doesnt exist
+				command = { type = secedeprovince which = GER value = 380 }
+				command = { type = secedeprovince which = GER value = 381 }
+				command = { type = secedeprovince which = GER value = 382 }
+				command = { type = secedeprovince which = GER value = 383 }
+				command = { type = secedeprovince which = GER value = 384 }
+				command = { type = secedeprovince which = GER value = 385 }
+				command = { type = secedeprovince which = GER value = 459 }
+				command = { type = secedeprovince which = GER value = 455 }
+
+#######if yugoslavia doesnt exist
+				command = { type = secedeprovince which = GER value = 454 }
+				command = { type = secedeprovince which = GER value = 453 }
+				command = { type = secedeprovince which = GER value = 452 }
+				command = { type = secedeprovince which = GER value = 451 }
+				command = { type = secedeprovince which = GER value = 389 }
+				command = { type = secedeprovince which = GER value = 388 }
+				command = { type = secedeprovince which = GER value = 387 }
+				command = { type = secedeprovince which = GER value = 386 }
+				command = { type = secedeprovince which = GER value = 385 }
+				command = { type = secedeprovince which = GER value = 493 }
+				command = { type = secedeprovince which = GER value = 494 }
+				command = { type = secedeprovince which = GER value = 418 }
+				command = { type = secedeprovince which = GER value = 415 }
+				command = { type = secedeprovince which = GER value = 414 }
+				command = { type = secedeprovince which = GER value = 413 }
+
+#######if finland doesnt exist
+				command = { type = secedeprovince which = GER value = 132 }
+			        command = { type = secedeprovince which = GER value = 130 } #Mikkeli, missing in 1.05b
+				command = { type = secedeprovince which = GER value = 131 }
+				command = { type = secedeprovince which = GER value = 137 }
+				command = { type = secedeprovince which = GER value = 136 }
+				command = { type = secedeprovince which = GER value = 138 }
+				command = { type = secedeprovince which = GER value = 139 }
+				command = { type = secedeprovince which = GER value = 103 }
+				command = { type = secedeprovince which = GER value = 148 }
+				command = { type = secedeprovince which = GER value = 149 }
+				command = { type = secedeprovince which = GER value = 147 }
+				command = { type = secedeprovince which = GER value = 144 }
+				command = { type = secedeprovince which = GER value = 146 }
+				command = { type = secedeprovince which = GER value = 143 }
+				command = { type = secedeprovince which = GER value = 142 }
+				command = { type = secedeprovince which = GER value = 141 }
+				command = { type = secedeprovince which = GER value = 133 }
+				command = { type = secedeprovince which = GER value = 134 } # Russian Karelia + Kola to GERland
+				command = { type = secedeprovince which = GER value = 135 }
+				command = { type = secedeprovince which = GER value = 150 }
+				command = { type = secedeprovince which = GER value = 151 }
+				command = { type = secedeprovince which = GER value = 152 }
+				command = { type = secedeprovince which = GER value = 146 }
+				command = { type = secedeprovince which = GER value = 145 }
+
+#########if sweden doesn´t exist
+	                        command = { type = secedeprovince which = GER value = 96 }
+				command = { type = secedeprovince which = GER value = 95 }
+				command = { type = secedeprovince which = GER value = 93 }
+				command = { type = secedeprovince which = GER value = 98 }
+				command = { type = secedeprovince which = GER value = 97 }
+				command = { type = secedeprovince which = GER value = 99 }
+				command = { type = secedeprovince which = GER value = 100 }
+				command = { type = secedeprovince which = GER value = 101 }
+				command = { type = secedeprovince which = GER value = 102 }
+				command = { type = secedeprovince which = GER value = 104 }
+				command = { type = secedeprovince which = GER value = 105 }
+				command = { type = secedeprovince which = GER value = 106 }
+				command = { type = secedeprovince which = GER value = 112 }
+				command = { type = secedeprovince which = GER value = 113 }
+				command = { type = secedeprovince which = GER value = 114 }
+				command = { type = secedeprovince which = GER value = 115 }
+				command = { type = secedeprovince which = GER value = 119 }
+				command = { type = secedeprovince which = GER value = 120 }
+				command = { type = secedeprovince which = GER value = 121 }
+				command = { type = secedeprovince which = GER value = 122 }
+				command = { type = secedeprovince which = GER value = 123 }
+				command = { type = secedeprovince which = GER value = 126 }
+				command = { type = secedeprovince which = GER value = 127 }
+
+#########if bulgaria doesn´t exist
+				command = { type = secedeprovince which = GER value = 416 }
+				command = { type = secedeprovince which = GER value = 417 }
+				command = { type = secedeprovince which = GER value = 419 }
+				command = { type = secedeprovince which = GER value = 420 }
+				command = { type = secedeprovince which = GER value = 421 }
+				command = { type = secedeprovince which = GER value = 422 }
+
+#########if hungary doesn´t exist
+				command = { type = secedeprovince which = GER value = 456 }
+				command = { type = secedeprovince which = GER value = 457 }
+				command = { type = secedeprovince which = GER value = 458 }
+				command = { type = secedeprovince which = GER value = 491 }
+				command = { type = secedeprovince which = GER value = 492 }
+				command = { type = secedeprovince which = GER value = 497 }
+				command = { type = secedeprovince which = GER value = 499 } # Munkacs, missing in 1.05b
+
+#########if slovakia doesn´t exist
+				command = { type = secedeprovince which = GER value = 469 }
+				command = { type = secedeprovince which = GER value = 476 }
+				command = { type = secedeprovince which = GER value = 477 }
+				command = { type = secedeprovince which = GER value = 478 }
+
+#########if persia doesn´t exist
+				command = { type = secedeprovince which = GER value = 1859 }
+				command = { type = secedeprovince which = GER value = 1789 }
+				command = { type = secedeprovince which = GER value = 1788 }
+				command = { type = secedeprovince which = GER value = 1825 }
+				command = { type = secedeprovince which = GER value = 1826 }
+				command = { type = secedeprovince which = GER value = 1787 }
+				command = { type = secedeprovince which = GER value = 1502 }
+				command = { type = secedeprovince which = GER value = 1501 }
+				command = { type = secedeprovince which = GER value = 1500 }
+				command = { type = secedeprovince which = GER value = 1503 }
+				command = { type = secedeprovince which = GER value = 1498 }
+				command = { type = secedeprovince which = GER value = 1499 }
+				command = { type = secedeprovince which = GER value = 1497 }
+				command = { type = secedeprovince which = GER value = 1496 }
+				command = { type = secedeprovince which = GER value = 1495 }
+
+#########if manchukou doesn't exist
+	    			command = { type = secedeprovince which = JAP value = 1382 }
+	   			command = { type = secedeprovince which = JAP value = 1381 }
+	  			command = { type = secedeprovince which = JAP value = 1380 }
+	    			command = { type = secedeprovince which = JAP value = 1387 }
+# 				command = { type = secedeprovince which = JAP value = 1530 }
+	    			command = { type = secedeprovince which = JAP value = 1390 }
+	    			command = { type = secedeprovince which = JAP value = 1389 }
+	    			command = { type = secedeprovince which = JAP value = 1374 }
+	    			command = { type = secedeprovince which = JAP value = 1375 }
+	    			command = { type = secedeprovince which = JAP value = 1377 }
+	    			command = { type = secedeprovince which = JAP value = 1378 }
+	    			command = { type = secedeprovince which = JAP value = 1379 }
+
+# New in HoI 2
+	    			command = { type = secedeprovince which = GER value = 194 }
+	    			command = { type = secedeprovince which = GER value = 193 }
+	    			command = { type = secedeprovince which = GER value = 195 }
+	    			command = { type = secedeprovince which = GER value = 196 }
+	    			command = { type = secedeprovince which = GER value = 199 }
+	    			command = { type = secedeprovince which = GER value = 198 }
+	    			command = { type = secedeprovince which = GER value = 197 }
+	    			command = { type = secedeprovince which = GER value = 205 }
+	    			command = { type = secedeprovince which = GER value = 204 }
+	    			command = { type = secedeprovince which = GER value = 203 }
+	    			command = { type = secedeprovince which = GER value = 202 }
+	    			command = { type = secedeprovince which = GER value = 214 }
+	    			command = { type = secedeprovince which = GER value = 577 }
+	    			command = { type = secedeprovince which = GER value = 511 }
+	    			command = { type = secedeprovince which = GER value = 207 }
+	    			command = { type = secedeprovince which = GER value = 208 }
+	    			command = { type = secedeprovince which = GER value = 213 }
+	    			command = { type = secedeprovince which = GER value = 509 }
+	    			command = { type = secedeprovince which = GER value = 209 }
+	    			command = { type = secedeprovince which = GER value = 211 }
+	    			command = { type = secedeprovince which = GER value = 508 }
+	    			command = { type = secedeprovince which = GER value = 507 }
+	    			command = { type = secedeprovince which = GER value = 210 }
+	    			command = { type = secedeprovince which = GER value = 505 }
+	    			command = { type = secedeprovince which = GER value = 503 }
+	    			command = { type = secedeprovince which = GER value = 222 }
+	    			command = { type = secedeprovince which = GER value = 504 }
+	    			command = { type = secedeprovince which = GER value = 562 }
+	    			command = { type = secedeprovince which = GER value = 506 }
+	    			command = { type = secedeprovince which = GER value = 502 }
+	    			command = { type = secedeprovince which = GER value = 501 }
+	    			command = { type = secedeprovince which = GER value = 229 }
+	    			command = { type = secedeprovince which = GER value = 500 }
+	    			command = { type = secedeprovince which = GER value = 179 }
+	    			command = { type = secedeprovince which = GER value = 243 }
+	    			command = { type = secedeprovince which = GER value = 158 }
+	    			command = { type = secedeprovince which = GER value = 1833 }
+	    			command = { type = secedeprovince which = GER value = 1849 }
+	    			command = { type = secedeprovince which = JAP value = 1164 }
+	    			command = { type = secedeprovince which = JAP value = 1174 }
+	    			command = { type = secedeprovince which = JAP value = 1416 } # Irkutsk
+
+	   			command = { type = peace which = GER }
+
+
+	    # Estonia
+		command = { type = removecore which = 199 }
+		command = { type = removecore which = 195 }
+		command = { type = removecore which = 193 }
+		command = { type = removecore which = 196 }
+		command = { type = removecore which = 194 }
+
+		# Latvia
+		command = { type = removecore which = 205 }
+		command = { type = removecore which = 204 }
+		command = { type = removecore which = 203 }
+		command = { type = removecore which = 202 }
+		command = { type = removecore which = 197 }
+		command = { type = removecore which = 198 }
+
+		# Lithuania
+		command = { type = removecore which = 577 }
+		command = { type = removecore which = 511 }
+		command = { type = removecore which = 206 }
+		command = { type = removecore which = 207 }
+
+		# Bessarabia
+		command = { type = removecore which = 434 }
+		command = { type = removecore which = 435 }
+		command = { type = removecore which = 433 }
+		command = { type = removecore which = 230 }
+
+		# Claims on Finland
+		command = { type = removecore which = 132 }
+		command = { type = removecore which = 145 }
+		command = { type = removecore which = 152 }
+		command = { type = removecore which = 146
+ }
+
+
+
+		# If Slovakia doesn't exist, it Slovakian provinces to Hungary
+		# If both countries don't exist, provinces of both go to Germany
+	    command = { type = secedeprovince which = HUN value = 496 }
+	    command = { type = secedeprovince which = HUN value = 477 }
+	    command = { type = secedeprovince which = HUN value = 476 }
+	    command = { type = secedeprovince which = HUN value = 478 }
+
+
+	    # In case Finland still exists:
+		command = { type = secedeprovince which = FIN value = 145 }
+		command = { type = secedeprovince which = FIN value = 146 }
+		command = { type = secedeprovince which = FIN value = 134 } # Russian Karelia + Kola to Finland
+		command = { type = secedeprovince which = FIN value = 133 }
+		command = { type = secedeprovince which = FIN value = 135 }
+		command = { type = secedeprovince which = FIN value = 150 }
+		command = { type = secedeprovince which = FIN value = 151 }
+		command = { type = secedeprovince which = FIN value = 152 }
+		command = { type = secedeprovince which = FIN value = 132 }
+
+		command = { type = peace which = FIN }
+
+		# In case USSR is still at war with Sweden:
+		command = { type = peace which = SWE }
+
+		# Bessarabia back to Romania:
+		command = { type = secedeprovince which = ROM value = 434 }
+		command = { type = secedeprovince which = ROM value = 435 }
+		command = { type = secedeprovince which = ROM value = 433 }
+		command = { type = secedeprovince which = ROM value = 230 }
+		command = { type = secedeprovince which = ROM value = 231 }
+		command = { type = secedeprovince which = ROM value = 232 }
+		command = { type = secedeprovince which = ROM value = 233 }
+		command = { type = peace which = ROM  }
+
+		command = { type = peace which = BUL }
+		command = { type = peace which = PER }
+		command = { type = peace which = SLO }
+
+
+		# Japanese Slice of the Cake:
+		command = { type = secedeprovince which = JAP value = 1175 } # Northern Sakhalin
+		command = { type = secedeprovince which = JAP value = 1172 } # Commodore
+		command = { type = secedeprovince which = JAP value = 1171 } # Kamtjatka
+		command = { type = secedeprovince which = JAP value = 1405 }
+
+		command = { type = secedeprovince which = JAP value = 1366 } # Vanino
+		command = { type = secedeprovince which = JAP value = 1368 } # Ulunga
+		command = { type = secedeprovince which = JAP value = 1369 } # Dalnegorsk
+		command = { type = secedeprovince which = JAP value = 1373 } # Spassk Dalnij
+		command = { type = secedeprovince which = JAP value = 1370 } # Dalneretjensk
+		command = { type = secedeprovince which = JAP value = 1367 } # Chabarovsk
+		command = { type = secedeprovince which = JAP value = 1371 } # Nachodka
+		command = { type = secedeprovince which = JAP value = 1372 } # Vladivostok
+
+		# Even bigger slice for Japan
+		command = { type = secedeprovince which = JAP value = 1160 }
+		command = { type = secedeprovince which = JAP value = 1166 }
+		command = { type = secedeprovince which = JAP value = 1167 }
+		command = { type = secedeprovince which = JAP value = 1163 }
+		command = { type = secedeprovince which = JAP value = 1165 }
+		command = { type = secedeprovince which = JAP value = 1170 }
+		command = { type = secedeprovince which = JAP value = 1158 }
+		command = { type = secedeprovince which = JAP value = 1159 }
+		command = { type = secedeprovince which = JAP value = 1525 }
+		command = { type = secedeprovince which = JAP value = 1522 }
+		command = { type = secedeprovince which = JAP value = 1524 }
+		command = { type = secedeprovince which = JAP value = 1521 }
+		command = { type = secedeprovince which = JAP value = 1520 }
+		command = { type = secedeprovince which = JAP value = 1412 }
+		command = { type = secedeprovince which = JAP value = 1411 }
+		command = { type = secedeprovince which = JAP value = 1409 }
+		command = { type = secedeprovince which = JAP value = 1384 }
+		command = { type = secedeprovince which = JAP value = 1383 }
+		command = { type = secedeprovince which = JAP value = 1410 }
+		command = { type = secedeprovince which = JAP value = 1526 }
+		command = { type = secedeprovince which = JAP value = 1523 }
+		command = { type = secedeprovince which = JAP value = 1528 }
+		command = { type = secedeprovince which = JAP value = 1529 }
+		command = { type = secedeprovince which = JAP value = 1527 }
+		command = { type = secedeprovince which = JAP value = 1404 }
+		command = { type = secedeprovince which = JAP value = 1437 }
+		command = { type = secedeprovince which = JAP value = 1438 }
+		command = { type = secedeprovince which = JAP value = 1399 }
+
+		# Added because because original event didn't make peace with them
+		command = { type = peace which = JAP }
+		command = { type = peace which = MAN }
+
+# If Germany is at war with Norway, and USSR has captured a German-occupied Norwegian province,
+		# gives it back to Norway
+		# If USSR has annexed Norway, secede provinces to Germany
+
+		command = { type = secedeprovince which = GER value = 129 }
+		command = { type = secedeprovince which = GER value = 128 }
+		command = { type = secedeprovince which = GER value = 125 }
+		command = { type = secedeprovince which = GER value = 124 }
+		command = { type = secedeprovince which = GER value = 118 }
+		command = { type = secedeprovince which = GER value = 117 }
+		command = { type = secedeprovince which = GER value = 116 }
+		command = { type = secedeprovince which = GER value = 111 }
+		command = { type = secedeprovince which = GER value = 110 }
+		command = { type = secedeprovince which = GER value = 109 }
+		command = { type = secedeprovince which = GER value = 108 }
+		command = { type = secedeprovince which = GER value = 107 }
+
+		# Hand back provinces to Norway in case it still exists
+		command = { type = control which = NOR value = 129 }
+		command = { type = control which = NOR value = 128 }
+		command = { type = control which = NOR value = 125 }
+		command = { type = control which = NOR value = 124 }
+		command = { type = control which = NOR value = 118 }
+		command = { type = control which = NOR value = 117 }
+		command = { type = control which = NOR value = 116 }
+		command = { type = control which = NOR value = 111 }
+		command = { type = control which = NOR value = 110 }
+		command = { type = control which = NOR value = 109 }
+		command = { type = control which = NOR value = 108 }
+		command = { type = control which = NOR value = 107 }
+
+
+
+		command = { type = dissent value = -15 }
+		command = { type = relation which = GER value = 25 }
+		command = { type = relation which = ROM value = 20 }
+		command = { type = relation which = HUN value = 20 }
+		command = { type = relation which = FIN value = 20 }
+		command = { type = relation which = JAP value = 20 }
+		command = { type = relation which = MAN value = 20 }
+		command = { type = relation which = ENG value = -20 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = USA value = -20 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = belligerence which = SOV value = -50 }
+
+		# Move the capital
+		command = { type = capital which = 1548} # Novosibirsk
+		command = { type = province_keypoints which = 1548 value = 5 }
+
+		command = { type = headofstate which = 4011 }
+		command = { type = headofgovernment which = 4012 }
+		command = { type = foreignminister which = 4013 }
+		command = { type = armamentminister which = 4014 }
+		command = { type = ministerofsecurity which = 4015 }
+		command = { type = ministerofintelligence which = 4016 }
+		command = { type = chiefofstaff which = 4017 }
+		command = { type = chiefofarmy which = 4018 }
+		command = { type = chiefofnavy which = 4019 }
+		command = { type = chiefofair which = 4020 }
+	}
+}
+#########################################################################
+#  A Lend-Lease Shipment Arrives from the USA (modified by Aregorn)
+#########################################################################
+event = {
+	id = 2626
+	random = no
+	country = SOV
+	persistent = yes
+	# Triggered by USA 3703. NOTE: May be triggered several times.
+
+	name = "A Lend-Lease Shipment from the USA is ready"
+	desc = "EVT_2626_DESC"
+	style = 0
+	picture = "Lend_Lease_SOV"
+
+	action_a = {
+		name = "OK" # Excellent!
+		command = { type = supplies value = 1000 where = 575 }
+		command = { type = supplies value = 2000 }
+		command = { type = rarematerialspool value = 500 }
+		command = { type = add_corps value = land where = 575 }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_corps value = naval where = 575 }
+		command = { type = add_division value = transport }
+		command = { type = manpowerpool value = -10 }
+	}
+}
+
+
+#########################################################################
+#  Germany Invades Poland without our Blessing!
+#########################################################################
+event = {
+	id = 2650
+	random = no
+	country = SOV
+
+	# Triggered by GER 2050
+
+	name = "EVT_2650_NAME"
+	desc = "EVT_2650_DESC"
+	style = 0
+	picture = "Mol_Rib"
+
+	action_a = {
+		name = "ACTIONNAME2650A" # We shall never forget this!
+		ai_chance = 90
+		command = { type = dissent value = 10 }
+		command = { type = relation which = GER value = -20 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME2650B" # This means war!
+		ai_chance = 10
+		command = { type = relation which = POL value = 15 }
+		command = { type = war which = GER }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+
+#########################################################################
+#  End of the Finnish Winter War (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2627
+	random = no
+	country = SOV
+
+	trigger = {	random = 25
+
+		OR = {	lost_national = { country = FIN value = 20 }
+			AND = {	control = { province = 145 data = SOV } #Viipuri
+				control = { province = 146 data = SOV } #Sortvala
+			}
+			AND = {	control = { province = 149 data = SOV } #Joensuu
+				control = { province = 146 data = SOV } #Sortvala
+			}
+			control = { province = 142 data = SOV } # Helsinski
+		}
+
+		war = { country = FIN country = SOV }
+		NOT = {	alliance = { country = FIN country = GER }}
+	}
+
+
+	name = "EVT_2627_NAME"
+	desc = "EVT_2627_DESC"
+	style = 0
+	picture = "End_Winter_War"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2627A" # We'll settle for what we asked for
+		ai_chance = 99
+		command = { type = trigger which = 3203 } # FIN
+		command = { type = relation which = FIN value = 10 }
+	}
+	action_b = {
+		name = "ACTIONNAME2627B" # Let's bring them Socialism!
+		ai_chance = 1
+		command = { type = relation which = FIN value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = manpowerpool value = -100 }
+		command = { type = dissent value = 5 }
+	}
+}
+
+#########################################################################
+#  End of the Finnish Winter War - Finns accepts
+#########################################################################
+event = {
+	id = 2628
+	random = no
+	country = SOV
+
+	# Triggered by FIN 3203
+
+	name = "EVT_2628_NAME"
+	desc = "EVT_2628_DESC"
+	style = 0
+	picture = "End_Winter_War"
+
+	action_a = {
+		name = "ACTIONNAME2628A" # Good!
+		command = { type = peace which = FIN value = 0 }
+		command = { type = dissent value = -10 }
+	}
+}
+
+#########################################################################
+#  End of the Finnish Winter War - Finns refuse
+#########################################################################
+event = {
+	id = 2629
+	random = no
+	country = SOV
+
+	# Triggered by FIN 3203
+
+	name = "EVT_2629_NAME"
+	desc = "EVT_2629_DESC"
+	style = 0
+	picture = "End_Winter_War"
+
+	action_a = {
+		name = "ACTIONNAME2629A" # They will have to pay!
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+#########################################################################
+#  End of the Swedish Winter War (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2630
+	random = no
+	country = SOV
+	picture = "finland_sweden"
+	trigger = {
+		event = 2628 # End of the Winter War - Finns accepts
+		war = { country = SWE country = SOV }
+		NOT = {
+			alliance = { country = SWE country = GER }
+		}
+		NOT = {
+			alliance = { country = SWE country = ENG }
+		}
+	}
+
+	name = "EVT_2630_NAME"
+	desc = "EVT_2630_DESC"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2630A" # Let us stop this unnecissary fighting
+		ai_chance = 99
+		command = { type = trigger which = 3302 } # SWE
+		command = { type = relation which = SWE value = 10 }
+		command = { type = relation which = NOR value = 5 }
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = ENG value = 5 }
+	}
+	action_b = {
+		name = "ACTIONNAME2630B" # Let's bring them Socialism!
+		ai_chance = 1
+		command = { type = relation which = SWE value = -100 }
+		command = { type = relation which = NOR value = -100 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+#########################################################################
+#  End of the Swedish Winter War - Swedes accepts
+#########################################################################
+event = {
+	id = 2631
+	random = no
+	country = SOV
+
+	# Triggered by SWE 3302
+
+	name = "EVT_2631_NAME"
+	desc = "EVT_2631_DESC"
+	picture = "finland_sweden"
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME2631A" # Good!
+		command = { type = dissent value = -10 }
+	}
+}
+
+#########################################################################
+#  End of the Swedish Winter War - Swedes refuse
+#########################################################################
+event = {
+	id = 2632
+	random = no
+	country = SOV
+
+	# Triggered by SWE 3302
+
+	name = "EVT_2632_NAME"
+	desc = "EVT_2632_DESC"
+	picture = "finland_sweden"
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME2632A" # They will have to pay!
+		command = { type = dissent value = 5 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = NOR value = -100 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+#########################################################################
+#  Moving of Industry to Sibiria
+#########################################################################
+event = {
+	id = 2633
+	random = no
+	country = SOV
+
+	trigger = {
+		control = { province = 219 data = SOV } #Smolensk
+		control = { province = 238 data = SOV } #Kiev
+		control = { province = 248 data = SOV } #Kharkov
+	    	control = { province = 187 data = SOV } #leningrad
+		control = { province = 1572 data = SOV } #Sverdlovsk
+		war = { country = GER country = SOV }
+	}
+
+	name = "EVT_2633_NAME"
+	desc = "EVT_2633_DESC"
+	picture = "siberia"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2633A" # Let's move our industrial base to Siberia
+		ai_chance = 100
+		command = { type = construct which = ic where = 219 value = -5 } #Smolensk
+		command = { type = construct which = ic where = 238 value = -5 } #Kiev
+		command = { type = construct which = ic where = 248 value = -5 } #Kharkov
+		command = { type = construct which = ic where = 187 value = -15 } #Leningrad
+		command = { type = construct which = ic where = 1572 value = 30 } #Sverdlovsk
+
+		command = { type = province_keypoints which = 219 value = -3 }
+		command = { type = province_keypoints which = 1572 value = 3 } #Sverdlovsk
+		command = { type = province_keypoints which = 238 value = -3 }
+		command = { type = province_keypoints which = 248 value = -1 }
+		command = { type = province_keypoints which = 187 value = -5 }
+		command = { type = domestic which = free_market value = -1 }
+  }
+	action_b = {
+		name = "ACTIONNAME2633B" # No let it be.
+		ai_chance = 0
+		command = {  }
+	}
+}
+
+#########################################################################
+#  Moving of Industry to Sibiria
+#########################################################################
+event = {
+	id = 2634
+	random = no
+	country = SOV
+
+	trigger = {
+		control = { province = 258 data = SOV } #Rostov
+		control = { province = 253 data = SOV } #Sevastapol
+		control = { province = 233 data = SOV } #Odessa
+		control = { province = 1575 data = SOV } #Kurgan
+		control = { province = 1576 data = SOV } #Kustanai
+		war = { country = GER country = SOV }
+	}
+
+	name = "EVT_2634_NAME"
+	desc = "EVT_2634_DESC"
+	picture = "siberia"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2634A" # Let's move our industrial base to Sibiria
+		ai_chance = 100
+		command = { type = construct which = ic where = 258 value = -5 } #Rostov
+		command = { type = construct which = ic where = 253 value = -5 } #Sevastapol
+		command = { type = construct which = ic where = 233 value = -5 } #Odessa
+		command = { type = construct which = ic where = 1575 value = 10 } #Kurgan
+		command = { type = construct which = ic where = 1576 value = 5 } #Kustanai
+
+		command = { type = province_keypoints which = 258 value = -1 }
+		command = { type = province_keypoints which = 1575 value = 1 }
+		command = { type = province_keypoints which = 253 value = -1 }
+		command = { type = province_keypoints which = 1576 value = 1 }
+		command = { type = province_keypoints which = 233 value = -1 }
+
+	}
+	action_b = {
+		name = "ACTIONNAME2634B" # No let it be.
+		ai_chance = 0
+		command = {  }
+	}
+}
+
+#########################################################################
+#  Moving of Industry to Sibiria
+#########################################################################
+event = {
+	id = 2635
+	random = no
+	country = SOV
+
+	trigger = {
+		control = { province = 212 data = SOV } #Minsk
+		control = { province = 197 data = SOV } #Riga
+		control = { province = 194 data = SOV } #Tallinn
+		control = { province = 1422 data = SOV } #Alma-Ata
+		control = { province = 1550 data = SOV } #Semipalatinsk
+		control = { province = 1560 data = SOV } #Krasnojarsk
+		war = { country = GER country = SOV }
+	}
+
+	name = "EVT_2635_NAME"
+	desc = "EVT_2635_DESC"
+	picture = "siberia"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2635A" # Let's move our industrial base to Sibiria
+		ai_chance = 100
+		command = { type = construct which = ic where = 212 value = -7 } #Minsk
+		command = { type = construct which = ic where = 197 value = -5 } #Riga
+		command = { type = construct which = ic where = 194 value = -5 } #Tallinn
+		command = { type = construct which = ic where = 1422 value = 7 } #Alma-Ata
+		command = { type = construct which = ic where = 1550 value = 5 } #Semipalatinsk
+		command = { type = construct which = ic where = 1560 value = 5 } #Krasnojarsk
+		command = { type = province_keypoints which = 212 value = -3 }
+		command = { type = province_keypoints which = 1422 value = 3 }
+		command = { type = province_keypoints which = 197 value = -1 }
+		command = { type = province_keypoints which = 1550 value = 1 }
+		command = { type = province_keypoints which = 194 value = -1 }
+		command = { type = province_keypoints which = 1560 value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME2634B" # No let it be.
+		ai_chance = 0
+		command = {  }
+	}
+}
+#########################################################################
+#  End of the Soviet-Romanian War (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2636
+	random = no
+	country = SOV
+
+	trigger = {
+
+		OR = {
+			AND = {
+				control = { province = 230 data = SOV } #
+				control = { province = 433 data = SOV } #
+				control = { province = 435 data = SOV } #
+				control = { province = 434 data = SOV } #
+			}
+			lost_national = { country = ROM value = 20 }
+		}
+		event = 2608
+		war = { country = ROM country = SOV }
+		NOT = {
+				alliance = { country = ROM country = GER }
+				}
+	}
+
+
+	name = "EVT_2636_NAME"
+	desc = "EVT_2636_DESC"
+	style = 0
+	picture = "stalin_proposes"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7 # Check for trigger conditions every seven days
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2627A" # We'll settle for what we asked for
+		ai_chance = 98
+		command = { type = trigger which = 2703 } # ROM
+		command = { type = relation which = ROM value = 10 }
+	}
+	action_b = {
+		name = "ACTIONNAME2627B" # Let's bring them Socialism!
+		ai_chance = 2
+		command = { type = relation which = ROM value = -100 }
+		command = { type = relation which = HUN value = -100 }
+		command = { type = relation which = BUL value = -100 }
+		command = { type = relation which = GER value = -100 }
+		command = { type = relation which = FRA value = -100 }
+		command = { type = relation which = USA value = -100 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+#########################################################################
+#  End of the Soviet-Romanian War - Romania accepts
+#########################################################################
+event = {
+	id = 2637
+	random = no
+	country = SOV
+
+	# Triggered by ROM 2703
+
+	name = "EVT_2637_NAME"
+	desc = "EVT_2703_DESC"
+	style = 0
+	picture = "stalin_proposes"
+
+	action_a = {
+		name = "ACTIONNAME2628A" # Good!
+		command = { type = peace which = ROM value = 0 }
+		command = { type = dissent value = -10 }
+	}
+}
+
+#########################################################################
+#  End of the Soviet-Romanian War - Romania refuse
+#########################################################################
+event = {
+	id = 2638
+	random = no
+	country = SOV
+
+	# Triggered by ROM 2703
+
+	name = "EVT_2638_NAME"
+	desc = "EVT_2703_DESC"
+	style = 0
+	picture = "romanian_soldier"
+
+	action_a = {
+		name = "ACTIONNAME2629A" # They will have to pay!
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+#########################################################################
+# North Korea - USSR Puppet
+#########################################################################
+event = {
+	id = 3810
+	random = no
+	country = SOV
+
+	name = "EVT_3810_NAME"
+	desc = "EVT_3810_DESC"
+	picture = "korea"
+	style = 0
+
+	trigger = {
+		exists = KOR
+		exists = PRK
+		OR = {
+			event = 45 # Japan already surrendered
+			NOT = {
+				exists = JAP
+			}
+		}
+	}
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 2
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_3810_ACTA" #
+		command = { type = make_puppet which = PRK }
+	}
+}
+#########################################################################
+# Manchuria to Mao
+#########################################################################
+event = {
+	id = 3812
+	random = no
+	country = SOV
+
+	trigger = {
+		event = 44
+		OR = {
+			event = 45 # Japan already surrendered
+			NOT = {
+				exists = JAP
+			}
+		}
+	}
+
+	name = "EVT_3812_NAME"
+	desc = "EVT_3812_DESC"
+	style = 0
+	picture = "China_CW"
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_3812_ACTA" #
+		command = { type = secedeprovince which = CHC value = 1381 } #Manchuria
+		command = { type = secedeprovince which = CHC value = 1382 }
+		command = { type = secedeprovince which = CHC value = 1380 }
+		command = { type = secedeprovince which = CHC value = 1530 }
+		command = { type = secedeprovince which = CHC value = 1374 }
+		command = { type = secedeprovince which = CHC value = 1375 }
+		command = { type = secedeprovince which = CHC value = 1378 }
+		command = { type = secedeprovince which = CHC value = 1377 }
+		command = { type = secedeprovince which = CHC value = 1394 }
+		command = { type = secedeprovince which = CHC value = 1395 }
+		command = { type = secedeprovince which = CHC value = 1396 }
+		command = { type = secedeprovince which = CHC value = 1388 }
+		command = { type = secedeprovince which = CHC value = 1386 }
+		command = { type = secedeprovince which = CHC value = 1387 }
+		command = { type = secedeprovince which = CHC value = 1379 }
+		command = { type = secedeprovince which = CHC value = 1389 }
+		command = { type = secedeprovince which = CHC value = 1390 }
+		command = { type = secedeprovince which = CHC value = 1397 }
+		command = { type = secedeprovince which = CHC value = 1202 }
+		command = { type = secedeprovince which = CHC value = 1398 } #Mengukuo
+		command = { type = secedeprovince which = CHC value = 1207 }
+		command = { type = secedeprovince which = CHC value = 1208 }
+		command = { type = secedeprovince which = CHC value = 1206 }
+		command = { type = secedeprovince which = CHC value = 1209 }
+		command = { type = secedeprovince which = CHC value = 1439 } #Below Mongolia
+		command = { type = secedeprovince which = CHC value = 1273 }
+		command = { type = secedeprovince which = CHC value = 1274 }
+		command = { type = secedeprovince which = CHC value = 1272 }
+	}
+}

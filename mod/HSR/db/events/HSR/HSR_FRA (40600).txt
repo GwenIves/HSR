@@ -1,0 +1,1340 @@
+# Aregorn_FRA: Events for France and Vichy France (32)
+#
+# ID		Title							Author
+#
+# 40600 	France call to Arms					(by Aregorn 050616)
+# 40601-05 	French Military programmes 				(by Aregorn 050205)
+# 40606 	Operation Catapult 					(by Aregorn 040516)
+# 40607 	British take over of Lebanon-Syria 			(by Aregorn 040607)
+# 40608 	French Expeditionary Force unloaded in Norway 		(by Aregorn 030713)
+# 40609-12	Encirclement of the Maginot Line 			(by Hannibal and Aregorn)
+# 40613 	Vichy Army Reorganisation 				(by Aregorn 051217)
+# 40614 	Re-occupation of the Rhineland - Allied Reaction 	(by Aregorn 060114)
+# 40615 	Re-occupation of the Rhineland - Final Decision	(by Aregorn 060114)
+# 40616 	Re-occupation of the Rhineland - British Request 	(by Aregorn 060114)
+# 40617 	Re-occupation of the Rhineland - Allied Coalition 	(by Aregorn 060114)
+# 40618-19 	War against Spain 					(by Aregorn 050605)
+# 40620-21 	Sudeteland - Allied Reaction 				(by Aregorn 060204)
+# 40622 	France War (A.I.) 					(by Aregorn 060122)
+# 40623 	France Reacts (A.I.) 					(by Aregorn 060122)
+# 40624 	France Anti-Schlieffen (A.I.)				(by Aregorn 060305)
+# 40625-28  	Marine Nationale   					(by Dec152000 060121)
+# 40629 	Withdrawal of the French Expeditionary Force in Norway 	(by Aregorn 060325)
+# 40630 	France War/ Danzig (A.I.) 				(by Aregorn 081005)
+# 40631 	French Armor 						(by Aregorn 081107) requested by Alan Mateus
+
+############################################################################
+# 40600 France call to Arms (by Aregorn 050616)
+############################################################################
+event = {
+	id = 40600
+	random = no
+	country = fra
+
+	trigger = { ai = yes random = 25 war = { country = fra country = ger }
+			not = {
+				and = {
+					event = 2028
+					year = 1939
+				}
+			}
+	}
+
+	name = "France call to Arms"
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = convoy_prod_mod which = transports value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = tc_mod value = 10 }
+
+	command = { type = activate_division which = 13500 value = 510 where = 316 }
+	command = { type = activate_division which = 13500 value = 511 where = 72 }
+	command = { type = activate_division which = 13500 value = 512 where = 73 }
+	command = { type = activate_division which = 13500 value = 513 where = 875 }
+
+	command = { type = activate_division which = 13500 value = 514 where = 32 }
+	command = { type = activate_division which = 13500 value = 515 where = 33 }
+	command = { type = activate_division which = 13500 value = 516 where = 34 }
+	command = { type = activate_division which = 13500 value = 517 where = 35 }
+	command = { type = activate_division which = 13500 value = 518 where = 39 }
+	command = { type = activate_division which = 13500 value = 519 where = 59 }
+	command = { type = activate_division which = 13500 value = 520 where = 41 }
+	command = { type = activate_division which = 13500 value = 521 where = 42 }
+	command = { type = activate_division which = 13500 value = 522 where = 18 }
+		}
+}
+#########################################################################
+# 40601-05 French Military programmes (by Aregorn 050205)
+#########################################################################
+event = {
+	id = 40601
+	random = no
+	country = fra
+	trigger = { ai = yes random = 25 war = { country = fra country = ger }
+			control = { province = 56 data = fra }
+}
+
+
+
+	name = "1941 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "1941 Military programme finished"
+
+
+		command = { type = add_division value = armor }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = add_division value = motorized where = engineer }
+
+	        command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+	       command = { type = add_division value = cas }
+		command = { type = add_division value = cas }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		 command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = research_mod value = 2 }
+		command = { type = dissent value = -5 }
+
+	  	command = { type = new_model which = garrison value = 2 }
+		}
+}
+
+event = {
+	id = 40602
+	random = no
+	country = fra
+	trigger = { ai = yes random = 25 war = { country = eng country = fra }
+			control = { province = 56 data = fra }
+}
+
+
+	name = "1942 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1942 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 Military programme finished"
+
+		command = { type = add_division value = armor }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = industrial_modifier which = total value = 5 }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+	       command = { type = add_division value = cas }
+		command = { type = add_division value = cas }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = tactical_bomber when = 2 }
+		 command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = research_mod value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		}
+}
+
+
+event = {
+	id = 40603
+	random = no
+	country = fra
+	trigger = { ai = yes random = 25 war = { country = fra country = ger }
+			control = { province = 56 data = fra }
+}
+
+
+	name = "1943 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1943 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 Military programme finished"
+
+		command = { type = add_division value = armor }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = add_division value = motorized where = engineer }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+	       command = { type = add_division value = cas }
+		command = { type = add_division value = cas }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		 command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = research_mod value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		}
+}
+
+
+event = {
+	id = 40604
+	random = no
+	country = fra
+	trigger = { ai = yes random = 25 war = { country = fra country = ger }
+			control = { province = 56 data = fra }
+}
+
+
+	name = "1944 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "1944 Military programme finished"
+
+		command = { type = add_division value = armor }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = add_division value = motorized where = engineer }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+	       command = { type = add_division value = cas }
+		command = { type = add_division value = cas }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = tactical_bomber when = 2 }
+		 command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = research_mod value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+		}
+}
+
+
+event = {
+	id = 40605
+	random = no
+	country = fra
+	trigger = {	ai = yes random = 50 war = { country = fra country = ger }
+			control = { province = 56 data = fra }
+}
+
+
+	name = "1945 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1945 }
+
+	action_a = {
+		name = "1945 Military programme finished"
+
+
+		command = { type = add_division value = armor }
+		command = { type = add_division value = motorized where = engineer }
+		command = { type = add_division value = motorized where = engineer }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 56 }
+	       command = { type = add_division value = cas }
+		command = { type = add_division value = cas }
+
+		command = { type = add_corps value = air where = 56 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		 command = { type = add_division value = tactical_bomber when = 2 }
+
+		command = { type = industrial_modifier which = total value = 5 }
+		command = { type = research_mod value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+	}
+}
+############################################################################
+# 40606 Operation Catapult (by Aregorn 040516)
+############################################################################
+
+
+event = {
+   id = 40606
+   random = no
+   country = vic
+
+	name = "Operation Catapult"
+	desc = ""
+
+	style = 0
+	picture = uk_40526_catapult	#steffele
+
+	action_a = {
+		name = "Traitors!"
+
+		command = { type = remove_division which = "Algérie" value = vic }
+		command = { type = remove_division which = "Colbert" value = vic }
+		command = { type = remove_division which = "Dupleix" value = vic }
+		command = { type = remove_division which = "Jean de Vienne" value = vic }
+		command = { type = remove_division which = "La Galissonnière" value = vic }
+		command = { type = remove_division which = "Marseillaise" value = vic }
+		command = { type = remove_division which = "Emile Bertin" value = vic }
+		command = { type = relation which = ger value = 10 }
+		command = { type = domestic which = democratic value = -1 }
+
+		}
+}
+######################################################################################################################
+# 40607 (VIC) British take over of Lebanon-Syria (by Aregorn 040607)
+######################################################################################################################
+event = {
+	id = 40607
+	random = no
+	country = vic
+
+# triggered by
+
+	name = "British take over of Lebanon-Syria"
+	desc = "As soon as the French sign the Armistice, fearing an axis landing in Middle East, the British took control of the former French territory"
+
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+	 command = { type = secedeprovince which = eng value = 1862 }
+	 command = { type = secedeprovince which = eng value = 1861 }
+	 command = { type = secedeprovince which = eng value = 1863 }
+	 command = { type = secedeprovince which = eng value = 1792 }
+	 command = { type = secedeprovince which = eng value = 1793 }
+	 command = { type = secedeprovince which = eng value = 1794 }
+	 command = { type = secedeprovince which = eng value = 1795 }
+		}
+}
+#########################################################################
+# 40608 French Expeditionary Force unloaded in Norway (by Aregorn 030601)
+#########################################################################
+event = {
+	id = 40608
+	random = no
+	country = fra
+	trigger = {	random = 25 ai = yes random = 25 control = { province = 56 data = fra }
+			alliance = { country = fra country = nor }
+			war = { country = ger country = nor } event = 40528 not = { ai = ger }
+			or = { 	control = { province = 125 data = nor }
+				control = { province = 125 data = eng }
+				control = { province = 125 data = fra }
+			}
+			not = { garrison = { country = ger province = 2388 type = land size = 1 } }
+			not = { garrison = { country = ger province = 125 type = land size = 1 } }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = activate_division which = 13500 value = 500 where = 125 }
+	}
+}
+#########################################################################
+# 40609 Encirclement of the Maginot Line (by Hannibal and Aregorn)
+#########################################################################
+	event = {
+	id = 40609
+	random = no
+	country = FRA
+	persistent = yes
+
+	trigger = { 	not = {  event = { 2021 } }  not = { flag = maginot }
+			not = { control = { province = 64 data = fra } } #Reims
+	 		not = { control = { province = 317 data = fra } } #Chaumont
+	 		not = { control = { province = 318 data = fra } } #Dijon
+			}
+
+   name = "Encirclement of the Maginot Line"
+   desc = "The great fortress was completely vulnerable if attack from the rear"
+   style = 0
+   picture = "Fra_MaginotEncircled"
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+   action_a = {
+      name = "Crap!"
+      command = { type = construct which = land_fort where = 73 value = -8 } #Strassbourg
+      command = { type = construct which = land_fort where = 72 value = -8 } #Metz
+      command = { type = construct which = land_fort where = 316 value = -8 } #Mulhouse
+      command = { type = dissent value = 3 }
+      command = { type = setflag which = maginot }
+      }
+}
+#######################
+event = {
+   id = 40610
+   random = no
+   country = FRA
+   persistent = yes
+
+   trigger = {
+		flag = maginot
+		NOT = { event = { 2021 } }
+	 	control = { province = 64 data = FRA } #Reims
+	    	control = { province = 317 data = FRA } #Chaumont
+	    	control = { province = 318 data = FRA } #Dijon
+		}
+
+   name = "The Maginot Pocket has been relieved"
+   desc = "We managed to open a corridor to the Maginot. The danger of an attack in the rear is gone for now."
+   style = 0
+   picture = "Fra_MaginotEncircled"
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+   action_a = {
+      name = "Vive la France!"
+      command = { type = construct which = land_fort where = 73 value = 8 } #Strassbourg
+      command = { type = construct which = land_fort where = 72 value = 8 } #Metz
+      command = { type = construct which = land_fort where = 316 value = 8 } #Mulhouse
+      command = { type = dissent value = -3 }
+      command = { type = clrflag which = maginot }
+      }
+}
+#######################
+event = {
+   id = 40611
+   random = no
+   country = FRA
+
+
+   trigger = { 	not = { event = 2021 }
+		control = { province = 73  data = ger } #Strassbourg
+		control = { province = 72  data = ger } #Metz
+		control = { province = 316 data = ger } #Mulhouse
+	 	}
+
+
+   name = "Fall of the Maginot Line!"
+   desc = "The Germans managed to take the Maginot Line. Loads of Military Equipment has been lost."
+   style = 0
+   picture = "Fra_MaginotEncircled"
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+   action_a = {
+      name = "Ok"
+	command = { type = supplies value = -5000 }
+	command = { type = dissent value = 3 }
+	command = { type = trigger which = 40612 }
+     }
+}
+#########################
+event = {
+   id = 40612
+   random = no
+   country = GER
+
+   # triggered  by 40611 - Fall of the Maginot line
+
+
+   name = "Fall of the Maginot Line!"
+   desc = "The Maginot Line was considered to be invulnerable. When the fate of France was already sealed, Hitler ordered a frontal assault on the fortress to show the world that nothing could stop the German war machine."
+   style = 0
+   picture = "Fra_MaginotEncircled"
+
+   action_a = {
+      name = "Ausgezeichnet!"
+	command = { type = dissent value = -3 }
+	command = { type = supplies value = 5000 }
+	command = { type = morale which = land value = 2 }
+      }
+}
+
+#########################################################################
+# 40613 Vichy Army Reorganisation (by Aregorn)
+#########################################################################
+event = {
+   id = 40613
+   random = no
+   country = vic
+
+#	Triggered by 4003 (Vichy)
+
+   name = "Vichy Army Reorganisation"
+   desc = "."
+   style = 0
+
+   action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Armée Métropolitaine HQ" value = land when = 380032 where = 361 }
+		command = { type = add_division which = "Armée Métropolitaine HQ" value = hq when = 1 where = police }
+
+		command = { type = add_corps which = "Armée Métropolitaine" value = land when = 380022 where = 363 }
+		command = { type = add_division which = "2ème Division d'Infanterie" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "4ème Division d'Infanterie" value = infantry when = 1 }
+		command = { type = add_division which = "6ème Division d'Infanterie" value = infantry when = 1 }
+		command = { type = add_division which = "7ème Division d'Infanterie" value = infantry when = 1 where = anti_air }
+		command = { type = add_division which = "8ème Division d'Infanterie" value = infantry when = 1 }
+		command = { type = add_division which = "1ère Division d'Infanterie Motorisée" value = motorized when = 0 where = anti_tank }
+		command = { type = add_division which = "3ème Division d'Infanterie Motorisée" value = motorized when = 0 }
+
+		command = { type = add_corps which = "Troupes d'Afrique du Nord HQ" value = land when = 380028 where = 939 }
+		command = { type = add_division which = "Troupes d'Afrique du Nord HQ" value = hq when = 1 where = anti_air }
+
+		command = { type = add_corps which = "1ère Corps d'Afrique" value = land when = 380008 where = 935 }
+		command = { type = add_division which = "9ème Division d'Infanterie" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "10ème Division d'Infanterie" value = infantry when = 1 where = anti_air }
+		command = { type = add_division which = "11ème Division d'Infanterie" value = infantry when = 1 }
+		command = { type = add_division which = "2ème Division d'Infanterie Motorisée" value = motorized when = 0 where = anti_tank }
+
+		command = { type = add_corps which = "2ème Corps d'Afrique" value = land when = 380015 where = 939 }
+		command = { type = add_division which = "12ème Division d'Infanterie" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "1ère Division de Cavalérie" value = cavalry when = 2 }
+
+		command = { type = add_corps which = "3ème Corps d'Afrique" value = land when = 380025 where = 958 }
+		command = { type = add_division which = "13ème Division d'Infanterie" value = infantry when = 1 }
+		command = { type = add_division which = "14ème Division d'Infanterie" value = infantry when = 1 }
+
+		command = { type = add_corps which = "Troupes de Madagascar" value = land where = 1137 }
+		command = { type = add_division which = "1ère Division d'Infanterie de Réserve" value = militia when = 0 }
+
+		command = { type = add_corps which = "Troupes de Djibouti" value = land where = 1037 }
+		command = { type = add_division which = "2ème Division d'Infanterie de Réserve" value = militia when = 0 }
+
+		command = { type = add_corps which = "Troupes de Guyanne" value = land where = 875 }
+		command = { type = add_division which = "3ème Division d'Infanterie de Réserve" value = militia when = 0 }
+
+		command = { type = add_corps which = "Troupes de Fort de France" value = land where = 899 }
+		command = { type = add_division which = "4ème Division d'Infanterie de Réserve" value = militia when = 0 }
+
+		command = { type = add_corps which = "Troupes de Gabon" value = land where = 987 }
+		command = { type = add_division which = "4ème Division d'Infanterie de Réserve" value = militia when = 0 }
+		command = { type = add_division which = "5ème Division d'Infanterie de Réserve" value = militia when = 0 }
+
+		command = { type = add_corps which = "Troupes de Afrique" value = land where = 981 }
+		command = { type = add_division which = "1ère Division d'Infanterie Coloniale" value = infantry when = 1 }
+		command = { type = add_division which = "2ème Division d'Infanterie Coloniale" value = infantry when = 1 }
+		command = { type = add_division which = "3ème Division d'Infanterie Coloniale" value = infantry when = 1 }
+
+		command = { type = add_corps which = "1ère Flotte de France" value = naval when = 380034 where = 949 }
+		command = { type = add_division which = "Algérie" value = heavy_cruiser when = 2 }
+		command = { type = add_division which = "Colbert" value = heavy_cruiser when = 1 }
+		command = { type = add_division which = "Dupleix" value = heavy_cruiser when = 1 }
+		command = { type = add_division which = "Jean de Vienne" value = light_cruiser when = 3 }
+		command = { type = add_division which = "La Galissonnière" value = light_cruiser when = 3 }
+		command = { type = add_division which = "Marseillaise" value = light_cruiser when = 3 }
+		command = { type = add_division which = "Emile Bertin" value = light_cruiser when = 2 }
+		command = { type = add_division which = "Jeanne d'Arc" value = light_cruiser when = 1 }
+		command = { type = add_division which = "Lamotte-Picquet" value = light_cruiser when = 1 }
+		command = { type = add_division which = "Primaguet" value = light_cruiser when = 1 }
+		command = { type = add_division which = "1ère Flotille des Contre-Torpilleurs" value = destroyer when = 2 }
+		command = { type = add_division which = "2ème Flotille des Contre-Torpilleurs" value = destroyer when = 1 }
+		command = { type = add_division which = "3ème Flotille des Contre-Torpilleurs" value = destroyer when = 0 }
+
+		command = { type = add_corps which = "2ème Flotte de France" value = naval when = 380033 where = 365 }
+		command = { type = add_division which = "Provence" value = battleship when = 1 }
+		command = { type = add_division which = "Foch" value = heavy_cruiser when = 1 }
+		command = { type = add_division which = "4ème Flotille des Contre-Torpilleurs" value = destroyer when = 2 }
+		command = { type = add_division which = "5ème Flotille des Contre-Torpilleurs" value = destroyer when = 1 }
+
+		command = { type = add_corps which = "3ème Flotte de France" value = naval when = 380035 where = 365 }
+		command = { type = add_division which = "Dunkerque" value = battlecruiser when = 3 }
+		command = { type = add_division which = "Strasbourg" value = battlecruiser when = 3 }
+		command = { type = add_division which = "6ème Flotille des Contre-Torpilleurs" value = destroyer when = 1 }
+		command = { type = add_division which = "1ère Flotille de Convoi" value = transport when = 0 }
+		command = { type = add_division which = "2ème Flotille de Convoi" value = transport when = 0 }
+
+		command = { type = add_corps which = "Escadre d'Afrique" value = naval when = 380040 where = 981 }
+		command = { type = add_division which = "Béarn" value = carrier when = 1 where = cag }
+		command = { type = add_division which = "Richelieu" value = battleship when = 3 }
+		command = { type = add_division which = "Georges Leygues" value = light_cruiser when = 3 }
+		command = { type = add_division which = "Gloire" value = light_cruiser when = 3 }
+		command = { type = add_division which = "Montcalm" value = light_cruiser when = 3 }
+		command = { type = add_division which = "7ème Flotille des Contre-Torpilleurs" value = destroyer when = 2 }
+		command = { type = add_division which = "8ème Flotille des Contre-Torpilleurs" value = destroyer when = 0 }
+		command = { type = add_division which = "3ème Flotille de Convoi" value = transport when = 0 }
+		command = { type = add_division which = "4ème Flotille de Convoi" value = transport when = 0 }
+		command = { type = add_division which = "5ème Flotille de Convoi" value = transport when = 0 }
+		command = { type = add_division which = "6ème Flotille de Convoi" value = transport when = 0 }
+		command = { type = add_division which = "7ème Flotille de Convoi" value = transport when = 0 }
+
+		command = { type = add_corps which = "1ère Flotte des Sous-Marins" value = naval when = 380039 where = 365 }
+		command = { type = add_division which = "1ère Flotille des Sous-Marins" value = submarine when = 2 }
+		command = { type = add_division which = "2ème Flotille des Sous-Marins" value = submarine when = 2 }
+		command = { type = add_division which = "3ème Flotille des Sous-Marins" value = submarine when = 2 }
+		command = { type = add_division which = "4ème Flotille des Sous-Marins" value = submarine when = 1 }
+		command = { type = add_division which = "5ème Flotille des Sous-Marins" value = submarine when = 1 }
+		command = { type = add_division which = "6ème Flotille des Sous-Marins" value = submarine when = 1 }
+
+		command = { type = add_corps which = "Zone d'Opérations Aériennes Nord" value = air when = 380052 where = 320 }
+		command = { type = add_division which = "Groupe de Chasse 21" value = interceptor when = 1 }
+		command = { type = add_division which = "Groupe de Chasse 23" value = interceptor when = 1 }
+		command = { type = add_division which = "Groupe de Bombardement 1" value = tactical_bomber when = 1 }
+
+		command = { type = add_corps which = "Zone d'Opérations Aériennes Nord" value = air when = 380051 where = 939 }
+		command = { type = add_division which = "Groupe de Chasse 24" value = interceptor when = 1 }
+		command = { type = add_division which = "Groupe de Bombardement 2" value = tactical_bomber when = 1 }
+		command = { type = add_division which = "Groupe de Bombardement d'Assaut 18" value = tactical_bomber when = 1 }
+
+		command = { type = add_corps which = "Commande Aérienne de Dakar" value = air when = 380054 where = 981 }
+		command = { type = add_division which = "Groupe de Bombardement Naval 1" value = naval_bomber when = 6 }
+
+		command = { type = add_corps which = "Commande Aérienne Afrique Ouest" value = air when = 380045 where = 981 }
+		command = { type = add_division which = "Groupe de Bombardement Naval 2" value = naval_bomber when = 6 }
+		}
+}
+#########################################################################
+# 40614 Re-occupation of the Rhineland - Allied Reaction (by Aregorn 060114)
+#########################################################################
+event = {
+	id = 40614
+	random = no
+	country = fra
+
+	name = "Re-occupation of the Rhineland"
+	desc = "EVT_2000_DESC"
+	style = 0
+	picture = "Rhineland"
+
+	action_a = {
+		name = "Send a Formal Protest"
+		ai_chance = 100
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = peacetime_ic_mod value = 10 }
+		command = { type = sleepevent which = 40615 }
+		command = { type = sleepevent which = 50131 }
+		command = { type = sleepevent which = 50130 }
+	}
+	action_b = {
+		name = "Send an Ultimatum without the British Support"
+		ai_chance = 0
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = BEL value = -30 }
+		command = { type = relation which = HOL value = -30 }
+		command = { type = belligerence which = fra value = 20 }
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = rhineland }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = leave_alliance }
+		command = { type = sleepevent which = 40552 }
+	}
+}
+#########################################################################
+# 40615 Re-occupation of the Rhineland - Final Decision (by Aregorn 060114)
+#########################################################################
+event = {
+	id = 40615
+	random = no
+	country = fra
+	trigger = { 	event = 50130
+			NOT = {
+				war = { country = GER country = FRA }
+				alliance = { country = GER country = FRA }
+			}
+			or = { 	garrison = { country = GER province = 74 size = 1 }
+				garrison = { country = GER province = 75 size = 1 }
+			}
+	}
+
+	name = "Re-occupation of the Rhineland - Final Decision"
+	desc = "Defiant Germany refused to listen to the French demands"
+	style = 0
+	picture = "Rhineland"
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "This means War"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = dissent value = 5 }
+		command = { type = war which = ger}
+		command = { type = sleepevent which = 50131 }
+	}
+	action_b = {
+		name = "Give diplomatic concesions to Germany"
+		command = { type = relation which = ENG value = -30 }
+		command = { type = relation which = BEL value = -30 }
+		command = { type = relation which = HOL value = -30 }
+		command = { type = belligerence which = GER value = -10 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = -3 }
+		command = { type = domestic which = defense_lobby value = -3 }
+		command = { type = peacetime_ic_mod value = 10 }
+		command = { type = sleepevent which = 50131 }
+	}
+}
+#########################################################################
+# 40616 Re-occupation of the Rhinelands - British Request (by Aregorn 060114)
+#########################################################################
+event = {
+	id = 40616
+	random = no
+	country = fra
+
+	name = "Re-occupation of the Rhinelands - British Request"
+	desc = "The British requested full intervention of Allied troops"
+	style = 0
+	picture = "Rhineland"
+
+	action_a = {
+		name = "France currently can not be involved in any military action"
+		ai_chance = 99
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = peacetime_ic_mod value = 10 }
+		command = { type = setflag which = nonrhineland }
+		command = { type = sleepevent which = 40615 }
+	}
+	action_b = {
+		name = "Send an Ultimatum to Germany"
+		ai_chance = 1
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = BEL value = -30 }
+		command = { type = relation which = HOL value = -30 }
+		command = { type = belligerence which = fra value = 10 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = setflag which = rhineland }
+	}
+}
+#########################################################################
+# 40617 Re-occupation of the Rhineland - Allied Coalitions (by Aregorn 060114)
+#########################################################################
+event = {
+	id = 40617
+	random = no
+	country = fra
+
+	name = "Allied Coalition"
+	desc = "Britain decided to oppose Germany without the French blessing. Final decision needs to be taken then, whether France would stay in the alliance and face future threats alone or change policy and support the British."
+	style = 0
+
+	action_a = {
+		name = "France can not be part of the Allied coalition any longer"
+		ai_chance = 90
+		command = { type = relation which = ENG value = -100 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = leave_alliance }
+	}
+	action_b = {
+		name = "France must support its allies"
+		ai_chance = 10
+		command = { type = relation which = ENG value = 20 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+	}
+}
+#########################################################################
+# 40618-19 War against Spain (by Aregorn 050605)
+#########################################################################
+event = {
+	id = 40618
+	random = no
+	country = fra
+
+	trigger = { ai = no
+		or = { war = { country = fra country = spa }
+			war = { country = fra country = spr } }
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Nationalist Spain was not well received by neither the Latin American countries nor any mayor power."
+	style = 0
+
+	date = { day = 22 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = arg value = -100 }
+		command = { type = relation which = mex value = -100 }
+		command = { type = relation which = ven value = -100 }
+		command = { type = relation which = pru value = -100 }
+		command = { type = relation which = bol value = -100 }
+		command = { type = relation which = col value = -100 }
+		command = { type = relation which = ecu value = -100 }
+		command = { type = relation which = chl value = -100 }
+		command = { type = relation which = par value = -100 }
+		command = { type = relation which = gua value = -100 }
+		command = { type = relation which = cos value = -100 }
+		command = { type = relation which = nic value = -100 }
+		command = { type = relation which = hon value = -100 }
+		command = { type = relation which = cub value = -100 }
+		command = { type = relation which = hai value = -100 }
+		command = { type = relation which = dom value = -100 }
+		command = { type = relation which = sal value = -100 }
+		command = { type = relation which = ita value = -100 }
+		command = { type = belligerence which = fra value = 10 }
+		command = { type = dissent value = 10 }
+		command = { type = leave_alliance }
+	}
+}
+event = {
+	id = 40619
+	random = no
+	country = fra
+
+	trigger = { 	ai = yes not = { event = 2021 }
+			war = { country = eng country = spa }
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Nationalist Spain was not well received by neither the latin american countries nor any mayor power."
+	style = 0
+
+	date = { day = 22 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = leave_alliance }
+		command = { type = peace which = spa value = 1 }
+		command = { type = peace which = ger value = 1 }
+	}
+}
+#########################################################################
+# 40620-21 Sudeteland - Allied Reaction (by Aregorn 060204)
+#########################################################################
+event = {
+	id = 40620
+	random = no
+	country = fra
+
+	name = "EVT_2030_NAME"
+	desc = "EVT_2030_DESC"
+	style = 0
+	picture = "Munich"
+
+	action_a = {
+		name = "Support the Munich pact"
+		ai_chance = 100
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = peacetime_ic_mod value = 10 }
+		command = { type = setflag which = sudetelandnosupport }
+	}
+	action_b = {
+		name = "Guarantee Czechs territorial integrity without the British Support"
+		ai_chance = 0
+		command = { type = relation which = ENG value = -100 }
+		command = { type = relation which = BEL value = -30 }
+		command = { type = relation which = HOL value = -30 }
+		command = { type = relation which = cze value = 200 }
+		command = { type = belligerence which = fra value = 20 }
+		command = { type = dissent value = 5 }
+		command = { type = setflag which = sudetelandsupport }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = leave_alliance }
+	}
+}
+event = {
+	id = 40621
+	random = no
+	country = fra
+
+	name = "EVT_2030_NAME"
+	desc = "EVT_2030_DESC"
+	style = 0
+	picture = "Munich"
+
+	action_a = {
+		name = "France currently can not be involved in a War"
+		ai_chance = 90
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = domestic which = defense_lobby value = -1 }
+		command = { type = peacetime_ic_mod value = 10 }
+	}
+	action_b = {
+		name = "Support Britain and guarantee Czechs territorial integrity"
+		ai_chance = 10
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = BEL value = -30 }
+		command = { type = relation which = HOL value = -30 }
+		command = { type = relation which = cze value = 200 }
+		command = { type = belligerence which = fra value = 10 }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = setflag which = sudetelandsupport }
+	}
+}
+#########################################################################
+# 40622 France War (A.I.) (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40622
+	random = no
+	country = fra
+
+	trigger = { ai = yes event = 40600 }
+
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_FRA_atwar.ai" }
+	}
+}
+#########################################################################
+# 40623 France Reacts (A.I.) (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40623
+	random = no
+	country = fra
+
+	trigger = {	ai = yes war = { country = ger country = eng }
+			war = { country = ger country = fra }
+			or = { 	year = 1941
+				control = { province = 56 data = GER }
+			}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_FRA_Ger.ai" }
+	}
+}
+############################################################################
+# 40624 France Anti-Schlieffen (by Aregorn 060305)
+############################################################################
+event = {
+	id = 40624
+	random = no
+	country = fra
+
+	trigger = { ai = yes war = { country = fra country = ger } war = { country = bel country = ger } }
+
+	name = "ai_event"
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = remove_division which = "1ère Armée" value = fra }
+		command = { type = remove_division which = "2ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "1ère Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "4ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "6ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "7ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "8ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "14ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "10ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "1ère Div. d'Infanterie Motorisée" value = fra }
+		command = { type = remove_division which = "1ère Division Cuirassée" value = fra }
+		command = { type = remove_division which = "2ème Division Cuirassée" value = fra }
+		command = { type = remove_division which = "16ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "13ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "18ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "19ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "20ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "21ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "22ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "23ème Division d'Infanterie" value = fra }
+		command = { type = remove_division which = "24ème Division d'Infanterie" value = fra }
+
+		command = { type = add_corps value = land where = 43 }
+		command = { type = add_division which = "1ère Armée" value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division which = "14ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "10ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "1ère Div. d'Infanterie Motorisée" value = motorized when = 0 where = engineer }
+		command = { type = add_division which = "1ère Division Cuirassée" value = light_armor when = 1 }
+		command = { type = add_division which = "2ème Division Cuirassée" value = light_armor when = 1 }
+		command = { type = add_division which = "22ème Division Cuirassée" value = light_armor when = 1 }
+		command = { type = add_division which = "23ème Division Cuirassée" value = light_armor when = 1 }
+		command = { type = add_division which = "24ème Division Cuirassée" value = light_armor when = 1 }
+
+		command = { type = add_corps value = land where = 45 }
+		command = { type = add_division which = "2ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "1ère Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "4ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "6ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "7ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "8ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+
+		command = { type = add_corps value = land where = 44 }
+		command = { type = add_division which = "16ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "13ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "18ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "19ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "20ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+		command = { type = add_division which = "21ème Division d'Infanterie" value = infantry when = 2 where = engineer }
+
+		command = { type = ai which = "switch/hsr_FRA_schlieffen.ai" }
+		}
+}
+########################################################################
+# 40625-28  Marine Nationale   (by Dec152000 060121 mod by Aregorn)
+#########################################################################
+event = {
+	id = 40625
+	random = no
+	country = fra
+
+	trigger = { }
+
+	name = "Marine Nationale"
+	desc = "The Marine Nationale is a strong force. The new BCs are a state of the art design and the cruisers are well designed, but emphasize speed over protection. The fleet has been designed with a Mediterranean focus, and the ships tend to have lower range.  Submarines are large and have poor combat capabilities making them only suitable for scouting and raiding."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	date = { day = 9 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We are prepared for the Italians"
+		ai_chance = 100
+		command = { type = build_time which = naval where = relative value = 10} # Slow shipyards
+	 	command = { type = build_cost which = naval where = relative value = -10 }
+
+		command = { type = range which = battleship value = -800 } # Poor range
+	  	command = { type = naval_attack which = battleship value = -2 } # Poor FC/throw weigth
+	  	command = { type = shore_attack which = battleship value = -1 } # Poor throw weight
+		command = { type = fuel_consumption which = battleship value = 0.4 } # poor fuel economy
+
+		command = { type = range which = battlecruiser value = -500 }
+	  	command = { type = shore_attack which = battlecruiser value = -2 } # Poor throw weight
+	  	command = { type = naval_attack which = battlecruiser value = -3 } # Poor throw weigth
+		command = { type = fuel_consumption which = battlecruiser value = 0.4 } # Poor fuel economy
+
+		command = { type = speed which = carrier value = -1 }
+		command = { type = range which = carrier value = -200 }
+
+	  	command = { type = speed which = heavy_cruiser value = 1 } # Fast
+		command = { type = fuel_consumption which = heavy_cruiser value = 0.2 } # poor fuel economy
+	  	command = { type = max_positioning which = heavy_cruiser value = 0.01 }
+	  	command = { type = min_positioning which = heavy_cruiser value = 0.01 }
+
+		command = { type = range which = light_cruiser value = -1000 }
+	 	command = { type = build_cost which = light_cruiser where = relative value = -5 }
+
+		command = { type = range which = destroyer value = -500 }
+	  	command = { type = speed which = destroyer value = 2 } # Fast
+	  	command = { type = max_positioning which = destroyer value = 0.02 }
+	  	command = { type = min_positioning which = destroyer value = 0.02 }
+		command = { type = fuel_consumption which = destroyer value = 0.2 } # Poor fuel economy
+		command = { type = build_time which = destroyer where = relative value = 10 } # big
+	 	command = { type = build_cost which = destroyer where = relative value = 10 }
+		command = { type = supply_consumption which = destroyer value = 0.2 }
+
+		command = { type = air_defense which = submarine value = -1 } # Slow diving
+		command = { type = morale which = submarine value = -5 } # Poor reliability
+
+		command = { type = scrap_model which = battleship value = 2 }
+		command = { type = scrap_model which = battlecruiser value = 2 }
+		command = { type = scrap_model which = heavy_cruiser value = 1 }
+		command = { type = scrap_model which = light_cruiser value = 2 }
+		command = { type = scrap_model which = destroyer value = 1 }
+	}
+}
+###################################
+event = {
+	id = 40626
+	random = no
+	country = fra
+
+	trigger = { }
+
+	name = "Marine Nationale Naval Plan"
+	desc = "The Marine Nationale is ready to start replacing the WW1 era BBs. The Richelieu is currently underway and 3 additional BBs are planned, the first will be laid down in 1936.  Additionally, a new CV to compliment the aging Bearn is planned for 1938 as well."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -2.5 }
+	}
+	action_b = {
+		name = "We do not need the plan"
+		ai_chance = 0
+		command = { }
+		command = { type = sleepevent which = 40627 }
+		command = { type = sleepevent which = 40628 }
+	}
+}
+####################################
+event = {
+	id = 40627
+	random = no
+	country = FRA
+
+	trigger = { ai = yes }
+
+	date = { day = 12 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Jean Bart Laid Down"
+	desc = "With much fanfare the keel of the battleship Jean Bart is laid down (Historical target completion November, 1941)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+###################################
+event = {
+	id = 40628
+	random = no
+	country = fra
+
+	trigger = { ai = yes }
+
+	date = { day = 26 month = november year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Joffre Laid Down"
+	desc = "With much fanfare the keel of the carrier Joffre is laid down (Historical target completion July, 1942)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+###################################################################################
+# 40629 Withdrawal of the French Expeditionary Force in Norway (by Aregorn 060325)
+###################################################################################
+event = {
+	id = 40629
+	random = no
+	country = fra
+	trigger = {	event = 40608 not =  { control = { province = 56 data = -1 } }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = remove_division which = 13500 value = 500  }
+	}
+}
+#########################################################################
+# 40630 France War/ Danzig (A.I.) (by Aregorn 081005)
+#########################################################################
+event = {
+	id = 40630
+	random = no
+	country = fra
+
+	trigger = {	ai = yes event = 2028 war = { country = ger country = eng }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_FRA_danzig.ai" }
+	}
+}
+#################################################################################################################
+# 40631 French Armor (by Aregorn 081107) requested by Alan Mateus
+#################################################################################################################
+event = {
+	id = 40631
+	random = no
+	country = fra
+
+	trigger = { random = 25 }
+
+	name = "French Armor"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities."
+	style = 0
+
+	picture = french_tank	#by Aregorn
+	date = { day = 1 month = february year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "Extremes policies are risky"
+	ai_chance = 100
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 2 }
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = 15 }
+	command = { type = build_cost which = armor when = now where = relative value = 15 }
+	command = { type = build_time which = mechanized when = now where = relative value = 10 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 10 }
+	command = { type = tc_mod value = -2 }
+	}
+	action_b = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 0
+	command = { type = build_time which = armor when = now where = relative value = -30 }
+	command = { type = build_cost which = armor when = now where = relative value = -30 }
+	command = { type = supply_consumption which = armor value = -0.5 }
+	command = { type = fuel_consumption which = armor value = -1 }
+	command = { type = speed which = armor value = 1 }
+	command = { type = transport_weight which = armor value = -10 }
+
+	command = { type = build_time which = mechanized when = now where = relative value = -20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = mechanized value = -0.1 }
+	command = { type = transport_weight which = mechanized value = -10 }
+
+	command = { type = hard_attack which = motorized value = -1 }
+	command = { type = soft_attack which = motorized value = -1 }
+	command = { type = build_time which = motorized when = now where = relative value = -20 }
+	command = { type = build_cost which = motorized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = motorized value = -0.1 }
+	command = { type = transport_weight which = motorized value = -5 }
+
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = industrial_modifier which = total value = 1 }
+	command = { type = tc_mod value = 5 }
+	}
+	action_c = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 4 }
+	command = { type = soft_attack which = armor value = 4 }
+	command = { type = build_time which = armor when = now where = relative value = 30 }
+	command = { type = build_cost which = armor when = now where = relative value = 30 }
+	command = { type = supply_consumption which = armor value = 0.5 }
+	command = { type = fuel_consumption which = armor value = 0.5 }
+	command = { type = speed which = armor value = -1 }
+	command = { type = transport_weight which = armor value = 5 }
+	command = { type = max_organization which = armor value = 3 }
+
+	command = { type = hard_attack which = mechanized value = 2 }
+	command = { type = soft_attack which = mechanized value = 3 }
+	command = { type = build_time which = mechanized when = now where = relative value = 20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = mechanized value = 0.1 }
+	command = { type = speed which = mechanized value = 1 }
+	command = { type = transport_weight which = mechanized value = 5 }
+	command = { type = max_organization which = mechanized value = 3 }
+
+	command = { type = build_time which = motorized when = now where = relative value = 20 }
+	command = { type = build_cost which = motorized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = motorized value = 0.1 }
+	command = { type = speed which = motorized value = 1 }
+	command = { type = max_organization which = motorized value = 3 }
+	command = { type = industrial_modifier which = total value = -1 }
+	command = { type = tc_mod value = -10 }
+	}
+	action_d = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}

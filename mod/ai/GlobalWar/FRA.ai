@@ -1,0 +1,247 @@
+war = 50
+
+combat = {
+	   UTL = 100
+	   UPS = 100
+	   UES = 100
+	   URO = 100
+	   UAP = 100
+	   UPE = 100
+	   UCS = 100
+	   UIC = 100
+	   UPR = 100
+	   UER = 100
+	   UTO = 100
+	   UIR = 100
+	}
+
+befriend = {
+	     USN = 50
+	     UCH = 50
+	     UGS = 50
+	     UTC = 50
+	     UAU = 50
+	   }
+trade = {
+	cancel_deal_threshold = 2
+
+	energy 		= -1
+	rare_materials 	= -1
+	metal 		= -1
+	oil 		= -1
+	supplies 	= -1
+	money 		= -1
+
+
+	favored = {
+		USN = 50
+		UCH = 50
+		UGS = 50
+		UTC = 50
+		UAU = 50
+	}
+	embargo = {
+		    UTL
+		    UPS
+		    UES
+		    URO
+		    UAP
+		    UPE
+	   	    UCS
+	   	    UIC
+	   	    UPR
+	   	    UER
+	   	    UTO
+	   	    UIR
+	}
+}
+tech_sharing = {
+	favored = {
+		    USN = 50
+	     	    UCH = 50
+	     	    UGS = 50
+	     	    UTC = 50
+	     	    UAU = 50
+	}
+}
+###################################
+# Spying
+###################################
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.8
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 20
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+		country = ENG
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UIC
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UPS
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UIR
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UTL
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UCS
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UAP
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UER
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UTO
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UPE
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= URO
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UPR
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans		= 3
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= UPS
+	}
+}

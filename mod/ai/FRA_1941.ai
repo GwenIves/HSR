@@ -1,0 +1,487 @@
+# 100 = Total warmonger, 0 = absolute pacifist
+#
+# Hearts of Iron 2
+#
+# 1941 Free France AI
+# Tamerlan
+
+
+# 100 = Total warmonger, 0 = absolute pacifist
+war = 10
+reinforcement = 0.3500
+upgrading = 0.3500
+
+combat = {
+}
+befriend = {
+	USA = 50
+	DEN = 40
+	BEL = 40
+	HOL = 40
+	NOR = 40
+	PER = 30
+	POL = 30
+	GRE = 30
+	SPA = 30
+	POR = 30
+	SAU = 20
+	SPR = 20
+	SWE = 20
+	VEN = 20
+	AFG = 20
+	YUG = 20
+	TUR = 20
+	BRA = 20
+}
+protect = {
+}
+
+strat_redeploy_threshold = 20
+
+max_front_ratio			= 1.2
+max_garrison_prop		= 0.05 #Not my job
+min_garrison_prop		= 0.02
+###################################
+# Spying
+###################################
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.8
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 20
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+		country = FRA
+	}
+	spyprefsdata = {
+		country_priorities	= 10
+		steal_blueprint 	= 10
+		minister_assassination 		= 2
+		smear_campaign 		= 4
+		coup 				= 2
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans 	= 2
+		massmedia 			= 3
+		disrupt_techteam	= 5
+		country 			= VIC
+	}
+	spyprefsdata = {
+		country_priorities	= 5
+		steal_blueprint 	= 10
+		minister_assassination 		= 0
+		smear_campaign 		= 4
+		coup 				= 0
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans 	= 2
+		massmedia 			= 3
+		disrupt_techteam	= 5
+		country 			= GER
+	}
+}
+construction = {
+	max_factor		= 0.02
+	AA_batteries	 	= no
+	coastal_fort 		= no
+	ic_at_war		= yes
+	ic_end_year		= 1946
+}
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace = 270		# Max production run length in DAYS while at peace
+	max_batch_war = 270		# Max production run length in DAYS while at war with no home front
+	max_batch_home_front = 180
+	extra_convoys_war = 0.0500
+	extra_convoys_peace = 0.0500
+
+
+
+#						43 %
+	infantry = 		18
+	cavalry = 		0
+	motorized = 	10
+	mechanized =	0
+	light_armor =	7
+	armor =		2
+	paratrooper = 	0
+	marine = 		2
+	bergsjaeger = 	0
+	garrison	=	4
+
+#						22 %
+	cas 		= 		6
+	interceptor = 		5
+	multi_role = 		3
+	strategic_bomber = 	1
+	tactical_bomber = 	2
+	naval_bomber = 		5
+	transport_plane = 	0
+
+#						30 %
+	battleship = 		1
+	carrier = 			1
+	destroyer = 		12
+	light_cruiser =		2
+	heavy_cruiser = 		2
+	battlecruiser =		2
+	submarine = 		0
+	transports = 		10
+
+#5%
+      hq = 				5
+      militia = 			0
+      flying_bomb = 		0
+      flying_rocket = 		0
+# Land types:
+	artillery		=	9
+	sp_artillery	=	3
+	rocket_artillery	=	3
+	sp_rocket_artillery	=	2
+	anti_tank		=	5
+	tank_destroyer	=	2
+	light_armor_brigade	=	3
+	heavy_armor		=	2
+	super_heavy_armor	=	2
+	armored_car		=	8
+	anti_air		=	5
+	police		=	3
+	engineer		= 	3
+# Sum of these should be <= 50
+
+	cag 	= 100
+	escort 	= 100
+
+	    naval_asw = 20.0000
+	    naval_anti_air_s = 20.0000
+	    naval_radar_s = 20.0000
+	    naval_fire_controll_s = 20.0000
+	    naval_improved_hull_s = 10.0000
+	    naval_torpedoes_s = 10.0000
+	    naval_anti_air_l = 0.0000
+	    naval_radar_l = 0.0000
+	    naval_fire_controll_l = 0.0000
+	    naval_improved_hull_l = 0.0000
+	    naval_torpedoes_l = 0.0000
+}
+
+technology = {
+
+	endgoal = { 4070 4230 5440 8200 }
+	preference = { 1030 3230 4040 4190 4220 5150 5330 5350 5360 5420 8130
+			2320 2330 2470 2480 }
+
+	armor = 		4.0
+	infantry = 		4.0
+	industry = 		7.0
+	aircraft = 		2.0
+	naval = 		4.0
+	land_doctrines = 	6.0
+	air_doctrines = 	2.0
+	naval_doctrines =	3.0
+	secret_weapons = 	0.1
+}
+
+garrison = {
+	defend_overseas_beaches = yes
+
+
+
+	# PRIORITIES:
+	beach			= 70	# Beach
+	capital			= 10	# Our capital
+	human_border		= 1	# Ignored for allied human players
+	war_target		= 100	# The next country targeted for attack by this AI
+	home_peace_cap 	= 5
+	war_zone_odds 	= 1.0
+	opposing_alliance	= 5	# For neutrals, all alliances are "opposing"
+	claim_threat	= 1	# If we are neutral, countries with claims on us get this
+	unstable_border	= 1	# Bordering countries at war with someone else get this
+
+#2/15=0.26
+	home_multiplier = 0.13
+	overseas_multiplier = 0.2 #In case of conquest hold them
+
+	key_point_prio_mult	= 0
+
+	# Borders with specific countries
+	country_priorities = {
+		SAU = -1
+		BEL = -1
+		TUR = -1
+	}
+#4 divisions/7 provinces=0.57
+	area_multiplier = {
+		1792 = 0.57
+	}
+	# Specific provinces
+	province_priorities = {
+	}
+}
+
+front = {
+	recklessness 		= 	2 # 0-3
+	distrib_vs_ai 		= 	reactive
+	distrib_vs_human 	= 	even
+
+	enemy_reinf_days	=	1
+
+	reserve_prop		=	0.2
+	panic_ratio_vs_ai	=	2.0
+	panic_ratio_vs_human	=	1.5
+	base_attack_odds	=	2.5
+	min_attack_odds		=	1.5
+	max_attack_odds		=	3.0
+	reinforce_odds		=	1.0 #don't reinforce
+	withdraw_odds		=	1.4
+
+	strength = 1.0
+	organisation = 2.0
+	soft_attack = 1.0
+	hard_attack = 2.0
+	ground_defense = 1.0
+	dig_in = 1.05 #1.25 Against defender
+
+	occupied 	= 0.7
+	owned 		= 0.7
+
+}
+invasion = {
+	#for evaluating specific province target.
+	base = 1.0			# Relative modifier. (lower = specific targets much more important.)
+	random = 1.0			# How big a random range.  (1.0 = 1%)
+	coastal = 1.0                   # increase to avoid coastal forts more.
+	beach = 1.0                     # higher, avoid worst beaches.
+	distance = 2.0                  # higher = avoid long distance.
+	pocket = 1.0                    # prioritise pockets, ie provinces with no adjacent controlled by same.
+	island = 1.0                    # prioritise taking pure islands.
+	enemy = 1.0                     # higher = much more vary of troops in province.
+	adjacentenemy = 1.0             # higher = much more vary of troops nearby
+	air_base	= 0.2   	# add this priority for air bases within adjacentenemy
+	naval_base	= 0.1		# add this priority for naval bases within adjacentenemy
+	air_support	= 0.5   	# add this priority for beaches within reach of air_bases
+	ignore = no			# to do invasions, even if a front with homearea.  (ie allow germany to invade norway, while at war with france.9)
+
+	redirect	  = nearest	# priority/nearest/home   priority refers to targets in the AI file,
+					# nearest is the closest enemy beach where the AI has
+					# good attack odds and home is to return back to port
+
+	#specific provinces can be targetted to get special bonuses..
+	target = {
+#	Italy
+		525 = 70	# Palermo
+		526 = 50	# Catania
+		521 = 60	# Naples
+		523 = 60	# Taranto
+		520 = 50	# Foggia
+		519 = 30	# Anzio
+#	other
+		31  = 100  	# Malta
+# 	Middle East
+		404 = 100	# Palestine
+		406 = 100	#
+		1793 = 100	# Syria
+		1794 = 100	#
+		1798 = 100	# Palestine
+		1799 = 100	#
+		1800 = 100	#
+		1801 = 100	#
+		1862 = 100	# Lebanon
+# North Africa
+		900 = 100	# Suez
+		901 = 100	# Port Said
+		906 = 100	# Alexandra
+		909 = 100	# El Alamein
+		910 = 100	# Fuka
+		916 = 120	# Tobruk
+		919 = 120	# Bardia
+		924 = 100	# Bengazi
+		932 = 100	# Lybia
+		933 = 100
+		938 = 100	# Tunisia
+		939 = 100
+		940 = 100
+		949 = 100	# Algeria
+		953 = 100
+		954 = 100	# Morocco
+		958 = 100
+#Islands of the colonial empire which might need to be recaptured
+#Indian ocean
+		1134 = 50 #Madagacar
+		1137 = 50 #Madagacar
+		1037 = 50 #Djibouti
+		1135 = 50 #Reunion
+#Pacific ocean
+		1692 = 50 #Noumea
+		1689 = 50 #Elspiritusanto
+		1692 = 50 #Bougainville
+		1751 = 50 #Tahiti
+#West indies
+		875 = 50 #Cayenne
+		879 = 50 #Fort de France
+		898 = 50 #Guadeloupe
+	}
+}
+admiral = {
+	ignore = {
+		"Southeast Northsea"
+		"kattegat"
+		"Bothnian Bay"
+		"northern baltic"
+		"southern baltic"
+		"Southeast Northsea"
+		"East North Sea"
+		"Norwegian Sea"
+	}
+	#specific provinces can be targetted to get special bonuses..
+	target = {
+#East Med
+		2452 = 100
+		2454 = 100
+		2451 = 100
+	}
+
+	core = {
+#Atlantic
+		2278
+		2277
+#East Med
+		2452
+		2454
+		2451
+	}
+
+}
+
+#bomber = {
+#     units = 10.000 #we are not threaten uy bombing
+#      defensiveIC = 2.000
+#      recentlybombed = 2.000
+#      protectoil = 1.00
+#      protectenergy = 1.00
+#      protectmetal = 1.000
+#      protectrarematerials = 1.000
+#      areasize = 0.1
+#      areadistance = 1.0
+#      adjacency = 0.1
+#      targetic = 10.000
+#      avoidaa = 1.000
+#      targetenergy = 5.000
+#      targetmetal = 5.000
+#      targetoil = 20.000
+#      targetrarematerials = 20.000
+#      occupied = 25.000
+#      fighter = 40.000
+#}
+
+trade = {
+	favored = {
+		AST = 200  	# Preferred Countries to trade techs with. Higher value also means better techs.
+		ENG  = 200
+		SAF = 200
+		NZL = 200
+		CAN = 200
+		USA = 200
+		SOV = 100
+		CHI = 100
+		BEL = 50
+	}
+	embargo = {
+		GER  		# Will not trade techs with these countries.
+		ITA		# Allies
+		JAP
+		MAN
+		VIC
+		HUN
+		CRO
+		SLO
+		ROM
+		BUL
+		FIN
+		CZE
+	}
+}
+leader_ratio = {
+	land_field_marshal 	=0.02
+	land_general 		=0.031
+	land_lt_general 	=0.41
+
+	sea_grand_admiral 	=0.02
+	sea_admiral 		=0.061
+	sea_vice_admiral 	=0.401
+
+	air_marshal 		=0.02
+	air_general 		=0.091
+	air_lt_General 		=0.11
+}
+tech_sharing = {
+	favored = {
+		AST = 200  	# Preferred Countries to trade techs with. Higher value also means better techs.
+		ENG = 200
+		SAF = 200
+		NZL = 200
+		CAN = 200
+		USA = 200
+		SOV = 100
+		CHI = 100
+		BEL = 50
+	}
+	embargo = {
+		GER  		# Will not trade techs with these countries.
+		ITA		# Allies
+		JAP
+		MAN
+		VIC
+		HUN
+		CRO
+		SLO
+		ROM
+		BUL
+		FIN
+		CZE
+	}
+	prioritized = {
+	}
+}
+
+air_marshal = {
+	icxdayscostfactor = 10.0		# How to value true industrial cost when calculating expect causalties
+	manpowercostfactor = 100.0		# How to value manpower cost when calculating expect causalties
+	destructionriskthreashold = 0.2		# when to fear a divisiopn might be destroyed
+
+	airsuperioritydesirability = 10.0	# desirability is a multiplier used when calcualting the mission desirability
+	airsuperioritylosstolerance = 1.0	# tolerance is the required kill:loss ration expected to do mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+	groundattacklosstolerance = 1.0
+	groundattackdesirability = 1.0
+	interdictionlosstolerance = 1.5
+	inderdictiondesirability = 1.0
+	logisticalstrikelosstolerance = 4.5
+	logisticalstrikeefficency = 0.01	# efficency is a tweakable param to adjust according to how much actual damage comes from doing this mission (not to be confused with desirability)
+	logisticalstrikedesirability = 100000.0
+	runwaycrateringlosstolerance = 1.5
+	runwaycrateringefficency = 0.01
+	runwaycrateringdesirability = 20000.0
+	strategicstriketolerance = 4.5
+	strategicstrikeefficency = 0.01
+	strategicstrikedesirability = 1000000.0
+	installationstriketolerance = 1.5
+	installationstrikeefficency = 0.01
+	installationstrikedesirability = 10.0
+	navalstriketolerance = 1.0
+	navalstrikedesirability = 10.0
+	portstriketolerance = 1.0
+	portstrikedesirability = 9.0
+}

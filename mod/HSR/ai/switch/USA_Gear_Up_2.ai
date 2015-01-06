@@ -1,0 +1,69 @@
+#
+# by Aregorn for HSR
+#
+
+construction = {
+	max_factor = 0.40
+
+	AA_batteries = yes
+	max_AA_level = 3
+	AA_provs = {
+		658  # Hawaii
+		662  # Midway
+		1756 # Samoa
+		765 # San Francisco
+		762 # Los Angeles
+		761 # San Diego
+		780 # Seattle
+		600 # Boston
+		602 # New York
+		606 # Washington DC
+		651 # Miami
+	}
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = yes
+	max_radar = 3
+	radar_provs = {
+		663 # Pearl Harbor
+		658  # Hawaii
+		662  # Midway
+		1756 # Samoa
+		765 # San Francisco
+		761 # San Diego
+		780 # Seattle
+		549 # Anchorage
+		600 # Boston
+		602 # New York
+		606 # Washington DC
+		651 # Miami
+	}
+
+	air_base = yes
+	max_air_base = 4
+	air_base_provs = {
+		658  # Hawaii
+		662  # Midway
+		1766 # Johnson Island
+		1762 # Phoenix Island
+		1756 # Samoa
+	}
+
+	naval_base = yes
+	max_naval_base = 5
+	naval_base_provs = {
+		1756 # Samoa
+	}
+
+	land_fort = no
+	max_land_level = 3
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1940
+	ic_end_year = 1942
+	IC_provs = { }
+}

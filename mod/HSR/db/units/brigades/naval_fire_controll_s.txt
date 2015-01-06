@@ -1,0 +1,127 @@
+# Aregorn for HSR2 ARM
+# 0 - Basic Naval Fire Control Computer
+model = {
+cost 				= 2
+buildtime			= 140
+manpower 			= 0.2
+surfacedetectioncapability	= 0
+airdetectioncapability		= 0
+subdetectioncapability		= 0
+airdefence			= 0
+seaattack			= 1
+convoyattack			= 0
+subattack			= 0
+airattack			= 0
+shorebombardment		= 1
+distance			= 0.05
+supplyconsumption 		= 0.4
+fuelconsumption			= 0
+upgrade_time_factor 		= 0.5
+upgrade_cost_factor 		= 1.0
+}
+# 1 - Improved Naval Fire Control Computer
+model = {
+cost 				= 2.5
+buildtime			= 140
+manpower 			= 0.2
+surfacedetectioncapability	= 0
+airdetectioncapability		= 0
+subdetectioncapability		= 0
+airdefence			= 0
+seaattack			= 1.5
+convoyattack			= 0
+subattack			= 0
+airattack			= 0
+shorebombardment		= 1.5
+distance			= 0.1
+supplyconsumption 		= 0.4
+fuelconsumption			= 0
+upgrade_time_factor 		= 0.5
+upgrade_cost_factor 		= 1.0
+}
+# 2 - Advanced Naval Fire Control Computer
+model = {
+cost 				= 3
+buildtime			= 140
+manpower 			= 0.2
+surfacedetectioncapability	= 0
+airdetectioncapability		= 0
+subdetectioncapability		= 0
+airdefence			= 0
+seaattack			= 2
+convoyattack			= 0
+subattack			= 0
+airattack			= 0
+shorebombardment		= 2
+distance			= 0.15
+supplyconsumption 		= 0.4
+fuelconsumption			= 0
+upgrade_time_factor 		= 0.5
+upgrade_cost_factor 		= 1.0
+}
+#####################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 3 - Semi-Modern Naval Fire Control Computer
+model = {
+cost 				= 3.5
+buildtime			= 140
+manpower 			= 0.2
+surfacedetectioncapability	= 0
+airdetectioncapability		= 0
+subdetectioncapability		= 0
+airdefence			= 0
+seaattack			= 2.5
+convoyattack			= 0
+subattack			= 0
+airattack			= 0
+shorebombardment		= 2.5
+distance			= 0.2
+supplyconsumption 		= 0.4
+fuelconsumption			= 0
+upgrade_time_factor 		= 0.5
+upgrade_cost_factor 		= 1.0
+}
+# 4 - Modern Naval Fire Control Computer
+model = {
+cost 				= 4
+buildtime			= 140
+manpower 			= 0.2
+surfacedetectioncapability	= 0
+airdetectioncapability		= 0
+subdetectioncapability		= 0
+airdefence			= 0
+seaattack			= 3
+convoyattack			= 0
+subattack			= 0
+airattack			= 0
+shorebombardment		= 3
+distance			= 0.25
+supplyconsumption 		= 0.4
+fuelconsumption			= 0
+upgrade_time_factor 		= 0.5
+upgrade_cost_factor 		= 1.0
+}

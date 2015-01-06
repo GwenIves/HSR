@@ -1,0 +1,648 @@
+#
+# by Aregorn for HSR
+#
+
+
+switch = no # [yes/no]
+max_front_ratio = 4.0
+max_garrison_prop = 0.30
+min_garrison_prop = 0.20
+neutrality = 120.000
+war = 5
+strat_redeploy_threshold = 25
+exp_force_ratio = 0.0
+exp_force_ratios = { }
+no_exp_forces_to = { }
+
+###################################
+# Diplomacy
+###################################
+combat = { CHI = 50 }
+
+claim_acceptance = -49
+
+demand_claims = {
+	CGX
+	SIK
+	CXB
+	CYN
+	CHI
+	JAP
+	MAN
+}
+befriend = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+	CGX = 100
+}
+protect = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+	CGX = 100
+}
+target = {
+	#Guangxi Clique
+	1309 = 150
+	1310 = 150
+	1258 = 150
+	1311 = 150
+	1312 = 150
+	1249 = 150
+	1248 = 150
+	1314 = 150
+	1313 = 150
+	1317 = 150
+	1318 = 150
+	1320 = 150
+	1321 = 150
+	1325 = 150
+	1319 = 150
+
+	#Yunan
+	1282 = 125
+	1281 = 125
+	1327 = 125
+	1305 = 125
+	1308 = 125
+	1362 = 125
+	1307 = 125
+	1293 = 125
+	1294 = 125
+
+	#Shanxi
+	1206 = 115
+	1205 = 115
+	1204 = 115
+	1203 = 115
+	1210 = 115
+	1211 = 115
+	1212 = 115
+	1224 = 115
+	1215 = 115
+	1213 = 115
+	1216 = 115
+	1214 = 115
+	1207 = 115
+	1208 = 115
+	1272 = 115
+	1209 = 115
+	1225 = 115
+	1226 = 115
+
+	#Xibei San Ma
+	1442 = 110
+	1441 = 110
+	1273 = 110
+	1440 = 110
+	1443 = 110
+	1274 = 110
+	1444 = 110
+	1439 = 110
+
+	#China
+	1276 = 200
+	1275 = 200
+	1360 = 200
+	1361 = 200
+	1363 = 200
+	1364 = 200
+	1365 = 200
+	1277 = 200
+	1269 = 200
+	1268 = 200
+	1267 = 200
+	1266 = 200
+	1279 = 200
+	1280 = 200
+	1265 = 200
+	1264 = 200
+	1263 = 200
+	1262 = 200
+	1261 = 200
+	1260 = 200
+	1259 = 200
+	1257 = 200
+	1256 = 200
+	1255 = 200
+	1254 = 200
+	1253 = 200
+	1252 = 200
+	1251 = 200
+	1250 = 200
+	1247 = 200
+	1246 = 200
+	1245 = 200
+	1244 = 200
+	1243 = 200
+	1242 = 200
+	1241 = 200
+	1240 = 200
+	1239 = 200
+	1238 = 200
+	1237 = 200
+	1236 = 200
+	1235 = 200
+	1234 = 200
+	1233 = 200
+	1232 = 200
+	1231 = 200
+	1230 = 200
+	1229 = 200
+	1228 = 200
+	1227 = 200
+	1223 = 200
+	1222 = 200
+	1221 = 200
+	1220 = 200
+	1219 = 200
+	1218 = 200
+	1217 = 200
+	1278 = 200
+
+	# Sinkiang
+	1435 = 90
+	1445 = 90
+	1447 = 90
+	1421 = 90
+	1432 = 90
+	1433 = 90
+	1446 = 90
+	1430 = 90
+	1431 = 90
+
+	#United Kingdom
+	1315 = 40 #Hong Kong
+
+	#Portugal
+	1316 = 100 # Macao
+}
+trade = {
+	energy 		= -1
+	rare_materials 	= -1
+	metal 		= -1
+	oil 		= -1
+	supplies 	= -1
+	money 		= -1
+
+	favored = {
+		CHI = 100
+	}
+	embargo = { JAP }
+}
+tech_sharing = {
+	favored = { }
+	embargo = { JAP }
+	not = { }
+	prioritized = {
+		# Arcriculture
+		5020 = 100
+		5030 = 100
+		5040 = 100
+
+		# Inf support
+		1310 = 100
+		1320 = 100
+		1330 = 100
+		1340 = 100
+		1350 = 100
+		1360 = 100
+
+		# Production
+		5050 = 100
+		5060 = 100
+		5070 = 100
+		5080 = 100
+		5090 = 100
+		5100 = 100
+		5110 = 100
+		5120 = 100
+		5130 = 100
+		5180 = 100
+
+		# Mountain Unit techs
+		1110 = 100
+		1120 = 100
+		1130 = 100
+		1140 = 100
+	}
+}
+###################################
+# Spying
+###################################
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.7
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 10
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+		country = CHC
+	}
+	spyprefsdata = {
+		country_priorities	= 6
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans 	= 2
+		massmedia 			= 1
+		disrupt_techteam	= 5
+		country 			= CHI
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 3
+		coup 				= 0
+		sabotage_industry 	= 5
+		nuclear_sabotage 	= 0
+		found_partisans 	= 2
+		massmedia 			= 1
+		disrupt_techteam	= 5
+		country 			= JAP
+	}
+	spyprefsdata = {
+		country_priorities	= 2
+		steal_blueprint 	= 10
+		minister_assassination          = 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 4
+		nuclear_sabotage 	= 0
+		found_partisans 	= 1
+		massmedia 			= 1
+		disrupt_techteam	= 4
+		country 			= GXB
+	}
+}
+###################################
+# Construction and Tech Research
+###################################
+#Default values
+construction = {
+	max_factor = 0.200
+
+
+	AA_batteries = atwar
+	max_AA_level = 3
+	AA_provs = {
+		1271 # Yanan
+	}
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = no
+	max_radar = 5
+	radar_provs = { }
+
+	air_base = atwar
+	max_air_base = 2
+	air_base_provs = { }
+
+	naval_base = no
+	max_naval_base = 5
+	naval_base_provs = { }
+
+	land_fort = yes
+	max_land_level = 2
+	fort_borders = { CHI CSX JAP CXB }
+
+	ic_at_war = yes
+	force_ic_until = 1935
+	ic_end_year = 1940
+	IC_provs = {
+		1271 # Yanan
+	}
+}
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 43
+	cavalry 	= 2
+	motorized 	= 3
+	mechanized 	= 2
+	light_armor 	= 4
+	armor 		= 2
+	paratrooper 	= 0
+	marine 		= 0
+	bergsjaeger 	= 1
+	garrison	= 15
+	hq 		= 1
+	militia 	= 0
+#				73 %
+	interceptor 	= 7
+	multi_role 	= 0
+	escort 		= 0
+	cas 		= 5
+	strategic_bomber = 0
+	tactical_bomber = 5
+	naval_bomber 	= 1
+	transport_plane = 0
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#				18 %
+	battleship 	= 0
+	carrier 	= 0
+	destroyer 	= 4
+	light_cruiser 	= 2
+	heavy_cruiser 	= 0
+	battlecruiser 	= 0
+	submarine 	= 2
+	transports 	= 1
+#				9 %
+
+	#### Brigades
+	artillery 		= 50
+	sp_artillery 		= 0
+	rocket_artillery	= 0
+	sp_rct_artillery 	= 0
+	anti_tank 		= 20
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 0
+	heavy_armor 		= 0
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 20
+	police 			= 0
+	engineer 		= 10
+
+	cag = 100.000
+}
+
+technology = {
+	endgoal 	= { }
+	preference 	= {
+		# Arcriculture
+		5020 5030 5040
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Production
+		5050 5060 5070 5110 5130 5180
+
+		# Mountain Unit techs
+		1110 1120 1130 1140
+	}
+	ignore 		= {
+	        # Aircraft, Naval, Vehicle Assembly & Rocket Assembly
+		5140 5150 5160 5170
+
+		# Airborne
+		1070 1080 1090 1100
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Rocket Artillery
+		2370 2380 2390
+
+		# Refining
+		5210 5220 5230 5240
+
+		# Rocketry
+		5550 5560 5570 5580 5590
+
+		# Atomic Research
+		5470 5480 5490 5500 5510 5520 5530 5540
+
+		# Bas Decimetric
+		5410 5420 5430 5440 5450 5460
+
+		# motorized
+		1230 1240 1250
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Medium tanks
+		2070 2080 2090
+	}
+
+	armor 		= 2
+	infantry 	= 4
+	industry 	= 2
+	aircraft 	= 0
+	naval 		= 0
+	land_doctrines 	= 2
+	secret_weapons 	= 0
+	air_doctrines 	= 0
+	naval_doctrines = 0
+}
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+leader_ratio = {
+	land_field_marshal 	=0.02
+	land_general 		=0.031
+	land_lt_general 	=0.41
+
+	sea_grand_admiral 	=0.02
+	sea_admiral 		=0.061
+	sea_vice_admiral 	=0.401
+
+	air_marshal 		=0.02
+	air_general 		=0.091
+	air_lt_General 		=0.11
+}
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 0.5
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0
+	revolt_risk_mult	= 1.0
+
+	# PRIORITIES:
+	beach			= 20	# Beach level 2
+	capital			= 40	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target		= 150	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		SOV = -1
+		MON = -1
+		TIB = -1
+		NEP = -1
+		AFG = -1
+		FRA = -1
+		ENG = -1
+		POR = -1
+		JAP = 150
+		CHI = 50
+		MAN = 70
+		CSX = 10
+		SIK = 10
+		CXB = 10
+		CYN = 10
+		CGX = 10
+	}
+	province_priorities = {
+		1270 = 30 #Xianyang
+	}
+	area_multiplier = { }
+}
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.0
+	panic_ratio_vs_human	= 2.0
+	base_attack_odds	= 1.7
+	min_attack_odds		= 1.3
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+	strength 		= 1.0
+	organisation 		= 2.0
+	soft_attack 		= 1.0
+	hard_attack 		= 2.0
+	ground_defense 		= 1.0
+	dig_in 			= 1.25
+
+	frozen_attack 		= 1.0
+	snow_attack 		= 1.0
+	blizzard_attack 	= 1.0
+	storm_attack 		= 1.0
+	muddy_attack 		= 1.0
+
+	largefort 		= 2.0
+	smallfort 		= 1.5
+	occupied 		= 0.7
+	owned 			= 0.7
+
+	jungle_attack 		= 1.0
+	mountain_attack 	= 1.0
+	swamp_attack 		= 1.0
+	forest_attack 		= 1.0
+	hill_attack 		= 1.0
+	urban_attack 		= 1.0
+	river 			= 1.0
+
+	enemy_handicap = {
+		CHI = 200
+		CXB = 200
+		JAP = 200
+	}
+	passivity = {
+		CHI = 95
+		CXB = 95
+		JAP = 95
+	}
+
+}
+###################################
+# Air bombardment and defense
+###################################
+# Air AI File For Ground Bombings as priority
+# bomber is now obsolete and NOT USED AT ALL replace and use Air Marshal instead
+
+air_marshal = {
+	icxdayscostfactor 		= 10.0		# How to value true industrial cost when calculating expect causalties
+	manpowercostfactor		= 100.0		# How to value manpower cost when calculating expect causalties
+	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed
+
+	# desirability is a multiplier used when calcualting the mission desirability
+	airsuperioritydesirability 	= 10.0
+	groundattackdesirability 	= 40.0
+	inderdictiondesirability 	= 50.0
+	logisticalstrikedesirability 	= 30.0
+	runwaycrateringdesirability 	= 20.0
+	strategicstrikedesirability 	= 2.0
+	installationstrikedesirability 	= 2.0
+	navalstrikedesirability 	= 2.0
+	portstrikedesirability 		= 9.0
+
+	# tolerance is the required kill:loss ration expected to do
+	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+	airsuperioritylosstolerance 	= 1.0
+	groundattacklosstolerance 	= 1.0
+	interdictionlosstolerance 	= 2.0
+	logisticalstrikelosstolerance 	= 4.5
+	runwaycrateringlosstolerance 	= 1.5
+	strategicstriketolerance 	= 4.5
+	installationstriketolerance 	= 1.5
+	navalstriketolerance 		= 1.0
+	portstriketolerance 		= 1.0
+
+	# efficency is a tweakable param to adjust according to how
+	#    much actual damage comes from doing this mission (not to be confused with desirability)
+	logisticalstrikeefficency 	= 0.01
+	runwaycrateringefficency 	= 0.01
+	strategicstrikeefficency 	= 0.01
+	installationstrikeefficency 	= 0.01
+
+	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes }
+	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes }
+	taskforcetype = { name = "Naval Bombing" desiredratio = 0.050 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes }
+	taskforcetype = { name = "Airlift" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes }
+}
+###################################
+# Invasions and Naval
+###################################
+invasion = {
+	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)
+	random		= 8.0	#How big a random range.  (1.0 = 1%)
+	coastal		= 0.1	#increase to avoid coastal forts more.
+	beach		= 0.1	#higher, avoid worst beaches.
+	distance	= 20.0	#higher = avoid long distance.
+	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
+	island		= 0.1	#prioritise taking pure islands.
+	enemy		= 2.0	#higher = much more vary of troops in province.
+	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby
+	air_base	= 1.5
+	naval_base 	= 0.1
+	air_support 	= 3.0
+	redirect 	= priority
+	ignore		= no
+
+	target = { }
+}
+admiral = {
+	min_org		= 90	# NEW: Percent of org gained back before the unit can leave port
+	min_dmg		= 95    # NEW: Percent of dmg gained back before the unit can leave port
+	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+	return_dmg 	= 80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+
+	target = { }
+	core = { }
+}

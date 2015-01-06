@@ -1,0 +1,209 @@
+####################################
+# Liberia AI events 34400 - 34499 by Lothos
+####################################
+################
+# Minister of Security Section 34400 - 34409
+#############################################
+event = { # Ralph W. Morrison takes power
+	id = 34400
+	random = no
+	country = LIB
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 69056 # Ralph W. Morrison
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = LIBSecurityMorrison }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = LIBSecurityMorrison }
+		command = { type = local_clrflag which = LIBSecurityPittman }
+		command = { type = ministerofsecurity which = 69056 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Key Pittman takes power
+	id = 34401
+	random = no
+	country = LIB
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 69053 # Key Pittman
+		NOT = { minister = 69056 } # Ralph W. Morrison
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = LIBSecurityPittman }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = IREecurityDulanty }
+		command = { type = local_setflag which = IREecurityMcDermott }
+		command = { type = ministerofsecurity which = 69053 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 34410 - 34419
+#############################################
+################
+# Head of Intelligence Section 34420 - 34429
+#############################################
+event = { # Henry M. Robinson takes power
+	id = 34420
+	random = no
+	country = LIB
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 69006 # Henry M. Robinson
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = LIBIntelligenceRobinson }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = LIBIntelligenceRobinson }
+		command = { type = ministerofintelligence which = 69006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 34430 - 34439
+#############################################
+event = { # Iver Virgin takes power
+	id = 34430
+	random = no
+	country = LIB
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 69008 # Iver Virgin
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = LIBArmyVirgin }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = LIBArmyVirgin }
+		command = { type = chiefofarmy which = 69008 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 34440 - 34449
+#############################################
+event = { # Cornelius van Oudkarspel takes power
+	id = 34440
+	random = no
+	country = LIB
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 69046 # Cornelius van Oudkarspel
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = LIBArmamentOudkarspel }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = LIBArmamentOudkarspel }
+		command = { type = armamentminister which = 69046 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 34460 - 34499
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 34460
+	random = no
+	country = LIB
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_2.ai" }
+	}
+}

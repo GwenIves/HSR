@@ -1,0 +1,110 @@
+name       = "Armageddon"
+panel      = "scenarios/data/armageddon.bmp"
+header =
+{ name       = "It's War Jim, but not as we know it"
+  startdate  = { year = 1936 }
+  selectable = { UES UBO UPR URO UER UGS UTO UPS UCH UTC UTL UCS UAU USN UIC UPE
+		 UIR UAP TAN
+	       }
+  UES        = { }
+  UBO        = { }
+  URO        = { }
+  UPR        = { }
+  UER        = { }
+  UGS        = { }
+  UCH        = { }
+  UPS        = { }
+  USN        = { }
+  UCS        = { }
+}
+globaldata =
+{ startdate = { year = 1936 month = january day = 0 }
+  enddate   = { year = 1964 month = january day = 0 }
+  rules     = { diplomacy = yes }
+  axis =
+  { id          = { type = 15000 id = 2 }
+    participant = { UCS UIC UPR UER UTO UIR }
+  }
+  allies =
+  { id          = { type = 15000 id = 1 }
+    participant = { USN UAU UBO UGS UTC UCH }
+  }
+  comintern =
+  { id          = { type = 15000 id = 3 }
+    participant = { UTL UPS UES URO UAP UPE }
+
+  }
+
+ war =
+  { id        = { type = 9430 id = 1 }
+    date      = { year = 1939 month = january day = 1 hour = 1 }
+    enddate   = { year = 1939 month = january day = 1 }
+    attackers =
+    { id          = { type = 9430 id = 2 }
+      participant = { UCS UIC UPR UER UTO UIR }
+    }
+    defenders =
+    { id          = { type = 9430 id = 3 }
+      participant = { USN UAU UBO UGS UTC UCH }
+    }
+  }
+
+ war =
+  { id        = { type = 9430 id = 4 }
+    date      = { year = 1939 month = january day = 1 hour = 1 }
+    enddate   = { year = 1939 month = january day = 1 }
+    attackers =
+    { id          = { type = 9430 id = 5 }
+      participant = { UCS UIC UPR UER UTO UIR }
+    }
+    defenders =
+    { id          = { type = 9430 id = 6 }
+      participant = { UTL UPS UES URO UAP UPE }
+    }
+  }
+
+ war =
+  { id        = { type = 9430 id = 7 }
+    date      = { year = 1939 month = january day = 1 hour = 1 }
+    enddate   = { year = 1939 month = january day = 1 }
+    attackers =
+    { id          = { type = 9430 id = 8 }
+      participant = { UTL UPS UES URO UAP UPE }
+    }
+    defenders =
+    { id          = { type = 9430 id = 9 }
+      participant = { USN UAU UBO UGS UTC UCH }
+    }
+  }
+}
+
+
+# Includes for global data
+include = "scenarios\globalwar\events.txt"
+
+# Victory points distribution
+include = "scenarios\globalwar\vp.inc"
+
+# Include files for each country tag used in the scenario
+include = "scenarios\globalwar\ast_36.inc"
+include = "scenarios\globalwar\bra_36.inc"
+include = "scenarios\globalwar\chi_36.inc"
+include = "scenarios\globalwar\uk.inc"
+include = "scenarios\globalwar\france.inc"
+include = "scenarios\globalwar\germany.inc"
+include = "scenarios\globalwar\italy.inc"
+include = "scenarios\globalwar\japan.inc"
+include = "scenarios\globalwar\mexico.inc"
+include = "scenarios\globalwar\nep.inc"
+include = "scenarios\globalwar\persia.inc"
+include = "scenarios\globalwar\romania.inc"
+include = "scenarios\globalwar\southafrica.inc"
+include = "scenarios\globalwar\siam.inc"
+include = "scenarios\globalwar\soviet.inc"
+include = "scenarios\globalwar\sweden.inc"
+include = "scenarios\globalwar\tan.inc"
+include = "scenarios\globalwar\turkey.inc"
+include = "scenarios\globalwar\usa.inc"
+
+# Data for provinces, currently not owned by any nation
+include = "scenarios\globalwar\provinces.inc"

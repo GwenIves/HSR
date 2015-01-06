@@ -1,0 +1,117 @@
+#
+# By Aregorn for HSR
+# Airmod by Dec152000
+###################################
+
+technology = {
+	endgoal 	= {
+		# Assault Breakthrough
+		6180 }
+
+	preference = {
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5150 5180
+
+		# Refining
+		5190 5200 5210 5220 5230 5240
+
+		# Mountain Unit techs
+		1110 1120 1130 1140
+
+		# Tactical bomber
+		4130 4140
+
+		# Naval Bomber
+		4190 4200 4210
+
+		# Light Cruiser
+		3120
+
+		# Air Doctrine
+		9110 9130 9250 9350 9360 9380
+
+	}
+	ignore 	= {
+		# Air Doctrines
+		9180 9270 9190 9310
+
+		# Vehicle Assembly & Rocket Assembly
+		5160 5170
+
+		# Airborne
+	        1090 1100
+
+		# Air Transport
+		4270
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Atomic Research
+		5470 5480 5490 5500 5510 5520 5530 5540
+
+		# Test and Research
+		5580 5590
+
+		# Bas Decimetric
+		5420 5430 5440 5450 5460
+
+		# Strategic bombers
+		4220 4230 4240
+
+		# Heavy Tanks and Semi-Modern Tank
+		2100 2110 2120 2140
+
+		# SP Rocket Artillery
+		2260 2270 2280
+
+		# Rocket Artillery
+		2370 2380 2390
+
+		# Battle Cruiser
+		3190 3200 3210 3220 3230 3240
+
+		# Battleship 3250 3260 3270
+		3300 3310
+
+		# Carrier
+	        3360 3370 3380 3390
+
+		# Mechanized
+		1260 1270 1280 1290
+	}
+
+	armor 		= 3
+	infantry 	= 3
+	industry 	= 4
+	aircraft 	= 3
+	naval 		= 3
+	land_doctrines 	= 2
+	secret_weapons 	= 1
+	air_doctrines 	= 2
+	naval_doctrines = 2
+}
+
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 4.0
+	panic_ratio_vs_human	= 4.0
+	base_attack_odds	= 1.5
+	min_attack_odds		= 1.2
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+}

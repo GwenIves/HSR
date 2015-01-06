@@ -1,0 +1,212 @@
+#
+# By Aregorn for HSR
+# Airmod by Dec152000
+
+max_garrison_prop = 0.50
+min_garrison_prop = 0.40
+max_front_ratios = { }
+
+###################################
+# Diplomacy
+###################################
+combat = {
+	SOV = 300
+}
+###################################
+# Construction and Tech Research
+###################################
+construction = {
+
+	coastal_fort = atwar
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = atwar
+	max_radar = 3
+	radar_provs = {
+	}
+
+	air_base = yes
+	max_air_base = 4
+	air_base_provs = { }
+
+	naval_base = no
+
+	land_fort = yes
+	max_land_level = 2
+	fort_borders = { }
+
+	ic_at_war = no
+}
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 		= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 25
+	cavalry 	= 0
+	motorized 	= 5
+	mechanized 	= 5
+	light_armor 	= 0
+	armor 		= 15
+	paratrooper 	= 0
+	marine 		= 0
+	bergsjaeger 	= 1
+	garrison	= 10
+	hq 		= 4
+	militia 	= 0
+#			65 %
+
+	interceptor 		= 5
+	multi_role 		= 3
+	escort 			= 2
+	cas 			= 3
+	strategic_bomber 	= 1
+	tactical_bomber 	= 3
+	naval_bomber 		= 2
+	transport_plane 	= 1
+	flying_bomb 		= 0
+	flying_rocket 		= 0
+#				20 %
+
+	battleship 	= 1
+	carrier 	= 0
+	destroyer 	= 1
+	light_cruiser 	= 2
+	heavy_cruiser 	= 0
+	battlecruiser 	= 0
+	submarine 	= 10
+	transports 	= 1
+#			15 %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 5
+	rocket_artillery	= 5
+	sp_rct_artillery 	= 5
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 0
+	heavy_armor 		= 0
+	super_heavy_armor 	= 10
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 5
+	engineer 		= 70
+
+	cag = 100.000
+}
+
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.5
+	revolt_risk_mult	= 0.2
+
+	# PRIORITIES:
+	beach			= 40	# Beach level 2
+	capital			= 20	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 10	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		VIC = -1
+		SWE = -1
+		FIN = -1
+		ITA = -1
+		sch = -1
+		AUS = -1
+		TUR = -1
+		SPR = -1
+		SPA = -1
+		SOV = 100
+		ENG = 50
+		USA = 50
+		FRA = 50
+	}
+	province_priorities = {	}
+	area_multiplier = { }
+}
+front = {
+	recklessness 		= 2  # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 0.8
+	min_attack_odds		= 0.6
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.4
+
+	enemy_handicap = { }
+	passivity = { }
+}
+###################################
+# Invasions and Naval
+###################################
+invasion = {
+	base		= 0.1	#Relative modifier. (lower = specific targets much more important.)
+	random		= 8.0	#How big a random range.  (1.0 = 1%)
+	coastal		= 0.1	#increase to avoid coastal forts more.
+	beach		= 0.1	#higher, avoid worst beaches.
+	distance	= 0.1	#higher = avoid long distance.
+	pocket		= 20.0	#prioritise pockets, ie provinces with no adjacent controlled by same.
+	island		= 0.1	#prioritise taking pure islands.
+	enemy		= 2.0	#higher = much more vary of troops in province.
+	adjacentenemy 	= 2.0	#higher = much more vary of troops nearby
+	air_base	= 1.5
+	naval_base 	= 0.1
+	air_support 	= 3.0
+	redirect 	= priority
+	ignore		= no
+
+	staging_province = { }
+}
+admiral = {
+	min_org		= 90	# NEW: Percent of org gained back before the unit can leave port
+	min_dmg		= 90    # NEW: Percent of dmg gained back before the unit can leave port
+	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+	return_dmg 	= 50 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+
+	ignore = {
+	}
+
+	target = {
+		2484 = 200
+		2483 = 200
+		2482 = 200
+		2480 = 200
+		2479 = 200
+		2481 = 200
+		2489 = 100
+		2491 = 100
+		2492 = 100
+		2494 = 100
+		2493 = 100
+	}
+	core = {
+		2473
+		2474
+		2475
+		2476
+		2477
+		2478
+	}
+}

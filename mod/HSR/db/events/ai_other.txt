@@ -1,0 +1,363 @@
+################
+# Partition of Yugoslavia AI only events
+#############################################
+event = {
+	id = 29009
+	random = no
+	country = ROM
+	trigger = {
+		ai = yes
+		ai = GER
+		event = 20011
+		alliance = { country = GER country = ROM }
+		NOT = { exists = YUG }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = GER value = 380 }
+		command = { type = secedeprovince which = GER value = 459 }
+		command = { type = secedeprovince which = GER value = 455 }
+		command = { type = secedeprovince which = GER value = 454 }
+		command = { type = secedeprovince which = GER value = 453 }
+		command = { type = secedeprovince which = GER value = 382 }
+		command = { type = secedeprovince which = GER value = 381 }
+		command = { type = secedeprovince which = GER value = 383 }
+		command = { type = secedeprovince which = GER value = 384 }
+		command = { type = secedeprovince which = GER value = 385 }
+		command = { type = secedeprovince which = GER value = 386 }
+		command = { type = secedeprovince which = GER value = 387 }
+		command = { type = secedeprovince which = GER value = 388 }
+		command = { type = secedeprovince which = GER value = 389 }
+		command = { type = secedeprovince which = GER value = 451 }
+		command = { type = secedeprovince which = GER value = 452 }
+		command = { type = secedeprovince which = GER value = 418 }
+		command = { type = secedeprovince which = GER value = 415 }
+		command = { type = secedeprovince which = GER value = 493 }
+		command = { type = secedeprovince which = GER value = 494 }
+		command = { type = secedeprovince which = GER value = 413 }
+		command = { type = secedeprovince which = GER value = 414 }
+	}
+}
+################
+# Partition of Yugoslavia AI only events
+#############################################
+event = {
+	id = 29010
+	random = no
+	country = BUL
+
+	trigger = {
+		ai = yes
+		ai = GER
+		event = 20011
+		alliance = { country = GER country = BUL }
+		NOT = { exists = YUG }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = GER value = 380 }
+		command = { type = secedeprovince which = GER value = 459 }
+		command = { type = secedeprovince which = GER value = 455 }
+		command = { type = secedeprovince which = GER value = 454 }
+		command = { type = secedeprovince which = GER value = 453 }
+		command = { type = secedeprovince which = GER value = 382 }
+		command = { type = secedeprovince which = GER value = 381 }
+		command = { type = secedeprovince which = GER value = 383 }
+		command = { type = secedeprovince which = GER value = 384 }
+		command = { type = secedeprovince which = GER value = 385 }
+		command = { type = secedeprovince which = GER value = 386 }
+		command = { type = secedeprovince which = GER value = 387 }
+		command = { type = secedeprovince which = GER value = 388 }
+		command = { type = secedeprovince which = GER value = 389 }
+		command = { type = secedeprovince which = GER value = 451 }
+		command = { type = secedeprovince which = GER value = 452 }
+		command = { type = secedeprovince which = GER value = 418 }
+		command = { type = secedeprovince which = GER value = 415 }
+		command = { type = secedeprovince which = GER value = 493 }
+		command = { type = secedeprovince which = GER value = 494 }
+	}
+}
+################
+# Partition of Yugoslavia AI only events
+#############################################
+event = {
+	id = 29011
+	random = no
+	country = ITA
+
+	trigger = {
+		ai = yes
+		ai = GER
+		event = 20011
+		alliance = { country = GER country = ITA }
+		NOT = { exists = YUG }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = GER value = 380 }
+		command = { type = secedeprovince which = GER value = 459 }
+		command = { type = secedeprovince which = GER value = 455 }
+		command = { type = secedeprovince which = GER value = 454 }
+		command = { type = secedeprovince which = GER value = 453 }
+		command = { type = secedeprovince which = GER value = 382 }
+		command = { type = secedeprovince which = GER value = 383 }
+		command = { type = secedeprovince which = GER value = 385 }
+		command = { type = secedeprovince which = GER value = 386 }
+		command = { type = secedeprovince which = GER value = 451 }
+		command = { type = secedeprovince which = GER value = 452 }
+		command = { type = secedeprovince which = GER value = 418 }
+		command = { type = secedeprovince which = GER value = 415 }
+		command = { type = secedeprovince which = GER value = 493 }
+		command = { type = secedeprovince which = GER value = 494 }
+		command = { type = secedeprovince which = GER value = 413 }
+		command = { type = secedeprovince which = GER value = 414 }
+	}
+}
+################
+# Partition of Greece AI only events
+#############################################
+event = {
+	id = 29014
+	random = no
+	country = BUL
+
+	trigger = {
+		ai = yes
+		ai = ITA
+		event = 20011
+		alliance = { country = ITA country = BUL }
+		NOT = { exists = GRE }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = ITA value = 392 }
+		command = { type = secedeprovince which = ITA value = 393 }
+		command = { type = secedeprovince which = ITA value = 394 }
+		command = { type = secedeprovince which = ITA value = 395 }
+		command = { type = secedeprovince which = ITA value = 396 }
+		command = { type = secedeprovince which = ITA value = 400 }
+		command = { type = secedeprovince which = ITA value = 401 }
+		command = { type = secedeprovince which = ITA value = 402 }
+		command = { type = secedeprovince which = ITA value = 403 }
+		command = { type = secedeprovince which = ITA value = 405 }
+		command = { type = secedeprovince which = ITA value = 411 }
+		command = { type = sleepevent which = 29015 }
+	}
+}
+################
+# Partition of Greece AI only events
+#############################################
+event = {
+	id = 29015
+	random = no
+	country = BUL
+
+	trigger = {
+		ai = yes
+		ai = ITA
+		event = 20011
+		exists = GRE
+		alliance = { country = ITA country = BUL }
+		NOT = { control = { province = 401 data = GRE } } # Athens
+		NOT = { control = { province = 393 data = GRE } }
+		NOT = { control = { province = 395 data = GRE } }
+		NOT = { control = { province = 394 data = GRE } }
+		NOT = { control = { province = 402 data = GRE } }
+		NOT = { control = { province = 403 data = GRE } }
+		NOT = { control = { province = 392 data = GRE } }
+		NOT = { control = { province = 412 data = GRE } }
+		NOT = { control = { province = 411 data = GRE } }
+		NOT = { control = { province = 410 data = GRE } }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = control which = ITA value = 392 }
+		command = { type = control which = ITA value = 393 }
+		command = { type = control which = ITA value = 394 }
+		command = { type = control which = ITA value = 395 }
+		command = { type = control which = ITA value = 396 }
+		command = { type = control which = ITA value = 400 }
+		command = { type = control which = ITA value = 401 }
+		command = { type = control which = ITA value = 402 }
+		command = { type = control which = ITA value = 403 }
+		command = { type = control which = ITA value = 405 }
+		command = { type = control which = ITA value = 411 }
+		command = { type = sleepevent which = 29014 }
+	}
+}
+################
+# Partition of Greece AI only events
+#############################################
+event = {
+	id = 29016
+	random = no
+	country = GER
+
+	trigger = {
+		ai = yes
+		ai = ITA
+		ai = BUL
+		event = 20011
+		alliance = { country = GER country = ITA }
+		NOT = { exists = GRE }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = secedeprovince which = ITA value = 392 }
+		command = { type = secedeprovince which = ITA value = 393 }
+		command = { type = secedeprovince which = ITA value = 394 }
+		command = { type = secedeprovince which = ITA value = 395 }
+		command = { type = secedeprovince which = ITA value = 396 }
+		command = { type = secedeprovince which = ITA value = 400 }
+		command = { type = secedeprovince which = ITA value = 401 }
+		command = { type = secedeprovince which = ITA value = 402 }
+		command = { type = secedeprovince which = ITA value = 403 }
+		command = { type = secedeprovince which = ITA value = 405 }
+		command = { type = secedeprovince which = BUL value = 410 }
+		command = { type = secedeprovince which = ITA value = 411 }
+		command = { type = secedeprovince which = BUL value = 412 }
+		command = { type = sleepevent which = 29017 }
+	}
+}
+################
+# Partition of Greece AI only events
+#############################################
+event = {
+	id = 29017
+	random = no
+	country = GER
+
+	trigger = {
+		ai = yes
+		ai = ITA
+		ai = BUL
+		event = 20011
+		alliance = { country = GER country = ITA }
+		exists = GRE
+		NOT = { control = { province = 401 data = GRE } } # Athens
+		NOT = { control = { province = 393 data = GRE } }
+		NOT = { control = { province = 395 data = GRE } }
+		NOT = { control = { province = 394 data = GRE } }
+		NOT = { control = { province = 402 data = GRE } }
+		NOT = { control = { province = 403 data = GRE } }
+		NOT = { control = { province = 392 data = GRE } }
+		NOT = { control = { province = 412 data = GRE } }
+		NOT = { control = { province = 411 data = GRE } }
+		NOT = { control = { province = 410 data = GRE } }
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = control which = ITA value = 392 }
+		command = { type = control which = ITA value = 393 }
+		command = { type = control which = ITA value = 394 }
+		command = { type = control which = ITA value = 395 }
+		command = { type = control which = ITA value = 396 }
+		command = { type = control which = ITA value = 400 }
+		command = { type = control which = ITA value = 401 }
+		command = { type = control which = ITA value = 402 }
+		command = { type = control which = ITA value = 403 }
+		command = { type = control which = ITA value = 405 }
+		command = { type = control which = BUL value = 410 }
+		command = { type = control which = ITA value = 411 }
+		command = { type = control which = BUL value = 412 }
+		command = { type = sleepevent which = 29016 }
+	}
+}
+################
+# Partition of Greece AI only events Italy gets partisans
+#############################################
+event = {
+	id = 29018
+	random = no
+	country = ITA
+
+	trigger = {
+		ai = yes
+		OR = {
+			event = 29014
+			event = 29015
+			event = 29016
+			event = 29017
+		}
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = province_revoltrisk  which = 392 value = 15 }
+		command = { type = province_revoltrisk  which = 393 value = 15 }
+		command = { type = province_revoltrisk  which = 394 value = 15 }
+		command = { type = province_revoltrisk  which = 395 value = 15 }
+		command = { type = province_revoltrisk  which = 396 value = 15 }
+		command = { type = province_revoltrisk  which = 400 value = 15 }
+		command = { type = province_revoltrisk  which = 401 value = 15 }
+		command = { type = province_revoltrisk  which = 402 value = 15 }
+		command = { type = province_revoltrisk  which = 403 value = 15 }
+		command = { type = province_revoltrisk  which = 405 value = 15 }
+		command = { type = province_revoltrisk  which = 410 value = 15 }
+		command = { type = province_revoltrisk  which = 411 value = 15 }
+		command = { type = province_revoltrisk  which = 412 value = 15 }
+	}
+}

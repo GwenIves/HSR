@@ -1,0 +1,167 @@
+#
+# Reworked by Aregorn for HSR2_DD
+#
+# 0 - Great War Carrier Air Group
+model = {
+	cost 						= 4	#2
+	buildtime					= 175
+	surfacedetectioncapability			= 10
+	airdetectioncapability				= 3
+	subdetectioncapability				= 1	#2
+	airdefence					= 6	#3
+	seaattack					= 2	#2
+	airattack					= 6	#3
+	shorebombardment				= 3	#5
+	distance					= 0.8	#1.0
+	supplyconsumption 				= 0.4
+	fuelconsumption					= 1
+	upgrade_time_factor 			= 0.5
+	upgrade_cost_factor 			= 1.0
+}
+# 1 - Early Carrier Air Group
+model = {
+	cost 						= 5	#2.5
+	buildtime					= 175
+	surfacedetectioncapability			= 11
+	airdetectioncapability				= 4
+	subdetectioncapability				= 2	#3
+	airdefence					= 10	#5
+	seaattack					= 3	#4
+	subattack					= 0
+	airattack					= 12	#6
+	shorebombardment				= 5	#7
+	distance					= 0.9	#1.2
+	supplyconsumption 				= 0.4
+	fuelconsumption					= 1
+	upgrade_time_factor 			= 0.5
+	upgrade_cost_factor 			= 1.0
+}
+# 2 - Basic Carrier Air Group
+model = {
+	cost 						= 6	#3
+	buildtime					= 175
+	surfacedetectioncapability			= 12
+	airdetectioncapability				= 5
+	subdetectioncapability				= 2	#4
+	airdefence					= 14	#7
+	seaattack					= 4	#6
+	subattack					= 0
+	airattack					= 16	#8
+	shorebombardment				= 7	#10
+	distance					= 1.0	#1.4
+	supplyconsumption 				= 0.5
+	fuelconsumption					= 1
+	upgrade_time_factor 			= 0.5
+	upgrade_cost_factor 			= 1.0
+}
+# 3 - Improved Carrier Air Group
+model = {
+	cost 						= 7	#3.5
+	buildtime					= 175
+	surfacedetectioncapability			= 13
+	airdetectioncapability				= 6
+	subdetectioncapability				= 4	#6
+	airdefence					= 18	#9
+	seaattack					= 6	#8
+	subattack					= 0.5
+	airattack					= 20	#10
+	shorebombardment				= 9	#12
+	distance					= 1.1	#1.6
+	supplyconsumption 				= 0.5
+	fuelconsumption					= 1
+	upgrade_time_factor 			= 0.5
+	upgrade_cost_factor 			= 1.0
+}
+# 4 - Advanced Carrier Air Group
+model = {
+	cost 						= 8	#4
+	buildtime					= 175
+	surfacedetectioncapability			= 14
+	airdetectioncapability				= 7
+	subdetectioncapability				= 5	#7
+	airdefence					= 24	#12
+	seaattack					= 8	#11
+	subattack					= 1
+	airattack					= 24	#12
+	shorebombardment				= 11	#14
+	distance					= 1.2	#1.8
+	supplyconsumption 			= 0.6
+	fuelconsumption				= 1
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 5 - Heavy Advanced Carrier Air Group
+model = {
+	cost 						= 9	#4.5
+	buildtime					= 175
+	surfacedetectioncapability			= 15
+	airdetectioncapability				= 7
+	subdetectioncapability				= 5	#7
+	airdefence					= 32	#16
+	seaattack					= 10	#14
+	subattack					= 2
+	airattack					= 32	#16
+	shorebombardment				= 13	#16
+	distance					= 1.3	#2.0
+	supplyconsumption 			= 0.6
+	fuelconsumption				= 1
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 6 - Super Heavy Advanced Carrier Air Group
+model = {
+	cost 						= 10	#5
+	buildtime					= 175
+	surfacedetectioncapability			= 16
+	airdetectioncapability				= 7
+	subdetectioncapability				= 5	#7
+	airdefence					= 36	#18
+	seaattack					= 11	#16
+	subattack					= 3	#5
+	airattack					= 40	#20
+	shorebombardment				= 15	#18
+	distance					= 1.4	#2.2
+	supplyconsumption 			= 0.7
+	fuelconsumption				= 1
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 7 - Semi-Modern Carrier Air Group
+model = {
+	cost 						= 11	#5.5
+	buildtime					= 175
+	surfacedetectioncapability			= 17
+	airdetectioncapability				= 8
+	subdetectioncapability				= 6	#8
+	airdefence					= 42	#21
+	seaattack					= 13	#18
+	subattack					= 3.5	#7
+	airattack					= 42	#21
+	shorebombardment				= 17	#19
+	distance					= 1.5	#2.4
+	supplyconsumption 			= 0.7
+	fuelconsumption				= 1
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+# 8 - Turbojet Carrier Air Group
+model = {
+	cost 						= 12	#6
+	buildtime					= 175
+	surfacedetectioncapability			= 20
+	airdetectioncapability				= 10
+	subdetectioncapability				= 8	#10
+	airdefence					= 50	#25
+	seaattack					= 15	#20
+	subattack					= 4	#9
+	airattack					= 50	#25
+	shorebombardment				= 20	#23
+	distance					= 1.6	#2.5
+	supplyconsumption 			= 1
+	fuelconsumption				= 1.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+########################################
+

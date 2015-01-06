@@ -1,0 +1,559 @@
+# Aregorn_SPA: Events for Nationalist Spain and Republican Spain (15)
+#
+# ID		Title						Author
+#
+# 40100		(SPA) German Luftwaffe to Spain			(by Aregorn 050129)
+# 40101  	(SPA) German Luftwaffe to Spain 		(by Aregorn 050129)
+# 40102  	(SPA) Nationalist offensive 			(by Aregorn 031116)
+# 40103  	(SPA) Axis armament shipment to Spain 		(by Aregorn 031116)
+# 40104  	(SPR) The Collapse of the Republic 		(by Aregorn 031224)
+# 40105  	(SPA) Axis armament shipment to Spain 		(by Aregorn 031116)
+# 40106  	(SPA) Spanish Civil War - U.S. Intervention 	(by Justin and Aregorn 040725)
+# 40107-08  	(SPA-SPR) End of Civil War ai 			(by Aregorn 050522)
+# 40109  	(SPR) Ejército de Madrid (AI)			(by Aregorn 050618)
+# 40110-11  	(SPR) Soviet shipments to Republican Spain 	(by Aregorn 031116)
+# 40112 	(SPA) Franco declares victory 			(by Aregorn 031214)
+# 40114-15 	Spain independent 				(by Aregorn 060514)
+
+
+#########################################################################
+# 40100  German Luftwaffe to Spain (by Aregorn 050129)
+#########################################################################
+event = {
+	id = 40100
+	random = no
+	country = spa
+
+
+	name = "Nationalist Spain receives Aid from the German Luftwaffe"
+	desc = "Contrary to Franco's claims the Spanish Civil war was not going as well as predicted. Hitler then ordered Herman Goering to assemble an expeditionary force initially composed by 6000 Luftwaffe personnel and various aircraft squadrons. The unit, named the Legion Condor, was immediately sent to aid the nationalists and proved to be decisive for their victory. The decision gave also a perfect opportunity for the Luftwaffe to train pilots and test air tactics in life battle."
+
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Legión Cóndor" value = air when = 470 where = 347 }
+		command = { type = add_division which = "KG 53 'Legion Condor'" value = tactical_bomber when = 1 }
+		command = { type = add_division which = "KG 54 'Legion Condor'" value = tactical_bomber when = 1 }
+
+		command = { type = add_corps which = "Legión Cóndor" value = air when = 479 where = 347 }
+		command = { type = add_division which = "JG 1 'Legion Condor'" value = interceptor when = 1 }
+		command = { type = add_division which = "JG 2 'Legion Condor'" value = interceptor when = 1 }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = relation which = GER value = 10 }
+
+	}
+}
+#########################################################################
+# 40101  German Luftwaffe to Spain (by Aregorn 050129)
+#########################################################################
+event = {
+	id = 40101
+	random = no
+	country = spa
+
+	# trigger by aregorn_ger 40003
+
+	name = "Legion Condor returned to Germany"
+	desc = "The Luftwaffe units sent to help Soain returned home with its mission accomplished."
+
+	action_a = {
+		name = "ok"
+		command = { type = remove_division which = "KG 53 'Legion Condor'" value = spa }
+		command = { type = remove_division which = "KG 54 'Legion Condor'" value = spa }
+		command = { type = remove_division which = "JG 1 'Legion Condor'" value = spa }
+		command = { type = remove_division which = "JG 2 'Legion Condor'" value = spa }
+		command = { type = relation which = GER value = 10 }
+
+	}
+}
+#########################################################################
+# 40102  Nationalist offensive (by Aregorn 031116)
+#########################################################################
+
+event = {
+	id = 40102
+	random = no
+	country = spa
+
+	trigger = { 	ai = yes exists = spr
+			not = {
+				or = { 	and = { lost_national = { country = spr value = 50 }
+						control = { province = 341 data = spa }
+						control = { province = 347 data = spa }
+						control = { province = 333 data = spa }
+					}
+					and = { lost_national = { country = spr value = 50 }
+						control = { province = 347 data = spa }
+						control = { province = 357 data = spa }
+						control = { province = 333 data = spa }
+					}
+				}
+			}
+	}
+
+	date = { day = 3 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Nationalist offensive"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = add_division value = hq when = 0 where = rocket_artillery }
+	command = { type = add_division value = light_armor when = 1 where = engineer }
+	command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+
+	command = { type = domestic which = professional_army value = 1 }
+	command = { type = transport_pool which = ger value = 20 }
+
+	command = { type = supplies value = 10000 }
+	command = { type = oilpool value = 5000 }
+	}
+}
+
+#########################################################################
+# 40103  Axis armament shipment to Nationalist Spain (by Aregorn 031116)
+#########################################################################
+
+event = {
+	id = 40103
+	random = no
+	country = spa
+
+	trigger = { 	exists = spr ai = yes
+			not = {
+				or = { 	and = { lost_national = { country = spr value = 50 }
+						control = { province = 341 data = spa }
+						control = { province = 347 data = spa }
+						control = { province = 333 data = spa }
+					}
+					and = { lost_national = { country = spr value = 50 }
+						control = { province = 347 data = spa }
+						control = { province = 357 data = spa }
+						control = { province = 333 data = spa }
+					}
+				}
+			}
+	}
+
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Axis armament shipment to Nationalist Spain"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = add_division value = light_armor when = 1 where = engineer }
+	command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+
+	command = { type = domestic which = professional_army value = 1 }
+	command = { type = transport_pool which = ger value = 20 }
+
+	command = { type = supplies value = 5000 }
+	command = { type = oilpool value = 5000 }
+	}
+}
+#########################################################################
+# 40104  The Collapse of the Republic (by Aregorn 031224)
+#########################################################################
+
+event = {
+	id = 40104
+	random = no
+	country = spr
+
+	trigger = { ai = yes ai = spa war = { country = spa country = spr } }
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "The Collapse of the Republic"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+
+	command = { type = max_organization which = land value = -50 }
+	command = { type = construct which = land_fort where = 341 value = -2 }
+	}
+}
+#########################################################################
+# 40105  Axis armament shipment to Nationalist Spain (by Aregorn 031116)
+#########################################################################
+
+event = {
+	id = 40105
+	random = no
+	country = spa
+
+	trigger = { 	exists = spr ai = yes event = 40104 random = 25
+
+		}
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Axis armament shipment to Nationalist Spain"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = add_division value = hq when = 0 where = engineer }
+	command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+	command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+	command = { type = add_division value = bergsjaeger when = 0 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+
+		command = { type = supplies value = 10000 }
+		command = { type = oilpool value = 5000 }
+		command = { type = ai which = "switch/SP_EndCivilWar.ai" }
+
+}
+}
+#########################################################################
+#  40106  Spanish Civil War - U.S. Intervention (Historical) (by Justin and Aregorn 040725)
+#########################################################################
+event = {
+	id = 40106
+	random = no
+	country = SPA
+
+	# Triggered by Aregorn_usa 40924
+
+	name = "U.S. support to Franco"
+	desc = "The state of America's domestic economy meant that most large firms had to look overseas for their profits. With quiet approval from the U.S. government oil tankers with a cargo worth us$6,000,000 from the Texas Oil and Standard Oil companies 'mistakenly' found their way in to Spanish ports controlled by the Nationalists followed up by important bank loans and more than 12,000 trucks sold from Companies like Ford, General Motors, and Studabaker."
+	style = 0
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = manpowerpool value = -10 }
+		command = { type = oilpool value = 5000 }
+		command = { type = free_oil value = 5 }
+
+		command = { type = add_division value = cavalry when = 3 where = engineer }
+		command = { type = transport_pool which = ger value = 20 }
+		command = { type = tc_mod value = 10 }
+
+
+	}
+}
+#########################################################################
+#  40107-08  End of Civil War ai (by Aregorn 050522)
+#########################################################################
+
+event = {
+	id = 40107
+	random = no
+	country = SPA
+
+	trigger = {	ai = yes
+			or = {
+			NOT = { war = { country = SPR country = SPA } }
+			NOT = { ai = spr } }
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/SP_EndCivilWar.ai" }
+	}
+}
+event = {
+	id = 40108
+	random = no
+	country = SPR
+
+	trigger = {	ai = yes
+			or = {
+			NOT = { war = { country = SPR country = SPA } }
+			NOT = { ai = spa } }
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/SP_EndCivilWar.ai" }
+	}
+}
+#########################################################################
+#  40109  Ejército de Madrid (by Aregorn 050618)
+#########################################################################
+
+event = {
+	id = 40109
+	random = no
+	country = spr
+
+	trigger = {	ai = yes control = { province = 341 data = spr }
+			war = { country = SPR country = SPA }
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		command = { type = add_corps which = "Cuerpo de Ejercito de Madrid" value = land when = 3065 where = 341 }
+		command = { type = add_division value = hq where = artillery }
+		command = { type = activate_division which = 27600 value = 300 where = 341 }
+		command = { type = activate_division which = 27600 value = 301 where = 341 }
+		command = { type = supplies value = 10000 }
+	}
+}
+#########################################################################
+# 40110-11  Soviet armament shipments to Republican Spain (by Aregorn 031116)
+#########################################################################
+
+event = {
+	id = 40110
+	random = no
+	country = spr
+
+	trigger = { 	ai = spr exists = spa lost_national = { country = spr value = 65 }
+			not = {	lost_national = { country = spa value = 30 }
+			}
+	}
+
+	date = { day = 1 month = january year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1938 }
+
+	name = "Soviet armament shipment to Republican Spain"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = add_division value = cavalry when = 2 where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+
+		command = { type = supplies value = 10000 }
+		command = { type = oilpool value = 5000 }
+
+}
+}
+event = {
+	id = 40111
+	random = no
+	country = spr
+
+	trigger = { 	ai = spr exists = spa
+			not = { garrison = { country = spr province = 341 type = land size = 10 } }
+			or = { 	not = { ai = spa }
+				lost_national = { country = spr value = 80 }
+				}
+			}
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1939 }
+
+	name = "Soviet armament shipment to Republican Spain"
+	desc = ""
+	style = 0
+
+	action_a = { name = "Good!"
+	command = { type = add_corps value = land when = 3065 where = 339 } #Valladolid
+	command = { type = add_division value = cavalry when = 2 where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+	command = { type = add_division value = infantry where = engineer }
+
+		command = { type = supplies value = 10000 }
+		command = { type = oilpool value = 5000 }
+
+}
+}
+#########################################################################
+# 40112 Franco declares victory (by Aregorn 031214)
+#########################################################################
+
+event = {
+	id = 40112
+	random = no
+	country = spa
+
+	trigger = { 	random = 25 ai = yes lost_national = { country = spr value = 55 }
+			garrison = { country = spr province = 341 type = land size = 3 }
+			}
+
+	date = { day = 1 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Franco declares victory, the remaining republicans surrendered"
+	desc = ""
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME2001A" #OK
+		command = { type = inherit which = spr }
+		command = { type = dissent value = -10 }
+		command = { type = peacetime_ic_mod value = -30 }
+	}
+}
+#########################################################################
+# 40113 (SPR) Madrid had fallen to the Fascists (A.I.) (by Aregorn 051224)
+#########################################################################
+
+event = {
+	id = 40113
+	random = no
+	country = spr
+
+	trigger = { 	random = 25 ai = yes not = { year = 1939 }
+			control = { province = 341 data = spa }
+			garrison = { country = spa province = 341 type = land size = 2 }
+			}
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Madrid had fallen to the Fascists"
+	desc = ""
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME2001A" #OK
+	command = { type = add_corps value = land when = 3426 where = 354 } #Valencia
+	command = { type = add_division value = hq when = 0 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+	command = { type = add_division value = infantry when = 1 where = engineer }
+
+	command = { type = supplies value = 10000 }
+	command = { type = oilpool value = 5000 }
+	}
+}
+#########################################################################
+# 40114-15 Spain independent (by Aregorn 060514)
+#########################################################################
+event = {
+	id = 40114
+	random = no
+	country = ger
+	persistent = yes
+
+	trigger = { 	ai = no
+			or = { war = { country = eng country = ger } war = { country = usa country = ger } }
+			or = {
+				puppet = { country = spa country = ger }
+				puppet = { country = spr country = ger }
+			}
+	}
+
+	name = "Spain will not support the Axis"
+	desc = "The Spanish people is contrary to the Axis invaders. To keep them under control it must exist a traditional military occupation."
+	style = 0
+	picture = SPA_victory
+
+	date = { day = 1 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Create a military controlled state"
+		command = { type = inherit which = spa }
+		command = { type = inherit which = spr }
+		command = { type = dissent value = -5 }
+	}
+	action_b = {
+		name = "Forget about the spaniards and grant them independence"
+		command = { type = trigger which = 40115 }
+		command = { type = dissent value = -5 }
+	}
+}
+event = {
+	id = 40115
+	random = no
+	country = spa
+	persistent = yes
+
+	name = "Spain pulls out of the axis"
+	desc = "The Spanish people is contrary to the Axis invaders. To keep them under control it must exist a state of military occupation."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = end_puppet which = spa }
+		command = { type = leave_alliance }
+		command = { type = dissent value = -5 }
+		command = { type = peace which = eng value = 1 }
+		command = { type = peace which = sov value = 1 }
+		command = { type = end_access which = ger }
+
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 7 }
+		command = { type = domestic which = freedom value = 1 }
+		command = { type = domestic which = defense_lobby value = 1 }
+
+		command = { type = relation which = ger value = -100 }
+		command = { type = relation which = ita value = -50 }
+		command = { type = relation which = eng value = 100 }
+
+		command = { type = secedeprovince which = ger value = 348 }
+
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+	}
+}

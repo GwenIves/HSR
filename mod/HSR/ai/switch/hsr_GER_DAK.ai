@@ -1,0 +1,8 @@
+#
+# by Aregorn for HSR
+#
+exp_force_ratio = 0.10
+exp_force_ratios = {
+	ita = 1.0
+}
+no_exp_forces_to = { }

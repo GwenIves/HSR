@@ -1,0 +1,140 @@
+#
+# By Aregorn for HSR
+#
+#########################
+tech_sharing = {
+	favored = {
+		ENG = 100
+		CAN = 50
+		AST = 50
+		NZL = 50
+	    	SAF = 50
+		USA = 100
+		BEL = 100
+		HOL = 50
+		SPR = 30
+		POL = 20
+		CZE = 20
+		TUR = 10
+		IRQ = 20
+		PER = 100
+		POR = 10
+		CHI = 10
+	}
+}
+###################################
+# Construction and Tech Research
+###################################
+
+construction = {
+	max_factor = 0.100
+
+	AA_batteries = atwar
+	max_AA_level = 10
+	AA_provs = { }
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = no
+	max_radar = 5
+	radar_provs = { }
+
+	air_base = yes
+	max_air_base = 5
+	air_base_provs = { }
+
+	naval_base = no
+	max_naval_base = 5
+	naval_base_provs = { }
+
+	land_fort = atwar
+	max_land_level = 2
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1937
+	ic_end_year = 1939
+	IC_provs = { }
+}
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 		= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+		#### Divisions etc...
+	infantry 	= 20
+	cavalry 	= 0
+	motorized 	= 5
+	mechanized 	= 4
+	light_armor 	= 5
+	armor 		= 4
+	paratrooper 	= 0
+	marine 		= 0
+	bergsjaeger 	= 1
+	garrison	= 5
+	hq 		= 1
+	militia 	= 0
+#			45 %
+
+	interceptor 	= 8
+	multi_role 	= 8
+	escort 		= 2
+	cas 		= 2
+	strategic_bomber= 1
+	tactical_bomber = 8
+	naval_bomber 	= 1
+	transport_plane = 0
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#			30 %
+
+	battleship 	= 1
+	carrier 	= 5
+	destroyer 	= 5
+	light_cruiser 	= 4
+	heavy_cruiser 	= 2
+	battlecruiser 	= 0
+	submarine 	= 5
+	transports 	= 3
+#			25 %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 5
+	rocket_artillery	= 5
+	sp_rct_artillery 	= 5
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 5
+	heavy_armor 		= 5
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 0
+	engineer 		= 75
+
+	cag = 100.000
+}
+
+
+###################################
+front = {
+	recklessness 		= 1 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.3
+	panic_ratio_vs_ai	= 4.0
+	panic_ratio_vs_human	= 4.0
+	base_attack_odds	= 1.1
+	min_attack_odds		= 0.9
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+}

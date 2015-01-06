@@ -1,0 +1,325 @@
+####################################
+# Italy 26500 - 26599 = Minister Change Events
+####################################
+################
+# Minister of Security Section 26500 - 26509
+#############################################
+################
+# Chief of Staff Section 26510 - 26519
+#############################################
+event = { # Francesco Grazioli takes power
+	id = 26510
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 3007 # Francesco Grazioli
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAChiefFrancesco }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAChiefFrancesco }
+		command = { type = local_clrflag which = ITAChiefPietro }
+		command = { type = chiefofstaff which = 3007 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Pietro Badoglio takes power
+	id = 26511
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		NOT = { minister = 3007 } # Francesco Grazioli
+		minister = 3125 # Pietro Badoglio
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAChiefPietro }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ITAChiefFrancesco }
+		command = { type = local_setflag which = ITAChiefPietro }
+		command = { type = chiefofstaff which = 3125 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 26520 - 26529
+#############################################
+event = { # Umberto Ricci takes power
+	id = 26520
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 3016 # Umberto Ricci
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAIntelligenceUmberto }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAIntelligenceUmberto }
+		command = { type = local_clrflag which = ITAIntelligenceDino }
+		command = { type = ministerofintelligence which = 3016 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Dino Grandi takes power
+	id = 26521
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		NOT = { minister = 3016 } # Umberto Ricci
+		minister = 3109 # Dino Grandi
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAIntelligenceDino }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ITAIntelligenceUmberto }
+		command = { type = local_setflag which = ITAIntelligenceDino }
+		command = { type = chiefofstaff which = 3109 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 26530 - 26539
+#############################################
+################
+# Armament Minister Section 26540 - 26549
+#############################################
+event = { # Benito Mussolini takes power
+	id = 26540
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 3004 # Benito Mussolini
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAArmamentBenito }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAArmamentBenito }
+		command = { type = local_clrflag which = ITAArmamentUbaldo }
+		command = { type = armamentminister which = 3004 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Ubaldo Soddu takes power
+	id = 26541
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { minister = 3004 } # Benito Mussolini
+		minister = 3066 # Ubaldo Soddu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAArmamentUbaldo }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAArmamentUbaldo }
+		command = { type = local_clrflag which = ITAArmamentBenito }
+		command = { type = armamentminister which = 3066 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 22550 - 22559
+# Air AI Flags
+#	ITAAirAINaval		= Priority on Naval targets
+#	ITAAirAIGround		= Priority on Ground targets
+#############################################
+event = { # Francesco Pricolo takes power
+	id = 26550
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ITAAirAINaval
+		minister = 3160 # Francesco Pricolo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAChiefAirFrancesco }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAChiefAirFrancesco }
+		command = { type = local_clrflag which = ITAChiefAirGiuseppe }
+		command = { type = local_clrflag which = ITAChiefAirRino }
+		command = { type = chiefofair which = 3160 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Rino Corso Fougier takes power
+	id = 26551
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ITAAirAIGround
+		minister = 3161 # Rino Corso Fougier
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAChiefAirRino }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = ITAChiefAirRino }
+		command = { type = local_clrflag which = ITAChiefAirFrancesco }
+		command = { type = local_clrflag which = ITAChiefAirGiuseppe }
+		command = { type = chiefofair which = 3161 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Giuseppe Valle takes power
+	id = 26552
+	random = no
+	country = ITA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = ITAAirAIGround
+		NOT = { minister = 3161 } # Rino Corso Fougier
+		minister = 3010 # Giuseppe Valle
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = ITAChiefAirGiuseppe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = ITAChiefAirFrancesco }
+		command = { type = local_setflag which = ITAChiefAirGiuseppe }
+		command = { type = local_clrflag which = ITAChiefAirRino }
+		command = { type = chiefofair which = 3010 }
+		command = { type = dissent value = -1 }
+	}
+}

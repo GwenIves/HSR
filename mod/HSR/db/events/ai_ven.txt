@@ -1,0 +1,317 @@
+####################################
+# Venezuela AI events 35100 - 35199 by Lothos
+####################################
+################
+# Minister of Security Section 35100 - 35109
+#############################################
+event = { # Santiago Key Ayala takes power
+	id = 35100
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38005 # Santiago Key Ayala
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENSecurityAyala }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = VENSecurityAyala }
+		command = { type = local_clrflag which = VENSecurityVillegas }
+		command = { type = ministerofsecurity which = 38005 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Antonio Jose Villegas takes power
+	id = 35101
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38047 # Antonio Jose Villegas
+		NOT = { minister = 38005 } # Santiago Key Ayala
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENSecurityVillegas }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = VENSecurityAyala }
+		command = { type = local_setflag which = VENSecurityVillegas }
+		command = { type = ministerofsecurity which = 38047 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 35110 - 35119
+#############################################
+event = { # Carlos Garcia Mendoza takes power
+	id = 35110
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38064 # Carlos Garcia Mendoza
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENChiefMendoza }
+		}
+		OR = {
+			atwar = no
+			NOT = { manpower = 20 }
+			AND = {
+				atwar = yes
+				NOT = { minister = 38007 } # Isaias Medina Angarita
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = VENChiefMendoza }
+		command = { type = local_clrflag which = VENChiefAngarita }
+		command = { type = chiefofstaff which = 38064 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Isaias Medina Angarita
+	id = 35111
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		manpower = 20
+		minister = 38007 # Isaias Medina Angarita
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENChiefAngarita }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = VENChiefMendoza }
+		command = { type = local_setflag which = VENChiefAngarita }
+		command = { type = chiefofstaff which = 38007 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 35120 - 35129
+#############################################
+event = { # Diogenes Escalante takes power
+	id = 35120
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38056 # Diogenes Escalante
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENIntelligenceEscalante }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = VENIntelligenceEscalante }
+		command = { type = local_clrflag which = VENIntelligenceLaya }
+		command = { type = ministerofintelligence which = 38056 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Pedro Alcántara Laya takes power
+	id = 35121
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38058 # Pedro Alcántara Laya
+		NOT = { minister = 38056 } # Diogenes Escalante
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENIntelligenceLaya }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = VENIntelligenceEscalante }
+		command = { type = local_setflag which = VENIntelligenceLaya }
+		command = { type = ministerofintelligence which = 38058 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 35130 - 35139
+#############################################
+event = { # Tomas Contreras Villalobos takes power
+	id = 35130
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38068 # Tomas Contreras Villalobos
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENArmyVillalobos }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = VENArmyVillalobos }
+		command = { type = chiefofarmy which = 38068 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 35140 - 35149
+#############################################
+event = { # Don Pedro Grases takes power
+	id = 35140
+	random = no
+	country = VEN
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 38039 # Don Pedro Grases
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = VENArmamentGrases }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = VENArmamentGrases }
+		command = { type = armamentminister which = 38039 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 35160 - 35199
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 35160
+	random = no
+	country = VEN
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_3.ai" }
+	}
+}

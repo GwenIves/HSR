@@ -1,0 +1,12 @@
+#
+# by Aregorn for HSR
+#
+
+war = 50
+neutrality = 80.000
+
+combat = {
+	ger = 200
+}
+
+

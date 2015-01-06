@@ -1,0 +1,388 @@
+####################################
+# Soviet 25500 - 25599 = Minister Change Events
+####################################
+################
+# Minister of Security Section 25500 - 25509
+#############################################
+event = { # Sergej Uritskiy takes power
+	id = 25500
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4040 # Sergej Uritskiy
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVSecuritySergej }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVSecuritySergej }
+		command = { type = local_clrflag which = SOVSecurityNikolai }
+		command = { type = ministerofsecurity which = 4040 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Nikolai Yezhov takes power
+	id = 25501
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4039 # Nikolai Yezhov
+		NOT = { minister = 4040 } # Sergej Uritskiy
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVSecurityNikolai }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SOVSecuritySergej }
+		command = { type = local_setflag which = SOVSecurityNikolai }
+		command = { type = ministerofsecurity which = 4039 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 25510 - 25519
+#############################################
+event = { # Boris M. Shaposhnikov takes power
+	id = 25510
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4051 # Boris M. Shaposhnikov
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVChiefShaposhnikov }
+		}
+		OR = {
+			atwar = no
+			NOT = { manpower = 200 }
+			NOT = { minister = 4052 } # Kirill A. Meretskov
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVChiefShaposhnikov }
+		command = { type = local_clrflag which = SOVChiefMeretskov }
+		command = { type = chiefofstaff which = 4051 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Kirill A. Meretskov takes power
+	id = 25511
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4052 # Kirill A. Meretskov
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVChiefMeretskov }
+		}
+		OR = {
+			AND = {
+				atwar = yes
+				manpower = 200
+			}
+			NOT = { minister = 4051 } # Boris M. Shaposhnikov
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SOVChiefShaposhnikov }
+		command = { type = local_setflag which = SOVChiefMeretskov }
+		command = { type = chiefofstaff which = 4052 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 25520 - 25529
+#############################################
+event = { # Igor I. Ilichev takes power
+	id = 25520
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4049 # Igor I. Ilichev
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVIntelligenceIlichev }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVIntelligenceIlichev }
+		command = { type = ministerofintelligence which = 4049 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 25530 - 25539
+#############################################
+event = { # Iosif V. Stalin takes power
+	id = 25530
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4059 # Iosif V. Stalin
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVArmyStalin }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVArmyStalin }
+		command = { type = local_clrflag which = SOVArmyKliment }
+		command = { type = chiefofarmy which = 4059 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Kliment Y. Voroshilov takes power
+	id = 25531
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4008 # Kliment Y. Voroshilov
+		NOT = { minister = 4059 } # Iosif V. Stalin
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVArmyKliment }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SOVArmyStalin }
+		command = { type = local_setflag which = SOVArmyKliment }
+		command = { type = chiefofarmy which = 4008 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 25540 - 25549
+#############################################
+event = { # Lazer Kaganovich takes power
+	id = 25540
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4004 # Lazer Kaganovich
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVArmamentLazer }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVArmamentLazer }
+		command = { type = local_clrflag which = SOVArmamentNikolaj }
+		command = { type = armamentminister which = 4004 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Nikolaj Bulganin takes power
+	id = 25541
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4071 # Nikolaj Bulganin
+		NOT = { minister = 4004 } # Lazer Kaganovich
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVArmamentNikolaj }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SOVArmamentLazer }
+		command = { type = local_setflag which = SOVArmamentNikolaj }
+		command = { type = armamentminister which = 4071 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 25550 - 25559
+#############################################
+event = { # Yakov I. Alksnis takes power
+	id = 25550
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4010 # Yakov I. Alksnis
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVChiefAirYakov }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SOVChiefAirYakov }
+		command = { type = local_clrflag which = SOVChiefAirAleksandr }
+		command = { type = chiefofair which = 4010 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Aleksandr D. Loktionov takes power
+	id = 25551
+	random = no
+	country = SOV
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 4064 # Aleksandr D. Loktionov
+		NOT = { minister = 4010 } # Yakov I. Alksnis
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SOVChiefAirAleksandr }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SOVChiefAirYakov }
+		command = { type = local_setflag which = SOVChiefAirAleksandr }
+		command = { type = chiefofair which = 4064 }
+		command = { type = dissent value = -1 }
+	}
+}

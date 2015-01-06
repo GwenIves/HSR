@@ -1,0 +1,22 @@
+#
+# by Aregorn for HSR
+#
+garrison = {
+
+	# Borders with specific countries
+	country_priorities = {
+		BEL = -1
+		HOL = -1
+		LUX = -1
+		GER = 100
+		SPA = 50
+		ITA = 100
+		SCH = -1
+		FRA = -1
+		CAN = -1
+		AST = -1
+		NZL = -1
+		POR = -1
+		CYN = -1
+		TUR = -1	}
+}

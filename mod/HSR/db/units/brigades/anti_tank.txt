@@ -1,0 +1,82 @@
+#
+# Reworked by Aregorn for HSR2_DD
+#
+# 0 - Early
+model = {
+	cost 				= 2.5 #4
+	buildtime	 		= 105 #60
+	manpower 			= 2
+	defensiveness 			= 1
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	hardattack			= 2
+	supplyconsumption 		= 0.15	#0.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 1 - Basic
+model = {
+	cost 				= 3 #5
+	buildtime	 		= 105 #60
+	manpower 			= 2
+	defensiveness 			= 2
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	hardattack			= 3
+	supplyconsumption 		= 0.16	#0.35
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+
+# 2 - Improved
+model = {
+	cost 				= 3 #5
+	buildtime	 		= 105 #60
+	manpower 			= 2
+	defensiveness 			= 3
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	hardattack			= 5
+	supplyconsumption 		= 0.2	#0.4
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 3 - Advanced
+model = {
+	cost 				= 3 #5
+	buildtime	 		= 105 #60
+	manpower 			= 2
+	defensiveness 			= 4
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	hardattack			= 6
+	supplyconsumption 		= 0.22	#0.45
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 4 - Semi-Modern
+model = {
+	cost 				= 3 #5
+	buildtime	 		= 105 #60
+	manpower 			= 2
+	defensiveness 			= 5
+	morale				= -3	#0
+	defaultorganisation 		= -2	#0
+	hardattack			= 7
+	supplyconsumption 		= 0.25	#0.5
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 5 - Modern
+model = {
+	cost 				= 3	#5
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 6
+	morale				= -2	#0
+	defaultorganisation 		= -1	#0
+	hardattack			= 8
+	supplyconsumption 		= 0.3	#0.5
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

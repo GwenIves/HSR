@@ -1,0 +1,207 @@
+####################################
+# Nicaragua AI events 33200 - 33299 by Lothos
+####################################
+################
+# Minister of Security Section 33200 - 33209
+#############################################
+event = { # Gustavo Pavon Ochoa takes power
+	id = 33200
+	random = no
+	country = NIC
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 48061 # Gustavo Pavon Ochoa
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NICecurityOchoa }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NICecurityOchoa }
+		command = { type = ministerofsecurity which = 48061 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 33210 - 33219
+#############################################
+################
+# Head of Intelligence Section 33220 - 33229
+#############################################
+event = { # Francisco Estrasa takes power
+	id = 33220
+	random = no
+	country = NIC
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 48064 # Francisco Estrasa
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NICIntelligenceEstrasa }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NICIntelligenceEstrasa }
+		command = { type = ministerofintelligence which = 48064 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 33230 - 33239
+#############################################
+event = { # Victor Roman y Reyes takes power
+	id = 33230
+	random = no
+	country = NIC
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 48075 # Victor Roman y Reyes
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NICArmyReyes }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NICArmyReyes }
+		command = { type = chiefofarmy which = 48075 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 33240 - 33249
+#############################################
+event = { # Benjamin Lacayo Sacasa takes power
+	id = 33240
+	random = no
+	country = NIC
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 48054 # Benjamin Lacayo Sacasa
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NICArmamentSacasa }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = NICArmamentSacasa }
+		command = { type = local_clrflag which = NICArmamentJarquin }
+		command = { type = armamentminister which = 48054 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Carlos Brenes Jarquin takes power
+	id = 33241
+	random = no
+	country = NIC
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 48051 # Carlos Brenes Jarquin
+		NOT = { minister = 48054 } # Benjamin Lacayo Sacasa
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = NICArmamentJarquin }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = NICArmamentSacasa }
+		command = { type = local_setflag which = NICArmamentJarquin }
+		command = { type = armamentminister which = 48051 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+#############################################
+# Regular AI Events 33260 - 33299
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 33260
+	random = no
+	country = NIC
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_1.ai" }
+	}
+}

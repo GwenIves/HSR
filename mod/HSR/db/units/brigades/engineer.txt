@@ -1,0 +1,771 @@
+#
+# by Aregorn for HSR2_DD
+#
+# This attachment type tries to represent historical division formations with an extra regiment and complementing divisional battalions (not just the engineer battalion).
+
+#HOI engineers 0
+
+model = {
+	cost 				= 2
+	buildtime	 		= 105
+	manpower 			= 2
+	toughness 			= 3
+	defaultorganisation 		= 4	#0
+	morale				= 3	#0 (elite)
+	softness			= -3	#0 (mines)
+	softattack			= 1	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	defensiveness 			= 5
+	maxspeed 			= 2	#1
+	supplyconsumption		= 0.3
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+################################################################################################
+#Minors		-org, -moral, -hard attack, -soft attack, -toughness & softness
+################################################################################################
+
+#Minors Heavy Division 1936 (1)
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5	#2
+	defaultorganisation 		= 2	#0
+	morale				= 3	#0
+	toughness 			= 1
+	softness			= -3	#0 (mines)
+	softattack			= 2	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 1	#0
+	defensiveness 			= 4	#5
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.4
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Minors Heavy Division 1939 (2)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 3	#0
+	morale				= 4	#0
+	toughness 			= 2
+	softness			= -3	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 5	#5
+	maxspeed 			= 1
+	supplyconsumption		= 0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Minors Heavy Division 1941 (3)
+
+model = {
+	cost 				= 5.0	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 4	#0
+	morale				= 5	#0
+	toughness 			= 2
+	softness			= -3	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 5	#5
+	maxspeed 			= 1
+	supplyconsumption		= 0.6
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Minors Heavy Division 1943 (4)
+
+model = {
+	cost 				= 5.0	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 5	#0
+	morale				= 6	#0
+	toughness 			= 2
+	softness			= -3	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	defensiveness 			= 5	#5
+	airattack			= 1	#0
+	airdefence			= 3	#0
+	maxspeed 			= 1
+	supplyconsumption		= 0.7
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Minors Heavy Division 1945 (5)
+
+model = {
+	cost 				= 5.6	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 6	#0
+	morale				= 7	#0
+	toughness 			= 3
+	softness			= -4	#0 (mines)
+	softattack			= 5	#0 (special equipment)
+	hardattack			= 3	#0 (special equipment)
+	airattack			= 2	#0
+	airdefence			= 3	#0
+	defensiveness 			= 5	#5
+	maxspeed 			= 1
+	supplyconsumption		= 0.8
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Minors Heavy Division 1947 (6)
+
+model = {
+	cost 				= 5.6	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 7	#0
+	morale				= 8	#0
+	toughness 			= 3
+	softness			= -5	#0 (mines)
+	softattack			= 6	#0 (special equipment)
+	hardattack			= 4	#0 (special equipment)
+	airattack			= 3	#0
+	airdefence			= 4	#0
+	defensiveness 			= 6	#5
+	maxspeed 			= 1
+	supplyconsumption		= 0.9
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Minors Heavy Division 1951 (7)
+
+model = {
+	cost 				= 6.0	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 7	#0
+	morale				= 9	#0
+	toughness 			= 4
+	softness			= -6	#0 (mines)
+	softattack			= 7	#0 (special equipment)
+	hardattack			= 5	#0 (special equipment)
+	airattack			= 4	#0
+	airdefence			= 5	#0
+	defensiveness 			= 7	#5
+	maxspeed 			= 1
+	supplyconsumption		= 1.0
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+################################################################################################
+#Allies	+Speed, +supply, +fuel consumption, +cost
+################################################################################################
+
+#Allies Heavy Division 1936 (8)
+model = {
+	cost 				= 5.2	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5	#2
+	defaultorganisation 		= 2	#0
+	morale				= 3	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 1	#0
+	defensiveness 			= 4	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.7	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Allies Heavy Division 1939 (9)
+
+model = {
+	cost 				= 5.2	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 3	#0
+	morale				= 4	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 5	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.8	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Allies Heavy Division 1941 (10)
+
+model = {
+	cost 				= 5.8	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 4	#0
+	morale				= 5	#0
+	toughness 			= 4
+	softness			= -4	#0 (mines)
+	softattack			= 5	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 6	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.9	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Allies Heavy Division 1943 (11)
+
+model = {
+	cost 				= 5.8	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 5	#0
+	morale				= 6	#0
+	toughness 			= 4
+	softness			= -4	#0 (mines)
+	softattack			= 6	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 3	#0
+	defensiveness 			= 7	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 1.0	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Allies Heavy Division 1945 (12)
+
+model = {
+	cost 				= 6.4	#9
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 6	#0
+	morale				= 7	#0
+	toughness 			= 5
+	softness			= -5	#0 (mines)
+	softattack			= 7	#0 (special equipment)
+	hardattack			= 3	#0 (special equipment)
+	airattack			= 2	#0
+	airdefence			= 3	#0
+	defensiveness 			= 8	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 1.1	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Allies Heavy Division 1947 (13)
+
+model = {
+	cost 				= 6.4	#9
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 7	#0
+	morale				= 8	#0
+	toughness 			= 5
+	softness			= -6	#0 (mines)
+	softattack			= 8	#0 (special equipment)
+	hardattack			= 4	#0 (special equipment)
+	airattack			= 3	#0
+	airdefence			= 4	#0
+	defensiveness 			= 9	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 1.2	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Allies Heavy Division 1951 (14)
+
+model = {
+	cost 				= 7.0	#9
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 8	#0
+	morale				= 9	#0
+	toughness 			= 6
+	softness			= -7	#0 (mines)
+	softattack			= 9	#0 (special equipment)
+	hardattack			= 5	#0 (special equipment)
+	airattack			= 4	#0
+	airdefence			= 5	#0
+	defensiveness 			= 10	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 1.3	#0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+################################################################################################
+#Japan	++Moral, -hard attack, -supply consumption, -cost, -toughness & softness, +suppression
+################################################################################################
+
+#Japanese Heavy Division 1936 (15)
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5	#2
+	defaultorganisation 		= 2	#0
+	morale				= 7	#0
+	toughness 			= 1
+	softness			= -1	#0 (mines)
+	softattack			= 2	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 1	#0
+	defensiveness 			= 4	#5
+	supplyconsumption		= 1	#0.5
+	suppression			= 1
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.2
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Japanese Heavy Division 1939 (16)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 3	#0
+	morale				= 9	#0
+	toughness 			= 2
+	softness			= -2	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 5	#5
+	suppression			= 1
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.3
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Japanese Heavy Division 1941 (17)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 4	#0
+	morale				= 11	#0
+	toughness 			= 2
+	softness			= -2	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 6	#5
+	suppression			= 1
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.4
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Japanese Heavy Division 1943 (18)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 5	#0
+	morale				= 13	#0
+	toughness 			= 2
+	softness			= -2	#0 (mines)
+	softattack			= 5	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 3	#0
+	defensiveness 			= 7	#5
+	suppression			= 1
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Japanese Heavy Division 1945 (19)
+
+model = {
+	cost 				= 5.0	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 6	#0
+	morale				= 15	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 6	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 2	#0
+	airdefence			= 3	#0
+	defensiveness 			= 8	#5
+	suppression			= 1
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.6
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Japanese Heavy Division 1947 (20)
+
+model = {
+	cost 				= 5.0	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 7	#0
+	morale				= 16	#0
+	toughness 			= 4
+	softness			= -4	#0 (mines)
+	softattack			= 7	#0 (special equipment)
+	hardattack			= 3	#0 (special equipment)
+	airattack			= 3	#0
+	airdefence			= 4	#0
+	defensiveness 			= 9	#5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.7
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Japanese Heavy Division 1951 (21)
+
+model = {
+	cost 				= 5.5	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 8	#0
+	morale				= 17	#0
+	toughness 			= 5
+	softness			= -5	#0 (mines)
+	softattack			= 8	#0 (special equipment)
+	hardattack			= 4	#0 (special equipment)
+	airattack			= 4	#0
+	airdefence			= 5	#0
+	defensiveness 			= 10	#5
+	suppression			= 3
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.8
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+################################################################################################
+#Germany	++organization, +Moral, +speed, +suppression
+################################################################################################
+
+#Wehrmacht Heavy Division 1936 (22)
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5	#2
+	defaultorganisation 		= 5	#0
+	morale				= 5	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 1	#0
+	defensiveness 			= 5	#5
+	suppression			= 1
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.4
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Wehrmacht Heavy Division 1939 (23)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 6	#0
+	morale				= 6	#0
+	toughness 			= 4
+	softness			= -4	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 6	#5
+	suppression			= 1
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Wehrmacht Heavy Division 1941 (24)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 8	#0
+	morale				= 8	#0
+	toughness 			= 5
+	softness			= -4	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	suppression			= 1
+	defensiveness 			= 7	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.6
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Wehrmacht Heavy Division 1943 (25)
+
+model = {
+	cost 				= 5.0	#7
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 8	#0
+	morale				= 9	#0
+	toughness 			= 5
+	softness			= -5	#0 (mines)
+	softattack			= 6	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 3	#0
+	suppression			= 1
+	defensiveness 			= 8	#5
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.7
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Wehrmacht Heavy Division 1945 (26)
+
+model = {
+	cost 				= 5.0	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 10	#0
+	morale				= 10	#0
+	toughness 			= 6
+	softness			= -6	#0 (mines)
+	softattack			= 7	#0 (special equipment)
+	hardattack			= 3	#0 (special equipment)
+	airattack			= 2	#0
+	airdefence			= 3	#0
+	defensiveness 			= 9	#5
+	suppression			= 1
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.7
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Wehrmacht Heavy Division 1947 (27)
+
+model = {
+	cost 				= 5.4	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 11	#0
+	morale				= 11	#0
+	toughness 			= 6
+	softness			= -6	#0 (mines)
+	softattack			= 8	#0 (special equipment)
+	hardattack			= 4	#0 (special equipment)
+	airattack			= 3	#0
+	airdefence			= 4	#0
+	defensiveness 			= 10	#5
+	suppression			= 2
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.8
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Wehrmacht Heavy Division 1951 (28)
+
+model = {
+	cost 				= 5.8	#8
+	buildtime	 		= 105	#70
+	manpower 			= 5
+	defaultorganisation 		= 12	#0
+	morale				= 12	#0
+	toughness 			= 7
+	softness			= -7	#0 (mines)
+	softattack			= 9	#0 (special equipment)
+	hardattack			= 5	#0 (special equipment)
+	airattack			= 4	#0
+	airdefence			= 5	#0
+	defensiveness 			= 11	#5
+	suppression			= 3
+	maxspeed 			= 2	#1 (only wheeled units will get 2)
+	supplyconsumption		= 0.9
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+################################################################################################
+#Soviets	+Moral, +defensiveness, +mp cost, ++suppression
+################################################################################################
+
+#Soviet Heavy Division 1936 (29)
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7	#2
+	morale				= 4	#0
+	defaultorganisation 		= 2	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 2	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 1	#0
+	defensiveness 			= 6	#5
+	supplyconsumption		= 1	#0.5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.4
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Soviet Heavy Division 1939 (30)
+
+model = {
+	cost 				= 4.4	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 5	#0
+	defaultorganisation 		= 2	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 3	#0 (special equipment)
+	hardattack			= 1	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 7	#5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.5
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Soviet Heavy Division 1941 (31)
+
+model = {
+	cost 				= 5.0	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 6	#0
+	defaultorganisation 		= 3	#0
+	toughness 			= 3
+	softness			= -3	#0 (mines)
+	softattack			= 4	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 2	#0
+	defensiveness 			= 7	#5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.6
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Soviet Heavy Division 1943 (32)
+
+model = {
+	cost 				= 5.0	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 8	#0
+	defaultorganisation 		= 4	#0
+	toughness 			= 3
+	softness			= -4	#0 (mines)
+	softattack			= 5	#0 (special equipment)
+	hardattack			= 2	#0 (special equipment)
+	airattack			= 1	#0
+	airdefence			= 3	#0
+	defensiveness 			= 8	#5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.7
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+
+#Soviet Heavy Division 1945 (33)
+
+model = {
+	cost 				= 5.6	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 10 	#0
+	defaultorganisation 		= 5	#0
+	toughness 			= 4
+	softness			= -5	#0 (mines)
+	softattack			= 5	#0 (special equipment)
+	hardattack			= 3	#0 (special equipment)
+	airattack			= 2	#0
+	airdefence			= 3	#0
+	defensiveness 			= 8	#5
+	suppression			= 2
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.8
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Soviet Heavy Division 1947 (34)
+
+model = {
+	cost 				= 5.6	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 11 	#0
+	defaultorganisation 		= 6	#0
+	toughness 			= 5
+	softness			= -6	#0 (mines)
+	softattack			= 6	#0 (special equipment)
+	hardattack			= 4	#0 (special equipment)
+	airattack			= 3	#0
+	airdefence			= 4	#0
+	defensiveness 			= 9	#5
+	suppression			= 3
+	maxspeed 			= 1	#1
+	supplyconsumption		= 0.9
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}
+#Soviet Heavy Division 1951 (35)
+
+model = {
+	cost 				= 6.0	#6
+	buildtime	 		= 105	#70
+	manpower 			= 7
+	morale				= 12 	#0
+	defaultorganisation 		= 6	#0
+	toughness 			= 6
+	softness			= -7	#0 (mines)
+	softattack			= 7	#0 (special equipment)
+	hardattack			= 5	#0 (special equipment)
+	airattack			= 4	#0
+	airdefence			= 5	#0
+	defensiveness 			= 10	#5
+	suppression			= 34
+	maxspeed 			= 1	#1
+	supplyconsumption		= 1.0
+	upgrade_time_factor 		= 0.5
+	upgrade_cost_factor 		= 1.0
+}

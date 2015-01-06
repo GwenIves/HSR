@@ -1,0 +1,281 @@
+####################################
+# El Salvador AI events 33300 - 33399 by Lothos
+####################################
+################
+# Minister of Security Section 33300 - 33309
+#############################################
+event = { # Pedro Jaime de Matheu takes power
+	id = 33300
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77048 # Pedro Jaime de Matheu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALecurityMatheu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SALecurityMatheu }
+		command = { type = local_clrflag which = SALecurityParada }
+		command = { type = ministerofsecurity which = 77048 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # José Adán Parada takes power
+	id = 33301
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77047 # José Adán Parada
+		NOT = { minister = 77048 } # Pedro Jaime de Matheu
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALecurityParada }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SALecurityMatheu }
+		command = { type = local_setflag which = SALecurityParada }
+		command = { type = ministerofsecurity which = 77047 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 33310 - 33319
+#############################################
+event = { # Marco A. Molina takes power
+	id = 33310
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77007 # Marco A. Molina
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALChiefMolina }
+		}
+		OR = {
+			atwar = no
+			NOT = { manpower = 200 }
+			AND = {
+				atwar = yes
+				NOT = { minister = 77007 } # Marco A. Molina
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SALChiefMolina }
+		command = { type = local_clrflag which = SALChiefIgnacio }
+		command = { type = chiefofstaff which = 77007 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Andrés Ignacio Menéndez takes power
+	id = 33311
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		manpower = 200
+		minister = 77052 # Andrés Ignacio Menéndez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALChiefIgnacio }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SALChiefMolina }
+		command = { type = local_setflag which = SALChiefIgnacio }
+		command = { type = chiefofstaff which = 77052 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 33320 - 33329
+#############################################
+event = { # Oscar A. Bolaños takes power
+	id = 33320
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77006 # Oscar A. Bolaños
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALIntelligenceOscar }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SALIntelligenceOscar }
+		command = { type = ministerofintelligence which = 77006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 33330 - 33339
+#############################################
+################
+# Armament Minister Section 33340 - 33349
+#############################################
+event = { # Pio Romero Bosque takes power
+	id = 33340
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77042 # Pio Romero Bosque
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALArmamentBosque }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SALArmamentBosque }
+		command = { type = local_clrflag which = SALArmamentMatheu }
+		command = { type = armamentminister which = 77042 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Pedro Jaime de Matheu takes power
+	id = 33341
+	random = no
+	country = SAL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 77043 # Pedro Jaime de Matheu
+		NOT = { minister = 77042 } # Pio Romero Bosque
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SALArmamentMatheu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SALArmamentBosque }
+		command = { type = local_setflag which = SALArmamentMatheu }
+		command = { type = armamentminister which = 77043 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+#############################################
+# Regular AI Events 33360 - 33399
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 33360
+	random = no
+	country = SAL
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_1.ai" }
+	}
+}

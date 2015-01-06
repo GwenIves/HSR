@@ -1,0 +1,109 @@
+#
+# by Aregorn for HSR2_DD
+#
+#
+# Airmod by Dec152000
+#
+
+# 0 - Early Army Artillery
+model = {
+	cost 				= 4.25
+	buildtime	 		= 275
+	manpower 			= 7
+	defensiveness 			= 4	#2
+	toughness			= 1	#3
+	morale				= -6	#0
+	defaultorganisation 		= -5	#0
+	softattack			= 16	#4
+	hardattack			= 6	#7
+	airattack			= 1
+	airdefence			= 2
+	supplyconsumption 		= 1.0	#3.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 1 - Basic Army Artillery
+model = {
+	cost 				= 4.25
+	buildtime	 		= 275
+	manpower 			= 7
+	defensiveness 			= 4	#2
+	toughness			= 2	#4
+	morale				= -5	#0
+	defaultorganisation 		= -4	#0
+	softattack			= 19	#5
+	hardattack			= 6	#7
+	airattack			= 1
+	airdefence			= 2
+	supplyconsumption 		= 1.2	#3.6
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 2 - Improved Army Artillery
+model = {
+	cost 				= 4.75
+	buildtime	 		= 275
+	manpower 			= 7
+	defensiveness 			= 5	#
+	toughness			= 3	#5
+	morale				= -5	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 22	#6
+	hardattack			= 6	#7
+	airattack			= 2
+	airdefence			= 3
+	supplyconsumption 		= 1.4	#3.9
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 3 - Advanced Army Artillery
+model = {
+	cost 				= 7
+	buildtime	 		= 220
+	manpower 			= 7
+	defensiveness 			= 5	#4
+	toughness			= 3	#6
+	morale				= -5	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 25	#7
+	hardattack			= 7	#8
+	airattack			= 2
+	airdefence			= 3
+	supplyconsumption		= 1.6	#4.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 4 - Semi-Modern Army Artillery
+model = {
+	cost 				= 7
+	buildtime	 		= 220
+	manpower 			= 7
+	defensiveness 			= 6	#5
+	toughness			= 4	#7
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 28	#8
+	hardattack			= 8	#12
+	airattack			= 3	#
+	airdefence			= 3	#
+	supplyconsumption 		= 2.0	#4.7
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 5 - Modern Army Artillery
+model = {
+	cost 				= 7
+	buildtime	 		= 220
+	manpower 			= 7
+	defensiveness 			= 7	#5
+	toughness			= 5	#7
+	morale				= -3	#0
+	defaultorganisation 		= -2	#0
+	softattack			= 30	#8
+	hardattack			= 9	#12
+	airattack			= 3	#
+	airdefence			= 4	#
+	supplyconsumption 		= 2.2	#4.7
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

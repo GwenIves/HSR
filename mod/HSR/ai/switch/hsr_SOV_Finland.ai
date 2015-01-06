@@ -1,0 +1,265 @@
+#
+# By Aregorn for HSR
+# Airmod by Dec152000
+#
+technology = {
+	endgoal 	= { }
+	preference 	= {
+		# Artillery
+		2290 2300 2310 2320 2330 2340 2350
+
+		# Motorized
+		1230 1240 1250
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Light tanks
+		2020 2030 2040 2050 2060
+
+		# Medium tanks
+		2070 2080 2090
+
+		# Heavy Tanks
+		2100 210 2120 2130 2140
+
+		# Interceptor
+		4020 4030 4060 4090
+
+		# CAS
+		4170 4280 4180
+
+		# Arcriculture
+		5020
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5160 5180
+
+		# Encryption
+		5350 5370 5390
+
+		# Air Doctrines
+		9040 9050 9060 9080 9230 9260 9270 9390 9410
+
+		# SP Rocket Artillery
+		2260 2270 2280
+
+		# Rocket Artillery
+		2370 2380 2390
+
+	}
+	ignore 		= {
+
+		# Arcriculture (Lysenkoism, bad Ag practices)
+		5030 5040
+
+		# Test and Research
+		5570 5580 5590
+
+		# Atomic Research
+		5490 5500 5510 5520 5530 5540
+
+		# Refining
+		5220 5230 5240
+
+		# Computers
+		5340
+
+		# Radar
+		5420 5430 5440 5450 5460
+
+		# Airborne 1070 1080
+		1090 1100
+
+		# Naval Bomber
+		4200 4210
+
+		# Air Transports
+		4260 4270
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Submarines
+		3430 3440 3450
+
+		# Heavy Cruiser
+		3180 3190
+
+		# Carrier
+		3320 3330 3340 3350 3360 3370 3380 3390
+
+		# Battle Cruiser
+		3230 3240
+
+		# Battleship
+		3300 3310
+
+		# Strategic bombers
+		4230 4240
+
+		# Air Doctrines
+		9180 9430
+	}
+
+	armor 		= 5
+	infantry 	= 5
+	industry 	= 6
+	aircraft 	= 4
+	naval 		= 1
+	land_doctrines 	= 3
+	secret_weapons 	= 1
+	air_doctrines 	= 3
+	naval_doctrines = 1
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = no
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 0.5
+	home_peace_cap 		= 20
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 1.0
+	revolt_risk_mult	= 1.0
+
+	# PRIORITIES:
+	beach			= 0	# Beach level 2
+	capital			= 40	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target		= 100	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		MON = -1
+		TAN = -1
+		SIK = -1
+		CHI = -1
+		AFG = -1
+		PER = 10
+		TUR = 20
+		FIN = 100
+		ROM = 50
+		POL = 100
+		GER = 100
+		ITA = 50
+		JAP = 20
+		MAN = 20
+		SWE = 20
+		NOR = 20
+		HUN = 15
+		SLO = 15
+		BUL = 15
+	}
+	province_priorities = {
+		187 = 50 # Leningrad
+		238 = 50 # Kiev
+		235 = 50 # Dnepropetrovsk
+		163 = 50 # Stalingrad
+		248 = 50 # Kharkov
+		277 = 50 # Bryansk
+		1372 = 50 # Vladivostock
+		113 = 50 # Murmansk
+	}
+	area_multiplier = {
+		113 = 2.0 # Murmansk
+		205 = 0.0 # Mazirbe (German Border easy surround hex)
+		505 = 0.8 # Bielsk, Pripyt marsh surround problem
+		504 = 0.6 # Brest-Litovsk, Pripyt marsh surround problem
+		503 = 0.6 # Pinsk, Pripyt marsh surround problem
+		222 = 0.6 # Luminec, Pripyt marsh surround problem
+		225 = 0.6 # Mozyr,  Pripyt marsh surround problem
+		226 = 0.6 # Korosten,  Pripyt marsh surround problem
+		562 = 0.8 # Rowne,  Pripyt marsh surround problem
+	}
+}
+######################################
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 50
+	cavalry 	= 3
+	motorized 	= 10
+	mechanized 	= 2
+	light_armor 	= 0
+	armor 		= 10
+	paratrooper 	= 0
+	marine 		= 0
+	bergsjaeger 	= 3
+	garrison	= 10
+	hq 		= 2
+	militia 	= 0
+#			90 %
+
+	interceptor 		= 4
+	multi_role 		= 2
+	escort 			= 0
+	cas 			= 2
+	strategic_bomber 	= 0
+	tactical_bomber 	= 2
+	naval_bomber 		= 0
+	transport_plane 	= 0
+	flying_bomb 		= 0
+	flying_rocket 		= 0
+#				10 %
+
+	battleship 	= 0
+	carrier 	= 0
+	destroyer 	= 0
+	light_cruiser 	= 0
+	heavy_cruiser 	= 0
+	battlecruiser 	= 0
+	submarine 	= 0
+	transports 	= 0
+#			0 %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 5
+	rocket_artillery	= 5
+	sp_rct_artillery 	= 5
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 0
+	heavy_armor 		= 5
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 0
+	engineer 		= 80
+
+	cag = 100.000
+}
+######################################
+
+front = {
+	recklessness 		= 1  # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 4.0
+	panic_ratio_vs_human	= 4.0
+	base_attack_odds	= 1.0
+	min_attack_odds		= 0.8
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+}

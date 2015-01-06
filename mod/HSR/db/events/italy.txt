@@ -1,0 +1,117 @@
+# HoI - Italy Events
+#
+#
+# Modified by Aregorn for HSR
+#
+# 2900-04
+# written by Henrik Fåhraeus
+#
+# (2) 2902, 2903
+#
+#########################################################################
+#  Annexation of Albania (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2902
+	random = no
+	country = ITA
+
+	trigger = {
+			exists = ALB
+		OR = {
+			event = 2006 # Germany annexes Bohemia and Moravia - Mussolini feels he must not be outdone...
+			event = 2011 event = 2012
+		}
+		NOT = {
+			OR = {  alliance = { country = ALB country = ger }
+				alliance = { country = ALB country = eng }
+				alliance = { country = ALB country = ITA }
+				war = { country = ALB country = ITA }
+			}
+		}
+
+	}
+	name = "EVT_2902_NAME"
+	desc = "EVT_2902_DESC"
+	style = 0
+	picture = "Albania"
+
+	date = { day = 25 month = march year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME2902A" # Send an Ultimatum to King Zog
+		ai_chance = 100
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 3500 } #Alb
+		command = { type = relation which = ALB value = -20 }
+		command = { type = relation which = YUG value = -5 }
+		command = { type = relation which = GRE value = -5 }
+		command = { type = addcore which = 390 }
+	}
+	action_b = {
+		name = "ACTIONNAME2902B" # We have no need of Albania
+		ai_chance = 0
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = relation which = ALB value = 20 }
+		command = { type = relation which = YUG value = 5 }
+		command = { type = relation which = GRE value = 5 }
+	}
+}
+#########################################################################
+#  Annexation of Albania - Zog refuses (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 2903
+	random = no
+	country = ITA
+
+	# Triggered by ALB 3500
+
+	name = "EVT_2903_NAME"
+	desc = "EVT_2903_DESC"
+	style = 0
+	picture = "Albania"
+
+	action_a = {
+		name = "ACTIONNAME2903A" # Declare War
+		ai_chance = 100
+		command = { type = war which = ALB }
+		command = { type = relation which = YUG value = -10 }
+		command = { type = relation which = GRE value = -10 }
+		command = { type = add_corps which = "Corpo de Spedizione Albania" value = land where = 391 }
+		command = { type = add_division value = bergsjaeger }
+		command = { type = add_division value = bergsjaeger }
+		command = { type = supplies value = -2000 }
+	}
+	action_b = {
+		name = "ACTIONNAME2903B" # We do not dare follow through
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = relation which = ALB value = 10 }
+	}
+}
+#########################################################################
+#  Annexation of Albania - Zog accepts
+#########################################################################
+event = {
+	id = 2904
+	random = no
+	country = ITA
+
+	# Triggered by ALB 3500
+
+	name = "EVT_2904_NAME"
+	desc = "EVT_2904_DESC"
+	style = 0
+	picture = "Albania"
+
+	action_a = {
+		name = "OK" # Great!
+		command = { type = inherit which = ALB }
+		command = { type = dissent value = -5 }
+		command = { type = relation which = YUG value = -5 }
+		command = { type = relation which = GRE value = -10 }
+	}
+}

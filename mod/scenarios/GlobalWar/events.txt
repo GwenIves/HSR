@@ -1,0 +1,23 @@
+#
+#
+#
+# The Hearts of Iron 2 - Events Database
+#
+#
+
+
+# Political Events
+
+event = "db\events\sc events.txt"
+event = "db\events\ml events.txt"
+event = "db\events\sl events.txt"
+event = "db\events\sd events.txt"
+event = "db\events\election_events.txt"
+
+# Random events
+
+event = "db\events\RandomEvents.txt"
+
+# Invention type events
+event = "db\events\secret_weapon_events.txt"
+

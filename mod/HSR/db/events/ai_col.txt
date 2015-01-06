@@ -1,0 +1,281 @@
+####################################
+# Columbia AI events 34500 - 34599 by Lothos
+####################################
+################
+# Minister of Security Section 34500 - 34509
+#############################################
+event = { # Alberto Lleras Camargo takes power
+	id = 34500
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37095 # Alberto Lleras Camargo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLSecurityCamargo }
+		}
+		OR = {
+			manpower = 20
+			NOT = { minister = 37096 } # Francesco José Urrutia
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COLSecurityCamargo }
+		command = { type = local_clrflag which = COLSecurityMcDermott }
+		command = { type = ministerofsecurity which = 37095 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Francesco José Urrutia takes power
+	id = 34501
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37096 # Francesco José Urrutia
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLSecurityMcDermott }
+		}
+		OR = {
+			NOT = { manpower = 20 }
+			NOT = { minister = 37095 } # Alberto Lleras Camargo
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = COLSecurityCamargo }
+		command = { type = local_setflag which = COLSecurityMcDermott }
+		command = { type = ministerofsecurity which = 37096 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 34510 - 34519
+#############################################
+event = { # Jorge Mercado Sanchez takes power
+	id = 34510
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37007 # Jorge Mercado Sanchez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLChiefSanchez }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COLChiefSanchez }
+		command = { type = chiefofstaff which = 37007 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 34520 - 34529
+#############################################
+event = { # Fernando Londono y Londono takes power
+	id = 34520
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37006 # Fernando Londono y Londono
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLIntelligenceLondono }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COLIntelligenceLondono }
+		command = { type = ministerofintelligence which = 37006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 34530 - 34539
+#############################################
+event = { # Ruben Piedrahita Arango takes power
+	id = 34530
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37140 # Ruben Piedrahita Arango
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLArmyArango }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COLArmyArango }
+		command = { type = chiefofarmy which = 37140 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 34540 - 34549
+#############################################
+event = { # Alain Adair Arriaga takes power
+	id = 34540
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 25004 # Alain Adair Arriaga
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLArmamentArriaga }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COLArmamentArriaga }
+		command = { type = local_clrflag which = COLArmamentFernandez }
+		command = { type = armamentminister which = 25004 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Joaquin Fernandez takes power
+	id = 34541
+	random = no
+	country = COL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 37084 # Joaquin Fernandez
+		NOT = { minister = 25004 } # Alain Adair Arriaga
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COLArmamentFernandez }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = COLArmamentArriaga }
+		command = { type = local_setflag which = COLArmamentFernandez }
+		command = { type = armamentminister which = 37084 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 34560 - 34599
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 34560
+	random = no
+	country = COL
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_3.ai" }
+	}
+}

@@ -1,0 +1,281 @@
+####################################
+# Peru AI events 35300 - 35399 by Lothos
+####################################
+################
+# Minister of Security Section 35300 - 35309
+#############################################
+event = { # Abraham Ortega Aguayo takes power
+	id = 35300
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44097 # Abraham Ortega Aguayo
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLSecurityAguayo }
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 44095 } # Antonio Huneeus
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHLSecurityAguayo }
+		command = { type = local_clrflag which = CHLSecurityHuneeus }
+		command = { type = ministerofsecurity which = 44097 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Antonio Huneeus takes power
+	id = 35301
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44095 # Antonio Huneeus
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLSecurityHuneeus }
+		}
+		OR = {
+			NOT = { manpower = 200 }
+			NOT = { minister = 44097 } # Abraham Ortega Aguayo
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CHLSecurityAguayo }
+		command = { type = local_setflag which = CHLSecurityHuneeus }
+		command = { type = ministerofsecurity which = 44097 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 35310 - 35319
+#############################################
+event = { # Ernesto M. Orlando takes power
+	id = 35310
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44121 # Ernesto M. Orlando
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLChiefOrlando }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHLChiefOrlando }
+		command = { type = chiefofstaff which = 44121 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 35320 - 35329
+#############################################
+event = { # Carlos Fuentes Rabe takes power
+	id = 35320
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44112 # Carlos Fuentes Rabe
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLIntelligenceRabe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHLIntelligenceRabe }
+		command = { type = ministerofintelligence which = 44112 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 35330 - 35339
+#############################################
+event = { # Carlos Fuentes Rabe takes power
+	id = 35330
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44132 # Carlos Fuentes Rabe
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLArmyRabe }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHLArmyRabe }
+		command = { type = chiefofarmy which = 44132 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 35340 - 35349
+#############################################
+event = { # Cristobál Saénz Cerda takes power
+	id = 35340
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44077 # Cristobál Saénz Cerda
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLArmamentCerda }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = CHLArmamentCerda }
+		command = { type = local_clrflag which = CHLArmamentMorales }
+		command = { type = armamentminister which = 44077 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Juan Rios Morales takes power
+	id = 35341
+	random = no
+	country = CHL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 44069 # Juan Rios Morales
+		NOT = { minister = 44077 } # Cristobál Saénz Cerda
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = CHLArmamentMorales }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = CHLArmamentCerda }
+		command = { type = local_setflag which = CHLArmamentMorales }
+		command = { type = armamentminister which = 44069 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 35360 - 35399
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 35360
+	random = no
+	country = CHL
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_3.ai" }
+	}
+}

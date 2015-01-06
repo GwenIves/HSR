@@ -1,0 +1,496 @@
+# Aregorn_Weather: Some historical weather patterns (6)
+#
+# ID		Title						Author
+#
+# 49000 	Weather spring 1940 				(by Aregprn 050612)
+# 49001 	Weather Winter 1939 				(by Aregprn 050612)
+# 49002 	Weather events - raining (GER)
+# 49003 	Weather events - frozen (GER)
+# 49004  	Weather events - mud (SOV)
+# 49005 	Weather events - mud (SOV)
+# 49006-09 	Weather events - May 1941 mud 			(by Aregorn 090214)
+
+#########################################################################
+# 500100 dissent
+#########################################################################
+event = {
+	id = 500100
+	random = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+	command = { }
+	}
+}
+#########################################################################
+# 500000 dissent
+#########################################################################
+event = {
+	id = 500000
+	random = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -5 }
+	}
+}
+#########################################################################
+# 500001 naval_bomber
+#########################################################################
+event = {
+	id = 500001
+	random = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = naval_bomber when = 0 where = escort }
+	}
+}
+#########################################################################
+# 500002 tactical_bomber
+#########################################################################
+event = {
+	id = 500002
+	random = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+	}
+}
+#########################################################################
+# 500003 multi_role
+#########################################################################
+event = {
+	id = 500003
+	persistent = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = multi_role when = 0 }
+	}
+}
+#########################################################################
+# 500004 infantry
+#########################################################################
+event = {
+	id = 500004
+	persistent = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = infantry when = 2 }
+	}
+}
+#########################################################################
+# 500005 bergsjaeger
+#########################################################################
+event = {
+	id = 500005
+	persistent = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = bergsjaeger when = 2 }
+	}
+}
+#########################################################################
+# 500006 armor
+#########################################################################
+event = {
+	id = 500006
+	persistent = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+	}
+}
+#########################################################################
+# 500011 CV
+#########################################################################
+event = {
+	id = 500011
+	persistent = yes
+
+	trigger = { year = 1966
+	}
+
+	name = "Difficulty"
+	desc = "Difficulty"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		command = { type = add_division value = carrier when = 3 where = cag }
+		command = { type = supplies value = -15000 }
+	}
+}
+#########################################################################
+# 49000 Weather spring 1940 (by Aregprn 050612)
+#########################################################################
+
+event = {
+	id = 49000
+	random = no
+	country = ger
+
+	trigger = { event = 49001 }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 16 month = march year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "The army is now ready to move!"
+		command = { type = end_pattern which = 4712 value = 501 }
+		command = { type = end_pattern which = 4712 value = 502 }
+		command = { type = end_pattern which = 4712 value = 503 }
+		command = { type = end_pattern which = 4712 value = 504 }
+		command = { type = end_pattern which = 4712 value = 505 }
+		command = { type = end_pattern which = 4712 value = 506 }
+		command = { type = end_pattern which = 4712 value = 507 }
+		command = { type = end_pattern which = 4712 value = 508 }
+		command = { type = end_pattern which = 4712 value = 509 }
+		command = { type = end_pattern which = 4712 value = 510 }
+		command = { type = end_pattern which = 4712 value = 511 }
+		command = { type = end_pattern which = 4712 value = 512 }
+	}
+}
+#########################################################################
+# 49001 Weather Winter 1939 (by Aregprn 050612)
+#########################################################################
+
+event = {
+	id = 49001
+	random = no
+	country = ger
+
+	trigger = { event = 40055 }
+
+	name = "Weather End 1939"
+	desc = "The end of 1939 was characterised by constant rains in western Europe, making difficult to perform air operations."
+	style = 0
+
+	date = { day = 2 month = November year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1939 }
+
+	action_a = {
+		name = "ok"
+		command = { type = start_pattern which = 4712 value = 501 where = 51 when = snowing } # Brusels
+		command = { type = start_pattern which = 4712 value = 502 where = 47 when = snowing } # Amsterdam
+		command = { type = start_pattern which = 4712 value = 503 where = 107 when = snowing } # Oslo
+		command = { type = start_pattern which = 4712 value = 504 where = 54 when = snowing } # Amiens
+		command = { type = start_pattern which = 4712 value = 505 where = 70 when = snowing } # Arlon
+		command = { type = start_pattern which = 4712 value = 506 where = 50 when = snowing } # Antwerp
+		command = { type = start_pattern which = 4712 value = 507 where = 49 when = snowing } # Eindhoven
+		command = { type = start_pattern which = 4712 value = 508 where = 63 when = snowing } # Troyes
+		command = { type = start_pattern which = 4712 value = 509 where = 56 when = snowing } # Paris
+		command = { type = start_pattern which = 4712 value = 510 where = 55 when = snowing } # Compiègne
+		command = { type = start_pattern which = 4712 value = 511 where = 65 when = snowing } # Namur
+		command = { type = start_pattern which = 4712 value = 512 where = 45 when = snowing } # Ghent
+	}
+}
+#########################################################################
+# 49002 Weather events - mud (GER)
+#########################################################################
+event = {
+	id = 49002
+	random = no
+	country = GER
+
+	trigger = { random = 20	}
+
+	name = "fbarb_event6_name"
+	desc = "fbarb_event6_desc"
+
+	picture = "german_mud"
+	style = 0
+
+	date = { day = 1 month = september year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = october year = 1941 }
+
+
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 501 where = 219 when = raining } # Smolensk
+		command = { type = start_pattern which = 4712 value = 502 where = 238 when = raining } # Kiev
+		command = { type = start_pattern which = 4712 value = 503 where = 197 when = raining } # Riga
+		command = { type = start_pattern which = 4712 value = 504 where = 278 when = raining } # Tula
+		command = { type = start_pattern which = 4712 value = 505 where = 248 when = raining } # Kharkov
+		command = { type = start_pattern which = 4712 value = 506 where = 187 when = raining } # Piter
+		command = { type = trigger which = 49004 } # Soviet Weather
+
+	}
+}
+#########################################################################
+# 49003 Weather events - frozen (GER)
+#########################################################################
+event = {
+	id = 49003
+	random = no
+	country = GER
+
+	trigger = { random = 50	}
+
+
+	name = "fbarb_event7_name"
+	desc = "fbarb_event7_desc"
+
+	picture = "german_frozen"
+	style = 0
+
+	date = { day = 15 month = november year = 1941 }
+	offset = 10
+	deathdate = { day = 3 month = december year = 1941 }
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 513 where = 219 when = blizzard } # Smolensk
+		command = { type = start_pattern which = 4712 value = 514 where = 238 when = blizzard } # Kiev
+		command = { type = start_pattern which = 4712 value = 515 where = 197 when = blizzard } # Riga
+		command = { type = start_pattern which = 4712 value = 516 where = 278 when = blizzard } # Tula
+		command = { type = start_pattern which = 4712 value = 517 where = 248 when = blizzard } # Kharkov
+		command = { type = start_pattern which = 4712 value = 518 where = 187 when = blizzard } # Piter
+		command = { type = trigger which = 49005 } # Soviet Weather
+	}
+}
+#########################################################################
+# 49004  Weather events - mud (SOV)
+#########################################################################
+event = {
+	id = 49004
+	random = no
+	country = SOV
+
+
+	name = "fbarb_event6_name"
+	desc = "fbarb_event6_desc"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 507 where = 219 when = raining } # Smolensk
+		command = { type = start_pattern which = 4712 value = 508 where = 238 when = raining } # Kiev
+		command = { type = start_pattern which = 4712 value = 509 where = 197 when = raining } # Riga
+		command = { type = start_pattern which = 4712 value = 510 where = 278 when = raining } # Tula
+		command = { type = start_pattern which = 4712 value = 511 where = 248 when = raining } # Kharkov
+		command = { type = start_pattern which = 4712 value = 512 where = 187 when = raining } # Piter
+
+	}
+}
+#########################################################################
+# 49005 Weather events - mud (SOV)
+#########################################################################
+event = {
+	id = 49005
+	random = no
+	country = SOV
+
+
+	name = "fbarb_event7_name"
+	desc = "fbarb_event7_desc"
+
+	picture = "soviet_mud"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 519 where = 219 when = blizzard } # Smolensk
+		command = { type = start_pattern which = 4712 value = 520 where = 238 when = blizzard } # Kiev
+		command = { type = start_pattern which = 4712 value = 521 where = 197 when = blizzard } # Riga
+		command = { type = start_pattern which = 4712 value = 522 where = 175 when = blizzard } # Moscow
+		command = { type = start_pattern which = 4712 value = 523 where = 248 when = blizzard } # Kharkov
+		command = { type = start_pattern which = 4712 value = 524 where = 187 when = blizzard } # Piter
+
+	}
+}
+#########################################################################
+# 49006-09 Weather events - May 1941 mud (by Aregorn 090214)
+#########################################################################
+event = {
+	id = 49006
+	random = no
+	country = GER
+
+	trigger = { ai = no }
+
+	name = "Extended raining season in Russia"
+	desc = "Unusal late rainy weather for the month of May is causing muddy terrain unfit for normal armor movement"
+
+	picture = "german_mud"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = may year = 1941 }
+
+
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 601 where = 219 when = raining } # Smolensk
+		command = { type = start_pattern which = 4712 value = 602 where = 238 when = raining } # Odessa
+		command = { type = start_pattern which = 4712 value = 603 where = 197 when = raining } # Riga
+		command = { type = start_pattern which = 4712 value = 605 where = 248 when = raining } # Kharkov
+		command = { type = start_pattern which = 4712 value = 606 where = 217 when = raining } # vitebsk
+	}
+}
+event = {
+	id = 49007
+	random = no
+	country = ami
+
+	trigger = { ai = yes }
+
+	name = "AI_EVENT"
+
+	style = 0
+
+	date = { day = 7 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = may year = 1941 }
+
+
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 607 where = 236 when = raining } # Krivoi
+		command = { type = start_pattern which = 4712 value = 608 where = 227 when = raining } # Zhitomir
+		command = { type = start_pattern which = 4712 value = 609 where = 231 when = raining } # Mogilev
+		command = { type = start_pattern which = 4712 value = 610 where = 201 when = raining } # opochka
+		command = { type = start_pattern which = 4712 value = 611 where = 218 when = raining } # vitebsk
+	}
+}
+event = {
+	id = 49008
+	random = no
+	country = ami
+
+	trigger = { ai = yes }
+
+	name = "AI_EVENT"
+
+	style = 0
+	date = { day = 14 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = may year = 1941 }
+
+
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 612 where = 221 when = raining } # Smolensk
+		command = { type = start_pattern which = 4712 value = 613 where = 240 when = raining } # Odessa
+		command = { type = start_pattern which = 4712 value = 614 where = 199 when = raining } # Riga
+		command = { type = start_pattern which = 4712 value = 615 where = 250 when = raining } # Kharkov
+		command = { type = start_pattern which = 4712 value = 616 where = 219 when = raining } # vitebsk
+	}
+}
+event = {
+	id = 49009
+	random = no
+	country = ami
+
+	trigger = { ai = yes }
+
+	name = "AI_EVENT"
+
+	style = 0
+
+	date = { day = 21 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = may year = 1941 }
+
+
+
+	action_a = {
+		name = "OK"
+		command = { type = start_pattern which = 4712 value = 617 where = 236 when = raining } # Krivoi
+		command = { type = start_pattern which = 4712 value = 618 where = 227 when = raining } # Zhitomir
+		command = { type = start_pattern which = 4712 value = 619 where = 231 when = raining } # Mogilev
+		command = { type = start_pattern which = 4712 value = 620 where = 201 when = raining } # opochka
+		command = { type = start_pattern which = 4712 value = 621 where = 218 when = raining } # vitebsk
+	}
+}

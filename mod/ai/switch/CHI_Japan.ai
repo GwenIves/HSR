@@ -1,0 +1,162 @@
+# China 1936 AI File by Lothos
+
+max_front_ratio = 1.1
+max_garrison_prop = 0.60
+min_garrison_prop = 0.50
+neutrality = 100.000
+war = 20
+strat_redeploy_threshold = 25
+exp_force_ratio = 0.0
+exp_force_ratios = { }
+no_exp_forces_to = { }
+
+###################################
+# Diplomacy
+###################################
+combat = {
+	JAP = 150
+}
+
+befriend = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+}
+protect = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+	CGX = 100
+}
+target = { }
+###################################
+# Construction and Tech Research
+###################################
+construction = {
+	max_factor = 0.00
+
+	AA_batteries = no
+	max_AA_level = 3
+	AA_provs = { }
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = no
+	max_radar = 5
+	radar_provs = { }
+
+	air_base = yes
+	max_air_base = 4
+	air_base_provs = {
+		1261 # Huahihua
+		1280 # Chungking
+	}
+
+	naval_base = no
+	max_naval_base = 5
+	naval_base_provs = { }
+
+	land_fort = no
+	max_land_level = 1
+	fort_provs	= { }
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1935
+	ic_end_year = 1935
+	IC_provs = { }
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 		= 1.0
+	overseas_multiplier 	= 1.0
+	home_peace_cap 			= 10
+	war_zone_odds 			= 1.5
+	key_point_prio_mult		= 0.0
+	revolt_risk_mult		= 0.3
+
+	# PRIORITIES:
+	beach			= 50	# Beach level 2
+	capital		= 70	# Our capital
+	human_border	= 0		# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+	reserves 		= 40
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		SOV = -1
+		MON = -1
+		TIB = -1
+		NEP = -1
+		AFG = -1
+		FRA = -1
+		VIC = 40
+		SIA = 40
+		ENG = -1
+		POR = -1
+		JAP = 80
+		CHC = -1
+		MAN = 70
+		CSX = -1
+		SIK = -1
+		CXB = -1
+		CYN = -1
+		CGX = -1
+	}
+}
+front = {
+	recklessness 		= 0 # 0-3
+	distrib_vs_ai 		= even
+	distrib_vs_human 	= even
+
+	enemy_reinf_days	= 7
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 3.0
+	panic_ratio_vs_human	= 3.0
+	base_attack_odds	= 1.4
+	min_attack_odds		= 1.3
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.1
+	withdraw_odds		= 0.8
+	support_defense_prop 	= 0.1
+
+	province_priorities = {
+		1439 = 0.5 # Bayan Nur
+		1273 = 0.5 # Yinchuan
+		1274 = 0.5 # Guyuan
+
+		# Communist China
+		1269 = 1.5 # Xi'an
+		1271 = 0.2
+		# Yantai to prevent pocket
+		1214 = 0.2
+		1215 = 0.5
+		1216 = 0.5
+		# To prevent center trap
+		1229 = 0.1
+		1230 = 0.1
+		1228 = 0.1
+		# to help ai fight along coast
+		1239 = 0.2
+		1240 = 0.2
+		1241 = 1.2
+		1243 = 1.2
+		1244 = 0.3
+		1245 = 0.3
+		1247 = 0.3
+		1248 = 0.3
+		1249 = 0.3
+		1250 = 3.0 # Ghazhou
+	}
+}

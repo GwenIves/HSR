@@ -1,0 +1,68 @@
+#
+# Reworked by Aregorn for HSR2_DD
+#
+# 0 - Basic
+model = {
+	cost 				= 1
+	buildtime	 		= 105 	#40
+	manpower 			= 1	#2
+	defensiveness 			= 1
+	hardattack			= 1
+	airattack			= 1
+	airdefence			= 2
+	supplyconsumption 		= 0.15	#0.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 1 - Improved
+model = {
+	cost 				= 1
+	buildtime	 		= 105 	#40
+	manpower 			= 1	#2
+	defensiveness 			= 1
+	hardattack			= 1
+	airattack			= 2
+	airdefence			= 3
+	supplyconsumption 		= 0.15	#0.35
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 2 - Advanced
+model = {
+	cost 				= 1
+	buildtime	 		= 105 	#40
+	manpower 			= 1	#2
+	defensiveness 			= 1
+	hardattack			= 2
+	airattack			= 3
+	airdefence			= 3
+	supplyconsumption 		= 0.18	#0.4
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 3 - Semi-Modern
+model = {
+	cost 				= 1
+	buildtime	 		= 105 	#40
+	manpower 			= 1	#2
+	defensiveness 			= 2
+	hardattack			= 3
+	airattack			= 4
+	airdefence			= 4
+	supplyconsumption 		= 0.18	#0.45
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 4 - Modern
+model = {
+	cost 				= 1
+	buildtime	 		= 105	#40
+	manpower 			= 1	#2
+	defensiveness 			= 3
+	hardattack			= 3
+	airattack			= 5
+	airdefence			= 5
+	supplyconsumption 		= 0.2
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

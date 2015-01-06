@@ -1,0 +1,37 @@
+#
+# Reworked by Aregorn for HSR2_DD
+#
+# 0 - Basic
+model = {
+	cost 				= 3
+	buildtime	 		= 60
+	manpower 			= 2
+	defensiveness 			= 1
+	toughness 			= 1
+	defaultorganisation 		= 5	#3
+	softness			= -5
+	softattack			= 2
+	hardattack			= 1
+	maxspeed 			= 1 #0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.2	#0.4
+	upgrade_time_factor 	= 0.5
+	upgrade_cost_factor 	= 1.0
+}
+# 1 - Improved
+model = {
+	cost 				= 4	#3
+	buildtime	 		= 60
+	manpower 			= 2
+	defensiveness 			= 2
+	toughness 			= 2
+	defaultorganisation 		= 10	#6
+	softness			= -5
+	softattack			= 4	#3
+	hardattack			= 2	#1
+	maxspeed 			= 1 	#0
+	supplyconsumption 		= 0.5	#1
+	fuelconsumption			= 0.22	#0.45
+	upgrade_time_factor 	= 0.5
+	upgrade_cost_factor 	= 1.0
+}

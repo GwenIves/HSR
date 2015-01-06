@@ -1,0 +1,574 @@
+#
+# Hearts of Iron 2
+#
+# Finland 1941 AI file
+# Tamerlan
+
+# 100 = Total warmonger, 0 = absolute pacifist
+war = 5
+reinforcement = 0.3000
+upgrading = 0.2500
+strat_redeploy_threshold = 20
+
+max_front_ratio			= 1.2
+max_garrison_prop		= 0.1
+min_garrison_prop		= 0.05
+
+combat = {
+}
+
+claim_acceptance = -49
+
+befriend = {
+	BUL =  60
+	ROM =  60
+	YUG =  50
+	CRO =  40
+	SPA =  40
+	SLO =  30
+	GRE =  20
+	HUN =  20
+	POR =  20
+	AFG =  10
+	PER =  10
+	ARG =  10
+	BRA =  10
+	GER = 150
+	JAP =  60
+	ITA =  50
+	VIC =  50
+	MAN =  10
+}
+protect = {
+}
+###################################
+# Spying
+###################################
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.6
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 10
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+		country = FIN
+	}
+	spyprefsdata = {
+		country_priorities	= 6
+		steal_blueprint 	= 10
+		minister_assassination 		= 0
+		smear_campaign 		= 2
+		coup 				= 0
+		sabotage_industry 	= 0
+		nuclear_sabotage 	= 0
+		found_partisans 	= 0
+		massmedia 			= 1
+		disrupt_techteam	= 0
+		country 			= SOV
+	}
+}
+construction = {
+
+	max_factor		= 0.02
+
+	AA_batteries	 	= no
+	coastal_fort 		= no
+
+	ic_at_war		= no
+	ic_end_year		= 1946
+}
+
+military = {
+
+	relative_build_scheme 	= yes
+	max_batch_peace = 270					# Max production run length in DAYS while at peace
+	max_batch_war = 270			 			# Max production run length in DAYS while at war with no home front
+	max_batch_home_front = 270				# Max production run length in DAYS while at war with home fronts
+	extra_convoys_war = 0.0500
+	extra_convoys_peace = 0.0500
+
+#						80 %
+	infantry = 			30
+	cavalry = 			0
+	motorized = 		0
+	mechanized =		0
+	light_armor =		5
+	armor =			5
+	paratrooper = 		0
+	marine = 			0
+	bergsjaeger = 		20
+	garrison	=		20
+
+#						9 %
+	cas 		= 		0
+	interceptor = 		8
+	multi_role = 		0
+	strategic_bomber = 	0
+	tactical_bomber = 	1
+	naval_bomber = 		0
+	transport_plane = 	0
+
+#						1 %
+	battleship = 		0
+	carrier = 			0
+	destroyer = 		1
+	light_cruiser =		0
+	heavy_cruiser = 	0
+	battlecruiser =		0
+	submarine = 		0
+	transports = 		0
+#10%
+      hq = 				5
+      militia = 			5
+      flying_bomb = 		0
+      flying_rocket = 		0
+# Land types: 15
+	artillery		=	5
+	sp_artillery	=	0
+	rocket_artillery	=	0
+	sp_rocket_artillery	=	0
+	anti_tank		=	5
+	tank_destroyer	=	0
+	light_armor_brigade	=	0
+	heavy_armor		=	0
+	super_heavy_armor	=	0
+	armored_car		=	2
+	anti_air		=	3
+	police		=	0
+	engineer		= 	0
+
+	cag	= 100
+	escort = 			0
+
+	    naval_asw = 20.0000
+	    naval_anti_air_s = 20.0000
+	    naval_radar_s = 20.0000
+	    naval_fire_controll_s = 20.0000
+	    naval_improved_hull_s = 10.0000
+	    naval_torpedoes_s = 10.0000
+	    naval_anti_air_l = 0.0000
+	    naval_radar_l = 0.0000
+	    naval_fire_controll_l = 0.0000
+	    naval_improved_hull_l = 0.0000
+	    naval_torpedoes_l = 0.0000
+}
+
+ technology = {
+      endgoal = { }
+      preference = { }
+      ignore = { }
+
+      infantry = 5.000
+      armor = 4.000
+      industry = 3.000
+      aircraft = 4.000
+      naval = 1.000
+      land_doctrines = 3.000
+      secret_weapons = 1.000
+      air_doctrines = 2.000
+      naval_doctrines = 1.000
+}
+
+garrison = {
+
+	defend_overseas_beaches = no
+
+	# PRIORITIES:
+	beach			= 50	# Beach
+	capital			= 100	# Our capital
+	human_border		= 10  #Ignored for allied human players
+	war_target		= 100	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 1	# For neutrals, all alliances are "opposing"
+	claim_threat	= 10	# If we are neutral, countries with claims on us get this
+	unstable_border		= 1	# Bordering countries at war with someone else get this
+#14 divisions/14 provinces should be enough to protect Finland
+	home_multiplier = 1
+	overseas_multiplier = 0.5 #In case of conquest
+
+	key_point_prio_mult	= 0
+	country_priorities = {
+		SOV = 100
+		SWE = -1
+		GER = -1
+		NOR = -1
+	}
+}
+
+front = {
+	recklessness 		= 	1 # 0-3
+	distrib_vs_ai 		= 	reactive
+	distrib_vs_human 	= 	even
+
+	enemy_reinf_days	=	3
+
+	reserve_prop		=	0.2
+	panic_ratio_vs_ai	=	1.8
+	panic_ratio_vs_human	=	1.5
+	base_attack_odds	=	2.5
+	min_attack_odds		=	2.0
+	max_attack_odds		=	3.0
+	reinforce_odds		=	1.0
+	withdraw_odds		=	1.7
+
+	strength = 1.0
+	organisation = 2.0
+	soft_attack = 1.0
+	hard_attack = 2.0
+	ground_defense = 1.0
+	dig_in = 1.05 #1.25 Against defender
+
+	occupied 	= 0.7
+	owned 		= 0.7
+
+}
+admiral = {
+	ignore = {
+		#Norway Coast (Denmark Coast)
+		"Norwegian Sea"
+		"East North Sea"
+		"Kattegat"
+
+		#North Sea, East Coast of England
+		"Central Northsea"
+		"West Northsea"
+		"Southeast Northsea"
+
+		#England/France border Sea Areas
+		"English Channel"
+		"Bay of Biscay"
+		"Cape Finisterre"
+
+		#Spanish Coast (Atlantic Side)
+		"Portugese Coast"
+		"Cap St Vincent"
+
+		#Iceland
+		"Faroes Gap"
+		"Denmark Strait"
+
+		#Ireland/West Coast of England
+		"Irish Sea"
+		"The Hebreides"
+		"Irish West Coast"
+
+		#Greenland
+		"Greenland Coast"
+		"Northern Sea of Labrador"
+		"Southern Sea of Labrador"
+
+		#Canada East Coast
+		"Hudson Bay"
+		"Grand Banks"
+		"Canadian Maritimes"
+
+		#Western Mediterranean
+		"Costa del Sol"
+		"Gulf of Lyon"
+		"Algerian Coast"
+
+		#Central Mediterranean
+		"Tyrrhenian Sea"
+		"Adriatic Sea"
+
+		#Eastern Mediterranean
+		"Black Sea"
+		"Aegean Sea"
+		"Egyptian Coast"
+
+		#North Atlantic
+		"North Atlantic"
+		"Western Approaches"
+		"The Seamounts"
+		"Azores"
+
+		#Central Atlantic
+		"Central Atlantic"
+		"Central Mid-Atlantic Ridge"
+		"Bermuda Triangle"
+		"Guiana Basin"
+		"South-Central Mid-Atlantic Ridge"
+		"Cap Verde"
+
+		#South Atlantic
+		"Pernambuco Plain"
+		"Ascension Fracture Zone"
+		"Argentine Plain"
+		"Angola Plain"
+
+		#Caribbean Sea and Guilf of Mexico
+		"West Gulf of Mexico"
+		"East Gulf of Mexico"
+		"Florida Strait"
+		"Yucatan Strait"
+		"Windward Islands"
+		"Central Carribean"
+
+		#Brazil and Argentina Coast
+		"Coast of Guyana"
+		"Coast of Recife"
+		"Coast of Uruguay"
+		"Coast of Brazil"
+		"Coast of Argentina"
+
+		# West Africa
+		"Coast of Africa"
+		"Coast of Bissao"
+
+		#Equitorial Africa
+		"Gulf of Guinea"
+		"Coast of Angola-Namibia"
+
+		#South Africa
+		"Coast of South Africa"
+		"Atlantic-Indian Ridge"
+
+		#East Africa
+		"Red Sea"
+		"Horn of Africa"
+
+		#Madagascar Coast
+		"South Mozambique Channel"
+		"North Mozambique Channel"
+		"Northeast Coast of Madagascar"
+		"Southeast Coast of Madagascar"
+
+		#North Indian Ocean (Persian Gulf)
+		"Persian Gulf"
+		"North Arabian Sea"
+		"South Arabian Sea"
+		"Coast of Ceylon"
+
+		#Central/South Indian Ocean
+		"Mascarene Plateau"
+		"Mid-Indian Ridge"
+		"Ninetyeast Ridge"
+		"Southeast Indian Ocean"
+		"Southwest Indian Ocean"
+
+		#Bay of Bengal & West Indonesia
+		"East Bay of Bengal"
+		"West Bay of Bengal"
+		"Malacca Strait"
+		"Java Ridge"
+		"Java Trench"
+
+		#Indo-China, Borneo, Phillipenes
+		"Gulf of Siam"
+		"Coast of Indochina"
+		"Spratly Sea"
+		"Coast of Brunei"
+		"Flores Sea"
+		"Sulu Sea"
+		"Celebes Sea"
+		"Luzon Strait"
+
+		#China Coast
+		"Taiwan Strait"
+		"Yellow Sea"
+
+		#Japanese Coast
+		"Sea of Japan"
+		"Ryukyus"
+		"Coast of Japan"
+		"South Sea of Okhotsk"
+		"West Sea of Okhotsk"
+		"East Sea of Okhotsk"
+
+		#Mariana Basin, Phillipenes
+		"Philipine Trench"
+		"Central Philippine Sea"
+		"Mariana Trench"
+		"East Mariana Basin"
+		"Mid-Pacific Mountains"
+		"North Bismarck Sea"
+
+		#New Guinea, East/North Australia and New Zealan
+		"Coast of New Guinea"
+		"Molucca Sea"
+		"Banda Sea"
+		"Arafura Sea"
+		"South Bismarck Sea"
+		"Solomon Sea"
+		"West Coral Sea"
+		"East Coral Sea"
+		"North Tasman Sea"
+		"South Tasman Sea"
+		"East Cost of New Zealand"
+
+		# South and West Australia
+		"Timor Sea"
+		"West Coast of Australia"
+		"East Great Australian Bight"
+		"West Great Australian Bight"
+
+		#North Pacific
+		"Coast of Kamchatka"
+		"East Bering Sea"
+		"West Bering Sea"
+		"Aleutians"
+		"Northwest Pacific Basin"
+		"North Northeast Pacific Basin"
+
+		#Central Pacific
+		"Hawaiian Rise"
+		"North East Pacific Ocean"
+		"Marshalls Sea"
+		"South East Pacific Ocean"
+		"Marianas"
+		"Western Solomons"
+		"Eastern Solomons"
+		"US Maritimes"
+		"Carolines"
+
+		#South Pacific
+		"Gilberts"
+		"Line Islands"
+		"Fiji Basin"
+		"Southwest Pacific Basin"
+
+		# South American West Coast
+		"Southeast Pacific Basin"
+		"West Coast of Chile"
+		"West Coast of Peru"
+		"South Southeast Pacific Ocean"
+		"North Southeast Pacific Ocean"
+
+		# USA West Coast
+		"Gulf of Alaska"
+		"West Coast of the United States"
+
+		#West Coast of Mexico
+		"West Coast of Mexico"
+		"West Coast of Central America"
+	}
+	#specific provinces can be targetted to get special bonuses..
+	target = {
+		2482 = 30
+		2491 = 30
+		2493 = 30
+	}
+
+# Keep this ones in 1941... a special core section could be loaded if Germany is NOT played by a human
+	core = {
+		# 2484 no point, either it is the sov navy (our navy can't save us), or it's a sneaky human minor, and then we could probably rely on our troops in Helsinki
+		2482
+		2491
+		2493
+	}
+}
+
+trade = {
+	favored = {
+		GER = 200 		# Will not trade techs with these countries.
+		JAP = 100
+		VIC = 150
+		HUN = 100
+		CRO = 150
+		SLO = 50
+		ROM = 50
+		BUL = 100
+		ITA = 100
+		CZE = 50
+		SPA = 20
+	}
+	embargo = {
+		AST
+		CAN
+		SAF
+		NZL
+		FRA
+		USA
+		SOV
+		CHI
+		BEL
+		CHC
+		ENG
+	}
+}
+leader_ratio = {
+	land_field_marshal 	=0.02
+	land_general 		=0.031
+	land_lt_general 	=0.41
+
+	sea_grand_admiral 	=0.02
+	sea_admiral 		=0.061
+	sea_vice_admiral 	=0.401
+
+	air_marshal 		=0.02
+	air_general 		=0.091
+	air_lt_General 		=0.11
+}
+tech_sharing = {
+	favored = {
+		GER = 200 		# Will not trade techs with these countries.
+		JAP = 100
+		VIC = 100
+		HUN = 100
+		CRO = 150
+		SLO = 50
+		ROM = 50
+		BUL = 100
+		ITA = 100
+		CZE = 50
+		SPA = 20
+	}
+	embargo = {
+		AST
+		CAN
+		SAF
+		NZL
+		FRA
+		USA
+		SOV
+		CHI
+		BEL
+		CHC
+		ENG
+	}
+	prioritized = {
+	}
+}
+
+
+
+air_marshal = {
+	icxdayscostfactor = 10.0		# How to value true industrial cost when calculating expect causalties
+	manpowercostfactor = 100.0		# How to value manpower cost when calculating expect causalties
+	destructionriskthreashold = 0.2		# when to fear a divisiopn might be destroyed
+
+	airsuperioritydesirability = 10.0	# desirability is a multiplier used when calcualting the mission desirability
+	airsuperioritylosstolerance = 1.0	# tolerance is the required kill:loss ration expected to do mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+	groundattacklosstolerance = 1.0
+	groundattackdesirability = 1.0
+	interdictionlosstolerance = 1.5
+	inderdictiondesirability = 1.0
+	logisticalstrikelosstolerance = 4.5
+	logisticalstrikeefficency = 0.01	# efficency is a tweakable param to adjust according to how much actual damage comes from doing this mission (not to be confused with desirability)
+	logisticalstrikedesirability = 100000.0
+	runwaycrateringlosstolerance = 1.5
+	runwaycrateringefficency = 0.01
+	runwaycrateringdesirability = 20000.0
+	strategicstriketolerance = 4.5
+	strategicstrikeefficency = 0.01
+	strategicstrikedesirability = 1000000.0
+	installationstriketolerance = 1.5
+	installationstrikeefficency = 0.01
+	installationstrikedesirability = 10.0
+	navalstriketolerance = 1.0
+	navalstrikedesirability = 10.0
+	portstriketolerance = 1.0
+	portstrikedesirability = 9.0
+}

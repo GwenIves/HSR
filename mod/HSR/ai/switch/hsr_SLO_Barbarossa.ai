@@ -1,0 +1,28 @@
+#
+# by Aregorn for HSR
+#
+combat = {
+	SOV = 50
+}
+front = {
+	recklessness 		= 2 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 4.0
+	panic_ratio_vs_human	= 4.0
+	base_attack_odds	= 1.0
+	min_attack_odds		= 0.8
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+}
+garrison = {
+	country_priorities = {
+		sov = 100
+	}
+}
+

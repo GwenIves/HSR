@@ -1,0 +1,508 @@
+# Aregorn_Latin_America: Events for Latin America (15)
+#
+# ID		Title						Author
+#
+# 46000-2 	(ARG) Argentina at War with the allies		(by Aregorn 050130)
+# 46003 	(ARG) Argentina's Economy 			(by Aregorn 050130)
+# 46004 	(BRA) Brazil joins the allies 			(by Aregorn 050130)
+# 46005 	(ARG) New Agriculture methods 			(by Aregorn 050130)
+# 46006 	(ARG) New Agriculture methods 2			(by Aregorn 050130)
+# 46007 	(ARG) Argentinean Claims 			(by Aregorn 050709)
+# 46008-12 	Latin American Immigration 			(by Aregorn 060604)
+# 46013 	(ARG) International Help to Finland (Historical)(by Aregorn 050604)
+# 46014 	(ARG) Deutsche SüdameriKakorps  		(by Aregorn 060606)
+
+###################################################################################################
+# 46000-2 Argentina at War with the allies (by Aregorn 050130)
+###################################################################################################
+event = {
+	id = 46000
+	country = arg
+	random = no
+	persistent = yes
+
+	trigger = { 	war = { country = arg country = eng }
+			or = {
+				and = { month = 3 not = { month = 4 }  }
+				and = { month = 9 not = { month = 10 }  }
+			}
+			day = 29
+	}
+
+	name = "Nationalisation of English companies"
+	desc = "War with the allies meant that all British companies most importantly the rail system and exporting facilities were nationalised."
+	style = 0
+
+	date = { day = 10 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Nationalise the companies!"
+			ai_chance = 100
+			command = { type = industrial_modifier which = total value = 2 }
+			command = { type = construct which = ic where = 667 value = 1 }
+		    	command = { type = dissent value = -2 }
+			command = { type = supplies value = -1000 }
+			command = { type = domestic which = free_market value = -1 }
+			command = { type = relation which = usa value = -10 }
+			command = { type = free_money value = -2 }
+			command = { type = trigger which = 46001 }
+			command = { type = sleepevent which = 46000 }
+	}
+	action_b = {
+		name = "We better not touch foreign interests for now."
+			ai_chance = 0
+		   	command = { type = dissent value = 3 }
+	}
+}
+event = {
+	id = 46001
+	country = eng
+	random = no
+
+	name = "Argentina Nationalised English companies"
+	desc = "War with the allies meant that all British companies most importantly the rail system and exporting facilities were nationalised."
+	style = 0
+
+	action_a = {
+		name = "This was a severe blow to our economy"
+		command = { type = industrial_modifier which = supplies value = -2 }
+
+	}
+}
+
+event = {
+	id = 46002
+	country = eng
+	random = no
+
+	trigger = { event = 46001 random = 50 war = { country = arg country = eng }}
+
+	name = "Argentina's commodities"
+	desc = "Argentina was the largest exporter of agricultural goods at the time. Nicknamed as the mill of the world was indeed saving Europe from starvation. Once at war the usual food convoys to Britain stopped striking a severe blow to the allies."
+	style = 0
+
+	date = { day = 10 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "This was a severe blow to our economy"
+	  	command = { type = relative_manpower value = -20 }
+
+	}
+}
+###################################################################################################
+# 46003 Argentina's Economy (by Aregorn 050130)
+###################################################################################################
+event = {
+	id = 46003
+	country = arg
+	random = no
+
+	trigger = { random = 50 }
+
+	name = "Argentina's Economy"
+	desc = "Argentina was the largest exporter of agricultural goods at the time. Nicknamed as the mill of the world did indeed saved Europe from starvation."
+	style = 0
+	picture = argentina
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase exports"
+		ai_chance = 100
+		command = { type = free_money value = 2 }
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = gain_tech which = 5020 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "What is produced in our soil will remain in our soil"
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+}
+###################################################################################################
+# 46004 Brazil joins the allies (by Aregorn 050130)
+###################################################################################################
+event = {
+	id = 46004
+	random = no
+	country = BRA
+
+	trigger = {
+		war = { country = usa country = ger }
+		random = 50
+		NOT = { alliance = { country = BRA country = GER }}
+		NOT = { alliance = { country = BRA country = SOV }}
+		NOT = { alliance = { country = BRA country = ENG }}
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Brazil joins the USA"
+	desc = "."
+
+	style = 0
+
+	action_a = {
+		name = "Join the allies"
+		ai_chance = 80
+		command = { type = alliance which = usa }
+		command = { type = relation which = usa value = 10 }
+		command = { type = domestic which = democratic value = 1 }
+		command = { type = domestic which = freedom value = 1 }
+	}
+	action_b = {
+		name = "We are better off alone"
+		ai_chance = 20
+		command = { type = relation which = usa value = -5 }
+		command = { type = relation which = ger value = 5 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+	}
+}
+###################################################################################################
+# 46005 New Agriculture methods (by Aregorn 050130)
+###################################################################################################
+event = {
+	id = 46005
+	country = arg
+	random = no
+
+	trigger = { random = 50 technology = 5020 }
+
+	name = "New Agriculture methods"
+	desc = "Thanks to the technological advances a boom in agricultural production was achieved."
+	style = 0
+	picture = argentina
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase exports"
+		ai_chance = 100
+		command = { type = free_money value = 2 }
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = gain_tech which = 5030 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "What is produced in our soil will remain in our soil"
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+}
+###################################################################################################
+# 46006 New Agriculture methods (by Aregorn 050130)
+###################################################################################################
+event = {
+	id = 46006
+	country = arg
+	random = no
+
+	trigger = { random = 50 technology = 5040 }
+
+	name = "New Agriculture methods"
+	desc = "Thanks to the technological advances a boom in agricultural production was achieved."
+	style = 0
+	picture = argentina
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase exports"
+		ai_chance = 100
+		command = { type = free_money value = 2 }
+		command = { type = domestic which = free_market value = 1 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "What is produced in our soil will remain in our soil"
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+}
+#########################################################################
+# 46007 Argentinean Claims (by Aregorn)
+#########################################################################
+event = {
+	id = 46007
+	random = no
+	country = arg
+	trigger = { exists = uru exists = par or = { alliance = { country = arg country = ger } ai = no }	}
+
+	name = "Argentinean Claims"
+	desc = "Argentina started a new aggressive territorial policy"
+	style = 0
+	picture = argentina
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 1
+	deathdate = { day = 12 month = march year = 1963 }
+
+	action_a = {
+		name = "ok"
+		ai_chance = 99
+		command = { type = addcore which = 837 }
+		command = { type = addcore which = 849 }
+		command = { type = addcore which = 861 }
+		command = { type = addcore which = 864 }
+		command = { type = addcore which = 866 }
+
+		command = { type = relation which = ENG value = -20 }
+		command = { type = relation which = usa value = -50 }
+		command = { type = relation which = fra value = -10 }
+		command = { type = relation which = bra value = -50 }
+		command = { type = relation which = chl value = -50 }
+		command = { type = relation which = uru value = -50 }
+		command = { type = relation which = par value = -50 }
+
+		command = { type = belligerence which = arg value = 15 }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = free_money value = -1 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "Do not create tension"
+		ai_chance = 1
+		command = { type = relation which = ENG value = 30 }
+		command = { type = relation which = usa value = 30 }
+		command = { type = relation which = fra value = 30 }
+		command = { type = relation which = bra value = 30 }
+		command = { type = relation which = chl value = 30 }
+		command = { type = relation which = uru value = 30 }
+		command = { type = relation which = par value = 30 }
+		command = { type = belligerence which = arg value = -2 }
+		}
+}
+###################################################################################################
+# 46008-12 Latin American Immigration (by Aregorn 050130)
+###################################################################################################
+
+### ARG
+
+event = {
+	id = 46008
+	country = arg
+	random = no
+
+	trigger = { 	random = 50 atwar = no
+			or = {
+				war = { country = eng country = ger }
+				not = { exists = aus }
+			}
+	}
+
+	name = "European immigration"
+	desc = "The political instability in Europe induced a massive emmigration to more promising and secure lands."
+	style = 0
+	picture = argentina
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Welcome people"
+		command = { type = province_manpower which = 667 value = 3 }
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = construct which = ic where = 667 value = 1 }
+	}
+}
+event = {
+	id = 46009
+	country = arg
+	random = no
+
+	trigger = { 	random = 50 atwar = no
+			war = { country = spa country = spr }
+	}
+
+	name = "Spanish immigration"
+	desc = "The political instability in Spain induced a massive emmigration to more promising and secure lands."
+	style = 0
+	picture = argentina
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Welcome people"
+		command = { type = province_manpower which = 667 value = 1 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = construct which = ic where = 667 value = 1 }
+	}
+}
+
+### BRA
+
+event = {
+	id = 46010
+	country = bra
+	random = no
+
+	trigger = { 	random = 50 atwar = no
+			or = {
+				war = { country = eng country = ger }
+				not = { exists = aus }
+			}
+	}
+
+	name = "European immigration"
+	desc = "The political instability in Europe induced a massive emmigration to more promising and secure lands."
+	style = 0
+	picture = southamerica
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Welcome people"
+		command = { type = province_manpower which = 885 value = 3 }
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = construct which = ic where = 885 value = 1 }
+	}
+}
+
+### MEX
+
+event = {
+	id = 46011
+	country = mex
+	random = no
+
+	trigger = { 	random = 50 atwar = no
+			or = {
+				war = { country = eng country = ger }
+				not = { exists = aus }
+			}
+	}
+
+	name = "European immigration"
+	desc = "The political instability in Europe induced a massive emmigration to more promising and secure lands."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Welcome people"
+		command = { type = province_manpower which = 752 value = 3 }
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = construct which = ic where = 752 value = 1 }
+	}
+}
+event = {
+	id = 46012
+	country = mex
+	random = no
+
+	trigger = { 	random = 50 atwar = no
+			war = { country = spa country = spr }
+	}
+
+	name = "Spanish immigration"
+	desc = "The political instability in Spain induced a massive emmigration to more promising and secure lands."
+	style = 0
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Welcome people"
+		command = { type = province_manpower which = 752 value = 1 }
+		command = { type = construct which = ic where = 752 value = 1 }
+	}
+}
+#########################################################################
+# 46013 International Help to Finland - Sweden and the Allies the big absents (Historical) (by Aregorn 050604)
+#########################################################################
+event = {
+	id = 46013
+	random = no
+	country = arg
+
+	trigger = { atwar = no not = { war = { country = arg country = FIN } }
+		war = { country = SOV country = FIN }
+		event = 2621
+		NOT = {	alliance = { country = FIN country = GER } }
+	}
+
+	name = "International Help to Finland - Sweden and the Allies the big absents (Historical)"
+	desc = "Besides the League of Nations call for helping Finland, The 3th of December Sweden decided not to defend the Finish-Sweden disputed island of Åland against the Soviets (reason why later after the War the League of Nations will rule in favour of Finland) and declared that no support will be given to the neighbour country. Conversely first Argentina (22/12/39) and one day later Ecuador, Haití, Perú, Bolivia,
+	Venezuela and México sent immediate help."
+	style = 0
+
+	date = { day = 22 month = december year = 1939 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		ai_chance = 100
+		command = { type = relation which = fin value = 50 }
+		command = { type = relation which = swe value = -30 }
+		command = { type = relation which = eng value = -30 }
+		command = { type = relation which = fra value = -30 }
+		command = { type = relation which = mex value = 10 }
+		command = { type = relation which = ven value = 10 }
+		command = { type = relation which = pru value = 10 }
+		command = { type = relation which = bol value = 10 }
+		command = { type = relation which = ecu value = 10 }
+		command = { type = resource which = supplies value = -50 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 40432 }
+	}
+	action_b = {
+		name = "We can not afford it"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 46014 Deutsche SüdameriKakorps  (by Aregorn 060606)
+#########################################################################
+
+event = {
+	id = 46014
+	country = arg
+	random = no
+
+	name = "Deutsche SüdameriKakorps"
+	desc = "To help the latin american allies Germany created the SüdameriKakorps, a small group built to give mainly military training support."
+	style = 0
+	picture = ger_40057_dak1	#Steffele
+
+	action_a = {
+		name = "Welcome to Argentina"
+		command = { type = gain_tech which = 6260 }
+		command = { type = gain_tech which = 6220 }
+
+		command = { type = gain_tech which = 9050 }
+
+		command = { type = gain_tech which = 2030 }
+		command = { type = gain_tech which = 2040 }
+
+		command = { type = gain_tech which = 1030 }
+
+		command = { type = add_corps value = land where = 667 }
+		command = { type = activate_division which = 12000 value = 100 where = 667 }
+	}
+}

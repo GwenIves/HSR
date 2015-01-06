@@ -1,0 +1,115 @@
+#
+# Reworked by Aregorn for HSR2_DD
+#
+# 0 - Great War Light Field Artillery
+model = {
+	cost 				= 2.5	#5
+	buildtime	 		= 105	#45
+	manpower 			= 2
+	defensiveness 			= 2
+	morale				= -6	#0
+	defaultorganisation 		= -4	#0
+	softattack			= 3	#2
+	hardattack			= 1
+	supplyconsumption 		= 0.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 1 - Great War Medium Field Artillery
+model = {
+	cost 				= 3	#5
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 2
+	morale				= -5	#0
+	defaultorganisation 		= -4	#0
+	softattack			= 4	#3
+	hardattack			= 1
+	supplyconsumption 		= 0.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 2 - Great War Heavy Field Artillery
+model = {
+	cost 				= 3	#6
+	buildtime	 		= 105	#80
+	manpower 			= 2
+	defensiveness 			= 3
+	morale				= -5	#0
+	defaultorganisation 		= -4	#0
+	softattack			= 5	#4
+	hardattack			= 1
+	supplyconsumption 		= 0.3
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 3 - Early Field Artillery
+model = {
+	cost 				= 3	#5
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 4	#3
+	morale				= -5	#0
+	defaultorganisation 		= -4	#0
+	softattack			= 5	#4
+	hardattack			= 2
+	supplyconsumption 		= 0.4
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 4 - Basic Field Artillery
+model = {
+	cost 				= 3	#5
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	morale				= -5	#0
+	defaultorganisation 		= -4	#0
+	defensiveness 			= 4
+	softattack			= 6	#5
+	hardattack			= 2
+	supplyconsumption 	= 0.4
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 5 - Improved Field Artillery
+model = {
+	cost 				= 3.5	#6
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 4
+	morale				= -5	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 7	#6
+	hardattack			= 2
+	supplyconsumption 	= 0.5
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 6 - Advanced Field Artillery
+model = {
+	cost 				= 4	#7
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 5
+	morale				= -5	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 8	#7
+	hardattack			= 2
+	supplyconsumption		= 0.6
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}
+# 7 - Semi-Modern Field Artillery
+model = {
+	cost 				= 4	#7
+	buildtime	 		= 105	#60
+	manpower 			= 2
+	defensiveness 			= 5
+	morale				= -4	#0
+	defaultorganisation 		= -3	#0
+	softattack			= 9	#8
+	hardattack			= 3
+	supplyconsumption 		= 0.6
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

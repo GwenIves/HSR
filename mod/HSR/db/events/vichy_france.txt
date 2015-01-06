@@ -1,0 +1,519 @@
+#
+# HoI - Vichy France Events
+#
+#		written by Henrik Fåhraeus
+#
+
+# ID series: 4000-4099, 970-998
+
+# (5) 4000, 4002 (Aregorn)
+#########################################################################
+#  Japan demands bases in French Indochine (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 4000
+	random = no
+	country = VIC
+
+	# Triggered by JAP 3803
+
+	name = "EVT_4000_NAME"
+	desc = "EVT_4000_DESC"
+		  style = 0
+	picture = "VIC"
+
+	action_a = {
+		name = "ACTIONNAME4001A" # Accept
+		ai_chance = 100
+		command = { type = secedeprovince which = JAP value = 1326 }
+		command = { type = secedeprovince which = JAP value = 1338 }
+		command = { type = secedeprovince which = JAP value = 1335 }
+		command = { type = addcore which = 1862 }
+		command = { type = addcore which = 1861 }
+		command = { type = addcore which = 1863 } #Homs
+		command = { type = addcore which = 1792 }
+		command = { type = addcore which = 1793 }
+		command = { type = addcore which = 1795 }
+		command = { type = addcore which = 1794 }
+		command = { type = relation which = JAP value = 30 }
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = FRA value = -20 }
+		command = { type = relation which = ENG value = -20 }
+		command = { type = relation which = USA value = -15 }
+		command = { type = relation which = CHI value = -20 }
+		command = { type = trigger which = 3804 }
+	}
+	action_b = {
+		name = "ACTIONNAME4001B" # Refuse
+		ai_chance = 0
+		command = { type = trigger which = 3805 }
+		command = { type = addcore which = 1862 }
+		command = { type = addcore which = 1861 }
+		command = { type = addcore which = 1863 } #Homs
+		command = { type = addcore which = 1792 }
+		command = { type = addcore which = 1793 }
+		command = { type = addcore which = 1795 }
+		command = { type = addcore which = 1794 }
+		command = { type = relation which = JAP value = -20 }
+		command = { type = relation which = FRA value = -15 }
+		command = { type = relation which = USA value = 5 }
+	}
+}
+#########################################################################
+#  Japan demands French Indochine
+#########################################################################
+event = {
+	id = 4001
+	random = no
+	country = VIC
+
+	# Triggered by JAP 3803
+
+	name = "EVT_4001_NAME"
+	desc = "EVT_4001_DESC"
+	picture = "indochina_demand"
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME4001A" # Accept
+		ai_chance = 100
+		command = { type = secedeprovince which = JAP value = 1306 }
+		command = { type = secedeprovince which = JAP value = 1329 }
+		command = { type = secedeprovince which = JAP value = 1328 }
+		command = { type = secedeprovince which = JAP value = 1332 }
+		command = { type = secedeprovince which = JAP value = 1333 }
+		command = { type = secedeprovince which = JAP value = 1334 }
+		command = { type = secedeprovince which = JAP value = 1336 }
+		command = { type = secedeprovince which = JAP value = 1335 }
+		command = { type = secedeprovince which = JAP value = 1338 }
+		command = { type = secedeprovince which = JAP value = 1337 }
+		command = { type = secedeprovince which = JAP value = 1339 }
+		command = { type = secedeprovince which = JAP value = 1340 }
+		command = { type = secedeprovince which = JAP value = 1341 }
+		command = { type = secedeprovince which = JAP value = 1326 }
+		command = { type = relation which = JAP value = 35 }
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = FRA value = -30 }
+		command = { type = relation which = ENG value = -25 }
+		command = { type = relation which = USA value = -15 }
+		command = { type = trigger which = 3894 }
+	}
+	action_b = {
+		name = "ACTIONNAME4001B" # Refuse
+		ai_chance = 0
+		command = { type = trigger which = 3805 }
+	}
+}
+#########################################################################
+#  Japan demands French Indochine and Madagascar (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 4002
+	random = no
+	country = VIC
+
+	# Triggered by JAP 3803
+
+	name = "EVT_4002_NAME"
+	desc = "EVT_4002_DESC"
+	picture = "indochina_demand"
+	style = 0
+
+	action_a = {
+		name = "ACTIONNAME4002A" # Refuse
+		command = { type = trigger which = 3805 }
+		command = { type = trigger which = 4001 }
+	}
+	action_b = {
+		name = "ACTIONNAME4002B" # Accept
+		command = { type = secedeprovince which = JAP value = 1306 }
+		command = { type = secedeprovince which = JAP value = 1329 }
+		command = { type = secedeprovince which = JAP value = 1328 }
+		command = { type = secedeprovince which = JAP value = 1332 }
+		command = { type = secedeprovince which = JAP value = 1333 }
+		command = { type = secedeprovince which = JAP value = 1334 }
+		command = { type = secedeprovince which = JAP value = 1336 }
+		command = { type = secedeprovince which = JAP value = 1335 }
+		command = { type = secedeprovince which = JAP value = 1338 }
+		command = { type = secedeprovince which = JAP value = 1337 }
+		command = { type = secedeprovince which = JAP value = 1339 }
+		command = { type = secedeprovince which = JAP value = 1340 }
+		command = { type = secedeprovince which = JAP value = 1341 }
+		command = { type = secedeprovince which = JAP value = 1326 }
+
+		command = { type = secedeprovince which = JAP value = 1134 }
+		command = { type = secedeprovince which = JAP value = 1137 }
+
+		command = { type = trigger which = 3894 }
+	}
+}
+
+######liberation of france
+event = {
+	id = 14003
+	random = no
+	country = VIC
+
+	trigger = {
+		NOT = {
+			OR = {
+				alliance = { country = GER country = FRA }
+				puppet = { country = FRA country = GER }
+			}
+		}
+		exists = FRA
+		control = { province = 527 data = FRA } # Paris
+		# Because: Paris is French-controlled if an ally liberates it
+
+		NOT = { # Less than 40% national provinces enemy held
+			lost_national = { country = FRA value = 40 }
+		}
+
+		random = 50
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "EVT_2802_NAME"
+	desc = "EVT_2802_DESC"
+	picture = "france_liberated"
+	style = 0
+	action_a = {
+		name = "OOPS!" # Eh, Vive la France!
+		command = { type = trigger which = 2802 }#France
+		command = { type = leave_alliance }
+		command = { type = dissent value = 100 }
+		command = { type = switch_allegiance which = -1 where = FRA }
+		command = { type = switch_allegiance which = -1 where = FRA }
+		command = { type = switch_allegiance which = -1 where = FRA }
+#France
+		command = { type = secedeprovince which = FRA value = 319 }
+		command = { type = secedeprovince which = FRA value = 320 }
+		command = { type = secedeprovince which = FRA value = 327 }
+		command = { type = secedeprovince which = FRA value = 328 }
+		command = { type = secedeprovince which = FRA value = 324 }
+		command = { type = secedeprovince which = FRA value = 322 }
+		command = { type = secedeprovince which = FRA value = 321 }
+		command = { type = secedeprovince which = FRA value = 359 }
+		command = { type = secedeprovince which = FRA value = 358 }
+		command = { type = secedeprovince which = FRA value = 362 }
+		command = { type = secedeprovince which = FRA value = 361 }
+		command = { type = secedeprovince which = FRA value = 360 }
+		command = { type = secedeprovince which = FRA value = 363 }
+		command = { type = secedeprovince which = FRA value = 364 }
+		command = { type = secedeprovince which = FRA value = 365 }
+		command = { type = secedeprovince which = FRA value = 366 }
+		command = { type = secedeprovince which = FRA value = 528 }
+		command = { type = secedeprovince which = FRA value = 529 }
+		command = { type = secedeprovince which = FRA value = 527 }
+		command = { type = secedeprovince which = FRA value = 367 }
+#Vichy Colonies North Africa
+		command = { type = secedeprovince which = FRA value = 1005 }
+		command = { type = secedeprovince which = FRA value = 1006 }
+		command = { type = secedeprovince which = FRA value = 1093 }
+		command = { type = secedeprovince which = FRA value = 1092 }
+		command = { type = secedeprovince which = FRA value = 1075 }
+		command = { type = secedeprovince which = FRA value = 1077 }
+		command = { type = secedeprovince which = FRA value = 1078 }
+		command = { type = secedeprovince which = FRA value = 1079 }
+		command = { type = secedeprovince which = FRA value = 1070 }
+		command = { type = secedeprovince which = FRA value = 1089 }
+		command = { type = secedeprovince which = FRA value = 1088 }
+		command = { type = secedeprovince which = FRA value = 1087 }
+		command = { type = secedeprovince which = FRA value = 1086 }
+		command = { type = secedeprovince which = FRA value = 1084 }
+		command = { type = secedeprovince which = FRA value = 1083 }
+		command = { type = secedeprovince which = FRA value = 1082 }
+		command = { type = secedeprovince which = FRA value = 1081 }
+		command = { type = secedeprovince which = FRA value = 1080 }
+		command = { type = secedeprovince which = FRA value = 998 }
+		command = { type = secedeprovince which = FRA value = 976 }
+		command = { type = secedeprovince which = FRA value = 975 }
+		command = { type = secedeprovince which = FRA value = 974 }
+		command = { type = secedeprovince which = FRA value = 973 }
+		command = { type = secedeprovince which = FRA value = 979 }
+		command = { type = secedeprovince which = FRA value = 978 }
+		command = { type = secedeprovince which = FRA value = 976 }
+		command = { type = secedeprovince which = FRA value = 981 }
+		command = { type = secedeprovince which = FRA value = 980 }
+		command = { type = secedeprovince which = FRA value = 984 }
+		command = { type = secedeprovince which = FRA value = 987 }
+		command = { type = secedeprovince which = FRA value = 989 }
+		command = { type = secedeprovince which = FRA value = 986 }
+		command = { type = secedeprovince which = FRA value = 985 }
+		command = { type = secedeprovince which = FRA value = 990 }
+		command = { type = secedeprovince which = FRA value = 991 }
+		command = { type = secedeprovince which = FRA value = 993 }
+		command = { type = secedeprovince which = FRA value = 994 }
+		command = { type = secedeprovince which = FRA value = 995 }
+		command = { type = secedeprovince which = FRA value = 996 }
+		command = { type = secedeprovince which = FRA value = 997 }
+#Madagascar
+		command = { type = secedeprovince which = FRA value = 1134 }
+		command = { type = secedeprovince which = FRA value = 1137 }
+		command = { type = secedeprovince which = FRA value = 1135 }
+#Indochine
+		command = { type = secedeprovince which = JAP value = 1306 }
+		command = { type = secedeprovince which = JAP value = 1329 }
+		command = { type = secedeprovince which = JAP value = 1328 }
+		command = { type = secedeprovince which = JAP value = 1332 }
+		command = { type = secedeprovince which = JAP value = 1333 }
+		command = { type = secedeprovince which = JAP value = 1334 }
+		command = { type = secedeprovince which = JAP value = 1336 }
+		command = { type = secedeprovince which = JAP value = 1335 }
+		command = { type = secedeprovince which = JAP value = 1338 }
+		command = { type = secedeprovince which = JAP value = 1337 }
+		command = { type = secedeprovince which = JAP value = 1339 }
+		command = { type = secedeprovince which = JAP value = 1340 }
+		command = { type = secedeprovince which = JAP value = 1341 }
+		command = { type = secedeprovince which = JAP value = 1326 }
+#Syria
+		command = { type = addcore which = 1862 }
+		command = { type = addcore which = 1861 }
+		command = { type = addcore which = 1863 } #Homs
+		command = { type = addcore which = 1792 }
+		command = { type = addcore which = 1793 }
+		command = { type = addcore which = 1795 }
+		command = { type = addcore which = 1794 }
+#Djibouti
+		command = { type = secedeprovince which = FRA value = 1037 }
+	}
+}
+
+
+#########################################################################
+#  Independent Vichy France
+#########################################################################
+event = {
+	id = 4003
+	random = no
+	country = VIC
+
+	#Triggered by FRA2800
+
+	name = "EVT_4003_NAME"
+	desc = "EVT_2021_DESC"
+	style = 0
+
+
+	action_a = {
+		name = "ACTIONNAME4003A" # We have to accomodate to the New Order!
+		command = { type = set_domestic which = political_left value = 3 }
+		command = { type = set_domestic which = freedom value = 3 }
+		command = { type = set_domestic which = democratic value = 4 }
+		command = { type = set_domestic which = interventionism value = 1 }
+		command = { type = add_division value = transport  }
+		command = { type = transport_pool which = VIC value = 80 }
+		command = { type = escort_pool which = VIC value = 20 }
+		command = { type = set_relation which = GER value = 150 }
+		command = { type = set_relation which = ITA value = 100 }
+		command = { type = set_relation which = SPA value = 50 }
+		command = { type = set_relation which = FRA value = -100 }
+		command = { type = set_relation which = ENG value = -50 }
+		command = { type = set_relation which = USA value = -50 }
+		command = { type = leave_alliance }
+		command = { type = peace which = ENG value = 1 }
+		command = { type = belligerence value = -20 }
+
+
+		##Independance of SYR-LEB-MAD##
+		command = { type = independence which = SYR value = 1 when = 0 }
+		##removal of Syrian provinces as Cores##
+		command = { type = removecore which = 1862 }
+		command = { type = removecore which = 1863 }
+		command = { type = removecore which = 1792 }
+		command = { type = removecore which = 1795 }
+		command = { type = removecore which = 1861 }
+		command = { type = trigger which = 100000 } #Syrian event
+
+		command = { type = independence which = LEB value = 1 when = 0 }
+		##removal of Lebanese provinces as cores##
+		command = { type = removecore which = 1793 }
+		command = { type = removecore which = 1794 }
+		command = { type = trigger which = 100001 } #Lebanese event
+
+		command = { type = independence which = MAD value = 1 when = 0 }
+		##removal of MAD provinces as cores##
+		command = { type = removecore which = 1134 }
+		command = { type = removecore which = 1137 }
+		command = { type = trigger which = 100002 } #Madagascar event
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+		command = { type = trigger which = 40613} #Aregorn_Fra
+	}
+}
+
+
+
+#############################################################
+###FRENCH LEADERS DEFECTING TO VICHY - SLEPT IN FRENCH.CSV###
+#############################################################
+
+event = {
+	 id = 2103
+	random = no
+	country = FRA
+
+	trigger = {  exists = VIC  exists = FRA    }
+
+	name = "VICHY_DEFECT_NAME"
+	desc = "VICHY_DEFECT_DESC"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "OK" #French leaders to the Vichy Government
+		command = { type = sleepleader which = 24004 } #Arnaud
+	  	command = { type = sleepleader which = 24005 } #Audet
+	    	command = { type = sleepleader which = 24020 } #Bridoux
+	    	command = { type = sleepleader which = 24022 } #Brocard
+	    	command = { type = sleepleader which = 24027 } #Carles
+	    	command = { type = sleepleader which = 24029 } #Castroux
+	    	command = { type = sleepleader which = 24034 } #colson
+	    	command = { type = sleepleader which = 24043 } #de Boissieu de Lugne
+	    	command = { type = sleepleader which = 24046 } #de Cyvoct
+	    	command = { type = sleepleader which = 24054 } #de Verdillac
+	    	command = { type = sleepleader which = 24056 } #Debeney
+	    	command = { type = sleepleader which = 24059 } #Dentz
+	    	command = { type = sleepleader which = 24060 } #Desmazes
+	    	command = { type = sleepleader which = 24062 } #Doumenc
+	    	command = { type = sleepleader which = 24065 } #Dubuisson
+	    	command = { type = sleepleader which = 24070 } #Fagalde
+	    	command = { type = sleepleader which = 24071 } #Falvy
+	    	command = { type = sleepleader which = 24074 } #Francois H.N.
+	    	command = { type = sleepleader which = 24095 } #Huntziger
+	    	command = { type = sleepleader which = 24103 } #Keime
+	    	command = { type = sleepleader which = 24115 } #Laure
+	    	command = { type = sleepleader which = 24117 } #Lemonnier
+	    	command = { type = sleepleader which = 24120 } #Mer
+	    	command = { type = sleepleader which = 24124 } #Nogues
+	    	command = { type = sleepleader which = 24145 } #Weygand
+	    	command = { type = sleepleader which = 24146 } #Abrial
+	    	command = { type = sleepleader which = 24151 } #Darlan
+	    	command = { type = sleepleader which = 24153 } #de Geffrier
+	    	command = { type = sleepleader which = 24154 } #de Laborde
+	    	command = { type = sleepleader which = 24157 } #Decoux
+	    	command = { type = sleepleader which = 24158 } #Escudier
+	    	command = { type = sleepleader which = 24159 } #Esteva
+	    	command = { type = sleepleader which = 24160 } #Gensoul
+	    	command = { type = sleepleader which = 24161 } #Godfroy
+	    	command = { type = sleepleader which = 24167 } #Luc
+	    	command = { type = sleepleader which = 24176 } #Baltus
+	    	command = { type = sleepleader which = 24178 } #Bergeret
+	    	command = { type = sleepleader which = 24182 } #Bouscat
+	    	command = { type = sleepleader which = 24183 } #Clostermann
+	    	command = { type = sleepleader which = 24186 } #d'Arnaud de Vitrolles
+	    	command = { type = sleepleader which = 24188 } #Goys de Meyzerac
+	    	command = { type = sleepleader which = 24199 } #Jannekeyn
+	    	command = { type = sleepleader which = 24200 } #Jauneaud
+	    	command = { type = sleepleader which = 24208 } #Paskewicz
+	    	command = { type = sleepleader which = 24209 } #Pinsard
+	    	command = { type = sleepleader which = 24213 } #Rousselot de Saint-Ceran
+	    	command = { type = sleepleader which = 24215 } #Royer de Marancour
+	    	command = { type = sleepleader which = 24082 } #Georges
+
+			command = { type = sleepminister which = 2001 } # les défaitistes :)
+			command = { type = sleepminister which = 2038 }
+			command = { type = sleepminister which = 2033 }
+			command = { type = sleepminister which = 2040 }
+			command = { type = sleepminister which = 2041 }
+			command = { type = sleepminister which = 2054 }
+			command = { type = sleepminister which = 2055 }
+			command = { type = sleepminister which = 2052 }
+			command = { type = sleepminister which = 2057 }
+			command = { type = sleepminister which = 2062 }
+			command = { type = sleepminister which = 2068 }
+			command = { type = sleepminister which = 2069 }
+			command = { type = sleepminister which = 2073 }
+			command = { type = sleepminister which = 2074 }
+			command = { type = sleepminister which = 2075 }
+			command = { type = sleepminister which = 2076 }
+			command = { type = sleepminister which = 2077 }
+			command = { type = sleepminister which = 2079 }
+			command = { type = sleepminister which = 2080 }
+			command = { type = sleepminister which = 2081 }
+			command = { type = sleepminister which = 2082 }
+			command = { type = sleepminister which = 2098 }
+			command = { type = sleepminister which = 2099 }
+			command = { type = sleepminister which = 2100 }
+			command = { type = sleepminister which = 2101 }
+			command = { type = sleepminister which = 2105 }
+			command = { type = sleepminister which = 2106 }
+			command = { type = sleepminister which = 2107 }
+			command = { type = sleepminister which = 2110 }
+			command = { type = sleepminister which = 2111 }
+			command = { type = sleepminister which = 2123 }
+			command = { type = sleepminister which = 2124 }
+			command = { type = sleepminister which = 2128 }
+			command = { type = sleepminister which = 2131 }
+			command = { type = sleepminister which = 2132 }
+			command = { type = sleepminister which = 2077 }
+			command = { type = sleepminister which = 2146 }
+			command = { type = sleepminister which = 2148 }
+			command = { type = sleepminister which = 2008 }
+			command = { type = sleepminister which = 2009 }
+			command = { type = sleepminister which = 2206 }
+   }
+ }
+
+

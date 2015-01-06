@@ -1,0 +1,32 @@
+#
+# By Aregorn for HSR
+#
+garrison = {
+
+	country_priorities = {
+		MON = -1
+		TAN = -1
+		SIK = -1
+		CHI = -1
+		AFG = -1
+		PER = -1
+		TUR = 50
+		CGX = -1
+		CYN = -1
+		CHC = -1
+		CHI = -1
+		CSX = -1
+		FIN = 30
+		ROM = 50
+		POL = 70
+		GER = 100
+		ITA = 50
+		JAP = -1
+		MAN = -1
+		SWE = -1
+		NOR = -1
+		HUN = 50
+		SLO = 50
+		BUL = 25
+	}
+}

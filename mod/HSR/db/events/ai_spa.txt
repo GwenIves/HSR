@@ -1,0 +1,330 @@
+####################################
+# Spanish Nationalists AI events 32400 - 32499 by Lothos
+####################################
+################
+# Minister of Security Section 32400 - 32409
+#############################################
+event = { # José Martínez de Velasco takes power
+	id = 32400
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10150 # José Martínez de Velasco
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPASecurityMartinez }
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 10127 } # Pedro Sáinz Rodríguez
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SPASecurityMartinez }
+		command = { type = local_clrflag which = SPASecurityRodriguez }
+		command = { type = ministerofsecurity which = 10150 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Pedro Sáinz Rodríguez takes power
+	id = 32401
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10127 # Pedro Sáinz Rodríguez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPASecurityRodriguez }
+		}
+		OR = {
+			NOT = { manpower = 200 }
+			NOT = { minister = 10150 } # José Martínez de Velasco
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SPASecurityMartinez }
+		command = { type = local_setflag which = SPASecurityRodriguez }
+		command = { type = ministerofsecurity which = 10127 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 32410 - 32419
+#############################################
+event = { # Luís Orgaz Yoldi takes power
+	id = 32410
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10017 # Luís Orgaz Yoldi
+		atwar = yes
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAChiefYoldi }
+		}
+		OR = {
+			AND = {
+				manpower = 200
+			}
+			AND = {
+				NOT = { manpower = 200 }
+				NOT = { minister = 10200 } # Gonzalo Queipo de Llano
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SPAChiefYoldi }
+		command = { type = local_clrflag which = SPAChiefLlano }
+		command = { type = chiefofstaff which = 10017 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Gonzalo Queipo de Llano power
+	id = 32411
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10200 # Gonzalo Queipo de Llano
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAChiefLlano }
+		}
+		OR = {
+			atwar = no
+			NOT = { manpower = 200 }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SPAChiefYoldi }
+		command = { type = local_setflag which = SPAChiefLlano }
+		command = { type = chiefofstaff which = 10200 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 32420 - 32429
+#############################################
+event = { # José Ungría Jiménez takes power
+	id = 32420
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10162 # José Ungría Jiménez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAIntelligenceJimenez }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SPAIntelligenceJimenez }
+		command = { type = ministerofintelligence which = 10162 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 32430 - 32439
+#############################################
+event = { # Agustín Aznar Guerner takes power
+	id = 32430
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = no
+		minister = 10216 # Agustín Aznar Guerner
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAArmyGuerner }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SPAArmyGuerner }
+		command = { type = local_clrflag which = SPAArmyFranco }
+		command = { type = chiefofarmy which = 10216 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Francisco Franco Bahamonde takes power
+	id = 32431
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 10276 # Francisco Franco Bahamonde Guerner
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAArmyFranco }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SPAArmyGuerner }
+		command = { type = local_setflag which = SPAArmyFranco }
+		command = { type = chiefofarmy which = 10276 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 32440 - 32449
+#############################################
+event = { # Juan March Ordinas takes power
+	id = 32440
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 10113 # Juan March Ordinas
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAArmamentOrdinas }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = SPAArmamentOrdinas }
+		command = { type = local_clrflag which = SPAArmamentNolla }
+		command = { type = armamentminister which = 10113 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Joaquín Bau Nolla takes power
+	id = 32441
+	random = no
+	country = SPA
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { minister = 10113 } # Juan March Ordinas
+		minister = 10097 # Joaquín Bau Nolla
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = SPAArmamentNolla }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = SPAArmamentOrdinas }
+		command = { type = local_setflag which = SPAArmamentNolla }
+		command = { type = armamentminister which = 10097 }
+		command = { type = dissent value = -1 }
+	}
+}

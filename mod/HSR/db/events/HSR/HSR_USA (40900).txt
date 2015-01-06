@@ -1,0 +1,3128 @@
+# Aregorn_USA: Events for the U.S. (68)
+#
+# ID		Title						Author
+#
+# 40900 	The USA mobilises for War 			(by Aregorn 040720)
+# 40901-10 	U.S. Military programmes 			(by Aregorn 030527)
+# 40911 	U.S. Volunteer Group sent to China  		(by Justin and Aregorn 040612)
+# 40912 	U.S. 'Flying Tigers' begun operations in Asia  	(by Justin and Aregorn 040612)
+# 40913 	U.S. help to China  				(by Justin and Aregorn 040612)
+# 40914 	The Flying Tigers returned home   		(by Justin and Aregorn 040612)
+# 40915-17 	U.S. help to China  				(by Justin and Aregorn 040718)
+# 40918 	U.S. Army modernisation  			(by Justin and Aregorn 040725)
+# 40919 	The U.S. Armored Force School 		 	(by Justin and Aregorn 040725)
+# 40920		The United Service Organization (USO) 		(by Justin and Aregorn 040725)
+# 40921 	USO propaganda 					(by Justin and Aregorn 040725)
+# 40922 	USO in the Pacific 				(by Justin and Aregorn 040725)
+# 40923 	USO in Europe 					(by Justin and Aregorn 040725)
+# 40924 	U.S. support to Franco 				(by Justin and Aregorn 040725)
+# 40925 	Franco's payment for the U.S. support 		(by Justin and Aregorn 040725)
+# 40926-33 	U.S. War Bonds (Series)				(by Justin and Aregorn 040725)
+# 40934 	U.S. public opinion against Germany (Sea Lion)	(by Aregorn 031121)
+# 40935 	The U.S. at war 				(by Aregorn 050402)
+# 40936-37 	Army A.I. 					(by Aregorn 050508)
+# 40938 		Moved to Vichy - War on Vichy 		(by Aregorn 051008)
+# 40939 	USA Join the allies  				(by Aregorn 051008)
+# 40940 	Control of African provinces 			(by Aregorn 060110)
+# 40941 	USA Invasion Europe (A.I.)			(by Aregorn 060122)
+# 40942 	USA landing on Casablanca (A.I.)		(by Aregorn 050708)
+# 40943 	War against Spain 				(by Aregorn 050605)
+# 40944 	USA Invasion France (A.I.)			(by Aregorn 060122)
+# 40945 	USA Volunteer Group returns 			(by Aregorn 060218)
+# 40946 	Pacific Fleet 					(by Aregorn 060223)
+# 40947-64  	United States Navy   				(by Dec152000 060124, modified by Aregorn)
+# 40965 	USA Aid to China - End  			(by Aregorn 060226)
+# 40966 	U.S. Armor 					(by Aregorn 081107) requested by Alan Mateus
+# 40967 	U.S. Aircrafts 					(by Aregorn 081107) requested by Alan Mateus
+
+
+############################################################################
+# 40900 The USA mobilises for War (by Aregorn 040720)
+############################################################################
+
+
+event = {
+   id = 40900
+   random = no
+   country = usa
+
+trigger = { ai = yes or = { not = { ai = jap } not = { ai = ger }} war = { country = usa country = jap } }
+
+	name = "The USA mobilizes for War"
+	desc = ""
+
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 2 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 2 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 2 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = battleship when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Atlantic Fleet" value = naval where = 650 } #Orlando
+		command = { type = add_division value = destroyer when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 2 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 2 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = battleship when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = battlecruiser when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+
+		command = { type = manpowerpool value = -25 }
+
+}
+
+}
+#########################################################################
+# 40901-10 USA Military programmes (by Aregorn 030527)
+#########################################################################
+event = {
+	id = 40901
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+}
+
+
+
+	name = "1941 USAF & USN programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = may year = 1941 }
+
+	action_a = {
+		name = "1941 Military programme finished"
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = battleship when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+
+		command = { type = dissent value = -5 }
+		command = { type = tc_mod value = 10 }
+
+		command = { type = max_organization which = tactical_bomber value = 10 }
+		command = { type = max_organization which = cas value = 10 }
+
+		command = { type = manpowerpool value = -15 }
+	}
+}
+
+event = {
+	id = 40902
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1942 USAF & USN programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = may year = 1942 }
+
+	action_a = {
+		name = "1942 Military programme finished"
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = battleship when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = battlecruiser when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 }
+		command = { type = add_division value = strategic_bomber when = 1 }
+		command = { type = add_division value = strategic_bomber when = 1 }
+		command = { type = add_division value = strategic_bomber when = 1 }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+
+		command = { type = dissent value = -2 }
+		command = { type = tc_mod value = 10 }
+		command = { type = max_organization which = tactical_bomber value = 10 }
+		command = { type = max_organization which = cas value = 10 }
+		command = { type = max_organization which = naval_bomber value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -20 }
+
+}
+}
+
+event = {
+	id = 40903
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1943 USAF & USN programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = may year = 1943 }
+
+	action_a = {
+		name = "1943 Military programme finished"
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = strategic_bomber where = escort }
+		command = { type = add_division value = strategic_bomber where = escort }
+		command = { type = add_division value = strategic_bomber where = escort }
+		command = { type = add_division value = strategic_bomber where = escort }
+
+		command = { type = add_division value = transport_plane }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = light_cruiser when = 4 }
+		command = { type = add_division value = light_cruiser when = 4 }
+		command = { type = add_division value = battlecruiser when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = battlecruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = tc_mod value = 10 }
+		command = { type = convoy_prod_mod which = transports value = 50 }
+
+		command = { type = max_organization which = strategic_bomber value = 10 }
+		command = { type = max_organization which = multi_role value = 10 }
+		command = { type = max_organization which = naval_bomber value = 10 }
+		command = { type = domestic which = professional_army value = 5 }
+
+		command = { type = manpowerpool value = -30 }
+}
+}
+
+event = {
+	id = 40904
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1944 USAF & USN programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = may year = 1944 }
+
+	action_a = {
+		name = "1944 Military programme finished"
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+
+		command = { type = add_division value = transport_plane when = 1 }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 5 }
+		command = { type = add_division value = destroyer when = 5 }
+		command = { type = add_division value = light_cruiser when = 5 }
+		command = { type = add_division value = light_cruiser when = 5 }
+		command = { type = add_division value = battleship when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = battlecruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 4 where = naval_anti_air_s }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = tc_mod value = 10 }
+
+		command = { type = max_organization which = strategic_bomber value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = gain_tech which = 5500 }
+		command = { type = gain_tech which = 5510 }
+		command = { type = gain_tech which = 5520 }
+		command = { type = gain_tech which = 5530 }
+		command = { type = gain_tech which = 5540 }
+
+		command = { type = manpowerpool value = -30 }
+}
+}
+
+event = {
+	id = 40905
+	random = no
+	country = usa
+	trigger = {	ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1945 USAF & USN programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = may year = 1945 }
+
+	action_a = {
+		name = "1944 Military programme finished"
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_corps value = air where = 707 }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+		command = { type = add_division value = strategic_bomber when = 1 where = escort }
+
+		command = { type = add_division value = transport_plane when = 1 }
+		command = { type = add_division value = paratrooper when = 1 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval where = 765 } #San Francisco
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = battlecruiser when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60404 where = 765 } #San Francisco
+		command = { type = add_division value = battlecruiser when = 5 where = naval_fire_controll_l }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = dissent value = -2 }
+		command = { type = tc_mod value = 10 }
+
+		command = { type = max_organization which = strategic_bomber value = 10 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -30 }
+}
+}
+#################################################################################################
+event = {
+	id = 40906
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+}
+
+
+
+	name = "1941 Army programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "1941 Military programme finished"
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -200 }
+}
+}
+
+event = {
+	id = 40907
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1942 Army programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 Military programme finished"
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -200 }
+}
+}
+
+event = {
+	id = 40908
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1943 Army programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 Military programme finished"
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -200 }
+}
+}
+
+event = {
+	id = 40909
+	random = no
+	country = usa
+	trigger = { ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1944 Army programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "1944 Military programme finished"
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -200 }
+}
+}
+
+event = {
+	id = 40910
+	random = no
+	country = usa
+	trigger = {	ai = yes random = 50 war = { country = usa country = ger }
+
+}
+
+
+	name = "1945 Army programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1945 }
+
+	action_a = {
+		name = "1945 Military programme finished"
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+		command = { type = add_division value = marine where = artillery }
+
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = light_armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery  }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = dissent value = -2 }
+
+		command = { type = manpowerpool value = -200 }
+	}
+}
+###############################################################################################
+# 40911 USA Volunteer Group sent to China  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40911
+	random = no
+	country = usa
+
+	trigger = {	supplies = 5000 war = { country = CHI country = JAP } random = 50
+			not = { war = { country = CHI country = usa } }
+			not = { war = { country = jap country = usa } }
+	}
+
+	name = "USA Volunteer Group sent to China (Historical)"
+	desc = "The U.S. President agreed to send a group of American aviators to China to help out. The American Volunteer Group (AVG) was funded through shady sources, using 'borrowed' equipment. Members of the AVG boarded in San Francisco on July 10 1941. With Curtis P-40 Warhawks packed in the holds of their two steamers, they set sail for China. The Japanese found out about this covert endeavor and the Tokyo Rose, voice of the Japanese propaganda radio, promised a warm reception for the American Joes."
+	style = 0
+
+	date = { day = 1 month = july year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Send them"
+		command = { type = supplies value = -5000 }
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = trigger which = 40800 }
+		}
+	action_b = {
+		name = "We can not afford a political scandal"
+		command = { }
+		}
+}
+###############################################################################################
+# 40912 US 'Flying Tigers' begun operations in Asia  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40912
+	random = no
+	country = usa
+
+	trigger = {	random = 50
+			event = 40800
+	}
+
+	name = "US 'Flying Tigers' begun operations in Asia"
+	desc = "The Group arrived at Rangoon in late summer 1941, meeting their commander, Lt. Gen. Clair Chenault. Assigned to an incomplete RAF airfield near Mandalay they were divided into three squadrons: Hell's Angels, the Adams and Eves and the Panda Bears. The baptism of fire came in late December 1941 when 14 fearsome shark-mouthed fighters met Japanese bombers attacking the Burma road in Kunming. The Japanese fled back to Hanoi loosing 90% of their planes... Kunming was never bombed again."
+	style = 0
+	picture = 40912_Flying_Tigers_begun_operations
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = belligerence which = jap value = 2 }
+		}
+}
+###############################################################################################
+# 40913 USA help to China  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40913
+	random = no
+	country = usa
+	persistent = yes
+
+	trigger = {	supplies = 5000 war = { country = chi country = JAP } random = 50 event = 40810
+			not = { war = { country = chi country = usa } }
+			not = { war = { country = jap country = usa } }
+			flag = BurmaRoadOpen
+			NOT = { flag = lendleasechi }
+	}
+
+	name = "USA Aid to China - Initiation"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Send them the help"
+		ai_chance = 100
+		command = { type = supplies value = -5000 }
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = belligerence which = usa value = 5 }
+		command = { type = trigger which = 40804 }
+		command = { type = free_ic value = -5 }
+		command = { type = setflag which = lendleasechi }
+
+	}
+	action_b = {
+		name = "We can not afford a political scandal"
+		ai_chance = 0
+		command = { }
+	}
+}
+###############################################################################################
+# 40914 The Flying Tigers returned home (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40914
+	random = no
+	country = usa
+
+	trigger = {	random = 50 event = 40531
+			war = { country = jap country = usa }
+	}
+
+	name = "The Flying Tigers returned home"
+	desc = "After the devastation at Pearl Harbor, Chenault disbanded his Flying Tigers so that he and his experienced aviators and mechanics could return home to fight for the U.S. Some stayed in China to pursue black market opportunities. The rest came back to the U.S. on civilian transports. Chinese general Chang Kai-Chek awarded many medals before these heroes left Chinese soil. He promised that the Flying Tigers would always be fondly remembered by the grateful Chinese people."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = gain_tech which = -1 }
+		command = { type = add_division value = multi_role }
+		}
+	action_b = {
+		name = "Let them stay in China"
+		command = { type = relation which = chi value = 20 }
+		}
+}
+###############################################################################################
+# 40915 USA help to China (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40915
+	random = no
+	country = usa
+
+	trigger = {	supplies = 5000 war = { country = chi country = JAP } random = 50 event = 40913
+			not = { war = { country = chi country = usa } }
+			not = { war = { country = jap country = usa } }
+	}
+
+	name = "USA Aid to China 1941"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Send them the help"
+		ai_chance = 100
+		command = { type = supplies value = -5000 }
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = belligerence which = usa value = 5 }
+		command = { type = trigger which = 40801 }
+		}
+	action_b = {
+		name = "We can not divert any more material"
+		ai_chance = 0
+		command = { }
+		}
+}
+###############################################################################################
+# 40916 USA help to China  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40916
+	random = no
+	country = usa
+
+	trigger = {	supplies = 5000 war = { country = chi country = JAP } random = 50 event = 40915
+			not = { war = { country = chi country = usa } }
+			not = { war = { country = jap country = usa } }
+	}
+
+	name = "USA Aid to China 1942"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Send them the help"
+		ai_chance = 100
+		command = { type = supplies value = -5000 }
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = belligerence which = usa value = 5 }
+		command = { type = trigger which = 40802 }
+		}
+	action_b = {
+		name = "We can not divert any more material"
+		ai_chance = 0
+		command = { }
+		}
+}
+###############################################################################################
+# 40917 USA help to China  (by Justin and Aregorn 040612)
+###############################################################################################
+event = {
+	id = 40917
+	random = no
+	country = usa
+
+	trigger = {	supplies = 5000 war = { country = chi country = JAP } random = 50 event = 40916
+			not = { war = { country = chi country = usa } }
+			not = { war = { country = jap country = usa } }
+	}
+
+	name = "USA Aid to China 1943"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Send them the help"
+		ai_chance = 100
+		command = { type = supplies value = -5000 }
+		command = { type = relation which = chi value = 10 }
+		command = { type = relation which = jap value = -10 }
+		command = { type = belligerence which = usa value = 5 }
+		command = { type = trigger which = 40803 }
+		}
+	action_b = {
+		name = "We can not divert any more material"
+		ai_chance = 0
+		command = { }
+		}
+}
+###############################################################################################
+# 40918 U.S. Army modernisation (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40918
+	random = no
+	country = usa
+
+	trigger = {	random = 25 not = { technology = 11307 }
+			supplies = 10000
+	}
+
+	name = "U.S. Army modernisation"
+	desc = "By mid 1940, the potential of Germany's new tactics and formations shocked the War Department.  A frenzied effort to create an American counterpart to the German panzer division begun immediately.  Training manoeuvres of the third Army demonstrated the lack cohesion in combined arms formations with the need to reform the army doctrines training and tactics."
+	style = 0
+
+	date = { day = 1 month = august year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Develope Blitz tactics"
+		command = { type = supplies value = -10000 }
+		command = { type = gain_tech which = 2050 } # Improved light Tank
+		command = { type = gain_tech which = -1 }
+
+		}
+	action_b = {
+		name = "We will not invest in useless doctrines"
+		command = { }
+		}
+}
+###############################################################################################
+# 40919 The U.S. Armored Force School (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40919
+	random = no
+	country = usa
+
+	trigger = {	random = 25 not = { technology = 11307 }
+			supplies = 6000
+	}
+
+	name = "U.S. Army modernisation"
+	desc = "The Armored Force School and the Armored Force Replacement Center were officially established at Fort Knox Oct 1, 1940. The school trained armored force soldiers in military fundamentals and in specific areas such as tank gunnery, armor tactics, battlefield communications, and maintenance."
+	style = 0
+	picture = 40919_U.S._Armored_School	#mosquito
+
+	date = { day = 1 month = october year = 1940 }
+	offset = 3
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Create the Armored Force school"
+		command = { type = supplies value = -7000 }
+		command = { type = money value = -500 }
+		command = { type = gain_tech which = 2070 } # Basic Medium Tank
+		command = { type = add_division value = armor when = 2 where = artillery }
+		}
+	action_b = {
+		name = "We will not invest in useless doctrines"
+		command = { }
+		}
+}
+###############################################################################################
+# 40920 The United Service Organization (USO) (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40920
+	random = no
+	country = usa
+
+	trigger = {	random = 25
+			supplies = 2000
+	}
+
+	name = "The United Service Organization (USO)"
+	desc = "America's military rapidly grew in response to the increasing threats in both Europe and the Pacific. The President challenged six private organizations to form a non-profit volunteer group to boost the morale of the military in the case of War.  These groups were : the YMCA, YWCA, National Catholic Community Service, the National Jewish Welfare Board, the Traveler's Aid Association and the Salvation Army."
+	style = 0
+
+	date = { day = 1 month = june year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Accept the President's challenge"
+		command = { type = supplies value = -2000 }
+		command = { type = dissent value = -2 }
+		}
+	action_b = {
+		name = "We can not afford it"
+		command = { }
+		}
+}
+###############################################################################################
+# 40921 The United Service Organization propaganda (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40921
+	random = no
+	country = usa
+
+	trigger = {	random = 25 atwar = yes
+			supplies = 2000
+	}
+
+	name = "The United Service Organization propaganda"
+	desc = "The USO arranged to have promotional leaflets dropped over the city of New York to advertise its services. The text read (in part): The U.S.O. has been formed as a nationwide citizen effort to show our soldiers, sailors, and marines how much we appreciate what they are doing for us.  Join the army behind the Army. Get back of our soldiers, sailors and defense workers."
+	style = 0
+
+	date = { day = 1 month = june year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -2 }
+		}
+}
+###############################################################################################
+# 40922 The United Service Organization in the Pacific (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40922
+	random = no
+	country = usa
+	persistent = yes
+
+	trigger = {	random = 10  war = { country = usa country = jap } dissent = 2
+
+	}
+
+	name = "The United Service Organization in the Pacific"
+	desc = "The USO Sent some of the nation's favorite actors and comedians to the Pacific front significantly boosting morale."
+	style = 0
+	picture = 40922_USO_Pacific	#mosquito
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+		}
+}
+###############################################################################################
+# 40923 The United Service Organization in Europe (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40923
+	random = no
+	country = usa
+	persistent = yes
+
+	trigger = {	random = 10  war = { country = usa country = ger } dissent = 1
+
+	}
+
+	name = "The United Service Organization in Europe"
+	desc = "The USO Sent some of the nation's favorite actors and comedians to the European front significantly boosting morale."
+	style = 0
+	picture = 40923_USO_Europe	#mosquito
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+		}
+}
+###############################################################################################
+# 40924 U.S. support to Franco (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40924
+	random = no
+	country = usa
+
+	trigger = { oil = 5000 random = 50 war = { country = spa country = spr }}
+
+	name = "U.S. support to Franco"
+	desc = "The state of America's domestic economy meant that most large firms had to look overseas for their profits. With quiet approval from the U.S. government oil tankers with a cargo worth us$6,000,000 from the Texas Oil and Standard Oil companies 'mistakenly' found their way in to Spanish ports controlled by the Nationalists followed up by important bank loans and more than 12,000 trucks sold from Companies like Ford, General Motors, and Studabaker."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Business is business"
+		ai_chance = 99
+		command = { type = oilpool value = -5000 }
+		command = { type = trigger which = 40106  }
+		}
+	action_b = {
+		ai_chance = 1
+		name = "We will not support a fascist regime"
+		command = { }
+		}
+}
+###############################################################################################
+# 40925 Franco's payment for the U.S. support (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40925
+	random = no
+	country = usa
+
+	trigger = {	random = 25 not = { war = { country = spa country = spr }} exists = spa
+		not = { war = { country = spa country = usa }} 	event = 40106
+	}
+
+	name = "Franco's payment for the U.S. support"
+	desc = "The investment done by U.S. companies selling by credit to nationalist Spain did end very profitable indeed"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Great"
+		command = { type = supplies value = 5000 }
+		}
+}
+###############################################################################################
+# 40926-33 U.S. War Bonds (by Justin and Aregorn 040725)
+###############################################################################################
+event = {
+	id = 40926
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = no
+
+	}
+
+	name = "U.S. 1st War Bonds"
+	desc = "The War Faineances Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggested calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40926_1_war_bonds	#mosquito
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 5 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40927
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 2nd War Bonds"
+	desc = "The War Finance Committee is prepared to issue its next batch of bonds"
+	style = 0
+	picture = 40927_2_war_bonds	#mosquito
+
+	date = { day = 1 month = april year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 3 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40928
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 3th War Bonds"
+	desc = "The War Finance Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggested calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40928_3_war_bonds	#mosquito
+
+	date = { day = 1 month = september year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40929
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 4th War Bonds"
+	desc = "The War Finance Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggested calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40929_4_war_bonds	#mosquito
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40930
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 5th War Bonds"
+	desc = "The War Finance Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggested calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40930_5_war_bonds	#mosquito
+
+	date = { day = 1 month = june year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40931
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 6th War Bonds"
+	desc = "The War Finance Committee is prepared to issue its next batch of bonds"
+	style = 0
+	picture = 40931_6_war_bonds	#mosquito
+
+	date = { day = 1 month = november year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40932
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 7th War Bonds"
+	desc = "The War Finance Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggested calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40932_7_war_bonds	#mosquito
+
+	date = { day = 1 month = september year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+event = {
+	id = 40933
+	random = no
+	country = usa
+
+	trigger = {	random = 50 atwar = yes
+
+	}
+
+	name = "U.S. 8th War Bonds (Last)"
+	desc = "The War Finanance Committee sold the first E-series Savings Bond to the U.S. President in a public ceremony.  Popular gossip has it that the President himself suggsted calling them Savings bonds, instead of War bonds.  U.S. newspapers printed mixed reactions to the government's latest effort to prepare for a war that might not come."
+	style = 0
+	picture = 40933_8_war_bonds	#mosquito
+
+	date = { day = 1 month = october year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Release the bonds"
+		command = { type = money value = 2000 }
+		command = { type = dissent value = 2 }
+		command = { type = research_mod value = 2 }
+		}
+	action_b = {
+		name = "It is a bad sign for the people"
+		command = { }
+		}
+}
+#########################################################################
+#  40934 U.S. public opinion against Germany - Invasion of the British islands (by Aregorn 031121)
+#########################################################################
+event = {
+	id = 40934
+	random = no
+	country = usa
+
+	trigger = { random = 50
+			or = {
+			control = { province = 23 data = ger }
+			control = { province = 21 data = ger }
+			control = { province = 20 data = ger }
+			control = { province = 22 data = ger }
+			control = { province = 10 data = ger }
+			control = { province = 14 data = ger }
+			control = { province = 28 data = ger }}
+
+			ai = yes
+			war = { country = eng  country = ger }
+			exists = eng
+			NOT = { or = { ispuppet = eng ispuppet = usa }}
+			NOT = {	alliance = { country = eng  country = usa }}
+			NOT = {	alliance = { country = ger  country = usa }}
+			}
+
+	name = "U.S. public opinion against Germany"
+	desc = "The U.S. public opinion turned from neutrality to complete commotion and war mongering after the German invasion of the British islands. Will this change give enough political support to allow the Presidency to finally become involved in the conflict?"
+
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 3
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start campaigning for war intervention"
+		ai_chance = 100
+		command = { type = relation which = ger value = -100 }
+		command = { type = belligerence which = ger value = 30 }
+		command = { type = domestic which = interventionism value = 10 }
+		command = { type = ai which = "switch/hsr_USA_Gear_Up_Sealion.ai" }
+
+	}
+	action_b = {
+		name = "We should not get involved in this matter"
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+#########################################################################
+#  40935 The U.S. at war (by Aregorn 050402)
+#########################################################################
+event = {
+	id = 40935
+	random = no
+	country = usa
+
+	trigger = { 	ai = no
+			atwar = yes
+
+			}
+
+	name = "The U.S. at war"
+	desc = "The war caused great dissent among the population fuelled by an intense political opposition. Immediate diversion of resources went to military research and production."
+
+	style = 0
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 1 month = december year = 1941 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -20 }
+		command = { type = research_mod value = 5 }
+	}
+}
+#########################################################################
+# 40936-37 Army A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 40936
+	random = no
+	country = USA
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = ger country = usa }
+				war = { country = jap country = usa } }
+			random = 25 control = { province = 602 data = usa }
+			not = { manpower = 20 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 20 }
+		}
+}
+event = {
+	id = 40937
+	random = no
+	country = usa
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes technology = 1260
+			or = { 	war = { country = ger country = usa }
+				war = { country = jap country = usa } }
+			random = 25 control = { province = 602 data = usa }
+
+			not = { supplies = 500 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 1000 }
+		}
+}
+#########################################################################
+# 40938 War on Vichy (by Aregorn 051008)
+#########################################################################
+
+#########################################################################
+# 40939 USA Join the allies (by Aregorn 051008)
+#########################################################################
+event = {
+	id = 40939
+	random = no
+	country = usa
+
+	trigger = {
+		ai = yes not = { alliance = { country = eng country = usa } }
+		or = { and = { 	war = { country = ger country = usa }
+				war = { country = ger country = eng }
+			}
+			and = { war = { country = jap country = usa }
+				war = { country = jap country = eng }
+			}
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK"
+		command = { type = alliance which = eng }
+	}
+}
+#########################################################################
+# 40940 Control of African provinces (by Aregorn 060110)
+#########################################################################
+
+event = {
+	id = 40940
+	country = usa
+	random = no
+	persistent = yes
+
+	trigger = {	ai = yes alliance = { country = eng country = usa }
+			or = {	control = { province = 956 data = usa }
+				control = { province = 969 data = usa }
+				control = { province = 968 data = usa }
+				control = { province = 959 data = usa }
+				control = { province = 953 data = usa }
+
+				control = { province = 958 data = usa }
+				control = { province = 960 data = usa }
+				control = { province = 966 data = usa }
+				control = { province = 1014 data = usa }
+				control = { province = 970 data = usa }
+
+				control = { province = 1013 data = usa }
+				control = { province = 943 data = usa }
+				control = { province = 942 data = usa }
+				control = { province = 945 data = usa }
+				control = { province = 944 data = usa }
+
+				control = { province = 946 data = usa }
+				control = { province = 947 data = usa }
+				control = { province = 949 data = usa }
+				control = { province = 948 data = usa }
+				control = { province = 951 data = usa }
+
+				control = { province = 950 data = usa }
+				control = { province = 952 data = usa }
+				control = { province = 935 data = usa }
+				control = { province = 934 data = usa }
+				control = { province = 936 data = usa }
+
+				control = { province = 938 data = usa }
+				control = { province = 937 data = usa }
+				control = { province = 939 data = usa }
+				control = { province = 940 data = usa }
+				control = { province = 941 data = usa } }
+	}
+
+	name = "ai_event"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = september year = 1956 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+
+		command = { type = secedeprovince which = eng value = 956 }
+		command = { type = secedeprovince which = eng value = 969 }
+		command = { type = secedeprovince which = eng value = 968 }
+		command = { type = secedeprovince which = eng value = 959 }
+		command = { type = secedeprovince which = eng value = 953 }
+
+		command = { type = secedeprovince which = eng value = 958 }
+		command = { type = secedeprovince which = eng value = 960 }
+		command = { type = secedeprovince which = eng value = 966 }
+		command = { type = secedeprovince which = eng value = 1014 }
+		command = { type = secedeprovince which = eng value = 970 }
+
+		command = { type = secedeprovince which = eng value = 1013 }
+		command = { type = secedeprovince which = eng value = 943 }
+		command = { type = secedeprovince which = eng value = 942 }
+		command = { type = secedeprovince which = eng value = 945 }
+		command = { type = secedeprovince which = eng value = 944 }
+
+		command = { type = secedeprovince which = eng value = 946 }
+		command = { type = secedeprovince which = eng value = 947 }
+		command = { type = secedeprovince which = eng value = 949 }
+		command = { type = secedeprovince which = eng value = 948 }
+		command = { type = secedeprovince which = eng value = 951 }
+
+		command = { type = secedeprovince which = eng value = 950 }
+		command = { type = secedeprovince which = eng value = 952 }
+		command = { type = secedeprovince which = eng value = 935 }
+		command = { type = secedeprovince which = eng value = 934 }
+		command = { type = secedeprovince which = eng value = 936 }
+
+		command = { type = secedeprovince which = eng value = 938 }
+		command = { type = secedeprovince which = eng value = 937 }
+		command = { type = secedeprovince which = eng value = 939 }
+		command = { type = secedeprovince which = eng value = 940 }
+		command = { type = secedeprovince which = eng value = 941 }
+	}
+}
+#########################################################################
+# 40941 USA Invasion Europe (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40941
+	random = no
+	country = usa
+
+	trigger = {
+		ai = yes
+		war = { country = ger country = usa }
+		war = { country = ger country = sov }
+		random = 5
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_USA_Invasion.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+
+		command = { type = add_corps which = "Atlantic Task Force A" value = naval where = 600 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_corps which = "Armor Korps" value = land where = 600 }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_corps which = "Infantry Korps" value = land  where = 600 }
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+
+		command = { type = add_corps which = "Marine Korps" value = land  where = 600 }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+
+		command = { type = add_corps which = "Marine Korps" value = land  where = 600 }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+
+		command = { type = add_corps which = "Atlantic Task Force B" value = naval where = 602 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = destroyer when = 4 }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_corps which = "Armor Korps" value = land where = 602 }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery }
+
+		command = { type = add_corps which = "Infantry Korps" value = land  where = 602 }
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+		command = { type = add_division value = infantry when = 2 where = artillery }
+
+		command = { type = add_corps which = "Marine Korps" value = land  where = 602 }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+
+		command = { type = add_corps which = "Marine Korps" value = land  where = 602 }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+		command = { type = add_division value = marine when = 1 where = artillery }
+
+		command = { type = remove_division which = "1st Armored 'Old Ironsides' Div." value = usa }
+		command = { type = remove_division which = "2nd Armored 'Hell on Wheels' Div." value = usa }
+		command = { type = remove_division which = "3rd Armored 'Spearhead' Div." value = usa }
+		command = { type = remove_division which = "4th Armored 'Breakthrough' Div." value = usa }
+
+		command = { type = remove_division which = "1st 'Big Red One' Division" value = usa }
+		command = { type = remove_division which = "2nd 'Indianhead' Division" value = usa }
+		command = { type = remove_division which = "3rd 'Rock of the Marne' Division" value = usa }
+		command = { type = remove_division which = "24th 'Victory' Division" value = usa }
+		command = { type = remove_division which = "6th 'Sightseeing Sixth' Division" value = usa }
+		command = { type = remove_division which = "5th 'Red Devils' Division" value = usa }
+		command = { type = remove_division which = "33rd 'Golden Cross' NG Division" value = usa }
+		command = { type = remove_division which = "4th 'Iron Horse' Division" value = usa }
+		command = { type = remove_division which = "7th 'Bayonet!' Division" value = usa }
+		command = { type = remove_division which = "8th 'Pathfinder' Division" value = usa }
+		command = { type = remove_division which = "9th 'Old Reliables' Division" value = usa }
+		command = { type = remove_division which = "30th 'Old Hickory' NG Division" value = usa }
+		command = { type = remove_division which = "41st 'Sunset' NG Division" value = usa }
+		command = { type = remove_division which = "44th Infantry NG Division" value = usa }
+
+		command = { type = remove_division which = "1st US Marine 'The Old Breed' Div." value = usa }
+		command = { type = remove_division which = "2nd US Marine 'Follow Me' Division" value = usa }
+		command = { type = remove_division which = "3rd US Marine Division" value = usa }
+		command = { type = remove_division which = "4th US Marine Division" value = usa }
+		command = { type = remove_division which = "5th US Marine Division" value = usa }
+		command = { type = remove_division which = "6th US Marine Division" value = usa }
+
+		command = { type = remove_division which = "1st Army" value = usa }
+		command = { type = remove_division which = "2nd Army" value = usa }
+	}
+}
+############################################################################
+# 40942 USA landing on Casablanca (by Aregorn 050708)
+############################################################################
+
+event = {
+   id = 40942
+   random = no
+   country = usa
+
+	trigger = { 	event = 985
+			not = { garrison = { country = GER province = 958 type = land size = 1 } }
+			not = { garrison = { country = ita province = 958 type = land size = 1 } }
+			not = {	garrison = { country = ger province = 2429  type = naval size = 1 area = no } }
+			not = {	garrison = { country = ita province = 2429  type = naval size = 1 area = no } }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "North Africa Force A" value = land when = 60145 where = 958 } #casablanca
+		command = { type = add_division value = hq }
+
+		command = { type = add_corps which = "North Africa Force B" value = land where = 958 } #casablanca
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+
+		command = { type = add_corps which = "North Africa Force C" value = land where = 958 } #casablanca
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+
+		command = { type = add_corps which = "North Africa Force D" value = land when = 60357 where = 958 } #casablanca
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = supplies value = 1000 where = 958 }
+		command = { type = oilpool value = 500 where = 958 }
+}
+}
+#########################################################################
+# 40943 War against Spain (by Aregorn 050605)
+#########################################################################
+event = {
+	id = 40943
+	random = no
+	country = usa
+
+	trigger = { ai = no
+		or = { war = { country = usa country = spa }
+			war = { country = usa country = spr } }
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Spain was not well received by neither the latin american countries nor any mayor power."
+	style = 0
+
+	date = { day = 22 month = december year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = arg value = -100 }
+		command = { type = relation which = mex value = -100 }
+		command = { type = relation which = ven value = -100 }
+		command = { type = relation which = pru value = -100 }
+		command = { type = relation which = bol value = -100 }
+		command = { type = relation which = col value = -100 }
+		command = { type = relation which = ecu value = -100 }
+		command = { type = relation which = chl value = -100 }
+		command = { type = relation which = par value = -100 }
+		command = { type = relation which = gua value = -100 }
+		command = { type = relation which = cos value = -100 }
+		command = { type = relation which = nic value = -100 }
+		command = { type = relation which = hon value = -100 }
+		command = { type = relation which = cub value = -100 }
+		command = { type = relation which = hai value = -100 }
+		command = { type = relation which = dom value = -100 }
+		command = { type = relation which = sal value = -100 }
+		command = { type = relation which = ita value = -100 }
+		command = { type = relation which = sov value = -100 }
+		command = { type = relation which = eng value = -100 }
+		command = { type = relation which = fra value = -100 }
+		command = { type = relation which = ger value = -100 }
+		command = { type = belligerence which = usa value = 10 }
+		command = { type = dissent value = 10 }
+	}
+}
+#########################################################################
+# 40944 USA Invasion France (by Aregorn 060122)
+#########################################################################
+event = {
+	id = 40944
+	random = no
+	country = usa
+
+	trigger = {	ai = yes war = { country = usa country = ger }
+			alliance = { country = usa country = eng }
+			not = { and = { alliance = { country = ita country = ger }
+					control = { province = 932 data = ita }
+				}
+			}
+			not = { control = { province = 932 data = ger } }
+
+			or = { 	year = 1944
+				and = { year = 1943 random = 25 }
+				and = { year = 1942 random = 10 }
+			}
+
+			not = { control = { province = 32 data = usa } }
+			not = { control = { province = 32 data = eng } }
+			not = { control = { province = 32 data = fra } }
+
+			not = { control = { province = 42 data = usa } }
+			not = { control = { province = 42 data = eng } }
+			not = { control = { province = 42 data = fra } }
+
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+
+	date = { day = 30 month = october year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_USA_Fra.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+###############################################################################################
+# 40945 USA Volunteer Group returns (by Aregorn 060218)
+###############################################################################################
+event = {
+	id = 40945
+	random = no
+	country = usa
+
+	trigger = {	or = { 	not = { war = { country = CHI country = JAP } }
+				war = { country = jap country = usa }
+				war = { country = ger country = usa }
+			}
+			event = 40800
+	}
+
+	name = "USA Volunteer Group returns"
+	desc = "The U.S. entry into the War obliged the The American Volunteer Group to return home."
+	style = 0
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Call them back"
+		command = { type = add_corps which = "AVG" value = air when = 50370 where = 765 }
+		command = { type = add_division value = multi_role when = 1 }
+		}
+	action_b = {
+		name = "They will be more useful where they are"
+		command = { }
+		}
+}
+###############################################################################################
+# 40946 Pacific Fleet (by Aregorn 060223, mod Dec152000 060304)
+###############################################################################################
+event = {
+	id = 40946
+	random = no
+	country = usa
+
+	trigger = { 	or = { 	atwar = usa
+			   	event = 40302 event = 40314
+				war = { country = eng country = JAP }
+			}
+			not = { war = { country = usa country = JAP } }
+			not = { alliance = { country = usa country = JAP } }
+			or = {  and = { year = 1942 }
+				and = { year = 1941 month = 10 random = 10 }
+			}
+
+			event = 3800
+	}
+
+	name = "Pacific Fleet"
+	desc = "The increasing tension with Japan drove the US to show its military power basing a theatening pacific fleet in Hawaii."
+	style = 0
+	picture = usa_40946_fleet2 	#Steffele
+
+	date = { day = 1 month = july year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "Move the Pacific fleet to Pearl Harbour"
+		ai_chance = 100
+		command = { type = remove_division which = 14800 value = 29 } # USS Arizona
+		command = { type = remove_division which = 14800 value = 28 } # USS Nevada
+		command = { type = remove_division which = 14800 value = 30 } # USS Pennsylvania
+		command = { type = remove_division which = 14800 value = 33 } # USS Oklahoma
+		command = { type = remove_division which = 14800 value = 34 } #USS Tennessee
+		command = { type = remove_division which = 14800 value = 35 } # USS California
+		command = { type = remove_division which = 14800 value = 38 } #USS West Virginia
+		command = { type = remove_division which = 14800 value = 39 } # USS Maryland
+
+		command = { type = remove_division which = 14800 value = 57 } # USS New Orleans
+		command = { type = remove_division which = 14800 value = 60 } # USS San Francisco
+
+		command = { type = remove_division which = 14800 value = 44 } # USS Raliegh
+		command = { type = remove_division which = 14800 value = 45 } # USS Detriot
+		command = { type = remove_division which = 14800 value = 515 } # USS Phoenix
+		command = { type = remove_division which = 14800 value = 513 } # USS Honolulu
+		command = { type = remove_division which = 14800 value = 509 } # USS Philadelphia, stand in for USS St Louis
+		command = { type = remove_division which = 14800 value = 510 } # USS Brooklyn, stand in for USS Helena
+
+		command = { type = remove_division which = 14800 value = 147 } # 22nd Destroyer Division
+		command = { type = remove_division which = 14800 value = 148 } # 23rd Destroyer Division
+		command = { type = remove_division which = 14800 value = 62 } # 1st Destroyer Division
+		command = { type = remove_division which = 14800 value = 63 } # 2nd Destroyer Division
+		command = { type = remove_division which = 14800 value = 64 } # 3rd Destroyer Division
+		command = { type = remove_division which = 14800 value = 516 } # 4th Destroyer Division
+		command = { type = remove_division which = 14800 value = 517 } # 29th Destroyer Division
+		command = { type = remove_division which = 14800 value = 518 } # 30th Destroyer Division
+		command = { type = remove_division which = 14800 value = 519 } # 33rd Destroyer Division
+		command = { type = remove_division which = 14800 value = 520 } # 34th Destroyer Division
+
+		command = { type = add_corps which = "Pacific Fleet" value = naval when = 60424 where = 663 }
+		command = { type = activate_division which = 14800 value = 201 where = 663 } # Arizona
+		command = { type = activate_division which = 14800 value = 202 where = 663 } # Nevada
+		command = { type = activate_division which = 14800 value = 203 where = 663 } # Penn.
+		command = { type = activate_division which = 14800 value = 204 where = 663 } # Oklahoma
+		command = { type = activate_division which = 14800 value = 205 where = 663 } # Tennesse
+		command = { type = activate_division which = 14800 value = 206 where = 663 } # California
+		command = { type = activate_division which = 14800 value = 207 where = 663 } # WV
+		command = { type = activate_division which = 14800 value = 208 where = 663 } # Maryland
+		command = { type = activate_division which = 14800 value = 209 where = 663 } # New Orleans
+		command = { type = activate_division which = 14800 value = 210 where = 663 } # San Francisco
+		command = { type = activate_division which = 14800 value = 211 where = 663 } # Raliegh
+		command = { type = activate_division which = 14800 value = 212 where = 663 } # Detroit
+		command = { type = activate_division which = 14800 value = 213 where = 663 } # Phoenix
+		command = { type = activate_division which = 14800 value = 214 where = 663 } # Honolulu
+		command = { type = activate_division which = 14800 value = 215 where = 663 } # USS Philadelphia, stand in for USS St Louis
+		command = { type = activate_division which = 14800 value = 216 where = 663 } # USS Brooklyn, stand in for USS Helena
+		command = { type = activate_division which = 14800 value = 217 where = 663 } # 22nd DD
+		command = { type = activate_division which = 14800 value = 218 where = 663 } # 23rd DD
+		command = { type = activate_division which = 14800 value = 219 where = 663 } # 1st DD
+		command = { type = activate_division which = 14800 value = 220 where = 663 } # 2nd DD
+		command = { type = activate_division which = 14800 value = 221 where = 663 } # 3rd DD
+		command = { type = activate_division which = 14800 value = 222 where = 663 } # 4th DD
+		command = { type = activate_division which = 14800 value = 223 where = 663 } # 29th DD
+		command = { type = activate_division which = 14800 value = 224 where = 663 } # 30th DD
+		command = { type = activate_division which = 14800 value = 225 where = 663 } # 33rd DD
+		command = { type = activate_division which = 14800 value = 226 where = 663 } # 34th DD
+
+		command = { type = supplies value = 300 where = 663 }
+		command = { type = oilpool value = 300 where = 663 }
+		command = { type = supplies value = -300 }
+		command = { type = oilpool value = -300 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = setflag which = pearl }
+		}
+	action_b = {
+		name = "No need to further increase tension"
+		ai_chance = 0
+		command = { type = domestic which = interventionism value = -3 }
+		command = { type = domestic which = defense_lobby value = -2 }
+		}
+}
+###########################################################################
+# 40947-64  United States Navy   (by Dec152000 060124, modified by Aregorn)
+###########################################################################
+event = {
+	id = 40947
+	random = no
+	country = usa
+
+	trigger = { }
+
+	name = "United States Navy"
+	desc = "The United States Navy is a major power.  It has the highest tonnage limit under the Washington Naval Arms Treaty that caps fleet construction for the great powers (UK 5, USA 5, JAP 3, FRA 1.75, ITA 1.75).  The USN posses some of the finest carriers afloat and has a strong force of WW1 era BBs."
+	style = 0
+	picture = "american_ships_in_dock"
+
+	date = { day = 9 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Outstanding"
+		ai_chance = 100
+
+		command = { type = build_time which = naval where = relative value = -10} # Fast shipyards
+	 	command = { type = build_cost which = naval where = relative value = 10 }
+		command = { type = air_attack which = naval value = 1 } # Excellent AA defense
+
+		command = { type = range which = battleship value = 1000 } # Good range for all ships
+	  	command = { type = speed which = battleship value = -1 } # Slow
+	  	command = { type = max_positioning which = battleship value = -0.01 }
+	  	command = { type = min_positioning which = battleship value = -0.01 }
+	  	command = { type = naval_attack which = battleship value = 2 }  # Fire control + ammo
+		command = { type = naval_defense which = battleship value = 1 } # Well armored
+		command = { type = fuel_consumption which = battleship value = -0.5 } # Really good fuel economy
+		command = { type = air_attack which = battleship value = 1 } # Excellent AA defense
+
+		command = { type = range which = battlecruiser value = 700 }
+		command = { type = fuel_consumption which = battlecruiser value = -0.4 }
+	  	command = { type = naval_attack which = battlecruiser value = 1 } # Fire control + ammo
+		command = { type = naval_defense which = battlecruiser value = 1 } # Well armored
+
+		command = { type = range which = carrier value = 1200 }
+		command = { type = fuel_consumption which = carrier value = -0.3 } # Really good fuel economy
+
+		command = { type = naval_defense which = heavy_cruiser value = 1 }
+		command = { type = range which = heavy_cruiser value = 200 }
+	  	command = { type = naval_attack which = heavy_cruiser value = -1 } # no torpedoes
+		command = { type = fuel_consumption which = heavy_cruiser value = -0.2 } # Really good fuel economy
+
+		command = { type = range which = light_cruiser value = 1100 }
+	  	command = { type = naval_attack which = light_cruiser value = 2 } # Massive main battery, no torpedoes generally
+	  	command = { type = shore_attack which = light_cruiser value = 2 } # Massive main battery
+		command = { type = naval_defense which = light_cruiser value = 1 } # Well armored
+	 	command = { type = build_cost which = light_cruiser where = relative value = 10 }
+		command = { type = supply_consumption which = light_cruiser value = 0.2} # Really big plus lots of armarment
+		command = { type = fuel_consumption which = light_cruiser value = 0.15 }
+
+		command = { type = range which = destroyer value = 600 }
+
+		command = { type = speed which = submarine value = 1 } # Fast
+		command = { type = range which = submarine value = 500 } # Long range
+		command = { type = visibility which = submarine value = 1 } # big
+
+		command = { type = scrap_model which = battleship value = 1 }
+		command = { type = scrap_model which = battlecruiser value = 1 }
+		command = { type = scrap_model which = heavy_cruiser value = 1 }
+		command = { type = scrap_model which = light_cruiser value = 2 }
+		command = { type = scrap_model which = destroyer value = 1 }
+	}
+}
+event = {
+	id = 40948
+	random = no
+	country = usa
+
+	trigger = { }
+
+	name = "USN Fleet Plan"
+	desc = "To maintain  our global naval commitments, USN planners forsee the need for 10 new BBs.  They will be constructed starting in 1937 with the last laid down in 1941  Additionally, 2 new BCs and 6 new carriers will be added."
+	style = 0
+	picture = "naval_reinforcements"
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -5 }
+	 	command = { type = build_time which = battlecruiser where = relative value = -5 }
+	 	command = { type = build_time which = carrier where = relative value = -5 }
+		command = { type = industrial_modifier which = supplies value = -1 }
+	}
+	action_b = {
+		name = "We do not need the USN plan"
+		ai_chance = 0
+		command = { type = sleepevent which = 40949 }
+		command = { type = sleepevent which = 40950 }
+		command = { type = sleepevent which = 40951 }
+		command = { type = sleepevent which = 40952 }
+		command = { type = sleepevent which = 40953 }
+		command = { type = sleepevent which = 40954 }
+		command = { type = sleepevent which = 40955 }
+		command = { type = sleepevent which = 40956 }
+		command = { type = sleepevent which = 40957 }
+		command = { type = sleepevent which = 40958 }
+		command = { type = sleepevent which = 40959 }
+		command = { type = sleepevent which = 40960 }
+		command = { type = sleepevent which = 40961 }
+		command = { type = sleepevent which = 40962 }
+		command = { type = sleepevent which = 40963 }
+		command = { type = sleepevent which = 40964 }
+	}
+}
+########################################################################
+event = {
+	id = 40949
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 27 month = october year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS North Carolina Laid Down"
+
+	desc = "With much fanfare the keel of the USS North Carolina is laid down (target date April, 1941)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40950
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 14 month = june year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Washington Laid Down"
+
+	desc = "With much fanfare the keel of the USS Washington is laid down (target date May, 1941)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40951
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 5 month = july year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS South Dakota Laid Down"
+
+	desc = "With much fanfare the keel of the USS South Dakota is laid down (target date March, 1942)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40952
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 20 month = july year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Massachusetts Laid Down"
+
+	desc = "With much fanfare the keel of the USS Massachusetts is laid down (target date May, 1942)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		command = { }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		}
+}
+########################################################################
+event = {
+	id = 40953
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 20 month = november year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Indiana Laid Down"
+
+	desc = "With much fanfare the keel of the USS Indiana is laid down (target date May, 1942)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40954
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 1 month = february year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Alabama Laid Down"
+
+	desc = "With much fanfare the keel of the USS Alabama is laid down. (target date August, 1942)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40955
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 27 month = june year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Iowa Laid Down"
+
+	desc = "With much fanfare the keel of the USS Iowa is laid down (target date February, 1943)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40956
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 16 month = september year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS New Jersey Laid Down"
+
+	desc = "With much fanfare the keel of the USS New Jersey is laid down (target date May, 1943)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40957
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 16 month = september year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Missouri Laid Down"
+
+	desc = "With much fanfare the keel of the USS Missouri is laid down. (target date June, 1944)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40958
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 16 month = september year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Wisconsin Laid Down"
+
+	desc = "With much fanfare the keel of the USS Wisconsin is laid down (target date April, 1944)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+########################################################################
+event = {
+	id = 40959
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 17 month = december year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Alaska Laid Down"
+
+	desc = "With much fanfare the keel of the USS Alaska is laid down (target date June, 1944)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battlecruiser value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+#########################################################################
+event = {
+	id = 40960
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 2 month = february year = 1942 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Guam Laid Down"
+
+	desc = "With much fanfare the keel of the USS Guam is laid down (target date September, 1944)."
+	style = 0
+	picture = "naval_reinforcements"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battlecruiser value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = {  }
+		}
+}
+##############################################################################
+event = {
+	id = 40961
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 25 month = sep year = 1939 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Hornet Laid Down"
+
+	desc = "With much fanfare the keel of the USS Hornet is laid down. (target date October, 1941)."
+	style = 0
+	picture = "american_carrier"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = {  }
+		}
+}
+##############################################################################
+event = {
+	id = 40962
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 28 month = april year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Essex Laid Down"
+
+	desc = "With much fanfare the keel of the USS Essex is laid down (target date January, 1943)."
+	style = 0
+	picture = "american_carrier"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+##############################################################################
+event = {
+	id = 40963
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 1 month = december year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Bon Homme Richard Laid Down"
+
+	desc = "With much fanfare the keel of the USS Bon Homme Richard is laid down (target April, 1943)."
+	style = 0
+	picture = "american_carrier"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+##############################################################################
+event = {
+	id = 40964
+	random = no
+	country = usa
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 1 month = december year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "USS Intrepid Laid Down"
+
+	desc = "With much fanfare the keel of the Intrepid is laid down (Target August, 1943)."
+	style = 0
+	picture = "american_carrier"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+###############################################################################################
+# 40965 USA Aid to China - End  (by Aregorn 060226)
+###############################################################################################
+event = {
+	id = 40965
+	random = no
+	country = usa
+	persistent = yes
+
+	trigger = {	or = { 	not = { war = { country = chi country = jap } }
+				war = { country = chi country = usa }
+				NOT = { flag = BurmaRoadOpen }
+			}
+			flag = lendleasechi
+	}
+
+	name = "USA Aid to China - End"
+	desc = "Using the same type of creative accounting that allowed the AVG to operate without official U.S. sanction, unnamed officials in the U.S. War Department arrange several shiploads of small arms and assorted supplies to be lost. British defenders in Burma found it eventually when it showed up in Rangoon. Some of the cargo found its way to Chenault's volunteer pilots and the rest ended confiscated by Chinese officials as contraband..."
+	style = 0
+	picture = 40801-04Usa_helpto-China	#Steffele
+
+	date = { day = 1 month = july year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	action_a = {
+		name = "ok"
+		command = { type = free_ic value = 5 }
+		command = { type = trigger which = 40817 }
+		command = { type = clrflag which = lendleasechi }
+		}
+}
+###################################################################################################
+# 40966 U.S. Armor (by Aregorn 081107) requested by Alan Mateus
+###################################################################################################
+event = {
+	id = 40966
+	random = no
+	country = usa
+
+	trigger = { atwar = yes }
+
+	name = "U.S. Armor"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. The U.S. historically opted for an average quality, easier to transport to the front line, massproduced type of model."
+	style = 0
+
+	picture = tank_factory	#by Aregorn
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1954 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = build_time which = armor when = now where = relative value = -35 }
+	command = { type = build_cost which = armor when = now where = relative value = -35 }
+	command = { type = supply_consumption which = armor value = -0.5 }
+	command = { type = fuel_consumption which = armor value = -1 }
+	command = { type = speed which = armor value = 1 }
+	command = { type = transport_weight which = armor value = -15 }
+
+	command = { type = build_time which = mechanized when = now where = relative value = -20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = mechanized value = -0.1 }
+	command = { type = transport_weight which = mechanized value = -15 }
+
+	command = { type = hard_attack which = motorized value = -1 }
+	command = { type = soft_attack which = motorized value = -1 }
+	command = { type = build_time which = motorized when = now where = relative value = -20 }
+	command = { type = build_cost which = motorized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = motorized value = -0.1 }
+	command = { type = transport_weight which = motorized value = -5 }
+
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = industrial_modifier which = total value = 1 }
+	command = { type = tc_mod value = 5 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 4 }
+	command = { type = soft_attack which = armor value = 4 }
+	command = { type = build_time which = armor when = now where = relative value = 30 }
+	command = { type = build_cost which = armor when = now where = relative value = 30 }
+	command = { type = supply_consumption which = armor value = 0.5 }
+	command = { type = fuel_consumption which = armor value = 0.5 }
+	command = { type = speed which = armor value = -1 }
+	command = { type = transport_weight which = armor value = 10 }
+	command = { type = max_organization which = armor value = 3 }
+
+	command = { type = hard_attack which = mechanized value = 2 }
+	command = { type = soft_attack which = mechanized value = 2 }
+	command = { type = build_time which = mechanized when = now where = relative value = 20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = mechanized value = 0.1 }
+	command = { type = speed which = mechanized value = 1 }
+	command = { type = transport_weight which = mechanized value = 5 }
+	command = { type = max_organization which = mechanized value = 3 }
+
+	command = { type = build_time which = motorized when = now where = relative value = 20 }
+	command = { type = build_cost which = motorized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = motorized value = 0.1 }
+	command = { type = speed which = motorized value = 1 }
+	command = { type = max_organization which = motorized value = 3 }
+	command = { type = tc_mod value = -10 }
+	command = { type = industrial_modifier which = total value = -1 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 2 }
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = 15 }
+	command = { type = build_cost which = armor when = now where = relative value = 15 }
+	command = { type = build_time which = mechanized when = now where = relative value = 10 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 10 }
+	command = { type = tc_mod value = -2 }
+	}
+	action_d = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}
+#########################################################################
+# 40967 U.S. Aircrafts (by Aregorn 081107) requested by Alan Mateus
+#########################################################################
+event = {
+	id = 40967
+	random = no
+	country = usa
+
+	trigger = { atwar = yes }
+
+	name = "U.S. Aircrafts"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. The U.S. historically opted for an average quality, easier to transport to the front line, massproduced type of model."
+	style = 0
+
+	picture = usa_air_factory	#by Aregorn
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = soft_attack which = multi_role value = -1 }
+	command = { type = air_attack which = multi_role value = -1 }
+	command = { type = air_defense which = multi_role value = -2 }
+	command = { type = build_time which = multi_role when = now where = relative value = -25 }
+	command = { type = build_cost which = multi_role when = now where = relative value = -25 }
+	command = { type = supply_consumption which = multi_role value = -0.1 }
+	command = { type = speed which = multi_role value = -40 }
+
+	command = { type = soft_attack which = interceptor value = -1 }
+	command = { type = build_time which = interceptor when = now where = relative value = -25 }
+	command = { type = build_cost which = interceptor when = now where = relative value = -25 }
+	command = { type = air_attack which = interceptor value = -1 }
+	command = { type = air_defense which = interceptor value = -2 }
+	command = { type = supply_consumption which = interceptor value = -0.1 }
+	command = { type = speed which = interceptor value = -40 }
+
+	command = { type = hard_attack which = cas value = -2 }
+	command = { type = soft_attack which = cas value = -2 }
+	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = build_time which = cas when = now where = relative value = -25 }
+	command = { type = build_cost which = cas when = now where = relative value = -25 }
+	command = { type = supply_consumption which = cas value = -0.1 }
+	command = { type = speed which = cas value = -20 }
+
+	command = { type = hard_attack which = tactical_bomber value = -1 }
+	command = { type = soft_attack which = tactical_bomber value = -2 }
+	command = { type = strategic_attack which = tactical_bomber value = -1 }
+	command = { type = air_defense which = tactical_bomber value = -1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = tactical_bomber value = -0.2 }
+	command = { type = speed which = tactical_bomber value = -20 }
+
+	command = { type = soft_attack which = naval_bomber value = -1 }
+	command = { type = naval_attack which = naval_bomber value = -1 }
+	command = { type = air_defense which = naval_bomber value = -2 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = naval_bomber value = -0.1 }
+	command = { type = speed which = naval_bomber value = -40 }
+
+	command = { type = build_time which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = strategic_bomber value = -0.2 }
+	command = { type = speed which = strategic_bomber value = -20 }
+	command = { type = industrial_modifier which = total value = 1 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+	command = { type = build_time which = multi_role when = now where = relative value = 20 }
+	command = { type = build_cost which = multi_role when = now where = relative value = 20 }
+	command = { type = supply_consumption which = multi_role value = 0.1 }
+	command = { type = speed which = multi_role value = 40 }
+
+	command = { type = build_time which = interceptor when = now where = relative value = 20 }
+	command = { type = build_cost which = interceptor when = now where = relative value = 20 }
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+	command = { type = supply_consumption which = interceptor value = 0.1 }
+	command = { type = speed which = interceptor value = 40 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = build_time which = cas when = now where = relative value = 20 }
+	command = { type = build_cost which = cas when = now where = relative value = 20 }
+	command = { type = supply_consumption which = cas value = 0.1 }
+	command = { type = speed which = cas value = 20 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+	command = { type = air_defense which = tactical_bomber value = 1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = tactical_bomber value = 0.2 }
+	command = { type = speed which = tactical_bomber value = 20 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = naval_bomber value = 0.1 }
+	command = { type = speed which = naval_bomber value = 20 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 3 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = strategic_bomber value = 0.2 }
+	command = { type = speed which = strategic_bomber value = 20 }
+	command = { type = industrial_modifier which = total value = -1 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}

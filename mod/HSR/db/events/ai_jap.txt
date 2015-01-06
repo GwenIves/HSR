@@ -1,0 +1,665 @@
+####################################
+# Japan 22500 - 22599 = Minister Change Events
+####################################
+################
+# Minister of Security Section 22500 - 22509
+#############################################
+event = { # Ushio Shigenosuke takes power
+	id = 22500
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5105 # Ushio Shigenosuke
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPSecurityUshio }
+		}
+		OR = {
+			NOT = { war = { country = JAP country = CHI } }
+			NOT = {
+				war = { country = JAP country = CHI }
+				OR = {
+						minister = 5115 # Fujie Keisuke
+						minister = 5123 # Tojo Hideki
+				}
+				OR = {
+					lost_national = { country = CHI value = 10 }
+					control = { province = 125 data = JAP } # Nanjing
+				}
+			}
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 5099 } # Kawarada Kakichi
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPSecurityUshio }
+		command = { type = local_clrflag which = JAPSecurityGoto }
+		command = { type = local_clrflag which = JAPSecurityKawarada }
+		command = { type = local_clrflag which = JAPSecurityHideki }
+		command = { type = local_clrflag which = JAPSecurityKeisuke }
+		command = { type = ministerofsecurity which = 5105 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Goto Fumio takes power
+	id = 22501
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { minister = 5105 } # Ushio Shigenosuke
+		minister = 5005 # Goto Fumio
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPSecurityUshio }
+		}
+		OR = {
+			NOT = { war = { country = JAP country = CHI } }
+			NOT = {
+				war = { country = JAP country = CHI }
+				OR = {
+						minister = 5115 # Fujie Keisuke
+						minister = 5123 # Tojo Hideki
+				}
+				OR = {
+					lost_national = { country = CHI value = 10 }
+					control = { province = 125 data = JAP } # Nanjing
+				}
+			}
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 5099 } # Kawarada Kakichi
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPSecurityUshio }
+		command = { type = local_setflag which = JAPSecurityGoto }
+		command = { type = local_clrflag which = JAPSecurityKawarada }
+		command = { type = local_clrflag which = JAPSecurityHideki }
+		command = { type = local_clrflag which = JAPSecurityKeisuke }
+		command = { type = ministerofsecurity which = 5005 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Kawarada Kakichi takes power
+	id = 22502
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { manpower = 200 }
+		minister = 5099 # Kawarada Kakichi
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPSecurityKawarada }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPSecurityUshio }
+		command = { type = local_clrflag which = JAPSecurityGoto }
+		command = { type = local_setflag which = JAPSecurityKawarada }
+		command = { type = local_clrflag which = JAPSecurityHideki }
+		command = { type = local_clrflag which = JAPSecurityKeisuke }
+		command = { type = ministerofsecurity which = 5099 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Tojo Hideki takes power
+	id = 22503
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5123 # Tojo Hideki
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPSecurityHideki }
+		}
+		war = { country = JAP country = CHI }
+		OR = {
+			lost_national = { country = CHI value = 10 }
+			control = { province = 125 data = JAP } # Nanjing
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 5099 } # Kawarada Kakichi
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPSecurityUshio }
+		command = { type = local_clrflag which = JAPSecurityGoto }
+		command = { type = local_clrflag which = JAPSecurityKawarada }
+		command = { type = local_setflag which = JAPSecurityHideki }
+		command = { type = local_clrflag which = JAPSecurityKeisuke }
+		command = { type = ministerofsecurity which = 5123 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Fujie Keisuke takes power
+	id = 22504
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5115 # Fujie Keisuke
+		NOT = { minister = 5123 } # Tojo Hideki
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPSecurityKeisuke }
+		}
+		war = { country = JAP country = CHI }
+		OR = {
+			lost_national = { country = CHI value = 10 }
+			control = { province = 125 data = JAP } # Nanjing
+		}
+		OR = {
+			manpower = 200
+			NOT = { minister = 5099 } # Kawarada Kakichi
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPSecurityUshio }
+		command = { type = local_clrflag which = JAPSecurityGoto }
+		command = { type = local_clrflag which = JAPSecurityKawarada }
+		command = { type = local_clrflag which = JAPSecurityHideki }
+		command = { type = local_setflag which = JAPSecurityKeisuke }
+		command = { type = ministerofsecurity which = 5115 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 22510 - 22519
+#############################################
+event = { # Ushio Shigenosuke takes power
+	id = 22510
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 5007 # Kanin Kotohito
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefKanin }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPChiefKanin }
+		command = { type = local_clrflag which = JAPChiefHirotsugu }
+		command = { type = local_clrflag which = JAPChiefSugiyama }
+		command = { type = chiefofstaff which = 5007 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Sugiyama Hajime takes power
+	id = 22511
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		NOT = { minister = 5007 } # Kanin Kotohito
+		minister = 5155 # Sugiyama Hajime
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefSugiyama }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPChiefKanin }
+		command = { type = local_setflag which = JAPChiefSugiyama }
+		command = { type = local_clrflag which = JAPChiefHirotsugu }
+		command = { type = chiefofstaff which = 5155 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Hirotsugu Hayashida takes power
+	id = 22512
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = no
+		minister = 5149 # Hirotsugu Hayashida
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefHirotsugu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPChiefKanin }
+		command = { type = local_clrflag which = JAPChiefSugiyama }
+		command = { type = local_setflag which = JAPChiefHirotsugu }
+		command = { type = chiefofstaff which = 5149 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 22520 - 22529
+#############################################
+event = { # Takasu Shiro takes power
+	id = 22520
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5134 # Takasu Shiro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPIntelligenceTakasu }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPIntelligenceTakasu }
+		command = { type = ministerofintelligence which = 5134 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 22530 - 22539
+#############################################
+event = { # Inanba Satoru takes power
+	id = 22530
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5160 # Inanba Satoru
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPArmyInanba }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPArmyInanba }
+		command = { type = chiefofarmy which = 5160 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 22540 - 22549
+#############################################
+event = { # Fujiwara Ginjiro takes power
+	id = 22540
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5084 # Fujiwara Ginjiro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPArmamentGinjiro }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPArmamentGinjiro }
+		command = { type = local_clrflag which = JAPArmamentHatta }
+		command = { type = local_clrflag which = JAPArmamentOgawa }
+		command = { type = armamentminister which = 5084 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Hatta Yoshiaki takes power
+	id = 22541
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5082 # Hatta Yoshiaki
+		NOT = { minister = 5084 } # Fujiwara Ginjiro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPArmamentHatta }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPArmamentGinjiro }
+		command = { type = local_setflag which = JAPArmamentHatta }
+		command = { type = local_clrflag which = JAPArmamentOgawa }
+		command = { type = armamentminister which = 5082 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Ogawa Gotaro takes power
+	id = 22542
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 5072 # Ogawa Gotaro
+		NOT = { minister = 5082 } # Hatta Yoshiaki
+		NOT = { minister = 5084 } # Fujiwara Ginjiro
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPArmamentOgawa }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPArmamentGinjiro }
+		command = { type = local_setflag which = JAPArmamentOgawa }
+		command = { type = local_clrflag which = JAPArmamentHatta }
+		command = { type = armamentminister which = 5072 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 22550 - 22559
+# Air AI Flags
+#	JAPAirAINaval	= Naval Priority for bombardment
+#	JAPAirAIGround	= Ground support is a priority
+#############################################
+event = { # Yamamoto Isoroku takes power
+	id = 22550
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = JAPAirAINaval
+		minister = 5010 # Yamamoto Isoroku
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefAirYamamoto }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPChiefAirInoue }
+		command = { type = local_setflag which = JAPChiefAirYamamoto }
+		command = { type = local_clrflag which = JAPChiefAirTojo }
+		command = { type = local_clrflag which = JAPChiefAirTsukahara }
+		command = { type = chiefofair which = 5010 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Inoue Shigeyoshi takes power
+	id = 22551
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = JAPAirAINaval
+		minister = 5180 # Inoue Shigeyoshi
+		NOT = { minister = 5010 } # Yamamoto Isoroku
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefAirInoue }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPChiefAirInoue }
+		command = { type = local_clrflag which = JAPChiefAirYamamoto }
+		command = { type = local_clrflag which = JAPChiefAirTojo }
+		command = { type = local_clrflag which = JAPChiefAirTsukahara }
+		command = { type = chiefofair which = 5180 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Tojo Hideki takes power
+	id = 22552
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = JAPAirAIGround
+		minister = 5191 # Tojo Hideki
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefAirTojo }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = JAPChiefAirTojo }
+		command = { type = local_clrflag which = JAPChiefAirTsukahara }
+		command = { type = local_clrflag which = JAPChiefAirInoue }
+		command = { type = local_clrflag which = JAPChiefAirYamamoto }
+		command = { type = chiefofair which = 5191 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Tsukahara Nishizou takes power
+	id = 22553
+	random = no
+	country = JAP
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		local_flag = JAPAirAIGround
+		minister = 5181 # Tsukahara Nishizou
+		NOT = { minister = 5191 } # Tojo Hideki
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = JAPChiefAirTsukahara }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = JAPChiefAirTojo }
+		command = { type = local_setflag which = JAPChiefAirTsukahara }
+		command = { type = local_clrflag which = JAPChiefAirInoue }
+		command = { type = local_clrflag which = JAPChiefAirYamamoto }
+		command = { type = chiefofair which = 5181 }
+		command = { type = dissent value = -1 }
+	}
+}

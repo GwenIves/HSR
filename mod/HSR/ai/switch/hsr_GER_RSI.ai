@@ -1,0 +1,106 @@
+#
+# by Aregorn for HSR
+#
+exp_force_ratio = 0.10
+exp_force_ratios = { rsi = 1.0
+}
+
+no_exp_forces_to = { }
+
+combat = { SOV = 300 ita = 100 }
+
+protect = {
+	    ROM = 80
+	    BUL = 80
+	    SWE = 80
+	    SCH = 80
+	    AUS = 300
+	    POL = 80
+	    SLO = 80
+	    NOR = 80
+	    TUR = 80
+	    }
+ befriend = {
+	    ROM = 50
+	    BUL = 40
+	    HUN = 80
+	    YUG = 50
+	    SLO = 50
+	    SPA = 20
+	    SWE = 10
+	    FIN = 20
+	    JAP = 20
+	    POR = 10
+	    TUR = 30
+	    DEN = 50
+	    }
+front = {
+	recklessness 		= 2 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 1.0
+	min_attack_odds		= 0.8
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.4
+
+	strength 	= 1.0
+	organisation 	= 2.0
+	soft_attack 	= 1.0
+	hard_attack 	= 2.0
+	ground_defense 	= 1.0
+	dig_in 		= 1.25
+
+	frozen_attack 	= 1.0
+	snow_attack 	= 1.0
+	blizzard_attack = 1.0
+	storm_attack 	= 1.0
+	muddy_attack 	= 1.0
+
+	largefort 	= 2.0
+	smallfort 	= 1.5
+	occupied 	= 0.7
+	owned 		= 0.7
+
+	jungle_attack 	= 1.0
+	mountain_attack = 1.0
+	swamp_attack 	= 1.0
+	forest_attack 	= 1.0
+	hill_attack 	= 1.0
+	urban_attack 	= 1.0
+	river 		= 1.0
+	}
+
+invasion = {
+	ignore = yes
+
+	staging_province = {
+	}
+	target = {
+	}
+}
+garrison = {
+	country_priorities = {
+		ita = 50
+		SOV = 100
+		eng = 100
+		usa = 100
+	}
+	province_priorities = {
+	}
+}
+admiral = {
+	target = {
+	}
+	core = {
+	}
+	base = {
+	}
+}
+
+

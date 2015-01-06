@@ -1,0 +1,859 @@
+#
+# Reworked by Aregorn for HSR
+#
+#
+# HoI - USA Events
+#
+#		written by Henrik Fåhraeus
+#
+# 3701
+#########################################################################
+#  The Lend-Lease Act
+#########################################################################
+event = {
+	id = 3700
+	random = no
+	country = USA
+
+	trigger = {
+		Event = 32 #The Arsenal of Democracy
+		random = 10
+		OR = {
+				war = { country = USA country = GER }
+				AND = {
+						war = { country = ENG country = GER }
+						government = democratic
+						}
+			}
+}
+
+
+	name = "EVT_3700_NAME"
+	desc = "EVT_3700_DESC"
+	style = 0
+	picture = "lend_lease"
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME3700A" # Pass the Act
+		ai_chance = 99
+		command = { type = supplies value = -5000 }
+		command = { type = oilpool value = -2500 }
+		command = { type = metalpool value = -2500 }
+		command = { type = relation which = ENG value = 15 }
+		command = { type = relation which = FRA value = 15 }
+		command = { type = relation which = CHI value = 15 }
+		command = { type = relation which = SOV value = 10 }
+		command = { type = relation which = GER value = -15 }
+		command = { type = relation which = ITA value = -15 }
+		command = { type = relation which = JAP value = -15 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 3404 } # UK
+	}
+	action_b = {
+		name = "ACTIONNAME3700B" # Remain Completely Neutral
+		ai_chance = 1
+		command = { type = relation which = ENG value = -15 }
+		command = { type = relation which = FRA value = -15 }
+		command = { type = relation which = CHI value = -15 }
+		command = { type = relation which = SOV value = -10 }
+		command = { type = relation which = GER value = 15 }
+		command = { type = relation which = ITA value = 15 }
+		command = { type = relation which = JAP value = 15 }
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+#########################################################################
+#  Oil Embargo against Japan (modified by Aregorn)
+#########################################################################
+event = {
+	id = 3701
+	random = no
+	country = USA
+
+	trigger = {
+
+		OR = {
+			event = 3804 event = 3894
+			belligerence = { country = JAP value = 30 }
+			war = { country = ENG country = JAP }
+		}
+		NOT = {
+			OR = {
+				war = { country = USA country = JAP }
+				alliance = { country = JAP country = ENG }
+				alliance = { country = JAP country = FRA }
+			}
+		}
+		atwar = JAP
+		or = {  year = 1942
+			and = { year = 1941 month = 10 random = 10 }
+			war = { country = ENG country = JAP }
+		}
+	}
+
+	name = "EVT_3701_NAME"
+	desc = "EVT_3701_DESC"
+	style = 0
+	picture = "Oil_Embargo"
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1953 }
+
+	action_a = {
+		name = "ACTIONNAME3701A" # Pass the Embargo
+		ai_chance = 100
+		command = { type = relation which = JAP value = -100 }
+		command = { type = relation which = CHI value = 5 }
+		command = { type = trigger which = 3800 } #JAP
+		command = { type = end_trades which = USA where = JAP }
+		command = { type = end_trades which = HOL where = JAP }
+	}
+	action_b = {
+		name = "ACTIONNAME3701B" # Do not push the Mikado
+		ai_chance = 0
+		command = { type = relation which = JAP value = 15 }
+		command = { type = relation which = CHI value = -10 }
+	}
+}
+#########################################################################
+#  Lend-Lease Shipment to the UK (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3702
+	random = no
+	country = USA
+	persistent = yes
+
+
+	trigger = {
+		war = { country = ENG country = GER }
+		NOT = { war = { country = ENG country = USA } }
+		random = 10
+		event = 3404 # English event for Lend-Lease Act
+		oil = 2000
+		supplies = 3000
+	}
+
+	name = "EVT_3702_NAME"
+	desc = "EVT_3702_DESC"
+	style = 0
+	picture = "lend_lease"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1947 }
+
+	action_a = {
+		name = "ACTIONNAME3702A" # Send more supplies
+		ai_chance = 99
+		command = { type = supplies value = -3000 }
+		command = { type = oilpool value = -2000 }
+		command = { type = metalpool value = -1000 }
+		command = { type = relation which = ENG value = 2 }
+		command = { type = trigger which = 3405 } # UK
+	}
+	action_b = {
+		name = "ACTIONNAME3702B" # Not this time
+		ai_chance = 1
+		command = { type = relation which = ENG value = -5 }
+	}
+}
+#########################################################################
+#  Lend-Lease Shipment to the USSR (Modified by Aregorn)
+#########################################################################
+event = {
+	id = 3703
+	random = no
+	country = USA
+	persistent = yes
+
+	trigger = {
+		random = 10
+		war = { country = SOV country = GER }
+		event = 3404 # Lend-Lease Act passed
+		NOT = {
+		  OR = {
+		  control = { province = 1416 data = JAP } #Irkutsk
+		  control = { province = 1552 data = JAP } #Omsk
+		  control = { province = 1548 data = JAP } #Novosibirsk
+		  control = { province = 1416 data = GER }
+		  control = { province = 1552 data = GER }
+		  control = { province = 1548 data = GER }
+			   }
+		  }
+		NOT = {
+			war = { country = SOV country = USA }
+		}
+		lost_IC = { country = SOV value = 10 }
+		supplies = 5000
+		rare_materials = 500
+	}
+
+	name = "EVT_3703_NAME"
+	desc = "EVT_3703_DESC"
+	style = 0
+	picture = "Lend_Lease_SOV"
+
+	date = { day = 1 month = april year = 1941 }
+	offset = 7
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "ACTIONNAME3703A" # Send more supplies
+		ai_chance = 99
+		command = { type = supplies value = -5000 }
+		command = { type = rarematerialspool value = -500 }
+		command = { type = relation which = SOV value = 1 }
+		command = { type = trigger which = 2626 } # USSR
+		command = { type = trigger which = 40544 } #aregorn_uk
+	}
+	action_b = {
+		name = "ACTIONNAME3703B" # Not this time
+		ai_chance = 1
+		command = { type = relation which = SOV value = -5 }
+	}
+}
+
+#########################################################################
+#  Assassination of Yamamoto
+#########################################################################
+event = {
+	id = 3704
+	random = no
+	country = USA
+
+	trigger = {
+		war = { country = USA country = JAP }
+		intel_diff = 15
+	}
+
+	name = "EVT_3704_NAME"
+	desc = "EVT_3704_DESC"
+	style = 0
+	picture = "Yamamoto_Assesination"
+
+	date = { day = 18 month = april year = 1943 }
+
+	action_a = {
+		name = "ACTIONNAME3704A" # Assassinate him
+		ai_chance = 100
+		command = { type = trigger which = 3801 } #JAP
+	}
+	action_b = {
+		name = "ACTIONNAME3704B" # That would be low
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+#  US occupation of Greenland and Iceland
+#########################################################################
+event = {
+	id = 3705
+	random = no
+	country = USA
+
+	trigger = {
+			control = { province = 800 data = ENG }
+			control = { province = 1 data = ENG }
+			control = { province = 2 data = ENG }
+	}
+
+	name = "EVT_3705_NAME"
+	desc = "EVT_3705_DESC"
+	picture = "troops_greenland"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK" # Offer to take control of Greenland and Iceland
+		command = { type = trigger which = 3900 } #ENG
+	}
+}
+#########################################################################
+#  FDR dies
+#########################################################################
+event = {
+	id = 3706
+	random = no
+	country = USA
+
+	trigger = {
+		headofstate = 6001
+		random = 5 # 5% chance
+	}
+
+	name = "EVT_3706_NAME"
+	desc = "EVT_3706_DESC"
+	style = 0
+	picture = "FDR_dies"
+
+	date = { day = 8 month = january year = 1945 }
+	offset = 7 # Check every week
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK" # Oh, the Tragedy! The man who could rise up from his wheel-chair!
+		command = { type = sleepminister which = 6001 }
+		command = { type = headofstate which = 6034 }
+		command = { type = headofgovernment which = 6047 }
+		command = { type = foreignminister which = 6063 }
+		command = { type = armamentminister which = 6083 }
+		command = { type = ministerofsecurity which = 6005 }
+		command = { type = ministerofintelligence which = 6126 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6145 }
+		command = { type = chiefofnavy which = 6156 }
+		command = { type = chiefofair which = 6167 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = domestic which = political_left value = 1 }
+	}
+}
+#########################################################################
+#  Japan demands French Indochine from Vichy
+#########################################################################
+event = {
+	id = 3707
+	random = no
+	country = USA
+
+	# Triggered by JAP 3803
+
+	name = "EVT_3707_NAME"
+	desc = "EVT_3707_DESC"
+       picture = "asian_colonies"
+	style = 0
+
+	action_a = {
+		name = "OK" # The Japs are getting dangerous
+		command = { type = relation which = JAP value = -5 }
+	}
+}
+#########################################################################
+#  Japan demands French Indochine and Madagascar from Vichy
+#########################################################################
+event = {
+	id = 3708
+	random = no
+	country = USA
+
+	# Triggered by JAP 3803
+
+	name = "EVT_3708_NAME"
+	desc = "EVT_3708_DESC"
+	picture = "asian_colonies"
+	style = 0
+
+	action_a = {
+		name = "OK" # The Japs are getting very dangerous
+		command = { type = relation which = JAP value = -10 }
+	}
+}
+#########################################################################
+#  US. Presidential Election of 1936 - Historical Outcome
+#########################################################################
+event = {
+	id = 3709
+	random = no
+	country = USA
+
+	name = "US. Presidential Election of 1936"
+	desc = "EVT_3709_DESC"
+	picture = "roosevelt"
+	style = 0
+
+	trigger = {
+			government = democratic
+		NOT = {
+			ispuppet = USA
+			}
+	}
+
+	date = { day = 3 month = november year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1939 }
+
+	action_a = {
+		name = "Franklin D. Roosevelt (Dem.) (Historical)"
+		ai_chance = 100
+		command = { type = sleepevent which = 3713 }
+		command = { type = sleepevent which = 3717 }
+		command = { type = dissent value = -5 }
+		command = { type = manpowerpool value = 20 }
+		command = { type = headofstate which = 6001 }
+		command = { type = headofgovernment which = 6002 }
+		command = { type = foreignminister which = 6003 }
+		command = { type = armamentminister which = 6077 }
+		command = { type = ministerofsecurity which = 6005 }
+		command = { type = ministerofintelligence which = 6120 }
+		command = { type = chiefofstaff which = 6007 }
+		command = { type = chiefofarmy which = 6008 }
+		command = { type = chiefofnavy which = 6009 }
+		command = { type = chiefofair which = 6010 }
+	}
+	action_b = {
+		name = "Alf M. Landon (Rep.) (Alternative outcome)"
+		ai_chance = 0
+		command = { type = headofstate which = 6035 }
+		command = { type = headofgovernment which = 6048 }
+		command = { type = foreignminister which = 6065 }
+		command = { type = armamentminister which = 6085 }
+		command = { type = ministerofsecurity which = 6107 }
+		command = { type = ministerofintelligence which = 6184 }
+		command = { type = chiefofstaff which = 6007 }
+		command = { type = chiefofarmy which = 6008 }
+		command = { type = chiefofnavy which = 6162 }
+		command = { type = chiefofair which = 6010 }
+		command = { type = sleepevent which = 3711 }
+		command = { type = sleepevent which = 3712 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = construct which = ic where = -1 value = 5 }
+		command = { type = construct which = ic where = -1 value = 5 }
+		command = { type = oilpool value = 100 }
+		command = { type = energypool value = 100 }
+		command = { type = metalpool value = 100 }
+		command = { type = rarematerialspool value = 100 }
+		command = { type = dissent value = 2 }
+	}
+	action_c = {
+		name = "William F. Lemke (Union.)"
+		ai_chance = 0
+		command = { type = headofstate which = 6186 }
+		command = { type = headofgovernment which = 6187 }
+		command = { type = foreignminister which = 6070 }
+		command = { type = armamentminister which = 6094 }
+		command = { type = ministerofsecurity which = 6188 }
+		command = { type = chiefofstaff which = 6192 }
+		command = { type = chiefofarmy which = 6148 }
+		command = { type = chiefofnavy which = 6164 }
+		command = { type = chiefofair which = 6172 }
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = dissent value = 2 }
+	}
+}
+#########################################################################
+#  US. Presidential Election of 1940 - Historical Outcome
+#########################################################################
+event = {
+	id = 3711
+	random = no
+	country = USA
+
+	trigger = {
+		government = democratic
+		NOT = {
+			dissent = 10
+			ispuppet = USA
+		}
+	}
+
+	name = "US. Presidential Election of 1940"
+	desc = "EVT_3711_DESC"
+	picture = "us_election"
+	style = 0
+
+	date = { day = 5 month = november year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "Franklin D. Roosevelt (Dem.) (Historical)"
+		ai_chance = 100
+		command = { type = dissent value = -5 }
+		command = { type = manpowerpool value = 10 }
+		command = { type = headofstate which = 6001 }
+		command = { type = headofgovernment which = 6044 }
+		command = { type = foreignminister which = 6003 }
+		command = { type = armamentminister which = 6077 }
+		command = { type = ministerofsecurity which = 6005 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6144 }
+		command = { type = chiefofnavy which = 6159 }
+		command = { type = chiefofair which = 6167 }
+	}
+	action_b = {
+		name = "Wendell Wilkie (Rep.) (Alternative outcome)"
+		ai_chance = 0
+		command = { type = headofstate which = 6036 }
+		command = { type = headofgovernment which = 6049 }
+		command = { type = foreignminister which = 6066 }
+		command = { type = armamentminister which = 6088 }
+		command = { type = ministerofsecurity which = 6005 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6144 }
+		command = { type = chiefofnavy which = 6159 }
+		command = { type = chiefofair which = 6167 }
+	}
+	action_c = {
+		name = "Henry A. Wallace (Dem.) (Alternative outcome)"
+		ai_chance = 0
+		command = { type = headofstate which = 6032 }
+		command = { type = headofgovernment which = 6045 }
+		command = { type = foreignminister which = 6003 }
+		command = { type = armamentminister which = 6080 }
+		command = { type = ministerofsecurity which = 6104 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6144 }
+		command = { type = chiefofnavy which = 6159 }
+		command = { type = chiefofair which = 6167 }
+		command = { type = dissent value = -5 }
+		command = { type = manpowerpool value = 10 }
+	}
+	action_d = {
+		name = "Alf M. Landon (Rep.) (Alternative outcome)"
+		ai_chance = 0
+		command = { type = headofstate which = 6035 }
+		command = { type = headofgovernment which = 6048 }
+		command = { type = foreignminister which = 6065 }
+		command = { type = armamentminister which = 6085 }
+		command = { type = ministerofsecurity which = 6107 }
+		command = { type = ministerofintelligence which = 6184 }
+		command = { type = chiefofstaff which = 6007 }
+		command = { type = chiefofarmy which = 6008 }
+		command = { type = chiefofnavy which = 6162 }
+		command = { type = chiefofair which = 6010 }
+		command = { type = sleepevent which = 3711 }
+		command = { type = sleepevent which = 3712 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = construct which = ic where = -1 value = 5 }
+		command = { type = construct which = ic where = -1 value = 5 }
+		command = { type = oilpool value = 100 }
+		command = { type = energypool value = 100 }
+		command = { type = metalpool value = 100 }
+		command = { type = rarematerialspool value = 100 }
+		command = { type = dissent value = 2 }
+	}
+}
+#########################################################################
+#  US. Presidential Election of 1944 - Historical Outcome
+#########################################################################
+event = {
+	id = 3715
+	random = no
+	country = USA
+
+	name = "US. Presidential Election of 1944"
+	desc = "EVT_3715_DESC"
+	picture = "us_election"
+	style = 0
+
+	trigger = {
+		government = democratic
+		ideology = social_liberal
+		NOT = { ispuppet = USA }
+	}
+
+	date = { day = 7 month = november year = 1944 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Current President (Dem.)"
+		ai_chance = 100
+		command = { type = dissent value = -5 }
+		command = { type = foreignminister which = 6060 }
+		command = { type = armamentminister which = 6077 }
+		command = { type = ministerofsecurity which = 6005 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6144 }
+		command = { type = chiefofnavy which = 6163 }
+		command = { type = chiefofair which = 6167 }
+	}
+	action_b = {
+		name = "Thomas E.Dewey (Rep.)"
+		ai_chance = 0
+		command = { type = headofstate which = 6038 }
+		command = { type = headofgovernment which = 6050 }
+		command = { type = foreignminister which = 6068 }
+		command = { type = armamentminister which = 6090 }
+		command = { type = ministerofsecurity which = 6110 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6137 }
+		command = { type = chiefofarmy which = 6147 }
+		command = { type = chiefofnavy which = 6163 }
+		command = { type = chiefofair which = 6167 }
+		command = { type = oilpool value = 100 }
+		command = { type = energypool value = 100 }
+		command = { type = metalpool value = 100 }
+		command = { type = rarematerialspool value = 100 }
+		command = { type = supplies value = 200 }
+	}
+	action_c = {
+		name = "Warren G. Hooper (Dem.)"
+		ai_chance = 0
+		command = { type = headofstate which = 6033 }
+		command = { type = headofgovernment which = 6046 }
+		command = { type = foreignminister which = 6062 }
+		command = { type = armamentminister which = 6081 }
+		command = { type = ministerofsecurity which = 6106 }
+		command = { type = ministerofintelligence which = 6128 }
+		command = { type = chiefofstaff which = 6136 }
+		command = { type = chiefofarmy which = 6144 }
+		command = { type = chiefofnavy which = 6155 }
+		command = { type = chiefofair which = 6167 }
+		command = { type = manpowerpool value = 20 }
+	}
+}
+#########################################################################
+#  Spanish Civil War -  German Intervention
+#########################################################################
+event = {
+	id = 3719
+	random = no
+	country = USA
+
+	# Triggered by GER 2023
+
+	name = "EVT_3719_NAME"
+	desc = "EVT_3719_DESC"
+	style = 0
+	picture = "SCW_german_intervention"
+
+	action_a = {
+		name = "OK" # The Fascists are on the move.
+		command = { type = relation which = GER value = -10 }
+	}
+}
+#########################################################################
+#  Spanish Civil War -  Italian Intervention
+#########################################################################
+event = {
+	id = 3720
+	random = no
+	country = USA
+
+	# Triggered by ITA 2901
+
+	name = "EVT_3720_NAME"
+	desc = "EVT_3720_DESC"
+	style = 0
+	picture = "SCW_italian_intervention"
+
+	action_a = {
+		name = "OK" # The Fascists are on the move.
+		command = { type = relation which = ITA value = -10 }
+	}
+}
+#########################################################################
+#  Spanish Civil War -  Soviet Intervention
+#########################################################################
+event = {
+	id = 3721
+	random = no
+	country = USA
+
+	# Triggered by SOV 2623
+
+	name = "EVT_3721_NAME"
+	desc = "EVT_3721_DESC"
+	style = 0
+	picture = "SCW_soviet_intervention"
+
+	action_a = {
+		name = "OK" # Let the totalitarians destroy eachother.
+		command = { type = relation which = SOV value = -10 }
+	}
+}
+#########################################################################
+#  Spanish Civil War -  British Intervention
+#########################################################################
+event = {
+	id = 3722
+	random = no
+	country = USA
+
+	# Triggered by ENG 3400
+
+	name = "EVT_3722_NAME"
+	desc = "EVT_3722_DESC"
+	style = 0
+	picture = "spanish_civil_war_uk"
+
+	action_a = {
+		name = "OK" # This is a problem for Europeans.
+		command = { type = relation which = ENG value = -5 }
+	}
+}
+#########################################################################
+#  Spanish Civil War -  French Intervention
+#########################################################################
+event = {
+	id = 3723
+	random = no
+	country = USA
+
+	# Triggered by FRA 2801
+
+	name = "EVT_3723_NAME"
+	desc = "EVT_3723_DESC"
+	style = 0
+	picture = "SCW_french_intervention"
+
+	action_a = {
+		name = "OK" # This is a problem for Europeans.
+		command = { type = relation which = FRA value = -5 }
+	}
+}
+#########################################################################
+#  The Nanking Massacre
+#########################################################################
+event = {
+	id = 3724
+	random = no
+	country = USA
+
+	# Triggered by JAP 3802
+
+	name = "EVT_3724_NAME"
+	desc = "EVT_3724_DESC"
+       picture = "Nanking_invasion"
+	style = 0
+
+	action_a = {
+		name = "Horrible!" #
+		command = { type = relation which = JAP value = -10 }
+		command = { type = relation which = CHI value = 10 }
+		command = { type = domestic which = interventionism value = 1 }
+	}
+}
+
+
+
+#########################################################################
+#  US. Presidential Election of 1940 - Alternative Outcome
+#########################################################################
+event = {
+	id = 3727
+	random = no
+	country = USA
+
+	trigger = {
+		ideology = paternal_autocrat
+		NOT = { ispuppet = USA }
+		OR = {
+			headofstate = 6001
+			headofstate = 6032
+			headofstate = 6033
+			headofstate = 6034
+			headofstate = 6035
+			headofstate = 6036
+			headofstate = 6037
+			headofstate = 6038
+			headofstate = 6186
+		}
+	}
+
+	name = "EVT_3712_NAME"
+	desc = "EVT_3727_DESC"
+       picture = "us_election"
+	style = 0
+
+	date = { day = 5 month = november year = 1940 }
+
+	action_a = {
+		name = "Charles Lindbergh (Am.Fir.)"
+		command = { type = headofstate which = 6189 }
+		command = { type = headofgovernment which = 6190 }
+		command = { type = foreignminister which = 6070 }
+		command = { type = armamentminister which = 6096 }
+		command = { type = ministerofsecurity which = 6191 }
+		command = { type = chiefofstaff which = 6140 }
+		command = { type = chiefofarmy which = 6148 }
+		command = { type = chiefofnavy which = 6164 }
+		command = { type = chiefofair which = 6173 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+#  US. Presidential Election of 1944 - Alternative Outcome
+#########################################################################
+event = {
+	id = 3728
+	random = no
+	country = USA
+
+	name = "EVT_3716_NAME"
+	desc = "EVT_3728_DESC"
+       picture = "us_election"
+	style = 0
+
+	trigger = {
+		ideology = paternal_autocrat
+		NOT = { ispuppet = USA }
+		OR = {
+			headofstate = 6001
+			headofstate = 6032
+			headofstate = 6033
+			headofstate = 6034
+			headofstate = 6035
+			headofstate = 6036
+			headofstate = 6037
+			headofstate = 6038
+			headofstate = 6186
+		}
+	}
+
+	date = { day = 7 month = november year = 1944 }
+
+	action_a = {
+		name = "Charles Lindbergh (Am.Fir.)"
+		command = { type = headofstate which = 6189 }
+		command = { type = headofgovernment which = 6190 }
+		command = { type = foreignminister which = 6070 }
+		command = { type = armamentminister which = 6096 }
+		command = { type = ministerofsecurity which = 6191 }
+		command = { type = chiefofstaff which = 6140 }
+		command = { type = chiefofarmy which = 6148 }
+		command = { type = chiefofnavy which = 6164 }
+		command = { type = chiefofair which = 6173 }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = domestic	which = defense_lobby value = 3 }
+		command = { type = dissent value = -1 }
+	}
+}
+#########################################################################
+# South Korea - USA Puppet
+#########################################################################
+event = {
+	id = 3811
+	random = no
+	country = USA
+
+	name = "EVT_3811_NAME"
+	desc = "EVT_3811_DESC"
+	picture = "korea"
+	style = 0
+
+	trigger = {
+		exists = KOR
+		exists = PRK
+		OR = {
+			event = 45 # Japan already surrendered
+			NOT = {
+				exists = JAP
+			}
+		}
+	}
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 2
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "EVT_3811_ACTA" #
+		command = { type = make_puppet which = KOR }
+	}
+}

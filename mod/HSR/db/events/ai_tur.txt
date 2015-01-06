@@ -1,0 +1,320 @@
+####################################
+# Turkey AI events 32300 - 32399
+####################################
+################
+# Minister of Security Section 32300 - 32309
+#############################################
+event = { # Abdul Naci Tinaz takes power
+	id = 32300
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12061 # Abdul Naci Tinaz
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURSecurityAbdul }
+		}
+		OR = {
+			manpower = 50
+			NOT = { minister = 12005 } # Sükrü Kaya
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURSecurityAbdul }
+		command = { type = local_clrflag which = TURSecurityKaya }
+		command = { type = ministerofsecurity which = 12061 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Sükrü Kaya takes power
+	id = 32301
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		NOT = { manpower = 50 }
+		minister = 12005 # Sükrü Kaya
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURSecurityKaya }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = TURSecurityRichard }
+		command = { type = local_setflag which = TURSecurityKaya }
+		command = { type = ministerofsecurity which = 12005 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 32310 - 32319
+#############################################
+event = { # Mustafa Ismet takes power
+	id = 32310
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12017 # Mustafa Ismet
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURChiefMustafa }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURChiefMustafa }
+		command = { type = chiefofstaff which = 12017 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Head of Intelligence Section 32320 - 32329
+#############################################
+event = { # Sükrü Ali Ogel takes power
+	id = 32320
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12006 # Sükrü Ali Ogel
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURIntelligenceOgel }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURIntelligenceOgel }
+		command = { type = ministerofintelligence which = 12006 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 32330 - 32331
+#############################################
+event = { # Alparslan Türkes takes power
+	id = 32330
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12018 # Alparslan Türkes
+		OR = {
+			atwar = no
+			AND = {
+				atwar = yes
+				NOT = { minister = 12008 } # Mehmet Nuri Yamut
+			}
+		}
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURArmyAlparslan }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURArmyAlparslan }
+		command = { type = local_clrflag which = TURArmyMehmet }
+		command = { type = chiefofarmy which = 12018 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Mehmet Nuri Yamut takes power
+	id = 32331
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		minister = 12008 # Mehmet Nuri Yamut
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURArmyMehmet }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = TURArmyAlparslan }
+		command = { type = local_setflag which = TURArmyMehmet }
+		command = { type = chiefofarmy which = 12008 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 32340 - 32349
+#############################################
+event = { # Ismet Inönü takes power
+	id = 32340
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12047 # Ismet Inönü
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURArmamentIsmet }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURArmamentIsmet }
+		command = { type = local_clrflag which = TURArmamentZekai }
+		command = { type = armamentminister which = 12047 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Zekai Apaydin takes power
+	id = 32341
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12004 # Zekai Apaydin
+		NOT = { minister = 12047 } # Arvi A. Oksala
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURArmamentZekai }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURArmamentIsmet }
+		command = { type = local_clrflag which = TURArmamentZekai }
+		command = { type = armamentminister which = 12004 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Air Minister Section 32350 - 32359
+#############################################
+event = { # Ali Örlungat takes power
+	id = 32350
+	random = no
+	country = TUR
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 12010 # Ali Örlungat
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = TURChiefAirAli }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = TURChiefAirAli }
+		command = { type = chiefofair which = 12010 }
+		command = { type = dissent value = -1 }
+	}
+}

@@ -1,0 +1,236 @@
+#
+# By Aregorn for HSR2_ARM
+#
+
+allowed_brigades =  escort
+
+# 0 - Basic Naval Recon Aircraft
+model = {
+	cost 						= 4
+	buildtime					= 180
+	defaultorganisation 				= 5
+	morale						= 10	#30
+	manpower					= 10	#0.5
+	maxspeed					= 300
+	surfacedetectioncapability			= 4
+	airdetectioncapability				= 1
+	surfacedefence					= 40
+	airdefence					= 40
+	airattack					= 0
+	strategicattack					= 0
+	softattack					= 0
+	hardattack					= 0
+	navalattack					= 1
+	range						= 600
+	supplyconsumption 				= 0.1
+	fuelconsumption					= 0.5
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 1 - Improved Naval Recon Aircraft
+model = {
+	cost 						= 4.5
+	buildtime					= 180
+	defaultorganisation 				= 5
+	morale						= 10	#30
+	manpower					= 10	#0.5
+	maxspeed					= 350
+	surfacedetectioncapability			= 8
+	airdetectioncapability				= 1
+	surfacedefence					= 45
+	airdefence					= 45
+	airattack					= 0
+	strategicattack					= 0
+	softattack					= 0
+	hardattack					= 0
+	navalattack					= 1
+	range						= 800
+	supplyconsumption 				= 0.2
+	fuelconsumption					= 0.75
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 2 - Advanced Naval Recon Aircraft
+model = {
+	cost 						= 5
+	buildtime					= 180
+	defaultorganisation 				= 5
+	morale						= 10	#30
+	manpower					= 10	#0.5
+	maxspeed					= 400
+	surfacedetectioncapability			= 12
+	airdetectioncapability				= 1
+	surfacedefence					= 50
+	airdefence					= 50
+	airattack					= 0
+	strategicattack					= 0
+	softattack					= 0
+	hardattack					= 0
+	navalattack					= 1
+	range						= 1000
+	supplyconsumption 				= 0.3
+	fuelconsumption					= 1.0
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 3 - Semi Modern Naval Recon Aircraft
+model = {
+	cost 						= 5.5
+	buildtime					= 180
+	defaultorganisation 				= 5
+	morale						= 10	#30
+	manpower					= 10	#0.5
+	maxspeed					= 450
+	surfacedetectioncapability			= 16
+	airdetectioncapability				= 1
+	surfacedefence					= 55
+	airdefence					= 55
+	airattack					= 0
+	strategicattack					= 0
+	softattack					= 0
+	hardattack					= 0
+	navalattack					= 1
+	range						= 1200
+	supplyconsumption 				= 0.4
+	fuelconsumption					= 1.25
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 4 - Bridge
+model = {
+	cost 						= 13
+	buildtime					= 200
+	defaultorganisation 				= 30
+	morale						= 30
+	manpower					= 10	#2
+	maxspeed					= 200	#150
+	surfacedetectioncapability			= 1
+	airdetectioncapability				= 0
+	surfacedefence					= 9	#12
+	airdefence					= 1	#2
+	airattack					= 1
+	strategicattack					= 0
+	softattack					= 2	#1
+	hardattack					= 1
+	navalattack					= 5	#7
+	range						= 500	#800
+	supplyconsumption 				= 0.5	#1
+	fuelconsumption					= 3
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 5 - Basic Naval Bomber
+model = {
+	cost 						= 13
+	buildtime					= 200
+	defaultorganisation 				= 10	#30
+	morale						= 10	#30
+	manpower					= 10	#2
+	maxspeed					= 200	#150
+	surfacedetectioncapability			= 1
+	airdetectioncapability				= 0
+	surfacedefence					= 6	#12
+	airdefence					= 1	#2
+	airattack					= 1
+	strategicattack					= 0
+	softattack					= 2	#1
+	hardattack					= 1
+	navalattack					= 5	#7
+	range						= 500	#800
+	supplyconsumption 				= 0.5	#1
+	fuelconsumption					= 3
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 6 - Improved Naval Bomber
+model = {
+	cost 						= 16
+	buildtime					= 200
+	defaultorganisation 				= 10	#30
+	morale						= 10	#30
+	manpower					= 10	#2
+	maxspeed					= 250	#300
+	surfacedetectioncapability			= 2
+	airdetectioncapability				= 1
+	surfacedefence					= 9	#18
+	airdefence					= 2	#2
+	airattack					= 2
+	strategicattack					= 1	#0
+	softattack					= 2	#1
+	hardattack					= 2	#
+	navalattack					= 7	#12
+	range						= 700	#1000
+	supplyconsumption 				= 0.6	#1.2
+	fuelconsumption					= 3
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 7 - Advanced Naval Bomber
+model = {
+	cost 						= 18
+	buildtime					= 200
+	defaultorganisation 				= 10	#30
+	morale						= 10	#30
+	manpower					= 10	#2
+	maxspeed					= 300	#350
+	surfacedetectioncapability			= 2
+	airdetectioncapability				= 1
+	surfacedefence					= 11	#22
+	airdefence					= 4
+	airattack					= 2
+	strategicattack					= 2	#1
+	softattack					= 4	#3
+	hardattack					= 4	#4
+	navalattack					= 9	#14
+	range						= 900	#1300
+	supplyconsumption 				= 0.7	#1.4
+	fuelconsumption					= 3.2
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 8 - Turbojet Naval Bomber
+model = {
+	cost 						= 21
+	buildtime					= 200
+	defaultorganisation 				= 10	#30
+	morale						= 10	#30
+	manpower					= 10	#2
+	maxspeed					= 400	#400
+	surfacedetectioncapability			= 2
+	airdetectioncapability				= 1
+	surfacedefence					= 12	#24
+	airdefence					= 4
+	airattack					= 3
+	strategicattack					= 4	#3
+	softattack					= 6	#4
+	hardattack					= 6	#6
+	navalattack					= 11	#16
+	range						= 1000	#1300
+	supplyconsumption 				= 1.0	#2.0
+	fuelconsumption					= 3.5
+	upgrade_time_factor 				= 0.5
+	upgrade_cost_factor 				= 1.0
+}
+# 9 - Improved Turbojet Naval Bomber
+model = {
+	cost 						= 21
+	buildtime					= 200	#180
+	defaultorganisation 				= 10	#30
+	morale						= 10	#30
+	manpower					= 10	#2
+	maxspeed					= 500
+	surfacedetectioncapability			= 2
+	airdetectioncapability				= 1
+	surfacedefence					= 14	#12
+	airdefence					= 7 	#5
+	airattack					= 7 	#3
+	strategicattack					= 3
+	softattack					= 2
+	hardattack					= 5
+	navalattack					= 13
+	range						= 1200	#1400
+	supplyconsumption 				= 1	#2.0
+	fuelconsumption					= 3.5
+	upgrade_time_factor = 0.5
+	upgrade_cost_factor = 1.0
+}

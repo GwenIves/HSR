@@ -1,0 +1,372 @@
+#
+# Modified by Aregorn for HSR
+#
+# Airmod by Dec152000
+#
+
+tech_sharing = {
+	favored = {
+		FRA = 100
+		CAN = 100
+		AST = 100
+		NZL = 100
+	    SAF = 100
+		USA = 100
+		BEL = 90
+		HOL = 90
+		SPR = 30
+		POL = 20
+		CZE = 20
+		TUR = 10
+		IRQ = 60
+		PER = 60
+		POR = 10
+		CHI = 10
+	}
+	embargo = {
+		GER ITA JAP SLO HUN
+	}
+	not = { }
+	prioritized = {
+		# Arcriculture
+		5020 = 100
+		5030 = 100
+		5040 = 100
+
+		# Inf support
+		1310 = 100
+		1320 = 100
+		1330 = 100
+		1340 = 100
+		1350 = 100
+		1360 = 100
+
+		# Production
+		5050 = 100
+		5060 = 100
+		5070 = 100
+		5080 = 100
+		5090 = 100
+		5100 = 100
+		5110 = 100
+		5120 = 100
+		5130 = 100
+		5150 = 100
+		5180 = 100
+
+		# Naval Bomber
+		4190 = 100
+		4200 = 100
+		4210 = 100
+
+		# motorized
+		1230 = 100
+		1240 = 100
+		1250 = 100
+
+		# Medium tanks
+		2070 = 100
+		2080 = 100
+		2090 = 100
+
+		# Light tanks
+		2020 = 100
+		2030 = 100
+		2040 = 100
+		2050 = 100
+		2060 = 100
+
+		# Strategic bombers
+		4220 = 100
+		4230 = 100
+		4240 = 100
+
+		#Tactical Bombers
+		4130 = 100
+
+		#Escort Fighter
+		4050 = 100
+	}
+}
+
+construction = {
+	max_factor = 0.10
+
+	AA_batteries = no
+	max_AA_level = 10
+	AA_provs = { }
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = {
+		#England
+		20 # Dover
+		17 # Norwich
+		21 # Portsmouth
+		23 # Plymouth
+		13 # Sheiffield
+		28 # Belfast
+		22 # Bristol
+		14 # Liverpool
+		12 # Blackpool
+		11 # Sunderland
+		10 # Edinburgh
+		9  # Glasgow
+		348 # Gibraltar
+		31  # Malta
+	}
+
+	radar_station = yes
+	max_radar = 4
+	radar_provs = {
+		20 # Dover
+		17 # Norwich
+		21 # Portsmouth
+		23 # Plymouth
+		13 # Shefield
+		5  # Scapa Flow
+	}
+
+	air_base = yes
+	max_air_base = 5
+	air_base_provs = { }
+
+	naval_base = no
+	max_naval_base = 5
+	naval_base_provs = { }
+
+	land_fort = yes
+	max_land_level = 10
+	fort_borders = { GER }
+
+	ic_at_war = no
+	force_ic_until = 1938
+	ic_end_year = 1940
+	IC_provs = { 3 5 6 7 8 10 28 29	}
+}
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 11
+	cavalry 	= 0
+	motorized 	= 2
+	mechanized 	= 0
+	light_armor 	= 4
+	armor 		= 3
+	paratrooper 	= 0
+	marine 		= 1
+	bergsjaeger 	= 1
+	garrison	= 10
+	hq 		= 2
+	militia 	= 0
+#				34 %
+	interceptor 	= 2
+	multi_role 	= 3
+	escort 		= 1
+	cas 		= 1
+	strategic_bomber = 3
+	tactical_bomber = 3
+	naval_bomber 	= 1
+	transport_plane = 0
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#				14 %
+	battleship 	= 6
+	carrier 	= 5
+	destroyer 	= 17
+	light_cruiser 	= 14
+	heavy_cruiser 	= 0
+	battlecruiser 	= 0
+	submarine 	= 5
+	transports 	= 5
+#				52 %
+
+	#### Brigades
+	artillery 			= 0
+	sp_artillery 		= 5
+	rocket_artillery		= 5
+	sp_rct_artillery 		= 5
+	anti_tank 			= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 5
+	heavy_armor 		= 5
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 			= 0
+	police 			= 0
+	engineer 			= 75
+
+
+	cag = 100.000
+}
+technology = {
+	endgoal 	= {
+		# Branch Interoperability
+		6200
+
+		# Commerce Defense
+		8200
+}
+	preference 	= {
+		# Arcriculture
+		5020 5030 5040
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5150 5180
+
+		# Naval Bomber
+		4190 4200 4210
+
+		# motorized
+		1230 1240 1250
+
+		# Medium tanks
+		2070 2080 2090
+
+		# Light tanks
+		2020 2030 2040 2050 2060
+
+		# Strategic bombers
+		4220 4230 4240
+
+		# Multirole Fighter
+		4040 4070 4100
+
+		# Air Doctrines
+		9140 9150 9110 9160 9170 9230 9180 9250 9430 9390 9400 9440 9450 9410
+
+		# Naval Doctrines
+		8130 8310 8190 8200 8140 8260
+
+		# Decryption
+		5360 5380 5400
+	}
+	ignore 		= {
+		# Rocket Assembly
+		5170
+
+		# Battle Cruiser
+		3230 3240
+
+		# Battleship 3250 3260 3270
+		3300 3310
+
+		# Carrier 3320 3330 3340
+		3380 3390
+
+		# Mountain Unit techs
+		1120 1130 1140
+
+		# Test and Research
+		5580 5590
+
+		# Airborne 1070 1080 1090
+		1100
+
+		# Air Transports 4250
+		4270
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Rocket Artillery
+		2370 2380 2390
+
+	}
+
+	armor 		= 5
+	infantry 	= 5
+	industry 	= 4
+	aircraft 	= 5
+	naval 		= 4
+	land_doctrines 	= 3
+	secret_weapons 	= 2
+	air_doctrines 	= 4
+	naval_doctrines = 2
+}
+
+
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 0.5
+	home_peace_cap 		= 100
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 1.0
+	revolt_risk_mult	= 1.0
+
+	# PRIORITIES:
+	beach				= 20	# Beach level 2
+	capital			= 40	# Our capital
+	human_border		= 100	# Ignored for allied human players
+	war_target			= 150	# The next country targeted for attack by this AI
+
+	opposing_alliance		= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		HOL = -1
+		LUX = -1
+		GER = 100
+		SPA = 5
+		SPR = -1
+		ITA = 50
+		ETH = -1
+		SCH = -1
+		FRA = -1
+		CAN = -1
+		AST = -1
+		NZL = -1
+		POR = -1
+		CYN = -1
+		TUR = -1	}
+	province_priorities = {
+		348 = 20 # Gibraltar
+		906 = 20 # Alexandria
+	}
+	area_multiplier = {
+		348 = 2.0 # Gibraltar
+		19  = 0.2 # London
+	}
+}
+
+admiral = {
+	min_org	= 90	# NEW: Percent of org gained back before the unit can leave port
+	min_dmg	= 50    # NEW: Percent of dmg gained back before the unit can leave port
+	return_org 	= 60 	# NEW: PERCENT OF ORG LOST BEFORE RETURNING TO PORT applies to all fleets/ships
+	return_dmg 	= 80 	# NEW: PERCENT OF DMG LOST BEFORE RETURNING TO PORT for repairs applies to all fleets/ships
+
+	ignore = {
+		"Southeast Northsea"
+		"kattegat"
+		"Bothnian Bay"
+		"northern baltic"
+		"southern baltic"
+	}
+	target = {	}
+	core = {
+		2396
+		2397
+		2398
+		2471
+		2402
+		2403
+		2404
+		2405
+		2406
+		2410
+		2411
+	}
+}

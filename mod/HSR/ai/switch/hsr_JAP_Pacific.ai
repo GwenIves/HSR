@@ -1,0 +1,521 @@
+#
+# By Aregorn for HSR
+#
+# Airmod by Dec152000
+#
+
+max_garrison_prop = 0.30
+min_garrison_prop = 0.20
+war = 50
+strat_redeploy_threshold = 10
+exp_force_ratio = 0.05
+exp_force_ratios = {
+	SIA = 1.0
+}
+no_exp_forces_to = { GER ITA ROM HUN SLO YUG BUL FIN }
+
+combat = {
+	CHI = 50
+	CSX = 50
+	SIK = 50
+	CXB = 50
+	CYN = 50
+	CGX = 50
+	CHC = 50
+	USA = 100
+	ENG = 100
+	HOL = 100
+	PHI = 100
+	AUS = 100
+	NZL = 100
+	FRA = 100
+}
+construction = {
+	max_factor = 0.10
+
+	AA_batteries = atwar
+	max_AA_level = 4
+	AA_provs = {
+		1184 # Tokyo
+		1185 # Nagoya
+		1183 # Niigata
+		1187 # Osaka
+		1188 # Hiroshima
+		1190 # Fukuoka
+		1670 # Rabaul
+	}
+
+	coastal_fort = atwar
+	max_coastal_level = 2
+	coastal_fort_provs = {
+		1599 # Iwo Jima
+		1613 # Truk
+		1621 # Palau
+		1627 # Saipan
+		1601 # Eniwetok
+		1608 # Kwajelin
+		1670 # Rabaul
+		1193 # Okinawa
+	}
+
+	radar_station = no
+	max_radar = 3
+	radar_provs = { }
+
+	air_base = yes
+	max_air_base = 4
+	air_base_provs = {
+		1670 # Rabaul
+		1599 # Iwo Jima
+		1627 # Saipan
+		1621 # Palau
+	}
+
+	naval_base = yes
+	max_naval_base = 5
+	naval_base_provs = {
+		1670 # Rabaul
+	}
+
+	land_fort = no
+	max_land_level = 2
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1938
+	ic_end_year = 1940
+	IC_provs = {
+		1184 # Tokyo
+		1185 # Nagoya
+		1183 # Niigata
+		1187 # Osaka
+		1188 # Hiroshima
+		1190 # Fukuoka
+	}
+}
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 100
+
+	#### Divisions etc...
+	infantry 	= 20
+	cavalry 	= 0
+	motorized 	= 0
+	mechanized 	= 0
+	light_armor 	= 5
+	armor 		= 3
+	paratrooper 	= 0
+	marine 		= 10
+	bergsjaeger 	= 10
+	garrison	= 0
+	hq 		= 2
+	militia 	= 0
+#			50 %
+
+	interceptor 		= 4
+	multi_role 		= 4
+	escort 			= 1
+	cas 			= 5
+	strategic_bomber 	= 0
+	tactical_bomber		= 5
+	naval_bomber 		= 1
+	transport_plane 	= 0
+	flying_bomb 		= 0
+	flying_rocket 		= 0
+#				20 %
+
+	battleship 	= 2
+	carrier 	= 5
+	destroyer 	= 5
+	light_cruiser 	= 5
+	heavy_cruiser 	= 3
+	battlecruiser 	= 0
+	submarine 	= 5
+	transports 	= 5
+#			30 %
+
+	#### Brigades
+	artillery 		= 0
+	sp_artillery 		= 0
+	rocket_artillery	= 0
+	sp_rct_artillery 	= 5
+	anti_tank 		= 0
+	tank_destroyer 		= 0
+	light_armor_brigade 	= 0
+	heavy_armor 		= 0
+	super_heavy_armor 	= 0
+	armored_car 		= 0
+	anti_air 		= 0
+	police 			= 5
+	engineer 		= 90
+
+	cag = 100.000
+}
+technology = {
+	endgoal = { }
+	preference = {
+
+		# Inf support
+		1310 1320 1330 1340 1350 1360
+
+		# Production
+		5050 5060 5070 5080 5090 5110
+
+		# Assembly
+		5130 5150 5180
+
+		# Super Heavy BB
+		3310
+
+		# Aircraft Carrier
+		3350 3360 3370
+
+		# Marines
+		1150 1160 1170 1180
+
+		# Interceptor
+		4020 4030
+
+		# Refining
+		5190 5200 5210 5220 5230 5240
+
+		# Air Doctrines
+		9110 9120 9130 9190 9220 9210 9350 9270 9310 9360 9330  9380
+
+		# Land Doctrine
+		6110 6160
+
+		# Naval Doctrines
+		8110 8180 8230 8250 8140 8320
+
+	}
+	ignore 	= {
+
+		# Test and Research
+		5560 5570 5580 5590
+
+		# Flying Bomb & Rockets
+		7100 7110 7120 7130
+
+		# Air Doctrines
+		9140
+
+		# Naval Doctrines
+		8160 8130
+
+		# Vehicle Assembly & Rocket Assembly
+		5160 5170
+
+		# Airborne
+		1070 1080 1090 1100
+
+		# Air Transports
+		4270
+
+		# Mountain Unit techs
+		1110 1120 1130 1140
+
+		# Motorized
+		1240 1250
+
+		# Atomic Research
+		5470 5480 5490 5500 5510 5520 5530 5540
+
+		# Bas Decimetric
+		5410 5420 5430 5440 5450 5460
+
+		# Strategic bombers
+		4220 4230 4240
+
+		# Heavy Tanks and Semi-Modern Tank
+		2100 2110 2120 2140
+
+		# Rocket Artillery
+		2370 2380 2390
+
+		# Mechanized
+		1260 1270 1280 1290
+
+		# Battle Cruiser
+		3190 3200 3210 3220 3230 3240
+
+		# Battleship 3250 3260 3270
+		3290 3300
+	}
+
+	armor 		= 3
+	infantry 	= 6
+	industry 	= 6
+	aircraft 	= 6
+	naval 		= 6
+	land_doctrines 	= 4
+	secret_weapons 	= 1
+	air_doctrines 	= 5
+	naval_doctrines = 6
+}
+
+invasion = {
+	base		= 0.1		#Relative modifier. (lower = specific targets much more important.)
+	random		= 10.0		#How big a random range.  (1.0 = 1%)
+	coastal		= 0.1		#increase to avoid coastal forts more.
+	beach		= 0.1		#higher, avoid worst beaches.
+	max_distance    = 40.0  	#About the distance from Japan to Batavia
+	distance	= 0.1		#higher = avoid long distance.
+	pocket		= 20.0		#prioritise pockets, ie provinces with no adjacent controlled by same.
+	island		= 0.1		#prioritise taking pure islands.
+	enemy		= 2.0		#higher = much more vary of troops in province.
+	adjacentenemy 	= 2.0		#higher = much more vary of troops nearby
+	air_base	= 1.5
+	naval_base 	= 0.1
+	air_support 	= 3.0
+	redirect 	= priority
+	ignore		= no
+	help_allies 	= no 	#[yes/no]
+
+	staging_province = {
+		1337 # Saigon
+		1322 # Kaohsung
+		1613 # Truk
+		1187 # Osaka
+		1670 # Rabaul
+	}
+	target = {
+		# Japanese Heartland
+		1192 = 4000 # Amami
+		1193 = 4000 # Okinawa
+		1323 = 4000 # Taibei
+		1322 = 4000 # Gaoxiong
+		1784 = 4000 # Bonin Islands
+		1599 = 4000 # Iwo Jima
+		1177 = 4000 # Etorufu
+		1176 = 4000 # Toyohara
+		1175 = 4000 # Ocha  (Soviet Controlled)
+
+		#Philippines
+		1741 = 3750 # Aparri
+		1740 = 3750 # Lingayen Gulf
+		1742 = 3750 # Lamon Bay
+		1743 = 3750 # Legaspi
+		1750 = 3750 # Davao
+		1749 = 3750 # Cagayan
+		1748 = 3750 # Zamboangs
+		1744 = 3500 # Samar
+		1745 = 3500 # Leyte
+		1747 = 3500 # Negros
+		1746 = 3500 # Panay
+		1736 = 3500 # Mindoro
+		1735 = 3500 # Palawan
+
+		#Outer Japanese Islands
+		1627 = 3250 # Saipan
+		1626 = 3250 # Tinian
+		1625 = 3250 # Rota
+		1624 = 3250 # Guam
+		1621 = 3250 # Palau
+		1785 = 3250 # Marcus Island
+
+		#Netherlands East Indies
+		1354 = 3250 # Bagka Island
+		1628 = 3000 # Batavia
+		1630 = 3000 # Semarang
+		1629 = 3000 # Tjilatjap
+		1632 = 3000 # Soerabaja
+		1634 = 3000 # Madura
+		1631 = 3000 # Djokjakarta
+		1633 = 3000 # Malang
+		1358 = 2750 # Palembang
+		1359 = 2750 # Oosthaven
+		1356 = 2750 # Dumai
+		1357 = 2750 # Padang
+		1355 = 2750 # Medan
+
+		#Borneo
+		1646 = 2500 # Mini
+		1644 = 2500 # Kuching
+		1642 = 2500 # Pontianak
+		1641 = 2500 # Bandjermasin
+		1650 = 2500 # Balikpapan
+		1649 = 2500 # Samarinda
+		1648 = 2500 # Tarakan
+		1647 = 2500 # Jessleton
+
+		#Singapore
+		1350 = 2500 # Kota Bahru
+		1351 = 2500 # Kuantan
+		1349 = 2500 # Alor Star
+		1352 = 2500 # Kualla Lumpur
+		1353 = 2500 # Singapore
+
+		#USA
+		1786 = 2250 # Wake Island
+
+		#Britain
+		1315 = 3000 # Hong Kong
+
+		#Far Outer Rim Japanese Islands
+		1601 = 2250 # Eniwetok
+		1600 = 2250 # Bikini
+		1602 = 2250 # Wotje
+		1608 = 2250 # Kwajalein
+		1603 = 2250 # Maloelap
+		1605 = 2250 # Majuro
+		1607 = 2250 # Jaluit
+		1606 = 2250 # Mili
+		1610 = 2250 # Ponape
+		1609 = 2250 # Kosrae
+		1620 = 2250 # Ngulu
+		1619 = 2250 # Yap
+		1618 = 2250 # Ulithi
+		1604 = 2250 # Wolelai
+		1615 = 2250 # Ulul
+		1617 = 2250 # Woleai
+		1616 = 2250 # Pulusok
+		1613 = 2250 # Truk
+		1612 = 2250 # Satawan
+
+		#Indonesia
+		1653 = 2000 # Menado
+		1651 = 2000 # Palu
+		1640 = 2000 # Makassar
+		1652 = 2000 # Kendari
+
+		#New Britain
+		1670 = 2000 # Rabaul
+		1671 = 2000 # Gasmata
+
+		#Indonesia
+		1654 = 1750 # Helmahera
+		1655 = 1750 # Buru
+		1656 = 1750 # Ceram
+
+		#North New Guinea
+		1659 = 1750 # Sorong
+		1661 = 1750 # Biak Island
+		1660 = 1750 # Babo
+		1663 = 1750 # Arare
+		1664 = 1750 # Sarmi
+		1665 = 1750 # Hollandia
+		1666 = 1750 # Aitape
+		1667 = 1750 # Wewak
+		1672 = 1750 # Lae
+
+		#North Solomon Islands
+		1668 = 1750 # Admirality Islands
+		1669 = 1750 # New Ireland
+		1681 = 1750 # Buka Island
+		1682 = 1750 # Bougainville
+
+		# NEI Last Remaining Islands
+		1635 = 1500 # Bali
+		1636 = 1500 # Lombok
+		1637 = 1500 # Sumbawa
+		1639 = 1500 # Flores
+		1638 = 1500 # Sumba
+		1657 = 1500 # West Timor
+
+		# USA Alaska
+		1408 = 1500 # Attu Island
+		543  = 1500 # Amchika Island
+		542  = 1500 # Kiska Island
+
+		# South Solomon Islands
+		1683 = 1250 # Shortland Island
+		1614 = 1250 # Vella Lavella
+		1622 = 1250 # Kolombangara
+		1684 = 1250 # New Georgia
+		1685 = 1250 # Guadalcanal
+	}
+}
+
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 0.5
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 10
+	war_zone_odds 		= 2.0
+	key_point_prio_mult	= 0.5
+	revolt_risk_mult	= 0.5
+
+	# PRIORITIES:
+	beach			= 30	# Beach level 2
+	capital			= 30	# Our capital
+	human_border		= 50	# Ignored for allied human players
+	war_target		= 75	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 10	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		CHI = 50
+		CSX = 50
+		SIK = 50
+		CXB = 50
+		CYN = 50
+		CGX = 50
+		CHC = 50
+		VIC = -1
+		MAN = -1
+		MON = -1
+		SIA = -1
+		SOV = 10
+		POR = -1
+		ENG = 50
+		FRA = 50
+		HOL = 100
+		USA = 100
+		PHI = 100
+		AST = 10
+		NZL = 10
+	}
+	province_priorities = {
+		1337 = 35 # Saigon
+		1322 = 35 # Kaohsung
+		1613 = 35 # Truk
+		1601 = 35 # Eniwetok
+		1608 = 35 # Kwajelin
+		1670 = 35 # Rabaul
+	}
+	area_multiplier = {
+	}
+}
+front = {
+	recklessness 		= 2 # 0-3
+	distrib_vs_ai 		= reactive
+	distrib_vs_human 	= reactive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.2
+	panic_ratio_vs_ai	= 2.5
+	panic_ratio_vs_human	= 2.5
+	base_attack_odds	= 1.0
+	min_attack_odds		= 0.7
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.5
+
+	enemy_handicap = {
+	}
+	passivity = {
+		CHI = 90
+		CSX = 90
+		CHC = 90
+		CYN = 90
+		SIK = 90
+		CGX = 90
+		CXB = 90
+		SOV = 90
+	}
+}
+admiral = {
+
+	target = {
+	}
+	core = {
+	}
+
+}
+

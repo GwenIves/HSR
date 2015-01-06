@@ -1,0 +1,84 @@
+#
+# Reworked by Aregorn for HSR
+#
+#
+# HoI - Poland Events
+#
+#		written by Henrik Fåhraeus
+#
+# (2) 3600, 3601
+#########################################################################
+#  The UK offers an Alliance (Reworked by Aregorn)
+#########################################################################
+event = {
+	id = 3600
+	random = no
+	country = POL
+
+	# Triggered by ENG 3401
+
+	name = "EVT_3600_NAME"
+	desc = "EVT_3600_DESC"
+	style = 0
+	picture = "guarantee_POL"
+
+	action_a = {
+		name = "ACTIONNAME3600A" # Accept
+		ai_chance = 100
+		command = { type = relation which = ENG value = 50 }
+		command = { type = relation which = FRA value = 50 }
+		command = { type = relation which = GER value = -50 }
+		command = { type = relation which = SOV value = -50 }
+		command = { type = trigger which = 3402 }
+	}
+	action_b = {
+		name = "ACTIONNAME3600B" # Decline
+		ai_chance = 0
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = GER value = 5 }
+		command = { type = relation which = SOV value = 5 }
+		command = { type = trigger which = 3403 }
+	}
+}
+
+#########################################################################
+#  Danzig or War
+#########################################################################
+event = {
+	id = 3601
+	random = no
+	country = POL
+
+	# Triggered by GER 2027
+
+	name = "EVT_3601_NAME"
+	desc = "EVT_3601_DESC"
+	style = 0
+	picture = "Danzig"
+
+	action_a = {
+		name = "ACTIONNAME3601A" # Then it is War
+		ai_chance = 99
+		command = { type = relation which = SOV value = 5 }
+		command = { type = relation which = ENG value = 10 }
+		command = { type = relation which = FRA value = 10 }
+		command = { type = domestic which = political_left value = 1 }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 2028 }
+		command = { type = dissent value = -5 }
+	}
+	action_b = {
+		name = "ACTIONNAME3601B" # Fold
+		ai_chance = 1
+		command = { type = relation which = GER value = 10 }
+		command = { type = relation which = SOV value = -5 }
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = secedeprovince which = GER value = 303 }
+		command = { type = trigger which = 2029 }
+		command = { type = dissent value = 5 }
+	}
+}

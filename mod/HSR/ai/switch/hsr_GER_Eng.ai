@@ -1,0 +1,234 @@
+#
+# by Aregorn for HSR
+#
+
+invasion = {
+	ignore = yes
+
+	staging_province = {
+		38 32 90
+	}
+	target = {
+		17 = 4000 # Norwich
+		20 = 4000 # Dover
+		21 = 4000 # Portsmouth
+		23 = 4000 # Plymouth
+		13 = 2000 # Sheffield
+		9  = 1000 # Glasgow
+		10 = 1000 # Edinburgh
+		11 = 1000 # Sunderland
+	}
+}
+garrison = {
+	country_priorities = {
+		VIC = -1
+		FIN = -1
+		ITA = -1
+		SWI = -1
+		YUG = 25
+		SOV = 25
+		eng = 100
+	}
+	province_priorities = {
+	}
+}
+air_marshal = {
+	icxdayscostfactor 		= 10.0		# How to value true industrial cost when calculating expect causalties
+	manpowercostfactor		= 100.0		# How to value manpower cost when calculating expect causalties
+	destructionriskthreashold 	= 0.2		# when to fear a divisiopn might be destroyed
+
+	# desirability is a multiplier used when calcualting the mission desirability
+	airsuperioritydesirability 	= 10.0
+	groundattackdesirability 	= 5.0
+	inderdictiondesirability 	= 40.0
+	logisticalstrikedesirability 	= 5.0
+	runwaycrateringdesirability 	= 20.0
+	strategicstrikedesirability 	= 20.0
+	installationstrikedesirability 	= 20.0
+	navalstrikedesirability 	= 5.0
+	portstrikedesirability 		= 9.0
+
+	# tolerance is the required kill:loss ration expected to do
+	#    mission, 2.0 accept twice the losses of your enemy, 0.5 accept half
+	airsuperioritylosstolerance 	= 1.0
+	groundattacklosstolerance 	= 1.0
+	interdictionlosstolerance 	= 1.5
+	logisticalstrikelosstolerance 	= 4.5
+	runwaycrateringlosstolerance 	= 1.5
+	strategicstriketolerance 	= 4.5
+	installationstriketolerance 	= 1.5
+	navalstriketolerance 		= 1.0
+	portstriketolerance 		= 1.0
+
+	# efficency is a tweakable param to adjust according to how
+	#    much actual damage comes from doing this mission (not to be confused with desirability)
+	logisticalstrikeefficency 	= 0.01
+	runwaycrateringefficency 	= 0.01
+	strategicstrikeefficency 	= 0.01
+	installationstrikeefficency 	= 0.01
+
+	taskforcetype = { name = "Air Superiority" desiredratio = 0.400 rangeweight = 10.000 airkillpowerweight = 2000.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes air_superiority = yes }
+	taskforcetype = { name = "Soft Bombing" desiredratio = 0.250 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	taskforcetype = { name = "Hard Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 2000.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	taskforcetype = { name = "Strategic Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 0.000 strategickillpowerweight = 2000.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = -0.500 surfacevulnurabilityweight = -0.500 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes }
+	taskforcetype = { name = "Naval Bombing" desiredratio = 0.100 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = 0.000 softkillpowerweight = 0.000 navalkillpowerweight = 2000.000 strategickillpowerweight = 0.000 transportcapacityweight = -1000000.000 airvulnurabilityweight = 0.000 surfacevulnurabilityweight = -1.000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes }
+	taskforcetype = { name = "Airlift" desiredratio = 0.200 rangeweight = 10.000 airkillpowerweight = 0.000 hardkillpowerweight = -2000.000 softkillpowerweight = -2000.000 navalkillpowerweight = 0.000 strategickillpowerweight = -2000.000 transportcapacityweight = 1000000.000 airvulnurabilityweight = -1.000 surfacevulnurabilityweight = 0.000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes }
+}
+
+admiral = {
+
+	ignore = {
+		#Atlantic
+		"Bay of Biscay"
+		"Cape Finisterre"
+		"Portugese Coast"
+		"Cap St Vincent"
+		"Faroes Gap"
+		"Denmark Strait"
+		"Greenland Coast"
+		"Northern Sea of Labrador"
+		"Southern Sea of Labrador"
+		"Hudson Bay"
+		"Grand Banks"
+		"Canadian Maritimes"
+		"North Atlantic"
+		"Western Approaches"
+		"The Seamounts"
+		"Azores"
+		"Central Atlantic"
+		"Central Mid-Atlantic Ridge"
+		"Bermuda Triangle"
+		"Guiana Basin"
+		"South-Central Mid-Atlantic Ridge"
+		"Cap Verde"
+		"Pernambuco Plain"
+		"Ascension Fracture Zone"
+		"Argentine Plain"
+		"Angola Plain"
+		"West Gulf of Mexico"
+		"East Gulf of Mexico"
+		"Florida Strait"
+		"Yucatan Strait"
+		"Windward Islands"
+		"Central Carribean"
+		"Coast of Guyana"
+		"Coast of Recife"
+		"Coast of Uruguay"
+		"Coast of Brazil"
+		"Coast of Argentina"
+		"Barents Sea"
+		"Arctic Ocean"
+
+		#Mediterranean
+		"Costa del Sol"
+		"Gulf of Lyon"
+		"Algerian Coast"
+		"Tyrrhenian Sea"
+		"Adriatic Sea"
+		"Black Sea"
+		"Aegean Sea"
+		"Egyptian Coast"
+
+		#Africa
+		"Coast of Africa"
+		"Coast of Bissao"
+		"Gulf of Guinea"
+		"Coast of Angola-Namibia"
+		"Coast of South Africa"
+		"Atlantic-Indian Ridge"
+		"Red Sea"
+		"Horn of Africa"
+		"South Mozambique Channel"
+		"North Mozambique Channel"
+		"Northeast Coast of Madagascar"
+		"Southeast Coast of Madagascar"
+		"Persian Gulf"
+
+		#East
+		"North Arabian Sea"
+		"South Arabian Sea"
+		"Coast of Ceylon"
+		"Mascarene Plateau"
+		"Mid-Indian Ridge"
+		"Ninetyeast Ridge"
+		"Southeast Indian Ocean"
+		"Southwest Indian Ocean"
+		"East Bay of Bengal"
+		"West Bay of Bengal"
+		"Malacca Strait"
+		"Java Ridge"
+		"Java Trench"
+		"Gulf of Siam"
+		"Coast of Indochina"
+		"Spratly Sea"
+		"Coast of Brunei"
+		"Flores Sea"
+		"Sulu Sea"
+		"Celebes Sea"
+		"Luzon Strait"
+		"Taiwan Strait"
+		"Yellow Sea"
+		"Sea of Japan"
+		"Ryukyus"
+		"Coast of Japan"
+		"South Sea of Okhotsk"
+		"West Sea of Okhotsk"
+		"East Sea of Okhotsk"
+		"Philipine Trench"
+		"Central Philippine Sea"
+		"Mariana Trench"
+		"East Mariana Basin"
+		"Mid-Pacific Mountains"
+		"North Bismarck Sea"
+		"Coast of New Guinea"
+		"Molucca Sea"
+		"Banda Sea"
+		"Arafura Sea"
+		"South Bismarck Sea"
+		"Solomon Sea"
+		"West Coral Sea"
+		"East Coral Sea"
+		"North Tasman Sea"
+		"South Tasman Sea"
+		"East Cost of New Zealand"
+		"Timor Sea"
+		"West Coast of Australia"
+		"East Great Australian Bight"
+		"West Great Australian Bight"
+		"Coast of Kamchatka"
+		"East Bering Sea"
+		"West Bering Sea"
+		"Aleutians"
+		"Northwest Pacific Basin"
+		"North Northeast Pacific Basin"
+		"Hawaiian Rise"
+		"North East Pacific Ocean"
+		"Marshalls Sea"
+		"South East Pacific Ocean"
+		"Marianas"
+		"Western Solomons"
+		"Eastern Solomons"
+		"US Maritimes"
+		"Carolines"
+		"Gilberts"
+		"Line Islands"
+		"Fiji Basin"
+		"Southwest Pacific Basin"
+		"Southeast Pacific Basin"
+		"West Coast of Chile"
+		"West Coast of Peru"
+		"South Southeast Pacific Ocean"
+		"North Southeast Pacific Ocean"
+		"Gulf of Alaska"
+		"West Coast of the United States"
+		"West Coast of Mexico"
+		"West Coast of Central America"
+	}
+	target = {
+	}
+	core = {
+	}
+	base = {
+		90 32 38 325
+	}
+}

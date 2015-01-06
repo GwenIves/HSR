@@ -1,0 +1,818 @@
+#Aregorn_ai: ai switching (34)
+#
+# ID		Title						Author
+#
+# 41000		(POL) AI change for Poland at war 		(by Aregorn 050214)
+# 41000 	(SOV) AI change for Soviet aggresive 		(by Aregorn 050214)
+# 41002 	(USA) AI change for USA aggresive 		(by Aregorn 050214)
+# 41003 	(Fra) AI change for Fra aggresive 		(by Aregorn 050214)
+# 41004 	(ITA) AI change for Ita aggresive		(by Aregorn 050214)
+# 41005 	(JAP) AI change for Soviet  			(by Aregorn 050325)
+# 41006 	(SOV) AI change for Japan 			(by Aregorn 050325)
+# 41007-11 	(BAL) AI switch after Paris 			(by Aregorn 050402)
+# 41012-15 	(BAL) AI switch Barbarossa 			(by Aregorn 050528)
+# 41016-17 	(GER,SOV) Corrective non aggression pact events	(by Aregorn 050601)
+# 41018 	(ENG) England North Africa 			(by Aregorn 050608)
+# 41019 	(ENG) England Spain 				(by Aregorn 050608)
+# 41020 	(ENG) England Turkey 				(by Aregorn 050608)
+# 41021 	(SOV) Soviet Turkey 				(by Aregorn 050608)
+# 41022 	(ITA) Italy wants Albania 			(by Aregorn 050612)
+# 41023 	(YUG) AI switch after Paris 			(by Aregorn 050402)
+# 41024 	(SOV) AI switch Barbarossa 			(by Aregorn 050402)
+# 41025 	(SOV) Molotov-Ribbentrop 			(by Aregorn 050402)
+# 41026 	Baku captured from the south 			(by Aregorn 060325)
+# 41027-33 	Expeditionary forces 				(by Aregorn 090214)
+
+#########################################################################
+# 41000 AI change for Poland at war (by Aregorn 050214)
+#########################################################################
+event = {
+	id = 41000
+	random = no
+	country = pol
+
+	trigger = { random = 50 ai = yes or = { war = { country = ger country = pol } war = { country = sov country = pol }}
+			}
+
+	name = "Strategic change"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_pol_atwar.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+#########################################################################
+# 41000 AI change for Soviet aggresive (by Aregorn 050214)
+#########################################################################
+event = {
+	id = 41001
+	random = no
+	country = sov
+
+	trigger = { random = 50 ai = yes
+		or = {
+		and = { war = { country = ger country = usa } war = { country = sov country = ger }}
+		and = { year = 1943 war = { country = sov country = ger }}
+			}}
+
+	name = "Strategic change"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_sov_attack.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+#########################################################################
+# 41002 AI change for USA aggresive (by Aregorn 050214)
+#########################################################################
+event = {
+	id = 41002
+	random = no
+	country = usa
+
+	trigger = { random = 50	ai = yes
+		or = { 	and = { war = { country = ger country = usa } war = { country = sov country = ger }}
+			and = { year = 1942 war = { country = usa country = ger }}
+			}}
+
+	name = "Strategic change"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_usa_attack.ai" }
+	}
+}
+#########################################################################
+# 41003 AI change for Fra aggresive (by Aregorn 050214)
+#########################################################################
+event = {
+	id = 41003
+	random = no
+	country = fra
+
+	trigger = { random = 50	ai = yes
+		or = { 	and = { war = { country = ger country = usa } war = { country = ger country = fra } war = { country = sov country = ger }}
+			and = { not = { event = 2021 } year = 1942 war = { country = fra country = ger }}
+			}}
+
+	name = "Strategic change"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_fra_attack.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+#########################################################################
+# 41004 AI change for Ita aggresive (by Aregorn 050214)
+#########################################################################
+event = {
+	id = 41004
+	random = no
+	country = ita
+
+	trigger = { random = 50	ai = yes
+		or = { 	war = { country = ger country = ita } war = { country = eng country = ita } war = { country = sov country = ita }
+			}}
+
+	name = "Strategic change"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_ita_attack.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+	}
+}
+#########################################################################
+# 41005 AI change for Soviet (JAP) (by Aregorn 050325)
+#########################################################################
+event = {
+	id = 41005
+	random = no
+	country = sov
+
+	trigger = { random = 25 ai = yes not = { non_aggression = { country = jap  country = sov } }
+		war = { country = sov country = jap } event = 40328
+		}
+
+	name = "The Soviet Union is ready to attack Japan"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_sov-jap_attack.ai" }
+	}
+}
+#########################################################################
+# 41006 AI change for Japan (SOV) (by Aregorn 050325)
+#########################################################################
+event = {
+	id = 41006
+	random = no
+	country = jap
+
+	trigger = { random = 25 ai = yes not = { non_aggression = { country = jap  country = sov } }
+		war = { country = sov country = jap } event = 40328
+		}
+
+	name = "The Empire of Japan is ready to attack the Soviet Union"
+	desc = ""
+	style = 0
+
+	date = { day = 17 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_jap-sov_attack.ai" }
+	}
+}
+#######################################################################################
+# 41007-11 AI switch after Paris (by Aregorn 050402)
+#######################################################################################
+event = {
+	id = 41007
+	random = no
+	country = hun
+
+	trigger = { random = 5 not = { alliance = { country = ger country = hun }}
+		ai = yes
+		atwar = no
+		event = 2021
+		}
+
+	name = "Hungary is willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Neutrality_Change.ai" }
+	}
+}
+event = {
+	id = 41008
+	random = no
+	country = bul
+
+	trigger = { random = 3
+		ai = yes
+		atwar = no
+		event = 2021
+		}
+
+	name = "Bulgaria is more willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+	}
+}
+event = {
+	id = 41009
+	random = no
+	country = rom
+
+	trigger = { random = 4
+		ai = yes
+		atwar = no
+		event = 2021
+		}
+
+	name = "Romania is willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Neutrality_Change.ai" }
+	}
+}
+event = {
+	id = 41010
+	random = no
+	country = arg
+
+	trigger = { random = 1
+		ai = yes
+		atwar = no
+		event = 2021
+		}
+
+	name = "Argentina is more willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_neutrality_1.ai" }
+	}
+}
+event = {
+	id = 41011
+	random = no
+	country = fin
+
+	trigger = { random = 50 war = { country = ger country = sov }
+		ai = yes
+		atwar = no
+		event = 2021 or = { event = 2621 event = 2622 }
+		}
+
+	name = "Finland is willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Neutrality_Change.ai" }
+	}
+}
+#######################################################################################
+# 41012-15 AI switch Barbarossa (by Aregorn 050528)
+#######################################################################################
+event = {
+	id = 41012
+	random = no
+	country = hun
+
+	trigger = { random = 50 alliance = { country = ger country = hun }
+		ai = yes war = { country = sov country = ger }
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_HUN_Barbarossa.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+event = {
+	id = 41013
+	random = no
+	country = rom
+
+	trigger = { random = 50 alliance = { country = ger country = rom }
+		ai = yes war = { country = sov country = ger }
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_ROM_Barbarossa.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+event = {
+	id = 41014
+	random = no
+	country = bul
+
+	trigger = { random = 50 alliance = { country = ger country = bul }
+		ai = yes war = { country = sov country = ger }
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_BUL_Barbarossa.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+event = {
+	id = 41015
+	random = no
+	country = slo
+
+	trigger = { random = 50 alliance = { country = ger country = slo }
+		ai = yes war = { country = sov country = ger }
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_slo_Barbarossa.ai" }
+		command = { type = ai which = "Air_supremecy.ai" }
+	}
+}
+#########################################################################
+# 41016-17 Corrective non aggression pact event (by Aregorn 050601)
+#########################################################################
+
+event = {
+	id = 41016
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { ai = yes war = { country = sov country = ger} }
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = end_non_aggression which = ger where = sov }
+		}
+}
+event = {
+	id = 41017
+	random = no
+	country = ger
+	style = 0
+
+	trigger = { ai = yes war = { country = sov country = ger} }
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = end_non_aggression which = ger where = sov }
+		}
+}
+#########################################################################
+# 41018 England North Africa (by Aregorn 050608)
+#########################################################################
+
+event = {
+	id = 41018
+	random = no
+	country = eng
+	style = 0
+
+	trigger = { ai = yes war = { country = eng country = ita }
+			or = { event = 40515 year = 1941 }
+	}
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_Eng_Ita.ai" }
+		command = { type = ai which = "Air_ground.ai" }
+		}
+}
+#########################################################################
+# 41019 England Spain (by Aregorn 050608)
+#########################################################################
+
+event = {
+	id = 41019
+	random = no
+	country = eng
+	style = 0
+
+	trigger = { ai = yes
+			or = {
+				war = { country = ger country = spa }
+				war = { country = eng country = spa }
+				war = { country = ita country = spa }
+				}
+			}
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_Eng_Spa.ai" }
+		command = { type = ai which = "Air_ground.ai" }
+		}
+}
+#########################################################################
+# 41020 England Turkey (by Aregorn 050608)
+#########################################################################
+
+event = {
+	id = 41020
+	random = no
+	country = eng
+	style = 0
+
+	trigger = { ai = yes
+			or = {
+				war = { country = ger country = tur }
+				war = { country = eng country = tur }
+				war = { country = ita country = tur }
+				}
+			}
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_ENG_Tur.ai" }
+		command = { type = ai which = "Air_ground.ai" }
+		}
+}
+#########################################################################
+# 41021 Soviet Turkey (by Aregorn 050608)
+#########################################################################
+
+event = {
+	id = 41021
+	random = no
+	country = sov
+	style = 0
+
+	trigger = { 	ai = yes
+			atwar = tur }
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1950 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_SOV_Tur.ai" }
+		command = { type = ai which = "Air_ground.ai" }
+		}
+}
+#########################################################################
+# 41022 Italy wants Albania (by Aregorn 050612)
+#########################################################################
+
+event = {
+	id = 41022
+	country = ita
+	random = no
+
+	trigger = {	ai = yes event = 2902	}
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_ITA_alb.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+		}
+}
+#######################################################################################
+# 41023 AI switch after Paris (by Aregorn 050402)
+#######################################################################################
+event = {
+	id = 41023
+	random = no
+	country = yug
+
+	trigger = { random = 5 not = { alliance = { country = ger country = hun }}
+		ai = yes
+		atwar = no
+		event = 2021
+		}
+
+	name = "Yugoslavia is willing to open alliance negociations"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Neutrality_Change.ai" }
+	}
+}
+#######################################################################################
+# 41024 (SOV) AI switch Barbarossa (by Aregorn 050402)
+#######################################################################################
+
+event = {
+	id = 41024
+	random = no
+	country = sov
+
+	trigger = { random = 50
+		ai = yes war = { country = sov country = ger }
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/hsr_sov_Barbarossa.ai" }
+		command = { type = ai which = "Air_ground.ai" }
+	}
+}
+#######################################################################################
+# 41025 (SOV) Molotov-Ribbentrop (by Aregorn 050402)
+#######################################################################################
+
+event = {
+	id = 41025
+	random = no
+	country = sov
+
+	trigger = { random = 50
+		ai = yes event = 2018
+		}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/sov_fin_demands.ai" }
+	}
+}
+#########################################################################
+# 41026 Baku captured from the south (by Aregorn 060325)
+#########################################################################
+
+event = {
+	id = 41026
+	random = no
+
+	trigger = {	not = { ai = ger } or = { country = irq country = per }
+
+			garrison = { country = ger province = 1859 type = land size = 1 } #1907
+			or = {
+				and = {	alliance = { country = irq country = ger }
+					control = { province = 1859 data = irq }
+				}
+				and = {	alliance = { country = per country = ger }
+					control = { province = 1859 data = per }
+				}
+			}
+	}
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 1859 }
+	}
+}
+#######################################################################################
+# 41027-33 Expeditionary forces (by Aregorn 090214)
+#######################################################################################
+
+event = {
+	id = 41027
+	random = no
+	country = ita
+
+	trigger = { ai = yes not = { ai = ger }	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41028
+	random = no
+	country = rom
+
+	trigger = { ai = yes not = { ai = ger }	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41029
+	random = no
+	country = bul
+
+	trigger = { ai = yes not = { ai = ger }	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41030
+	random = no
+	country = tur
+
+	trigger = { ai = yes alliance = { country = tur country = ger } not = { ai = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41031
+	random = no
+	country = hun
+
+	trigger = { ai = yes not = { ai = ger }	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41032
+	random = no
+	country = cro
+
+	trigger = { ai = yes alliance = { country = cro country = ger } not = { ai = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}
+event = {
+	id = 41033
+	random = no
+	country = bos
+
+	trigger = { ai = yes alliance = { country = bos country = ger } not = { ai = ger } }
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/EXP_Russia.ai" }
+	}
+}

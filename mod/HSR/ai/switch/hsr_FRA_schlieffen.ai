@@ -1,0 +1,14 @@
+#
+# By Aregorn for HSR
+#
+
+max_garrison_prop = 0.30
+min_garrison_prop = 0.20
+max_front_ratios = {
+}
+
+target = {
+	45  = 100
+	46  = 50
+}
+

@@ -1,0 +1,387 @@
+##US 1945 Default AI inherited from previous campaigns
+	switch = no
+	flags = { }
+	max_front_ratio = 1.2000
+	max_front_ratios = { }
+	max_garrison_prop = 0.1500
+	min_garrison_prop = 0.1000
+	evac_islands = no
+	use_offensive_supply = yes
+	neutrality = 80.0000
+	war = 0
+	ferocity = no
+	reinforcement = 0.1000
+	upgrading = 0.1000
+	desperation = 0.3000
+spyprefs =
+{
+	percentage_on_spies 		= 0.2
+	percentage_foreign_mission 	= 0.9
+
+	# Used for Intell efficiency and for setting minimum chance to succeed for the AI to do that particular type of mission
+	spyprefsdata =
+	{
+		NumberOfSpies = 20
+		min_number_of_spies = 3
+		steal_blueprint = 10
+		minister_assassination = 5
+		smear_campaign 	= 10
+		coup = 3
+		sabotage_industry = 10
+		nuclear_sabotage = 5
+		found_partisans	= 10
+		massmedia = 10
+		disrupt_techteam = 10
+		country = USA
+	}
+	spyprefsdata = {
+		country_priorities	= 10
+		steal_blueprint 	= 10
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 6
+		nuclear_sabotage 	= 1
+		found_partisans		= 4
+		massmedia 			= 3
+		disrupt_techteam 	= 5
+		country 			= SOV
+	}
+	spyprefsdata = {
+		country_priorities	= 6
+		steal_blueprint 	= 1
+		minister_assassination 		= 1
+		smear_campaign 		= 3
+		coup 				= 1
+		sabotage_industry 	= 6
+		nuclear_sabotage 	= 0
+		found_partisans		= 4
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= POL
+	}
+	spyprefsdata = {
+		country_priorities	= 6
+		steal_blueprint 	= 1
+		minister_assassination 		= 1
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 4
+		nuclear_sabotage 	= 0
+		found_partisans		= 2
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= YUG
+	}
+	spyprefsdata = {
+		country_priorities	= 4
+		steal_blueprint 	= 1
+		minister_assassination = 5
+		smear_campaign 		= 4
+		coup 				= 1
+		sabotage_industry 	= 4
+		nuclear_sabotage 	= 0
+		found_partisans		= 4
+		massmedia 			= 2
+		disrupt_techteam 	= 5
+		country 			= HUN
+	}
+}
+	strat_redeploy_threshold = 25
+	max_redeploying = 0.2500
+	resistance = {
+	    GER = 8
+	    JAP = 8
+	    SOV = 4
+	    ITA = 3
+	    }
+	protect = {
+	    ARG = 300
+	    BOL = 300
+	    BRA = 300
+	    CHL = 300
+	    COL = 300
+	    ECU = 300
+	    GUI = 300
+	    GUY = 300
+	    PAR = 300
+	    PRU = 300
+	    URU = 300
+	    VEN = 300
+	    COS = 300
+	    CUB = 300
+	    DOM = 300
+	    GUA = 300
+	    HAI = 300
+	    HON = 300
+	    MEX = 300
+	    PAN = 300
+	    SAL = 300
+	    CAL = 300
+	    CSA = 300
+	    QUE = 300
+	    TEX = 300
+	    }
+	befriend = {
+	    ENG = 50
+	    BEL = 70
+	    HOL = 70
+	    SPR = 40
+	    POL = 80
+	    AUS = 30
+	    CZE = 40
+	    TUR = 10
+	    IRQ = 20
+	    PER = 20
+	    POR = 20
+	    CHI = 20
+	    }
+	target = { 1184 = 100 300 = 100 }
+	exp_force_ratio = 0.0300
+	exp_force_ratios = { ENG = 1.0000 }
+	admiral = {
+	    target = { }
+	    core = { 2348 2347 2346 2535 2534 2533 2531 2530 1922 1936 1937 1938 1943 1931 2564 2563 }
+	    base = { 663 1756 765 633 651 602 1618 1670 1337 1353 1628 1737 1624 }
+	    ignore = { }
+	    }
+	trade = { favored = { JAP = 100 FRA = 100 CAN = 100 AST = 100 NZL = 100 ENG = 100 BEL = 90 HOL = 90 SPR = 30 POL = 20 CZE = 20 TUR = 10 IRQ = 100 PER = 100 POR = 10 CHI = 10 } cancel_deal_threshold = 2.0000 }
+	tech_sharing = { favored = { FRA = 100 CAN = 100 AST = 100 NZL = 100 ENG = 100 BEL = 90 HOL = 90 SPR = 30 POL = 20 CZE = 20 TUR = 10 IRQ = 100 PER = 100 POR = 10 CHI = 10 LIB = 10 PHI = 10 } }
+	invasion = {
+	    base = 0.1000
+	    random = 8.0000
+	    coastal = 0.1000
+	    beach = 0.1000
+	    distance = 10.0000
+	    max_distance = 99999.0000
+	    pocket = 20.0000
+	    island = 1.0000
+	    enemy = 2.0000
+	    adjacentenemy = 2.0000
+	    air_base = 1.5000
+	    naval_base = 0.1000
+	    air_support = 3.0000
+	    ignore = no
+	    invasion = yes
+	    help_allies = yes
+	    redirect = priority
+	    target = { 292 = 8000 92 = 8000 91 = 8000 90 = -1 78 = 8000 47 = 8000 46 = 8000 45 = 8000 18 = 8000 42 = 8000 41 = 8000 39 = 8000 33 = 8000 32 = 8000 34 = 8000 35 = 8000 59 = 8000 325 = 8000 326 = 8000 548 = 50 547 = 50 546 = 50 545 = 50 544 = 50 542 = 50 553 = 5000 1177 = -1 1174 = -1 658 = 4000 659 = 4000 660 = 4000 661 = 4000 662 = 3000 663 = 4000 1766 = 3000 1785 = 60 1786 = 60 1799 = 30 1784 = 30 1602 = 40 1600 = 40 1601 = 45 1608 = 45 1605 = 40 1606 = 40 1607 = 40 1610 = 40 1609 = 40 1611 = 40 1753 = 40 1751 = 40 1752 = 40 1755 = 40 1756 = 3000 1757 = 40 1770 = 40 1761 = 40 1769 = 40 1768 = 40 1767 = 40 1762 = 45 1763 = 45 1764 = 45 1765 = 45 1760 = 40 1758 = 40 1871 = 3000 1871 = 3000 1868 = 3000 1872 = 3000 1703 = 2750 1702 = 2750 1701 = 2750 1695 = 2750 1694 = 2750 1722 = 2750 1723 = 2750 1724 = 2750 1727 = 2750 1730 = 2750 1732 = 2750 1733 = 2750 1729 = 2750 1718 = 2750 1717 = 2750 1716 = 2750 1713 = 2750 1712 = 2750 1711 = 2750 1710 = 2750 1704 = 2750 1692 = 40 1691 = 40 1687 = 40 1690 = 40 1688 = 40 1686 = 40 1685 = 40 1684 = 40 1622 = 40 1614 = 40 1683 = 40 1682 = 40 1681 = 40 1669 = 40 1670 = 40 1671 = 40 1675 = 40 1679 = 45 1680 = 40 1677 = 40 1672 = 40 1668 = 40 1667 = 40 1666 = 40 1665 = 40 1664 = 40 1663 = 40 1661 = 40 1612 = 40 1613 = 45 1615 = 40 1617 = 40 1616 = 40 1604 = 40 1618 = 40 1619 = 40 1620 = 20 1674 = 35 1673 = 35 1660 = 35 1659 = 35 1654 = 35 1656 = 35 1655 = 35 1653 = 35 1651 = 35 1640 = 35 1652 = 35 1658 = 35 1657 = 35 1635 = 35 1636 = 35 1637 = 35 1638 = 35 1639 = 35 1642 = 10 1641 = 10 1650 = 10 1649 = 10 1648 = 10 1647 = 10 1646 = 10 1644 = 10 1633 = 10 1634 = 10 1631 = 10 1630 = 10 1629 = 10 1628 = 10 1358 = 5 1359 = 5 1354 = 5 1356 = 5 1351 = 5 1355 = 5 1321 = 10 1735 = 30 1736 = 30 1744 = 30 1745 = 30 1749 = 30 1747 = 30 1750 = 30 1746 = 30 1743 = 35 1742 = 35 1740 = 35 1741 = 35 1323 = 30 1322 = 30 1193 = 35 1192 = 35 1353 = 15 1349 = 15 1351 = 15 1350 = 15 1348 = 15 1345 = 10 1343 = 10 1339 = 10 1338 = 10 1337 = 10 1335 = 10 1334 = 10 1333 = 10 1328 = 10 1326 = 10 1176 = 10 75 = 10 1316 = 10 1248 = 10 1247 = 10 1244 = 10 1235 = 10 1215 = 10 1214 = 10 1204 = 10 1202 = 10 1199 = 10 1196 = 10 1190 = 20 1191 = 20 1189 = 20 1188 = 25 1187 = 25 1186 = 25 1185 = 25 1184 = 25 1183 = 25 1182 = 25 1181 = 25 1180 = 25 1179 = 20 1178 = 20 556 = 40 541 = 40 780 = 40 782 = 40 765 = 40 762 = 40 761 = 40 737 = 5000 738 = 5000 739 = 5000 743 = 5000 751 = 5000 754 = 5000 755 = 5000 759 = 5000 539 = 5000 888 = 5000 890 = 5000 814 = 5000 563 = 4750 800 = 4750 1 = 4750 576 = 4750 578 = 4750 538 = 4750 652 = 4750 665 = 4750 664 = 4750 653 = 4750 666 = 4750 668 = 4750 1867 = 4750 866 = 4750 802 = 4750 810 = 4750 870 = 4750 871 = 4750 873 = 4750 874 = 4750 875 = 4750 876 = 4750 877 = 4750 879 = 4750 881 = 4750 882 = 4750 884 = 4750 885 = 4750 886 = 4750 847 = 4750 848 = 4750 849 = 4750 667 = 4750 852 = 4750 853 = 4750 854 = 4750 857 = 4750 858 = 4750 863 = 4750 654 = 5000 655 = 5000 656 = 5000 657 = 5000 758 = 5000 891 = 5000 892 = 5000 893 = 5000 894 = 5000 895 = 5000 896 = 5000 897 = 5000 898 = 5000 899 = 5000 805 = 5000 807 = 5000 806 = 5000 809 = 5000 525 = 35 526 = 35 521 = 35 523 = 35 520 = 35 519 = 35 31 = 3000 900 = 35 901 = 35 906 = 35 909 = 35 910 = 35 916 = 35 919 = 35 924 = 35 932 = 35 933 = 35 938 = 2500 939 = 2500 940 = 2500 949 = 3000 953 = 3000 954 = 3000 958 = 3000 404 = 35 406 = 35 1793 = 35 1794 = 35 1798 = 35 1799 = 35 1800 = 35 1801 = 35 1862 = 35 }
+	    }
+	air_marshal = {
+	    icxdayscostfactor = 10.0000
+	    manpowercostfactor = 100.0000
+	    destructionriskthreashold = 0.2000
+	    airsuperioritydesirability = 10.0000
+	    airsuperioritylosstolerance = 1.0000
+	    groundattacklosstolerance = 1.0000
+	    groundattackdesirability = 40.0000
+	    interdictionlosstolerance = 2.0000
+	    inderdictiondesirability = 50.0000
+	    logisticalstrikelosstolerance = 4.5000
+	    logisticalstrikeefficency = 0.0100
+	    logisticalstrikedesirability = 30.0000
+	    runwaycrateringlosstolerance = 1.5000
+	    runwaycrateringefficency = 0.0100
+	    runwaycrateringdesirability = 20.0000
+	    strategicstriketolerance = 4.5000
+	    strategicstrikeefficency = 0.0100
+	    strategicstrikedesirability = 2.0000
+	    nukestriketolerance = 1.0000
+	    nukestrikedesirability = 5.0000
+	    installationstriketolerance = 1.5000
+	    installationstrikeefficency = 0.0100
+	    installationstrikedesirability = 2.0000
+	    navalstriketolerance = 1.0000
+	    navalstrikedesirability = 2.0000
+	    portstriketolerance = 1.0000
+	    portstrikedesirability = 9.0000
+	    min_mission_strength_org = 0.50000
+	    taskforcetype = { name = "Air Superiority" desiredratio = 0.4000 rangeweight = 10.0000 airkillpowerweight = 2000.0000 hardkillpowerweight = 0.0000 softkillpowerweight = 0.0000 navalkillpowerweight = 0.0000 strategickillpowerweight = 0.0000 transportcapacityweight = -1000000.0000 airvulnurabilityweight = -1.0000 surfacevulnurabilityweight = 0.0000 idle = yes reorganize = yes air_superiority = yes }
+	    taskforcetype = { name = "Soft Bombing" desiredratio = 0.2500 rangeweight = 10.0000 airkillpowerweight = 0.0000 hardkillpowerweight = 0.0000 softkillpowerweight = 2000.0000 navalkillpowerweight = 0.0000 strategickillpowerweight = 0.0000 transportcapacityweight = -1000000.0000 airvulnurabilityweight = 0.0000 surfacevulnurabilityweight = -1.0000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	    taskforcetype = { name = "Hard Bombing" desiredratio = 0.1000 rangeweight = 10.0000 airkillpowerweight = 0.0000 hardkillpowerweight = 2000.0000 softkillpowerweight = 0.0000 navalkillpowerweight = 0.0000 strategickillpowerweight = 0.0000 transportcapacityweight = -1000000.0000 airvulnurabilityweight = 0.0000 surfacevulnurabilityweight = -1.0000 idle = yes reorganize = yes interdiction = yes ground_attack = yes }
+	    taskforcetype = { name = "Strategic Bombing" desiredratio = 0.1000 rangeweight = 10.0000 airkillpowerweight = 0.0000 hardkillpowerweight = 0.0000 softkillpowerweight = 0.0000 navalkillpowerweight = 0.0000 strategickillpowerweight = 2000.0000 transportcapacityweight = -1000000.0000 airvulnurabilityweight = -0.5000 surfacevulnurabilityweight = -0.5000 idle = yes reorganize = yes logistical_strike = yes runway_cratering = yes strategic_bombardment = yes installation_strike = yes }
+	    taskforcetype = { name = "Naval Bombing" desiredratio = 0.0500 rangeweight = 10.0000 airkillpowerweight = 0.0000 hardkillpowerweight = 0.0000 softkillpowerweight = 0.0000 navalkillpowerweight = 2000.0000 strategickillpowerweight = 0.0000 transportcapacityweight = -1000000.0000 airvulnurabilityweight = 0.0000 surfacevulnurabilityweight = -1.0000 idle = yes reorganize = yes naval_strike = yes port_strike = yes convoy_air_raiding = yes }
+	    taskforcetype = { name = "Airlift" desiredratio = 0.1000 rangeweight = 10.0000 airkillpowerweight = 0.0000 hardkillpowerweight = -2000.0000 softkillpowerweight = -2000.0000 navalkillpowerweight = 0.0000 strategickillpowerweight = -2000.0000 transportcapacityweight = 1000000.0000 airvulnurabilityweight = -1.0000 surfacevulnurabilityweight = 0.0000 idle = yes reorganize = yes airborne_assault = yes air_supply = yes }
+	    }
+	garrison = {
+	    defend_overseas_beaches = yes
+	    key_point_prio_mult = 0.3000
+	    revolt_risk_mult = 0.3000
+	    beach = 30
+	    reserves = 20
+	    capital = 20
+	    human_border = 0
+	    war_target = 50
+	    opposing_alliance = 50
+	    claim_threat = 0
+	    unstable_border = 0
+	    war_zone_odds = 2.0000
+	    home_multiplier = 0.3000
+	    overseas_multiplier = 0.4000
+	    home_peace_cap = 20
+	    country_priorities = { CAN = -1 MEX = -1 SPA = -1 SCH = -1 GER = 100 JAP = 60 ITA = 60 }
+	    province_priorities = { }
+	    area_multiplier = { }
+	    ignore = { 292 92 91 90 78 47 46 45 43 18 42 41 39 33 32 34 35 59 325 326 358 362 364 365 366 918 926 927 1017 1018 1016 1015 931 928 1020 1019 907 1021 1022 1067 1068 1069 1065 1032 1041 1040 1059 1039 1048 1042 1044 1045 1047 1053 1049 1043 1050 1054 1055 1071 1072 1073 1074 1144 1143 1142 }
+	    }
+	military = {
+	    relative_build_scheme = no
+	    max_batch_peace = 360
+	    max_batch_war = 180
+	max_batch_home_front = 180
+	extra_convoys_war = 0.0500
+	extra_convoys_peace = 0.0500
+
+	    infantry = 3.0000
+	    cavalry = 0.0000
+	    motorized = 6.0000
+	    mechanized = 11.0000
+	    light_armor = 0.0000
+	    armor = 5.0000
+	    paratrooper = 1.0000
+	    marine = 3.0000
+	    bergsjaeger = 0.0000
+	    garrison = 0.0000
+	    hq = 3.0000
+	    militia = 0.0000
+	    multi_role = 2.0000
+	    interceptor = 4.0000
+	    strategic_bomber = 3.0000
+	    tactical_bomber = 3.0000
+	    naval_bomber = 4.0000
+	    cas = 0.0000
+	    transport_plane = 1.0000
+	    flying_bomb = 0.0000
+	    flying_rocket = 0.0000
+	    battleship = 0.0000
+	    light_cruiser = 9.0000
+	    heavy_cruiser = 7.0000
+	    battlecruiser = 0.0000
+	    destroyer = 10.0000
+	    carrier = 7.0000
+	    escort_carrier = 3.0000
+	    submarine = 5.0000
+	    nuclear_submarine = 0.0000
+	    transport = 10.0000
+	    artillery = 15.0000
+	    sp_artillery = 9.0000
+	    rocket_artillery = 0.0000
+	    sp_rct_artillery = 0.0000
+	    anti_tank = 8.0000
+	    tank_destroyer = 8.0000
+	    light_armor_brigade = 6.0000
+	    heavy_armor = 5.0000
+	    super_heavy_armor = 0.0000
+	    armored_car = 5.0000
+	    anti_air = 7.0000
+	    police = 2.0000
+	    engineer = 6.0000
+	    cag = 100.0000
+	    escort = 0.0000
+	    naval_asw = 20.0000
+	    naval_anti_air_s = 20.0000
+	    naval_radar_s = 20.0000
+	    naval_fire_controll_s = 20.0000
+	    naval_improved_hull_s = 10.0000
+	    naval_torpedoes_s = 10.0000
+	    naval_anti_air_l = 0.0000
+	    naval_radar_l = 0.0000
+	    naval_fire_controll_l = 0.0000
+	    naval_improved_hull_l = 0.0000
+	    naval_torpedoes_l = 0.0000
+	    }
+	front = {
+	    strength = 1.0000
+	    organisation = 1.0000
+	    dig_in = 1.0000
+	    soft_attack = 1.0000
+	    hard_attack = 1.0000
+	    ground_defense = 1.0000
+	    support_defense_prop = 0.3300
+	    river = 1.0000
+	    frozen_attack = 1.0000
+	    snow_attack = 1.0000
+	    blizzard_attack = 1.0000
+	    storm_attack = 1.0000
+	    muddy_attack = 1.0000
+	    largefort = 1.0000
+	    smallfort = 1.0000
+	    occupied = 0.7000
+	    owned = 0.7000
+	    jungle_attack = 1.0000
+	    mountain_attack = 1.0000
+	    swamp_attack = 1.0000
+	    forest_attack = 1.0000
+	    hill_attack = 1.0000
+	    urban_attack = 1.0000
+	    recklessness = 0
+	    enemy_reinf_days = 6
+	    reserve_prop = 0.1000
+	    panic_ratio_vs_ai = 2.5000
+	    panic_ratio_vs_human = 2.5000
+	    base_attack_odds = 1.3000
+	    min_attack_odds = 1.1000
+	    max_attack_odds = 3.0000
+	    reinforce_odds = 1.3000
+	    withdraw_odds = 0.6000
+	    distrib_vs_ai = even
+	    distrib_vs_human = even
+	    enemy_handicap = { GER = 20 }
+	    passivity = { GER = 40 }
+	    province_priorities = { }
+	    }
+	construction = {
+	    max_factor = 0.1000
+	    transports = -1
+	    escorts = -1
+	    AA_batteries = yes
+	    max_AA_level = 5
+	    AA_provs = { 658 662 1756 765 762 761 780 600 602 606 651 }
+	    coastal_fort = no
+	    max_coastal_level = 3
+	    coastal_fort_provs = { }
+	    radar_station = yes
+	    max_radar = 5
+	    radar_provs = { 658 662 1756 765 761 780 549 600 602 606 651 }
+	    air_base = yes
+	    max_air_base = 4
+	    air_base_provs = { 658 662 1766 1762 1756 }
+	    naval_base = yes
+	    max_naval_base = 10
+	    naval_base_provs = { 1756 }
+	    land_fort = no
+	    max_land_level = 10
+	    fort_borders = { }
+	    fort_provs = { }
+	    nuclear_reactor = no
+	    max_nuclear = 10
+	    rocket_test = no
+	    max_rocket = 10
+	    ic_at_war = yes
+	    force_ic_until = 1940
+	    ic_end_year = 1948
+	    IC_provs = { }
+	    }
+	technology = {
+	    preference = { 1010 1020 1030 1040 1050 1060 }
+	    armor = 3.0000
+	    infantry = 3.0000
+	    industry = 4.0000
+	    aircraft = 3.0000
+	    naval = 3.0000
+	    land_doctrines = 2.0000
+	    secret_weapons = 2.0000
+	    air_doctrines = 2.0000
+	    naval_doctrines = 2.0000
+	    }
+	leader_ratio = {
+	    land_field_marshal = 0.0200
+	    land_general = 0.0310
+	    land_lt_general = 0.4100
+	    sea_grand_admiral = 0.0200
+	    sea_admiral = 0.0610
+	    sea_vice_admiral = 0.4010
+	    air_marshal = 0.0200
+	    air_general = 0.0910
+	    air_lt_General = 0.1100
+	    }

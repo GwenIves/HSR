@@ -1,0 +1,272 @@
+# Airmod by Dec152000
+
+max_garrison_prop = 0.15
+min_garrison_prop = 0.10
+neutrality = 100.000
+war = 20
+strat_redeploy_threshold = 15
+exp_force_ratio = 0.0
+exp_force_ratios = { }
+no_exp_forces_to = { }
+
+###################################
+# Diplomacy
+###################################
+combat = {
+	JAP = 150
+}
+
+befriend = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+}
+protect = {
+	CSX = 100
+	SIK = 100
+	CXB = 100
+	CYN = 100
+	CGX = 100
+}
+target = {
+	#Guangxi Clique
+	1309 = 150
+	1310 = 150
+	1258 = 150
+	1311 = 150
+	1312 = 150
+	1249 = 150
+	1248 = 150
+	1314 = 150
+	1313 = 150
+	1317 = 150
+	1318 = 150
+	1320 = 150
+	1321 = 150
+	1325 = 150
+	1319 = 150
+
+	#Yunan
+	1282 = 125
+	1281 = 125
+	1327 = 125
+	1305 = 125
+	1308 = 125
+	1362 = 125
+	1307 = 125
+	1293 = 125
+	1294 = 125
+
+	#Shanxi
+	1206 = 115
+	1205 = 115
+	1204 = 115
+	1203 = 115
+	1210 = 115
+	1211 = 115
+	1212 = 115
+	1224 = 115
+	1215 = 115
+	1213 = 115
+	1216 = 115
+	1214 = 115
+	1207 = 115
+	1208 = 115
+	1272 = 115
+	1209 = 115
+	1225 = 115
+	1226 = 115
+
+	#Xibei San Ma
+	1442 = 110
+	1441 = 110
+	1273 = 110
+	1440 = 110
+	1443 = 110
+	1274 = 110
+	1444 = 110
+	1439 = 110
+
+	#Communist China
+	1270 = 200
+	1271 = 200
+
+	# Sinkiang
+	1435 = 90
+	1445 = 90
+	1447 = 90
+	1421 = 90
+	1432 = 90
+	1433 = 90
+	1446 = 90
+	1430 = 90
+	1431 = 90
+
+	#United Kingdom
+	1315 = 40 #Hong Kong
+
+	#Portugal
+	1316 = 100 # Macao
+}
+###################################
+# Construction and Tech Research
+###################################
+construction = {
+	max_factor = 0.100
+
+
+	AA_batteries = no
+	max_AA_level = 3
+	AA_provs = { }
+
+	coastal_fort = no
+	max_coastal_level = 3
+	coastal_fort_provs = { }
+
+	radar_station = no
+	max_radar = 5
+	radar_provs = { }
+
+	air_base = yes
+	max_air_base = 4
+	air_base_provs = {
+		1261 # Huahihua
+		1280 # Chungking
+	}
+
+	naval_base = no
+	max_naval_base = 5
+	naval_base_provs = { }
+
+	land_fort = no
+	max_land_level = 2
+	fort_borders = { }
+
+	ic_at_war = yes
+	force_ic_until = 1935
+	ic_end_year = 1940
+	IC_provs = { }
+}
+
+military = {
+	relative_build_scheme 	= yes
+	max_batch_peace 	= 800
+	max_batch_war 		= 500
+	max_batch_home_front 	= 190
+
+	#### Divisions etc...
+	infantry 	= 46
+	cavalry 	= 8
+	motorized 	= 3
+	mechanized 	= 2
+	light_armor 	= 4
+	armor 		= 2
+	paratrooper 	= 0
+	marine 		= 0
+	bergsjaeger 	= 1
+	garrison	= 15
+	hq 		= 1
+	militia 	= 0
+#				82 %
+	interceptor 	= 7
+	multi_role 	= 0
+	escort 		= 0
+	cas 		= 5
+	strategic_bomber = 0
+	tactical_bomber = 6
+	naval_bomber 	= 0
+	transport_plane = 0
+	flying_bomb 	= 0
+	flying_rocket 	= 0
+#				18 %
+	battleship 	= 0
+	carrier 	= 0
+	destroyer 	= 0
+	light_cruiser 	= 0
+	heavy_cruiser 	= 0
+	battlecruiser 	= 0
+	submarine 	= 0
+	transports 	= 0
+#				0 %
+
+	#### Brigades
+	artillery 		= 20
+	sp_artillery 		= 10
+	rocket_artillery	= 5
+	sp_rct_artillery 	= 5
+	anti_tank 		= 8
+	tank_destroyer 		= 8
+	light_armor_brigade 	= 6
+	heavy_armor 		= 5
+	super_heavy_armor 	= 3
+	armored_car 		= 15
+	anti_air 		= 5
+	police 			= 10
+	engineer 		= 5
+
+	cag = 100.000
+}
+###################################
+# Ground Combat, Leaders and Garrisons
+###################################
+garrison = {
+	defend_overseas_beaches = yes
+	home_multiplier 	= 1.0
+	overseas_multiplier 	= 1.0
+	home_peace_cap 		= 10
+	war_zone_odds 		= 1.5
+	key_point_prio_mult	= 0.0
+	revolt_risk_mult	= 0.3
+
+	# PRIORITIES:
+	beach			= 50	# Beach level 2
+	capital			= 30	# Our capital
+	human_border		= 50	# Ignored for allied human players
+	war_target		= 50	# The next country targeted for attack by this AI
+
+	opposing_alliance	= 50	# For neutrals, all alliances are "opposing"
+	claim_threat		= 0	# If we are neutral, countries with claims on us get this
+	unstable_border		= 0	# Bordering countries at war with someone else get this
+
+	# Borders with specific countries
+	country_priorities = {
+		SOV = -1
+		MON = -1
+		TIB = -1
+		NEP = -1
+		AFG = -1
+		FRA = 40
+		SIA = 40
+		ENG = -1
+		POR = -1
+		JAP = 80
+		CHC = -1
+		MAN = 70
+		CSX = -1
+		SIK = -1
+		CXB = -1
+		CYN = -1
+		CGX = -1
+	}
+	province_priorities = {	}
+	area_multiplier = { }
+}
+front = {
+	recklessness 		= 0 # 0-3
+	distrib_vs_ai 		= op_defensive
+	distrib_vs_human 	= op_defensive
+
+	enemy_reinf_days	= 6
+	reserve_prop		= 0.1
+	panic_ratio_vs_ai	= 2.0
+	panic_ratio_vs_human	= 2.0
+	base_attack_odds	= 1.7
+	min_attack_odds		= 1.3
+	max_attack_odds		= 3.0
+	reinforce_odds		= 1.2
+	withdraw_odds		= 0.6
+
+	enemy_handicap = { }
+	passivity = { }
+}

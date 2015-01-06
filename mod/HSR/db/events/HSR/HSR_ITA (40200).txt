@@ -1,0 +1,2486 @@
+# Aregorn_ITA: Events for Italy (59)
+#
+# ID		Title						Author
+#
+# 40200    	Fiat-Revelli's Light Machine Gun 		(by Justin and Aregorn 050129)
+# 40201    	Ciano I 					(by Justin and Aregorn 050129)
+# 40202    	Ciano II 					(by Justin and Aregorn 050129)
+# 40203    	Victory in Ethiopia, Ciano returned 		(by Justin and Aregorn 050129)
+# 40204     	The Rome-Berlin Axis 				(by Justin and Aregorn 050129)
+# 40205     	Italian Monetary Policy 			(by Justin and Aregorn 050129)
+# 40206      	Italian Car Industry Policy 			(by Justin and Aregorn 050129)
+# 40207      	Mitragliatrice Breda MOD.37 			(by Justin and Aregorn 050129)
+# 40208	     	Victory in Ethiopia II 				(by Justin and Aregorn 050129)
+# 40209      	Sweden's Emergency Purchase  			(by Justin and Aregorn 050129)
+# 40210      	DB-601 fighter engines 				(by Justin and Aregorn 050129)
+# 40211     	Italy improves relations with Germany 		(by Justin and Aregorn 050129)
+# 40212     	Italian reaction to Czech Crisis  		(by Justin and Aregorn 050129)
+# 40213-15   	Giulio Douhet 					(by Justin and Aregorn 050129)
+# 40216-17	Italian intervention in the Spanish Civil War 	(by Justin and Aregorn 050129)
+# 40218 	Italy offers to join the War after Paris 	(by Justin and Aregorn 040817)
+# 40219 	Italy DOW on Greece 				(by Aregorn 030615)
+# 40220 	Italian air bombing campaign in Ethiopia	(by Aregorn 050406)
+# 40221 	Afrikakorps Italiani 				(by Aregorn 030527)
+# 40222-23	Italian Deployment in Africa 			(by Aregorn 030527)
+# 40224 	Vichy France - Return of occupied provinces 	(by Aregorn based on HOI2 050529)
+# 40225 	DAK control of Egyptian provinces 		(by Aregorn 050608)
+# 40226 	Afrikakorps I 					(by Aregorn 030527)
+# 40227 	Raids from Malta 				(by Aregorn 050630)
+# 40228-32 	Regia Marina programmes 			(by Aregorn 050205)
+# 40233-34 	Italian Battleship Modernization I 		(by Dec152000 050828)
+# 40235-40 	Operation C3 - Malta				(by Aregorn 051204)
+# 40241 	Military Research 				(by Aregorn 051223)
+# 40242 	War against Spain 				(by Aregorn 050605)
+# 40243 	Afrikakorps I 					(by Aregorn 030527)
+# 40244 	Afrikakorps II 					(by Aregorn 030527)
+# 40245-48 	Italy Surrenders 				(by Aregorn based on HOI2 event)
+# 40249 	Italian intervention in the SCW (A.I.)		(by Justin and Aregorn 050129)
+# 40250-53  	Regia Marina  					(by Dec152000 060120)
+# 40254  	Yugoslavian Ships 				(by Dec152000 060121)
+# 40255 	Independent Croatia 				(by Aregorn 060324)
+# 40256 	Italian Army - change of fate 			(by Aregorn 060602)
+# 40257 	Italian unemployment 				(by Aregorn 060608)
+# 40258 	France defeated 				(by Aregorn 050211)
+
+#########################################################################
+# 40200 Fiat-Revelli's Light Machine Gun (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40200
+	country = ita
+	random = no
+
+	trigger = { random = 50 supplies = 1000 not = { technology = 1031 }}
+
+	name = "Fiat-Revelli's Light Machine Gun"
+	desc = "Italy's premier light machine gun was first built in 1918 by Fiat-Revelli, under the permission of Army Chief of Staff Luigi Cadorna. Weighing 17kg, the 6.5mm calibre gun was water-cooled and used a 50-round magazine loaded via the gun's left side. World War One model suffer from frequent jamming. The new models gives 100-round magazines, with decreased jamming."
+	style = 0
+	picture = ita_40200_gun		#Steffele
+
+	date = { day = 5 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Sign the contract"
+		ai_chance = 100
+		command = { type = gain_tech which = 1030 }
+		command = { type = supplies value = -1000 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "We can not afford the new weapon."
+		command = {  }
+	}
+}
+#########################################################################
+# 40201 Ciano I (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40201
+	country = ita
+	random = no
+
+	trigger = { random = 50 war = { country = ita country = eth }}
+
+	name = "Ciano "
+	desc = "Gian Galeazzo Ciano was born in Livorno, Italy on 18 March 1903. He was the son of Admiral Costanzo Ciano, who had won the medal of honour in World War I. Galeazzo entered the political forum in 1925, married in 1930 Benito Mussolini's daughter Edda soon becoming Propaganda Minister of Fascist Italy. Ciano, a qualified pilot, wished to fly as a Volunteer in Ethiopia."
+	style = 0
+	picture = ita_40201-02_ciano		#Steffele
+
+	date = { day = 3 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Such bravery will stimulate nationalist sentiments"
+		ai_chance = 100
+		command = { type = dissent value = -1 }
+		command = { type = trigger which = 40202 }
+	}
+	action_b = {
+		name = "We can not afford loosing him."
+		ai_chance = 0
+		command = {  }
+	}
+}
+#########################################################################
+# 40202 Ciano II (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40202
+	country = ita
+	random = no
+
+	picture = news_paper
+
+	name = "Ciano was sent to Ethiopia"
+	desc = "Gian Galeazzo Ciano was born in Livorno, Italy on 18 March 1903. He was the son of Admiral Costanzo Ciano, who had won the medal of honour in World War I. Galeazzo entered the political forum in 1925, married in 1930 Benito Mussolini's daughter Edda soon becoming Propaganda Minister of Fascist Italy. Ciano, a qualified pilot, wished to fly as a Volunteer in Ethiopia."
+	style = 0
+	picture = ita_40201-02_ciano		#Steffele
+
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+#########################################################################
+# 40203 Victory in Ethiopia, Ciano returned (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40203
+	country = ita
+	random = no
+	picture = military_parade
+
+	trigger = { random = 50 event = 40202
+			not = { war = { country = ita country = eth } }
+	}
+
+	name = "Victory in Ethiopia, Ciano returned."
+	desc = "Gian Galeazzo Ciano flying with the 'La Disperata'squadron, was awarded two silver medals for valor. It is said that he personally dropped the first bombs in the war and was the first Italian to enter Addis Ababa."
+	style = 0
+
+	date = { day = 3 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "The people is thrilled"
+		command = { type = dissent value = -2 }
+	}
+}
+#########################################################################
+# 40204 The Rome-Berlin Axis (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40204
+	country = ita
+	random = no
+
+	trigger = { random = 50 }
+
+	name = "The Rome-Berlin Axis"
+	desc = "The Rome-Berlin Axis was born after a state visit from Mussolini to the German capital. The Armaments Minister was asked to capitalize on the moment authorizing bank loans to buy German technology to improve Italian war capabilities."
+	style = 0
+	picture = 40015_relations_italy_germany		#Mosquito
+
+	date = { day = 20 month = october year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Favour the Army with bank loans"
+		ai_chance = 30
+		command = { type = gain_tech which = 2050 }
+		command = { type = money value = -100 }
+	}
+	action_b = {
+		name = "Favour the Navy with bank loans"
+		ai_chance = 30
+		command = { type = gain_tech which = 3160 }
+		command = { type = money value = -100 }
+	}
+	action_c = {
+		name = "Favour the Air force with bank loans"
+		ai_chance = 40
+		command = { type = gain_tech which = 4140 }
+		command = { type = money value = -100 }
+	}
+	action_d = {
+		name = "We can not afford further military spending."
+		ai_chance = 0
+		command = {  }
+	}
+}
+#########################################################################
+# 40205 Italian Monetary Policy (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40205
+	country = ita
+	random = no
+
+	trigger = { random = 50 not = { war = { country = ita country = eng }}}
+
+	name = "Italian Monetary Policy"
+	desc = "Due to unforeseen military expenses, the government is forced to consider a new monetary policy. The Italian economy is still struggling to support the Ethiopian campaign and recover from a severe world depression. De-valuing the Italian currency will favour exports while decreasing imports, increasing the national treasure and Italian competition capabilities. On the other hand peoples savings and salaries will be drastically affected."
+	style = 0
+
+	picture = news_paper
+
+	date = { day = 18 month = november year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Devalue the Lira"
+		ai_chance = 100
+		command = { type = dissent value = 3 }
+		command = { type = supplies value = 1000 }
+		command = { type = industrial_modifier which = total value = 2 }
+
+	}
+	action_b = {
+		name = "Pursue bank loans"
+		ai_chance = 0
+		command = { type = dissent value = -2 }
+		command = { type = money value = 300 }
+
+	}
+}
+#########################################################################
+# 40206 Italian Car Industry Policy (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40206
+	country = ita
+	random = no
+
+	trigger = { random = 50 }
+
+	name = "Italian Car Industry Policy"
+	desc = "The Gruppo Orsi proposed to buy the Maserati auto company. For successful take over the government had to approve the sale. Traditionally Italian policies preferred many small automakers instead of few bigger once though. A change in policy would certainly improve vehicles designs and production for military and civilian use although it might forge dangerous powerful companies with real political influence."
+	style = 0
+
+	date = { day = 15 month = may year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Allow the merger"
+		ai_chance = 100
+		command = { type = gain_tech which = 1230 }
+		command = { type = domestic which = free_market value = -1 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "Do not allow the merger"
+		command = { type = domestic which = free_market value = 1 }
+	}
+}
+#########################################################################
+# 40207 Mitragliatrice Breda MOD.37 (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40207
+	country = ita
+	random = no
+
+	trigger = { random = 50 not = { technology = 1041 }}
+
+	name = "Mitragliatrice Breda MOD.37"
+	desc = "Breda introduced a new heavy machinegun for the Army with a uniquely Italian design. The MOD 37 used many tried-and-true technologies, along with better metals, to derive a hard-hitting 8mm gun system that uses 20 round clips. This weapon has an average firing rate of 250 rounds per minute, with a maximum range of 5200 meters. Effective range is 1000 meters."
+	style = 0
+	picture = 40207_m37	#by Mosquito
+
+	date = { day = 5 month = june year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need to modernise our infantry"
+		ai_chance = 100
+		command = { type = gain_tech which = 1120 }
+		command = { type = money value = -100 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "We can not afford the new weapon."
+		command = {  }
+	}
+}
+#########################################################################
+# 40208 Victory in Ethiopia II (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40208
+	country = ita
+	random = no
+
+	picture = military_parade
+
+	trigger = { random = 50 event = 40202
+		or = { not = { exists = eth } puppet = { country = eth country = ita } }
+	}
+
+	name = "Victory in Ethiopia."
+	desc = "On May 6 1937 Italian troops commanded by Pietro Badoglio were finally victorious in Ethiopia and King Vittorio Emanuele III was named Emperor of the former independent nation. Italian diplomats in New York reported that the League of Nations officially voted to lift its sanctions against Italy. Reacting to the good news, Mussolini himself announces that Fascist Italy is now the true heir of the Roman Empire."
+	style = 0
+
+	date = { day = 3 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "The people is thrilled"
+		command = { type = dissent value = -3 }
+		command = { type = domestic which = interventionism value = 1 }
+
+	}
+}
+#########################################################################
+# 40209 Sweden's Emergency Purchase  (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40209
+	country = ita
+	random = no
+
+#	trigger by aregorn_misc 40400
+
+	name = "Sweden's Emergency Purchase "
+	desc = "Official representatives of the Swedish Air Force approached the Italians once the war started with the purpose of buying some J-11, J-12, and Caproni Ca 313 fighters. The hostile situation in Europe has left them with few choices, as their own aviation industry is quite small."
+	style = 0
+	picture = 40209_j11	#mosquito
+	action_a = {
+		name = "Sell the fighters to Sweden"
+		ai_chance = 100
+		command = { type = money value = 2000 }
+		command = { type = supplies value = -2000 }
+		command = { type = trigger which = 40401 }
+		command = { type = relation which = swe value = 5 }
+		command = { type = dissent value = -2 }
+	}
+	action_b = {
+		name = "The selling might alter the military balance in scandinavia"
+		ai_chance = 0
+		command = { type = relation which = swe value = -5 }
+	}
+}
+#########################################################################
+# 40210 DB-601 Fighter engines (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40210
+	country = ita
+	random = no
+
+	trigger = { random = 50 supplies = 1000 not = { technology = 4060 } }
+
+	name = "DB-601 Fighter Engines"
+	desc = "A report from the Regia Aeronautica states that the best Italian fighters, manufactured by Macchi, are outdated. Macchi's chief designer, Mario Castoldi, suggested to buy Germany's DB-601 series engines. Alfa-Romeo could manufacture having those engines an improved interceptor that will be strong enough to defend Italy against any threat"
+	style = 0
+	picture = 40210_db_601_engine	#mosquito
+
+	date = { day = 20 month = may year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We need those engines"
+		command = { type = gain_tech which = 4060 }
+		command = { type = supplies value = -1000 }
+	}
+	action_b = {
+		name = "We can not afford them"
+		command = {  }
+	}
+}
+#########################################################################
+# 40211 Italy improves relations with Germany (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40211
+	country = ita
+	random = no
+
+	trigger = { random = 50 }
+
+	name = "Italy improved relations with Germany"
+	desc = "The Italian government begun a new policy of open support for Germany. In the Italian high circles though some fear that German engineering firms will out-bid Italian companies for the privilege of improving Italy's industrial capacity."
+	style = 0
+	picture = 40015_relations_italy_germany		#Mosquito
+
+	date = { day = 20 month = march year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Favor the German companies"
+		command = { type = dissent value = 2 }
+		command = { type = industrial_modifier which = total value = 2 }
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = relation which = ger value = 20 }
+		command = { type = money value = -200 }
+		command = { type = trigger which = 40015 }
+	}
+	action_b = {
+		name = "Favor the Italian companies"
+		command = { type = dissent value = -2 }
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = relation which = ger value = -5 }
+	}
+}
+#########################################################################
+# 40212 Italian reaction to Czech Crisis  (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40212
+	country = ita
+	random = no
+
+	trigger = { random = 50 supplies = 3000 }
+
+	name = "Italian reaction to Czech Crisis"
+	desc = "Mussolini enraged because The British and French did not seeking Italian counsel in the crisis. After a friendly consultation with Adolf Hitler, Mussolini decided it might be reasonable to improve military readiness to send a clear message to the allies adding important further pressure to the Munich meeting."
+	style = 0
+
+	date = { day = 1 month = september year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1938 }
+
+	action_a = {
+		name = "Reinforce the Army"
+		command = { type = add_division value = bergsjaeger }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = dissent value = 1 }
+		command = { type = supplies value = -2000 }
+		command = { type = manpowerpool value = -20 }
+	}
+	action_b = {
+		name = "Reinforce the Navy"
+		command = { type = add_division value = heavy_cruiser when = 2 }
+		command = { type = dissent value = 1 }
+		command = { type = supplies value = -2000 }
+		command = { type = manpowerpool value = -1 }
+
+	}
+	action_c = {
+		name = "Reinforce the Airforce"
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = dissent value = 1 }
+		command = { type = supplies value = -3000 }
+		command = { type = manpowerpool value = -1 }
+
+	}
+	action_d = {
+		name = "No military buildup will be required to show our support"
+		command = { }
+
+	}
+}
+#########################################################################
+# 40213 Giulio Douhet (by Justin and Aregorn)
+#########################################################################
+event = {
+	id = 40213
+	country = ita
+	random = no
+
+	trigger = { random = 50 supplies = 5000 not = { technology = 4224 } }
+
+	name = "Giulio Douhet "
+	desc = "Giulio Douhet (1869-1930) considered to be the father of Italian airpower theorized that Bombers would dominate the next war. Court-martial for his out-spoken views but later released when proven true at Caporetto by the Austrian victory over the Italian forces. Recalled and promoted to general (1921) he was appointed in 22' head of Italy's aviation program by Benito Mussolini."
+	style = 0
+	picture = 40213_giulido_douhet	#Mosquito
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 5
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Initiate a programme following Douhet's principles"
+		ai_chance = 100
+		command = { type = supplies value = -5000 }
+		command = { type = trigger which = 40214 }
+
+	}
+	action_b = {
+		name = "We can not afford it"
+		ai_chance = 0
+		command = {  }
+	}
+}
+event = {
+	id = 40214
+	country = ita
+	random = no
+
+#	trigger by 40213
+
+	name = "Bomber programme initiated"
+	desc = "Giulio Douhet (1869-1930) considered to be the father of Italian airpower theorized that Bombers would dominate the next war. Court-martial for his out-spoken views but later released when proven true at Caporetto by the Austrian victory over the Italian forces. Recalled and promoted to general (1921) he was appointed in 22' head of Italy's aviation program by Benito Mussolini."
+	style = 0
+
+	action_a = {
+		name = "ok"
+		command = { }
+	}
+}
+event = {
+	id = 40215
+	country = ita
+	random = no
+
+	trigger = { random = 50 event = 40214 }
+
+	name = "Bomber programme finished"
+	desc = "The Italian industry is ready to start plans for long range bombers."
+	style = 0
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = gain_tech which = 4220 }
+		command = { type = add_division value = strategic_bomber }
+	}
+	action_b = {
+		name = "ok"
+		command = { type = gain_tech which = 4220 }
+		command = { type = add_division value = tactical_bomber }
+		command = { type = add_division value = tactical_bomber }
+	}
+}
+###############################################################################################
+# 40216-17 Italian intervention in the Spanish Civil War (by Justin and Aregorn 050129)
+###############################################################################################
+event = {
+	id = 40216
+	country = ita
+	random = no
+
+	trigger = { ai = no event = 3100 war = { country = spr country = spa }
+			supplies = 2000
+			manpower = 80
+			NOT = {
+				OR = {
+					war = { country = ITA country = SPA }
+				}
+			}
+	}
+
+	name = "Italian intervention in the Spanish Civil War"
+	desc = "During the Spanish Civil War Italy sent 80,000 men to aid the Nationalists. Almost 6,000 men belonged to the Italian Air Force, 45,000 to the army and 29,000 to the fascist militia. Italy also supplied 1,800 cannon, 1,400 mortars, 3,400 machine-guns, 6,800 motor vehicles, 157 tanks, 213 bombers, 44 assault planes and 414 fighters."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+		name = "Send materiel and volunteers"
+		ai_chance = 100
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = SPA value = 20 }
+		command = { type = relation which = SPR value = -20 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = SOV value = -5 }
+		command = { type = relation which = GER value = 5 }
+		command = { type = manpowerpool value = -80 }
+		command = { type = supplies value = -2000 }
+		command = { type = money value = -100 }
+		command = { type = trigger which = 3003 } #SPA
+		command = { type = trigger which = 3720 } #USA
+		command = { type = belligerence which = ITA value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME2901B" # Franco needs no aid
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = SPR value = 20 }
+		command = { type = relation which = FRA value = 5 }
+		command = { type = relation which = ENG value = 5 }
+		command = { type = relation which = SOV value = 5 }
+		command = { type = relation which = GER value = -5 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = belligerence which = ITA value = -1 }
+	}
+}
+event = {
+	id = 40217
+	country = ita
+	random = no
+
+	trigger = {	event = 3003 exists = spa
+			or = { NOT = { exists = spr }
+			lost_VP = { country = spr value = 80 }	}
+
+	}
+
+	name = "Italian military returned from Spain with important combat experience"
+	desc = "Italian military returned home. Intensive studies to analyse the collected war experience had begun."
+	style = 0
+	picture = 40217_Italian_intervention_SCW	#Steffele
+
+	date = { day = 1 month = may year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = gain_tech which = 9070 }
+		command = { type = gain_tech which = 1320 }
+		command = { type = manpowerpool value = 70 }
+		command = { type = remove_division which = "Littorio" value = spa }
+		command = { type = remove_division which = "Dio lo Vuole" value = spa }
+		command = { type = remove_division which = "Fiamme Nere" value = spa }
+		command = { type = remove_division which = "Penne Nere" value = spa }
+		command = { type = remove_division which = "Cazas Aviación Legionaria" value = spa }
+		command = { type = remove_division which = "Bombarderos Aviación Legionaria" value = spa }
+	}
+
+}
+######################################################################################################
+# 40218 Italy offers to join the War after Paris (by Justin and Aregorn 040817)
+######################################################################################################
+event = {
+	id = 40218
+	random = no
+	country = ita
+
+	trigger = {	war = { country = ger country = eng }
+			random = 50 control = { province = 56 data = GER }
+			control = { province = 51 data = GER }
+			relation = { which = ger value = 10 }
+			NOT = {	war = { country = ger country = ita }}
+			NOT = {	alliance = { country = ger country = ita }}
+			}
+
+	name = "Italy offers to join the War"
+	desc = "After the fall of Paris it was clear that Germany was wining the War. Before it was too late, Italy conveniently wanted to join the victorious side to be part of the loot distribution of course."
+	style = 0
+	picture = paris #by Flecktarn
+
+	date = { day = 1 month = may year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		ai_chance = 100
+		name = "Offer Germany a Military alliance"
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = trigger which = 40047 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = "Italy is not yet prepared for War"
+		command = { }
+	}
+}
+#########################################################################
+# 40219 Italy DOW on Greece (by Aregorn 030615)
+#########################################################################
+event = {
+	id = 40219
+	random = no
+	country = ita
+
+	trigger = { 	random = 25
+			InCabinet = 3002
+			NOT = {	war = { country = ita country = gre }}
+			NOT = {	alliance = { country = ita country = gre }}
+			NOT = {	alliance = { country = ger country = gre }}
+			NOT = {	control = { province = 56 data = fra } }
+			exists = gre
+			control = { province = 391 data = ita }
+
+			}
+
+
+	name = "Italy declares war on Greece"
+	desc = "Mussolini wanting to show Germany that he can make his own war plans launched an offensive against Greece from recently occupied Albania."
+	style = 0
+
+	date = { day = 15 month = october year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the offensive"
+		ai_chance = 100
+		command = { type = war which = gre }
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = add_corps value = land where = 391 }
+		command = { type = add_division value = bergsjaeger }
+		command = { type = dissent value = -2 }
+		command = { type = supplies value = -1000 }
+	}
+	action_b = {
+		name = "Italy is not yet prepared for War with Greece"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40220 Italian massive air bombing campaign (by Aregorn 050406)
+#########################################################################
+
+event = {
+	id = 40220
+	random = no
+	country = eth
+
+	trigger = { ai = ita war = { country = ita country = eth } }
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Italian massive air bombing campaign"
+	desc = ""
+	style = 0
+
+	action_a = { name = "ok"
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+	command = { type = delete_unit which = -1 }
+
+	}
+}
+#########################################################################
+# 40221 Afrikakorps Italiani (by Aregorn 030527)
+#########################################################################
+
+event = {
+	id = 40221
+	country = ita
+	random = no
+
+	trigger = {	event = 40057 ai = yes ai = ger
+			supplies = 6000
+			war = { country = ita country = eng }
+			alliance = { country = GER country = ita }
+			control = { province = 525 data = ita }
+	}
+
+	name = "Italian Deployment in Africa"
+	desc = "Once Malta was taken, Axis convoys could freely supply North Africa"
+	style = 0
+
+	date = { day = 1 month = september year = 1939 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+	action_a = {
+		name = "Send reinforcements"
+		command = { type = manpowerpool value = -60 }
+		command = { type = supplies value = -6000 }
+		command = { type = add_corps which = "Afrikakorps Italiani" value = land when = 6084 where = 932 }
+		command = { type = add_division value = light_armor when = 1 }
+		command = { type = add_division value = light_armor when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+
+		command = { type = max_organization which = tactical_bomber value = 10 }
+		command = { type = max_organization which = cas value = 10 }
+		command = { type = max_organization which = naval_bomber value = 10 }
+		command = { type = max_organization which = multi_role value = 10 }
+	}
+	action_b = {
+		name = "We can not divert any more troops in Africa"
+		command = { }
+	}
+}
+#########################################################################
+# 40222 Italian Deployment in Africa (by Aregorn 030527)
+#########################################################################
+
+event = {
+	id = 40222
+	country = ita
+	random = no
+
+	trigger = {	ai = yes ai = ger
+			war = { country = ita country = eng }
+			control = { province = 525 data = ita }
+	}
+
+	name = "Italian Deployment in Africa"
+	desc = "Once Malta was taken, Axis convoys could freely supply North Africa"
+	style = 0
+
+	date = { day = 1 month = september year = 1939 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+	action_a = {
+		name = "Send reinforcements"
+		command = { type = manpowerpool value = -90 }
+		command = { type = add_corps which = "Afrikakorps Italiani" value = land when = 6015 where = 932 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+		command = { type = add_division value = infantry when = 1 }
+
+	}
+}
+#########################################################################
+#  40224 Vichy France - Return of occupied provinces (by Aregorn based on HOI2 050529)
+#########################################################################
+event = {
+	id = 40224
+	random = no
+	country = ita
+
+	trigger = {
+		exists = VIC not = { war = { country = ger country = ita } }
+	        }
+
+	name = "EVT_2022_NAME"
+	desc = "EVT_2022_DESC"
+	style = 0
+	picture = "VIC"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 4
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "OK" # Return occupied provinces as per agreement
+		command = { type = secedeprovince which = VIC value = 319 }
+		command = { type = secedeprovince which = VIC value = 320 }
+		command = { type = secedeprovince which = VIC value = 327 }
+		command = { type = secedeprovince which = VIC value = 328 }
+		command = { type = secedeprovince which = VIC value = 324 }
+		command = { type = secedeprovince which = VIC value = 322 }
+		command = { type = secedeprovince which = VIC value = 321 }
+		command = { type = secedeprovince which = VIC value = 359 }
+		command = { type = secedeprovince which = VIC value = 358 }
+		command = { type = secedeprovince which = VIC value = 362 }
+		command = { type = secedeprovince which = VIC value = 361 }
+		command = { type = secedeprovince which = VIC value = 360 }
+		command = { type = secedeprovince which = VIC value = 363 }
+		command = { type = secedeprovince which = VIC value = 364 }
+		command = { type = secedeprovince which = VIC value = 365 }
+		command = { type = secedeprovince which = VIC value = 528 }
+		command = { type = secedeprovince which = VIC value = 529 }
+		command = { type = secedeprovince which = VIC value = 367 }
+
+		command = { type = secedeprovince which = VIC value = 318 }
+
+		command = { type = secedeprovince which = VIC value = 942 }
+		command = { type = secedeprovince which = VIC value = 943 }
+# Not Nice	command = { type = secedeprovince which = VIC value = 366 }
+# Not Grenoble	command = { type = secedeprovince which = VIC value = 527 }
+
+# Tunisia	command = { type = secedeprovince which = VIC value = 934 }
+#		command = { type = secedeprovince which = VIC value = 935 }
+#		command = { type = secedeprovince which = VIC value = 936 }
+#		command = { type = secedeprovince which = VIC value = 937 }
+#		command = { type = secedeprovince which = VIC value = 938 }
+#		command = { type = secedeprovince which = VIC value = 939 }
+#		command = { type = secedeprovince which = VIC value = 940 }
+#		command = { type = secedeprovince which = VIC value = 941 }
+
+		command = { type = addcore which = 527 }
+		command = { type = addcore which = 366 }
+		}
+}
+#########################################################################
+# 40225 DAK control of Egyptian provinces (by Aregorn 050608)
+#########################################################################
+
+event = {
+	id = 40225
+	country = ita
+	random = no
+	persistent = yes
+
+	trigger = {	ai = yes
+			or = { garrison = { country = ger province = 908 type = land size = 1 }
+			garrison = { country = ger province = 910 type = land size = 1 }}
+			war = { country = ita country = eng } alliance = { country = ita country = ger }
+			or = {	control = { province = 908 data = ita }
+				control = { province = 909 data = ita }
+				control = { province = 910 data = ita } }
+	}
+
+	name = "DAK control of Egyptian provinces"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Give the DAK control of the provinces"
+		command = { type = secedeprovince which = ger value = 908 }
+		command = { type = secedeprovince which = ger value = 910 }
+		command = { type = secedeprovince which = ger value = 909 }
+
+	}
+}
+#########################################################################
+# 40226 Afrikakorps I (by Aregorn 030527)
+#########################################################################
+
+event = {
+	id = 40226
+	country = ita
+	random = no
+
+	trigger = { 	ai = ger ai = no NOT = { control = { province = 925 data = ita }} #Agedabia
+			control = { province = 932 data = ita } #Tripoli
+			war = { country = ita country = eng }
+			alliance = { country = GER country = ita }
+	}
+
+	name = "Deutsche Afrikakorps"
+	desc = "To help Italian efforts in North Africa Germany created the Afrikakorps, an army corp with elite elements under the command of E. Rommel. In the event the Corps successfully take over Alexandria, the Italians will grant full control of the province to Germany."
+	style = 0
+	picture = ger_40057_dak1	#Steffele
+
+	date = { day = 1 month = june year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare and send the Afrikakorps!"
+		command = { type = add_corps which = "Panzerarmee Afrika" value = land when = 230 where = 932 }
+		command = { type = activate_division which = 23500 value = 84 where = 932 }
+		command = { type = activate_division which = 23500 value = 85 where = 932 }
+		command = { type = activate_division which = 23500 value = 86 where = 932 }
+		command = { type = activate_division which = 23500 value = 87 where = 932 }
+		command = { type = activate_division which = 23500 value = 88 where = 932 }
+		command = { type = activate_division which = 23500 value = 89 where = 932 }
+		command = { type = supplies value = -2000 }
+
+		command = { type = add_corps value = air where = 932 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+	}
+	action_b = {
+		name = "We do not need German help"
+		command = { type = dissent value = -2 }
+	}
+}
+#########################################################################
+# 40227 Raids from Malta (by Aregorn 050630)
+#########################################################################
+
+event = {
+	id = 40227
+	country = ita
+	random = no
+	persistent = yes
+
+	trigger = {	or = { event = 40512 event = 40546 }
+			random = 25
+			control = { province = 932 data = ita }	#Tripoli
+			control = { province = 31 data = eng }	#Malta
+			or = { control = { province = 901 data = eng } control = { province = 348 data = eng }} #PS, Gibraltar
+			war = { country = GER country = ENG }
+			war = { country = ita country = ENG }
+	}
+
+	name = "Raids from Malta"
+	desc = "Malta in Allies hands proved to be deadly for Axis convoys in route to North Africa especially when the British managed to decode the Enigma."
+	style = 0
+	picture = 40509_enigma	#Steffele
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Another convoy to Tripoli intercepted!"
+		command = { type = supplies value = -200 where = 932 }
+		command = { type = oilpool value = -100 where = 932 }
+		command = { type = transport_pool which = ger value = -2 }
+		command = { type = trigger which = 40235 }
+	}
+}
+#########################################################################
+# 40228-32 Regia Marina programmes (by Aregorn 050205)
+#########################################################################
+event = {
+	id = 40228
+	random = no
+	country = ita
+	trigger = { ai = yes random = 25 atwar = yes
+			control = { province = 515 data = ita }
+}
+
+
+
+	name = "1941 Regia Marina programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = july year = 1941 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "1941 Regia Marina programme finished"
+
+
+		command = { type = add_division value = naval_bomber when = 6 }
+
+		command = { type = add_corps value = naval where = 515 }
+		command = { type = add_division value = destroyer when = 1 }
+		command = { type = add_division value = destroyer when = 1 }
+		command = { type = add_division value = light_cruiser when = 1 }
+		command = { type = add_division value = light_cruiser when = 1 }
+		command = { type = add_division value = heavy_cruiser when = 1 }
+		command = { type = add_division value = battlecruiser when = 1  }
+		command = { type = add_division value = carrier when = 2  where = cag }
+
+		command = { type = add_division value = transport  }
+		command = { type = add_division value = transport  }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = research_mod value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = tc_mod value = 5 }
+
+		}
+}
+
+event = {
+	id = 40229
+	random = no
+	country = ita
+	trigger = { ai = yes random = 25 atwar = yes
+			control = { province = 515 data = ita }
+}
+
+
+	name = "1942 Regia Marina programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = july year = 1942 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "1942 Regia Marina programme finished"
+
+		command = { type = add_division value = naval_bomber when = 6 }
+
+		command = { type = add_corps value = naval where = 515 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = heavy_cruiser when = 2 }
+		command = { type = add_division value = battlecruiser when = 1  }
+		command = { type = add_division value = carrier when = 2  where = cag }
+
+		command = { type = add_division value = transport  }
+		command = { type = add_division value = transport  }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = research_mod value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = tc_mod value = 5 }
+		}
+}
+
+
+event = {
+	id = 40230
+	random = no
+	country = ita
+	trigger = { ai = yes random = 25 atwar = yes
+			control = { province = 515 data = ita }
+}
+
+
+	name = "1943 Regia Marina programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = july year = 1943 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = {
+		name = "1943 Regia Marina programme finished"
+
+
+		command = { type = add_division value = naval_bomber when = 6 }
+
+		command = { type = add_corps value = naval where = 515 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = destroyer when = 2 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = heavy_cruiser when = 1 }
+		command = { type = add_division value = battlecruiser when = 1  }
+		command = { type = add_division value = carrier when = 2  where = cag }
+
+		command = { type = add_division value = transport  }
+		command = { type = add_division value = transport  }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = research_mod value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = tc_mod value = 5 }
+		}
+}
+
+
+event = {
+	id = 40231
+	random = no
+	country = ita
+	trigger = { ai = yes random = 25 atwar = yes
+			control = { province = 515 data = ita }
+}
+
+
+	name = "1944 Regia Marina programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 14
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "1944 Regia Marina programme finished"
+
+
+		command = { type = add_division value = naval_bomber when = 6 }
+
+		command = { type = add_corps value = naval where = 515 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3  }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = battlecruiser when = 1  }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_division value = transport  }
+		command = { type = add_division value = transport  }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = research_mod value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = tc_mod value = 5 }
+		}
+}
+
+
+event = {
+	id = 40232
+	random = no
+	country = ita
+	trigger = {	ai = yes random = 50 atwar = yes
+			control = { province = 515 data = ita }
+}
+
+
+	name = "1945 Regia Marina programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = july year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1945 }
+
+	action_a = {
+		name = "1945 Regia Marina programme finished"
+
+		command = { type = add_division value = naval_bomber when = 6 }
+
+		command = { type = add_corps value = naval where = 515 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3  }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+		command = { type = add_division value = battlecruiser when = 2 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_division value = transport  }
+		command = { type = add_division value = transport  }
+
+		command = { type = industrial_modifier which = total value = 1 }
+		command = { type = research_mod value = 1 }
+		command = { type = dissent value = -5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = tc_mod value = 5 }
+	}
+}
+#########################################################################
+# 40233-34 Italian Battleship Modernization I (by Dec152000 050828)
+#########################################################################
+
+event = {
+	id = 40233
+	country = ita
+	random = no
+
+	trigger = { control = { province = 378 data = ita }}
+
+	name = "Italian Battleship Modernization I"
+	desc = "In 1931 the Regia Marina began studies for modernizing the old WW1 Cavour class battleships.  The ships were completely gutted and the hull was modified to improve protection from torpedo attacks.  The main and secondary armament were upgraded as well.  The first two units have been successfully completed. Modernizing the RM Andrea Doria and RM Caio Duilio will require considerable Industrial Capacity. TECHNICAL NOTE: The ships will be upgraded from BC1 to BC3 and will be available in early 1940."
+	style = 0
+	picture = ita_40233_doria1	#Steffele
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Modernize the old battleships"
+		ai_chance = 99
+		command = { type = construct which = ic where = 378 value = -2 } # Venice
+		command = { type = remove_division which = 23500 value = 127 }
+		command = { type = remove_division which = 23500 value = 128 }
+		}
+	action_b = {
+		name = "The old battleships are sufficient"
+		ai_chance = 1
+		command = { type = sleepevent which = 40234 }
+		}
+}
+event = {
+	id = 40234
+	country = ita
+	random = no
+
+	trigger = { 	random = 25
+			control = { province = 378 data = ita }}
+
+	name = "Italian Battleship Modernization II"
+	desc = "The RM Andrea Doria and RM Caio Duilio are now ready to return to the fleet."
+	style = 0
+	picture = ita_40234_doria	#Steffele
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Deploy the ships"
+		command = { type = construct which = ic where = 378 value = 2 } # Venice
+		command = { type = activate_division which = 23500 value = 208 where = 378 }
+		command = { type = activate_division which = 23500 value = 210 where = 378 }
+		}
+}
+#########################################################################
+# 40235-40 Operation C3 (by Aregorn 051204)
+#########################################################################
+
+event = {
+	id = 40235
+	country = ita
+	random = no
+
+#	triggered by  aregorn_ita 40227
+
+	name = "Operation C3"
+	desc = "The Italian High command realised the important threat Malta represented and initiate preparations for Operation C3, an Airborne-Amphibious operation to subdue the small island."
+	style = 0
+	picture = ger_50110_malta1	#Steffele
+
+	action_a = {
+		name = "Plan the capture of Malta (when ready, 10000 supplies will be needed)"
+		ai_chance = 100
+		command = { type = supplies value = -1000 }
+		command = { type = oilpool value = -500 }
+	}
+	action_b = {
+		name = "No need for such a risky operation"
+		ai_chance = 0
+		command = { type = sleepevent which = 40236 }
+		command = { type = sleepevent which = 50110 }
+		command = { type = sleepevent which = 50111 }
+		command = { type = sleepevent which = 40237 }
+		command = { type = sleepevent which = 40238 }
+		command = { type = sleepevent which = 40239 }
+	}
+}
+
+event = {
+	id = 40236
+	random = no
+	country = ita
+
+	trigger = {	control = { province = 932 data = ita }
+			or = { 	and = { supplies = 10000 ai = no }
+				ai = yes
+			}
+			war = { country = ger country = eng }
+			war = { country = ita country = eng }
+			control = { province = 31 data = eng }
+			or = { flag = Alamein year = 1942 } event = 40235
+			or = { 	and = { random = 100 year = 1939 }
+				and = { random = 50 year = 1942 }
+			}
+	}
+
+	name = "Operation C3 - Ready to start"
+	desc = "Malta in Allies hands proved to be deadly for Axis convoys in route to North Africa. The Italians prepared a plan to take the island with a combined arms operation with such unprecedented information detail that even each of the British trenches depth was accurately calculated by the centimetre. Nevertheless Rommel sure of success in Egypt together with the negative Crete experience, call off the operation and brought the Folgore to Africa for what he thought would have been the final assault."
+	style = 0
+	picture = para1
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare the troops and consult with Germany"
+		ai_chance = 100
+		command = { type = supplies value = -10000  }
+		command = { type = manpowerpool value = -41 }
+		command = { type = sleepevent which = 40240 }
+		command = { type = trigger which = 50110 } #aregorn_ger
+		command = { type = sleepevent which = 50111 }
+	}
+	action_b = {
+		name = "We need the manpower and supplies to reinforce our African divisions"
+		ai_chance = 0
+		command = { type = supplies value = 1000 where = 932 }
+		command = { type = oilpool value = 500 where = 932 }
+		command = { type = sleepevent which = 50110 }
+		command = { type = sleepevent which = 50111 }
+		command = { type = sleepevent which = 40237 }
+		command = { type = sleepevent which = 40238 }
+		command = { type = sleepevent which = 40239 }
+		command = { type = sleepevent which = 40240 }
+	}
+	action_c = {
+		name = "Prepare the troops and start the operation"
+		ai_chance = 0
+		command = { type = supplies value = -10000  }
+		command = { type = manpowerpool value = -41 }
+		command = { type = sleepevent which = 50110 }
+		command = { type = sleepevent which = 50111 }
+		command = { type = sleepevent which = 40240 }
+		command = { type = trigger which = 40237 } #aregorn_ita
+	}
+}
+
+event = {
+	id = 40237
+	random = no
+	country = ita
+
+ #	triggered by  aregorn_ger 50110
+
+	name = "Operation C3 - Airborne assault"
+	desc = "The Folgore now on British soil, secured some Malta landing points for desperately needed reinforcements."
+	style = 0
+	picture = ger_50111_malta1	#Steffele
+
+	action_a = {
+		name = "Take off the Folgore and sail the Marines!"
+		ai_chance = 100
+		command = { type = add_corps when = 6088 value = land where = 31 }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+		command = { type = trigger which = 40238 } #aregorn_ita
+	}
+	action_b = {
+		name = "Take off the Folgore!"
+		ai_chance = 0
+		command = { type = add_corps when = 6088 value = land where = 31 }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+		command = { type = add_division value = paratrooper when = 0 where = sp_rct_artillery }
+	}
+	action_c = {
+		name = "Second thought, abort the mission"
+		ai_chance = 0
+		command = { type = supplies value = 5000  }
+		command = { type = manpowerpool value = 17 }
+		command = { type = sleepevent which = 40238 }
+		command = { type = sleepevent which = 40239 }
+		command = { type = supplies value = 1000 where = 932 }
+		command = { type = oilpool value = 500 where = 932 }
+		command = { type = trigger which = 40237 } #aregorn_ita
+	}
+}
+event = {
+	id = 40238
+	random = no
+	country = ita
+
+	name = "Operation C3 - Amphibious assault"
+	desc = "The Folgore now on British soil, secured some Malta landing points for desperately needed reinforcements."
+	style = 0
+	picture = ger_50111_malta1	#Steffele
+
+	action_a = {
+		name = "Send the Marines"
+		command = { type = add_corps when = 6029 value = land where = 31 }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+	}
+	action_b = {
+		name = "There is no need for more reinforcements."
+		command = { type = sleepevent which = 40239 }
+	}
+}
+event = {
+	id = 40239
+	random = no
+	country = ita
+
+	trigger = { event = 40237 random = 70 }
+
+	name = "Operation C3 - Reinforcements"
+	desc = "The landed Italian troops could use the reserve mountain troops to finish the battle."
+	style = 0
+	picture = ger_50111_malta1	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the Mountain troops"
+		command = { type = add_corps when = 6131 value = land where = 31 }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+	}
+	action_b = {
+		name = "There is no need for more reinforcements."
+	}
+}
+event = {
+	id = 40240
+	random = no
+	country = ita
+	persistent = yes
+
+	trigger = {	control = { province = 932 data = ita } not = { supplies = 10000 }
+			war = { country = ger country = eng }
+			war = { country = ita country = eng }
+			control = { province = 31 data = eng }
+			or = { flag = Alamein year = 1942 } event = 40235 not = { event = 40236 }
+			or = { 	and = { random = 10 year = 1939 }
+				and = { random = 50 year = 1942 }
+			}
+	}
+
+	name = "Operation C3 - German Help Request"
+	desc = "Malta in Allies hands proved to be deadly for Axis convoys in route to North Africa. The Italians prepared a plan to take the island with a combined arms operation with such unprecedented information detail that even each of the British trenches depth was accurately calculated by the centimetre. Nevertheless Rommel sure of success in Egypt and the bad experience gained on Crete, call off the operation and brought the Folgore to Africa for what he thought would have been the final assault."
+	style = 0
+	picture = ger_50111_malta1	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ask Germany for military equipment to start the operation"
+		ai_chance = 100
+		command = { type = manpowerpool value = -41 }
+		command = { type = trigger which = 50111 } #aregorn_ger
+	}
+	action_b = {
+		name = "We need the manpower to reinforce our African divisions"
+		ai_chance = 0
+		command = { type = supplies value = 1000 where = 932 }
+		command = { type = oilpool value = 500 where = 932 }
+		command = { type = sleepevent which = 50110 }
+		command = { type = sleepevent which = 50111 }
+		command = { type = sleepevent which = 40236 }
+		command = { type = sleepevent which = 40237 }
+		command = { type = sleepevent which = 40238 }
+		command = { type = sleepevent which = 40239 }
+	}
+}
+#########################################################################
+# 40241 Military Research (by Aregorn 051223)
+#########################################################################
+
+event = {
+	id = 40241
+	country = ita
+	random = no
+	persistent = yes
+
+	trigger = {	control = { province = 932 data = ita } supplies = 5000
+			war = { country = ita country = eng } random = 50
+			control = { province = 31 data = ita } vp = 75
+			year = 1939
+	}
+
+	name = "Military Research"
+	desc = "The Axis are achieving nothing but victories. Bombings from Malta are not an issue anymore and the new territories, material, goods and resources gained from the enemy allows if desired an increase in the military research output."
+	style = 0
+	picture = breaktroug_in_research
+
+	date = { day = 1 month = january year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Increase the Military Research budget"
+		ai_chance = 90
+		command = { type = supplies value = -5000 }
+		command = { type = research_mod value = 5 }
+		}
+	action_b = {
+		name = "We can not afford it at this time"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "Research is not a priority"
+		ai_chance = 10
+		command = { type = sleepevent which = 40241 }
+		}
+}
+#########################################################################
+# 40242 War against Spain (by Aregorn 050605)
+#########################################################################
+event = {
+	id = 40242
+	random = no
+	country = ita
+
+	trigger = { ai = no
+		or = { war = { country = ita country = spa }
+			war = { country = ita country = spr } }
+	}
+
+	name = "War against Spain"
+	desc = "The formal War declaration against Spain was not well received by neither the latin american countries nor any mayor power."
+	style = 0
+
+	date = { day = 22 month = july year = 1936 }
+	offset = 1
+	deathdate = { day = 31 month = december year = 1940 }
+
+	action_a = {
+		name = "ok"
+		command = { type = relation which = arg value = -100 }
+		command = { type = relation which = mex value = -100 }
+		command = { type = relation which = ven value = -100 }
+		command = { type = relation which = pru value = -100 }
+		command = { type = relation which = bol value = -100 }
+		command = { type = relation which = col value = -100 }
+		command = { type = relation which = ecu value = -100 }
+		command = { type = relation which = chl value = -100 }
+		command = { type = relation which = par value = -100 }
+		command = { type = relation which = gua value = -100 }
+		command = { type = relation which = cos value = -100 }
+		command = { type = relation which = nic value = -100 }
+		command = { type = relation which = hon value = -100 }
+		command = { type = relation which = cub value = -100 }
+		command = { type = relation which = hai value = -100 }
+		command = { type = relation which = dom value = -100 }
+		command = { type = relation which = sal value = -100 }
+		command = { type = relation which = ger value = -300 }
+		command = { type = relation which = usa value = -200 }
+		command = { type = relation which = eng value = -200 }
+		command = { type = relation which = fra value = -200 }
+		command = { type = relation which = sov value = -200 }
+		command = { type = belligerence which = ita value = 10 }
+		command = { type = dissent value = 20 }
+		command = { type = leave_alliance }
+	}
+}
+#########################################################################
+# 40243 Afrikakorps I (by Aregorn 030527)
+#########################################################################
+
+event = {
+	id = 40243
+	country = ita
+	random = no
+
+	trigger = { 	ai = ger ai = yes NOT = { control = { province = 925 data = ita }} #Agedabia
+			control = { province = 932 data = ita } #Tripoli
+			war = { country = ita country = eng }
+			alliance = { country = GER country = ita }
+	}
+
+	name = "Deutsche Afrikakorps"
+	desc = "To help Italian efforts in North Africa Germany created the Afrikakorps, an army corp with elite elements under the command of E. Rommel. In the event the corps successfully take over Alexandria, the Italians will grant full control of the province to Germany."
+	style = 0
+	picture = ger_40057_dak1	#Steffele
+
+	date = { day = 1 month = june year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare and send the Afrikakorps!"
+		command = { type = add_corps which = "Panzerarmee Afrika" value = land when = 230 where = 932 }
+		command = { type = activate_division which = 23500 value = 84 where = 932 }
+		command = { type = activate_division which = 23500 value = 85 where = 932 }
+		command = { type = activate_division which = 23500 value = 86 where = 932 }
+		command = { type = activate_division which = 23500 value = 87 where = 932 }
+		command = { type = activate_division which = 23500 value = 88 where = 932 }
+		command = { type = activate_division which = 23500 value = 89 where = 932 }
+		command = { type = activate_division which = 23500 value = 94 where = 932 }
+		command = { type = activate_division which = 23500 value = 95 where = 932 }
+		command = { type = activate_division which = 23500 value = 96 where = 932 }
+
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = armor when = 2 where = sp_artillery  }
+		command = { type = add_division value = motorized when = 0 where = sp_artillery  }
+
+		command = { type = add_corps value = air where = 932 }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+		command = { type = add_division value = tactical_bomber when = 2 where = escort }
+
+		command = { type = supplies value = -2000 }
+	}
+}
+#########################################################################
+# 40244 Afrikakorps II (by Aregorn 030527)
+#########################################################################
+
+event = {
+	id = 40244
+	country = ita
+	random = no
+
+	trigger = { 	ai = ger
+			control = { province = 932 data = ita } #Tripoli
+			war = { country = ita country = eng }
+			alliance = { country = GER country = ita } year = 1942
+	}
+
+	name = "Deutsche Afrikakorps Reinforcements"
+	desc = "To help Italian efforts in North Africa Germany created the Afrikakorps, an army corp with elite elements under the command of E. Rommel."
+	style = 0
+	picture = ger_40057_dak1	#Steffele
+
+	date = { day = 1 month = june year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Prepare and send the Afrikakorps!"
+		command = { type = add_corps which = "Panzerarmee Afrika" value = land when = 230 where = 932 }
+		command = { type = activate_division which = 23500 value = 90 where = 932 }
+		command = { type = activate_division which = 23500 value = 91 where = 932 }
+		command = { type = activate_division which = 23500 value = 92 where = 932 }
+		command = { type = activate_division which = 23500 value = 93 where = 932 }
+		command = { type = supplies value = -2000 }
+	}
+	action_b = {
+		name = "We do not need German help"
+		command = { type = dissent value = -2 }
+	}
+}
+###########################################
+# 40245-48 Italy Surrenders (by Aregorn based on HOI2 event)
+###########################################
+
+event = {
+	id = 40245
+	random = no
+	country = ITA
+
+	name = EVT_36_NAME
+	desc = EVT_36_DESC
+	style = 0
+	picture = "Ita_Surrender"
+
+	trigger = {
+		alliance = { country = ITA  country = GER }
+		war = { country = ITA country = ENG }
+		OR = {
+			headofgovernment = 3002 # Mussolini (FA)
+			headofgovernment = 3043 # Mussolini (NS)
+			headofgovernment = 3044 # Borghese  (NS)
+		}
+		random = 10
+		# Africa not in Italy hands
+		NOT = {
+			OR = {
+				control = { province = 932 data = ITA } #Tripoli not controlled by Italy
+				control = { province = 919 data = ITA } #Tobruk not controlled by Italy
+				control = { province = 924 data = ITA } #Benghazi not controlled by Italy
+				control = { province = 1046 data = ITA } #Addis Abeba not controlled by Italy
+				control = { province = 939 data = ITA } #Tunis not controlled by Italy
+				}
+			}
+
+		# South Italy invaded
+		NOT = {
+			and = {
+				control = { province = 515 data = ITA } #Roma not controlled by Italy
+				control = { province = 523 data = ITA } #Taranto not controlled by Italy
+				control = { province = 525 data = ITA } #Siracusa not controlled by Italy
+				control = { province = 526 data = ITA } #Messina not controlled by Italy
+				control = { province = 522 data = ITA } #Cosenza not controlled by Italy
+				control = { province = 521 data = ITA } #Napoli not controlled by Italy
+				and = {
+					control = { province = 524 data = ITA } #Calabria
+					control = { province = 525 data = ITA } #Palermo
+				}
+			}
+
+
+		}
+	}
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "Negotiate a way out of the war"
+		ai_chance = 100
+		command = { type = trigger which = 40247 }
+	}
+	action_b = {
+		name = EVT_36_ACTB
+		ai_chance = 0
+		command = { type = dissent value = 10 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = manpowerpool value = -200 }
+		command = { type = sleepevent which = 37 }
+	}
+}
+event = {
+	id = 40247
+	random = no
+	country = eng
+
+	name = EVT_36_NAME
+	desc = EVT_36_DESC
+	style = 0
+	picture = "Ita_Surrender"
+
+	action_a = {
+		name = "Demand all Italian Colonies and for Italy to join the Allies"
+		ai_chance = 100
+		command = { type = trigger which = 40248 } #Italy Surrenders
+	}
+	action_b = {
+		name = "To late for that"
+		ai_chance = 0
+		command = { }
+	}
+}
+event = {
+	id = 40248
+	random = no
+	country = eng
+
+	name = EVT_36_NAME
+	desc = EVT_36_DESC
+	style = 0
+	picture = "Ita_Surrender"
+
+	action_a = {
+		name = "Italy is getting ready to join the Allies"
+		command = { }
+	}
+}
+
+event = {
+	id = 40246
+	random = no
+	country = ITA
+
+	name = EVT_36_NAME
+	desc = EVT_36_DESC
+	style = 0
+	picture = "Ita_Surrender"
+
+	trigger = { 	or = { 	event = 45029
+				not = { ai = ger }
+				}
+			event = 40248
+
+	}
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = EVT_36_ACTA
+		ai_chance = 100
+		command = { type = set_domestic which = democratic value = 6 }
+		command = { type = set_domestic which = political_left value = 2 }
+		command = { type = headofstate which = 3036 }
+		command = { type = headofgovernment which = 3048 }
+		command = { type = foreignminister which = 3055 }
+		command = { type = armamentminister which = 3076 }
+		command = { type = ministerofsecurity which = 3100 }
+		command = { type = ministerofintelligence which = 3118 }
+		command = { type = chiefofstaff which = 3125 }
+		command = { type = chiefofarmy which = 3144 }
+		command = { type = chiefofnavy which = 3154 }
+		command = { type = chiefofair which = 3165 }
+		command = { type = dissent value = -10 }
+		command = { type = leave_alliance }
+		command = { type = domestic which = freedom value = 4 }
+		command = { type = set_relation which = SOV value = 30 }
+		command = { type = set_relation which = USA value = 50 }
+		command = { type = set_relation which = ENG value = 50 }
+		command = { type = set_relation which = GER value = -40 }
+
+		### Provinces seceded to Germany
+		command = { type = secedeprovince which = GER value = 373 } #Lech
+		### Colonial Provinces seceded to England
+		command = { type = secedeprovince which = ENG value = 931 } #Ghadames
+		command = { type = secedeprovince which = ENG value = 932 } #Tripoli
+		command = { type = secedeprovince which = ENG value = 933 } #Zuara
+		command = { type = secedeprovince which = ENG value = 918 } #Forte Maddalena
+		command = { type = secedeprovince which = ENG value = 917 } #Forte Capuzzo
+		command = { type = secedeprovince which = ENG value = 927 } #Aujila
+		command = { type = secedeprovince which = ENG value = 916 } #Bardiyah
+		command = { type = secedeprovince which = ENG value = 926 } #Al Jaghbub
+		command = { type = secedeprovince which = ENG value = 930 } #Homs
+		command = { type = secedeprovince which = ENG value = 920 } #Darnah
+		command = { type = secedeprovince which = ENG value = 919 } #Tobruk
+		command = { type = secedeprovince which = ENG value = 924 } #Benghazi
+		command = { type = secedeprovince which = ENG value = 921 } #Mechili
+		command = { type = secedeprovince which = ENG value = 922 } #Msus
+		command = { type = secedeprovince which = ENG value = 923 } #Barca
+		command = { type = secedeprovince which = ENG value = 925 } #Agedabia
+		command = { type = secedeprovince which = ENG value = 929 } #Sirte
+		command = { type = secedeprovince which = ENG value = 928 } #Socna
+		command = { type = secedeprovince which = ENG value = 1015 } #Ghat
+		command = { type = secedeprovince which = ENG value = 1016 } #Murzuk
+		command = { type = secedeprovince which = ENG value = 1017 } #Calansho Sand Sea
+		command = { type = secedeprovince which = ENG value = 1018 } #Kufra
+		command = { type = secedeprovince which = ENG value = 1036 } #Zeila
+		command = { type = secedeprovince which = ENG value = 1038 } #Asab
+		command = { type = secedeprovince which = ENG value = 1033 } #Massaua
+		command = { type = secedeprovince which = ENG value = 1039 } #Asmara
+		command = { type = secedeprovince which = ENG value = 1035 } #Berbera
+		command = { type = secedeprovince which = ENG value = 1034 } #Obbia
+		command = { type = secedeprovince which = ENG value = 1058 } #Kismayo
+		command = { type = secedeprovince which = ENG value = 1056 } #Mogadishu
+		command = { type = secedeprovince which = FRA value = 1037 } #Djibouti
+		command = { type = secedeprovince which = ENG value = 1055 } #Bardera
+		command = { type = secedeprovince which = ENG value = 398 } #Dodecanese
+		### Ethiopia to UK control###
+		command = { type = secedeprovince which = ENG value = 1050 } #Dire dawa
+		command = { type = secedeprovince which = ENG value = 1042 } #Gondar
+		command = { type = secedeprovince which = ENG value = 1047 } #Jimma
+		command = { type = secedeprovince which = ENG value = 1046 } #Addis Ababa
+		command = { type = secedeprovince which = ENG value = 1051 } #Harar
+		command = { type = secedeprovince which = ENG value = 1052 } #Ginir
+		command = { type = secedeprovince which = ENG value = 1048 } #Adwa
+		command = { type = secedeprovince which = ENG value = 1049 } #Denakil
+		command = { type = secedeprovince which = ENG value = 1043 } #Dese
+		command = { type = secedeprovince which = ENG value = 1044 } #Debre Markos
+		command = { type = secedeprovince which = ENG value = 1045 } #Gambela
+		command = { type = secedeprovince which = ENG value = 1053 } #Moyale
+		command = { type = secedeprovince which = ENG value = 1054 } #Ogaden
+		### Greece and Yugoslavia to GER ###
+		command = { type = secedeprovince which = GER value = 384 }
+		command = { type = secedeprovince which = GER value = 387 }
+		command = { type = secedeprovince which = GER value = 388 }
+		command = { type = secedeprovince which = GER value = 389 }
+		command = { type = secedeprovince which = GER value = 390 }
+		command = { type = secedeprovince which = GER value = 391 }
+		command = { type = secedeprovince which = GER value = 413 }
+		command = { type = secedeprovince which = GER value = 392 }
+		command = { type = secedeprovince which = GER value = 402 }
+		command = { type = secedeprovince which = GER value = 393 }
+		command = { type = secedeprovince which = GER value = 394 }
+		command = { type = secedeprovince which = GER value = 395 }
+		command = { type = secedeprovince which = GER value = 406 }
+		command = { type = secedeprovince which = GER value = 409 }
+		### Continental Italy to England
+		#command = { type = secedeprovince which = ENG value = 897 } #Messina
+		#command = { type = secedeprovince which = ENG value = 898 } #Siracusa
+		#command = { type = secedeprovince which = ENG value = 903 } #Cosenza
+		#command = { type = secedeprovince which = ENG value = 902 } #Potenza
+		#command = { type = secedeprovince which = ENG value = 901 } #Napoli
+		#command = { type = secedeprovince which = ENG value = 900 } #Bari
+		#command = { type = secedeprovince which = ENG value = 908 } #Rome
+
+
+		###Removal of non-Italian cores###
+		command = { type = removecore which = 931 } #Ghadames
+		command = { type = removecore which = 932 } #Tripoli
+		command = { type = removecore which = 933 } #Zuara
+		command = { type = removecore which = 918 } #Forte Maddalena
+		command = { type = removecore which = 917 } #Forte Capuzzo
+		command = { type = removecore which = 927 } #Aujila
+		command = { type = removecore which = 916 } #Bardiyah
+		command = { type = removecore which = 926 } #Al Jaghbub
+		command = { type = removecore which = 930 } #Homs
+		command = { type = removecore which = 920 } #Darnah
+		command = { type = removecore which = 919 } #Tobruk
+		command = { type = removecore which = 924 } #Benghazi
+		command = { type = removecore which = 921 } #Mechili
+		command = { type = removecore which = 922 } #Msus
+		command = { type = removecore which = 923 } #Barca
+		command = { type = removecore which = 925 } #Agedabia
+		command = { type = removecore which = 929 } #Sirte
+		command = { type = removecore which = 928 } #Socna
+		command = { type = removecore which = 1015 } #Ghat
+		command = { type = removecore which = 1016 } #Murzuk
+		command = { type = removecore which = 1017 } #Calansho Sand Sea
+		command = { type = removecore which = 1018 } #Kufra
+		command = { type = removecore which = 1036 } #Zeila
+		command = { type = removecore which = 1038 } #Asab
+		command = { type = removecore which = 1033 } #Massaua
+		command = { type = removecore which = 1039 } #Asmara
+		command = { type = removecore which = 1035 } #Berbera
+		command = { type = removecore which = 1034 } #Obbia
+		command = { type = removecore which = 1058 } #Kismayo
+		command = { type = removecore which = 1056 } #Mogadishu
+		command = { type = removecore which = 1037 } #Djibouti
+		command = { type = removecore which = 1055 } #Bardera
+		command = { type = removecore which = 384 }
+		command = { type = removecore which = 387 }
+		command = { type = removecore which = 388 }
+		command = { type = removecore which = 389 }
+		command = { type = removecore which = 381 } #Rijeka
+		command = { type = removecore which = 398 }
+
+		command = { type = capital which = 893 } #Taranto
+
+		command = { type = sleepleader which = 6029 }
+		command = { type = sleepleader which = 6031 }
+		command = { type = sleepleader which = 6057 }
+		command = { type = sleepleader which = 6249 }
+		command = { type = sleepleader which = 6250 }
+		command = { type = sleepleader which = 6065 }
+		command = { type = sleepleader which = 6074 }
+		command = { type = sleepleader which = 6084 }
+		command = { type = sleepleader which = 6258 }
+		command = { type = sleepleader which = 6261 }
+		command = { type = sleepleader which = 6263 }
+		command = { type = sleepleader which = 6266 }
+		command = { type = sleepleader which = 6124 }
+		command = { type = sleepleader which = 6269 }
+		command = { type = sleepleader which = 6274 }
+		command = { type = sleepleader which = 6275 }
+		command = { type = sleepleader which = 6164 }
+		command = { type = sleepleader which = 6173 }
+		command = { type = sleepleader which = 6276 }
+		command = { type = sleepleader which = 6188 }
+		command = { type = sleepleader which = 6277 }
+		command = { type = sleepleader which = 6201 }
+		command = { type = sleepleader which = 6206 }
+		command = { type = sleepleader which = 6218 }
+		command = { type = sleepleader which = 6233 }
+		command = { type = sleepleader which = 6278 }
+		command = { type = sleepleader which = 6237 }
+
+		command = { type = sleepleader which = 6054 }
+		command = { type = sleepleader which = 6076 }
+		command = { type = sleepleader which = 6079 }
+		command = { type = sleepleader which = 6257 }
+
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+		command = { type = delete_unit which = -1 }
+
+
+		command = { type = trigger which = 37 } #Italy Surrenders
+	}
+	action_b = {
+		name = EVT_36_ACTB
+		ai_chance = 0
+		command = { type = dissent value = 10 }
+		command = { type = domestic which = political_left value = -1 }
+		command = { type = domestic which = freedom value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = manpowerpool value = -200 }
+		command = { type = sleepevent which = 37 }
+	}
+}
+###############################################################################################
+# 40249 Italian intervention in the Spanish Civil War A.I. (by Justin and Aregorn 050129)
+###############################################################################################
+event = {
+	id = 40249
+	country = ita
+	random = no
+
+	trigger = { 	ai = yes event = 3100 war = { country = spr country = spa }
+			manpower = 80
+			NOT = {
+				OR = {
+					war = { country = ITA country = SPA }
+				}
+			}
+	}
+
+	name = "Italian intervention in the Spanish Civil War"
+	desc = "."
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+action_a = {
+		name = "Send materiel and volunteers"
+		ai_chance = 100
+		command = { type = domestic which = interventionism value = 1 }
+		command = { type = relation which = SPA value = 20 }
+		command = { type = relation which = SPR value = -20 }
+		command = { type = relation which = FRA value = -5 }
+		command = { type = relation which = ENG value = -5 }
+		command = { type = relation which = SOV value = -5 }
+		command = { type = relation which = GER value = 5 }
+		command = { type = manpowerpool value = -80 }
+		command = { type = money value = -100 }
+		command = { type = trigger which = 3003 } #SPA
+		command = { type = trigger which = 3720 } #USA
+		command = { type = belligerence which = ITA value = 1 }
+	}
+	action_b = {
+		name = "ACTIONNAME2901B" # Franco needs no aid
+		ai_chance = 0
+		command = { type = dissent value = 5 }
+		command = { type = relation which = SPA value = -20 }
+		command = { type = relation which = SPR value = 20 }
+		command = { type = relation which = FRA value = 5 }
+		command = { type = relation which = ENG value = 5 }
+		command = { type = relation which = SOV value = 5 }
+		command = { type = relation which = GER value = -5 }
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = belligerence which = ITA value = -1 }
+	}
+}
+#########################################################################
+# 40250-53  Regia Marina  (by Dec152000 060120 mod by Aregorn)
+#########################################################################
+event = {
+	id = 40250
+	random = no
+	country = ita
+
+	trigger = { }
+
+	name = "Regia Marina"
+	desc = "The Regia Marina was the premier military force in Fascist Italy.  The new BBs being built are a state of the art design and the RM cruisers were well designed, but emphasize speed over protection.  On the other hand, the RM doctrines have not changed greatly since the end of WW1.  Also, due to a Mediterranean focus, ships tend to have noticeably lower range.  Italian submarines tended to be large and have poor combat capability and are really only suitable for scouting and raiding."
+	style = 0
+	picture = ita_40251	#Steffele
+
+	date = { day = 10 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We are prepared for the Frenchmen"
+		ai_chance = 100
+		command = { type = build_time which = naval where = relative value = 10} # Slow shipyards
+	 	command = { type = build_cost which = naval where = relative value = -10 }
+
+		command = { type = range which = battleship value = -800 } # Poor range
+	 	command = { type = build_cost which = battleship where = relative value = 5 } # Very large
+	  	command = { type = naval_attack which = battleship value = -2 } # Very poor throw weight/FC/ammo
+		command = { type = air_attack which = battleship value = -1 } # Inadequate AA defense
+		command = { type = fuel_consumption which = battleship value = 0.2} # poor fuel economy
+		command = { type = minisub_bonus value = 3 }
+
+		command = { type = range which = battlecruiser value = -1000 }
+	  	command = { type = speed which = battlecruiser value = 1 } # Fast
+	  	command = { type = naval_defense which = battlecruiser value = 1 } # superior armor (fast BB)
+	  	command = { type = naval_attack which = battlecruiser value = 2 } # Good throw weight
+	  	command = { type = shore_attack which = battlecruiser value = 1 } # Good throw weight
+	  	command = { type = max_positioning which = battlecruiser value = 0.01 }
+	  	command = { type = min_positioning which = battlecruiser value = 0.01 }
+
+		command = { type = range which = carrier value = -1000 }
+
+		command = { type = naval_defense which = heavy_cruiser value = 1 }
+	  	command = { type = speed which = heavy_cruiser value = 1 } # Fast
+	  	command = { type = max_positioning which = heavy_cruiser value = 0.01 }
+	  	command = { type = min_positioning which = heavy_cruiser value = 0.01 }
+
+		command = { type = range which = heavy_cruiser value = -800 }
+		command = { type = fuel_consumption which = heavy_cruiser value = 0.5 }
+
+	  	command = { type = naval_attack which = light_cruiser value = -1 } # Poor throw weight
+	  	command = { type = shore_attack which = light_cruiser value = -1 } # Poor throw weight
+	  	command = { type = speed which = light_cruiser value = 1 } # Fast
+	  	command = { type = max_positioning which = light_cruiser value = 0.01 }
+	  	command = { type = min_positioning which = light_cruiser value = 0.01 }
+		command = { type = range which = light_cruiser value = -800 }
+		command = { type = sub_detection  which = light_cruiser value = -1 }
+
+		command = { type = range which = destroyer value = -500 }
+		command = { type = fuel_consumption which = destroyer value = 0.3 }
+	  	command = { type = naval_attack which = destroyer value = -2 } # Miserable torpedoes
+	  	command = { type = shore_attack which = destroyer value = -1 } # Light guns
+		command = { type = sub_detection  which = destroyer value = -1 }
+
+		command = { type = naval_defense which = submarine value = -1 } Large boats, weak hulls, slow diving
+		command = { type = air_defense which = submarine value = -1 } # Slow diving, big
+		command = { type = visibility which = submarine value = 1 } # big
+
+		command = { type = scrap_model which = battleship value = 2 }
+		command = { type = scrap_model which = heavy_cruiser value = 1 }
+		command = { type = scrap_model which = light_cruiser value = 2 }
+		command = { type = scrap_model which = destroyer value = 1 }
+
+	}
+}
+##############################
+event = {
+	id = 40251
+	random = no
+	country = ita
+
+	trigger = { }
+
+	name = "Regia Marina Naval Plan"
+	desc = "The Regia Marina is in the middle of modernization plan.  Two Cavour class BBs are currently being modernized and 2 new Littorio class BBs are under construction.  In 1938 the remaining 2 Cavour class ships will enter modernization and 2 more Littorio class BBs will be laid down.  TECHNICAL NOTE:  Choosing to follow the plan will result in further events and will influence AI ship construction.  If you elect to choose the Regia Marina plan keep track of any additional BB production you order."
+	style = 0
+	picture = ita_40251	#Steffele
+
+	date = { day = 11 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -7.5 }
+	 	command = { type = build_time which = battlecruiser where = relative value = -7.5 }
+		command = { type = supplies value = -3000 }
+		command = { type = setflag which = ITAPlan }
+	}
+	action_b = {
+		name = "We do not need the RM plan"
+		ai_chance = 0
+		command = { type = dissent value = 6 }
+		command = { type = sleepevent which = 40252 }
+		command = { type = sleepevent which = 40253 }
+		command = { type = sleepevent which = 40233 }
+		command = { type = sleepevent which = 40234 }
+	}
+}
+##############################
+event = {
+	id = 40252
+	random = no
+	country = ita
+	style = 0
+
+	trigger = { 	atwar = no ai = yes
+	}
+
+	date = { day = 14 month = may year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "RM Impero Laid Down"
+	desc = "With much fanfare the keel of the RM Impero is laid down. (Historical commission October, 1943)."
+	style = 0
+	picture = american_naval_reinforcments2
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+##############################
+event = {
+	id = 40253
+	random = no
+	country = ita
+	style = 0
+
+	trigger = { 	atwar = no ai = yes
+	}
+
+	date = { day = 18 month = september year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "RM Roma Laid Down"
+	desc = "With much fanfare the keel of the RM Roma is laid down. (Historical completion June, 1942)."
+	style = 0
+	picture = ita_40253_roma1	#Steffele
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+#########################################################################
+# 40254  Yugoslavian Ships (by Dec152000 060121)
+#########################################################################
+event = {
+	id = 40254
+	random = no
+	country = ita
+	trigger = { 	event = 40707 #occupation Yugoslavia
+			random = 25
+			supplies = 500
+			manpower = 2
+			alliance = { country = GER country = ita }
+			control = { province = 515 data = ita } # Roma
+			control = { province = 384 data = ita } #Split
+}
+	name = "Yugoslavian Ships"
+	desc = "Following the occupation of Yugoslavia a number of small naval vessels became available to the Regia Marina.  These ships will make excellent escorts for our convoys."
+	style = 0
+	picture = ita_40254_yugo1	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Put the ships to use"
+		ai_chance = 100
+		command = { type = add_division value = destroyer when = 1 }
+		command = { type = escort_pool which = ITA value = 20 }
+		command = { type = supplies value = -250 }
+		command = { type = manpowerpool value = -2 }
+
+		}
+	action_b = {
+		name = "We do not need those old scows"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40255 Independent Croatia (by Aregorn 060324)
+#########################################################################
+event = {
+	id = 40255
+	random = no
+	country = ita
+	trigger = {	alliance = { country = ger country = ita }
+			exists = CRO
+			alliance = { country = ita country = cro }
+	}
+
+	name = "Independent Croatia"
+	desc = "The Croats would like to obtain all their rightful territories"
+	style = 0
+	picture = "Croatia"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "We must comply with our friends request"
+		ai_chance = 100
+		command = { type = secedeprovince which = cro value = 388 }
+		command = { type = secedeprovince which = cro value = 381 }
+		command = { type = secedeprovince which = cro value = 384 }
+		command = { type = secedeprovince which = cro value = 387 }
+		command = { type = manpowerpool value = 20 }
+	}
+	action_b = {
+		name = "They should be happy with what the have already"
+		ai_chance = 0
+		command = { type = province_revoltrisk which = 388 value = 20 }
+		command = { type = province_revoltrisk which = 381 value = 20 }
+		command = { type = province_revoltrisk which = 384 value = 20 }
+		command = { type = province_revoltrisk which = 387 value = 20 }
+	}
+}
+#########################################################################
+# 40256 Italian Army - change of fate (by Aregorn 060602)
+#########################################################################
+
+event = {
+	id = 40256
+	random = no
+	country = ita
+
+	trigger = { 	event = 40419
+			or = {
+				and = { vp = 75
+					not = { control = { province = 364 data = ita } }
+					not = { control = { province = 527 data = ita } }
+				}
+				vp = 82
+			}
+	}
+
+	name = "Italian Army"
+	desc = "The chain of military successes not only gave the necessary motivation to fight to the average soldier but also gave invaluable confidence to the Italian military leadership."
+	style = 0
+
+	date = { day = 1 month = december year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Well..."
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = morale which = infantry value = 25 }
+		command = { type = morale which = motorized value = 25 }
+		command = { type = morale which = mechanized value = 25 }
+		command = { type = morale which = light_armor value = 25 }
+		command = { type = morale which = armor value = 25 }
+		command = { type = morale which = hq value = 25 }
+		command = { type = max_organization which = land value = 15 }
+		command = { type = max_organization which = bergsjaeger value = -15 }
+		command = { type = max_organization which = marine value = -15 }
+		command = { type = max_organization which = paratrooper value = -15 }
+		command = { type = domestic which = professional_army value = 2 }
+		command = { type = morale which = air value = 25 }
+		command = { type = max_organization which = air value = 10 }
+		command = { type = morale which = naval value = 25 }
+		}
+}
+#########################################################################
+# 40257 Italian unemployment (by Aregorn 060608)
+#########################################################################
+event = {
+	id = 40257
+	random = no
+	country = ita
+	persistent = yes
+
+	trigger = {	ai = no atwar = no
+			not = {
+				or = { 	and = { infantry = { country = ita value = 31 } militia = { country = ita value = 10 } bergsjaeger = { country = ita value = 5 }
+					}
+					and = { infantry = { country = ita value = 31 } bergsjaeger = { country = ita value = 8 }
+					}
+				}
+			}
+		or = {
+			and = {	manpower = 550 year = 1936 month = 4 day = 0 not = { day = 1 } not = { month = 5 } }
+			and = {	manpower = 600 year = 1936 month = 10 day = 0 not = { day = 1 } not = { month = 11 } }
+			and = {	manpower = 650 year = 1937 month = 4 day = 0 not = { day = 1 } not = { month = 5 } }
+			and = {	manpower = 700 year = 1937 month = 4 day = 0 not = { day = 1 } not = { month = 11 } }
+			and = {	manpower = 750 year = 1938 month = 4 day = 0 not = { day = 1 } not = { month = 5 } }
+			and = {	manpower = 800 year = 1938 month = 4 day = 0 not = { day = 1 } not = { month = 11 } }
+			and = {	manpower = 850 year = 1939 month = 4 day = 0 not = { day = 1 } not = { month = 5 } }
+			and = {	manpower = 900 year = 1939 month = 4 day = 0 not = { day = 1 } not = { month = 11 } }
+		}
+	}
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "Italian unemployment"
+	desc = "Idle manpower is growing without real job offers which together with the bad recesion context is producing severe unemployment and dissent among the population. Reducing free idle manpower maybe by increasing the army forces and most importantly keeping the original military OOB manpower will reduce the problem."
+	style = 0
+	picture = ger_40009_crisis
+
+	action_a = {
+		command = { type = dissent value = 5 }
+	}
+}
+#########################################################################
+#  40258 France defeated (by Aregorn 050211)
+#########################################################################
+event = {
+	id = 40258
+	country = ita
+	random = no
+
+	trigger = { 	not = { or = { 	war = { country = spa country = ger }
+					war = { country = spr country = ger }
+				}
+			}
+			or = { 	exists = vic
+				not = { exists = fra }
+			}
+			war = { country = ita country = fra }
+	}
+
+	name = "France has been defeated"
+	desc = "Against all predictions France is now under Axis control leaving the British as the only European power holding against the Axis. The War end seems near."
+	style = 0
+	picture = 47010_fra_occupation	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "Good"
+		command = { type = dissent value = -10 }
+	}
+}

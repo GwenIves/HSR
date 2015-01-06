@@ -1,0 +1,316 @@
+# Aregorn_Commonwealth : Events for the Commonwealth countries but thr UK (11)
+#
+# ID		Title						Author
+#
+
+# 43001-10 	Commonwealth Military Forces 			(Dec152000 and Aregorn 060305)
+
+#########################################################################################
+# 43001-10 Commonwealth Military Forces (Dec152000 and Aregorn 060305)
+#########################################################################################
+event = {
+	id = 43001
+	random = no
+	country = eng
+
+	trigger = { ai = no }
+
+	name = "Commonwealth Military Forces"
+	desc = "During WW2, many units from the British Commonwealth effectively served under the control of the UK's High Command."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	date = { day = 2 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "I will Assume total control of Commonwealth forces"
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = naval value = -5 }
+		command = { type = max_organization which = air value = -5 }
+		command = { type = industrial_modifier which = total value = -5 }
+		command = { type = trigger which = 43002 }
+		command = { type = trigger which = 43003 }
+		command = { type = trigger which = 43004 }
+		command = { type = trigger which = 43005 }
+	}
+	action_b = {
+		name = "Limited control will be requested in the case of a major war"
+		command = { type = setflag which = commonwealth }
+	}
+	action_c = {
+		name = "Let them manage their own forces"
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43002
+	random = no
+	country = ast
+
+	# triggered by 43001
+
+	name = "Australian Military Forces"
+	desc = ""
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Place our forces under the UK's command"
+		ai_chance = 100
+		command = { type = sleepevent which = 44064 }
+		command = { type = industrial_modifier which = total value = -30 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = naval value = -5 }
+		command = { type = max_organization which = air value = -5 }
+	}
+	action_b = {
+		name = "That can not be done"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43003
+	random = no
+	country = can
+
+	# triggered by 43001
+
+	name = "Canadian Military Forces"
+	desc = ""
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Place our forces under the UK's command"
+		ai_chance = 100
+		command = { type = sleepevent which = 44065 }
+		command = { type = industrial_modifier which = total value = -30 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = naval value = -5 }
+		command = { type = max_organization which = air value = -5 }
+	}
+	action_b = {
+		name = "That can not be done"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43004
+	random = no
+	country = nzl
+
+	# triggered by 43001
+
+	name = "New Zealand Military Forces"
+	desc = ""
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Place our forces under the UK's command"
+		ai_chance = 100
+		command = { type = sleepevent which = 44066 }
+		command = { type = industrial_modifier which = total value = -30 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = naval value = -5 }
+		command = { type = max_organization which = air value = -5 }
+	}
+	action_b = {
+		name = "That can not be done"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43005
+	random = no
+	country = saf
+
+	# triggered by 43001
+
+	name = "South African Military Forces"
+	desc = ""
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Place our forces under the UK's command"
+		ai_chance = 100
+		command = { type = sleepevent which = 44067 }
+		command = { type = industrial_modifier which = total value = -30 }
+		command = { type = max_organization which = land value = -15 }
+		command = { type = max_organization which = naval value = -5 }
+		command = { type = max_organization which = air value = -5 }
+	}
+	action_b = {
+		name = "That can not be done"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# Commonwealth Limited control
+#########################################################################
+event = {
+	id = 43006
+	random = no
+	country = eng
+
+	trigger = { 	or = { 	war = { country = ger country = eng }
+				war = { country = sov country = eng }
+			}
+			flag = commonwealth
+	}
+
+	name = "Commonwealth military forces"
+	desc = "War had started and help is needed to protect the empire."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	date = { day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Request Commonwealth help"
+		ai_chance = 100
+		command = { type = trigger which = 43007 }
+		command = { type = trigger which = 43008 }
+		command = { type = trigger which = 43009 }
+		command = { type = trigger which = 43010 }
+
+	}
+	action_b = {
+		name = "There is no need"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43007
+	random = no
+	country = ast
+
+	name = "Commonwealth military forces"
+	desc = "War had started and help is needed to protect the empire."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Give the UK control of part of our military"
+		ai_chance = 100
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+	}
+	action_b = {
+		name = "Our forces will be better off under our command"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43008
+	random = no
+	country = can
+
+	name = "Commonwealth military forces"
+	desc = "War had started and help is needed to protect the empire."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Give the UK control of part of our military"
+		ai_chance = 100
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+	}
+	action_b = {
+		name = "Our forces will be better off under our command"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43009
+	random = no
+	country = nzl
+
+	name = "Commonwealth military forces"
+	desc = "War had started and help is needed to protect the empire."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Give the UK control of part of our military"
+		ai_chance = 100
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+	}
+	action_b = {
+		name = "Our forces will be better off under our command"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+event = {
+	id = 43010
+	random = no
+	country = saf
+
+	name = "Commonwealth military forces"
+	desc = "War had started and help is needed to protect the empire."
+	style = 0
+	picture = "british_tactical_victory_pacific"
+
+	action_a = {
+		name = "Give the UK control of part of our military"
+		ai_chance = 100
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+		command = { type = switch_allegiance which = -1 where = eng }
+	}
+	action_b = {
+		name = "Our forces will be better off under our command"
+		ai_chance = 0
+		command = { }
+	}
+}

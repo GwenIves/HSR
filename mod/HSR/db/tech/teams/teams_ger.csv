@@ -1,0 +1,33 @@
+GER;Name;Pic Name;Skill;Start Year;End Year;Speciality1;Speciality2;Speciality3;Speciality4;Speciality5;Speciality6;Speciality7;Speciality8;Speciality9;Speciality10;Speciality11;Speciality12;Speciality13;Speciality14;Speciality15;Speciality16;Speciality17;Speciality18;Speciality19;Speciality20;Speciality21;Speciality22;Speciality23;Speciality24;Speciality25;Speciality26;Speciality27;Speciality28;Speciality29;Speciality30;Speciality31;Speciality32;x
+1;I.G. Farben;T3;9;1930;1970;chemistry;industrial_engineering;general_equipment;management;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+2;Daimler-Benz;T12;9;1930;1970;mechanics;electronics;technical_efficiency;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+3;Skoda;T1105;8;1970;1970;mechanics;industrial_engineering;management;technical_efficiency;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+4;Mauser Werke;T9;7;1930;1970;general_equipment;electronics;training;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+5;Rheinmetall-Borsig;T13;7;1930;1970;artillery;electronics;training;chemistry;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+6;Hanomag;T29;7;1930;1970;general_equipment;mechanics;artillery;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+7;Henschel;T30;8;1930;1970;aeronautics;chemistry;technical_efficiency;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+8;MAN;T8;8;1930;1970;mechanics;chemistry;artillery;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+9;Siemens;T14;8;1930;1970;electronics;industrial_engineering;technical_efficiency;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+11;Opel;T11;7;1930;1970;mechanics;management;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+12;Daimler;T600;7;1970;1970;mechanics;industrial_engineering;general_equipment;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+13;Messerschmitt AG;T10;9;1930;1970;aeronautics;rocketry;artillery;electronics;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+14;Junkers AG;T4;8;1939;1970;aeronautics;general_equipment;electronics;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+15;Arado Flugzeugwerke;T40;8;1944;1970;aeronautics;general_equipment;electronics;rocketry;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+16;Focke-Wulf Flugzeugbau;T28;9;1938;1970;aeronautics;naval_artillery;artillery;electronics;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+17;Heinkel Flugzeugwerke;T2;5;1930;1970;aeronautics;general_equipment;electronics;mechanics;aircraft_testing;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+18;Blohm & Voss;T1;7;1930;1970;naval_engineering;electronics;technical_efficiency;general_equipment;naval_artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+19;Kriegsmarinewerft;T6;7;1930;1970;naval_engineering;technical_efficiency;naval_artillery;electronics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+20;Krupp;T7;9;1930;1970;mechanics;electronics;technical_efficiency;artillery;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+21;Konrad Zuse;T5;7;1935;1970;mathematics;electronics;mechanics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+22;Werner Heisenberg;T16;7;1927;1976;nuclear_physics;nuclear_engineering;mathematics;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+23;Wernher von Braun;T17;9;1932;1976;rocketry;aeronautics;technical_efficiency;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+24;Karl Dönitz;T25;9;1930;1970;submarine_tactics;small_taskforce_tactics;seamanship;centralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+25;Erich Raeder;T19;8;1930;1970;large_taskforce_tactics;naval_training;seamanship;centralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+26;Erich von Manstein;T20;9;1930;1970;combined_arms_focus;large_unit_tactics;centralized_execution;training;management;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+27;Heinz Guderian;T22;9;1930;1954;combined_arms_focus;small_unit_tactics;decentralized_execution;training;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+28;Hugo Sperrle;T24;7;1939;1970;combined_arms_focus;bomber_tactics;training;centralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+29;Ernst Udet;T21;6;1930;1948;combined_arms_focus;piloting;aircraft_testing;bomber_tactics;decentralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+30;Wolfram von Richthofen;T26;7;1939;1970;combined_arms_focus;piloting;training;bomber_tactics;decentralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+31;Adolf Galland;T18;6;1941;1970;fighter_tactics;piloting;training;centralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+32;Hermann Göring;T23;4;1930;1970;bomber_tactics;piloting;training;centralized_execution;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x
+33;Alexander Löhr;T604;6;1970;1970;bomber_tactics;combined_arms_focus;training;piloting;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x

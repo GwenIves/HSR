@@ -1,0 +1,2355 @@
+# Aregorn_JAP: Events for Japan (63)
+#
+# ID		Title						Author
+#
+# 40700-04	The Yamashita Report 				(by Justin and Aregorn 040725)
+# 40705 	Manchuko Annexation 				(by Aregorn 040728)
+# 40706 	Technology purchase from Germany 		(by Justin and Aregorn 040725)
+# 40707 	Japanese deployment in Indochina 		(by Aregorn 050405)
+# 40708-13 	Japanese Military programmes 			(by Aregorn 050405)
+# 40714 	Manchuko Defensive Line 			(by Aregorn 050406)
+# 40715 	War against China 				(by Aregorn 050406)
+# 40716 	Japanese Military programmes (1938)		(by Aregorn 050405)
+# 40717-18 	Naval A.I. 					(by Aregorn 050508)
+# 40719-22 	Airforce A.I. 					(by Aregorn 050508)
+# 40722-27 	Army A.I. 					(by Aregorn 050508)
+# 40728 	Soviet-Japanese non Agression Pact 		(by Aregorn 050601)
+# 40729 	Japanese Military programme (1945)		(by Aregorn 050406)
+# 40730 	War against China 				(by Aregorn 050406)
+# 40731 	War against China 2 				(by Aregorn 060219)
+# 40732-5 	Manchuko 					(by Dec152000 060121, and extended by Aregorn)
+# 40736-7 	Automobile Manufacturing Industries Act 	(by Dec152000 from Syntax and slightly modified by Aregorn 060215)
+# 40738 	General Mobilization Act 			(by Dec152000 from Syntax and slightly modified by Aregorn 060215)
+# 40739 	Wartime Fuel Conservation 			(by Dec152000 from Syntax 060215)
+# 40740-42 	Pearl Harbour 					(by Aregorn 060223 using HOI2 event as base mod Dec152000 060304))
+# 40743 	War against China 3 				(by Aregorn 060219)
+# 40744     Deleted and replaced for land connectionKorean Manpower 				(by Aregorn 060311)
+# 40745-54  	Nihon Kaigun   					(by Dec152000 060120, mod by Aregorn)
+# 40755-61 	Carrier Conversions   				(by Dec152000 060224)
+# 40762 	Japanese Aircraft models 			(by Aregorn 081107) requested by Alan Mateus
+
+#########################################################################
+# 40700 The Yamashita Report (by Justin and Aregorn 040725)
+#########################################################################
+event = {
+	id = 40700
+	random = no
+	country = jap
+
+	trigger = { random = 50 not = { government = democratic } }
+
+	name = "The Yamashita Report"
+	desc = "During his authorized trip to Germany, General Tomoyuki Yamashita met with the Imperial local ambassador, Lt. General Hiroshi Oshima. They prepared a comprehensive report that detailed the technological advances of the German army."
+	style = 0
+	picture = 40700_Yamashita_Report
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "It needs to be analyse independently of the moral cost."
+		ai_chance = 99
+		command = { type = dissent value = 2 }
+		command = { type = trigger which = 40701 }
+				}
+	action_b = {
+		name = "Leave it, the report will generate a scandal in the Honourable high ranks"
+		ai_chance = 1
+		command = {  }
+		}
+}
+#########################################################################
+# 40701 The Yamashita Report (by Justin and Aregorn 040725)
+#########################################################################
+event = {
+	id = 40701
+	random = no
+	country = jap
+
+	name = "The Yamashita Report"
+	desc = "The report begun to be thoroughly analysed"
+	style = 0
+	picture = 40700_Yamashita_Report
+
+	action_a = {
+		name = "ok"
+		command = { }
+				}
+}
+#########################################################################
+# 40702 Analysis of The Yamashita Report (by Justin and Aregorn 040725)
+#########################################################################
+event = {
+	id = 40702
+	random = no
+	country = jap
+
+	trigger = { random = 25 event = 40701 NOT = { war = { country = jap country = ger }}
+		}
+
+	name = "Analysis of The Yamashita Report"
+	desc = "After careful analysis, the deficiencies of the Japanese military technology became evident. A close relation with Germany will need to be created in order to benefit from their superior technological knowledge."
+	style = 0
+	picture = 40702_Analysis_Yamashita_Report
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Send the Diplomats to improve relations and begin trade negociations"
+		ai_chance = 99
+		command = { type = dissent value = 1 }
+		command = { type = trigger which = 40703 }
+				}
+	action_c = {
+		name = "No deals with western countries."
+		ai_chance = 1
+		command = { type = dissent value = -2 }
+		}
+}
+#########################################################################
+# 40703 Diplomatic negotiations with Germany (by Justin and Aregorn 040725)
+#########################################################################
+event = {
+	id = 40703
+	random = no
+	country = jap
+
+	name = "Diplomatic negotiations with Germany"
+	desc = "The Japanese ambassador in Berlin has been instructed to initiate negotiations"
+	style = 0
+	picture = 40704_negociations_with_Germany
+
+	action_a = {
+		name = "Good"
+		command = { }
+				}
+}
+############################################################################################
+# 40704 Diplomatic negotiations with Germany are in the good path (by Justin and Aregorn 040725)
+############################################################################################
+event = {
+	id = 40704
+	random = no
+	country = jap
+
+	trigger = { random = 20 rare_materials = 1000 event = 40703 NOT = { war = { country = jap country = ger }}
+		}
+
+	name = "Diplomatic negotiations with Germany are in the good path"
+	desc = "The Ambassador in Berlin, Hiroshi Oshima, is pleased to inform that the negotiations with Germany came to a very fruitful end. Germany is willing to share military and industrial technology in exchange of Japanese materials and most importantly bilateral friendship."
+	style = 0
+	picture = 40704_negociations_with_Germany
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great news!"
+		command = { type = relation which = ger value = 20 }
+		command = { type = gain_tech which = 2040 }
+		command = { type = rarematerialspool value = -1000 }
+				}
+}
+#########################################################################
+# 40705 Manchuko annexation (by Aregorn 040728)
+#########################################################################
+
+############################################################################################
+# 40706 Technology purchase from Germany (by Justin and Aregorn 040725)
+############################################################################################
+event = {
+	id = 40706
+	random = no
+	country = jap
+
+	trigger = { supplies = 3000 random = 20 event = 40704 NOT = { war = { country = jap country = ger }}
+		}
+
+	name = "Technology purchase from Germany"
+	desc = "The Ambassador in Berlin, was instructed to bargain for optical equipment and the licensing agreements needed to produce Germany's high-performance DB-601 fighter engine.(Historical July 1942)"
+	style = 0
+	picture = jap_40706_db601_2		#Steffele
+
+	date = { day = 1 month = february year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Get the new technology"
+		ai_chance = 99
+		command = { type = gain_tech which = 4060 }
+		command = { type = gain_tech which = 4070 }
+		command = { type = supplies value = -3000 }
+				}
+	action_b = {
+		name = "Way too expensive, it is not really required"
+		ai_chance = 1
+		command = { }
+				}
+}
+#########################################################################
+# 40707 Japanese deployment in Indochina (by Aregorn 050405)
+#########################################################################
+event = {
+	id = 40707
+	random = no
+	country = jap
+
+	trigger = { event = 2021 random = 50 ai = yes not = { lost_national = { country = chi value = 50 }}
+			not = { control = { province = 1325 data = jap } }
+			not = { control = { province = 1319 data = jap } }
+			not = { control = { province = 1260 data = jap } }
+			war = { country = jap country = chi } control = { province = 1328 data = jap }
+		}
+
+	name = "Japanese deployment in Indochina"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps value = land when = 101034 where = 1328 }
+		command = { type = add_division value = hq when = 1 where = rocket_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = manpowerpool value = -90 }
+				}
+}
+#########################################################################
+# 40708-12 Japanese Military programmes (by Aregorn 050405)
+#########################################################################
+event = {
+	id = 40708
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 25 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			not = { lost_national = { country = CHi value = 35 } }
+			control = { province = 1184 data = jap }
+
+			or = { 	not = { control = { province = 1397  data = jap } }
+				not = { control = { province = 1235  data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa }
+				not = { ai = chi }
+			}
+	}
+
+
+
+	name = "1939 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1939 }
+
+	action_a = {
+		name = "1939 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = battlecruiser when = 2 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps value = naval where = 1190 } #Fukuoka
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 3 where = naval_fire_controll_l }
+
+		command = { type = add_corps value = land where = 1190 } #Fukuoka
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+
+
+		command = { type = tc_mod value = 5 }
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+
+		command = { type = manpowerpool value = -150 }
+		}
+}
+#########################
+event = {
+	id = 40709
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			not = { lost_national = { country = CHi value = 35 } }
+			control = { province = 1184 data = jap }
+			or = { 	not = { control = { province = 1397  data = jap } }
+				not = { control = { province = 1235  data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa }
+				not = { ai = chi }
+			}
+	}
+
+
+
+	name = "1940 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1940 }
+
+	action_a = {
+		name = "1940 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+		command = { type = add_division value = naval_bomber when = 5 }
+
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 2 where = naval_fire_controll_s }
+		command = { type = add_division value = battlecruiser when = 2 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps value = naval where = 1190 } #Fukuoka
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+
+		command = { type = add_corps value = land where = 1190 } #Fukuoka
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 5 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+
+		command = { type = manpowerpool value = -150 }
+		}
+}
+#########################
+event = {
+	id = 40710
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			not = { lost_national = { country = CHi value = 35 } }
+			control = { province = 1184 data = jap }
+			or = { 	not = { control = { province = 1397  data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa }
+				not = { ai = chi }
+			}
+	}
+
+
+
+	name = "1941 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1941 }
+
+	action_a = {
+		name = "1941 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = battlecruiser when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = battleship when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+
+		command = { type = add_corps value = naval where = 1190 } #Fukuoka
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+
+		command = { type = add_corps value = land where = 1190 } #Fukuoka
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 5 }
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = max_organization which = tactical_bomber value = 10 }
+		command = { type = max_organization which = cas value = 10 }
+		command = { type = max_organization which = naval_bomber value = 10 }
+		command = { type = max_organization which = multi_role value = 10 }
+
+		command = { type = manpowerpool value = -150 }
+
+		command = { type = unlock_division which = 13016 value = 718  } #Fukuoka
+
+		}
+}
+#########################
+event = {
+	id = 40711
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			war = { country = usa country = jap } NOT = { ispuppet = jap }
+			control = { province = 1184 data = jap }
+			}
+
+
+	name = "1942 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1942 }
+
+	action_a = {
+		name = "1942 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+		command = { type = add_division value = interceptor when = 2 }
+
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 4 }
+		command = { type = add_division value = battleship when = 3 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps value = naval where = 1190 } #Fukuoka
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = battlecruiser when = 3 where = naval_fire_controll_l }
+
+		command = { type = add_corps value = land where = 1190 } #Fukuoka
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 10 }
+		command = { type = domestic which = professional_army value = 2 }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = convoy_prod_mod which = transports value = 5 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = domestic which = professional_army value = 1 }
+		command = { type = free_transport value = 20 }
+
+		command = { type = max_organization which = tactical_bomber value = 10 }
+		command = { type = max_organization which = cas value = 10 }
+		command = { type = max_organization which = naval_bomber value = 10 }
+		command = { type = max_organization which = multi_role value = 10 }
+
+		command = { type = manpowerpool value = -150 }
+		}
+}
+#################
+event = {
+	id = 40712
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			war = { country = usa country = jap } NOT = { ispuppet = jap }
+			control = { province = 1184 data = jap }
+			}
+
+
+
+	name = "1943 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1943 }
+
+	action_a = {
+		name = "1943 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+		command = { type = add_division value = naval_bomber when = 5 where = escort }
+
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 3 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = battleship when = 3 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_corps value = naval where = 1190 } #Fukuoka
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 }
+		command = { type = add_division value = heavy_cruiser when = 3 }
+
+		command = { type = add_corps value = land where = 1190 } #Fukuoka
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 10 }
+		command = { type = free_transport value = 20 }
+		command = { type = domestic which = professional_army value = 2 }
+
+		command = { type = industrial_modifier which = supplies value = 5 }
+		command = { type = convoy_prod_mod which = transports value = 5 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -120 }
+		}
+}
+######################
+event = {
+	id = 40713
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			control = { province = 1184 data = jap }
+			or = { 	not = { control = { province = 1397  data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa } }
+				not = { lost_national = { country = chi value = 20 } }
+			}
+
+
+
+	name = "1938 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = june year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1938 }
+
+	action_a = {
+		name = "1938 Military programme finished"
+
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+		command = { type = add_division value = cas when = 1 }
+
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+		command = { type = add_division value = interceptor when = 1 }
+
+		command = { type = add_division value = destroyer when = 3 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = light_cruiser when = 2 }
+		command = { type = add_division value = battlecruiser when = 2 }
+		command = { type = add_division value = carrier when = 3  where = cag }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = light_cruiser when = 3 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 5}
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+		command = { type = domestic which = professional_army value = 1 }
+
+		command = { type = manpowerpool value = -100 }
+		}
+}
+#########################################################################
+# 40714 Manchuko Defensive Line (by Aregorn 050406)
+#########################################################################
+event = {
+	id = 40714
+	random = no
+	country = jap
+
+	trigger = { event = 40715 ai = yes not = { ai = chi } }
+
+	name = "Manchuko Defensive Line"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = construct which = land_fort where = 1386  value = 2 }
+		command = { type = construct which = land_fort where = 1388  value = 2 }
+		command = { type = construct which = land_fort where = 1396  value = 2 }
+		command = { type = add_corps value = land where = 1386  }
+		command = { type = add_division value = garrison }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1388  }
+		command = { type = add_division value = garrison }
+		command = { type = add_division value = garrison }
+		command = { type = add_corps value = land where = 1396  }
+		command = { type = add_division value = garrison }
+		command = { type = add_division value = garrison }
+
+		command = { type = manpowerpool value = -40 }
+				}
+}
+#########################################################################
+# 40715 War against China (by Aregorn 050406)
+#########################################################################
+event = {
+	id = 40715
+	random = no
+	country = jap
+
+	trigger = { 	war = { country = chi country = jap } ai = yes
+			control = { province = 1397 data = jap }
+	}
+
+	name = "War against China"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = dissent value = -2 }
+		command = { type = industrial_modifier which = supplies value = 2 }
+
+		command = { type = ai which = "switch/hsr_JAP_China.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+
+		command = { type = manpowerpool value = -6 }
+				}
+}
+#########################################################################
+# 40716 1944 Military programme (by Aregorn 050406)
+#########################################################################
+
+event = {
+	id = 40716
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			control = { province = 1184 data = jap }
+			or = { 	not = { control = { province = 1397 data = jap } }
+				not = { control = { province = 1235 data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa }
+				not = { ai = chi }
+			}
+	}
+
+
+
+	name = "1944 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1944 }
+
+	action_a = {
+		name = "1944 Military programme finished"
+
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+		command = { type = add_division value = naval_bomber when = 6 where = escort }
+
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = battlecruiser when = 5 where = naval_fire_controll_l }
+		command = { type = add_division value = battleship when = 5 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 4 where = cag }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 5 }
+		command = { type = free_transport value = 20 }
+		command = { type = domestic which = professional_army value = 2 }
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+
+		command = { type = manpowerpool value = -150 }
+		}
+}
+#########################################################################
+# 40722-26 Army A.I. (by Aregorn 050508)
+#########################################################################
+
+event = {
+	id = 40722
+	random = no
+	country = jap
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = jap country = usa }
+				war = { country = jap country = sov } }
+			random = 25 control = { province =  1184  data = jap }
+			not = { manpower = 25 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = manpowerpool value = 100 }
+		}
+}
+
+event = {
+	id = 40725
+	random = no
+	country = jap
+	persistent = yes
+	style = 0
+
+	trigger = { 	ai = yes
+			or = { 	war = { country = jap country = usa }
+				war = { country = jap country = sov } }
+			random = 25 control = { province =  1184  data = jap }
+			not = { supplies = 100 }
+			}
+
+
+	date = { day = 25 month = may year = 1939 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+		command = { type = supplies value = 1000 }
+		}
+}
+event = {
+	id = 40726
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { 	ai = yes
+			atwar = yes	}
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+	command = { type = activate_division which = 13016 value = 697 where = 1180 }
+	command = { type = construct which = coastal_fort where = 1180 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 698 where = 1181 }
+	command = { type = construct which = coastal_fort where = 1180 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 699 where = 1184 }
+	command = { type = construct which = coastal_fort where = 1184 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 700 where = 1185 }
+	command = { type = construct which = coastal_fort where = 1185 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 701 where = 1187 }
+	command = { type = construct which = coastal_fort where = 1187 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 702 where = 1188 }
+	command = { type = construct which = coastal_fort where = 1188 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 703 where = 1189 }
+	command = { type = construct which = coastal_fort where = 1189 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 704 where = 1179 }
+	command = { type = construct which = coastal_fort where = 1179 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 705 where = 1192 }
+	command = { type = construct which = coastal_fort where = 1192 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 706 where = 1177 }
+	command = { type = construct which = coastal_fort where = 1177 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 707 where = 1784 }
+	command = { type = construct which = coastal_fort where = 1784 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 708 where = 1607 }
+	command = { type = construct which = coastal_fort where = 1607 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 709 where = 1184 }
+	command = { type = construct which = coastal_fort where = 1184 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 716 where = 1178 } #Asahikawa
+	command = { type = construct which = coastal_fort where = 1178 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 717 where = 1174 } #Shumushushima
+	command = { type = construct which = coastal_fort where = 1174 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 718 where = 1190 } #Fukuoka
+	command = { type = construct which = coastal_fort where = 1190 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 719 where = 1191 } #Kagoshima
+	command = { type = construct which = coastal_fort where = 1191 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 720 where = 1196 } #Busan
+	command = { type = construct which = coastal_fort where = 1196 value = 1 }
+
+	command = { type = activate_division which = 13016 value = 721 where = 1625 } #Rota
+	command = { type = construct which = coastal_fort where = 1625 value = 1 }
+		}
+}
+event = {
+	id = 40727
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { 	ai = yes event = 3894
+			atwar = yes	}
+
+
+	date = { day = 25 month = may year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "AI_EVENT"
+
+	action_a = {
+	command = { type = activate_division which = 13016 value = 710 where = 1337 }
+	command = { type = activate_division which = 13016 value = 711 where = 1338 }
+	command = { type = activate_division which = 13016 value = 712 where = 1335 }
+	command = { type = activate_division which = 13016 value = 713 where = 1339 }
+	command = { type = activate_division which = 13016 value = 714 where = 1333 }
+	command = { type = activate_division which = 13016 value = 715 where = 1334 }
+		}
+}
+#########################################################################
+# 40728 Soviet-Japanese non-Aggression Pact (by Aregorn 050601)
+#########################################################################
+event = {
+	id = 40728
+	random = no
+	country = jap
+	persistent = yes
+
+	# Trigger by sov 40328
+
+	name = "Soviet-Japanese non Aggression Pact"
+	desc = "It will be much easier for Japan to fight a war in Asia without the Soviet interference"
+	style = 0
+
+	action_a = {
+		name = "Sign the pact"
+		ai_chance = 100
+		command = { type = non_aggression which = sov where = jap }
+		command = { type = non_aggression which = sov where = man }
+	}
+	action_b = {
+		name = "We can easily take over the Russian bear if required"
+		ai_chance = 0
+		command = { }
+	}
+}
+#########################################################################
+# 40729 1945 Military programme (by Aregorn 050406)
+#########################################################################
+
+event = {
+	id = 40729
+	random = no
+	country = jap
+	trigger = { 	ai = yes random = 10 war = { country = chi country = jap }
+			event = 91 NOT = { ispuppet = jap }
+			control = { province = 1184 data = jap }
+			or = { 	not = { control = { province = 1397 data = jap } }
+				not = { control = { province = 1235 data = jap } }
+				war = { country = jap country = eng }
+				war = { country = jap country = usa } }
+			}
+
+
+
+	name = "1945 Military programme"
+	desc = ""
+	style = 0
+
+	date = { day = 1 month = january year = 1945 }
+	offset = 7
+	deathdate = { day = 30 month = june year = 1945 }
+
+	action_a = {
+		name = "1945 Military programme finished"
+
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+		command = { type = add_division value = cas when = 2 }
+
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+		command = { type = add_division value = interceptor when = 3 }
+
+		command = { type = add_division value = naval_bomber when = 7 where = escort }
+		command = { type = add_division value = naval_bomber when = 7 where = escort }
+
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = destroyer when = 5 where = naval_anti_air_s }
+		command = { type = add_division value = light_cruiser when = 5 where = naval_fire_controll_s }
+		command = { type = add_division value = heavy_cruiser when = 4 where = naval_fire_controll_l }
+		command = { type = add_division value = battlecruiser when = 5 where = naval_fire_controll_l }
+		command = { type = add_division value = battleship when = 5 where = naval_fire_controll_l }
+		command = { type = add_division value = carrier when = 4 where = cag }
+
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+		command = { type = add_division value = transport }
+
+		command = { type = add_division value = hq where = rocket_artillery }
+
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 1 where = sp_rct_artillery }
+
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+		command = { type = add_division value = infantry when = 1 where = artillery }
+
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = marine when = 1 where = sp_rct_artillery }
+
+		command = { type = tc_mod value = 5 }
+		command = { type = free_transport value = 20 }
+		command = { type = domestic which = professional_army value = 2 }
+
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = dissent value = -5 }
+		command = { type = supplies value = 5000 }
+
+		command = { type = manpowerpool value = -220 }
+		}
+}
+#########################################################################
+# 40730 War against China (by Aregorn 050406)
+#########################################################################
+event = {
+	id = 40730
+	random = no
+	country = jap
+
+	trigger = { 	war = { country = chi country = jap } ai = yes
+			control = { province = 1397 data = jap } not = { ai = chi } not = { ai = chc }
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = february year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "2nd Imperial Army" value = land where = 1397 }
+		command = { type = add_division value = hq where = rocket_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "3nd Imperial Guard Korps" value = land where = 1397 }
+		command = { type = add_division value = bergsjaeger when = 0 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 0 where = sp_rct_artillery }
+		command = { type = add_division value = bergsjaeger when = 0 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "1st Imperial Armor Korps" value = land  where = 1398 }
+		command = { type = add_division value = light_armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = light_armor when = 2 where = sp_rct_artillery }
+		command = { type = add_division value = motorized when = 0 where = sp_rct_artillery }
+
+		command = { type = add_corps which = "4nd Imperial Guard Korps" value = land where = 1397 }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+		command = { type = add_division value = infantry when = 1 where = sp_rct_artillery }
+
+		command = { type = manpowerpool value = -140 }
+
+		command = { type = ai which = "switch/hsr_JAP_China2.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+				}
+}
+
+#########################################################################
+# 40732-5 Manchuko (by Dec152000 060121, and extended by Aregorn)
+#########################################################################
+event = {
+	id = 40732
+	random = no
+	country = jap
+
+	trigger = { 	puppet = { country = MAN country = JAP }
+	}
+
+	name = "Manchuko"
+	desc = "Japanese mastery over Manchuko provided substantial support for the Japanese economy. Manchuria was the most productive portion of China and exported substantial quantities of goods to Japan."
+	style = 0
+	picture = jap_40732-35_man1	#Steffele
+
+	date = { day = 15 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = free_ic value = 10 }
+		command = { type = trigger which = 40734 }
+	}
+}
+
+event = {
+	id = 40733
+	random = no
+	country = jap
+
+	trigger = { 	NOT = { puppet = { country = MAN country = JAP }}
+	}
+
+
+	date = { day = 15 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	name = "Manchuko"
+	desc = "The end of the Manchuko mastery resulted in the loss of Japanese business concessions."
+	style = 0
+	picture = jap_40732-35_man3	#Steffele
+
+	action_a = {
+		name = "ok"
+		command = { type = free_ic value = -10 }
+		command = { type = trigger which = 40735 }
+	}
+}
+event = {
+	id = 40734
+	random = no
+	country = man
+
+	name = "Manchuko"
+	desc = "Japanese mastery over Manchuko provided substantial support for the Japanese economy. Manchuria was the most productive portion of China and exported substantial quantities of goods to Japan."
+	style = 0
+	picture = jap_40732-35_man2	#Steffele
+
+	action_a = {
+		name = "Ok"
+		command = { type = free_ic value = -10 }
+	}
+}
+event = {
+	id = 40735
+	random = no
+	country = man
+
+
+	name = "Manchuko"
+	desc = "The end of the Manchuko mastery resulted in the loss of Japanese business concessions."
+	style = 0
+	picture = jap_40732-35_man3 	#Steffele
+
+	action_a = {
+		name = "Ok"
+		command = { type = free_ic value = 10 }
+	}
+}
+############################################################################################################
+# 40736-7 Automobile Manufacturing Industries Act (by Dec152000 from Syntax and slightly modified by Aregorn 060215)
+############################################################################################################
+event = {
+	id = 40736
+	random = no
+	country = jap
+
+	trigger = { exists = jap }
+
+	name = "Automobile Manufacturing Industries Act"
+	desc = "In 1936 the Ministry of Commerce and Industry and the Ministry of War jointly supported the establishment of the Automobile Manufacturing Industries Act. The aim of this legislation was to end American domination of the domestic auto market and increase Japanese production of motor vehicles to meet the needs of the public, but an additional goal was to ensure an uninterrupted supply of vehicles for the military. The first companies operating under this law were Toyota and Nissan."
+	style = 0
+	picture = jap_40736-37_car1 	#Steffele
+
+	date = { day = 15 month = january year = 1936 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Pass the Act"
+		ai_chance = 100
+		command = { type = relation which = usa value = -20 }
+		command = { type = industrial_modifier which = supplies value = 2 }
+		command = { type = tc_mod value = 2 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = gain_tech which = 1220 }
+		command = { type = dissent value = -1 }
+	}
+	action_b = {
+		name = "We must not offend the Americans, modify the Act"
+		ai_chance = 0
+		command = { type = relation which = usa value = 20 }
+		command = { type = dissent value = 1 }
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = sleepevent which = 40735 }
+	}
+}
+###########################
+event = {
+	id = 40737
+	random = no
+	country = jap
+
+	trigger = { event = 40734 event = 40745 random = 25 }
+
+	name = "Withdrawal of the Big Three"
+	desc = "The advance of America's Big Three (Ford, GM and Chrysler, known in Japan as Kyoritsu Motors) into the Japanese market began in 1925 and by 1930 their annual production of automobiles totalled 19,684 units, about 43 times the production (458 units) of domestic cars. However, the Automobile Manufacturing Industries Act forced to limit production and short after Japanese foreign exchange regulations were also revised. With such conditions the Big Three decided to leave Japan in 1939."
+	style = 0
+	picture = jap_40736-37_car2 	#Steffele
+
+	date = { day = 15 month = december year = 1938 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Ok"
+		command = { type = relation which = usa value = -10 }
+		command = { type = dissent value = -1 }
+	}
+}
+###################################################################################################################
+# 40738 General Mobilization Act (by Dec152000 from Syntax and slightly modified by Aregorn 060215)
+###################################################################################################################
+event = {
+	id = 40738
+	random = no
+	country = jap
+
+	trigger = { war = { country = chi country = jap } random = 30 }
+
+	name = "General Mobilization Act"
+	desc = "In 1938, a General Mobilization Act increased government control of Japan's industries, including the nationalization of the electric industry and regulations governing the distribution of steel. In August, the Ministry of Commerce and Industry issued guidelines restricting manufacturing to trucks only. Between 1930 and 1940, a total of 284,568 motor vehicles (cars, trucks and buses) were produced which were supplied for the most part to the military."
+	style = 0
+	picture = jap_40738_mobil1 	#Steffele
+
+	date = { day = 15 month = january year = 1938 }
+	offset = 10
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Pass the Act"
+		ai_chance = 100
+		command = { type = dissent value = 1 }
+		command = { type = industrial_modifier which = supplies value = 1 }
+		command = { type = tc_mod value = 2 }
+		command = { type = domestic which = free_market value = -1 }
+		command = { type = domestic which = democratic value = -1 }
+		command = { type = gain_tech which = 1230 }
+	}
+	action_b = {
+		name = "We do not need this"
+		ai_chance = 0
+		command = { type = domestic which = free_market value = 1 }
+		command = { type = domestic which = democratic value = 1 }
+	}
+}
+#########################################################################
+# 40739 Wartime Fuel Conservation (by Dec152000 from Syntax 060215)
+#########################################################################
+event = {
+	id = 40739
+	random = no
+	country = jap
+
+	trigger = { OR = { event = 3800 war = { country = usa country = jap }} }
+
+	name = "Wartime Fuel Conservation"
+	desc = "In 1941, following the total ban on petroleum exports from the U.S. to Japan, the use of gasoline for household- and business-owned automobiles was prohibited, and the refitting of vehicles for the use of alternative fuels, such as charcoal, was swiftly carried out."
+	style = 0
+	picture = jap_40739_oel 	#Steffele
+
+	date = { day = 15 month = january year = 1940 }
+	offset = 30
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Pass the Act"
+		ai_chance = 100
+		command = { type = dissent value = 1 }
+		command = { type = industrial_modifier which = supplies value = -2 }
+		command = { type = add_prov_resource which = 1181 value = 1 where = oil }
+	}
+	action_b = {
+		name = "We do not need this"
+		ai_chance = 0
+		command = { }
+	}
+}
+##################################################################################################
+# 40740-42 Pearl Harbour (by Aregorn 060223 using HOI2 event as base, mod Dec152000 060304)
+##################################################################################################
+
+event = {
+	id = 40740
+	random = no
+	country = JAP
+
+	trigger = { flag = pearl random = 25
+	}
+
+	name = EVT_17_NAME
+	desc = EVT_17_DESC
+	style = 0
+	picture = jap_40740-42_pearl 	#Steffele
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 7
+	deathdate = { day = 29 month = december year = 1943 }
+
+	action_a = {
+		name = EVT_17_ACTA
+		ai_chance = 100
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = ambush value = 30 }
+		command = { type = surprise which = land value = 20 }
+		command = { type = surprise which = air value = 40 }
+		command = { type = surprise which = naval value = 40 }
+		command = { type = war which = usa }
+		command = { type = ai which = "switch/hsr_JAP_Pacific.ai" }
+		command = { type = ai which = "Air_naval.ai" }
+		command = { type = trigger which = 40741 }
+	}
+	action_b = {
+		ai_chance = 0
+		name = EVT_17_ACTB
+		command = { type = sleepevent which = 40741 }
+		command = { type = sleepevent which = 40742 }
+	}
+}
+
+event = {
+	id = 40741
+	random = no
+	country = USA
+
+	name = "Attack on Pearl Harbor"
+	desc = "American losses at Pearl Harbour were devastating.  The battleships USS Arizona and USS Oklahoma were completely destroyed with all of the remaining BBs seriously damaged.  Several light cruisers and 3 destroyers suffer massive damage as well. Fortunately the Pacific Fleet's aircraft carriers were away on manuvers at the time of the attack."
+	style = 0
+	picture = "Pearl_harbor"
+
+	# triggered by 40740
+
+	action_a = {
+		name = EVT_18_ACTA
+		command = { type = remove_division which = 14800 value = 201 } # Arizona
+		command = { type = damage_division which = 14800 value = 202 where = 80 } # Nevada
+		command = { type = disorg_division which = 14800 value = 202 where = 100 } # Nevada
+		command = { type = damage_division which = 14800 value = 203 where = 50 } # Penn.
+		command = { type = disorg_division which = 14800 value = 203 where = 100 } # Penn.
+		command = { type = remove_division which = 14800 value = 204 } # Oklahoma
+		command = { type = damage_division  which = 14800 value = 205 where = 70 } # Tennesse
+		command = { type = disorg_division  which = 14800 value = 205 where = 100 } # Tennesse
+		command = { type = damage_division which = 14800 value = 206 where = 90 } # California
+		command = { type = disorg_division which = 14800 value = 206 where = 100 } # California
+		command = { type = damage_division which = 14800 value = 207 where = 40 } # WV
+		command = { type = disorg_division which = 14800 value = 207 where = 100 } # WV
+		command = { type = damage_division which = 14800 value = 208 where = 60 } # Maryland
+		command = { type = disorg_division which = 14800 value = 208 where = 100 } # Maryland
+		command = { type = damage_division which = 14800 value = 211 where = 80 } # Raliegh
+		command = { type = disorg_division which = 14800 value = 211 where = 100 } # Raliegh
+		command = { type = damage_division which = 14800 value = 214 where = 60 } # Honolulu
+		command = { type = disorg_division which = 14800 value = 214 where = 100 } # Honolulu
+		command = { type = damage_division which = 14800 value = 216 where = 80 } # Brooklyn (Helena)
+		command = { type = disorg_division which = 14800 value = 216 where = 100 } # Brooklyn (Helena)
+		command = { type = remove_division which = 14800 value = 222 } # 4th DD (Shaw, Cassin, Downes)
+	}
+}
+
+event = {
+	id = 40742
+	random = no
+	country = JAP
+
+	# End of surprise effects
+
+	name = EVT_19_NAME
+	desc = EVT_19_DESC
+	style = 0
+	picture = "Pearl_harbor"
+
+	trigger = {
+		event = 40740
+		random = 10
+	}
+
+	date = { day = 0 month = january year = 1939 }
+	offset = 30
+	deathdate = { day = 29 month = december year = 1943 }
+
+	action_a = {
+		name = EVT_13_ACTA
+		command = { type = ambush value = -30 }
+		command = { type = surprise which = land value = -20 }
+		command = { type = surprise which = air value = -40 }
+		command = { type = surprise which = naval value = -40 }
+	}
+}
+#########################################################################
+# 40743 War against China 3 (by Aregorn 060219)
+#########################################################################
+event = {
+	id = 40743
+	random = no
+	country = jap
+
+	trigger = { 	war = { country = chi country = jap } ai = yes
+			or = { 	control = { province = 1397 data = chc }
+				control = { province = 1398 data = chc }
+			}
+	}
+
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = june year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = ai which = "switch/hsr_JAP_China3.ai" }
+		command = { type = ai which = "Air_Ground.ai" }
+				}
+}
+#########################################################################
+# 40744 Korean Manpower (by Aregorn 060311)
+#########################################################################
+
+#########################################################################
+# 40745-54  Nihon Kaigun   (by Dec152000 060120, mod by Aregorn)
+#########################################################################
+event = {
+	id = 40745
+	random = no
+	country = jap
+
+	trigger = { }
+
+	name = "Nihon Kaigun"
+	desc = "The IJN was leader in carrier aviation and had some of the worlds finest heavy cruisers, with cruisers and DDs, equipped with the superb Long Lance torpedo, excelling at night combat.  On the other hand, the fleet was plagued by problems with damage control and most ships carried inadequate AA defences.  Japanese submarines tended to be large, with good range but poor combat capability.  Additionally, IJN submarine doctrine was very rigid and rejected raiding."
+	style = 0
+	picture = "japanese_navy"
+
+	date = { day = 8 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action_a = {
+		name = "Outstanding"
+		ai_chance = 100
+		command = { type = task_efficiency which = convoy_raiding value = -0.25 }
+		command = { type = air_attack which = naval value = -1 } # Inadequate AA defense
+		command = { type = sub_detection  which = naval value = -1 }
+		command = { type = morale which = naval value = -10 }  #  Poor damage control equipment
+		command = { type = build_time which = naval where = relative value = 10} # Slow shipyards
+	 	command = { type = build_cost which = naval where = relative value = -10 }
+
+	  	command = { type = naval_attack which = battleship value = 2 } # Good throw weight
+	  	command = { type = shore_attack which = battleship value = 1 } # Good throw weight
+
+		command = { type = range which = battlecruiser value = 600 }
+	  	command = { type = naval_attack which = battlecruiser value = 1 } # 14" gun/Good throw weight
+
+		command = { type = speed which = carrier value = 1 }
+
+		command = { type = naval_defense which = heavy_cruiser value = 1 }
+	  	command = { type = naval_attack which = heavy_cruiser value = 3 } # Long Lance plus strong main battery
+	  	command = { type = shore_attack which = heavy_cruiser value = 1 } # Strong main battery
+		command = { type = night_attack which = heavy_cruiser value = 5 } # Really great night tactics
+		command = { type = night_defense which = heavy_cruiser value = 5 }
+		command = { type = max_organization which = heavy_cruiser value = 5 } # Excellent tactics
+
+		command = { type = naval_defense which = light_cruiser value = -1 } # Poorly armored
+	  	command = { type = shore_attack which = light_cruiser value = -1 } # Weak main battery
+	  	command = { type = speed which = light_cruiser value = 1 } # Fast
+	  	command = { type = max_positioning which = light_cruiser value = 0.01 }
+	  	command = { type = min_positioning which = light_cruiser value = 0.01 }
+		command = { type = range which = light_cruiser value = 700 }
+		command = { type = night_attack which = light_cruiser value = 5 }
+		command = { type = night_defense which = light_cruiser value = 5 }
+		command = { type = max_organization which = light_cruiser value = 5 }
+	 	command = { type = build_cost which = light_cruiser where = relative value = -10 }
+		command = { type = supply_consumption which = light_cruiser value = -0.1 } # Really small
+		command = { type = fuel_consumption which = light_cruiser value = -0.15 }
+
+	  	command = { type = naval_attack which = destroyer value = 1 } # Long Lance
+		command = { type = night_attack which = destroyer value = 5 }
+		command = { type = night_defense which = destroyer value = 5 }
+		command = { type = max_organization which = destroyer value = 5 }
+	  	command = { type = speed which = destroyer value = 1 } # Fast
+	  	command = { type = max_positioning which = destroyer value = 0.01 }
+	  	command = { type = min_positioning which = destroyer value = 0.01 }
+
+	  	command = { type = naval_attack which = submarine value = 2 } # World class torpedo
+		command = { type = naval_defense which = submarine value = -1 } # Large boats, weak hulls, slow diving
+		command = { type = speed which = submarine value = 1 } # Fast
+		command = { type = air_attack which = submarine value = 1 } # Comps for global -1 AA
+		command = { type = air_defense which = submarine value = -1 } # Slow diving, big
+		command = { type = range which = submarine value = 1500 } # Long range
+		command = { type = visibility which = submarine value = 2 } # Really big
+		}
+}
+############################
+event = {
+	id = 40746
+	random = no
+	country = jap
+
+	trigger = { }
+
+	name = "Nihon Kaigun Naval Plan"
+	desc = "To obtain naval superiority in the Pacific, IJN planners foresee the need to reject the limits of the Washington Naval Treaty and build 3 Super-BBs and 3 new carriers.  The BBs will enter production in 1937, 1938 and 1940 while the CVs will be laid down in 1937, 1938 and 1941."
+	style = 0
+	picture = "japanese_navy"
+
+	date = { day = 9 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Start the programme"
+		ai_chance = 100
+	 	command = { type = build_time which = battleship where = relative value = -5 }
+	 	command = { type = build_time which = battlecruiser where = relative value = -5 }
+	 	command = { type = build_time which = carrier where = relative value = -2.5 }
+		command = { type = supplies value = -3000 }
+	}
+	action_b = {
+		name = "We must not reject the treaty, build 3 normal BBs and 3 CVs"
+		ai_chance = 0
+	 	command = { type = build_time which = carrier where = relative value = -2.5 }
+	}
+	action_c = {
+		name = "We do not need the IJN plan"
+		ai_chance = 0
+		command = { type = dissent value = 7 }
+		command = { type = sleepevent which = 40747 }
+		command = { type = sleepevent which = 40748 }
+		command = { type = sleepevent which = 40749 }
+		command = { type = sleepevent which = 40750 }
+		command = { type = sleepevent which = 40751 }
+		command = { type = sleepevent which = 40752 }
+		command = { type = sleepevent which = 40753 }
+		command = { type = sleepevent which = 40754 }
+		command = { type = sleepevent which = 40755 }
+	}
+}
+############################
+event = {
+	id = 40747
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 4 month = november year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "IJN Yamato Laid Down"
+	desc = "With much fanfare the keel of the IJN Yamamoto is laid down.  This ship will be the world's most powerful battleship when it is commissioned in 1941. (target December, 1941)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+############################
+event = {
+	id = 40748
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 29 month = march year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "IJN Musashi Laid Down"
+	desc = "With much fanfare the keel of the IJN Musashi is laid down (target August, 1942)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = battleship value = naval_fire_controll_l }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+############################
+event = {
+	id = 40749
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 12 month = december year = 1937 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	name = "IJN Shokaku Laid Down"
+	desc = "With much fanfare the keel of the IJN Shokaku is laid down (target August, 1941)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+############################
+event = {
+	id = 40750
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 25 month = may year = 1938 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "IJN Zuikaku Laid Down"
+	desc = "With much fanfare the keel of the IJN Zuikaku is laid down (target September, 1941)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+############################
+event = {
+	id = 40751
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { ai = yes }
+
+	date = { day = 10 month = july year = 1941}
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+
+	name = "IJN Taiho Laid Down"
+	desc = "With much fanfare the keel of the IJN Taiho is laid down (target March, 1944)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = build_division which = carrier value = cag }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+}
+############################ Shinano
+event = {
+	id = 40752
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { 	ai = yes
+			NOT = { war = { country = jap country = usa }}
+			control = { province = 1184 data = jap }
+}
+
+	date = { day = 5 month = may year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	name = "IJN Shinano Laid Down"
+	desc = "With much fanfare the keel of the IJN Shinano is laid down (target January, 1945)."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Start Construction"
+		ai_chance = 100
+		command = { type = setflag which = JAPShinano }
+		command = { type = construct which = ic where = 1184 value = -1 } # Tokyo
+		command = { type = free_ic value = -2 } # Distributed costs
+		command = { type = free_energy value = -6 } # Distributed resource costs
+		command = { type = free_metal value = -3 } # Distributed resource costs
+		command = { type = free_rare_materials value = -1.5 }
+		command = { type = manpowerpool value = -4 }
+		}
+	action_b = {
+		name = "We do not need this ship"
+		ai_chance = 0
+		command = { }
+		}
+	action_c = {
+		name = "This ship is already underway"
+		ai_chance = 0
+		command = { }
+		}
+
+}
+#####################
+event = {
+	id = 40753
+	country = jap
+	random = no
+
+	trigger = {	flag = JAPShinanoCV
+			random = 25
+			control = { province = 1184 data = jap }
+}
+	name = "IJN Shinano"
+	desc = "The IJN Shinano is now ready to commence operations in Tokyo."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = november year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "Deploy the ship"
+		command = { type = activate_division which = 13016 value = 1256 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = free_ic value = 2 } # Distributed costs
+		command = { type = free_energy value = 6 } # Distributed resource costs
+		command = { type = free_metal value = 3 } # Distributed resource costs
+		command = { type = free_rare_materials value = 1.5 } # Distributed resource costs
+		}
+}
+######################
+event = {
+	id = 40754
+	random = no
+	country = jap
+	style = 0
+
+	trigger = { 	ai = no random = 25
+			flag = JAPShinano
+			war = { country = jap country = usa }
+			control = { province = 1184 data = jap }
+}
+	date = { day = 1 month = january year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1943 }
+
+	name = "IJN Shinano Conversion"
+	desc = "Due to the looming conflict with the USA the IJN halted construction of the Super-BB IJN Shinano.  Eventually, the IJN decided to complete the hull as a super-carrier and conversion work began in 1942.  TECHNICAL NOTE: If you convert the hull it will not show in the build cue, but will deploy via event in late 1944 with a CAG included at 65% strength. If you elect to convert or scrap the hull you must delete the unit in the build que."
+	style = 0
+	picture = "japanese_navy"
+
+	action_a = {
+		name = "Convert the IJN Shinano"
+		ai_chance = 100
+		command = { type = construct which = ic where = 1184 value = -1 } # Tokyo
+		command = { type = free_ic value = -2 } # Distributed costs
+		command = { type = free_energy value = -6 } # Distributed resource costs
+		command = { type = free_metal value = -3 } # Distributed resource costs
+		command = { type = free_rare_materials value = -1.5 }
+		command = { type = manpowerpool value = -4 }
+		command = { type = setflag which = JAPShinanoCV }
+		command = { type = clrflag which = JAPShinano }
+		command = { type = sleepevent which = 40753 }
+		}
+	action_b = {
+		name = "Finish the IJN Shinano as a BB"
+		ai_chance = 0
+		command = { type = sleepevent which = 40754 }
+		}
+	action_c = {
+		name = "Scrap the IJN Shinano"
+		ai_chance = 0
+		command = { metalpool value = 2000 }
+		command = { type = clrflag which = JAPShinano }
+		command = { type = sleepevent which = 40753 }
+		command = { type = sleepevent which = 40754 }
+		}
+}
+#########################################################################
+# 40755-61 Carrier Conversions   (by Dec152000 060224)
+#########################################################################
+
+event = {
+	id = 40755
+	country = jap
+	random = no
+
+	trigger = { 	manpower = 10
+			technology = 3320
+			control = { province = 1187 data = jap }
+			control = { province = 1184 data = jap }
+			control = { province = 1190 data = jap }
+	}
+
+	name = "Conversion Carriers"
+	desc = "As tensions in the Pacific region increased, the IJN developed plans to quickly increase it's carrier force.  Instead of producing completely new fleet carriers six conversion programs were undertaken using 2 civilian ships and 4 seaplane tenders.  These ships quickly augmented the IJN carrier force at a low cost.  Technical Note:  These ships will arrive with a CAG."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = january year = 1940 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Begin the conversion program"
+		ai_chance = 99
+		command = { type = construct which = ic where = 1187 value = -1 } # Osaka
+		command = { type = construct which = ic where = 1184 value = -2 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = -2 } # Fukuoka
+		command = { type = free_energy value = -10 } # Distributed resource costs
+		command = { type = free_metal value = -5 } # Distributed resource costs
+		command = { type = free_rare_materials value = -2.5 }
+		command = { type = manpowerpool value = -10 }
+		}
+	action_b = {
+		name = "The current carriers are sufficient"
+		ai_chance = 1
+		command = { type = sleepevent which = 40756 }
+		command = { type = sleepevent which = 40757 }
+		command = { type = sleepevent which = 40758 }
+		command = { type = sleepevent which = 40759 }
+		command = { type = sleepevent which = 40760 }
+		command = { type = sleepevent which = 40761 }
+		}
+}
+#####################
+event = {
+	id = 40756
+	country = jap
+	random = no
+
+	trigger = { 	random = 25
+			control = { province = 1187 data = jap }}
+
+	name = "IJN Hiyo"
+	desc = "The IJN Hiyo is now ready to commence operations in Osaka."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = july year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1250 where = 1187 }
+		command = { type = construct which = ic where = 1187 value = 1 } # Osaka
+		command = { type = free_energy value = 2 } # Distributed resource costs
+		command = { type = free_metal value = 1 } # Distributed resource costs
+		command = { type = free_rare_materials value = 0.5 } # Distributed resource costs
+		}
+	action_b = {
+		name = "Deploy this ship, but cancel all further conversions."
+		ai_chance = 0
+		command = { type = activate_division which = 13016 value = 1250 where = 1187 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = 1 } # Fukuoka
+		command = { type = construct which = ic where = 1187 value = 1 } # Osaka
+		command = { type = free_energy value = 6 } # Distributed resource costs
+		command = { type = free_metal value = 3 } # Distributed resource costs
+		command = { type = free_rare_materials value = 1.5 }
+		command = { type = manpowerpool value = 3 }
+		command = { type = sleepevent which = 40757 }
+		command = { type = sleepevent which = 40758 }
+	}
+}
+#####################
+event = {
+	id = 40757
+	country = jap
+	random = no
+
+	trigger = { 	random = 25
+			control = { province = 1190 data = jap }}
+
+	name = "IJN Junyo"
+	desc = "The IJN Junyo is now ready to commence operations in Fukuoka."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = may year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1251 where = 1190 }
+		command = { type = construct which = ic where = 1190 value = 1 } # Fukuoka
+		command = { type = free_energy value = 2 } # Distributed resource costs
+		command = { type = free_metal value = 1 } # Distributed resource costs
+		command = { type = free_rare_materials value = 0.5 } # Distributed resource costs
+		}
+	action_b = {
+		name = "Deploy this ship, but cancel all further conversions."
+		ai_chance = 0
+		command = { type = activate_division which = 13016 value = 1251 where = 1190 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = 2 } # Fukuoka
+		command = { type = construct which = ic where = 1187 value = 1 } # Osaka
+		command = { type = free_energy value = 8 } # Distributed resource costs
+		command = { type = free_metal value = 4 } # Distributed resource costs
+		command = { type = free_rare_materials value = 2 }
+		command = { type = manpowerpool value = 5 }
+		command = { type = sleepevent which = 40754 }
+		command = { type = sleepevent which = 40757 }
+		command = { type = sleepevent which = 40758 }
+	}
+}
+#####################
+event = {
+	id = 40758
+	country = jap
+	random = no
+
+	trigger = { 	random = 15
+			control = { province = 1184 data = jap }}
+
+	name = "IJN Shoho"
+	desc = "The IJN Shoho is now ready to commence operations in Tokyo."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = january year = 1942 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1942 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1252 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = free_energy value = 2 } # Distributed resource costs
+		command = { type = free_metal value = 1 } # Distributed resource costs
+		command = { type = free_rare_materials value = 0.5 } # Distributed resource costs
+
+	}
+	action_b = {
+		name = "Deploy this ship, but cancel all further conversions."
+		ai_chance = 0
+		command = { type = activate_division which = 13016 value = 1252 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 2 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = 2 } # Fukuoka
+		command = { type = construct which = ic where = 1187 value = 1 } # Osaka
+		command = { type = free_energy value = 10 } # Distributed resource costs
+		command = { type = free_metal value = 8 } # Distributed resource costs
+		command = { type = free_rare_materials value = 2.5 }
+		command = { type = manpowerpool value = 7 }
+		command = { type = sleepevent which = 40753 }
+		command = { type = sleepevent which = 40754 }
+		command = { type = sleepevent which = 40757 }
+		command = { type = sleepevent which = 40758 }
+	}
+}
+#####################
+event = {
+	id = 40759
+	country = jap
+	random = no
+
+	trigger = { 	random = 15
+			control = { province = 1184 data = jap }
+	}
+
+	name = "IJN Zuiho"
+	desc = "The IJN Zuiho is now ready to commence operations in Tokyo."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = december year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1941 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1253 where = 1184 }
+		}
+	action_b = {
+		name = "Deploy this ship, but cancel all further conversions."
+		ai_chance = 0
+		command = { type = activate_division which = 13016 value = 1253 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 2 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = 2 } # Fukuoka
+		command = { type = construct which = ic where = 1187 value = 1 } # Osaka
+		command = { type = free_energy value = 10 } # Distributed resource costs
+		command = { type = free_metal value = 5 } # Distributed resource costs
+		command = { type = free_rare_materials value = 2.5 }
+		command = { type = manpowerpool value = 8.5 }
+		command = { type = sleepevent which = 40753 }
+		command = { type = sleepevent which = 40754 }
+		command = { type = sleepevent which = 40755 }
+		command = { type = sleepevent which = 40757 }
+		command = { type = sleepevent which = 40758 }
+	}
+}
+#####################
+event = {
+	id = 40760
+	country = jap
+	random = no
+
+	trigger = { 	random = 25
+			control = { province = 1184 data = jap }
+	}
+
+	name = "IJN Chitose"
+	desc = "The IJN Chitose is now ready to commence operations in Tokyo."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = january year = 1944 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1254 where = 1190 }
+		command = { type = construct which = ic where = 1190 value = 1 } # Fukuoka
+		command = { type = free_energy value = 2 } # Distributed resource costs
+		command = { type = free_metal value = 1 } # Distributed resource costs
+		command = { type = free_rare_materials value = 0.5 } # Distributed resource costs
+		}
+}
+#####################
+event = {
+	id = 40761
+	country = jap
+	random = no
+
+	trigger = { 	random = 15
+			control = { province = 1184 data = jap }
+	}
+
+	name = "IJN Chiyoda"
+	desc = "The IJN Chiyoda is now ready to commence operations in Tokyo."
+	style = 0
+	picture = "american_carrier"
+
+	date = { day = 1 month = october year = 1943 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1944 }
+
+	action_a = {
+		name = "Deploy the ship"
+		ai_chance = 100
+		command = { type = activate_division which = 13016 value = 1255 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = free_energy value = 2 } # Distributed resource costs
+		command = { type = free_metal value = 1 } # Distributed resource costs
+		command = { type = free_rare_materials value = 0.5 } # Distributed resource costs
+		}
+	action_b = {
+		name = "Deploy this ship, but cancel all further conversions."
+		ai_chance = 0
+		command = { type = activate_division which = 13016 value = 1255 where = 1184 }
+		command = { type = construct which = ic where = 1184 value = 1 } # Tokyo
+		command = { type = construct which = ic where = 1190 value = 1 } # Fukuoka
+		command = { type = free_energy value = 4 } # Distributed resource costs
+		command = { type = free_metal value = 2 } # Distributed resource costs
+		command = { type = free_rare_materials value = 1 }
+		command = { type = manpowerpool value = 1.5 }
+		command = { type = sleepevent which = 40757 }
+	}
+}
+#########################################################################
+# 40762 Japanese Aircraft models (by Aregorn 081107) requested by Alan Mateus
+#########################################################################
+event = {
+	id = 40762
+	random = no
+	country = jap
+
+	trigger = { atwar = yes }
+
+	name = "Japanese Aircraft models"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. Historically Japan opted for quality with excellent planes like the Zero or battleships like Yamato but as good as they were quality came with a cost and in fact they proved to be very difficult to replace in the long run."
+	style = 0
+
+	picture = jap_air_factory	#by Aregorn
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+	command = { type = build_time which = multi_role when = now where = relative value = 20 }
+	command = { type = build_cost which = multi_role when = now where = relative value = 20 }
+	command = { type = supply_consumption which = multi_role value = 0.1 }
+	command = { type = speed which = multi_role value = 40 }
+
+	command = { type = build_time which = interceptor when = now where = relative value = 20 }
+	command = { type = build_cost which = interceptor when = now where = relative value = 20 }
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+	command = { type = supply_consumption which = interceptor value = 0.1 }
+	command = { type = speed which = interceptor value = 40 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = build_time which = cas when = now where = relative value = 20 }
+	command = { type = build_cost which = cas when = now where = relative value = 20 }
+	command = { type = supply_consumption which = cas value = 0.1 }
+	command = { type = speed which = cas value = 20 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+	command = { type = air_defense which = tactical_bomber value = 1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = tactical_bomber value = 0.2 }
+	command = { type = speed which = tactical_bomber value = 20 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = naval_bomber value = 0.1 }
+	command = { type = speed which = naval_bomber value = 20 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 2 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = strategic_bomber value = 0.2 }
+	command = { type = speed which = strategic_bomber value = 20 }
+	}
+	action_b = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 0
+	command = { type = soft_attack which = multi_role value = -1 }
+	command = { type = air_attack which = multi_role value = -1 }
+	command = { type = air_defense which = multi_role value = -2 }
+	command = { type = build_time which = multi_role when = now where = relative value = -25 }
+	command = { type = build_cost which = multi_role when = now where = relative value = -25 }
+	command = { type = supply_consumption which = multi_role value = -0.1 }
+	command = { type = speed which = multi_role value = -40 }
+
+	command = { type = soft_attack which = interceptor value = -1 }
+	command = { type = build_time which = interceptor when = now where = relative value = -25 }
+	command = { type = build_cost which = interceptor when = now where = relative value = -25 }
+	command = { type = air_attack which = interceptor value = -1 }
+	command = { type = air_defense which = interceptor value = -2 }
+	command = { type = supply_consumption which = interceptor value = -0.1 }
+	command = { type = speed which = interceptor value = -40 }
+
+	command = { type = hard_attack which = cas value = -2 }
+	command = { type = soft_attack which = cas value = -2 }
+	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = build_time which = cas when = now where = relative value = -25 }
+	command = { type = build_cost which = cas when = now where = relative value = -25 }
+	command = { type = supply_consumption which = cas value = -0.1 }
+	command = { type = speed which = cas value = -20 }
+
+	command = { type = hard_attack which = tactical_bomber value = -1 }
+	command = { type = soft_attack which = tactical_bomber value = -2 }
+	command = { type = strategic_attack which = tactical_bomber value = -1 }
+	command = { type = air_defense which = tactical_bomber value = -1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = tactical_bomber value = -0.2 }
+	command = { type = speed which = tactical_bomber value = -20 }
+
+	command = { type = soft_attack which = naval_bomber value = -1 }
+	command = { type = naval_attack which = naval_bomber value = -1 }
+	command = { type = air_defense which = naval_bomber value = -1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = naval_bomber value = -0.1 }
+	command = { type = speed which = naval_bomber value = -20 }
+
+	command = { type = hard_attack which = strategic_bomber value = -1 }
+	command = { type = soft_attack which = strategic_bomber value = -1 }
+	command = { type = strategic_attack which = strategic_bomber value = -2 }
+	command = { type = air_defense which = strategic_bomber value = -1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = strategic_bomber value = -0.2 }
+	command = { type = speed which = strategic_bomber value = -20 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}

@@ -1,0 +1,207 @@
+####################################
+# Costa Rica AI events 33500 - 33599 by Lothos
+####################################
+################
+# Minister of Security Section 33500 - 33509
+#############################################
+event = { # Isalino de Silva Londres takes power
+	id = 33500
+	random = no
+	country = COS
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 47082 # Isalino de Silva Londres
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COSecurityLondres }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COSecurityLondres }
+		command = { type = local_clrflag which = COSecurityIsalino }
+		command = { type = ministerofsecurity which = 47082 }
+		command = { type = dissent value = -1 }
+	}
+}
+event = { # Isalino de Silva Londres takes power
+	id = 33501
+	random = no
+	country = COS
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 47089 # Isalino de Silva Londres
+		NOT = { minister = 47082 } # Isalino de Silva Londres
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COSecurityIsalino }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = COSecurityLondres }
+		command = { type = local_setflag which = COSecurityIsalino }
+		command = { type = ministerofsecurity which = 47089 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of Staff Section 33510 - 33519
+#############################################
+################
+# Head of Intelligence Section 33520 - 33529
+#############################################
+event = { # José Mendéz Alino takes power
+	id = 33520
+	random = no
+	country = COS
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 47099 # José Mendéz Alino
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COSIntelligenceAlino }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COSIntelligenceAlino }
+		command = { type = ministerofintelligence which = 47099 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Chief of the Army Section 33530 - 33539
+#############################################
+event = { # Don Arnaldo Zamora takes power
+	id = 33530
+	random = no
+	country = COS
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 47116 # Don Arnaldo Zamora
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COSArmyZamora }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COSArmyZamora }
+		command = { type = chiefofarmy which = 47116 }
+		command = { type = dissent value = -1 }
+	}
+}
+################
+# Armament Minister Section 33540 - 33549
+#############################################
+event = { # Otto Cortes Fernandez takes power
+	id = 33540
+	random = no
+	country = COS
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		minister = 47074 # Otto Cortes Fernandez
+		OR = {
+			AND = {
+				day = 1
+				NOT = { day = 2 }
+			}
+			NOT = { local_flag = COSArmamentFernandez }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = COSArmamentFernandez }
+		command = { type = armamentminister which = 47074 }
+		command = { type = dissent value = -1 }
+	}
+}
+
+
+
+
+
+#############################################
+# Regular AI Events 33560 - 33599
+#############################################
+################
+# Control Building AI
+#############################################
+event = {
+	id = 33560
+	random = no
+	country = COS
+
+	trigger = {
+		ai = yes
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = ai which = "switch/Minor_Build_Standard_1.ai" }
+	}
+}

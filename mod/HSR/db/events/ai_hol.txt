@@ -1,0 +1,313 @@
+####################################
+# Holland AI events 35600 - 35699 by Lothos
+####################################
+# Behavior Flags
+#	HOLDDay		= Load DDay AI
+
+# Embargo Flags (must be a democracy)
+#	HOLEmbargoGER		= Embargo against German
+#	HOLEmbargoITA		= Embargo against Italy
+#	HOLEmbargoJAP		= Embargo against Japan
+#	HOLEmbargoGER_ITA	= Embargo both Germany and Italy
+#	HOLEmbargoGER_JAP	= Embargo both Germany and Japan
+#	HOLEmbargoITA_JAP	= Embargo both Italy and Japan
+#	HOLEmbargoGER_ITA_JAP	= Embargo Germany, Italy and Japan
+
+################
+# Minister of Security Section 35600 - 35609
+#############################################
+################
+# Chief of Staff Section 35610 - 35619
+#############################################
+################
+# Head of Intelligence Section 35620 - 35629
+#############################################
+################
+# Chief of the Army Section 35630 - 35639
+#############################################
+################
+# Armament Minister Section 35640 - 35649
+#############################################
+
+
+
+
+
+
+
+#############################################
+# Regular AI Events 35660 - 35699
+#############################################
+################
+# Load D-Day AI
+#############################################
+event = {
+	id = 35660
+	random = no
+	country = HOL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		flag = DDay
+		NOT = { local_flag = HOLDDay }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HOLDDay }
+		command = { type = ai which = "switch/Minor_DDay_ENG.ai" }
+	}
+}
+event = {
+	id = 35661
+	random = no
+	country = HOL
+	persistent = yes
+
+	trigger = {
+		ai = yes
+		atwar = yes
+		NOT = { flag = DDay }
+		local_flag = HOLDDay
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = BELDDay }
+		command = { type = ai which = "switch/Minor_DDay_Retrack.ai" }
+	}
+}
+################
+# HOL does Embargos
+#############################################
+event = {
+	id = 35662
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoGER }
+		NOT = { alliance = { country = HOL country = GER } }
+		OR = {
+			war = { country = BEL country = GER }
+			war = { country = LUX country = GER }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HOLEmbargoGER }
+		command = { type = ai which = "switch/USA_Embargo_GER.ai" }
+		command = { type = end_trades which = HOL where = GER }
+	}
+}
+event = {
+	id = 35663
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoJAP }
+		NOT = { alliance = { country = HOL country = JAP } }
+		OR = {
+			event = 3800 # Oil Embargo
+			war = { country = FRA country = JAP }
+			war = { country = ENG country = JAP }
+			war = { country = HOL country = JAP }
+			war = { country = PHI country = JAP }
+			war = { country = VIC country = JAP }
+			war = { country = AST country = JAP }
+			war = { country = NZL country = JAP }
+			war = { country = POR country = JAP }
+			war = { country = SIA country = JAP }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HOLEmbargoJAP }
+		command = { type = ai which = "switch/USA_Embargo_JAP.ai" }
+		command = { type = end_trades which = HOL where = JAP }
+	}
+}
+event = {
+	id = 35664
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoITA }
+		NOT = { alliance = { country = HOL country = ITA } }
+		OR = {
+			war = { country = BEL country = ITA }
+			war = { country = LUX country = ITA }
+		}
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HOLEmbargoITA }
+		command = { type = ai which = "switch/USA_Embargo_ITA.ai" }
+		command = { type = end_trades which = HOL where = ITA }
+	}
+}
+event = {
+	id = 35665
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoGER_ITA }
+		local_flag = HOLEmbargoGER
+		local_flag = HOLEmbargoITA
+		NOT = { local_flag = HOLEmbargoJAP }
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_setflag which = HOLEmbargoGER_ITA }
+		command = { type = local_clrflag which = HOLEmbargoGER_JAP }
+		command = { type = local_clrflag which = HOLEmbargoITA_JAP }
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA_JAP }
+		command = { type = ai which = "switch/USA_Embargo_GER_ITA.ai" }
+	}
+}
+event = {
+	id = 35666
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoGER_JAP }
+		local_flag = HOLEmbargoGER
+		NOT = { local_flag = HOLEmbargoITA }
+		local_flag = HOLEmbargoJAP
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA }
+		command = { type = local_setflag which = HOLEmbargoGER_JAP }
+		command = { type = local_clrflag which = HOLEmbargoITA_JAP }
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA_JAP }
+		command = { type = ai which = "switch/USA_Embargo_GER_JAP.ai" }
+	}
+}
+event = {
+	id = 35667
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoITA_JAP }
+		NOT = { local_flag = HOLEmbargoGER }
+		local_flag = HOLEmbargoITA
+		local_flag = HOLEmbargoJAP
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA }
+		command = { type = local_clrflag which = HOLEmbargoGER_JAP }
+		command = { type = local_setflag which = HOLEmbargoITA_JAP }
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA_JAP }
+		command = { type = ai which = "switch/USA_Embargo_ITA_JAP.ai" }
+	}
+}
+event = {
+	id = 35668
+	random = no
+	country = HOL
+	#persistent = yes
+
+	trigger = {
+		ai = yes
+		government = democratic
+		NOT = { local_flag = HOLEmbargoGER_ITA_JAP }
+		local_flag = HOLEmbargoGER
+		local_flag = HOLEmbargoITA
+		local_flag = HOLEmbargoJAP
+	}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 3
+	deathdate = { day = 29 month = december year = 1948 }
+
+	action_a = {
+		command = { type = local_clrflag which = HOLEmbargoGER_ITA }
+		command = { type = local_clrflag which = HOLEmbargoGER_JAP }
+		command = { type = local_clrflag which = HOLEmbargoITA_JAP }
+		command = { type = local_setflag which = HOLEmbargoGER_ITA_JAP }
+		command = { type = ai which = "switch/USA_Embargo_GER_ITA_JAP.ai" }
+	}
+}

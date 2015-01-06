@@ -1,0 +1,941 @@
+# Aregorn_Miscelaneus II: (23)
+#
+# ID		Title						Author
+#
+# 42000-09 	(ENG) Preventive UK invasions 				(by Aregorn 051022)
+# 42010  	(GER) Liberation of Georgia 				(by Aregorn 051222)
+# 42011  	(GER) Liberation of Armenia 				(by Aregorn 051222)
+# 42012  	(GER) Liberation of Azerbaijan 				(by Aregorn 051222)
+# 42013-14 	(GER,FIN) Murmansk captured				(by Aregorn 051203)
+# 42015 	(IRQ) Baku captured from the south 			(by Aregorn 060528)
+# 42016 	(SCH,AUS,ITA,NOR) Country specific - Mountain Troops	(by Aregorn 060604)
+# 42017-19 	(TUR) Claim Middle east with German blessing 		(By Aregorn)
+# 42020 	New Year 						(by Aregorn 081019)
+# 42021 	Armor Policy						(by Aregorn 081107) requested by Alan Mateus
+# 42022 	Aircrafts Policy 					(by Aregorn 081107) requested by Alan Mateus
+
+
+############################################################################
+# 42000-09 Preventive UK invasions (by Aregorn 051022)
+############################################################################
+
+
+event = {
+	id = 42000
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 43 size = 1 } }
+			control = { province = 43 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2395  type = naval size = 3 area = no }}
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 43 } #Dunkerque
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 43 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42001
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 42 size = 1 } }
+			control = { province = 42 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2412  type = naval size = 3 area = no }}
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 42 } #Dieppe
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 42 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42002
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 41 size = 1 } }
+			control = { province = 41 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2412  type = naval size = 3 area = no }}
+			}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 41 } #Havre
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 41 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42003
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 18 size = 1 } }
+			control = { province = 18 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2412  type = naval size = 3 area = no }}
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 18 } #Calais
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 18 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42004
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 39 size = 1 } }
+			control = { province = 39 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2412  type = naval size = 3 area = no }}
+			}
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 39 } #Caen
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 39 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42005
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 33 size = 1 } }
+			control = { province = 33 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2413  type = naval size = 3 area = no }}
+			}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 33 } #Rennes
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 33 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42006
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 32 size = 1 } }
+			control = { province = 32 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2415  type = naval size = 3 area = no }}
+			not = {	garrison = { country = ger province = 2413  type = naval size = 3 area = no }}
+			not = {	garrison = { country = ger province = 2414  type = naval size = 3 area = no }}
+	}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1941 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 32 } #Brest
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 32 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42007
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 35 size = 1 } }
+			control = { province = 35 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2415  type = naval size = 3 area = no }}
+			}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 35 } #Nantes
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 35 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42008
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 325 size = 1 } }
+			control = { province = 325 data = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2416  type = naval size = 3 area = no }}
+			not = {	garrison = { country = ger province = 2417  type = naval size = 3 area = no }}
+			}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 325 } #Bordeaux
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 325 }
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+event = {
+	id = 42009
+	random = no
+	country = eng
+	persistent = yes
+
+	trigger = {	ai = yes not = { ai = ger } war = { country = eng country = ger } random = 25
+			not = { garrison = { country = ger province = 90 size = 1 } }
+			control = { province = 90 data = ger }
+			not = { ai = ger }
+			control = { province = 23 data = eng }
+			not = {	garrison = { country = ger province = 2473  type = naval size = 3 area = no }}
+			}
+
+
+	name = "AI_EVENT"
+	style = 0
+
+	date = { day = 1 month = may year = 1940 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 90 } #Kiel
+		command = { type = add_division value = hq }
+		command = { type = add_division value = armor when = 2 where = sp_artillery }
+		command = { type = add_division value = motorized when = 1 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+	action_b = {
+		name = "ok"
+		command = { type = add_corps which = "Force A" value = land when = 1311 where = 90 } #Kiel
+		command = { type = add_division value = hq }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = add_division value = infantry when = 2 where = sp_artillery }
+		command = { type = manpowerpool value = -5 }
+}
+}
+#########################################################################
+# 42010 Liberation of Georgia (by Aregorn 051222)
+#########################################################################
+
+event = {
+	id = 42010
+	random = no
+	country = ger
+	trigger = { 	alliance = { country = ger country = geo }
+	}
+
+	name = "Liberation of Georgia"
+	desc = "Germany clearly shows its 'Liberator' policy. A Benevolent behaviour of the conquerors will indeed gain the favour of the oppressed severely hampering the Soviet chances to mount an effective military opposition."
+	style = 0
+	picture = 47000_Occupation_Poland	#Aregorn
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+		command = { type = manpowerpool value = 50 }
+	}
+}
+#########################################################################
+# 42011 Liberation of Armenia (by Aregorn 051222)
+#########################################################################
+
+event = {
+	id = 42011
+	random = no
+	country = ger
+	trigger = { 	alliance = { country = ger country = arm }
+	}
+
+	name = "Liberation of Armenia"
+	desc = "Germany clearly shows its 'Liberator' policy. A Benevolent behaviour of the conquerors will indeed gain the favour of the oppressed severely hampering the Soviet chances to mount an effective military opposition."
+	style = 0
+	picture = 47000_Occupation_Poland	#Aregorn
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+		command = { type = manpowerpool value = 50 }
+	}
+}
+#########################################################################
+# 42012 Liberation of Azerbaijan (by Aregorn 051222)
+#########################################################################
+
+event = {
+	id = 42012
+	random = no
+	country = ger
+	trigger = { 	alliance = { country = ger country = azb }
+	}
+
+	name = "Liberation of Azerbaijan"
+	desc = "Germany clearly shows its 'Liberator' policy. A Benevolent behaviour of the conquerors will indeed gain the favour of the oppressed severely hampering the Soviet chances to mount an effective military opposition."
+	style = 0
+	picture = 47000_Occupation_Poland	#Aregorn
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = dissent value = -1 }
+		command = { type = manpowerpool value = 50 }
+		command = { type = tc_mod value = 1 }
+	}
+}
+#########################################################################
+# 42013-14 Murmansk captured (by Aregorn)
+#########################################################################
+
+
+event = {
+	id = 42013
+	random = no
+
+	trigger = {
+			or = {
+				and = { control = { province = 133 data = ger } country = ger }
+				and = { control = { province = 133 data = fin } country = fin }
+			}
+	}
+
+	name = "Capture of Murmansk"
+	desc = "What historically was impossible, under a sensible leadership, became a fact."
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = dissent value = -5 }
+	}
+}
+
+event = {
+	id = 42014
+	random = no
+
+	trigger = { 	event = 42013 random = 25
+			or = {
+				and = { control = { province = 133 data = ger } country = ger }
+				and = { control = { province = 133 data = fin } country = fin }
+			}
+	}
+
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at our disposition"
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 10000 where = 133 }
+		command = { type = money value = 500 }
+	}
+}
+#########################################################################
+# 42015 (IRQ) Baku captured from the south (by Aregorn 060528)
+#########################################################################
+
+event = {
+	id = 42015
+	random = no
+	country = irq
+
+	trigger = {	not = { ai = ger }
+			garrison = { country = ger province = 1907 type = land size = 1 }
+			alliance = { country = irq country = ger }
+			control = { province = 1907 data = irq }
+	}
+	name = ai_event
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "ok"
+		command = { type = secedeprovince which = ger value = 1907 }
+	}
+}
+########################################################################
+# 42016 Country specific - Mountain Troops (by Aregorn 060604)
+########################################################################
+
+event = {
+	id = 42016
+	random = no
+
+	trigger = { 	ai = no
+			or = { 	country = sch country = aus country = ita country = nor
+				country = fin country = chl country = afg country = pru
+				country = tib country = bol country = chc country = nep
+				country = arg
+				}
+	}
+
+	name = "Mountain Troops"
+	desc = "Our Military is familiar with mountain warfare."
+	style = 0
+	picture = finish_soldiers
+
+	date = { day = 15 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1943 }
+
+	action_a = { name = "ok"
+		command = { type = build_cost which = bergsjaeger when = now where = relative value = -5 }
+		command = { type = mountain_move which = bergsjaeger value = 10 }
+		command = { type = mountain_attack which = bergsjaeger value = 5 }
+		command = { type = mountain_defense which = bergsjaeger value = 10 }
+		command = { type = max_organization which = bergsjaeger value = 10 }
+	}
+}
+#########################################################################
+# 42017-18 (TUR) Claim Middle east with German blessing (By Aregorn)
+#########################################################################
+event = {
+	id = 42017
+	random = no
+	country = tur
+
+	trigger = {
+		puppet = { country = jor country = ger }
+		puppet = { country = pal country = ger }
+		puppet = { country = syr country = ger }
+		puppet = { country = leb country = ger }
+		NOT = {	war = { country = tur country = ger } }
+		not = { control = { province = 31 data = eng } }
+		not = { control = { province = 348 data = eng } }
+		not = { control = { province = 900 data = eng } }
+		not = { control = { province = 1848 data = sov } } #Batum
+		not = { control = { province = 175 data = sov } } #Moscow
+	}
+
+	name = "The Ottoman empire"
+	desc = "Turkey asks for the German blessing to obtain their former territories"
+	style = 0
+
+	date = { day = 1 month = september year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Press the issue and offer an alliance"
+		ai_chance = 100
+		command = { type = relation which = slo value = -60 }
+		command = { type = trigger which = 45066 } # aregorn_ger2
+	}
+	action_b = {
+		name = "ACTIONNAME2503B" # Refrain
+		ai_chance = 0
+		command = { type = domestic which = interventionism value = -1 }
+	}
+}
+event = {
+	id = 42018
+	random = no
+	country = tur
+
+	# Triggered by aregorn_ger2
+
+	name = "EVT_2001_NAME"
+	desc = "EVT_2001_DESC"
+	style = 0
+
+	action_a = {
+		name = "OK"
+		command = { type = inherit which = jor }
+		command = { type = inherit which = pal }
+		command = { type = inherit which = leb }
+		command = { type = inherit which = syr }
+		command = { type = inherit which = cyp }
+		command = { type = dissent value = -10 }
+		command = { type = domestic which = defense_lobby value = 1 }
+		command = { type = independence which = OTT value = 1 }
+		command = { type = trigger which = 42019 }
+	}
+}
+event = {
+	id = 42019
+	random = no
+	country = OTT
+
+	#Triggered by 44087
+
+	name = "AI_EVENT"
+	desc = ""
+	style = 0
+
+	action_a = {
+		name = ""
+
+		command = { type = inherit which = tur }
+		command = { type = dissent value = -5 }
+		command = { type = alliance which = ger }
+		command = { type = relation which = ger value = 200 }
+	}
+}
+#########################################################################
+# 42020 New Year (by Aregorn 081019)
+#########################################################################
+
+event = {
+	id = 42020
+	random = no
+	persistent = yes
+
+	trigger = { 	ai = no  not = { day = 1 } not = { month = 1 }
+	}
+
+	name = "Happy New Year!"
+	desc = "A new year has started."
+	style = 0
+	picture = New_Year_misc2	#Aregorn
+
+	date = { hour = 0 day = 0 month = january year = 1936 }
+	offset = 1
+	deathdate = { hour = 0 day = 30 month = december year = 1963 }
+
+	action_a = {
+		name = "Good time for changing policy sliders"
+	        command = { type = dissent value = -1 }
+	}
+}
+###################################################################################################
+# 42021 Armor (by Aregorn 081107) requested by Alan Mateus
+###################################################################################################
+event = {
+	id = 42021
+	random = no
+
+	trigger = { ai = no atwar = yes
+			not = {
+				or = { 	country = ger
+					country = usa
+					country = eng
+					country = jap
+					country = fra
+					country = sov
+				}
+			}
+	}
+
+	name = "Armor Policy"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. The U.S. historically opted for an average quality, easier to transport to the front line, massproduced type of model."
+	style = 0
+
+	picture = tank_factory	#by Aregorn
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1954 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = build_time which = armor when = now where = relative value = -35 }
+	command = { type = build_cost which = armor when = now where = relative value = -35 }
+	command = { type = supply_consumption which = armor value = -0.5 }
+	command = { type = fuel_consumption which = armor value = -1 }
+	command = { type = speed which = armor value = 1 }
+	command = { type = transport_weight which = armor value = -15 }
+
+	command = { type = build_time which = mechanized when = now where = relative value = -20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = mechanized value = -0.1 }
+	command = { type = transport_weight which = mechanized value = -15 }
+
+	command = { type = hard_attack which = motorized value = -1 }
+	command = { type = soft_attack which = motorized value = -1 }
+	command = { type = build_time which = motorized when = now where = relative value = -20 }
+	command = { type = build_cost which = motorized when = now where = relative value = -20 }
+	command = { type = supply_consumption which = motorized value = -0.1 }
+	command = { type = transport_weight which = motorized value = -5 }
+
+	command = { type = domestic which = free_market value = -1 }
+	command = { type = industrial_modifier which = total value = 1 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 4 }
+	command = { type = soft_attack which = armor value = 4 }
+	command = { type = build_time which = armor when = now where = relative value = 30 }
+	command = { type = build_cost which = armor when = now where = relative value = 30 }
+	command = { type = supply_consumption which = armor value = 0.5 }
+	command = { type = fuel_consumption which = armor value = 0.5 }
+	command = { type = speed which = armor value = -1 }
+	command = { type = transport_weight which = armor value = 10 }
+	command = { type = max_organization which = armor value = 3 }
+
+	command = { type = hard_attack which = mechanized value = 2 }
+	command = { type = soft_attack which = mechanized value = 2 }
+	command = { type = build_time which = mechanized when = now where = relative value = 20 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = mechanized value = 0.1 }
+	command = { type = speed which = mechanized value = 1 }
+	command = { type = transport_weight which = mechanized value = 5 }
+	command = { type = max_organization which = mechanized value = 3 }
+
+	command = { type = build_time which = motorized when = now where = relative value = 20 }
+	command = { type = build_cost which = motorized when = now where = relative value = 20 }
+	command = { type = supply_consumption which = motorized value = 0.1 }
+	command = { type = speed which = motorized value = 1 }
+	command = { type = max_organization which = motorized value = 3 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 2 }
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
+	command = { type = build_time which = armor when = now where = relative value = 15 }
+	command = { type = build_cost which = armor when = now where = relative value = 15 }
+	command = { type = build_time which = mechanized when = now where = relative value = 10 }
+	command = { type = build_cost which = mechanized when = now where = relative value = 10 }
+	}
+	action_d = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}
+#########################################################################
+# 42022 Aircrafts Policy (by Aregorn 081107) requested by Alan Mateus
+#########################################################################
+event = {
+	id = 42022
+	random = no
+
+	trigger = { ai = no atwar = yes
+			not = {
+				or = { 	country = ger
+					country = usa
+					country = eng
+					country = jap
+					country = fra
+					country = sov
+				}
+			}
+	}
+	name = "Aircrafts Policy"
+	desc = "Time to chose qualitative edge on military hardware with better weaponry but longer and more costly to manufacture or master massproduction with average quality but tremendous quantities. The U.S. historically opted for an average quality, easier to transport to the front line, massproduced type of model."
+	style = 0
+
+	picture = usa_air_factory	#by Aregorn
+	date = { day = 1 month = january year = 1936 }
+	offset = 7
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "Overwhelming quantities is the answer"
+	ai_chance = 100
+	command = { type = soft_attack which = multi_role value = -1 }
+	command = { type = air_attack which = multi_role value = -1 }
+	command = { type = air_defense which = multi_role value = -2 }
+	command = { type = build_time which = multi_role when = now where = relative value = -25 }
+	command = { type = build_cost which = multi_role when = now where = relative value = -25 }
+	command = { type = supply_consumption which = multi_role value = -0.1 }
+	command = { type = speed which = multi_role value = -40 }
+
+	command = { type = soft_attack which = interceptor value = -1 }
+	command = { type = build_time which = interceptor when = now where = relative value = -25 }
+	command = { type = build_cost which = interceptor when = now where = relative value = -25 }
+	command = { type = air_attack which = interceptor value = -1 }
+	command = { type = air_defense which = interceptor value = -2 }
+	command = { type = supply_consumption which = interceptor value = -0.1 }
+	command = { type = speed which = interceptor value = -40 }
+
+	command = { type = hard_attack which = cas value = -2 }
+	command = { type = soft_attack which = cas value = -2 }
+	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = build_time which = cas when = now where = relative value = -25 }
+	command = { type = build_cost which = cas when = now where = relative value = -25 }
+	command = { type = supply_consumption which = cas value = -0.1 }
+	command = { type = speed which = cas value = -20 }
+
+	command = { type = hard_attack which = tactical_bomber value = -1 }
+	command = { type = soft_attack which = tactical_bomber value = -2 }
+	command = { type = strategic_attack which = tactical_bomber value = -1 }
+	command = { type = air_defense which = tactical_bomber value = -1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = tactical_bomber value = -0.2 }
+	command = { type = speed which = tactical_bomber value = -20 }
+
+	command = { type = soft_attack which = naval_bomber value = -1 }
+	command = { type = naval_attack which = naval_bomber value = -1 }
+	command = { type = air_defense which = naval_bomber value = -2 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = naval_bomber value = -0.1 }
+	command = { type = speed which = naval_bomber value = -40 }
+
+	command = { type = build_time which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = -25 }
+	command = { type = supply_consumption which = strategic_bomber value = -0.2 }
+	command = { type = speed which = strategic_bomber value = -20 }
+	}
+	action_b = {
+	name = "We need the best quality for our men"
+	ai_chance = 0
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+	command = { type = build_time which = multi_role when = now where = relative value = 20 }
+	command = { type = build_cost which = multi_role when = now where = relative value = 20 }
+	command = { type = supply_consumption which = multi_role value = 0.1 }
+	command = { type = speed which = multi_role value = 40 }
+
+	command = { type = build_time which = interceptor when = now where = relative value = 20 }
+	command = { type = build_cost which = interceptor when = now where = relative value = 20 }
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+	command = { type = supply_consumption which = interceptor value = 0.1 }
+	command = { type = speed which = interceptor value = 40 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = build_time which = cas when = now where = relative value = 20 }
+	command = { type = build_cost which = cas when = now where = relative value = 20 }
+	command = { type = supply_consumption which = cas value = 0.1 }
+	command = { type = speed which = cas value = 20 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+	command = { type = air_defense which = tactical_bomber value = 1 }
+	command = { type = build_time which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = tactical_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = tactical_bomber value = 0.2 }
+	command = { type = speed which = tactical_bomber value = 20 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+	command = { type = build_time which = naval_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = naval_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = naval_bomber value = 0.1 }
+	command = { type = speed which = naval_bomber value = 20 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 3 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	command = { type = build_time which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = build_cost which = strategic_bomber when = now where = relative value = 20 }
+	command = { type = supply_consumption which = strategic_bomber value = 0.2 }
+	command = { type = speed which = strategic_bomber value = 20 }
+	}
+	action_c = {
+	name = "Extremes policies are risky"
+	ai_chance = 0
+	command = { }
+	}
+}

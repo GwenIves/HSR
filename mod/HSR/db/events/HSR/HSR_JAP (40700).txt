@@ -2262,7 +2262,7 @@ event = {
 
 	command = { type = hard_attack which = cas value = 2 }
 	command = { type = soft_attack which = cas value = 2 }
-	command = { type = air_defense which = interceptor value = 1 }
+	command = { type = air_defense which = cas value = 1 }
 	command = { type = build_time which = cas when = now where = relative value = 20 }
 	command = { type = build_cost which = cas when = now where = relative value = 20 }
 	command = { type = supply_consumption which = cas value = 0.1 }
@@ -2315,7 +2315,7 @@ event = {
 
 	command = { type = hard_attack which = cas value = -2 }
 	command = { type = soft_attack which = cas value = -2 }
-	command = { type = air_defense which = interceptor value = -1 }
+	command = { type = air_defense which = cas value = -1 }
 	command = { type = build_time which = cas when = now where = relative value = -25 }
 	command = { type = build_cost which = cas when = now where = relative value = -25 }
 	command = { type = supply_consumption which = cas value = -0.1 }

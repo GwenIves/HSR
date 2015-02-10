@@ -49,11 +49,17 @@ trade = {
 	supplies 	= -1
 	money 		= -1
 
-	favored = { }
+	favored = {
+		GER = 150
+		ITA = 100
+	}
 	embargo = { }
 }
 tech_sharing = {
-	favored = {GER = 120 }
+	favored = {
+		GER = 120
+		ITA = 80
+	}
 	embargo = { ROM HUN BUL SLO TUR CZE GRE
 	}
 	not = { }
@@ -167,10 +173,10 @@ military = {
 	armor 		= 0
 	paratrooper 	= 0
 	marine 		= 0
-	bergsjaeger 	= 30
+	bergsjaeger 	= 40
 	garrison	= 0
 	hq 		= 0
-	militia 	= 40
+	militia 	= 30
 #				100 %
 	interceptor 	= 0
 	multi_role 	= 0

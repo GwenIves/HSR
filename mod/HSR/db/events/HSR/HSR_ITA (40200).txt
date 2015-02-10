@@ -1523,7 +1523,8 @@ event = {
 
 	trigger = {	control = { province = 932 data = ita } supplies = 5000
 			war = { country = ita country = eng } random = 50
-			control = { province = 31 data = ita } vp = 75
+			not = { control = { province = 31 data = eng }
+			vp = 75
 			year = 1939
 	}
 

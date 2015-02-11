@@ -139,6 +139,23 @@ event = {
 		command = { type = domestic which = defense_lobby value = 1 }
 		command = { type = waketeam which = 12 }
 		command = { type = waketeam which = 33 }
+
+		command = { type = wakeleader which = 551 )
+		command = { type = wakeleader which = 552 )
+		command = { type = wakeleader which = 555 )
+		command = { type = wakeleader which = 556 )
+		command = { type = wakeleader which = 557 )
+		command = { type = wakeleader which = 558 )
+		command = { type = wakeleader which = 561 )
+		command = { type = wakeleader which = 562 )
+		command = { type = wakeleader which = 567 )
+		command = { type = wakeleader which = 569 )
+		command = { type = wakeleader which = 570 )
+		command = { type = wakeleader which = 573 )
+		command = { type = wakeleader which = 575 )
+		command = { type = wakeleader which = 576 )
+		command = { type = wakeleader which = 577 )
+		command = { type = wakeleader which = 578 )
 	}
 }
 

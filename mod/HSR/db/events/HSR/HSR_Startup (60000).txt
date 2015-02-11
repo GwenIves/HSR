@@ -167,7 +167,7 @@ desc = "Messerschmitt continued to develop the Bf.109 during the late 1930s.  Th
 style = 0
 picture = 50013_bf109e_1	#Steffele
 
-date = { day = 0 month = january year = 1938 }
+date = { day = 0 month = january year = 1937 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -194,7 +194,7 @@ desc = "As war approached, the Luftwaffe was devoid of any long range naval bomb
 style = 0
 picture = 50014_fw200c	#Steffele
 
-date = { day = 1 month = july year = 1939 }
+date = { day = 1 month = january year = 1938 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -220,7 +220,7 @@ desc = "The continuing evolution of the Bf.109 resulted in the Franz entering pr
 style = 0
 picture = 50015_bf109f_1	#Steffele
 
-date = { day = 0 month = january year = 1940 }
+date = { day = 0 month = january year = 1938 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -272,7 +272,7 @@ desc = "Starting from the improved design of the Bf.109F, the G version addresse
 style = 0
 picture = 50015_bf109f_1	#Steffele
 
-date = { day = 0 month = january year = 1941 }
+date = { day = 0 month = january year = 1940 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -298,7 +298,7 @@ desc = "The FW.200C had proven to be an effective naval bomber.  However, it was
 style = 0
 picture = 50018_do217_1	#Steffele
 
-date = { day = 0 month = january year = 1942 }
+date = { day = 0 month = january year = 1941 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -324,7 +324,7 @@ desc = "With the decline of the Stuka, the Luftwaffe was in need of a new CAS ai
 style = 0
 picture = 50019_fw190_2	#Steffele
 
-date = { day = 0 month = january year = 1942 }
+date = { day = 0 month = january year = 1943 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -350,7 +350,7 @@ desc = "The failure of the Me.210 project resulted in the resumption of Bf.110 p
 style = 0
 picture = 50020_bf110g	#Steffele
 
-date = { day = 0 month = january year = 1942 }
+date = { day = 0 month = january year = 1940 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -402,7 +402,7 @@ desc = "This was the last production version of the venerable Bf.109.  It was ve
 style = 0
 picture = 50022_bf109k	#Steffele
 
-date = { day = 1 month = july year = 1943 }
+date = { day = 1 month = january year = 1943 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -428,7 +428,7 @@ desc = "Earlier models of the Ju.88 had served alongside the Bf.110G as night fi
 style = 0
 picture = 50023_ju88g	#Steffele
 
-date = { day = 1 month = july year = 1943 }
+date = { day = 1 month = january year = 1943 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -455,7 +455,7 @@ desc = "Kurt Tank first tested an inline engine on the FW-190 in 1942 and eventu
 style = 0
 picture = 50024_fw190d	#Steffele
 
-date = { day = 1 month = july year = 1943 }
+date = { day = 1 month = january year = 1943 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 
@@ -480,7 +480,7 @@ name = "Ju.188A-3 Development Program"
 desc = "The naval bomber variant of the Ju-188, which could carry torpedoes.  Very few were built."
 style = 0
 
-date = { day = 0 month = january year = 1944 }
+date = { day = 0 month = january year = 1943 }
 offset = 1
 deathdate = { day = 30 month = december year = 1963 }
 

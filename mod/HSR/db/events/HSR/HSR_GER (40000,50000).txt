@@ -2018,7 +2018,7 @@ event = {
 	random = no
 	persistent = yes
 
-	trigger = {	supplies = 40000 ai = no manpower = 70  random = 25
+	trigger = {	supplies = 55000 ai = no manpower = 70  random = 25
 			or = {
 				control = { province = 925 data = eng } #Agedabia
 				control = { province = 927 data = eng } #
@@ -2647,6 +2647,35 @@ event = {
 
 		command = { type = trigger which = 40076 }
 		}
+	action_b = {
+		name = "Reinforce the Italian divisions with German brigades."
+		command = { type = add_corps which = "Corpo d'Armata Nord Africa" value = land when = 6021 where = 932 }
+		command = { type = add_division which = "132a Div. Corazzata 'Ariete'" value = light_armor when = 1 where = light_armor_brigade }
+		command = { type = add_division which = "133a Div. Corazzata 'Littorio'" value = light_armor when = 1 where = light_armor_brigade }
+		command = { type = add_division which = "102a Div. Motocorazzata 'Trento'" value = motorized when = 0 where = engineer }
+		command = { type = add_division which = "101a Div. Motocorazzata 'Trieste'" value = motorized when = 0 where = engineer }
+
+		command = { type = add_corps which = "Corpo d'Armata Nord Africa" value = land when = 6041 where = 932 }
+		command = { type = add_division which = "27a Div. 'Brescia'" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "25a Div. 'Bologna'" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "17a Div. 'Pavia'" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "63a Div. 'Cirene'" value = infantry when = 1 where = artillery }
+		command = { type = add_division which = "62a Div. 'Marmarica'" value = infantry when = 1 where = anti_tank }
+		command = { type = add_division which = "29a Div. 'Piemonte'" value = infantry when = 1 where = anti_air }
+
+		command = { type = add_corps which = "Corpo d'Armata Nord Africa" value = land when = 6084 where = 932 }
+		command = { type = add_division which = "48a Div. 'Taro'" value = infantry when = 1 where = engineer }
+		command = { type = add_division which = "41a Div. 'Firenze'" value = infantry when = 1 where = engineer }
+		command = { type = add_division which = "51a Div. 'Siena'" value = infantry when = 1 where = engineer }
+		command = { type = add_division which = "50a Div. 'Regina'" value = infantry when = 1 where = engineer }
+		command = { type = add_division which = "19a Div. 'Venezia'" value = infantry when = 1 where = engineer }
+		command = { type = add_division which = "53a Div. 'Arezzo'" value = infantry when = 1 where = engineer }
+
+		command = { type = manpowerpool value = -55 }
+		command = { type = supplies value = -15000 }
+
+		command = { type = trigger which = 40076 }
+	}
 }
 event = {
 	id = 40076

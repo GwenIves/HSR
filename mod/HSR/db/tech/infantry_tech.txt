@@ -1155,6 +1155,7 @@ technology =
     { command = { type = new_model which = cavalry value = 4 }
       command = { type = scrap_model which = cavalry value = 3 }
       command = { type = info_may_cause which = 7240 }
+      command = { type = surprise which = land value = 5 }
     }
   }
   # #################################################################

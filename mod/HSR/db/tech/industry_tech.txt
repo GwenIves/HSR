@@ -571,6 +571,8 @@ technology =
 	command = { type = build_time which = flying_rocket when = now where = relative value = -20 }
 	command = { type = build_cost which = flying_bomb when = now where = relative value = -5 } #0
 	command = { type = build_cost which = flying_rocket when = now where = relative value = -5 } #0
+	command = { type = industrial_modifier which = supplies value = 1 }
+	command = { type = repair_mod value = 5 }
     }
   }
   # Small Arms Assembly Line (Aregorn for HSR2_ARM)

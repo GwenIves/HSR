@@ -819,7 +819,7 @@ technology =
       command = { type = build_cost which = engineer when = now where = relative value = -1 }
     }
   }
-  # Delay Doctrine
+  # Delay (GER) Doctrine
   application =
   { id        = 6230
     name      = TECH_APP_LD_23_NAME

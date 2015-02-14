@@ -399,49 +399,48 @@ event = {
 ###########################################################################
 
 event = {
-id = 47013
-country = GER
-random = no
+	id = 47013
+	country = GER
+	random = no
 
-trigger = { control = { province = 238 data = ger } }
+	trigger = { control = { province = 238 data = ger } }
 
-name = "Capture of Kiev"
-desc = "After an outstanding victory, Germany captures Kiev in one of the greatest encircle-destruction battles in history. Diverted from Moscow, Guderian's march south took the Russians by surprise. On September 16 the encirclement was complete as Stalin would not allow any withdrawal. After five days of resistance according to Germans sources some 665,000 men surrendered."
-style = 0
+	name = "Capture of Kiev"
+	desc = "After an outstanding victory, Germany captures Kiev in one of the greatest encircle-destruction battles in history. Diverted from Moscow, Guderian's march south took the Russians by surprise. On September 16 the encirclement was complete as Stalin would not allow any withdrawal. After five days of resistance according to Germans sources some 665,000 men surrendered."
+	style = 0
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 
 event = {
-id = 47014
-country = GER
-random = no
+	id = 47014
+	country = GER
+	random = no
 
-trigger = { event = 47013 random = 25 }
+	trigger = { event = 47013 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
-command = { type = add_division value = motorized where = sp_artillery }
-command = { type = supplies value = 3000 where = 238 }
-command = { type = money value = 100 }
-command = { type = manpowerpool value = -10 }
-
-}
+	action_a = {
+		name = "Great!"
+		command = { type = add_division value = motorized where = sp_artillery }
+		command = { type = supplies value = 3000 where = 238 }
+		command = { type = money value = 100 }
+		command = { type = manpowerpool value = -10 }
+	}
 }
 
 #########################################################################
@@ -450,52 +449,50 @@ command = { type = manpowerpool value = -10 }
 
 
 event = {
-id = 47015
-country = GER
-random = no
+	id = 47015
+	country = GER
+	random = no
 
-trigger = { control = { province = 212 data = ger }
-}
+	trigger = { control = { province = 212 data = ger } }
 
-name = "Capture of Minsk"
-desc = "Army Group Centre was the strongest of the three German formations. Commanded by Field Marshal Fedor von Bock, it included the 4th and 9th Army, the 2nd and 3rd Panzer Groups and the 2nd Air Fleet. By mid-August 1941 it had crushed Soviet forces in huge encirclement battles. In the Battle of Minsk The Wehrmacht captured over 300,000 Soviet prisoners."
-style = 0
-picture = ger_47014_minsk2
+	name = "Capture of Minsk"
+	desc = "Army Group Centre was the strongest of the three German formations. Commanded by Field Marshal Fedor von Bock, it included the 4th and 9th Army, the 2nd and 3rd Panzer Groups and the 2nd Air Fleet. By mid-August 1941 it had crushed Soviet forces in huge encirclement battles. In the Battle of Minsk The Wehrmacht captured over 300,000 Soviet prisoners."
+	style = 0
+	picture = ger_47014_minsk2
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 #####
 event = {
-id = 47016
-country = GER
-random = no
+	id = 47016
+	country = GER
+	random = no
 
-trigger = { event = 47015 random = 25 }
+	trigger = { event = 47015 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
-picture = ger_47014_minsk2
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
+	picture = ger_47014_minsk2
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
-command = { type = add_division value = motorized where = sp_artillery }
-command = { type = supplies value = 3000 where = 212 }
-command = { type = money value = 100 }
-command = { type = manpowerpool value = -10 }
-
-}
+	action_a = {
+		name = "Great!"
+		command = { type = add_division value = motorized where = sp_artillery }
+		command = { type = supplies value = 3000 where = 212 }
+		command = { type = money value = 100 }
+		command = { type = manpowerpool value = -10 }
+	}
 }
 
 #########################################################################
@@ -504,50 +501,48 @@ command = { type = manpowerpool value = -10 }
 
 
 event = {
-id = 47017
-country = GER
-random = no
+	id = 47017
+	country = GER
+	random = no
 
-trigger = { control = { province = 219 data = ger }
-}
+	trigger = { control = { province = 219 data = ger } }
 
-name = "Capture of Smolensk"
-desc = "Having driven the Soviet forces out of Byelorussia by July 1st, the German command was confident that it could complete the breakthrough to Moscow. German armoured divisions of Army Group Centre began an offensive on July 10 to encircle Soviet forces in the Smolensk area. The Resistance was so strong that not only some troops managed to brake out of the pocket but most importantly it delayed the overall German advance toward Moscow by two months."
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Capture of Smolensk"
+	desc = "Having driven the Soviet forces out of Byelorussia by July 1st, the German command was confident that it could complete the breakthrough to Moscow. German armoured divisions of Army Group Centre began an offensive on July 10 to encircle Soviet forces in the Smolensk area. The Resistance was so strong that not only some troops managed to brake out of the pocket but most importantly it delayed the overall German advance toward Moscow by two months."
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 event = {
-id = 47018
-country = GER
-random = no
+	id = 47018
+	country = GER
+	random = no
 
-trigger = { event = 47017 random = 25 }
+	trigger = { event = 47017 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
-command = { type = add_division value = motorized where = sp_artillery }
-command = { type = supplies value = 3000 where = 219 }
-command = { type = money value = 100 }
-command = { type = manpowerpool value = -10 }
-
-}
+	action_a = {
+		name = "Great!"
+		command = { type = add_division value = motorized where = sp_artillery }
+		command = { type = supplies value = 3000 where = 219 }
+		command = { type = money value = 100 }
+		command = { type = manpowerpool value = -10 }
+	}
 }
 
 #########################################################################
@@ -556,53 +551,52 @@ command = { type = manpowerpool value = -10 }
 
 
 event = {
-id = 47019
-country = GER
-random = no
+	id = 47019
+	country = GER
+	random = no
 
-trigger = { 	or = { 	control = { province = 253 data = ger }
-			and = {  control = { province = 253 data = ukr }
-				alliance = { country = ukr country = ger }
+	trigger = { 	or = { 	control = { province = 253 data = ger }
+				and = {  control = { province = 253 data = ukr }
+					alliance = { country = ukr country = ger }
+				}
 			}
-		}
-}
+	}
 
-name = "Capture of Sevastopol"
-desc = "In late September, 1941, Erich von Manstein's Eleventh Army from Army Group South began the siege of Sevastopol. By the 16th of November they had captured all of the peninsula other than the ancient port of Sevastopol, on the southern tip. The garrison at Sevastopol was made up of about 106,000 soldiers and sailors. Using their largest artillery piece, the 31.5 inch gun Gustav Gerat 'Big Dora' the Germans reduced Soviet fortifications and on the 4th of July 1942, Sevastopol was secured."
+	name = "Capture of Sevastopol"
+	desc = "In late September, 1941, Erich von Manstein's Eleventh Army from Army Group South began the siege of Sevastopol. By the 16th of November they had captured all of the peninsula other than the ancient port of Sevastopol, on the southern tip. The garrison at Sevastopol was made up of about 106,000 soldiers and sailors. Using their largest artillery piece, the 31.5 inch gun Gustav Gerat 'Big Dora' the Germans reduced Soviet fortifications and on the 4th of July 1942, Sevastopol was secured."
 
-style = 0
+	style = 0
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 event = {
-id = 47020
-country = GER
-random = no
+	id = 47020
+	country = GER
+	random = no
 
-trigger = { event = 47019 random = 25 }
+	trigger = { event = 47019 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
-picture = occu_47018_sevasto1	#Steffele
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
+	picture = occu_47018_sevasto1	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
- command = { type = supplies value = 3000 where = 253 }
-command = { type = money value = 100 }
-
-}
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 3000 where = 253 }
+		command = { type = money value = 100 }
+	}
 }
 #########################################################################
 # 47021 Baku oil Fields (by Aregorn 050101)
@@ -636,50 +630,49 @@ event = {
 
 
 event = {
-id = 47022
-country = GER
-random = no
+	id = 47022
+	country = GER
+	random = no
 
-trigger = { control = { province = 163 data = ger }
-}
+	trigger = { control = { province = 163 data = ger } }
 
-name = "Capture of Stalingrad"
-desc = "."
-picture = occu_47016_smolensk2	#Steffele
+	name = "Capture of Stalingrad"
+	desc = "."
+	picture = occu_47016_smolensk2	#Steffele
 
-style = 0
+	style = 0
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 event = {
-id = 47023
-country = GER
-random = no
+	id = 47023
+	country = GER
+	random = no
 
-trigger = { event = 47022 random = 25 }
+	trigger = { event = 47022 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
- command = { type = supplies value = 3000 where = 163 }
-command = { type = money value = 100 }
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 3000 where = 163 }
+		command = { type = money value = 100 }
 
-}
+	}
 }
 #########################################################################
 # Leningrad captured
@@ -687,49 +680,48 @@ command = { type = money value = 100 }
 
 
 event = {
-id = 47024
-country = GER
-random = no
+	id = 47024
+	country = GER
+	random = no
 
-trigger = { control = { province = 187 data = ger }
-}
+	trigger = { control = { province = 187 data = ger } }
 
-name = "Capture of Leningrad"
-desc = "."
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Capture of Leningrad"
+	desc = "."
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 event = {
-id = 47025
-country = GER
-random = no
+	id = 47025
+	country = GER
+	random = no
 
-trigger = { event = 47024 random = 25 }
+	trigger = { event = 47024 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
- command = { type = supplies value = 5000 where = 187 }
-command = { type = money value = 500 }
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 5000 where = 187 }
+		command = { type = money value = 500 }
 
-}
+	}
 }
 #########################################################################
 # Moscow captured
@@ -737,49 +729,47 @@ command = { type = money value = 500 }
 
 
 event = {
-id = 47026
-country = GER
-random = no
+	id = 47026
+	country = GER
+	random = no
 
-trigger = { control = { province = 175 data = ger }
-}
+	trigger = { control = { province = 175 data = ger } }
 
-name = "Capture of Moscow"
-desc = "."
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Capture of Moscow"
+	desc = "."
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 2
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 2
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Germany seems to be unstopable."
-command = { type = dissent value = -5 }
-}
+	action_a = {
+		name = "Germany seems to be unstopable."
+		command = { type = dissent value = -5 }
+	}
 }
 event = {
-id = 47027
-country = GER
-random = no
+	id = 47027
+	country = GER
+	random = no
 
-trigger = { event = 47026 random = 25 }
+	trigger = { event = 47026 random = 25 }
 
-name = "Soviet captured equipment"
-desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
-style = 0
-picture = occu_47016_smolensk2	#Steffele
+	name = "Soviet captured equipment"
+	desc = "Tons of material, and some valuable assets are now at the Reich's disposition"
+	style = 0
+	picture = occu_47016_smolensk2	#Steffele
 
-date = { day = 1 month = january year = 1936 }
-offset = 1
-deathdate = { day = 30 month = december year = 1963 }
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
 
-action_a = {
-name = "Great!"
- command = { type = supplies value = 10000 where = 175 }
-command = { type = money value = 1000 }
-
-}
+	action_a = {
+		name = "Great!"
+		command = { type = supplies value = 10000 where = 175 }
+		command = { type = money value = 1000 }
+	}
 }
 #########################################################################
 # 47028-30 Yugoslavian Partisans (by Dec152000 & Aregorn)

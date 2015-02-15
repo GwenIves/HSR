@@ -441,6 +441,11 @@ event = {
 		command = { type = money value = 100 }
 		command = { type = manpowerpool value = -10 }
 	}
+	action_b = {
+		name = "Great!"
+		command = { type = supplies value = 10000 where = 238 }
+		command = { type = money value = 100 }
+	}
 }
 
 #########################################################################
@@ -493,6 +498,11 @@ event = {
 		command = { type = money value = 100 }
 		command = { type = manpowerpool value = -10 }
 	}
+	action_b = {
+		name = "Great!"
+		command = { type = supplies value = 10000 where = 212 }
+		command = { type = money value = 100 }
+	}
 }
 
 #########################################################################
@@ -542,6 +552,11 @@ event = {
 		command = { type = supplies value = 3000 where = 219 }
 		command = { type = money value = 100 }
 		command = { type = manpowerpool value = -10 }
+	}
+	action_b = {
+		name = "Great!"
+		command = { type = supplies value = 10000 where = 219 }
+		command = { type = money value = 100 }
 	}
 }
 

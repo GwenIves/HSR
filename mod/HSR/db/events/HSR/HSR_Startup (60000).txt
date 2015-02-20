@@ -72,7 +72,7 @@ event = {
 	name = "HSR 2.11 house rules"
 	desc ="
 		1. Do not assume military control of your allies
-		2. Do not give attachments to event given expeditionary forces
+		2. Do not encircle areas larger than 3 provinces
 		3. Do not give provinces to countries that do not have a claim on them (exploit)
 		4. Choose a land doctrine path at the start and do not change it anymore during the game (serius Bug-exploit)
 		5. Max supported IC in each province is x3 the manpower on that province"

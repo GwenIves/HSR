@@ -1305,6 +1305,9 @@ event = {
 	action_c = {
 	name = "We need the best quality for our men"
 	ai_chance = 0
+
+	command = { type = setflag which = QualityLandFRA }
+
 	command = { type = hard_attack which = armor value = 4 }
 	command = { type = soft_attack which = armor value = 4 }
 	command = { type = build_time which = armor when = now where = relative value = 30 }
@@ -1336,5 +1339,30 @@ event = {
 	name = "Extremes policies are risky"
 	ai_chance = 0
 	command = { }
+	}
+}
+
+event = {
+	id = 40632
+	random = no
+	country = fra
+
+	trigger = { flag = QualityLandFRA }
+
+	name = "French Armor"
+	desc = "Additional improvements to French armor."
+	style = 0
+
+	picture = french_tank	#by Aregorn
+	date = { day = 1 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+
+	command = { type = hard_attack which = armor value = 1 }
+	command = { type = soft_attack which = armor value = 1 }
 	}
 }

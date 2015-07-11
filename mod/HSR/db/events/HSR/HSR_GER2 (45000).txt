@@ -3245,6 +3245,9 @@ event = {
 	action_a = {
 	name = "We need the best quality for our men"
 	ai_chance = 100
+
+	command = { type = setflag which = QualityLandGER }
+
 	command = { type = hard_attack which = armor value = 5 }
 	command = { type = soft_attack which = armor value = 6 }
 	command = { type = build_time which = armor when = now where = relative value = 30 }
@@ -3340,6 +3343,9 @@ event = {
 	action_a = {
 	name = "We need the best quality for our men"
 	ai_chance = 100
+
+	command = { type = setflag which = QualityAirGER }
+
 	command = { type = soft_attack which = multi_role value = 1 }
 	command = { type = air_attack which = multi_role value = 1 }
 	command = { type = air_defense which = multi_role value = 2 }
@@ -3448,5 +3454,79 @@ event = {
 	name = "Extremes policies are risky"
 	ai_chance = 0
 	command = { }
+	}
+}
+
+event = {
+	id = 45085
+	random = no
+	country = ger
+
+	trigger = { flag = QualityAirGER technology = 15500 }
+
+	name = "German Aircrafts"
+	desc = "Additional improvements to German aircraft."
+	style = 0
+
+	picture = german_air_factory	#by HSR
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+
+	command = { type = hard_attack which = cas value = 2 }
+	command = { type = soft_attack which = cas value = 2 }
+	command = { type = air_defense which = cas value = 1 }
+
+	command = { type = hard_attack which = tactical_bomber value = 1 }
+	command = { type = soft_attack which = tactical_bomber value = 2 }
+	command = { type = strategic_attack which = tactical_bomber value = 1 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 2 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	}
+}
+
+event = {
+	id = 45086
+	random = no
+	country = ger
+
+	trigger = { flag = QualityLandGER }
+
+	name = "German Armor"
+	desc = "Additional improvements to German armor."
+	style = 0
+
+	picture = german_tank_factory	#by HSR
+	date = { day = 1 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+
+	command = { type = hard_attack which = armor value = 2 }
+	command = { type = soft_attack which = armor value = 2 }
+
+	command = { type = hard_attack which = mechanized value = 1 }
+	command = { type = soft_attack which = mechanized value = 1 }
 	}
 }

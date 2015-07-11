@@ -3648,6 +3648,9 @@ event = {
 	action_a = {
 	name = "We need the best quality for our men"
 	ai_chance = 100
+
+	command = { type = setflag which = QualityAirUK }
+
 	command = { type = soft_attack which = multi_role value = 1 }
 	command = { type = air_attack which = multi_role value = 1 }
 	command = { type = air_defense which = multi_role value = 2 }
@@ -3787,6 +3790,9 @@ event = {
 	}
 	action_c = {
 	name = "We need the best quality for our men"
+
+	command = { type = setflag which = QualityLandUK }
+
 	ai_chance = 0
 	command = { type = hard_attack which = armor value = 3 }
 	command = { type = soft_attack which = armor value = 3 }
@@ -3819,5 +3825,68 @@ event = {
 	name = "Extremes policies are risky"
 	ai_chance = 0
 	command = { }
+	}
+}
+
+event = {
+	id = 40595
+	random = no
+	country = eng
+
+	trigger = { flag = QualityAirUK technology = 15500 }
+
+	name = "British Aircrafts"
+	desc = "Additional improvements to British aircraft."
+	style = 0
+
+	picture = uk_air	#by HSR
+	date = { day = 1 month = january year = 1936 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+
+	command = { type = soft_attack which = multi_role value = 1 }
+	command = { type = air_attack which = multi_role value = 1 }
+	command = { type = air_defense which = multi_role value = 2 }
+
+	command = { type = air_attack which = interceptor value = 1 }
+	command = { type = air_defense which = interceptor value = 2 }
+
+	command = { type = soft_attack which = naval_bomber value = 1 }
+	command = { type = naval_attack which = naval_bomber value = 1 }
+	command = { type = air_defense which = naval_bomber value = 1 }
+
+	command = { type = hard_attack which = strategic_bomber value = 1 }
+	command = { type = soft_attack which = strategic_bomber value = 1 }
+	command = { type = strategic_attack which = strategic_bomber value = 2 }
+	command = { type = air_defense which = strategic_bomber value = 1 }
+	}
+}
+
+event = {
+	id = 40596
+	random = no
+	country = eng
+
+	trigger = { flag = QualityLandUK }
+
+	name = "British Armor"
+	desc = "Additional improvements to British armor."
+	style = 0
+
+	picture = uk_tank	#by HSR
+	date = { day = 1 month = january year = 1943 }
+	offset = 1
+	deathdate = { day = 30 month = december year = 1963 }
+
+	action_a = {
+	name = "We need the best quality for our men"
+	ai_chance = 100
+
+	command = { type = hard_attack which = armor value = 1 }
+	command = { type = soft_attack which = armor value = 1 }
 	}
 }
